@@ -4,7 +4,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <%--Css popup--%>
     <style type="text/css">        .Background {            background-color: Black;            filter: alpha(opacity=30);            opacity: 0.8;        }        .Popup {            background-color: #FFFFFF;            border-width: 3px;            border-style: solid;            border-color: black;            padding-top: 10px;            width: 620px;            height: 520px;        }    </style>
+    <%--Pagina di visualizzazione dati personali dei corrieri--%>
     <div class="container-fluid col-lg-5">
         <div class="card mt-5">
             <div class="card-header text-center">

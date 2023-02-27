@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CORRIERI_Insert">
+        <s:complexType />
+      </s:element>
+      <s:element name="CORRIERI_InsertResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CORRIERI_Update">
+        <s:complexType />
+      </s:element>
+      <s:element name="CORRIERI_UpdateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CORRIERI_SelectAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="CORRIERI_SelectAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CORRIERI_SelectAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CORRIERI_SelectAll_DDL">
+        <s:complexType />
+      </s:element>
+      <s:element name="CORRIERI_SelectAll_DDLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CORRIERI_SelectAll_DDLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CORRIERI_SelectByKey">
+        <s:complexType />
+      </s:element>
+      <s:element name="CORRIERI_SelectByKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CORRIERI_SelectByKeyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CORRIERI_Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PWD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CORRIERI_LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CORRIERI_LoginResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CORRIERI_Abilita">
+        <s:complexType />
+      </s:element>
+      <s:element name="CORRIERI_AbilitaResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CORRIERI_InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:CORRIERI_Insert" />
+  </wsdl:message>
+  <wsdl:message name="CORRIERI_InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:CORRIERI_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="CORRIERI_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:CORRIERI_Update" />
+  </wsdl:message>
+  <wsdl:message name="CORRIERI_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:CORRIERI_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CORRIERI_SelectAllSoapIn">
+    <wsdl:part name="parameters" element="tns:CORRIERI_SelectAll" />
+  </wsdl:message>
+  <wsdl:message name="CORRIERI_SelectAllSoapOut">
+    <wsdl:part name="parameters" element="tns:CORRIERI_SelectAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="CORRIERI_SelectAll_DDLSoapIn">
+    <wsdl:part name="parameters" element="tns:CORRIERI_SelectAll_DDL" />
+  </wsdl:message>
+  <wsdl:message name="CORRIERI_SelectAll_DDLSoapOut">
+    <wsdl:part name="parameters" element="tns:CORRIERI_SelectAll_DDLResponse" />
+  </wsdl:message>
+  <wsdl:message name="CORRIERI_SelectByKeySoapIn">
+    <wsdl:part name="parameters" element="tns:CORRIERI_SelectByKey" />
+  </wsdl:message>
+  <wsdl:message name="CORRIERI_SelectByKeySoapOut">
+    <wsdl:part name="parameters" element="tns:CORRIERI_SelectByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="CORRIERI_LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:CORRIERI_Login" />
+  </wsdl:message>
+  <wsdl:message name="CORRIERI_LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:CORRIERI_LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="CORRIERI_AbilitaSoapIn">
+    <wsdl:part name="parameters" element="tns:CORRIERI_Abilita" />
+  </wsdl:message>
+  <wsdl:message name="CORRIERI_AbilitaSoapOut">
+    <wsdl:part name="parameters" element="tns:CORRIERI_AbilitaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsCorrieriSoap">
+    <wsdl:operation name="CORRIERI_Insert">
+      <wsdl:input message="tns:CORRIERI_InsertSoapIn" />
+      <wsdl:output message="tns:CORRIERI_InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_Update">
+      <wsdl:input message="tns:CORRIERI_UpdateSoapIn" />
+      <wsdl:output message="tns:CORRIERI_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_SelectAll">
+      <wsdl:input message="tns:CORRIERI_SelectAllSoapIn" />
+      <wsdl:output message="tns:CORRIERI_SelectAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_SelectAll_DDL">
+      <wsdl:input message="tns:CORRIERI_SelectAll_DDLSoapIn" />
+      <wsdl:output message="tns:CORRIERI_SelectAll_DDLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_SelectByKey">
+      <wsdl:input message="tns:CORRIERI_SelectByKeySoapIn" />
+      <wsdl:output message="tns:CORRIERI_SelectByKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_Login">
+      <wsdl:input message="tns:CORRIERI_LoginSoapIn" />
+      <wsdl:output message="tns:CORRIERI_LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_Abilita">
+      <wsdl:input message="tns:CORRIERI_AbilitaSoapIn" />
+      <wsdl:output message="tns:CORRIERI_AbilitaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsCorrieriSoap" type="tns:WsCorrieriSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CORRIERI_Insert">
+      <soap:operation soapAction="http://tempuri.org/CORRIERI_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_Update">
+      <soap:operation soapAction="http://tempuri.org/CORRIERI_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_SelectAll">
+      <soap:operation soapAction="http://tempuri.org/CORRIERI_SelectAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_SelectAll_DDL">
+      <soap:operation soapAction="http://tempuri.org/CORRIERI_SelectAll_DDL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_SelectByKey">
+      <soap:operation soapAction="http://tempuri.org/CORRIERI_SelectByKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_Login">
+      <soap:operation soapAction="http://tempuri.org/CORRIERI_Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_Abilita">
+      <soap:operation soapAction="http://tempuri.org/CORRIERI_Abilita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsCorrieriSoap12" type="tns:WsCorrieriSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CORRIERI_Insert">
+      <soap12:operation soapAction="http://tempuri.org/CORRIERI_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_Update">
+      <soap12:operation soapAction="http://tempuri.org/CORRIERI_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_SelectAll">
+      <soap12:operation soapAction="http://tempuri.org/CORRIERI_SelectAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_SelectAll_DDL">
+      <soap12:operation soapAction="http://tempuri.org/CORRIERI_SelectAll_DDL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_SelectByKey">
+      <soap12:operation soapAction="http://tempuri.org/CORRIERI_SelectByKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_Login">
+      <soap12:operation soapAction="http://tempuri.org/CORRIERI_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_Abilita">
+      <soap12:operation soapAction="http://tempuri.org/CORRIERI_Abilita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsCorrieri">
+    <wsdl:port name="WsCorrieriSoap" binding="tns:WsCorrieriSoap">
+      <soap:address location="http://localhost:50799/WsCorrieri.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsCorrieriSoap12" binding="tns:WsCorrieriSoap12">
+      <soap12:address location="http://localhost:50799/WsCorrieri.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

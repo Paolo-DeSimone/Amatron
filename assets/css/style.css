@@ -1,0 +1,156 @@
+﻿.destra {
+    display: flex;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.carrello :hover {
+    color: #B469FF;
+    cursor: pointer;
+}
+
+.nav-item :hover {
+    color: #B469FF;
+}
+
+.nav-link :hover {
+    color: #B469FF;   
+}
+
+.carrello {
+    color: grey;
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.searchbar {
+    width: 500px;
+    color: #B469FF;
+    margin: 0 auto;
+}
+
+.searchbar :hover {
+    border-width: 3px;
+    border-color: #B469FF;
+}
+.searchbar :focus {
+    border-width: 3px;
+    border-color: #B469FF;
+}
+
+.logoColor {
+    border-color: #B469FF;
+    color: #B469FF;
+    background-color: #212529;
+}
+
+.logo {
+    height: 50px;
+}
+
+.dMenu {
+    padding: 0px;
+    min-width: 250px;
+    right: 5px;
+}
+
+.sidebar {
+    display: none;
+    right: 0;
+    width: 400px;
+}
+
+.black :hover {
+    color: black;
+}
+
+.cont {
+    padding: 15px;
+}
+
+.bianco{
+    color: white;
+}
+
+
+/*CSS LOGIN E POPUP*/
+
+#loginform {
+    width:  25%;  
+    border-radius: 20vh;
+    margin-left: 72%;
+    background-color: #212529;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px #333;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: helvetica;
+    visibility: hidden;
+    display: none;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.popupLogin .chiusuraLogin {
+    position: fixed;
+}
+
+.popupLogin p {
+    margin-top: 40px;
+    font-size: 22px;
+    color: #E6E6E6;
+}
+
+.popupLogin .txtUSR {
+    width: 50%;
+    height: 10%;
+    border: 2px solid silver;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 0 auto;
+    margin-left: 14%;
+}
+
+.popupLogin .txtPWD {
+    width: 50%;
+    height: 10%;
+    border: 2px solid silver;
+    border-radius: 4px;
+    padding: 5px;
+    margin-top: 2%;
+    margin-left: 6%;
+}
+
+.popupLogin .doLogin {
+    margin-top: 15px;
+    width: 50%;
+    height: auto;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #B469FF;
+    font-size: 17px;
+    margin-left: 27%;
+}
+
+.check {
+    margin-top: 5%;
+    margin-left: 28%;
+}
+
+.form-switch .form-check-input:focus {
+    border-color: #B469FF;
+    outline: 0;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.form-switch .form-check-input:checked {
+    background-color: #B469FF;
+    border-color: #B469FF;
+    border: none;
+}
+
+.testo {
+    font-size: 17px;
+}

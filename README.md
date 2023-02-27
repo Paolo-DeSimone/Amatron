@@ -53,4 +53,4 @@ Una volta che un commit è stato creato, si può fare il push SEGUENDO LE REGOLE
 
 Il comando è git push origin {branchName}
 
-Per eliminare tutti i comandi che si vedono nella schermata di Git Bash, qualora uno le trovasse confusionarie, usare git...???
+Per eliminare tutti i comandi che si vedono nella schermata di Git Bash, qualora uno le trovasse confusionarie, usare clear. Solo clear, non git clear.

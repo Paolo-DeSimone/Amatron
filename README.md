@@ -1,8 +1,8 @@
 # Amatron
 Progetto finale DOITA08
 
-#GESTIONE REPO
-Ogni membro di ogni gruppo, inclusi i "jolly" ossia le persone che vengono spostate a lavorare in un certo gruppo ma che in realtà appartengono ad un gruppo diverso, avrà un suo branch, sul quale farà i push ed i pull request autonomamente. 
+# GESTIONE REPO
+Ogni membro di ogni gruppo, inclusi i "jolly" ossia le persone che vengono spostate a lavorare in un certo gruppo ma che in realtà appartengono ad un gruppo diverso, avrà un suo branch (es: B-Desimone), sul quale farà i push ed i pull request autonomamente. 
 
 I membri possono fare pull request dal loro branch PERSONALE solo verso il branch del PROPRIO GRUPPO di appartenza.
 

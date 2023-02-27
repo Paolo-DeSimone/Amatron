@@ -1,9 +1,19 @@
-﻿*{
+﻿* {
     margin: 0 auto;
 }
-.card2{
+
+.card2 {
     margin-top: 20px;
 }
+
 .card3 {
-    margin-top:20px;
+    margin-top: 20px;
+}
+
+#btnSalva {
+    margin-top: 20px;
+}
+
+#btnAggiungi {
+    margin-top: 20px;
 }

@@ -7,12 +7,17 @@
     justify-content:space-around;
 }
 .grandezzaImg{
-    max-width:10vw;
-    max-height:16vh;
+    min-width:8vw;
+    min-height:10vw;
+    max-width:8vw;
+    max-height:10vh;
 
 }
 
-.DescrizioneProdotto{
-    display:flex;
-    max-height:16vh;
+.DescrizioneProdotto {
+    display: inline-block;
+    width:300px;
+    height:10vw;
+    overflow: scroll;
+    text-overflow: ellipsis;
 }

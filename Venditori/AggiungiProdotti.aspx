@@ -63,7 +63,9 @@
                     <%--  strumento ajax per consentire solo numeri --%>
                     <ajaxToolkit:FilteredTextBoxExtender ID="txtQuantita_FilteredTextBoxExtender" runat="server"
                         Enabled="True" TargetControlID="txtQuantita" FilterType="Numbers"></ajaxToolkit:FilteredTextBoxExtender>
-
+                </center>
+                <center>
+                    <asp:Button ID="btnSalva" runat="server" Text="Salva" />
                 </center>
             </div>
 

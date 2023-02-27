@@ -154,3 +154,27 @@
 .testo {
     font-size: 17px;
 }
+
+
+/*Css popup Inscrizione prime*/
+.Background {
+    background-color: #212529;
+    filter: alpha(opacity=30);
+    opacity: 0.8;
+}
+
+.Popup {
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 600px;
+    height: 600px;
+}
+
+.colore {
+    background-color: #212529;
+
+}
+
+.inscriviti {
+    font-size: 30px;
+}

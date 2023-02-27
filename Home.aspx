@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="Default2" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="Default2" %>
 
 <!DOCTYPE html>
 
@@ -19,8 +19,7 @@
 
         function closeRightMenu() {
             document.getElementById("rightMenu").style.display = "none";
-        }                                                               
-
+        }
         function closePopupLogin() {
             document.getElementById("rightMenu").style.display = "none";
         }

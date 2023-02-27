@@ -24,16 +24,18 @@
                     </div>
                 </div>--%>
 
-<%--                display: inline-block;    width: 8vw;    height: 10vh;    overflow: hidden;    text-overflow: ellipsis;    white-space: nowrap;--%>
-
-
+<%--                display: inline-block;
+    width: 8vw;
+    height: 10vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;--%>
 
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-6">
                             <img class="img-thumbnail" style="max-width: 200px; max-height: 200px;" src="../assets/images/nayuta.jpg" />
                         </div>
-
 
                         <div class="col-md-6" style="text-align: left; align-self: end;">
                             <h5>TITOLO
@@ -50,9 +52,6 @@
                     </div>
                 </div>
             </div>
-
-
-
             <div class="col-md-6">
                 <div class="row">
 

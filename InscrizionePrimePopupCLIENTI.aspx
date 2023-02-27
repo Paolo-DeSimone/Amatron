@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="InscrizionePrimePopup.aspx.cs" Inherits="InscrizionePrimePopup" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="InscrizionePrimePopupCLIENTI.aspx.cs" Inherits="InscrizionePrimePopup" %>
 
 <!DOCTYPE html>
 

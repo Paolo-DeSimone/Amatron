@@ -1,4 +1,4 @@
-﻿.destra {
+.destra {
     display: flex;
     margin-left: auto;
     margin-right: 20px;
@@ -155,6 +155,12 @@
     font-size: 17px;
 }
 
+/*CSS ORDINI E POPUP*/
+
+.ordini {
+    margin: 10px auto;
+    width: 600px;
+    height: 200px;
 
 /*Css popup Inscrizione prime*/
 .Background {

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="VALUTAZIONI_Insert">
+        <s:complexType />
+      </s:element>
+      <s:element name="VALUTAZIONI_InsertResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="VALUTAZIONI_SelectAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="VALUTAZIONI_SelectAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VALUTAZIONI_SelectAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VALUTAZIONI_SelectAll_DDL">
+        <s:complexType />
+      </s:element>
+      <s:element name="VALUTAZIONI_SelectAll_DDLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VALUTAZIONI_SelectAll_DDLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VALUTAZIONI_SelectByKey">
+        <s:complexType />
+      </s:element>
+      <s:element name="VALUTAZIONI_SelectByKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VALUTAZIONI_SelectByKeyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VALUTAZIONI_SelectByOrder">
+        <s:complexType />
+      </s:element>
+      <s:element name="VALUTAZIONI_SelectByOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VALUTAZIONI_SelectByOrderResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="VALUTAZIONI_InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:VALUTAZIONI_Insert" />
+  </wsdl:message>
+  <wsdl:message name="VALUTAZIONI_InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:VALUTAZIONI_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="VALUTAZIONI_SelectAllSoapIn">
+    <wsdl:part name="parameters" element="tns:VALUTAZIONI_SelectAll" />
+  </wsdl:message>
+  <wsdl:message name="VALUTAZIONI_SelectAllSoapOut">
+    <wsdl:part name="parameters" element="tns:VALUTAZIONI_SelectAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="VALUTAZIONI_SelectAll_DDLSoapIn">
+    <wsdl:part name="parameters" element="tns:VALUTAZIONI_SelectAll_DDL" />
+  </wsdl:message>
+  <wsdl:message name="VALUTAZIONI_SelectAll_DDLSoapOut">
+    <wsdl:part name="parameters" element="tns:VALUTAZIONI_SelectAll_DDLResponse" />
+  </wsdl:message>
+  <wsdl:message name="VALUTAZIONI_SelectByKeySoapIn">
+    <wsdl:part name="parameters" element="tns:VALUTAZIONI_SelectByKey" />
+  </wsdl:message>
+  <wsdl:message name="VALUTAZIONI_SelectByKeySoapOut">
+    <wsdl:part name="parameters" element="tns:VALUTAZIONI_SelectByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="VALUTAZIONI_SelectByOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:VALUTAZIONI_SelectByOrder" />
+  </wsdl:message>
+  <wsdl:message name="VALUTAZIONI_SelectByOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:VALUTAZIONI_SelectByOrderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsValutazioniSoap">
+    <wsdl:operation name="VALUTAZIONI_Insert">
+      <wsdl:input message="tns:VALUTAZIONI_InsertSoapIn" />
+      <wsdl:output message="tns:VALUTAZIONI_InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VALUTAZIONI_SelectAll">
+      <wsdl:input message="tns:VALUTAZIONI_SelectAllSoapIn" />
+      <wsdl:output message="tns:VALUTAZIONI_SelectAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VALUTAZIONI_SelectAll_DDL">
+      <wsdl:input message="tns:VALUTAZIONI_SelectAll_DDLSoapIn" />
+      <wsdl:output message="tns:VALUTAZIONI_SelectAll_DDLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VALUTAZIONI_SelectByKey">
+      <wsdl:input message="tns:VALUTAZIONI_SelectByKeySoapIn" />
+      <wsdl:output message="tns:VALUTAZIONI_SelectByKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VALUTAZIONI_SelectByOrder">
+      <wsdl:input message="tns:VALUTAZIONI_SelectByOrderSoapIn" />
+      <wsdl:output message="tns:VALUTAZIONI_SelectByOrderSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsValutazioniSoap" type="tns:WsValutazioniSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VALUTAZIONI_Insert">
+      <soap:operation soapAction="http://tempuri.org/VALUTAZIONI_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VALUTAZIONI_SelectAll">
+      <soap:operation soapAction="http://tempuri.org/VALUTAZIONI_SelectAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VALUTAZIONI_SelectAll_DDL">
+      <soap:operation soapAction="http://tempuri.org/VALUTAZIONI_SelectAll_DDL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VALUTAZIONI_SelectByKey">
+      <soap:operation soapAction="http://tempuri.org/VALUTAZIONI_SelectByKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VALUTAZIONI_SelectByOrder">
+      <soap:operation soapAction="http://tempuri.org/VALUTAZIONI_SelectByOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsValutazioniSoap12" type="tns:WsValutazioniSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VALUTAZIONI_Insert">
+      <soap12:operation soapAction="http://tempuri.org/VALUTAZIONI_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VALUTAZIONI_SelectAll">
+      <soap12:operation soapAction="http://tempuri.org/VALUTAZIONI_SelectAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VALUTAZIONI_SelectAll_DDL">
+      <soap12:operation soapAction="http://tempuri.org/VALUTAZIONI_SelectAll_DDL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VALUTAZIONI_SelectByKey">
+      <soap12:operation soapAction="http://tempuri.org/VALUTAZIONI_SelectByKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VALUTAZIONI_SelectByOrder">
+      <soap12:operation soapAction="http://tempuri.org/VALUTAZIONI_SelectByOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsValutazioni">
+    <wsdl:port name="WsValutazioniSoap" binding="tns:WsValutazioniSoap">
+      <soap:address location="http://localhost:50799/WsValutazioni.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsValutazioniSoap12" binding="tns:WsValutazioniSoap12">
+      <soap12:address location="http://localhost:50799/WsValutazioni.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="FILTRA_Descrizione">
+        <s:complexType />
+      </s:element>
+      <s:element name="FILTRA_DescrizioneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FILTRA_DescrizioneResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FILTRA_Titolo">
+        <s:complexType />
+      </s:element>
+      <s:element name="FILTRA_TitoloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FILTRA_TitoloResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FILTRA_Categoria">
+        <s:complexType />
+      </s:element>
+      <s:element name="FILTRA_CategoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FILTRA_CategoriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="FILTRA_DescrizioneSoapIn">
+    <wsdl:part name="parameters" element="tns:FILTRA_Descrizione" />
+  </wsdl:message>
+  <wsdl:message name="FILTRA_DescrizioneSoapOut">
+    <wsdl:part name="parameters" element="tns:FILTRA_DescrizioneResponse" />
+  </wsdl:message>
+  <wsdl:message name="FILTRA_TitoloSoapIn">
+    <wsdl:part name="parameters" element="tns:FILTRA_Titolo" />
+  </wsdl:message>
+  <wsdl:message name="FILTRA_TitoloSoapOut">
+    <wsdl:part name="parameters" element="tns:FILTRA_TitoloResponse" />
+  </wsdl:message>
+  <wsdl:message name="FILTRA_CategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:FILTRA_Categoria" />
+  </wsdl:message>
+  <wsdl:message name="FILTRA_CategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:FILTRA_CategoriaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsFiltraSoap">
+    <wsdl:operation name="FILTRA_Descrizione">
+      <wsdl:input message="tns:FILTRA_DescrizioneSoapIn" />
+      <wsdl:output message="tns:FILTRA_DescrizioneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FILTRA_Titolo">
+      <wsdl:input message="tns:FILTRA_TitoloSoapIn" />
+      <wsdl:output message="tns:FILTRA_TitoloSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FILTRA_Categoria">
+      <wsdl:input message="tns:FILTRA_CategoriaSoapIn" />
+      <wsdl:output message="tns:FILTRA_CategoriaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsFiltraSoap" type="tns:WsFiltraSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FILTRA_Descrizione">
+      <soap:operation soapAction="http://tempuri.org/FILTRA_Descrizione" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FILTRA_Titolo">
+      <soap:operation soapAction="http://tempuri.org/FILTRA_Titolo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FILTRA_Categoria">
+      <soap:operation soapAction="http://tempuri.org/FILTRA_Categoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsFiltraSoap12" type="tns:WsFiltraSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FILTRA_Descrizione">
+      <soap12:operation soapAction="http://tempuri.org/FILTRA_Descrizione" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FILTRA_Titolo">
+      <soap12:operation soapAction="http://tempuri.org/FILTRA_Titolo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FILTRA_Categoria">
+      <soap12:operation soapAction="http://tempuri.org/FILTRA_Categoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsFiltra">
+    <wsdl:port name="WsFiltraSoap" binding="tns:WsFiltraSoap">
+      <soap:address location="http://localhost:50799/WsFiltra.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsFiltraSoap12" binding="tns:WsFiltraSoap12">
+      <soap12:address location="http://localhost:50799/WsFiltra.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

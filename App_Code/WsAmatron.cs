@@ -22,7 +22,7 @@ public class WsAmatron : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable Login(string email, string PWD)
+    public DataTable AMATRON_Login(string email, string PWD)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();

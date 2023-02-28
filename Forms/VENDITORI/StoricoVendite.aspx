@@ -6,79 +6,230 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
+    <%--formattazione card--%>
     <div class="container mt-5">
-        <div class="card" style="padding: 15px 15px 15px; background-color: #f5f5f5">
-            <div class="row text-center">
+        <div class="card">
 
-
-                <%--     <div class="col-md-6">
-
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="card-link">Card link</a>
-                            <a href="#" class="card-link">Another link</a>
-                        </div>
-                    </div>
-                </div>--%>
-
-<%--                display: inline-block;
-    width: 8vw;
-    height: 10vh;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;--%>
-
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img class="img-thumbnail" style="max-width: 200px; max-height: 200px;" src="../assets/images/nayuta.jpg" />
-                        </div>
-
-                        <div class="col-md-6" style="text-align: left; align-self: end;">
-                            <h5>TITOLO
-
-                            </h5>
-
-                            <h4>100€
-
-                            </h4>
-                            <asp:Label ID="Label1" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non faucibus odio. Nulla at ultrices ex, ut ultrices eros."></asp:Label>
-
-
-                        </div>
-                    </div>
-                </div>
+            <%--header--%>
+            <div class="card-header" style="background-color: #8e53c9">
+                <h5>Storico Vendite </h5>
             </div>
-            <div class="col-md-6">
+            <%-- Inizio body --%>
+            <div class="card-body" style="padding: 15px 15px 15px;">
                 <div class="row">
-
+                    
+                    <%-- prima col --%>
 
                     <div class="col-md-6">
+                        <div class="card" style="background-color: #f5f5f5; margin-bottom: 15px; " >
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img class="img-thumbnail" style="object-fit: scale-down; width: 225px; margin: auto; height: 225px;" src="/assets/images/nayuta.jpg" />
+                                </div>
 
-                        <img class="img-thumbnail" style="min-width: 250px; min-height: 250px; max-width: 250px; max-height: 250px;" src="../assets/images/kurado.png" />
+                                <div class="col-md-6" style="text-align: left; align-self: end;">
+                                    <h4>
+
+                                       Prodotto 1
+                                        
+
+                                    </h4>
+
+                                    <h4>100€
+
+                                    </h4>
+
+                                     <h5>Manga
+
+                                    </h5>
+                                    <asp:Label ID="Label3" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non faucibus odio. Nulla at ultrices ex, ut ultrices eros."></asp:Label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-md-6" style="text-align: left; align-self: end;">
-                        <h5>TITOLO
-
-                        </h5>
-
-                        <h4>45€
-
-                        </h4>
+                    <%-- seconda col --%>
+                    <div class="col-md-6">
+                        <div class="card" style="background-color: #f5f5f5; margin-bottom: 15px;">
+                            <div class="row">
 
 
-                        <asp:Label ID="Label2" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non faucibus odio. Nulla at ultrices ex, ut ultrices eros."></asp:Label>
+                                <div class="col-md-6">
 
 
+                                    <img class="img-thumbnail" src="/assets/images/kurado.png" style="object-fit: scale-down; width: 225px; height: 225px; margin: auto;" />
+
+                                </div>
+
+                                <div class="col-md-6" style="text-align: left; align-self: end;">
+
+
+                                    <h4>
+                                        Prodotto 2
+
+                                        
+
+                                    </h4>
+                                    <h4>45 euro
+
+                                    </h4>
+
+                                     <h5>Action Figure
+
+                                    </h5>
+
+
+                                    <asp:Label ID="Label4" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non faucibus odio. Nulla at ultrices ex, ut ultrices eros."></asp:Label>
+
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                     <%-- prima col --%>
+
+                    <div class="col-md-6">
+                        <div class="card" style="background-color: #f5f5f5; margin-bottom: 15px; " >
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img class="img-thumbnail" style="object-fit: scale-down; width: 225px; margin: auto; height: 225px;" src="/assets/images/nayuta.jpg" />
+                                </div>
+
+                                <div class="col-md-6" style="text-align: left; align-self: end;">
+                                    <h4>
+
+                                       Prodotto 1
+                                        
+
+                                    </h4>
+
+                                    <h4>100€
+
+                                    </h4>
+
+                                     <h5>Manga
+
+                                    </h5>
+                                    <asp:Label ID="Label1" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non faucibus odio. Nulla at ultrices ex, ut ultrices eros."></asp:Label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <%-- seconda col --%>
+                    <div class="col-md-6">
+                        <div class="card" style="background-color: #f5f5f5; margin-bottom: 15px;">
+                            <div class="row">
+
+
+                                <div class="col-md-6">
+
+
+                                    <img class="img-thumbnail" src="/assets/images/kurado.png" style="object-fit: scale-down; width: 225px; height: 225px; margin: auto;" />
+
+                                </div>
+
+                                <div class="col-md-6" style="text-align: left; align-self: end;">
+
+
+                                    <h4>
+                                        Prodotto 2
+
+                                        
+
+                                    </h4>
+                                    <h4>45 euro
+
+                                    </h4>
+
+                                     <h5>Action Figure
+
+                                    </h5>
+
+
+                                    <asp:Label ID="Label2" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non faucibus odio. Nulla at ultrices ex, ut ultrices eros."></asp:Label>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                     <%-- terza col --%>
+
+                    <div class="col-md-6">
+                        <div class="card" style="background-color: #f5f5f5; margin-bottom: 15px; " >
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img class="img-thumbnail" style="object-fit: scale-down; width: 225px; margin: auto; height: 225px;" src="/assets/images/nayuta.jpg" />
+                                </div>
+
+                                <div class="col-md-6" style="text-align: left; align-self: end;">
+                                    <h4>
+
+                                       Prodotto 1
+                                        
+
+                                    </h4>
+
+                                    <h4>100€
+
+                                    </h4>
+
+                                     <h5>Manga
+
+                                    </h5>
+                                    <asp:Label ID="Label5" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non faucibus odio. Nulla at ultrices ex, ut ultrices eros."></asp:Label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <%-- quarta col --%>
+                    <div class="col-md-6">
+                        <div class="card" style="background-color: #f5f5f5; margin-bottom: 15px;">
+                            <div class="row">
+
+
+                                <div class="col-md-6">
+
+
+                                    <img class="img-thumbnail" src="/assets/images/kurado.png" style="object-fit: scale-down; width: 225px; height: 225px; margin: auto;" />
+
+                                </div>
+
+                                <div class="col-md-6" style="text-align: left; align-self: end;">
+
+
+                                    <h4>
+                                        Prodotto 2
+
+                                        
+
+                                    </h4>
+                                    <h4>45 euro
+
+                                    </h4>
+
+                                     <h5>Action Figure
+
+                                    </h5>
+
+
+                                    <asp:Label ID="Label6" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non faucibus odio. Nulla at ultrices ex, ut ultrices eros."></asp:Label>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                 </div>
             </div>
         </div>
-
     </div>
 </asp:Content>
 

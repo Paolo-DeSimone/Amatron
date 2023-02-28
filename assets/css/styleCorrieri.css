@@ -1,0 +1,16 @@
+﻿/*Css PopUp corrieri*/
+.Background {
+    background-color: Black;
+    filter: alpha(opacity=30);
+    opacity: 0.8;
+}
+
+.PopupPersCorrieri {
+    background-color: #FFFFFF;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    padding-top: 10px;
+    width: 620px;
+    height: 520px;
+}

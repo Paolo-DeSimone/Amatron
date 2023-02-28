@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="InscrizionePrimePopupCLIENTI.aspx.cs" Inherits="InscrizionePrimePopup" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="InscrizionePrimePopup.aspx.cs" Inherits="InscrizionePrimePopup" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
-    <link href="../assets/css/style.css" rel="stylesheet" />
+    <link href="/assets/css/style.css" rel="stylesheet" />
 </head>
 <body class="colore">
     <form id="form1" runat="server">

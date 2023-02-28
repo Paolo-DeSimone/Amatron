@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PopupStatoCorrieri.aspx.cs" Inherits="PopupStatoCorriere" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PopupStato.aspx.cs" Inherits="PopupStatoCorriere" %>
 
 <!DOCTYPE html>
 

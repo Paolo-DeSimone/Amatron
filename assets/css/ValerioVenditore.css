@@ -1,7 +1,4 @@
-﻿* {
-    margin: 0 auto;
-}
-
+﻿
 .card2 {
     margin-top: 20px;
 }
@@ -16,4 +13,22 @@
 
 #btnAggiungi {
     margin-top: 20px;
+}
+.btnVenditoriPurple {
+    background-color: #a062de !important;
+}
+
+.btnVenditoriOffWhite {
+    background-color: :white !important;
+}
+.coloreHeader {
+    background-color: #8e53c9 !important;
+}
+.CardMargine {
+    margin: 12vh auto;
+    width: 65vw;
+}
+
+.prova{
+    margin-left:200px;
 }

@@ -1,6 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="ProfiloModificaCLIENTI.aspx.cs" Inherits="Default2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="PaginaPersonaleCLIENTI.aspx.cs" Inherits="Default2" %>
 
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -9,9 +8,10 @@
     <div class="container">
 
         <p></p>
-        <h2 class="intestazione">MODIFICA DATI</h2>
+        <h3 class="intestazione">Modifica i tuoi dati</h3>
 
-<div class="row margini">
+
+        <div class="row margini">
 
             <div class="col-md-1">
                 <asp:Literal ID="ltlCognome" runat="server"><h6 class="misura">COGNOME:</h6></asp:Literal>
@@ -96,32 +96,5 @@
 
     </div>
 
-        <%-- Introduzione di uno script manager --%>
-        <asp:ScriptManager ID="ScriptManager1" runat="server">
-        </asp:ScriptManager>
-
-        <%-- pulsante che apre il popup --%>
-        <asp:Button ID="btnApri" runat="server" Text="Iscriviti a Amatron Prime" />
-
-        <%-- chiamata del popup --%>
-        <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnApri"
-            CancelControlID="btnChiudi" BackgroundCssClass="Background">
-        </cc1:ModalPopupExtender>
-
-        <%-- contenuto del popup --%>
-        <asp:Panel
-            ID="Panl1"
-            runat="server"
-            CssClass="Popup"
-            align="center"
-            Style="display: none">
-            <%--ci pensa lo script manager a renderlo visibile--%>
-
-            <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-            <iframe style="width: 550px; height: 373px;  -webkit-border-radius: 10px 10px 10px 10px;" id="irm1" src="InscrizionePrimePopupCLIENTI.aspx" runat="server"></iframe>
-            <br />
-            <%--chiude il popup--%>
-            <asp:Button ID="btnChiudi" class="btn btn-primary" runat="server" Text="Chiudi" />
-        </asp:Panel>
-
 </asp:Content>
+

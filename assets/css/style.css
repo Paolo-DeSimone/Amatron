@@ -1,3 +1,4 @@
+
 .destra {
     display: flex;
     margin-left: auto;
@@ -14,6 +15,7 @@
 }
 
 .nav-link :hover {
+
     color: #B469FF;   
 }
 
@@ -30,14 +32,16 @@
     margin: 0 auto;
 }
 
-.searchbar :hover {
-    border-width: 3px;
-    border-color: #B469FF;
-}
-.searchbar :focus {
-    border-width: 3px;
-    border-color: #B469FF;
-}
+    .searchbar :hover {
+        border-width: 3px;
+        border-color: #B469FF;
+    }
+
+    .searchbar :focus {
+        border-width: 3px;
+        border-color: #B469FF;
+    }
+
 
 .logoColor {
     border-color: #B469FF;
@@ -69,6 +73,7 @@
     padding: 15px;
 }
 
+
 .bianco{
     color: white;
 }
@@ -77,6 +82,7 @@
 /*CSS LOGIN E POPUP*/
 
 #loginform {
+
     width:  25%;  
     border-radius: 20vh;
     margin-left: 72%;
@@ -155,13 +161,53 @@
     font-size: 17px;
 }
 
+
+
+/*CSS PAGINA PERSONALE CLIENTI*/
+
+.intestazione {
+    color: #B469FF;
+    font-family: Verdana; 
+}
+
+.misura {
+    width: 80%;
+    
+}
+
+.Textbox {
+    width: 50%;
+    
+}
+
+.margini {
+    height: 40px;
+}
+
+.casella {
+    width: 50%;
+}
+
+
+.btnSalva {
+    width: 60%;
+    align-items: stretch;
+    background-color: #B469FF;
+    border: #B469FF;
+    margin-left:900px;
+}
+
+   
+
+/*/////////////////////////////*/
+
 /*CSS ORDINI E POPUP*/
 
 .ordini {
     margin: 10px auto;
     width: 600px;
     height: 200px;
-
+}
 /*Css popup Inscrizione prime*/
 .Background {
     background-color: #212529;

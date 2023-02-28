@@ -27,7 +27,7 @@
 }
 
 .searchbar {
-    width: 500px;
+    width: 700px;
     color: #B469FF;
     margin: 0 auto;
 }
@@ -96,6 +96,11 @@
     display: none;
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+.popupLogin {
+    position: absolute;
+    z-index: 1;
 }
 
 .popupLogin .chiusuraLogin {
@@ -204,6 +209,13 @@
     border: #B469FF;
     margin-left: 170%;
     
+}
+
+
+.ordini {
+    margin: 10px auto;
+    width: 600px;
+    height: 200px;
 }
 
 /*Css popup Inscrizione prime*/

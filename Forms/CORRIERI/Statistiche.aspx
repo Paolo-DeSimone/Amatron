@@ -2,7 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">  
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <link href="/assets/css/test.css" rel="stylesheet" />
     <%--Visualizzazione statistiche corrieri--%>
     <div class="container mt-5">
         <div class="row">
@@ -60,6 +61,7 @@
                         <h5 class="card-title">Griglia</h5>
                         <p class="card-text">
                             Qui ci andrà la griglia
+                            <asp:GridView ID="grigliaStatisticheCorrieri" runat="server"></asp:GridView>                            
                         </p>
                     </div>
                 </div>

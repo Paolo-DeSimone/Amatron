@@ -114,4 +114,45 @@
         <asp:Button ID="btnChiudi" class="btn btn-secondary" runat="server" Text="Chiudi" />
     </asp:Panel>
 
+
+        <div class="row margini">
+            <div class="col-md-2">
+                <asp:Button ID="btnSalva" runat="server" Text="Salva" class="btn btn-secondary btnSalva" />
+            </div>
+        </div>
+        <p></p>
+
+    </div>
+
+        <%-- Introduzione di uno script manager --%>
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+
+        <%-- pulsante che apre il popup --%>
+        <asp:Button ID="btnApri" runat="server" Text="Iscriviti a Amatron Prime" />
+
+        <%-- chiamata del popup --%>
+        <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnApri"
+            CancelControlID="btnChiudi" BackgroundCssClass="Background">
+        </cc1:ModalPopupExtender>
+
+        <%-- contenuto del popup --%>
+        <asp:Panel
+            ID="Panl1"
+            runat="server"
+            CssClass="Popup"
+            align="center"
+            Style="display: none">
+            <%--ci pensa lo script manager a renderlo visibile--%>
+
+            <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+            <iframe style="width: 550px; height: 373px;  -webkit-border-radius: 10px 10px 10px 10px;" id="irm1" src="IscrizionePrimePopup.aspx" runat="server"></iframe>
+            <br />
+            <%--chiude il popup--%>
+            <asp:Button ID="btnChiudi" class="btn btn-primary" runat="server" Text="Chiudi" />
+        </asp:Panel>
+
+
+
 </asp:Content>
+

@@ -155,12 +155,20 @@
     font-size: 17px;
 }
 
-/*CSS ORDINI E POPUP*/
+/*CSS ORDINI/RESO E POPUP*/
 
 .ordini {
     margin: 10px auto;
     width: 600px;
     height: 200px;
+}
+
+.PopupReso {
+    background-color: #212529;
+    filter: alpha(opacity=30);
+    opacity: 0.8;
+}
+
 
 /*Css popup Inscrizione prime*/
 .Background {
@@ -184,3 +192,4 @@
 .inscriviti {
     font-size: 30px;
 }
+

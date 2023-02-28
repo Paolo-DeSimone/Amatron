@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PopupStatoCorrieri.aspx.cs" Inherits="PopupStatoCorriere" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PopupStato.aspx.cs" Inherits="PopupStatoCorriere" %>
 
 <!DOCTYPE html>
 
@@ -16,6 +16,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <%--Visualizzazione stato ordini--%>
         <div class="container-fluid">
             <div class="col-sm-2 mt-2">
                 <asp:Label ID="Label1" runat="server" class="form-label" Text="Stato Ordine:"></asp:Label>

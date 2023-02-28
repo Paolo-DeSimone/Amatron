@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="VisualizzaProdottiVenditori.aspx.cs" Inherits="_Default" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="VisualizzaProdotti.aspx.cs" Inherits="_Default" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
@@ -34,31 +35,36 @@
                     <%-- Qui ci andranno i prodotti,con un ciclo andremo a riempire i vari spazi utili andando a recuperare tutti i prodotti 
                         che ha messo in vendita il venditore--%>
                     <div class=" col-md-6 ">
+                            <div class="container ">
                         <div class="row">
-                            <div class="col-md-4">
-                                <img alt="" src="../assets/images/amatron-icon.png" class="grandezzaImg"/>
-                            </div>
+                                <div class="col-md-4">
+                                    <img alt="" src="../assets/images/amatron-icon.png" class="grandezzaImg" />
+                                </div>
 
-                            <div class="col-md-6 ">
-                                <asp:Label ID="lblTitoloProdotto" runat="server" Text="TITOLO 1"></asp:Label>
-                                <br />
-                                <asp:Label ID="lblDescrizioneProdotto" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum libero porttitor purus accumsan,
+                                <div class="col-md-6 ">
+                                    <asp:Label ID="lblTitoloProdotto" runat="server" Text="TITOLO 1"></asp:Label>
+                                    <br />
+                                    <asp:Label ID="lblDescrizioneProdotto" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum libero porttitor purus accumsan,
                             eget ultrices metus aliquet. Aliquam non ornare nulla. Aliquam et sollicitudin diam, malesuada lacinia enim. Integer at nibh tempus, lacinia diam auctor, vulputate augue. 
-                            Proin faucibus pharetra ante eget pharetra. Mauris lacinia libero consequat, sagittis purus." class="DescrizioneProdotto"></asp:Label>
+                            Proin faucibus pharetra ante eget pharetra. Mauris lacinia libero consequat, sagittis purus. " class="DescrizioneProdotto"></asp:Label>
+                                </div>
                             </div>
                         </div>
+                        
                     </div>
                     <div class="col-md-6 ">
+                            <div class="container">
                         <div class="row">
-                            <div class="col-md-4">
-                                <img alt="" src="../assets/images/amatron-icon.png" class="grandezzaImg" />
-                            </div>
-                            <div class="col-md-6">
-                                <asp:Label ID="lblTitoloProdotto1" runat="server" Text="TITOLO 2"></asp:Label>
-                                <br />
-                                <asp:Label ID="lblDescrizioneProdotto2" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum libero porttitor purus accumsan,
+                                <div class="col-md-4">
+                                    <img alt="" src="../assets/images/amatron-icon.png" class="grandezzaImg" />
+                                </div>
+                                <div class="col-md-6">
+                                    <asp:Label ID="lblTitoloProdotto1" runat="server" Text="TITOLO 2"></asp:Label>
+                                    <br />
+                                    <asp:Label ID="lblDescrizioneProdotto2" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum libero porttitor purus accumsan,
                             eget ultrices metus aliquet. Aliquam non ornare nulla. Aliquam et sollicitudin diam, malesuada lacinia enim. Integer at nibh tempus, lacinia diam auctor, vulputate augue. 
                             Proin faucibus pharetra ante eget pharetra. Mauris lacinia libero consequat, sagittis purus." class="DescrizioneProdotto"></asp:Label>
+                                </div>
                             </div>
                         </div>
                     </div>

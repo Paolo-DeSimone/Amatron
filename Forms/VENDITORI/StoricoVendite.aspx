@@ -1,5 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="StoricoVenditeVenditori.aspx.cs" Inherits="_Default" %>
-
+<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="StoricoVendite.aspx.cs" Inherits="_Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -31,14 +30,11 @@
     text-overflow: ellipsis;
     white-space: nowrap;--%>
 
-
-
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-6">
                             <img class="img-thumbnail" style="max-width: 200px; max-height: 200px;" src="../assets/images/nayuta.jpg" />
                         </div>
-
 
                         <div class="col-md-6" style="text-align: left; align-self: end;">
                             <h5>TITOLO
@@ -55,9 +51,6 @@
                     </div>
                 </div>
             </div>
-
-
-
             <div class="col-md-6">
                 <div class="row">
 

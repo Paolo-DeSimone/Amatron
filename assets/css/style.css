@@ -167,11 +167,12 @@
 
 .intestazione {
     color: #B469FF;
-    font-family: Verdana; 
+    font-family: Verdana;
+    text-align:center;
 }
 
 .misura {
-    width: 80%;
+    text-align:center;
     
 }
 
@@ -180,8 +181,13 @@
     
 }
 
+.cap {
+    width: 10%;
+}
+
 .margini {
     height: 40px;
+    margin-left: 15%;
 }
 
 .casella {
@@ -190,12 +196,14 @@
 
 
 .btnSalva {
-    width: 60%;
+    width: 50%;
     align-items: stretch;
     background-color: #B469FF;
     border: #B469FF;
-    margin-left:900px;
+    margin-left: 170%;
+    
 }
+
 
    
 

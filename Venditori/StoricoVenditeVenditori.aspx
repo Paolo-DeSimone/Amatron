@@ -24,7 +24,12 @@
                     </div>
                 </div>--%>
 
-<%--                display: inline-block;    width: 8vw;    height: 10vh;    overflow: hidden;    text-overflow: ellipsis;    white-space: nowrap;--%>
+<%--                display: inline-block;
+    width: 8vw;
+    height: 10vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;--%>
 
 
 

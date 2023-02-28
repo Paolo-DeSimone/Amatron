@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="Default2" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Home.aspx.cs" Inherits="Default2" %>
 
 <!DOCTYPE html>
 
@@ -67,6 +67,7 @@
         //    obj.checked = true;
         //}
     </script>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -82,10 +83,10 @@
                     <%--  BARRA DI RICERCA--%>
                     <div class="input-group searchbar">
                         <div class="dropdown">
-                            <button class="btn btn-secondary logoColor" style="background-color:#212529" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-secondary logoColor" style="background-color: #212529" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Dropdown button
                             </button>
-                            <div class="dropdown-menu" style="background-color:#212529" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-menu" style="background-color: #212529" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item bianco" href="#">Action</a>
                                 <a class="dropdown-item bianco" href="#">Another action</a>
                                 <a class="dropdown-item bianco" href="#">Something else here</a>
@@ -106,7 +107,7 @@
                         <li>&nbsp;</li>
                     </ul>
 
-                    <%--  ICONA CARRELLO--%>
+                    <%--  ICONA CARRELLO e relativa pagina--%>
                     <div>
                         <div onclick="openRightMenu()" class="carrello">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-cart4 carrello" viewBox="0 0 16 16">
@@ -120,9 +121,37 @@
 
         <div class="w3-sidebar w3-bar-block w3-card w3-animate-right " style="display: none; right: 0; width: 500px;" id="rightMenu">
             <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">&times;</button>
-            <a href="#" class="w3-bar-item w3-button">Link 1</a>
-            <a href="#" class="w3-bar-item w3-button">Link 2</a>
-            <a href="#" class="w3-bar-item w3-button">Link 3</a>
+            <div class="card" style="height: 100px; margin-left:5px; max-width: 98%; ">
+                <div class="row">
+                    <a href="Forms/AMATRON/AccettazioneResi.aspx" class="col-sm-4">
+                        <div>
+                            <img src="assets/images/amatron-icon.png" class="img-fluid"/>
+                        </div>
+                    </a>
+                    <div class="col-sm-5">
+                        titolo descrizione
+                    </div>
+                <div class="col-sm-3">
+                    quantità, prezzo
+                </div>
+            </div>
+        </div>
+        <a href="#" class="w3-bar-item w3-button">
+            <div class="card" style="height: 100px; max-width: 100%;">
+            </div>
+        </a>
+        <a href="#" class="w3-bar-item w3-button">
+            <div class="card" style="height: 100px; max-width: 100%;">
+            </div>
+        </a>
+        <a href="#" class="w3-bar-item w3-button">
+            <div class="card" style="height: 100px; max-width: 100%;">
+            </div>
+        </a>
+        <a href="#" class="w3-bar-item w3-button">
+            <div class="card" style="height: 100px; max-width: 100%;">
+            </div>
+        </a>
         </div>
 
         <%-- Questo è il contenuto del PopUp che si apre cliccando su SignUp --%>
@@ -142,7 +171,7 @@
             <br />
             <asp:Label class="bianco cont testo" ID="Label1" runat="server" Text="Password"></asp:Label>
             <input type="password" class="txtPWD" id="txtPWD" name="upass" placeholder="Password" />
-        <%--    <div class="form-check form-switch check">
+            <%--    <div class="form-check form-switch check">
                 <label class="bianco">
                     <input class="form-check-input" runat="server" type="checkbox" id="cliente" onchange="cbChange(this)" />
                     <asp:Label class="testo" ID="Label3" runat="server" Text="Sono un Cliente"></asp:Label>
@@ -160,6 +189,8 @@
             </div>--%>
             <input type="submit" class="doLogin" id="dologin" onclick="Accedi()" value="Login" />
         </div>
+
+
     </form>
 </body>
 </html>

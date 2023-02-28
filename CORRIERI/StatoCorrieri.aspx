@@ -12,24 +12,7 @@
     <link href="/assets/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/amatron-icon.png" />
-    <style type="text/css">
-        .Background {
-            background-color: Black;
-            filter: alpha(opacity=30);
-            opacity: 0.8;
-        }
-
-        .Popup {
-            background-color: #FFFFFF;
-            border-width: 3px;
-            border-style: solid;
-            border-color: black;
-            padding-top: 10px;
-            padding-left: 10px;
-            width: 350px;
-            height: 150px;
-        }
-    </style>
+    <link href="/assets/css/styleCorrieri.css" rel="stylesheet" />
     <div class="container-lg mt-5">
         <div class="row text-center">
             <div class="col-12 mx-auto">
@@ -60,7 +43,7 @@
                                     <asp:Panel
                                         ID="Panl1"
                                         runat="server"
-                                        CssClass="Popup"
+                                        CssClass="PopupStatoCorrieri"
                                         align="center"
                                         Style="display: none">
 

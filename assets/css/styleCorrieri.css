@@ -1,0 +1,16 @@
+﻿.Background {
+    background-color: Black;
+    filter: alpha(opacity=30);
+    opacity: 0.8;
+}
+
+.PopupStatoCorrieri {
+    background-color: #FFFFFF;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 350px;
+    height: 150px;
+}

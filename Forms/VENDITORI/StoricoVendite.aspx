@@ -1,3 +1,4 @@
+
 <%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="StoricoVendite.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -8,8 +9,21 @@
 
 /*riduzione dimensione del testo per evitare conflitti in caso di un titolo molto lungo*/
 
-            .DescrizioneProdotto{    display: -webkit-box;    text-overflow: ellipsis;    overflow: hidden;    -webkit-line-clamp: 3;    -webkit-box-orient: vertical;  }
-        .contenimentoTitolo {    display: -webkit-box;    text-overflow: ellipsis;    overflow: hidden;    -webkit-line-clamp: 2;    -webkit-box-orient: vertical;}
+            .DescrizioneProdotto{
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  
+}
+        .contenimentoTitolo {
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
     
 
     </style>

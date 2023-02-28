@@ -22,37 +22,40 @@ public class WsCategorie : System.Web.Services.WebService
         //InitializeComponent(); 
     }
 
-    //bisogna sempre passare tutti i parametri e soprattutto in ORDINE
     [WebMethod]
-    public void CATEGORIE_Insert()
+    public void CATEGORIE_Insert(string categoria)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spCATEGORIE_Insert";
-        //DB.cmd.Parameters.AddWithValue("",);     
+        DB.cmd.Parameters.AddWithValue("categoria", categoria);
         DB.EseguiSPNonRead();
     }
-    //bisogna sempre passare tutti i parametri e soprattutto in ORDINE
+
     [WebMethod]
-    public void CATEGORIE_Update()
+    public void CATEGORIE_Update(int chiave, string categoria)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spCATEGORIE_Update";
-        //DB.cmd.Parameters.AddWithValue("",);     
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
+        DB.cmd.Parameters.AddWithValue("categoria", categoria);
         DB.EseguiSPNonRead();
     }
+
     [WebMethod]
-    public DataTable CATEGORIE_SelectByKey()
+    public DataTable CATEGORIE_SelectByKey(int chiave)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
         DB.query = "spCATEGORIE_SelectByKey";
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         dt = DB.EseguiSPRead();
         dt.TableName = "SelectByKey";
         return dt;
     }
+
     [WebMethod]
     public DataTable CATEGORIE_SelectAll()
     {

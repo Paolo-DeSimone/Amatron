@@ -24,20 +24,30 @@ public class WsResi : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void Resi_Insert()
+    public void Resi_Insert(int chiaveordine, string descrizione, int qtaresa, bool accettazione,string datarichiesta, string dataemissione)
     {
         DATABASE DB = new DATABASE();
-        //  DB.cmd.Parameters.AddWithValue("",);
+        DB.cmd.Parameters.AddWithValue("chiaveORDINE", chiaveordine);
+        DB.cmd.Parameters.AddWithValue("DESCRIZIONE", descrizione);
+        DB.cmd.Parameters.AddWithValue("QTARESA", qtaresa);
+        DB.cmd.Parameters.AddWithValue("ACCETTAZIONE", accettazione);
+        DB.cmd.Parameters.AddWithValue("DATARICHIESTA", datarichiesta);
+        DB.cmd.Parameters.AddWithValue("DATAEMISSIONE", dataemissione);
         DB.EseguiSPNonRead();
         DB.query = "spResi_Insert";
     }
 
     [WebMethod]
-    public void Resi_Update()
+    public void Resi_Update(int chiaveordine, string descrizione, int qtaresa, bool accettazione,string datarichiesta, string dataemissione)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
-        //DB.cmd.Parameters.AddWithValue();
+        DB.cmd.Parameters.AddWithValue("chiaveORDINE", chiaveordine);
+        DB.cmd.Parameters.AddWithValue("DESCRIZIONE", descrizione);
+        DB.cmd.Parameters.AddWithValue("QTARESA", qtaresa);
+        DB.cmd.Parameters.AddWithValue("ACCETTAZIONE", accettazione);
+        DB.cmd.Parameters.AddWithValue("DATARICHIESTA", datarichiesta);
+        DB.cmd.Parameters.AddWithValue("DATAEMISSIONE", dataemissione);
         DB.query = "spResi_Update";
         DB.EseguiSPNonRead();
     }
@@ -64,22 +74,25 @@ public class WsResi : System.Web.Services.WebService
         return DB.EseguiSPRead();
     }
     [WebMethod]
-    public DataTable RESI_SelectByKey()
+    public DataTable RESI_SelectByKey(int chiave)
     {
         DataTable dt = new DataTable();
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         DB.query = "spRESI_SelectByKey";
         dt.TableName = "SelectByKey";
         return DB.EseguiSPRead();
     }
 
     [WebMethod]
-    public DataTable RESI_SelectByOrder()
+    public DataTable RESI_SelectByOrder(int chiaveordine)
     {
+
         DataTable dt = new DataTable();
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
+        DB.cmd.Parameters.AddWithValue("chiaveOrdine", chiaveordine);
         DB.query = "spRESI_SelectByOrder";
         dt.TableName = "SelectByOrder";
         return DB.EseguiSPRead();

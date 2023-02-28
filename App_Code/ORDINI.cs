@@ -44,6 +44,18 @@ public class ORDINI
         R.ORDINI_SelectByKey(chiave);
     }
 
-
-
+    public void SelectByCorriere()
+    {
+        R.ORDINI_SelectByCorriere(chiavecorriere);
+    } 
+    
+    public void SelectByProdotto()
+    {
+        R.ORDINI_SelectByProdotto(chiaveprodotto);
+    }
+    
+    public void SelectByCliente()
+    {
+        R.ORDINI_SelectByCliente(chiavecliente);
+    }
 }

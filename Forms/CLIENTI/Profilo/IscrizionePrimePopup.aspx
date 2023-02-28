@@ -12,7 +12,7 @@
 <body class="colore">
     <form id="form1" runat="server">
         <div class="card colore bianco" >
-            <img src="../assets/images/amatron-prime.png" />
+            <img src="../../../assets/images/amatron-prime.png" />
             <div class="card-body">
                 <h5 class="card-title">Amatron Prime</h5>
                 <p class="card-text">Amatron prime è un servizio che ti permetterà di avere uno sconto dell'1% su ogni prodotto acquistato.</p>

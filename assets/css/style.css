@@ -27,7 +27,7 @@
 }
 
 .searchbar {
-    width: 500px;
+    width: 700px;
     color: #B469FF;
     margin: 0 auto;
 }
@@ -96,6 +96,11 @@
     display: none;
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+.popupLogin {
+    position: absolute;
+    z-index: 1;
 }
 
 .popupLogin .chiusuraLogin {
@@ -207,26 +212,11 @@
 }
 
 
-   
-
-/*/////////////////////////////*/
-
-/*CSS ORDINI E POPUP*/
-
-
 .ordini {
     margin: 10px auto;
     width: 600px;
     height: 200px;
 }
-
-.PopupReso {
-    background-color: #212529;
-    filter: alpha(opacity=30);
-    opacity: 0.8;
-}
-
-
 
 /*Css popup Inscrizione prime*/
 .Background {
@@ -250,4 +240,3 @@
 .inscriviti {
     font-size: 30px;
 }
-

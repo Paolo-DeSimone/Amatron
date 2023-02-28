@@ -54,7 +54,11 @@
                         </div>
                     </div>
 
-                    <div style="position: relative;">                            <hr class="hrdivider">                            <span class="hrdivider1">Recapiti                            </span>                        </div>       
+                    <div style="position: relative;">
+                            <hr class="hrdivider">
+                            <span class="hrdivider1">Recapiti
+                            </span>
+                        </div>       
 
                     <div class="row ">
                         <div class="col-md-6">

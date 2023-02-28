@@ -19,9 +19,7 @@ public class CARRELLO
 
     public void DELETE()
     {
-        DATABASE D = new DATABASE();
-        D.query = "spCARRELLO_Delete";
-        D.EseguiSPNonRead();
+      
     }
 
     public void INSERT()

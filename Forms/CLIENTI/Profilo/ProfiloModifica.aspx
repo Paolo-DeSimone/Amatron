@@ -115,15 +115,15 @@
         <%--ci pensa lo script manager a renderlo visibile--%>
 
         <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-        <iframe style="width: 550px; height: 373px; -webkit-border-radius: 10px 10px 10px 10px;" id="irm1" src="../Profilo/IscrizionePrimePopup.aspx" runat="server"></iframe>
+        <iframe style="width: 550px; height: 373px; -webkit-border-radius: 10px 10px 10px 10px;" id="if2" src="../Profilo/IscrizionePrimePopup.aspx" runat="server"></iframe>
         <br />
         <%--chiude il popup--%>
         <asp:Button ID="btnChiudi" class="btn btn-secondary" runat="server" Text="Chiudi" />
     </asp:Panel>
-
           </div>
-
   </div>
 
-
+</asp:Content>
+=======
+ 
 </asp:Content>

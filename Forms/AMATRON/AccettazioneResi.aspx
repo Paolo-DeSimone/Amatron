@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <%--section--%>
     <section class="h-100 h-custom">
-        <div class="container text-center py-5 h-100"> <%--APPUNTO: text-align-center al posto di text-center--%>
+        <div class="container text-align-center py-5 h-100"> <%--APPUNTO: text-align-center al posto di text-center--%>
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-lg-12 col-xl-12">
                     <%--card--%>

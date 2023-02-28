@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CARRELLO_Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiavecliente" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="chiaveprodotto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="qta" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CARRELLO_InsertResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CARRELLO_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="qta" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CARRELLO_UpdateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CARRELLO_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CARRELLO_DeleteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CARRELLO_SelectByKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CARRELLO_SelectByKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CARRELLO_SelectByKeyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CARRELLO_SelectAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="CARRELLO_SelectAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CARRELLO_SelectAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CARRELLO_SelectByCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiaveCLIENTE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CARRELLO_SelectByClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CARRELLO_SelectByClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CARRELLO_SelectByProdotto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiavePRODOTTO" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CARRELLO_SelectByProdottoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CARRELLO_SelectByProdottoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CARRELLO_InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:CARRELLO_Insert" />
+  </wsdl:message>
+  <wsdl:message name="CARRELLO_InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:CARRELLO_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="CARRELLO_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:CARRELLO_Update" />
+  </wsdl:message>
+  <wsdl:message name="CARRELLO_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:CARRELLO_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CARRELLO_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:CARRELLO_Delete" />
+  </wsdl:message>
+  <wsdl:message name="CARRELLO_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:CARRELLO_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="CARRELLO_SelectByKeySoapIn">
+    <wsdl:part name="parameters" element="tns:CARRELLO_SelectByKey" />
+  </wsdl:message>
+  <wsdl:message name="CARRELLO_SelectByKeySoapOut">
+    <wsdl:part name="parameters" element="tns:CARRELLO_SelectByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="CARRELLO_SelectAllSoapIn">
+    <wsdl:part name="parameters" element="tns:CARRELLO_SelectAll" />
+  </wsdl:message>
+  <wsdl:message name="CARRELLO_SelectAllSoapOut">
+    <wsdl:part name="parameters" element="tns:CARRELLO_SelectAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="CARRELLO_SelectByClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:CARRELLO_SelectByCliente" />
+  </wsdl:message>
+  <wsdl:message name="CARRELLO_SelectByClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:CARRELLO_SelectByClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="CARRELLO_SelectByProdottoSoapIn">
+    <wsdl:part name="parameters" element="tns:CARRELLO_SelectByProdotto" />
+  </wsdl:message>
+  <wsdl:message name="CARRELLO_SelectByProdottoSoapOut">
+    <wsdl:part name="parameters" element="tns:CARRELLO_SelectByProdottoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsCarrelloSoap">
+    <wsdl:operation name="CARRELLO_Insert">
+      <wsdl:input message="tns:CARRELLO_InsertSoapIn" />
+      <wsdl:output message="tns:CARRELLO_InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_Update">
+      <wsdl:input message="tns:CARRELLO_UpdateSoapIn" />
+      <wsdl:output message="tns:CARRELLO_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_Delete">
+      <wsdl:input message="tns:CARRELLO_DeleteSoapIn" />
+      <wsdl:output message="tns:CARRELLO_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_SelectByKey">
+      <wsdl:input message="tns:CARRELLO_SelectByKeySoapIn" />
+      <wsdl:output message="tns:CARRELLO_SelectByKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_SelectAll">
+      <wsdl:input message="tns:CARRELLO_SelectAllSoapIn" />
+      <wsdl:output message="tns:CARRELLO_SelectAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_SelectByCliente">
+      <wsdl:input message="tns:CARRELLO_SelectByClienteSoapIn" />
+      <wsdl:output message="tns:CARRELLO_SelectByClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_SelectByProdotto">
+      <wsdl:input message="tns:CARRELLO_SelectByProdottoSoapIn" />
+      <wsdl:output message="tns:CARRELLO_SelectByProdottoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsCarrelloSoap" type="tns:WsCarrelloSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CARRELLO_Insert">
+      <soap:operation soapAction="http://tempuri.org/CARRELLO_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_Update">
+      <soap:operation soapAction="http://tempuri.org/CARRELLO_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_Delete">
+      <soap:operation soapAction="http://tempuri.org/CARRELLO_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_SelectByKey">
+      <soap:operation soapAction="http://tempuri.org/CARRELLO_SelectByKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_SelectAll">
+      <soap:operation soapAction="http://tempuri.org/CARRELLO_SelectAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_SelectByCliente">
+      <soap:operation soapAction="http://tempuri.org/CARRELLO_SelectByCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_SelectByProdotto">
+      <soap:operation soapAction="http://tempuri.org/CARRELLO_SelectByProdotto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsCarrelloSoap12" type="tns:WsCarrelloSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CARRELLO_Insert">
+      <soap12:operation soapAction="http://tempuri.org/CARRELLO_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_Update">
+      <soap12:operation soapAction="http://tempuri.org/CARRELLO_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_Delete">
+      <soap12:operation soapAction="http://tempuri.org/CARRELLO_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_SelectByKey">
+      <soap12:operation soapAction="http://tempuri.org/CARRELLO_SelectByKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_SelectAll">
+      <soap12:operation soapAction="http://tempuri.org/CARRELLO_SelectAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_SelectByCliente">
+      <soap12:operation soapAction="http://tempuri.org/CARRELLO_SelectByCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_SelectByProdotto">
+      <soap12:operation soapAction="http://tempuri.org/CARRELLO_SelectByProdotto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsCarrello">
+    <wsdl:port name="WsCarrelloSoap" binding="tns:WsCarrelloSoap">
+      <soap:address location="http://localhost:50799/WebServices/WsCarrello.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsCarrelloSoap12" binding="tns:WsCarrelloSoap12">
+      <soap12:address location="http://localhost:50799/WebServices/WsCarrello.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

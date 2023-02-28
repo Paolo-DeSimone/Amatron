@@ -1,0 +1,23 @@
+﻿.CardMargine {
+    margin: 12vh auto;
+    width:65vw;
+}
+.titoloVenditoreHeader{
+    display:flex;
+    justify-content:space-around;
+}
+.grandezzaImg{
+    min-width:8vw;
+    min-height:10vw;
+    max-width:8vw;
+    max-height:10vh;
+
+}
+
+.DescrizioneProdotto {
+    display: inline-block;
+    width:300px;
+    height:10vw;
+    overflow: scroll;
+    text-overflow: ellipsis;
+}

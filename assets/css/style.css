@@ -1,4 +1,5 @@
-﻿.destra {
+
+.destra {
     display: flex;
     margin-left: auto;
     margin-right: 20px;
@@ -14,7 +15,8 @@
 }
 
 .nav-link :hover {
-    color: #B469FF;
+
+    color: #B469FF;   
 }
 
 .carrello {
@@ -39,6 +41,7 @@
         border-width: 3px;
         border-color: #B469FF;
     }
+
 
 .logoColor {
     border-color: #B469FF;
@@ -70,7 +73,8 @@
     padding: 15px;
 }
 
-.bianco {
+
+.bianco{
     color: white;
 }
 
@@ -78,7 +82,8 @@
 /*CSS LOGIN E POPUP*/
 
 #loginform {
-    width: 25%;
+
+    width:  25%;  
     border-radius: 20vh;
     margin-left: 72%;
     background-color: #212529;
@@ -157,6 +162,7 @@
 }
 
 
+
 /*CSS PAGINA PERSONALE CLIENTI*/
 
 .intestazione {
@@ -194,3 +200,33 @@
    
 
 /*/////////////////////////////*/
+
+/*CSS ORDINI E POPUP*/
+
+.ordini {
+    margin: 10px auto;
+    width: 600px;
+    height: 200px;
+}
+/*Css popup Inscrizione prime*/
+.Background {
+    background-color: #212529;
+    filter: alpha(opacity=30);
+    opacity: 0.8;
+}
+
+.Popup {
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 600px;
+    height: 600px;
+}
+
+.colore {
+    background-color: #212529;
+
+}
+
+.inscriviti {
+    font-size: 30px;
+}

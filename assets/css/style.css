@@ -25,7 +25,7 @@
 }
 
 .searchbar {
-    width: 500px;
+    width: 700px;
     color: #B469FF;
     margin: 0 auto;
 }
@@ -90,6 +90,11 @@
     display: none;
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+.popupLogin {
+    position: absolute;
+    z-index: 1;
 }
 
 .popupLogin .chiusuraLogin {
@@ -162,6 +167,7 @@
     width: 600px;
     height: 200px;
 }
+<<<<<<< HEAD
 
 .PopupReso {
     background-color: #212529;
@@ -170,6 +176,8 @@
 }
 
 
+=======
+>>>>>>> 32980a58961a2dc7c7cc5681c80c80cb5efea38f
 /*Css popup Inscrizione prime*/
 .Background {
     background-color: #212529;

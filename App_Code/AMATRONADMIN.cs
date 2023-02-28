@@ -1,33 +1,24 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
-
+using System.Data.Sql;
+using System.Data.SqlClient;
 
 public class AMATRONADMIN
 {
-    public int chiaveVenditore;
-    public int chiaveCorriere;
-    DATABASE D = new DATABASE();
+    public int COSTOPRIME;
+    public int PERC1_10;
+    public int PERC11_100;
+    public int PERC101_1000;
+    public int PERC1001;
 
+    public string chiave;
+    public bool ACCETTAZIONE;
+    public string DATAEMISSIONE;
     public AMATRONADMIN()
     {
- 
-    }
 
-    // Metodo per abilitare i venditori
-    public void AbilitaVenditori()
-    {
-        D.query = "spVENDITORI_Abilita";
-        D.cmd.Parameters.AddWithValue("chiave", chiaveVenditore);
-        D.EseguiSPNonRead();
-    }
-
-    // Metodo per abilitare i corrieri
-    public void AbilitaCorrieri()
-    {
-        D.query = "spCORRIERI_Abilita";
-        D.cmd.Parameters.AddWithValue("chiave", chiaveCorriere);
-        D.EseguiSPNonRead();
     }
 }

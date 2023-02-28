@@ -1,6 +1,22 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="GestioneConfig.aspx.cs" Inherits="GestioneConfig" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <script>
+        function Accetta() {
+            $.ajax({
+                type: "POST",
+                url: "GestioneConfig.aspx/Accetta",
+                data: "{'COSTOPRIME': '" + $('#txtCostoPrime').val() + "', 'PERC1_10' : '" + $('#txtPerc1_10').val() + "','PERC11_100' : '" + $('txtPerc11_100').val() + "', 'PERC101_1000' : '" + $('txtPerc101_1000').val() + "','PERC_1001' : '" + $('txtPerc_1001').val() + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    notifySuccess(msg.d);
+                },
+                error: function (req, status, err) {
+                    alert(req, status, err);
+                }
+            });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <section class="h-100 h-custom">
@@ -11,7 +27,7 @@
                     <%--card--%>
                     <div class="card rounded-3">
                         <div class="card-body p-4 p-md-5">
-                            <h3 class="text-center mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Gestione AMATRONPrime / Percentuali di servizio AMATRON</h3>
+                            <h3 class="text-center mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Gestione Amatron Prime / Percentuali di servizio AMATRON</h3>
                             <%--Tabella provvisoria per sistemare l'html, da sostituire con GridView--%>
                             <div class="row align-items-center">
                                 <div class="col-lg-8">
@@ -59,8 +75,8 @@
                             </div>
                             <br />
                             <div class="row align-items-center">
-                                <div class="col-lg-8">
-                                    <asp:Button ID="btnAccetta" runat="server" class="btn btn-secondary" Text="Accetta" />
+                                <div class="col-lg-4">
+                                    <asp:Button ID="btnAccetta" runat="server" class="btn btn-secondary" Text="Accetta" OnClick="btnAccetta_Click" />
                                 </div>
                             </div>
                         </div>

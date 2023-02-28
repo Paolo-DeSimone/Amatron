@@ -9,18 +9,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="/assets/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-
-    <%--  position: fixed;    display: inline-block;    width: 100%;    height: 60px;    background-color: black;    font-size: 20px;    font-weight: 900;    line-height: 60px;    text-transform: uppercase;    z-index: 999;--%>
+    <link href="assets/css/cssGruppoWebservices.css" rel="stylesheet" />
 
     <div class="container my-5">
         <div class="row">
             <div class="col-md-4">
-                <div id="productCarousel" class="carousel slide w-100" data-bs-ride="carousel" style="overflow-y: scroll; vertical-align: top;">
+                <div id="productCarousel" class="carousel slide w-100" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="assets/images/kurado.png" class="d-block w-100" alt="Product Image 1" style="width: 500px";    height: 500px; />
+                            <img src="assets/images/kurado.png" class="d-block w-100" alt="Product Image 1" />
                         </div>
-                        <div class="carousel-item">
+                        <div class="carousel-item ">
                             <img src="assets/images/nayuta.jpg" class="d-block w-100" alt="Product Image 2" />
                         </div>
                         <div class="carousel-item">
@@ -35,28 +34,25 @@
                     </button>
                 </div>
             </div>
-            <%--<div class="container my-5">
-        <div class="row">
-                <div class="col-md-4" style="overflow-y:scroll; max-height:1500px">
-                    <img src="assets/images/nayuta.jpg" style="overflow-y:scroll;" class="img-fluid w-100" alt="Immagine Prodotto" >
-                </div>--%>
-            <div class="card col-md-5 border-0">
+           
+            <div class="card col-md-5 border-0 scrollo">
                 <div>
                     <h1>Titolo del Prodotto</h1>
                     <h2>Categoria</h2>
-                    <p class="lead">Breve descrizione del prodotto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus eget magna efficitur suscipit. Integer auctor odio ac lectus vestibulum, ac tristique sapien tincidunt.</p>
-                    <p class="lead">Breve descrizione del prodotto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus eget magna efficitur suscipit. Integer auctor odio ac lectus vestibulum, ac tristique sapien tincidunt.</p>
-                    <p class="lead">Breve descrizione del prodotto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus eget magna efficitur suscipit. Integer auctor odio ac lectus vestibulum, ac tristique sapien tincidunt.</p>
-                    <p class="lead">Breve descrizione del prodotto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus eget magna efficitur suscipit. Integer auctor odio ac lectus vestibulum, ac tristique sapien tincidunt.</p>
-                    <p class="lead">Breve descrizione del prodotto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus eget magna efficitur suscipit. Integer auctor odio ac lectus vestibulum, ac tristique sapien tincidunt.</p>
-                    <p class="lead">Breve descrizione del prodotto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus eget magna efficitur suscipit. Integer auctor odio ac lectus vestibulum, ac tristique sapien tincidunt.</p>
-                    <p class="lead">Breve descrizione del prodotto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus eget magna efficitur suscipit. Integer auctor odio ac lectus vestibulum, ac tristique sapien tincidunt.</p>
-                    <p class="lead">Breve descrizione del prodotto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus eget magna efficitur suscipit. Integer auctor odio ac lectus vestibulum, ac tristique sapien tincidunt.</p>
-                    <p class="lead">Breve descrizione del prodotto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus eget magna efficitur suscipit. Integer auctor odio ac lectus vestibulum, ac tristique sapien tincidunt.</p>
                     <h2 class="mt-4">Prezzo: €99.99</h2>
+                    <p class="lead">Breve descrizione del prodotto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus eget magna efficitur suscipit. Integer auctor odio ac lectus vestibulum, ac tristique sapien tincidunt.</p>
+                    <p class="lead">Breve descrizione del prodotto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus eget magna efficitur suscipit. Integer auctor odio ac lectus vestibulum, ac tristique sapien tincidunt.</p>
+                    <p class="lead">Breve descrizione del prodotto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus eget magna efficitur suscipit. Integer auctor odio ac lectus vestibulum, ac tristique sapien tincidunt.</p>
+                    <p class="lead">Breve descrizione del prodotto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus eget magna efficitur suscipit. Integer auctor odio ac lectus vestibulum, ac tristique sapien tincidunt.</p>
+                    <p class="lead">Breve descrizione del prodotto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus eget magna efficitur suscipit. Integer auctor odio ac lectus vestibulum, ac tristique sapien tincidunt.</p>
+                    <p class="lead">Breve descrizione del prodotto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus eget magna efficitur suscipit. Integer auctor odio ac lectus vestibulum, ac tristique sapien tincidunt.</p>
+                    <p class="lead">Breve descrizione del prodotto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus eget magna efficitur suscipit. Integer auctor odio ac lectus vestibulum, ac tristique sapien tincidunt.</p>
+                    <p class="lead">Breve descrizione del prodotto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus eget magna efficitur suscipit. Integer auctor odio ac lectus vestibulum, ac tristique sapien tincidunt.</p>
+                    <p class="lead">Breve descrizione del prodotto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus eget magna efficitur suscipit. Integer auctor odio ac lectus vestibulum, ac tristique sapien tincidunt.</p>
                 </div>
             </div>
-            <div class="card col-md-3">
+
+            <div class="card col-md-2 offset-md-1 bordoviola">
                 <div>
                     <h2 class="mt-4">Prezzo: €99.99</h2>
                     <p>Consegna senza costi aggiuntivi domani. Ordina entro 4 minuti</p>
@@ -69,6 +65,7 @@
                     </button>
                 </div>
             </div>
+
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

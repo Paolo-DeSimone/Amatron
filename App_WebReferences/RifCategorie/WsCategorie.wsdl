@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CATEGORIE_Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="categoria" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CATEGORIE_InsertResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CATEGORIE_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="categoria" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CATEGORIE_UpdateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CATEGORIE_SelectByKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CATEGORIE_SelectByKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CATEGORIE_SelectByKeyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CATEGORIE_SelectAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="CATEGORIE_SelectAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CATEGORIE_SelectAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CATEGORIE_InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:CATEGORIE_Insert" />
+  </wsdl:message>
+  <wsdl:message name="CATEGORIE_InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:CATEGORIE_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="CATEGORIE_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:CATEGORIE_Update" />
+  </wsdl:message>
+  <wsdl:message name="CATEGORIE_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:CATEGORIE_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="CATEGORIE_SelectByKeySoapIn">
+    <wsdl:part name="parameters" element="tns:CATEGORIE_SelectByKey" />
+  </wsdl:message>
+  <wsdl:message name="CATEGORIE_SelectByKeySoapOut">
+    <wsdl:part name="parameters" element="tns:CATEGORIE_SelectByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="CATEGORIE_SelectAllSoapIn">
+    <wsdl:part name="parameters" element="tns:CATEGORIE_SelectAll" />
+  </wsdl:message>
+  <wsdl:message name="CATEGORIE_SelectAllSoapOut">
+    <wsdl:part name="parameters" element="tns:CATEGORIE_SelectAllResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsCategorieSoap">
+    <wsdl:operation name="CATEGORIE_Insert">
+      <wsdl:input message="tns:CATEGORIE_InsertSoapIn" />
+      <wsdl:output message="tns:CATEGORIE_InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CATEGORIE_Update">
+      <wsdl:input message="tns:CATEGORIE_UpdateSoapIn" />
+      <wsdl:output message="tns:CATEGORIE_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CATEGORIE_SelectByKey">
+      <wsdl:input message="tns:CATEGORIE_SelectByKeySoapIn" />
+      <wsdl:output message="tns:CATEGORIE_SelectByKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CATEGORIE_SelectAll">
+      <wsdl:input message="tns:CATEGORIE_SelectAllSoapIn" />
+      <wsdl:output message="tns:CATEGORIE_SelectAllSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsCategorieSoap" type="tns:WsCategorieSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CATEGORIE_Insert">
+      <soap:operation soapAction="http://tempuri.org/CATEGORIE_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CATEGORIE_Update">
+      <soap:operation soapAction="http://tempuri.org/CATEGORIE_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CATEGORIE_SelectByKey">
+      <soap:operation soapAction="http://tempuri.org/CATEGORIE_SelectByKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CATEGORIE_SelectAll">
+      <soap:operation soapAction="http://tempuri.org/CATEGORIE_SelectAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsCategorieSoap12" type="tns:WsCategorieSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CATEGORIE_Insert">
+      <soap12:operation soapAction="http://tempuri.org/CATEGORIE_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CATEGORIE_Update">
+      <soap12:operation soapAction="http://tempuri.org/CATEGORIE_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CATEGORIE_SelectByKey">
+      <soap12:operation soapAction="http://tempuri.org/CATEGORIE_SelectByKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CATEGORIE_SelectAll">
+      <soap12:operation soapAction="http://tempuri.org/CATEGORIE_SelectAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsCategorie">
+    <wsdl:port name="WsCategorieSoap" binding="tns:WsCategorieSoap">
+      <soap:address location="http://localhost:50799/WebServices/WsCategorie.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsCategorieSoap12" binding="tns:WsCategorieSoap12">
+      <soap12:address location="http://localhost:50799/WebServices/WsCategorie.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

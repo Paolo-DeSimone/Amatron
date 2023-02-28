@@ -1,0 +1,16 @@
+/*Css corrieri*/
+.hrdivider {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.hrdivider1 {
+    background-color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 10px;
+    position: absolute;
+    top: -0.7em;
+    left: 50%;
+    transform: translateX(-50%);
+}

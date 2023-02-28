@@ -1,16 +1,16 @@
-﻿/*Css PopUp corrieri*/
-.Background {
-    background-color: Black;
-    filter: alpha(opacity=30);
-    opacity: 0.8;
+﻿/*Css corrieri*/
+.hrdivider {
+    font-weight: bold;
+    font-size: 16px;
 }
 
-.PopupPersCorrieri {
-    background-color: #FFFFFF;
-    border-width: 3px;
-    border-style: solid;
-    border-color: black;
-    padding-top: 10px;
-    width: 620px;
-    height: 520px;
+.hrdivider1 {
+    background-color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 10px;
+    position: absolute;
+    top: -0.7em;
+    left: 50%;
+    transform: translateX(-50%);
 }

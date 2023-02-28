@@ -161,7 +161,6 @@
 
 .intestazione {
     color: #B469FF;
-    text-align:center;
     font-family: Verdana; 
 }
 
@@ -189,16 +188,9 @@
     align-items: stretch;
     background-color: #B469FF;
     border: #B469FF;
+    margin-left:900px;
 }
 
-    .btnSalva :hover {
-        background-color: #B469FF !important;
-        background: #B469FF;
-    }
-
-    .btnSalva :focus {
-        background-color: #B469FF;
-        background: #B469FF;
-    }
+   
 
 /*/////////////////////////////*/

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 
 public class DATABASE
@@ -17,7 +18,7 @@ public class DATABASE
 
     public DATABASE()
     {
-        conn.ConnectionString = "Data Source=LAPTOP-VBSA6FHO\\SQLEXPRESS; Initial Catalog = ESERCIZIOAUTOSALONE; Integrated Security = true";
+        conn.ConnectionString = ConfigurationManager.ConnectionStrings["AMATRONDBConnectionString"].ConnectionString;
         cmd.Connection = conn;
     }
     //carica i dati dal db con una query diretta scritta in sql

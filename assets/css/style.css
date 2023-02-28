@@ -1,3 +1,4 @@
+
 .destra {
     display: flex;
     margin-left: auto;
@@ -14,6 +15,7 @@
 }
 
 .nav-link :hover {
+
     color: #B469FF;   
 }
 
@@ -25,19 +27,21 @@
 }
 
 .searchbar {
-    width: 500px;
+    width: 700px;
     color: #B469FF;
     margin: 0 auto;
 }
 
-.searchbar :hover {
-    border-width: 3px;
-    border-color: #B469FF;
-}
-.searchbar :focus {
-    border-width: 3px;
-    border-color: #B469FF;
-}
+    .searchbar :hover {
+        border-width: 3px;
+        border-color: #B469FF;
+    }
+
+    .searchbar :focus {
+        border-width: 3px;
+        border-color: #B469FF;
+    }
+
 
 .logoColor {
     border-color: #B469FF;
@@ -69,6 +73,7 @@
     padding: 15px;
 }
 
+
 .bianco{
     color: white;
 }
@@ -77,6 +82,7 @@
 /*CSS LOGIN E POPUP*/
 
 #loginform {
+
     width:  25%;  
     border-radius: 20vh;
     margin-left: 72%;
@@ -90,6 +96,11 @@
     display: none;
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+.popupLogin {
+    position: absolute;
+    z-index: 1;
 }
 
 .popupLogin .chiusuraLogin {
@@ -155,12 +166,77 @@
     font-size: 17px;
 }
 
-/*CSS ORDINI E POPUP*/
+
+
+
+
+/*CSS PAGINA PERSONALE CLIENTI*/
+
+.intestazione {
+    color: #B469FF;
+    font-family: Arial;
+    margin-left: 37%;
+}
+
+.misura {
+    text-align:center;
+    
+}
+
+.margini {
+    height: 40px;
+  
+    margin-bottom: 10px;
+}
+
+.sposta {
+    margin-left: 200px;
+}
+
+.largh {
+    width: inherit;
+    
+}
+
+.btnSalva {
+    width: 50%;
+    align-items: stretch;
+    background-color: #B469FF;
+    border: #B469FF;
+    margin-top: 8px;
+    margin-left:10px;
+    
+}
+
+.hrdivider {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.hrdivider1 {
+    background-color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 10px;
+    position: absolute;
+    top: -0.7em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btnApri {
+    width:200px;
+    margin-left:85px;
+}
+
+
+
 
 .ordini {
     margin: 10px auto;
     width: 600px;
     height: 200px;
+}
 
 /*Css popup Inscrizione prime*/
 .Background {
@@ -183,4 +259,11 @@
 
 .inscriviti {
     font-size: 30px;
+
 }
+
+.larghezza {
+    width: 30%;
+    height: 30%;
+}
+

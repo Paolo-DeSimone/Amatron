@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link href="../assets/css/styleCorrieri.css" rel="stylesheet" />
+    <link href="/assets/css/styleCorrieri.css" rel="stylesheet" />
     <%--Pagina di visualizzazione dati personali dei corrieri--%>
     <div class="container-fluid col-lg-5">
         <div class="card mt-5">
@@ -28,12 +28,6 @@
                         <asp:Label ID="Label3" class="form-label" runat="server" Text="Indirizzo:"></asp:Label>
                         <asp:TextBox ID="txtINDIRIZZO" class="form-control" ReadOnly="True" runat="server"></asp:TextBox>
                     </div>
-                    <div class="col">
-                        <asp:Label ID="Label3" class="form-label" runat="server" Text="Indirizzo:"></asp:Label>
-                        <asp:TextBox ID="txtINDIRIZZO" class="form-control" ReadOnly="True" runat="server"></asp:TextBox>
-                    </div>
-
-
                 </div>
                 <div class="row text-center">
                     <div class="col-7">

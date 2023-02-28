@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="VENDITORI_Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ragionesociale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="piva" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="indirizzo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="provincia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="citta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CAP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PWD" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="abilitato" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VENDITORI_InsertResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="VENDITORI_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ragionesociale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="piva" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="indirizzo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="provincia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="citta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CAP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PWD" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="abilitato" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VENDITORI_UpdateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="VENDITORI_SelectAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="VENDITORI_SelectAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VENDITORI_SelectAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VENDITORI_SelectAll_DDL">
+        <s:complexType />
+      </s:element>
+      <s:element name="VENDITORI_SelectAll_DDLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VENDITORI_SelectAll_DDLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VENDITORI_SelectByKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VENDITORI_SelectByKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VENDITORI_SelectByKeyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VENDITORI_Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PWD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VENDITORI_LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VENDITORI_LoginResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VENDITORI_Abilita">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VENDITORI_AbilitaResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="VENDITORI_InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:VENDITORI_Insert" />
+  </wsdl:message>
+  <wsdl:message name="VENDITORI_InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:VENDITORI_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="VENDITORI_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:VENDITORI_Update" />
+  </wsdl:message>
+  <wsdl:message name="VENDITORI_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:VENDITORI_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="VENDITORI_SelectAllSoapIn">
+    <wsdl:part name="parameters" element="tns:VENDITORI_SelectAll" />
+  </wsdl:message>
+  <wsdl:message name="VENDITORI_SelectAllSoapOut">
+    <wsdl:part name="parameters" element="tns:VENDITORI_SelectAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="VENDITORI_SelectAll_DDLSoapIn">
+    <wsdl:part name="parameters" element="tns:VENDITORI_SelectAll_DDL" />
+  </wsdl:message>
+  <wsdl:message name="VENDITORI_SelectAll_DDLSoapOut">
+    <wsdl:part name="parameters" element="tns:VENDITORI_SelectAll_DDLResponse" />
+  </wsdl:message>
+  <wsdl:message name="VENDITORI_SelectByKeySoapIn">
+    <wsdl:part name="parameters" element="tns:VENDITORI_SelectByKey" />
+  </wsdl:message>
+  <wsdl:message name="VENDITORI_SelectByKeySoapOut">
+    <wsdl:part name="parameters" element="tns:VENDITORI_SelectByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="VENDITORI_LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:VENDITORI_Login" />
+  </wsdl:message>
+  <wsdl:message name="VENDITORI_LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:VENDITORI_LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="VENDITORI_AbilitaSoapIn">
+    <wsdl:part name="parameters" element="tns:VENDITORI_Abilita" />
+  </wsdl:message>
+  <wsdl:message name="VENDITORI_AbilitaSoapOut">
+    <wsdl:part name="parameters" element="tns:VENDITORI_AbilitaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsVenditoriSoap">
+    <wsdl:operation name="VENDITORI_Insert">
+      <wsdl:input message="tns:VENDITORI_InsertSoapIn" />
+      <wsdl:output message="tns:VENDITORI_InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_Update">
+      <wsdl:input message="tns:VENDITORI_UpdateSoapIn" />
+      <wsdl:output message="tns:VENDITORI_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_SelectAll">
+      <wsdl:input message="tns:VENDITORI_SelectAllSoapIn" />
+      <wsdl:output message="tns:VENDITORI_SelectAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_SelectAll_DDL">
+      <wsdl:input message="tns:VENDITORI_SelectAll_DDLSoapIn" />
+      <wsdl:output message="tns:VENDITORI_SelectAll_DDLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_SelectByKey">
+      <wsdl:input message="tns:VENDITORI_SelectByKeySoapIn" />
+      <wsdl:output message="tns:VENDITORI_SelectByKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_Login">
+      <wsdl:input message="tns:VENDITORI_LoginSoapIn" />
+      <wsdl:output message="tns:VENDITORI_LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_Abilita">
+      <wsdl:input message="tns:VENDITORI_AbilitaSoapIn" />
+      <wsdl:output message="tns:VENDITORI_AbilitaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsVenditoriSoap" type="tns:WsVenditoriSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VENDITORI_Insert">
+      <soap:operation soapAction="http://tempuri.org/VENDITORI_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_Update">
+      <soap:operation soapAction="http://tempuri.org/VENDITORI_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_SelectAll">
+      <soap:operation soapAction="http://tempuri.org/VENDITORI_SelectAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_SelectAll_DDL">
+      <soap:operation soapAction="http://tempuri.org/VENDITORI_SelectAll_DDL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_SelectByKey">
+      <soap:operation soapAction="http://tempuri.org/VENDITORI_SelectByKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_Login">
+      <soap:operation soapAction="http://tempuri.org/VENDITORI_Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_Abilita">
+      <soap:operation soapAction="http://tempuri.org/VENDITORI_Abilita" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsVenditoriSoap12" type="tns:WsVenditoriSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VENDITORI_Insert">
+      <soap12:operation soapAction="http://tempuri.org/VENDITORI_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_Update">
+      <soap12:operation soapAction="http://tempuri.org/VENDITORI_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_SelectAll">
+      <soap12:operation soapAction="http://tempuri.org/VENDITORI_SelectAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_SelectAll_DDL">
+      <soap12:operation soapAction="http://tempuri.org/VENDITORI_SelectAll_DDL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_SelectByKey">
+      <soap12:operation soapAction="http://tempuri.org/VENDITORI_SelectByKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_Login">
+      <soap12:operation soapAction="http://tempuri.org/VENDITORI_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_Abilita">
+      <soap12:operation soapAction="http://tempuri.org/VENDITORI_Abilita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsVenditori">
+    <wsdl:port name="WsVenditoriSoap" binding="tns:WsVenditoriSoap">
+      <soap:address location="http://localhost:50799/WebServices/WsVenditori.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsVenditoriSoap12" binding="tns:WsVenditoriSoap12">
+      <soap12:address location="http://localhost:50799/WebServices/WsVenditori.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

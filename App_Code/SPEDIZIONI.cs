@@ -3,49 +3,50 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
+using RifSpedizioni;
 
 /// <summary>
 /// Descrizione di riepilogo per SPEDIZIONI
 /// </summary>
 public class SPEDIZIONI
 {
-    
 
     public int chiave;
     public int chiaveORDINE;
     public string STATO;
-    public DateTime DATAORA;
-
-
-    DATABASE D = new DATABASE();
-    DataTable DT = new DataTable();
-
+    public string DATAORA;
+    RifSpedizioni.WsSpedizioniSoapClient S = new WsSpedizioniSoapClient();
+    public SPEDIZIONI()
+    {
+        //
+        // TODO: aggiungere qui la logica del costruttore
+        //
+    }
 
     public void SPEDIZIONI_Insert()
     {
-        D.query = "spSPEDIZIONI_Insert";
-        D.cmd.Parameters.AddWithValue("@chiave", chiave);
-        D.cmd.Parameters.AddWithValue("@chiaveORDINE", chiaveORDINE);
-        D.cmd.Parameters.AddWithValue("@STATO", STATO);
-        D.cmd.Parameters.AddWithValue("@DATAORA", DATAORA);
-        D.EseguiSPNonRead();
+        S.SPEDIZIONI_Insert(chiave, chiaveORDINE, STATO, DATAORA);
     }
 
     public DataTable SPEDIZIONI_SelectByKey()
     {
-        D.query = "spSPEDIZIONI_SelectByKey";
-        D.cmd.Parameters.AddWithValue("@chiave", chiave);
-        DT = D.EseguiSPRead();
+        DataTable DT = new DataTable();
+        S.SPEDIZIONI_SelectByKey(chiave);
         return DT;
     }
-
-
 
     public DataTable SPEDIZIONI_SelectByOrdine()
     {
-        D.query = "spSPEDIZIONI_SelectByOrdine";
-        D.cmd.Parameters.AddWithValue("@chiave", chiave);
-        DT = D.EseguiSPRead();
+        DataTable DT = new DataTable();
+        S.SPEDIZIONI_SelectByOrdine(chiave);
         return DT;
     }
-}
+
+    public DataTable SPEDIZIONI_SelectAll()
+    {
+        DataTable DT = new DataTable();
+        S.SPEDIZIONI_SelectAll();
+        return DT;
+    }
+
+    }

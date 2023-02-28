@@ -3,95 +3,98 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <p></p>
 
     <h2 class="intestazione">Dati anagrafici</h2>
+    <div class="row largh d-flex justify-content-center text-align-center sposta">
+        <div class="col-lg-4">
+            <div class="card">
 
-    <div class="card ">
-        
-            <div class="card-header">
-                Modifica dati
-            </div>
-        <br />
-            <div class="row margini">
-                <div class="col-md-1">
-                    <asp:Literal ID="ltlCognome" runat="server"><h6 class="misura">COGNOME</h6></asp:Literal>
+                <div class="card-header">
+                    Modifica dati
                 </div>
-                <div class="col-md-5">
-                    <asp:TextBox ID="txtCognome" runat="server" class="Textbox"></asp:TextBox>
-                </div>
-                <div class="col-md-1">
-                    <asp:Literal ID="ltlNome" runat="server"><h6 class="misura ">NOME</h6></asp:Literal>
-                </div>
-                <div class="col-md-5">
-                    <asp:TextBox ID="txtNome" runat="server" class="Textbox"></asp:TextBox>
-                </div>
-            </div>
-            <div class="row margini">
-                <div class="col-md-1">
-                    <asp:Literal ID="ltlIndirizzo" runat="server"><h6 class="misura">INDIRIZZO</h6></asp:Literal>
-                </div>
-                <div class="col-md-5">
-                    <asp:TextBox ID="txtIndirizzo" runat="server" class="Textbox"></asp:TextBox>
-                </div>
-                <div class="col-md-1">
-                    <asp:Literal ID="ltlCAP" runat="server"><h6 class="misura">CAP</h6></asp:Literal>
-                </div>
-                <div class="col-md-5">
-                    <asp:TextBox ID="txtCAP" runat="server" class="cap"></asp:TextBox>
-                </div>
-            </div>
-            <div class="row margini">
-                <div class="col-md-1">
-                    <asp:Literal ID="ltlCitta" runat="server"><h6 class="misura">CITTÀ</h6></asp:Literal>
-                </div>
-                <div class="col-md-5">
-                    <asp:TextBox ID="txtCitta" runat="server" class="Textbox"></asp:TextBox>
-                </div>
-                <div class="col-md-1">
-                    <asp:Literal ID="ltlProvincia" runat="server"><h6 class="misura">PROVINCIA</h6></asp:Literal>
-                </div>
-                <div class="col-md-5">
-                    <asp:TextBox ID="txtProvincia" runat="server" class="cap"></asp:TextBox>
-                </div>
-            </div>
-            <div class="row margini">
-                <div class="col-md-1">
-                    <asp:Literal ID="ltlEMAIL" runat="server"><h6 class="misura">EMAIL</h6></asp:Literal>
-                </div>
-                <div class="col-md-5">
-                    <asp:TextBox ID="txtEMAIL" runat="server" class="Textbox"></asp:TextBox>
-                </div>
-                <div class="col-md-1">
-                    <asp:Literal ID="ltlTelefono" runat="server"><h6 class="misura">TELEFONO</h6></asp:Literal>
-                </div>
-                <div class="col-md-5">
-                    <asp:TextBox ID="txtTelefono" runat="server" class="Textbox"></asp:TextBox>
-                </div>
-            </div>
-            <div class="row margini">
-                <div class="col-md-2">
-                    <asp:Button ID="btnModifica" runat="server" Text="Modifica" class="btn btn-secondary btnSalva" />
-                </div>
-                <div class="col-md-2">
-                    <asp:Button ID="btnSalva" runat="server" Text="Salva" class="btn btn-secondary btnSalva" />
+                <br />
+                <div class="card-body">
+                    <div class="row ">
+                        <div class="col-lg-6">
+                            <asp:Literal ID="ltlCognome" runat="server"><h6 class="misura">COGNOME</h6></asp:Literal>
+                            <asp:TextBox ID="txtCognome" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+                        <div class="col-lg-6">
+                            <asp:Literal ID="ltlNome" runat="server"><h6 class="misura ">NOME</h6></asp:Literal>
+                            <asp:TextBox ID="txtNome" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <asp:Literal ID="ltlIndirizzo" runat="server"><h6 class="misura">INDIRIZZO</h6></asp:Literal>
+                            <asp:TextBox ID="txtIndirizzo" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <asp:Literal ID="ltlCAP" runat="server"><h6 class="misura">CAP</h6></asp:Literal>
+                            <asp:TextBox ID="txtCAP" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row ">
+                        <div class="col-md-10">
+                            <asp:Literal ID="ltlCitta" runat="server"><h6 class="misura">CITTÀ</h6></asp:Literal>
+                            <asp:TextBox ID="txtCitta" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+
+                        <div class="col-md-2">
+                            <asp:Literal ID="ltlProvincia" runat="server"><h6 class="misura">PROV</h6></asp:Literal>
+                            <asp:TextBox ID="txtProvincia" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+                    </div>
+
+                    <div style="position: relative;">                            <hr class="hrdivider">                            <span class="hrdivider1">Recapiti                            </span>                        </div>       
+
+                    <div class="row ">
+                        <div class="col-md-6">
+                            <asp:Literal ID="ltlEMAIL" runat="server"><h6 class="misura">EMAIL</h6></asp:Literal>
+                            <asp:TextBox ID="txtEMAIL" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+                        <div class="col-md-6">
+                            <asp:Literal ID="ltlTelefono" runat="server"><h6 class="misura">TELEFONO</h6></asp:Literal>
+                            <asp:TextBox ID="txtTelefono" runat="server" class="form-control"></asp:TextBox>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <asp:Button ID="btnModifica" runat="server" Text="Modifica" class="btn btn-secondary btnSalva" />
+                        </div>
+                        <div class="col-md-6">
+                            <asp:Button ID="btnSalva" runat="server" Text="Salva" class="btn btn-secondary btnSalva" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     
 
+      <div class="card colore bianco larghezza">
+        <img src="../../../assets/images/amatron-prime.png" />
+        <div class="card-body">           
+        </div>
+    
 
-    <%--POPUP--%>
+    <%-- POPUP--%>
 
     <%-- Introduzione di uno script manager --%>
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
 
     <%-- pulsante che apre il popup --%>
-    <asp:Button ID="btnApri" runat="server" Text="Iscriviti a Amatron Prime" />
+    <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-primary" Text="Iscriviti ad Amatron Prime" />
+          <br />
 
     <%-- chiamata del popup --%>
     <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnApri"
@@ -113,5 +116,10 @@
         <%--chiude il popup--%>
         <asp:Button ID="btnChiudi" class="btn btn-secondary" runat="server" Text="Chiudi" />
     </asp:Panel>
+
+          </div>
+
+  </div>
+
 
 </asp:Content>

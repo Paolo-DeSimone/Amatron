@@ -167,8 +167,8 @@
 
 .intestazione {
     color: #B469FF;
-    font-family: Verdana;
-    text-align:center;
+    font-family: Arial;
+    margin-left: 37%;
 }
 
 .misura {
@@ -176,33 +176,53 @@
     
 }
 
-.Textbox {
-    width: 50%;
-    
-}
-
-.cap {
-    width: 10%;
-}
-
 .margini {
     height: 40px;
-    margin-left: 15%;
+  
+    margin-bottom: 10px;
 }
 
-.casella {
-    width: 50%;
+.sposta {
+    margin-left: 200px;
 }
 
+.largh {
+    width: inherit;
+    
+}
 
 .btnSalva {
     width: 50%;
     align-items: stretch;
     background-color: #B469FF;
     border: #B469FF;
-    margin-left: 170%;
+    margin-top: 8px;
+    margin-left:10px;
     
 }
+
+.hrdivider {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.hrdivider1 {
+    background-color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 10px;
+    position: absolute;
+    top: -0.7em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btnApri {
+    width:200px;
+    margin-left:85px;
+}
+
+
 
 
    
@@ -237,4 +257,9 @@
 
 .inscriviti {
     font-size: 30px;
+}
+
+.larghezza {
+    width: 30%;
+    height: 30%;
 }

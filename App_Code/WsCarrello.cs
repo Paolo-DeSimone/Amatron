@@ -20,47 +20,53 @@ public class WsCarrello : System.Web.Services.WebService
         //Rimuovere il commento dalla riga seguente se si utilizzano componenti progettati 
         //InitializeComponent(); 
     }
-
-    //bisogna sempre passare tutti i parametri e soprattutto in ORDINE
+    
     [WebMethod]
-    public void CARRELLO_Insert()
+    public void CARRELLO_Insert(int chiavecliente, int chiaveprodotto, int qta)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spCARRELLO_Insert";
-        //DB.cmd.Parameters.AddWithValue("",);     
-        DB.EseguiSPNonRead();
-    }
-    [WebMethod]
-    public void CARRELLO_Update()
-    {
-        DATABASE DB = new DATABASE();
-        DB.cmd.Parameters.Clear();
-        DB.query = "spCARRELLO_Update";
-        //DB.cmd.Parameters.AddWithValue("",);     
-        DB.EseguiSPNonRead();
-    }
-    [WebMethod]
-    public void CARRELLO_Delete()
-    {
-        DATABASE DB = new DATABASE();
-        DB.cmd.Parameters.Clear();
-        DB.query = "spCARRELLO_Delete";
-        //DB.cmd.Parameters.AddWithValue("",);     
+        DB.cmd.Parameters.AddWithValue("chiavecliente", chiavecliente);
+        DB.cmd.Parameters.AddWithValue("chiaveprodotto", chiaveprodotto);
+        DB.cmd.Parameters.AddWithValue("qta", qta);
         DB.EseguiSPNonRead();
     }
 
     [WebMethod]
-    public DataTable CARRELLO_SelectByKey()
+    public void CARRELLO_Update(int chiave, int qta)
+    {
+        DATABASE DB = new DATABASE();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spCARRELLO_Update";
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
+        DB.cmd.Parameters.AddWithValue("qta", qta);
+        DB.EseguiSPNonRead();
+    }
+
+    [WebMethod]
+    public void CARRELLO_Delete(int chiave)
+    {
+        DATABASE DB = new DATABASE();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spCARRELLO_Delete";
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
+        DB.EseguiSPNonRead();
+    }
+
+    [WebMethod]
+    public DataTable CARRELLO_SelectByKey(int chiave)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
         DB.query = "spCARRELLO_SelectByKey";
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         dt = DB.EseguiSPRead();
         dt.TableName = "SelectByKey";
         return dt;
     }
+
     [WebMethod]
     public DataTable CARRELLO_SelectAll()
     {
@@ -74,24 +80,26 @@ public class WsCarrello : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable CARRELLO_SelectByCliente()
+    public DataTable CARRELLO_SelectByCliente(int chiaveCLIENTE)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
         DB.query = "spCARRELLO_SelectByCliente";
+        DB.cmd.Parameters.AddWithValue("chiaveCLIENTE", chiaveCLIENTE);
         dt = DB.EseguiSPRead();
         dt.TableName = "SelectByCliente";
         return dt;
     }
 
     [WebMethod]
-    public DataTable CARRELLO_SelectByProdotto()
+    public DataTable CARRELLO_SelectByProdotto(int chiavePRODOTTO)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
         DB.query = "spCARRELLO_SelectByProdotto";
+        DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiavePRODOTTO);
         dt = DB.EseguiSPRead();
         dt.TableName = "SelectByProdotto";
         return dt;

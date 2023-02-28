@@ -22,33 +22,37 @@ public class WsImmagini : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable IMMAGINI_SelectByKey()
+    public DataTable IMMAGINI_SelectByKey(int chiave)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
         DB.query = "spIMMAGINI_SelectByKey";
-        // DB.cmd.Parameters.AddWithValue();
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         dt.TableName = "SelectByKey";
         return DB.EseguiSPRead();
     }
 
     [WebMethod]
-    public void IMMAGINI_Insert()
+    public void IMMAGINI_Insert(int chiaveprodotto, string titolo, byte[] doc, string tipo)
     {
         DATABASE DB = new DATABASE();
-        //  DB.cmd.Parameters.AddWithValue("",);
+        DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);
+        DB.cmd.Parameters.AddWithValue("TITOLO", titolo);
+        DB.cmd.Parameters.AddWithValue("DOC", doc);
+        DB.cmd.Parameters.AddWithValue("TIPO", tipo);
         DB.EseguiSPNonRead();
         DB.query = "spIMMAGINI_Insert";
     }
 
     [WebMethod]
-    public void IMMAGINI_Delete()
+    public void IMMAGINI_Delete(int chiave)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         DB.query = "spORDINI_Delete";
-        DB.EseguiSPRead();
-        return;
+        DB.EseguiSPNonRead();
     }
 }
+

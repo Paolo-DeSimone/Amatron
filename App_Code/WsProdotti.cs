@@ -21,36 +21,52 @@ public class WsProdotti : System.Web.Services.WebService
         //Rimuovere il commento dalla riga seguente se si utilizzano componenti progettati 
         //InitializeComponent(); 
     }
-    //bisogna sempre passare tutti i parametri e soprattutto in ORDINE
+
     [WebMethod]
-    public void PRODOTTI_Insert()
+    public void PRODOTTI_Insert(int chiaveVENDITORE, int chiaveCATEGORIA, string titolo, string descrizione, float prezzo, int qnt, string datacaricamento, int percamatron)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spPRODOTTI_Insert";
-        //DB.cmd.Parameters.AddWithValue("",);     
+        DB.cmd.Parameters.AddWithValue("chiaveVENDITORE", chiaveVENDITORE);
+        DB.cmd.Parameters.AddWithValue("chiaveCATEGORIA", chiaveCATEGORIA);
+        DB.cmd.Parameters.AddWithValue("titolo", titolo);
+        DB.cmd.Parameters.AddWithValue("descrizione", descrizione);
+        DB.cmd.Parameters.AddWithValue("prezzo", prezzo);
+        DB.cmd.Parameters.AddWithValue("qnt", qnt);
+        DB.cmd.Parameters.AddWithValue("datacaricamento", datacaricamento);
+        DB.cmd.Parameters.AddWithValue("percamatron", percamatron);
         DB.EseguiSPNonRead();
     }
-    //bisogna sempre passare tutti i parametri e soprattutto in ORDINE
+
     [WebMethod]
-    public void PRODOTTI_Update()
+    public void PRODOTTI_Update(int chiave, int chiaveVENDITORE, int chiaveCATEGORIA, string TITOLO, string descrizione, float prezzo, int qta, string datacaricamento, int percamatron)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spPRODOTTI_Update";
-        //DB.cmd.Parameters.AddWithValue("",);     
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
+        DB.cmd.Parameters.AddWithValue("chiaveVENDITORE", chiaveVENDITORE);
+        DB.cmd.Parameters.AddWithValue("chiaveCATEGORIA", chiaveCATEGORIA);
+        DB.cmd.Parameters.AddWithValue("TITOLO", TITOLO);
+        DB.cmd.Parameters.AddWithValue("descrizione", descrizione);
+        DB.cmd.Parameters.AddWithValue("prezzo", prezzo);
+        DB.cmd.Parameters.AddWithValue("qta", qta);
+        DB.cmd.Parameters.AddWithValue("datacaricamento", datacaricamento);
+        DB.cmd.Parameters.AddWithValue("percamatron", percamatron);
         DB.EseguiSPNonRead();
     }
-    //bisogna sempre passare tutti i parametri e soprattutto in ORDINE
+
     [WebMethod]
-    public void PRODOTTI_Delete()
+    public void PRODOTTI_Delete(int chiave)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spPRODOTTI_Delete";
-        //DB.cmd.Parameters.AddWithValue("",);     
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         DB.EseguiSPNonRead();
     }
+
     [WebMethod]
     public DataTable PRODOTTI_SelectAll()
     {
@@ -62,6 +78,7 @@ public class WsProdotti : System.Web.Services.WebService
         dt.TableName = "SelectAll";
         return dt;
     }
+
     [WebMethod]
     public DataTable PRODOTTI_SelectAll_DDL()
     {
@@ -73,35 +90,41 @@ public class WsProdotti : System.Web.Services.WebService
         dt.TableName = "SelectAll_DDL";
         return dt;
     }
+
     [WebMethod]
-    public DataTable PRODOTTI_SelectbyKey()
+    public DataTable PRODOTTI_SelectbyKey(int chiave)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
         DB.query = "spPRODOTTI_SelectbyKey";
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         dt = DB.EseguiSPRead();
         dt.TableName = "SelectbyKey";
         return dt;
     }
+
     [WebMethod]
-    public DataTable PRODOTTI_SelectbyVenditore()
+    public DataTable PRODOTTI_SelectbyVenditore(int chiaveVENDITORE)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
         DB.query = "spPRODOTTI_SelectbyVenditore";
+        DB.cmd.Parameters.AddWithValue("chiaveVENDITORE", chiaveVENDITORE);
         dt = DB.EseguiSPRead();
         dt.TableName = "SelectbyVenditore";
         return dt;
     }
+
     [WebMethod]
-    public DataTable PRODOTTI_SelectbyCategoria()
+    public DataTable PRODOTTI_SelectbyCategoria(int chiaveCATEGORIA)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
         DB.query = "spPRODOTTI_SelectbyCategoria";
+        DB.cmd.Parameters.AddWithValue("chiaveCATEGORIA", chiaveCATEGORIA);
         dt = DB.EseguiSPRead();
         dt.TableName = "SelectbyCategoria";
         return dt;
@@ -142,6 +165,4 @@ public class WsProdotti : System.Web.Services.WebService
         dt.TableName = "PRODOTTI_MAX20Venduti";
         return dt;
     }
-
-
 }

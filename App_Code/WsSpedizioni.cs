@@ -23,12 +23,15 @@ public class WsSpedizioni : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void SPEDIZIONI_Insert()
+    public void SPEDIZIONI_Insert(int chiave, int chiaveOrdine, string stato, string dataora)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spSPEDIZIONI_Insert";
-        //DB.cmd.Parameters.AddWithValue("",);     
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);     
+        DB.cmd.Parameters.AddWithValue("chiaveOrdine", chiaveOrdine);     
+        DB.cmd.Parameters.AddWithValue("stato", stato);     
+        DB.cmd.Parameters.AddWithValue("dataora", dataora);     
         DB.EseguiSPNonRead();
     }
 
@@ -45,24 +48,26 @@ public class WsSpedizioni : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable SPEDIZIONI_SelectByKey()
+    public DataTable SPEDIZIONI_SelectByKey(int chiave)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
         DB.query = "spSPEDIZIONI_SelectByKey";
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         dt = DB.EseguiSPRead();
         dt.TableName = "SelectByKey";
         return dt;
     }
     
     [WebMethod]
-    public DataTable SPEDIZIONI_SelectByOrdine()
+    public DataTable SPEDIZIONI_SelectByOrdine(int chiave)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
         DB.query = "spSPEDIZIONI_SelectByOrdine";
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         dt = DB.EseguiSPRead();
         dt.TableName = "SelectByOrdine";
         return dt;

@@ -23,10 +23,13 @@ public class WsValutazioni : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void VALUTAZIONI_Insert()
+    public void VALUTAZIONI_Insert(int chiaveordine, int stelle, string commento, string datacommento)
     {
         DATABASE DB = new DATABASE();
-        //  DB.cmd.Parameters.AddWithValue("",);
+        DB.cmd.Parameters.AddWithValue("chiaveORDINE", chiaveordine);
+        DB.cmd.Parameters.AddWithValue("STELLE", stelle);
+        DB.cmd.Parameters.AddWithValue("COMMENTO", commento);
+        DB.cmd.Parameters.AddWithValue("DATACOMMENTO", datacommento);
         DB.EseguiSPNonRead();
         DB.query = "spVALUTAZIONI_Insert";
     }
@@ -52,22 +55,27 @@ public class WsValutazioni : System.Web.Services.WebService
         dt.TableName = "SelectByAllDDL";
         return DB.EseguiSPRead();
     }
+
     [WebMethod]
-    public DataTable VALUTAZIONI_SelectByKey()
+    public DataTable VALUTAZIONI_SelectByKey(int chiave)
     {
         DataTable dt = new DataTable();
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         DB.query = "spVALUTAZIONI_SelectByKey";
         dt.TableName = "SelectByKey";
         return DB.EseguiSPRead();
     }
+
     [WebMethod]
-    public DataTable VALUTAZIONI_SelectByOrder()
+    public DataTable VALUTAZIONI_SelectByOrder(int chiave, int chiaveordine)
     {
         DataTable dt = new DataTable();
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
+        DB.cmd.Parameters.AddWithValue("chiaveORDINE", chiaveordine);
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         DB.query = "spVALUTAZIONI_SelectByOrder";
         dt.TableName = "SelectByOrder";
         return DB.EseguiSPRead();

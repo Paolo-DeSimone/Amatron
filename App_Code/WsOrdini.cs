@@ -24,14 +24,18 @@ public class WsOrdini : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void ORDINI_Insert()
+    public void ORDINI_Insert(int chiavecorriere, int chiaveprodotto, int chiavecliente,string datatransazione, int qta, int numeroordine)
     {
         DATABASE DB = new DATABASE();
-      //  DB.cmd.Parameters.AddWithValue("",);
+        DB.cmd.Parameters.AddWithValue("chiaveCORRIERE", chiavecorriere);
+        DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);
+        DB.cmd.Parameters.AddWithValue("chiaveCLIENTE", chiavecliente);
+        DB.cmd.Parameters.AddWithValue("DATATRANSAZIONE", datatransazione);
+        DB.cmd.Parameters.AddWithValue("QTA", qta);
+        DB.cmd.Parameters.AddWithValue("NUMEROORDINE", numeroordine);
         DB.EseguiSPNonRead();
         DB.query = "spORDINI_Insert";
     }
-
 
     [WebMethod]
     public DataTable ORDINI_SelectAll()
@@ -45,36 +49,39 @@ public class WsOrdini : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable ORDINI_SelectByKey()
+    public DataTable ORDINI_SelectByKey(int chiave)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
         DB.query = "spORDINI_SelectByKey";
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         // DB.cmd.Parameters.AddWithValue();
         dt.TableName = "SelectByKey";
         return DB.EseguiSPRead();
     }
 
     [WebMethod]
-    public DataTable ORDINI_SelectByCorriere()
+    public DataTable ORDINI_SelectByCorriere(int chiavecorriere)
     {
         DataTable dt = new DataTable();
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
-        DB.query = "spORDINI_SelectByKey";
+        DB.query = "spORDINI_SelectByCorriere";
         dt.TableName = "SelectByCorriere";
+        DB.cmd.Parameters.AddWithValue("chiaveCORRIERE", chiavecorriere);
         // DB.cmd.Parameters.AddWithValue();
         return DB.EseguiSPRead();
     }
 
     [WebMethod]
-    public DataTable ORDINI_SelectByProdotto()
+    public DataTable ORDINI_SelectByProdotto(int chiaveprodotto)
     {
         DataTable dt = new DataTable();
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spORDINI_SelectByProdotto";
+        DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);
         // DB.cmd.Parameters.AddWithValue();
         dt.TableName = "SelectByProdotto";
         return DB.EseguiSPRead();
@@ -82,25 +89,25 @@ public class WsOrdini : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable ORDINI_SelectByCliente()
+    public DataTable ORDINI_SelectByCliente(int chiavecliente)
     {
         DataTable dt = new DataTable();
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spORDINI_SelectByCliente";
-        // DB.cmd.Parameters.AddWithValue();
+        DB.cmd.Parameters.AddWithValue("chiaveCLIENTE", chiavecliente);
         dt.TableName = "SelectByKey";
         return DB.EseguiSPRead();
     }
 
     [WebMethod]
-    public void ORDINI_Delete()
+    public void ORDINI_Delete(int chiave)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spORDINI_Delete";
-        DB.EseguiSPRead();
-        return;
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
+        DB.EseguiSPNonRead();        
     }
 
 }

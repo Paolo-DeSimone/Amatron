@@ -23,22 +23,41 @@ public class WsVenditori : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void VENDITORI_Insert()
+    public void VENDITORI_Insert(string ragionesociale, string piva, string indirizzo, string provincia, string citta, string CAP, string telefono, string email, string PWD, bool abilitato)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spVENDITORI_Insert";
-        //DB.cmd.Parameters.AddWithValue("",);     
+        DB.cmd.Parameters.AddWithValue("ragionesociale", ragionesociale);     
+        DB.cmd.Parameters.AddWithValue("piva", piva);     
+        DB.cmd.Parameters.AddWithValue("indirizzo", indirizzo);     
+        DB.cmd.Parameters.AddWithValue("provincia", provincia);     
+        DB.cmd.Parameters.AddWithValue("citta", citta);     
+        DB.cmd.Parameters.AddWithValue("CAP", CAP);     
+        DB.cmd.Parameters.AddWithValue("telefono", telefono);     
+        DB.cmd.Parameters.AddWithValue("email", email);     
+        DB.cmd.Parameters.AddWithValue("PWD", PWD);     
+        DB.cmd.Parameters.AddWithValue("abilitato", abilitato);     
         DB.EseguiSPNonRead();
     }
 
     [WebMethod]
-    public void VENDITORI_Update()
+    public void VENDITORI_Update(int chiave, string ragionesociale, string piva, string indirizzo, string provincia, string citta, string CAP, string telefono, string email, string PWD, bool abilitato)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spVENDITORI_Update";
-        //DB.cmd.Parameters.AddWithValue("", );
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
+        DB.cmd.Parameters.AddWithValue("ragionesociale", ragionesociale);
+        DB.cmd.Parameters.AddWithValue("piva", piva);
+        DB.cmd.Parameters.AddWithValue("indirizzo", indirizzo);
+        DB.cmd.Parameters.AddWithValue("provincia", provincia);
+        DB.cmd.Parameters.AddWithValue("citta", citta);
+        DB.cmd.Parameters.AddWithValue("CAP", CAP);
+        DB.cmd.Parameters.AddWithValue("telefono", telefono);
+        DB.cmd.Parameters.AddWithValue("email", email);
+        DB.cmd.Parameters.AddWithValue("PWD", PWD);
+        DB.cmd.Parameters.AddWithValue("abilitato", abilitato);
         DB.EseguiSPNonRead();
     }
 
@@ -67,12 +86,13 @@ public class WsVenditori : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable VENDITORI_SelectByKey()
+    public DataTable VENDITORI_SelectByKey(int chiave)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
         DB.query = "spVENDITORI_SelectByKey";
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         dt = DB.EseguiSPRead();
         dt.TableName = "SelectbyKey";
         return dt;
@@ -93,12 +113,12 @@ public class WsVenditori : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void VENDITORI_Abilita()
+    public void VENDITORI_Abilita(string email)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spVENDITORI_Abilita";
-        //DB.cmd.Parameters.AddWithValue("", );
+        DB.cmd.Parameters.AddWithValue("email", email);
         DB.EseguiSPNonRead();
     }
 

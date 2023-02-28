@@ -1,0 +1,30 @@
+﻿.BackgroundPopup {
+    background-color: Black;
+    filter: alpha(opacity=30);
+    opacity: 0.3;
+}
+
+.Popup {
+    background-color: #212529;
+    border-width: 3px;
+    border-style: solid;
+    border-color: darkgray;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 90%;
+    height: 600px;
+}
+
+.button {
+    background-color: #B469FF;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    height: auto;
+    font-size: 17px;
+}
+
+.backgroundCard {
+    background-color: #212529;
+}

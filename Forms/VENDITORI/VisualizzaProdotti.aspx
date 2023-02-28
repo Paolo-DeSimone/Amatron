@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="VisualizzaProdottiVenditori.aspx.cs" Inherits="_Default" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="VisualizzaProdotti.aspx.cs" Inherits="_Default" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">

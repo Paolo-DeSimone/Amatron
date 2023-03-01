@@ -5,26 +5,27 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <%--section--%>
     <section class="h-100 h-custom">
-        <div class="container text-align-center py-5 h-100"> <%--APPUNTO: text-align-center al posto di text-center--%>
+        <div class="container text-align-center py-5 h-100">         
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-lg-12 col-xl-12">
                     <%--card--%>
                     <div class="card rounded-3">
                         <div class="card-body p-4 p-md-5">
                             <h3 class="text-center mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Accettazione Resi</h3>
-                            <%--Tabella provvisoria per sistemare l'html, da sostituire con GridView--%>
+                          
                             <div class="row align-items-center">
                                 <div class="col-lg-8">
-                                    <asp:GridView ID="grigliaResi" runat="server" AutoGenerateColumns="False" DataKeyNames="chiave" DataSourceID="sdsTabellaResi" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Horizontal" OnSelectedIndexChanged="grigliaResi_SelectedIndexChanged">
+                                    <asp:GridView ID="grigliaResi" runat="server" AutoGenerateColumns="False" DataKeyNames="chiave" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Horizontal" OnSelectedIndexChanged="grigliaResi_SelectedIndexChanged">
                                         <AlternatingRowStyle BackColor="#F7F7F7" />
                                         <Columns>
                                             <asp:CommandField ShowSelectButton="True" />
-                                            <asp:BoundField DataField="chiaveORDINE" HeaderText="chiaveORDINE" SortExpression="chiaveORDINE" />
-                                            <asp:BoundField DataField="DESCRIZIONE" HeaderText="DESCRIZIONE" SortExpression="DESCRIZIONE" />
+                                            <asp:BoundField DataField="chiave" HeaderText="chiave" SortExpression="chiave" InsertVisible="False" ReadOnly="True"></asp:BoundField>
                                             <asp:BoundField DataField="QTARESA" HeaderText="QTARESA" SortExpression="QTARESA" />
-                                            <asp:CheckBoxField DataField="ACCETTAZIONE" HeaderText="ACCETTAZIONE" SortExpression="ACCETTAZIONE" />
-                                            <asp:BoundField DataField="DATARICHIESTA" HeaderText="DATARICHIESTA" SortExpression="DATARICHIESTA" />
+                                            <asp:BoundField DataField="DESCRIZIONE" HeaderText="DESCRIZIONE" SortExpression="DESCRIZIONE" />
+                                            <asp:BoundField DataField="chiaveORDINE" HeaderText="chiaveORDINE" SortExpression="chiaveORDINE" />
                                             <asp:BoundField DataField="DATAEMISSIONE" HeaderText="DATAEMISSIONE" SortExpression="DATAEMISSIONE" />
+                                            <asp:BoundField DataField="DATARICHIESTA" HeaderText="DATARICHIESTA" SortExpression="DATARICHIESTA" />
+                                            <asp:CheckBoxField DataField="ACCETTAZIONE" HeaderText="ACCETTAZIONE" SortExpression="ACCETTAZIONE" />
                                         </Columns>
                                         <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
                                         <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
@@ -36,6 +37,7 @@
                                         <SortedDescendingCellStyle BackColor="#D8D8F0" />
                                         <SortedDescendingHeaderStyle BackColor="#3E3277" />
                                     </asp:GridView>
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString2 %>" SelectCommand="SELECT [chiave], [QTARESA], [DESCRIZIONE], [chiaveORDINE], [DATAEMISSIONE], [DATARICHIESTA], [ACCETTAZIONE] FROM [RESI] ORDER BY [DATARICHIESTA], [chiaveORDINE]"></asp:SqlDataSource>
                                     <asp:SqlDataSource ID="sdsTabellaResi" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spRESI_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                 </div>
                                 <div class="col-lg-4">

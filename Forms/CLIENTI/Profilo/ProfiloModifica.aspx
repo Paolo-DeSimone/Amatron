@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="ProfiloModifica.aspx.cs" Inherits="Default2" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="ProfiloModifica.aspx.cs" Inherits="Default2" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -76,7 +76,7 @@
                             <asp:Button ID="btnModifica" runat="server" Text="Modifica" class="btn btn-secondary btnSalva" />
                         </div>
                         <div class="col-md-6">
-                            <asp:Button ID="btnSalva" runat="server" Text="Salva" class="btn btn-secondary btnSalva" />
+                            <asp:Button ID="btnSalva" runat="server" Text="Salva" class="btn btn-secondary btnSalva" OnClick="btnSalva_Click" />
                         </div>
                     </div>
                 </div>
@@ -124,4 +124,3 @@
   </div>
 
 </asp:Content>
-

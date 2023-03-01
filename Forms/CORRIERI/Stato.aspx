@@ -12,24 +12,7 @@
     <link href="/assets/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/amatron-icon.png" />
-    <style type="text/css">
-        .Background {
-            background-color: Black;
-            filter: alpha(opacity=30);
-            opacity: 0.8;
-        }
-
-        .Popup {
-            background-color: #FFFFFF;
-            border-width: 3px;
-            border-style: solid;
-            border-color: black;
-            padding-top: 10px;
-            padding-left: 10px;
-            width: 350px;
-            height: 150px;
-        }
-    </style>
+    <link href="/assets/css/styleCorrieri.css" rel="stylesheet" />
     <div class="container-lg mt-5">
         <div class="row text-center">
             <div class="col-12 mx-auto">
@@ -39,37 +22,27 @@
                     </div>
                     <div class="card-body">
                         <div class="row" style="margin-top: 10px;">
-                            <div class="col-md-9" style="overflow: auto;">
-                                QUA SI DEVE INSERIRE LA GRIGLIA PER LA VISUALIZZAZIONE DEGLI ORDINI
+                            <div class="col-md-9" style="overflow: auto; top: -1px; left: 0px; height: 94px;">
+                                <asp:GridView ID="grdSTATO" runat="server" DataSourceID="sdsSTATO" AutoGenerateColumns="False" DataKeyNames="chiaveSPEDIZIONE">
+                                    <Columns>
+                                       
+                                        <asp:BoundField DataField="chiaveSPEDIZIONE" HeaderText="chiaveSPEDIZIONE" ReadOnly="True" SortExpression="chiaveSPEDIZIONE" />
+                                        <asp:BoundField DataField="STATO_SPEDIZIONE" HeaderText="STATO_SPEDIZIONE" SortExpression="STATO_SPEDIZIONE" />
+                                        <asp:BoundField DataField="DATA_ORA_SPEDIZIONE" HeaderText="DATA_ORA_SPEDIZIONE" SortExpression="DATA_ORA_SPEDIZIONE" />
+                                        <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATATRANSAZIONE" SortExpression="DATATRANSAZIONE" />
+                                        <asp:BoundField DataField="NUMERO_ORDINE" HeaderText="NUMERO_ORDINE" SortExpression="NUMERO_ORDINE" />
+                                        <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
+                                        <asp:CheckBoxField DataField="chiaveSPEDIZIONE" runat="server"  />
+                                    </Columns>
+                                </asp:GridView>
+                                <asp:SqlDataSource ID="sdsSTATO" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSEDIZIONI_ORDINI_Select" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                             </div>
                             <div class="col-md-3 text-center">
-                                
-                                    <%-- Introduzione di uno script manager --%>
-                                    <asp:ScriptManager ID="ScriptManager1" runat="server">
-                                    </asp:ScriptManager>
 
-                                    <%-- pulsante che apre il popup --%>
-                                    <asp:Button ID="Button1" runat="server" class="btn btn-primary" Text="Stato Ordine" />
+                                    <%-- pulsante --%>
+                                    <asp:Button ID="btnStato" runat="server" class="btn btn-primary" Text="Aggiorna Stato" />
 
-                                    <%-- chiamata del popup --%>
-                                    <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="Button1"
-                                        CancelControlID="Button2" BackgroundCssClass="Background">
-                                    </cc1:ModalPopupExtender>
-
-
-                                    <asp:Panel
-                                        ID="Panl1"
-                                        runat="server"
-                                        CssClass="Popup"
-                                        align="center"
-                                        Style="display: none">
-
-                                        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-                                        <iframe style="width:300px; height: 90px;" id="irm1" src="PopupStatoCorrieri.aspx" runat="server"></iframe>
-                                        <br />
-                                        <asp:Button ID="Button2" runat="server" class="btn btn-danger" Text="Close" />
-                                        <%--chiude il popup--%>
-                                    </asp:Panel>
+                                  
                                 </div>
                         </div>
                     </div>

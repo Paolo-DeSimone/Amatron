@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AMATRON_Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PWD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMATRON_LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AMATRON_LoginResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMATRON_AbilitaVenditori">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiaveVenditore" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMATRON_AbilitaVenditoriResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AMATRON_AbilitaCorrieri">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiaveCorriere" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMATRON_AbilitaCorrieriResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AMATRON_UpdateRESI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chiave" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ACCETTAZIONE" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="DATAEMISSIONE" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMATRON_UpdateRESIResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AMATRON_UpdateCONFIG">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="COSTOPRIME" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PERC1_10" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PERC11_100" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PERC101_1000" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PERC1001" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMATRON_UpdateCONFIGResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AMATRON_LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:AMATRON_Login" />
+  </wsdl:message>
+  <wsdl:message name="AMATRON_LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:AMATRON_LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="AMATRON_AbilitaVenditoriSoapIn">
+    <wsdl:part name="parameters" element="tns:AMATRON_AbilitaVenditori" />
+  </wsdl:message>
+  <wsdl:message name="AMATRON_AbilitaVenditoriSoapOut">
+    <wsdl:part name="parameters" element="tns:AMATRON_AbilitaVenditoriResponse" />
+  </wsdl:message>
+  <wsdl:message name="AMATRON_AbilitaCorrieriSoapIn">
+    <wsdl:part name="parameters" element="tns:AMATRON_AbilitaCorrieri" />
+  </wsdl:message>
+  <wsdl:message name="AMATRON_AbilitaCorrieriSoapOut">
+    <wsdl:part name="parameters" element="tns:AMATRON_AbilitaCorrieriResponse" />
+  </wsdl:message>
+  <wsdl:message name="AMATRON_UpdateRESISoapIn">
+    <wsdl:part name="parameters" element="tns:AMATRON_UpdateRESI" />
+  </wsdl:message>
+  <wsdl:message name="AMATRON_UpdateRESISoapOut">
+    <wsdl:part name="parameters" element="tns:AMATRON_UpdateRESIResponse" />
+  </wsdl:message>
+  <wsdl:message name="AMATRON_UpdateCONFIGSoapIn">
+    <wsdl:part name="parameters" element="tns:AMATRON_UpdateCONFIG" />
+  </wsdl:message>
+  <wsdl:message name="AMATRON_UpdateCONFIGSoapOut">
+    <wsdl:part name="parameters" element="tns:AMATRON_UpdateCONFIGResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsAmatronSoap">
+    <wsdl:operation name="AMATRON_Login">
+      <wsdl:input message="tns:AMATRON_LoginSoapIn" />
+      <wsdl:output message="tns:AMATRON_LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_AbilitaVenditori">
+      <wsdl:input message="tns:AMATRON_AbilitaVenditoriSoapIn" />
+      <wsdl:output message="tns:AMATRON_AbilitaVenditoriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_AbilitaCorrieri">
+      <wsdl:input message="tns:AMATRON_AbilitaCorrieriSoapIn" />
+      <wsdl:output message="tns:AMATRON_AbilitaCorrieriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_UpdateRESI">
+      <wsdl:input message="tns:AMATRON_UpdateRESISoapIn" />
+      <wsdl:output message="tns:AMATRON_UpdateRESISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_UpdateCONFIG">
+      <wsdl:input message="tns:AMATRON_UpdateCONFIGSoapIn" />
+      <wsdl:output message="tns:AMATRON_UpdateCONFIGSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsAmatronSoap" type="tns:WsAmatronSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AMATRON_Login">
+      <soap:operation soapAction="http://tempuri.org/AMATRON_Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_AbilitaVenditori">
+      <soap:operation soapAction="http://tempuri.org/AMATRON_AbilitaVenditori" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_AbilitaCorrieri">
+      <soap:operation soapAction="http://tempuri.org/AMATRON_AbilitaCorrieri" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_UpdateRESI">
+      <soap:operation soapAction="http://tempuri.org/AMATRON_UpdateRESI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_UpdateCONFIG">
+      <soap:operation soapAction="http://tempuri.org/AMATRON_UpdateCONFIG" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsAmatronSoap12" type="tns:WsAmatronSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AMATRON_Login">
+      <soap12:operation soapAction="http://tempuri.org/AMATRON_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_AbilitaVenditori">
+      <soap12:operation soapAction="http://tempuri.org/AMATRON_AbilitaVenditori" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_AbilitaCorrieri">
+      <soap12:operation soapAction="http://tempuri.org/AMATRON_AbilitaCorrieri" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_UpdateRESI">
+      <soap12:operation soapAction="http://tempuri.org/AMATRON_UpdateRESI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_UpdateCONFIG">
+      <soap12:operation soapAction="http://tempuri.org/AMATRON_UpdateCONFIG" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsAmatron">
+    <wsdl:port name="WsAmatronSoap" binding="tns:WsAmatronSoap">
+      <soap:address location="http://localhost:50799/WebServices/WsAmatron.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsAmatronSoap12" binding="tns:WsAmatronSoap12">
+      <soap12:address location="http://localhost:50799/WebServices/WsAmatron.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

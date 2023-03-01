@@ -1,0 +1,16 @@
+﻿
+/*apetto bottoni*/
+.button {
+    background-color: #B469FF;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    height: auto;
+    font-size: 17px;
+}
+
+/*aspetto card*/
+.backgroundCard {
+    background-color: #212529;
+    color: #ffffff;
+}

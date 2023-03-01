@@ -23,7 +23,11 @@ public partial class GestioneConfig : System.Web.UI.Page
 
             //DT = AMATRONADMIN.RecuperaDatiConfig();
 
+
+            //DT = AMATRONADMIN.RecuperaDatiConfig();
+
             //DT = new AMATRONADMIN.RecuperaDatiConfig();
+
 
 
             //passo i dati dalla DT nei TextBox
@@ -51,6 +55,9 @@ public partial class GestioneConfig : System.Web.UI.Page
 
         C.Update();
         //A.UpdateCONFIG();
+
+        //A.UpdateCONFIG();
+
 
         //test js per avviso a schermo
 

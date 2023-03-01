@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -32,6 +32,10 @@ public partial class _Default : System.Web.UI.Page
         //prendo la chiave
         string chiave = Session["chiaveVenditore"].ToString();
         //istanzio l'oggetto AA
+        //AMATRONADMIN AA = new AMATRONADMIN();
+        //AA.chiaveVenditore = Convert.ToInt32(chiave);
+        ////eseguo la procedure
+        //AA.AbilitaVenditori();
         VENDITORI V = new VENDITORI();
         V.chiave = Convert.ToInt32(chiave);
         //eseguo la procedure

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -16,7 +16,11 @@ public partial class GestioneConfig : System.Web.UI.Page
             //carico i dati dalla tabella config e li inserisco nei TextBox di GestioneConfig -MATTEO
             DataTable DT = new DataTable();
             //chiamo la funzione RecuperaDatiConfig
+
             //DT = AMATRONADMIN.RecuperaDatiConfig();
+
+            //DT = new AMATRONADMIN.RecuperaDatiConfig();
+
             //passo i dati dalla DT nei TextBox
             txtCostoPrime.Text = DT.Rows[0]["COSTOPRIME"].ToString();
             txtPerc1_10.Text = DT.Rows[0]["PERC1_10"].ToString();

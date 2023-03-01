@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 
 public partial class Default2 : System.Web.UI.Page
 {
+
     
     public void Page_Load(object sender, EventArgs e)
     {
@@ -52,10 +53,30 @@ public partial class Default2 : System.Web.UI.Page
     }
 
     protected void btnSalva_Click(object sender, EventArgs e)
-    {
+    {     
+
         CLIENTI CL = new CLIENTI();
         CL.chiave = int.Parse((Session["chiave"].ToString()));
         CL.EMAIL = txtEMAIL.Text;
+        CL.COGNOME = txtCognome.Text;
+        CL.NOME = txtNome.Text;
+        CL.INDIRIZZO = txtIndirizzo.Text;
+        CL.CITTA = txtCitta.Text;
+        CL.PROVINCIA = txtProvincia.Text;
+        CL.CAP = txtCAP.Text;
+        CL.TELEFONO = txtTelefono.Text;
 
+        CL.UPDATE();
+
+        //Serve per svuotare i campi una volta confermato
+
+        txtEMAIL.Text = "";
+        txtCognome.Text = "";
+        txtNome.Text = "";
+        txtIndirizzo.Text = "";
+        txtCitta.Text = "";
+        txtProvincia.Text = "";
+        txtCAP.Text = "";
+        txtTelefono.Text = "";     
     }
 }

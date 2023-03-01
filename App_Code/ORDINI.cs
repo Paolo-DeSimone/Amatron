@@ -37,7 +37,7 @@ public class ORDINI
     public void Insert()
     {      
 
-        R.ORDINI_Insert(chiavecorriere, chiaveprodotto, chiavecliente, datatransazione, qta, numeroordine);
+        O.ORDINI_Insert(chiavecorriere, chiaveprodotto, chiavecliente, datatransazione, qta, numeroordine);
     }
 
        

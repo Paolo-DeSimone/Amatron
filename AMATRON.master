@@ -11,10 +11,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/amatron-icon.png" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
@@ -23,6 +25,7 @@
     <link href="/assets/css/style.css" rel="stylesheet" />
     <link href="/assets/css/cssCLIENTI.css" rel="stylesheet" />
     <link href="/assets/css/carousel.css" rel="stylesheet" />
+    <link href="/assets/css/masterStyle.css" rel="stylesheet" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -88,7 +91,7 @@
             <section>
                 <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-default">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" href="/Forms/Homepage.aspx">
                             <img class="logo" src="/assets/images/amatron.png" />
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -108,7 +111,7 @@
 
                             <%--  SIGN UP E SIGN IN--%>
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="nav-item"><a class="nav-link" href="#">Registrati</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/Forms/CORRIERI/Registrazione.aspx">Registrati</a></li>
                                 <li>&nbsp;</li>
                                 <li class="nav-item"><a class="nav-link" href="#" id="show_popup" onclick="showpopup()">Accedi</a></li>
                                 <li>&nbsp;</li>
@@ -116,6 +119,28 @@
                                 <li>&nbsp;</li>
                                 <li>&nbsp;</li>
                             </ul>
+
+                            <!-- DROPDOWN PER OPERAZIONI UTENTE -->
+                            <div class="dropdown">
+                                <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">User Actions
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AbilitazioneVenditoriCorrieriAMATRON.aspx">Abilita Utenti</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneOrdini.aspx">Accetta Ordini</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneResi.aspx">Accetta Resi</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/AMATRON/GestioneConfig.aspx">Gestisci Config</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/CLIENTI/Ordini_Resi/Ordini.aspx">Ordini</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/CLIENTI/Profilo/ProfiloModifica.aspx">Profilo Cliente</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/CORRIERI/PagPers.aspx">Profilo Corriere</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/CORRIERI/Statistiche.aspx">Statistiche</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/CORRIERI/Stato.aspx">Stato Ordine</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/PRODOTTI/PaginaProdotto.aspx">Prodotto Test</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/AggiungiProdotti.aspx">Aggiungi Prodotto</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/GestisciInventario.aspx">Gestisci Inventario</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/StoricoVendite.aspx">Storico Vendite</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/VisualizzaProdotti.aspx">Visualizza Prodotti</a></li>
+                                </ul>
+                            </div>
 
                             <%--  ICONA CARRELLO--%>
                             <div>
@@ -173,10 +198,12 @@
                 </div>
             </section>
 
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+            <div class="masterHideScroll masterContent">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
         </div>
     </form>
 </body>
-</html
-
+</html>

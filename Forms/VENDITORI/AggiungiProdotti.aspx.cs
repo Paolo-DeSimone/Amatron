@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -9,6 +10,31 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
+    }
+
+    protected void btnSalva_Click(object sender, EventArgs e)
+    {
+        if (txtDescrizione.Text.Trim() == "" || txtPrezzo.Text.Trim() == "")
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Errore');", true);
+            return;
+        }
+
+        //      CAMPO DA AGGIORNARE
+                PRODOTTI P = new PRODOTTI();
+        //      passare i campi che mi servono prezzo categoria quantità ddl chiave anche le immagini
+        //      titolo descrizione e per le immagini imgDB->
+
+
+        P.chiaveCATEGORIA = int.Parse(ddlCategoria.SelectedValue.ToString());
+        P.descrizione = txtDescrizione.Text.Trim();
+        P.prezzo = int.Parse(txtPrezzo.Text.Trim());
+        P.qta = int.Parse(txtQuantita.Text.Trim());
+        P.titolo=txtTitolo.Text.Trim();
+
+        P.Insert();
+        DataBind();
 
     }
 }

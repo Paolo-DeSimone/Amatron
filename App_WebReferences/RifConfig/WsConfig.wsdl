@@ -6,7 +6,7 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="costroprime" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="costoprime" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="perc1_10" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="perc11_100" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="perc101_1000" type="s:int" />

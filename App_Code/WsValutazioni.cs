@@ -69,13 +69,12 @@ public class WsValutazioni : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable VALUTAZIONI_SelectByOrder(int chiave, int chiaveordine)
+    public DataTable VALUTAZIONI_SelectByOrder(int chiaveordine)
     {
         DataTable dt = new DataTable();
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
-        DB.cmd.Parameters.AddWithValue("chiaveORDINE", chiaveordine);
-        DB.cmd.Parameters.AddWithValue("chiave", chiave);
+        DB.cmd.Parameters.AddWithValue("chiaveORDINE", chiaveordine);      
         DB.query = "spVALUTAZIONI_SelectByOrder";
         dt.TableName = "SelectByOrder";
         return DB.EseguiSPRead();

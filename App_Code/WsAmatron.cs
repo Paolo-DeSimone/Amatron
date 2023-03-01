@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -34,5 +34,4 @@ public class WsAmatron : System.Web.Services.WebService
         dt.TableName = "Login";
         return dt;
     }
-
 }

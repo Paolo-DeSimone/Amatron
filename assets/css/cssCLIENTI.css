@@ -1,6 +1,4 @@
 ﻿
-<<<<<<< HEAD
-=======
 /*CSS PAGINA PERSONALE CLIENTI*/
 
 .intestazione {
@@ -67,12 +65,8 @@
 
 
 
-
-
-
-
 /*CSS ORDINI E POPUP*/
->>>>>>> 43f5bb0a9111f5692958442762ecc7aa1737598f
+
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Rubik:300,400,500,700,900');
 
@@ -293,16 +287,6 @@ section
 {
     opacity: 0.8;
 }
-
-
-
-
-
-
-
-
-
-
 
 .viewed
 {

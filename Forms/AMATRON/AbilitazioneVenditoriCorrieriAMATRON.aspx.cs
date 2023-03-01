@@ -30,10 +30,10 @@ public partial class _Default : System.Web.UI.Page
         //prendo la chiave
         string chiave = Session["chiaveVenditore"].ToString();
         //istanzio l'oggetto AA
-        AMATRONADMIN AA = new AMATRONADMIN();
-        AA.chiaveVenditore = Convert.ToInt32(chiave);
-        //eseguo la procedure
-        AA.AbilitaVenditori();
+        //AMATRONADMIN AA = new AMATRONADMIN();
+        //AA.chiaveVenditore = Convert.ToInt32(chiave);
+        ////eseguo la procedure
+        //AA.AbilitaVenditori();
         grigliaVenditori.DataBind();
     }
 

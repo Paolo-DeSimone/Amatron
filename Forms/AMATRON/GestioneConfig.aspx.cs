@@ -16,9 +16,9 @@ public partial class GestioneConfig : System.Web.UI.Page
             //carico i dati dalla tabella config e li inserisco nei TextBox di GestioneConfig -MATTEO
             DataTable DT = new DataTable();
             //chiamo la funzione RecuperaDatiConfig
-<<<<<<< HEAD
+
             //DT = AMATRONADMIN.RecuperaDatiConfig();
-=======
+
 
             //DT = AMATRONADMIN.RecuperaDatiConfig();
 
@@ -28,7 +28,7 @@ public partial class GestioneConfig : System.Web.UI.Page
             //DT = new AMATRONADMIN.RecuperaDatiConfig();
 
 
->>>>>>> 43f5bb0a9111f5692958442762ecc7aa1737598f
+
             //passo i dati dalla DT nei TextBox
             txtCostoPrime.Text = DT.Rows[0]["COSTOPRIME"].ToString();
             txtPerc1_10.Text = DT.Rows[0]["PERC1_10"].ToString();
@@ -51,13 +51,12 @@ public partial class GestioneConfig : System.Web.UI.Page
         A.PERC101_1000 = int.Parse(txtPerc101_1000.Text.Trim());
         A.PERC1001 = int.Parse(txtPerc1001.Text.Trim());
         //chiamo la funzione
-<<<<<<< HEAD
-        //A.UpdateCONFIG();
-=======
 
         //A.UpdateCONFIG();
 
->>>>>>> 43f5bb0a9111f5692958442762ecc7aa1737598f
+        //A.UpdateCONFIG();
+
+
         //test js per avviso a schermo
 
         //ScriptManager.RegisterStartupScript(this,this.GetType(), )

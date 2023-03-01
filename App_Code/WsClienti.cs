@@ -115,4 +115,14 @@ public class WsClienti : System.Web.Services.WebService
         dt.TableName = "Login";
         return dt;
     }
+    [WebMethod]
+    public void CLIENTI_Prime(int chiave)
+    {
+        DATABASE DB = new DATABASE();
+        DataTable dt = new DataTable();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spClienti_Prime";
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
+        DB.EseguiSPNonRead();
+    }
 }

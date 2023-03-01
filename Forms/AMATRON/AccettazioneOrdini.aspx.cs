@@ -31,9 +31,11 @@ public partial class Default2 : System.Web.UI.Page
         if (O.chiave.ToString() != null)
         {
             //preparo i dati per l'invio nel db
+
             //O.ACCETTAZIONE = bool.Parse(ddlAccettaRifiuta.SelectedValue.ToString());
             //O.DATAEMISSIONE = DateTime.Now.ToString();
             O.Update();
+
 
             //invio una mail al cliente con la conferma dell'ordine
 

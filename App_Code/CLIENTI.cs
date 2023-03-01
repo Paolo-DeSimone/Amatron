@@ -21,7 +21,7 @@ public class CLIENTI
     public string CAP;
     public string TELEFONO;
     RifClienti.WsClientiSoapClient CL = new RifClienti.WsClientiSoapClient();
-    DataTable DT = new DataTable();
+    public DataTable DT = new DataTable();
 
 
     public CLIENTI()

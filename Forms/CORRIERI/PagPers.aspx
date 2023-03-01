@@ -5,7 +5,6 @@
     <link href="/assets/css/styleCorrieri.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <%--Pagina di visualizzazione dati personali dei corrieri--%>
     <div class="container">
         <div class="row">
@@ -63,7 +62,7 @@
                             </div>
                         </div>
                         <div class="text-center mt-2">
-                            <asp:Button ID="btnModifica" class="btn btn-primary btn-sm" runat="server" Text="Modifica i dati" />
+                            <asp:Button ID="btnModifica" class="btn btn-primary btn-sm" runat="server" Text="Modifica i dati" OnClick="btnModifica_Click" />
                         </div>
                     </div>
                 </div>
@@ -94,7 +93,7 @@
                             </div>
                         </div>
                         <div class="text-center mt-2">
-                            <asp:Button ID="btnModPWD" class="btn btn-primary btn-sm" runat="server" Text="Modifica Password" />
+                            <asp:Button ID="btnModPWD" class="btn btn-primary btn-sm" runat="server" Text="Modifica Password" OnClick="btnModPWD_Click" />
                         </div>
                     </div>
                 </div>

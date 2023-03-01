@@ -34,7 +34,8 @@
                     </div>
                     <div style="position: relative;" class="mt-2">
                         <hr class="hrdivider" />
-                        <span class="hrdivider1">Dati personali                            </span>
+                        <span class="hrdivider1">Dati personali
+                            </span>
                     </div>
                     <div class="row">
                         <div class="col-lg-6">
@@ -68,7 +69,8 @@
                     </div>
                     <div style="position: relative;" class="mt-2">
                         <hr class="hrdivider" />
-                        <span class="hrdivider1">Recapiti                            </span>
+                        <span class="hrdivider1">Recapiti
+                            </span>
                     </div>
                     <div class="row">
                         <div class="col-lg-3"></div>

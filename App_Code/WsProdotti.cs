@@ -23,7 +23,7 @@ public class WsProdotti : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void PRODOTTI_Insert(int chiaveVENDITORE, int chiaveCATEGORIA, string titolo, string descrizione, float prezzo, int qnt, string datacaricamento, int percamatron)
+    public void PRODOTTI_Insert(int chiaveVENDITORE, int chiaveCATEGORIA, string titolo, string descrizione, float prezzo, int qta, string datacaricamento, int percamatron)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
@@ -33,7 +33,7 @@ public class WsProdotti : System.Web.Services.WebService
         DB.cmd.Parameters.AddWithValue("titolo", titolo);
         DB.cmd.Parameters.AddWithValue("descrizione", descrizione);
         DB.cmd.Parameters.AddWithValue("prezzo", prezzo);
-        DB.cmd.Parameters.AddWithValue("qnt", qnt);
+        DB.cmd.Parameters.AddWithValue("qta", qta);
         DB.cmd.Parameters.AddWithValue("datacaricamento", datacaricamento);
         DB.cmd.Parameters.AddWithValue("percamatron", percamatron);
         DB.EseguiSPNonRead();
@@ -92,12 +92,12 @@ public class WsProdotti : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable PRODOTTI_SelectbyKey(int chiave)
+    public DataTable PRODOTTI_SelectByKey(int chiave)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
-        DB.query = "spPRODOTTI_SelectbyKey";
+        DB.query = "spPRODOTTI_SelectByKey";
         DB.cmd.Parameters.AddWithValue("chiave", chiave);
         dt = DB.EseguiSPRead();
         dt.TableName = "SelectbyKey";
@@ -105,12 +105,12 @@ public class WsProdotti : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable PRODOTTI_SelectbyVenditore(int chiaveVENDITORE)
+    public DataTable PRODOTTI_SelectByVenditore(int chiaveVENDITORE)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
-        DB.query = "spPRODOTTI_SelectbyVenditore";
+        DB.query = "spPRODOTTI_SelectByVenditore";
         DB.cmd.Parameters.AddWithValue("chiaveVENDITORE", chiaveVENDITORE);
         dt = DB.EseguiSPRead();
         dt.TableName = "SelectbyVenditore";
@@ -118,12 +118,12 @@ public class WsProdotti : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable PRODOTTI_SelectbyCategoria(int chiaveCATEGORIA)
+    public DataTable PRODOTTI_SelectByCategoria(int chiaveCATEGORIA)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
-        DB.query = "spPRODOTTI_SelectbyCategoria";
+        DB.query = "spPRODOTTI_SelectByCategoria";
         DB.cmd.Parameters.AddWithValue("chiaveCATEGORIA", chiaveCATEGORIA);
         dt = DB.EseguiSPRead();
         dt.TableName = "SelectbyCategoria";

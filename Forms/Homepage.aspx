@@ -21,7 +21,7 @@
                         <div class="panel panel-default">
                             <div class="panel-thumbnail">
                                 <a href="#" title="image 3" class="thumb">
-                                    <img class=" img-fluid mx-auto d-block"  src="assets/images/chiusura.png" alt="slide 2"/>
+                                    <img class=" img-fluid mx-auto d-block"  src="assets/images/pc.jpg" alt="slide 2"/>
                                 </a>
                             </div>
                         </div>
@@ -31,7 +31,7 @@
                             <div class="panel-thumbnail">
                                 <a href="#" title="image 4" class="thumb">
                                     
-                                    <img class=" img-fluid mx-auto d-block" src="assets/images/nayuta.jpg" alt="slide 3"/>
+                                    <img class=" img-fluid mx-auto d-block" src="assets/images/pc.jpg" alt="slide 3"/>
                                 </a>
                             </div>
                         </div>
@@ -40,7 +40,7 @@
                         <div class="panel panel-default">
                             <div class="panel-thumbnail">
                                 <a href="#" title="image 5" class="thumb">
-                                    <img class=" img-fluid mx-auto d-block" src="assets/images/kurado.png"  alt="slide 4"/>
+                                    <img class=" img-fluid mx-auto d-block" src="assets/images/pc.jpg"  alt="slide 4"/>
                                 </a>
                             </div>
                         </div>
@@ -49,7 +49,7 @@
                         <div class="panel panel-default">
                             <div class="panel-thumbnail">
                                 <a href="#" title="image 6" class="thumb">
-                                    <img class=" img-fluid mx-auto d-block"  src="assets/images/chiusura.png"  alt="slide 5"/>
+                                    <img class=" img-fluid mx-auto d-block"  src="assets/images/pc.jpg"  alt="slide 5"/>
                                 </a>
                             </div>
                         </div>
@@ -58,7 +58,7 @@
                         <div class="panel panel-default">
                             <div class="panel-thumbnail">
                                 <a href="#" title="image 7" class="thumb">
-                                    <img class="  img-fluid mx-auto d-block"  src="assets/images/nayuta.jpg" alt="slide 6"/>
+                                    <img class="  img-fluid mx-auto d-block"  src="assets/images/pc.jpg" alt="slide 6"/>
                                 </a>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                         <div class="panel panel-default">
                             <div class="panel-thumbnail">
                                 <a href="#" title="image 8" class="thumb">
-                                    <img class="  img-fluid mx-auto d-block"  src="assets/images/chiusura.png"  alt="slide 7"/>
+                                    <img class="  img-fluid mx-auto d-block"  src=assets/images/pc.jpg"  alt="slide 7"/>
                                 </a>
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                            
                             <div class="panel-thumbnail">
                                 <a href="#" title="image 2" class="thumb">
-                                    <img class=" img-fluid mx-auto d-block"  src="assets/images/kurado.png" alt="slide 8"/>
+                                    <img class=" img-fluid mx-auto d-block"  src="assets/images/pc.jpg" alt="slide 8"/>
                                 </a>
                             </div>
 
@@ -87,7 +87,7 @@
                         <div class="panel panel-default">
                             <div class="panel-thumbnail">
                                 <a href="#" title="image 2" class="thumb">
-                                    <img class="  img-fluid mx-auto d-block"  src="assets/images/nayuta.jpg" alt="slide 9"/>
+                                    <img class="  img-fluid mx-auto d-block"  src="assets/images/pc.jpg" alt="slide 9"/>
                                 </a>
                             </div>
 

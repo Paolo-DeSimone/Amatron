@@ -1,4 +1,4 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AMATRON.master.cs" Inherits="AMATRON" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AMATRON.master.cs" Inherits="AMATRON" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -180,4 +180,4 @@
         </div>
     </form>
 </body>
-</html>
+</html

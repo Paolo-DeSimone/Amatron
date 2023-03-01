@@ -52,11 +52,10 @@
                 <ajaxToolkit:FilteredTextBoxExtender ID="txtQuantita_FilteredTextBoxExtender" runat="server"
                     Enabled="True" TargetControlID="txtQuantita" FilterType="Numbers"></ajaxToolkit:FilteredTextBoxExtender>
                 <div class="col-md-12 mt-4">
-                    <asp:Button ID="btnAggiungi" Class="btn btn-block btn-purple" runat="server" Text="Aggiungi" />
+                    <asp:Button ID="btnAggiungi" Class="btn btn-block btn-purple" runat="server" Text="Aggiungi" OnClick="btnAggiungi_Click" />
                 </div>
             </div>
             </div>
-        </div>
     </form>
 </body>
 </html>

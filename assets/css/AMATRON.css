@@ -1,21 +1,5 @@
-﻿.BackgroundPopup {
-    background-color: Black;
-    filter: alpha(opacity=30);
-    opacity: 0.3;
-}
-
-.Popup {
-    background-color: #212529;
-    border-width: 3px;
-    border-style: solid;
-    border-color: darkgray;
-    padding-top: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
-    width: 90%;
-    height: 600px;
-}
-
+﻿
+/*apetto bottoni*/
 .button {
     background-color: #B469FF;
     color: #ffffff;
@@ -25,6 +9,8 @@
     font-size: 17px;
 }
 
+/*aspetto card*/
 .backgroundCard {
     background-color: #212529;
+    color: #ffffff;
 }

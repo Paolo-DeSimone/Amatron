@@ -410,6 +410,228 @@
 
     <%-- contenuto del popup --%>
     <asp:Panel
+        ID="Panel12b"
+        runat="server"
+        CssClass="PopupReso"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe13b" src="ResoClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button26b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+        <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel1b"
+        runat="server"
+        CssClass="Popup"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe2b" src="RecensioneClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button15b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+    <%-- chiamata del popup --%>
+    <cc1:ModalPopupExtender ID="ModalPopupExtender1b" runat="server" PopupControlID="Reso" TargetControlID="btnReso"
+        CancelControlID="Button4" BackgroundCssClass="Background">
+    </cc1:ModalPopupExtender>
+
+    <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel2b"
+        runat="server"
+        CssClass="PopupReso"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe3b" src="ResoClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button16b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+        <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel3b"
+        runat="server"
+        CssClass="Popup"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe4b" src="RecensioneClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button17b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+    <%-- chiamata del popup --%>
+    <cc1:ModalPopupExtender ID="ModalPopupExtender2b" runat="server" PopupControlID="Reso" TargetControlID="btnReso"
+        CancelControlID="Button4" BackgroundCssClass="Background">
+    </cc1:ModalPopupExtender>
+
+    <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel4b"
+        runat="server"
+        CssClass="PopupReso"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe5b" src="ResoClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button18b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+        <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel5b"
+        runat="server"
+        CssClass="Popup"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe6b" src="RecensioneClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button19b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+    <%-- chiamata del popup --%>
+    <cc1:ModalPopupExtender ID="ModalPopupExtender3b" runat="server" PopupControlID="Reso" TargetControlID="btnReso"
+        CancelControlID="Button4" BackgroundCssClass="Background">
+    </cc1:ModalPopupExtender>
+
+    <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel6b"
+        runat="server"
+        CssClass="PopupReso"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe7b" src="ResoClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button20b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+        <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel7b"
+        runat="server"
+        CssClass="Popup"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe8b" src="RecensioneClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button21b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+    <%-- chiamata del popup --%>
+    <cc1:ModalPopupExtender ID="ModalPopupExtender4b" runat="server" PopupControlID="Reso" TargetControlID="btnReso"
+        CancelControlID="Button4" BackgroundCssClass="Background">
+    </cc1:ModalPopupExtender>
+
+    <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel8b"
+        runat="server"
+        CssClass="PopupReso"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe9b" src="ResoClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button22b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+        <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel9b"
+        runat="server"
+        CssClass="Popup"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe10b" src="RecensioneClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button23b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+    <%-- chiamata del popup --%>
+    <cc1:ModalPopupExtender ID="ModalPopupExtender5b" runat="server" PopupControlID="Reso" TargetControlID="btnReso"
+        CancelControlID="Button4" BackgroundCssClass="Background">
+    </cc1:ModalPopupExtender>
+
+    <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel10b"
+        runat="server"
+        CssClass="PopupReso"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe11b" src="ResoClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button24b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+        <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel11b"
+        runat="server"
+        CssClass="Popup"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe12b" src="RecensioneClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button25b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+    <%-- chiamata del popup --%>
+    <cc1:ModalPopupExtender ID="ModalPopupExtender6b" runat="server" PopupControlID="Reso" TargetControlID="btnReso"
+        CancelControlID="Button4" BackgroundCssClass="Background">
+    </cc1:ModalPopupExtender>
+
+    <%-- contenuto del popup --%>
+    <asp:Panel
         ID="Panel12"
         runat="server"
         CssClass="PopupReso"

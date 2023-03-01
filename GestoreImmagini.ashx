@@ -1,19 +1,20 @@
 ﻿<%@ WebHandler Language="C#" Class="GestoreImmagini" %>
-
+using System.Threading.Tasks;
 using System;
 using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 
-public class GestoreImmagini : IHttpHandler {
+public class GestoreImmagini : HttpTaskAsyncHandler
+{
 
-    public void ProcessRequest (HttpContext context) {
+    public override async Task ProcessRequestAsync(HttpContext context)
+    {
         //leggo la chiave passata da default
         int chiave = int.Parse(context.Request.QueryString["c"].ToString());
-        RifImmagini.WsImmaginiSoapClient rif = new RifImmagini.WsImmaginiSoapClient();
         IMMAGINI I = new IMMAGINI();
         DataTable dt = new DataTable();
-        dt = rif.IMMAGINI_SelectByKey(chiave);
+        dt = I.SelectByKey();
 
         // leggo i dati dell'immagine dalla datatable
         string titolo = dt.Rows[0]["TITOLO"].ToString();
@@ -31,8 +32,10 @@ public class GestoreImmagini : IHttpHandler {
         context.Response.End();
     }
 
-    public bool IsReusable {
-        get {
+    public bool  IsReusable
+    {
+        get
+        {
             return false;
         }
     }

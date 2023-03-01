@@ -34,7 +34,8 @@
                     </div>
                     <div style="position: relative;" class="mt-2">
                         <hr class="hrdivider" />
-                        <span class="hrdivider1">Dati personali                            </span>
+                        <span class="hrdivider1">Dati personali
+                            </span>
                     </div>
                     <div class="row">
                         <div class="col-lg-6">
@@ -68,7 +69,8 @@
                     </div>
                     <div style="position: relative;" class="mt-2">
                         <hr class="hrdivider" />
-                        <span class="hrdivider1">Recapiti                            </span>
+                        <span class="hrdivider1">Recapiti
+                            </span>
                     </div>
                     <div class="row">
                         <div class="col-lg-3"></div>
@@ -89,9 +91,9 @@
                         </div>
                         <div class="col-lg-6">
                             <asp:RadioButtonList ID="radioButtonList1" runat="server" RepeatDirection="Horizontal">
-                                <asp:ListItem Text="Cliente" style="margin-left: 20px"></asp:ListItem>
-                                <asp:ListItem Text="Venditore" style="margin-left: 20px"></asp:ListItem>
-                                <asp:ListItem Text="Corriere" style="margin-left: 20px"></asp:ListItem>
+                                <asp:ListItem id="liCliente" runat="server" Text="Cliente" style="margin-left: 20px"></asp:ListItem>
+                                <asp:ListItem id="liVenditore" runat="server" Text="Venditore" style="margin-left: 20px"></asp:ListItem>
+                                <asp:ListItem id="liCorriere" runat="server" Text="Corriere" style="margin-left: 20px"></asp:ListItem>
                             </asp:RadioButtonList>
                         </div>
                         <div class="col-lg-2"></div>
@@ -100,7 +102,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <center style="margin-top: 25px">
-                                <asp:Button ID="btnRegistra" runat="server" Text="Registrati" class="btn btn-primary btn-lg" Style="width: 50%" />
+                                <asp:Button ID="btnRegistra" runat="server" Text="Registrati" class="btn btn-primary btn-lg" Style="width: 50%" OnClick="btnRegistra_Click" />
                             </center>
                         </div>
                         <div class="col-lg-6">

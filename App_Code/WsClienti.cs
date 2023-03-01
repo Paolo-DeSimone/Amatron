@@ -23,7 +23,7 @@ public class WsClienti : System.Web.Services.WebService
         //Rimuovere il commento dalla riga seguente se si utilizzano componenti progettati 
         //InitializeComponent(); 
     }
-     
+
     [WebMethod]
     public void CLIENTI_Insert(string email, string PWD, bool prime, string scadenzaprime, string cognome, string nome, string indirizzo, string citta, string provincia, string CAP, string telefono)
     {

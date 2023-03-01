@@ -113,12 +113,12 @@ public class WsVenditori : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void VENDITORI_Abilita(string email)
+    public void VENDITORI_Abilita(int chiave)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spVENDITORI_Abilita";
-        DB.cmd.Parameters.AddWithValue("email", email);
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         DB.EseguiSPNonRead();
     }
 

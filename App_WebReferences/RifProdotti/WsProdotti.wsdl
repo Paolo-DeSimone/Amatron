@@ -10,7 +10,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="titolo" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="descrizione" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="prezzo" type="s:float" />
-            <s:element minOccurs="1" maxOccurs="1" name="qnt" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="qta" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="datacaricamento" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="percamatron" type="s:int" />
           </s:sequence>
@@ -81,17 +81,17 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="PRODOTTI_SelectbyKey">
+      <s:element name="PRODOTTI_SelectByKey">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="PRODOTTI_SelectbyKeyResponse">
+      <s:element name="PRODOTTI_SelectByKeyResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="PRODOTTI_SelectbyKeyResult">
+            <s:element minOccurs="0" maxOccurs="1" name="PRODOTTI_SelectByKeyResult">
               <s:complexType>
                 <s:sequence>
                   <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
@@ -102,17 +102,17 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="PRODOTTI_SelectbyVenditore">
+      <s:element name="PRODOTTI_SelectByVenditore">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="chiaveVENDITORE" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="PRODOTTI_SelectbyVenditoreResponse">
+      <s:element name="PRODOTTI_SelectByVenditoreResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="PRODOTTI_SelectbyVenditoreResult">
+            <s:element minOccurs="0" maxOccurs="1" name="PRODOTTI_SelectByVenditoreResult">
               <s:complexType>
                 <s:sequence>
                   <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
@@ -123,17 +123,17 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="PRODOTTI_SelectbyCategoria">
+      <s:element name="PRODOTTI_SelectByCategoria">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="chiaveCATEGORIA" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="PRODOTTI_SelectbyCategoriaResponse">
+      <s:element name="PRODOTTI_SelectByCategoriaResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="PRODOTTI_SelectbyCategoriaResult">
+            <s:element minOccurs="0" maxOccurs="1" name="PRODOTTI_SelectByCategoriaResult">
               <s:complexType>
                 <s:sequence>
                   <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
@@ -227,23 +227,23 @@
   <wsdl:message name="PRODOTTI_SelectAll_DDLSoapOut">
     <wsdl:part name="parameters" element="tns:PRODOTTI_SelectAll_DDLResponse" />
   </wsdl:message>
-  <wsdl:message name="PRODOTTI_SelectbyKeySoapIn">
-    <wsdl:part name="parameters" element="tns:PRODOTTI_SelectbyKey" />
+  <wsdl:message name="PRODOTTI_SelectByKeySoapIn">
+    <wsdl:part name="parameters" element="tns:PRODOTTI_SelectByKey" />
   </wsdl:message>
-  <wsdl:message name="PRODOTTI_SelectbyKeySoapOut">
-    <wsdl:part name="parameters" element="tns:PRODOTTI_SelectbyKeyResponse" />
+  <wsdl:message name="PRODOTTI_SelectByKeySoapOut">
+    <wsdl:part name="parameters" element="tns:PRODOTTI_SelectByKeyResponse" />
   </wsdl:message>
-  <wsdl:message name="PRODOTTI_SelectbyVenditoreSoapIn">
-    <wsdl:part name="parameters" element="tns:PRODOTTI_SelectbyVenditore" />
+  <wsdl:message name="PRODOTTI_SelectByVenditoreSoapIn">
+    <wsdl:part name="parameters" element="tns:PRODOTTI_SelectByVenditore" />
   </wsdl:message>
-  <wsdl:message name="PRODOTTI_SelectbyVenditoreSoapOut">
-    <wsdl:part name="parameters" element="tns:PRODOTTI_SelectbyVenditoreResponse" />
+  <wsdl:message name="PRODOTTI_SelectByVenditoreSoapOut">
+    <wsdl:part name="parameters" element="tns:PRODOTTI_SelectByVenditoreResponse" />
   </wsdl:message>
-  <wsdl:message name="PRODOTTI_SelectbyCategoriaSoapIn">
-    <wsdl:part name="parameters" element="tns:PRODOTTI_SelectbyCategoria" />
+  <wsdl:message name="PRODOTTI_SelectByCategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:PRODOTTI_SelectByCategoria" />
   </wsdl:message>
-  <wsdl:message name="PRODOTTI_SelectbyCategoriaSoapOut">
-    <wsdl:part name="parameters" element="tns:PRODOTTI_SelectbyCategoriaResponse" />
+  <wsdl:message name="PRODOTTI_SelectByCategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:PRODOTTI_SelectByCategoriaResponse" />
   </wsdl:message>
   <wsdl:message name="PRODOTTI_MAX20NovitàSoapIn">
     <wsdl:part name="parameters" element="tns:PRODOTTI_MAX20Novità" />
@@ -284,17 +284,17 @@
       <wsdl:input message="tns:PRODOTTI_SelectAll_DDLSoapIn" />
       <wsdl:output message="tns:PRODOTTI_SelectAll_DDLSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="PRODOTTI_SelectbyKey">
-      <wsdl:input message="tns:PRODOTTI_SelectbyKeySoapIn" />
-      <wsdl:output message="tns:PRODOTTI_SelectbyKeySoapOut" />
+    <wsdl:operation name="PRODOTTI_SelectByKey">
+      <wsdl:input message="tns:PRODOTTI_SelectByKeySoapIn" />
+      <wsdl:output message="tns:PRODOTTI_SelectByKeySoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="PRODOTTI_SelectbyVenditore">
-      <wsdl:input message="tns:PRODOTTI_SelectbyVenditoreSoapIn" />
-      <wsdl:output message="tns:PRODOTTI_SelectbyVenditoreSoapOut" />
+    <wsdl:operation name="PRODOTTI_SelectByVenditore">
+      <wsdl:input message="tns:PRODOTTI_SelectByVenditoreSoapIn" />
+      <wsdl:output message="tns:PRODOTTI_SelectByVenditoreSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="PRODOTTI_SelectbyCategoria">
-      <wsdl:input message="tns:PRODOTTI_SelectbyCategoriaSoapIn" />
-      <wsdl:output message="tns:PRODOTTI_SelectbyCategoriaSoapOut" />
+    <wsdl:operation name="PRODOTTI_SelectByCategoria">
+      <wsdl:input message="tns:PRODOTTI_SelectByCategoriaSoapIn" />
+      <wsdl:output message="tns:PRODOTTI_SelectByCategoriaSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="PRODOTTI_MAX20Novità">
       <wsdl:input message="tns:PRODOTTI_MAX20NovitàSoapIn" />
@@ -356,8 +356,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PRODOTTI_SelectbyKey">
-      <soap:operation soapAction="http://tempuri.org/PRODOTTI_SelectbyKey" style="document" />
+    <wsdl:operation name="PRODOTTI_SelectByKey">
+      <soap:operation soapAction="http://tempuri.org/PRODOTTI_SelectByKey" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -365,8 +365,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PRODOTTI_SelectbyVenditore">
-      <soap:operation soapAction="http://tempuri.org/PRODOTTI_SelectbyVenditore" style="document" />
+    <wsdl:operation name="PRODOTTI_SelectByVenditore">
+      <soap:operation soapAction="http://tempuri.org/PRODOTTI_SelectByVenditore" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -374,8 +374,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PRODOTTI_SelectbyCategoria">
-      <soap:operation soapAction="http://tempuri.org/PRODOTTI_SelectbyCategoria" style="document" />
+    <wsdl:operation name="PRODOTTI_SelectByCategoria">
+      <soap:operation soapAction="http://tempuri.org/PRODOTTI_SelectByCategoria" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -458,8 +458,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PRODOTTI_SelectbyKey">
-      <soap12:operation soapAction="http://tempuri.org/PRODOTTI_SelectbyKey" style="document" />
+    <wsdl:operation name="PRODOTTI_SelectByKey">
+      <soap12:operation soapAction="http://tempuri.org/PRODOTTI_SelectByKey" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -467,8 +467,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PRODOTTI_SelectbyVenditore">
-      <soap12:operation soapAction="http://tempuri.org/PRODOTTI_SelectbyVenditore" style="document" />
+    <wsdl:operation name="PRODOTTI_SelectByVenditore">
+      <soap12:operation soapAction="http://tempuri.org/PRODOTTI_SelectByVenditore" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -476,8 +476,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="PRODOTTI_SelectbyCategoria">
-      <soap12:operation soapAction="http://tempuri.org/PRODOTTI_SelectbyCategoria" style="document" />
+    <wsdl:operation name="PRODOTTI_SelectByCategoria">
+      <soap12:operation soapAction="http://tempuri.org/PRODOTTI_SelectByCategoria" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -11,10 +11,10 @@
             <div class="col-md-4">
                 <div id="productCarousel" class="carousel slide w-100" data-bs-ride="carousel">
                     <div class="carousel-inner">
-                        <div class="carousel-item active">
+                        <div class="carousel-item active">                 
                             <img src="/assets/images/kurado.png" class="d-block w-100" alt="Product Image 1" />
                         </div>
-                        <div class="carousel-item ">
+                        <div class="carousel-item">
                             <img src="/assets/images/nayuta.jpg" class="d-block w-100" alt="Product Image 2" />
                         </div>
                         <div class="carousel-item">
@@ -52,12 +52,11 @@
                     <h2 class="mt-4">Prezzo: €99.99</h2>
                     <p>Consegna senza costi aggiuntivi domani. Ordina entro 4 minuti</p>
                     Quantità:
-                    <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlCarrello" runat="server"></asp:DropDownList>
                 </div>
                 <div class="py-5" align="center">
-                    <button class="btn btn-secondary logoColor" style="background-color: #212529" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Aggiungi al carrello
-                    </button>
+                    <button id="btnAggiungi" runat="server" class="btn btn-secondary logoColor" style="background-color: #212529; width: 182px;" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="Aggiungi()">
+                        Aggiungi al carrello</button>
                 </div>
             </div>
 

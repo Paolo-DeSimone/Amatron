@@ -20,6 +20,7 @@ public class ORDINI
     public string datatransazione;
     public int numeroordine;
 
+
     //istanzio il web service fuori dalla funzione cosi non devo ripeterlo
     RifOrdini.WsOrdiniSoapClient O = new RifOrdini.WsOrdiniSoapClient();
 
@@ -40,6 +41,11 @@ public class ORDINI
     {      
         O.ORDINI_Update(chiave, datatransazione, qta, numeroordine);
     } 
+
+    public void Update()
+    {
+        O.Ordini_Update()
+    }
     
     public void Delete()
     {

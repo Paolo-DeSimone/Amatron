@@ -54,6 +54,7 @@
                         </div>
                     </div>
 
+
                     <div class="bbb_viewed_slider_container">
                         <div class="owl-carousel owl-theme bbb_viewed_slider">
 
@@ -812,6 +813,7 @@
                         <div class="bbb_viewed_nav_container">
                         </div>
                     </div>
+
 
                     <div class="bbb_viewed_slider_container">
                         <div class="owl-carousel owl-theme bbb_viewed_slider">

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,6 +19,8 @@ public class ORDINI
     public int qta;
     public string datatransazione;
     public int numeroordine;
+    public bool ACCETTAZIONE;
+
 
     //istanzio il web service fuori dalla funzione cosi non devo ripeterlo
     RifOrdini.WsOrdiniSoapClient O = new RifOrdini.WsOrdiniSoapClient();
@@ -31,6 +33,7 @@ public class ORDINI
     }
 
     //richiamo il webservice fornendo tutti i parametri necessari
+    
     public void Insert()
     {      
         O.ORDINI_Insert(chiavecorriere, chiaveprodotto, chiavecliente, datatransazione, qta, numeroordine);

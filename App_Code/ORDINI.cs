@@ -19,6 +19,7 @@ public class ORDINI
     public int qta;
     public string datatransazione;
     public int numeroordine;
+    public bool ACCETTAZIONE;
 
 
     //istanzio il web service fuori dalla funzione cosi non devo ripeterlo

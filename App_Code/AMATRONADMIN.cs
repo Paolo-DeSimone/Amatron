@@ -14,11 +14,22 @@ public class AMATRONADMIN
     public int PERC101_1000;
     public int PERC1001;
 
-    public string chiave;
-    public bool ACCETTAZIONE;
-    public string DATAEMISSIONE;
+    public string email;
+    public string PWD;
+    RifAmatron.WsAmatronSoapClient A = new RifAmatron.WsAmatronSoapClient();
+
     public AMATRONADMIN()
     {
 
     }
+
+    public DataTable Login()
+    {
+        DataTable dt = new DataTable();
+        A.AMATRON_Login(email, PWD);
+        return dt;
+    }
+
+
+
 }

@@ -37,7 +37,6 @@
                                         <SortedDescendingCellStyle BackColor="#D8D8F0" />
                                         <SortedDescendingHeaderStyle BackColor="#3E3277" />
                                     </asp:GridView>
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString2 %>" SelectCommand="SELECT [chiave], [QTARESA], [DESCRIZIONE], [chiaveORDINE], [DATAEMISSIONE], [DATARICHIESTA], [ACCETTAZIONE] FROM [RESI] ORDER BY [DATARICHIESTA], [chiaveORDINE]"></asp:SqlDataSource>
                                     <asp:SqlDataSource ID="sdsTabellaResi" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spRESI_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                 </div>
                                 <div class="col-lg-4">

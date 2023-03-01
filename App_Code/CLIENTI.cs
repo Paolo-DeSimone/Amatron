@@ -77,5 +77,10 @@ public class CLIENTI
         CL.CLIENTI_Update(chiave, EMAIL,PWD,PRIME,SCADENZAPRIME,COGNOME,NOME,INDIRIZZO,CITTA,PROVINCIA,CAP,TELEFONO);
 
     }
-        
+
+
+    //Metodo per modificare i dati del cliente
+    public void CLIENTI_Prime()
+    {
+        CL.CLIENTI_Prime(chiave);   }
 }

@@ -23,42 +23,15 @@ public class WsFiltra : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable FILTRA_Descrizione(string descrizione)
+    public DataTable FILTRA(string searchTerm)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
-        DB.query = "spFILTRA_Descrizione";
-        DB.cmd.Parameters.AddWithValue("descrizione", descrizione);
+        DB.query = "spFILTRA";
+        DB.cmd.Parameters.AddWithValue("searchTerm", searchTerm);
         dt = DB.EseguiSPRead();
-        dt.TableName = "Descrizione";
+        dt.TableName = "searchTerm";
         return dt;
     }
-    
-    [WebMethod]
-    public DataTable FILTRA_Titolo(string titolo)
-    {
-        DATABASE DB = new DATABASE();
-        DataTable dt = new DataTable();
-        DB.cmd.Parameters.Clear();
-        DB.query = "spFILTRA_Titolo";
-        DB.cmd.Parameters.AddWithValue("titolo", titolo);
-        dt = DB.EseguiSPRead();
-        dt.TableName = "Titolo";
-        return dt;
-    }
-    
-    [WebMethod]
-    public DataTable FILTRA_Categoria(string categoria)
-    {
-        DATABASE DB = new DATABASE();
-        DataTable dt = new DataTable();
-        DB.cmd.Parameters.Clear();
-        DB.query = "spFILTRA_Categoria";
-        DB.cmd.Parameters.AddWithValue("categoria", categoria);
-        dt = DB.EseguiSPRead();
-        dt.TableName = "Categoria";
-        return dt;
-    }
-
 }

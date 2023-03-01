@@ -19,7 +19,11 @@ public partial class GestioneConfig : System.Web.UI.Page
 
             //DT = AMATRONADMIN.RecuperaDatiConfig();
 
+
+            //DT = AMATRONADMIN.RecuperaDatiConfig();
+
             //DT = new AMATRONADMIN.RecuperaDatiConfig();
+
 
             //passo i dati dalla DT nei TextBox
             txtCostoPrime.Text = DT.Rows[0]["COSTOPRIME"].ToString();
@@ -43,7 +47,9 @@ public partial class GestioneConfig : System.Web.UI.Page
         A.PERC101_1000 = int.Parse(txtPerc101_1000.Text.Trim());
         A.PERC1001 = int.Parse(txtPerc1001.Text.Trim());
         //chiamo la funzione
+
         //A.UpdateCONFIG();
+
         //test js per avviso a schermo
 
         //ScriptManager.RegisterStartupScript(this,this.GetType(), )

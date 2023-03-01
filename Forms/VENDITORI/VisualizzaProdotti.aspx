@@ -6,7 +6,7 @@
     <link href="/assets/css/cssFrancescoVENDITORE.css" rel="stylesheet" />
 
     <script>
-        //Qui inseriremo lo script che ci permetter‡ di aprire una pagina prodotto del prodotto selezionato
+        //Qui inseriremo lo script che ci permetter√† di aprire una pagina prodotto del prodotto selezionato
         //quando andremo a cliccare sulla sua img/card/titolo
         
         }
@@ -19,8 +19,8 @@
             <div class="card-header coloreHeader">
                 <%-- Label nella quale andremo a prendere il nome del venditore che apre la pagina
                     Lo recupereremo da una session--%>
-                <h3><strong>
-                    <asp:Label ID="lblNomeVenditore" runat="server" Text="NOME VENDITORE"></asp:Label></strong></h3>
+                <h4><strong>
+                    <asp:Label ID="lblNomeVenditore" runat="server" Text="NOME VENDITORE"></asp:Label></strong></h4>
             </div>
             <%-- Body --%>
             <div class="card-body">
@@ -38,7 +38,7 @@
                         <asp:Button ID="btnModificaQtaProdotto" class="btn btnVenditoriPurple" runat="server" Text="Ricarica Prodotto" />
                     </div>
                 </div>
-                <%-- Questo imgContainer ci servir‡ per popolare tutti i prodotti che ha a disposizione un venditore
+                <%-- Questo imgContainer ci servir√† per popolare tutti i prodotti che ha a disposizione un venditore
                         popolando la row sottostante, abbiamo infati copiato le stesse div nel file .cs per ricreare il formato--%>
                 <div id="imgContainer" runat="server" class="row"></div>
                 <div class="row">
@@ -94,10 +94,15 @@
         align="center"
         Style="display: none">
 
-        <div>
-            <%--l'iframe Ë un contenitore che ha la possibilit‡ di richiamare una pagina--%>
-            <iframe style="width: 100%; height: 100%; overflow: hidden; display: inline-table; border-radius: 10px; border-color: #8e53c9 !important; border-width: 0px;" id="Iframe2" src="AggiungiProdotti.aspx" runat="server"></iframe>
+
+        <div class="popupBoxWrapper">
+
+        
+        <%--l'iframe √® un contenitore che ha la possibilit√† di richiamare una pagina--%>
+        <iframe style=" width: 560px; height: 500px; border-radius:10px;border-color:#8e53c9 !important;border-width:0px;" id="Iframe2" src="AggiungiProdotti.aspx"  runat="server"></iframe>
         </div>
+            
+
         <br />
 
 
@@ -130,7 +135,7 @@
         align="center"
         Style="display: none">
 
-        <%--l'iframe Ë un contenitore che ha la possibilit‡ di richiamare una pagina--%>
+        <%--l'iframe √® un contenitore che ha la possibilit√† di richiamare una pagina--%>
         <iframe style="width: 100%; height: 93%; aspect-ratio: 16/9; border-radius: 10px; border-color: #8e53c9 !important;" id="Iframe1" src="GestisciInventario.aspx" runat="server"></iframe>
         <br />
 

@@ -19,6 +19,7 @@ public class ORDINI
     public int qta;
     public string datatransazione;
     public int numeroordine;
+    public bool ACCETTAZIONE;
 
 
     //istanzio il web service fuori dalla funzione cosi non devo ripeterlo
@@ -41,7 +42,11 @@ public class ORDINI
     {      
         O.ORDINI_Update(chiave, datatransazione, qta, numeroordine);
     } 
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 8717ec76d85686995007f01a2708e005eadc8158
     public void Delete()
     {
         O.ORDINI_Delete(chiave);

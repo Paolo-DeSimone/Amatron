@@ -15,11 +15,25 @@ public class RESI
     public bool accettazione;
     public string datarichiesta;
     public string dataemissione;
- 
+
+    //istanzio il web service fuori dalla funzione cosi non devo ripeterlo
+    RifResi.WsResiSoapClient R = new RifResi.WsResiSoapClient();
+
     public RESI()
     {
         //
         // TODO: aggiungere qui la logica del costruttore
         //
+    }
+
+    //richiamo il webservice fornendo tutti i parametri necessari
+    public void Insert()
+    {
+        R.Resi_Insert(chiaveOrdine, descrizione, qtaresa, accettazione, datarichiesta, dataemissione);
+    }
+
+    public void Update()
+    {
+        R.Resi_Update(chiave, accettazione, dataemissione);
     }
 }

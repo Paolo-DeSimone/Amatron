@@ -42,11 +42,6 @@ public class ORDINI
         O.ORDINI_Update(chiave, datatransazione, qta, numeroordine);
     } 
 
-    public void Update()
-    {
-        O.Ordini_Update()
-    }
-    
     public void Delete()
     {
         O.ORDINI_Delete(chiave);

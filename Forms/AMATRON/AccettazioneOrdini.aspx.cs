@@ -18,7 +18,7 @@ public partial class Default2 : System.Web.UI.Page
     {
         //memorizzo la chiave del row selezionato
         ORDINI O= new ORDINI();    
-        O.chiave = grigliaOrdini.SelectedValue.ToString();
+        //O.chiave = grigliaOrdini.SelectedValue.ToString();
     }
 
 
@@ -27,7 +27,7 @@ public partial class Default2 : System.Web.UI.Page
     protected void btnInvia_Click(object sender, EventArgs e)
     {
         //controlli formali
-        ORDINI O = new ORDINI;
+        ORDINI O = new ORDINI();
         if (A.chiave != null)
         {
             //preparo i dati per l'invio nel db

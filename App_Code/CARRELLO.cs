@@ -10,77 +10,59 @@ public class CARRELLO
     public int chiaveCLIENTE;
     public int chiavePRODOTTO;
     public int QTA;
-    public DataTable DT = new DataTable();
+    public RifCarrello.WsCarrelloSoapClient C = new RifCarrello.WsCarrelloSoapClient();
+    DataTable DT = new DataTable();
 
     public CARRELLO()
     {
         
     }
 
+    //Metodo per cancellare i prodotti nel carrello
     public void DELETE()
     {
-        RifCarrello.WsCarrelloSoapClient C = new RifCarrello.WsCarrelloSoapClient();
         C.CARRELLO_Delete(chiave);
     }
 
+    //Metodo per inserire prodotti nel carrello
     public void INSERT()
-    {
-        DATABASE D = new DATABASE();
-        D.query = "spCARRELLO_Insert";
-        D.cmd.Parameters.AddWithValue("@chiaveCLIENTE", chiaveCLIENTE);
-        D.cmd.Parameters.AddWithValue("@chiavePRODOTTO", chiavePRODOTTO);
-        D.cmd.Parameters.AddWithValue("@QTA", QTA);
-        D.EseguiSPNonRead();
+    {   
+        C.CARRELLO_Insert(chiaveCLIENTE, chiavePRODOTTO, QTA);      
     }
 
-
+    //Metodo per selezionare tutto nel carrello
     public DataTable SELECTALL()
     {
-        DataTable DT = new DataTable();
-        DATABASE D = new DATABASE();
-        D.query = "spCARRELLO_SelectAll";
-        DT = D.EseguiSPRead();
+        
+        DT = C.CARRELLO_SelectAll();
         return DT;
     }
 
+    //Metodo che fa riferimento alla chiave cliente
     public DataTable SELECTBYCLIENTE()
     {
-        DATABASE D = new DATABASE();
-        D.query = "spCARRELLO_SelectByCliente";
-        D.cmd.Parameters.AddWithValue("@chiaveCLIENTE", chiaveCLIENTE);
-        DT = D.EseguiSPRead();
+        DT = C.CARRELLO_SelectByCliente(chiaveCLIENTE);
         return DT;
     }
 
+    //Metodo per selezionare tramite la chiave
     public DataTable SELECTBYKEY()
     {
-        DATABASE D = new DATABASE();
-        D.query = "spCARRELLO_SelectByKey";
-        D.cmd.Parameters.AddWithValue("@chiave", chiave);
-        DT = D.EseguiSPRead();
+        DT = C.CARRELLO_SelectByKey(chiave);
         return DT;
     }
 
+    //Metodo per selezionare il prodotto
     public DataTable SELECTBYPRODOTTO()
     {
-        DATABASE D = new DATABASE();
-        D.query = "spCARRELLO_SelectByProdotto";
-        D.cmd.Parameters.AddWithValue("@chiavePRODOTTO", chiavePRODOTTO);
-        DT = D.EseguiSPRead();
+        DT = C.CARRELLO_SelectByProdotto(chiavePRODOTTO);
         return DT;
     }
 
+    //Metodo per aggiornare il carrello
     public void UPDATE()
     {
-        DATABASE D = new DATABASE();
-        D.query = "spCARRELLO_Update";
-        D.cmd.Parameters.AddWithValue("@chiaveCLIENTE", chiaveCLIENTE);
-        D.cmd.Parameters.AddWithValue("@chiavePRODOTTO", chiavePRODOTTO);
-        D.cmd.Parameters.AddWithValue("@QTA", QTA);
-        D.EseguiSPNonRead();
+        C.CARRELLO_Update(chiave, QTA);
     }
-
-
-
 
 }

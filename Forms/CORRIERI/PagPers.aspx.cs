@@ -21,6 +21,7 @@ public partial class _Default : System.Web.UI.Page
             }
             string chiave = Session["chiave"].ToString();
             CORRIERI C = new CORRIERI();
+            C.chiave = int.Parse(chiave);
             DataTable DT = C.CORRIERI_SelectByKey();
         }
     }

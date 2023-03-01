@@ -12,8 +12,8 @@
             <div class="card-header coloreHeader">
                 <%-- Label nella quale andremo a prendere il nome del venditore che apre la pagina
                     Lo recupereremo da una session--%>
-                <h3><strong>
-                    <asp:Label ID="lblNomeVenditore" runat="server" Text="NOME VENDITORE"></asp:Label></strong></h3>
+                <h4><strong>
+                    <asp:Label ID="lblNomeVenditore" runat="server" Text="NOME VENDITORE"></asp:Label></strong></h4>
             </div>
             <%-- Body --%>
             <div class="card-body">
@@ -120,9 +120,13 @@
         CssClass="Popup"
         align="center"
         Style="display: none">
+
+        <div class="popupBoxWrapper">
+
         
         <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-        <iframe style="width: 100%; height: 100%; border-radius:10px;border-color:#8e53c9 !important;border-width:0px;" id="Iframe2" src="AggiungiProdotti.aspx"  runat="server"></iframe>
+        <iframe style=" width: 560px; height: 500px; border-radius:10px;border-color:#8e53c9 !important;border-width:0px;" id="Iframe2" src="AggiungiProdotti.aspx"  runat="server"></iframe>
+        </div>
             
         <br />
 

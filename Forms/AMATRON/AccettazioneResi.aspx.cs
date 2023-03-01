@@ -32,7 +32,8 @@ public partial class AccettazioneResi : System.Web.UI.Page
             //preparo i dati per l'invio nel db
             A.ACCETTAZIONE = bool.Parse(ddlAccettaRifiuta.SelectedValue.ToString());
             A.DATAEMISSIONE = DateTime.Now.ToString();
-            A.UpdateRESI();
+
+            //A.UpdateRESI();
 
             //invio una mail al cliente con l'esito della richiesta di reso
 

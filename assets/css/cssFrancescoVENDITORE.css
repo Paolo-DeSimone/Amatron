@@ -1,6 +1,5 @@
 ﻿.CardMargine {
     margin: 12vh auto;
-    width: 65vw;
 }
 
 .DescrizioneProdotto {
@@ -54,10 +53,11 @@
     padding-top: 10px;
     padding-left: 5px;
     padding-right: 5px;
-    width: 29%;
-    height: 48%;
-    border:0px;
+    width: 40vw;
+    height: 50vh;
+    border: 0px;
 }
+
 .PopupGestisciInventario {
     background-color: #FFFFFF;
     border-width: 3px;
@@ -69,6 +69,13 @@
     padding-right: 5px;
     width: 31%;
     height: 27%;
+}
+
+.popupBoxWrapper {
+    max-width: 550px;
+    width: 95%;
+    height:100%;
+
 }
 
 .Background {
@@ -100,10 +107,12 @@
     top: 27%;
     right: 36%;
 }
+
 .chiusura {
     background-color: #8e53c9;
-    border:none;
+    border: none;
 }
+
 .close-btn3 {
     position: fixed;
     top: 39%;

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="ProfiloModifica.aspx.cs" Inherits="Default2" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="ProfiloModifica.aspx.cs" Inherits="Default2" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -124,6 +124,4 @@
   </div>
 
 </asp:Content>
-=======
- 
-</asp:Content>
+

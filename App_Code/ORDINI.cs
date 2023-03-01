@@ -23,7 +23,7 @@ public class ORDINI
         // TODO: aggiungere qui la logica del costruttore
         //
     }
-
+  
     public void Insert()
     {      
         R.ORDINI_Insert(chiavecorriere, chiaveprodotto, chiavecliente, datatransazione, qta, numeroordine);

@@ -168,6 +168,8 @@
 
 
 
+
+
 /*CSS PAGINA PERSONALE CLIENTI*/
 
 .intestazione {
@@ -230,17 +232,12 @@
 
 
 
-   
-
-/*/////////////////////////////*/
-
-/*CSS ORDINI E POPUP*/
-
 .ordini {
     margin: 10px auto;
     width: 600px;
     height: 200px;
 }
+
 /*Css popup Inscrizione prime*/
 .Background {
     background-color: #212529;
@@ -262,9 +259,11 @@
 
 .inscriviti {
     font-size: 30px;
+
 }
 
 .larghezza {
     width: 30%;
     height: 30%;
 }
+

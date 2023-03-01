@@ -15,6 +15,15 @@
     <link href="/assets/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/amatron-icon.png" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/cssCLIENTI.css" rel="stylesheet" />
+    <link href="assets/css/carousel.css" rel="stylesheet" />
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <script>
@@ -97,7 +106,7 @@
                                 </ul>
                                 <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
                                 <button class="btn logoColor input-group-append" type="submit">Search</button>
-                            </div>                            
+                            </div>
 
                             <%--  SIGN UP E SIGN IN--%>
                             <ul class="nav navbar-nav navbar-right">

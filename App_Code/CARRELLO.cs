@@ -19,7 +19,8 @@ public class CARRELLO
 
     public void DELETE()
     {
-      
+        RifCarrello.WsCarrelloSoapClient C = new RifCarrello.WsCarrelloSoapClient();
+        C.CARRELLO_Delete(chiave);
     }
 
     public void INSERT()

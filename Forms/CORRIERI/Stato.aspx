@@ -23,13 +23,8 @@
                     <div class="card-body">
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-md-9" style="overflow: auto;">
-                                <asp:GridView ID="grdStato" runat="server" AutoGenerateColumns="False">
-                                    <Columns>
-                                        <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
-                                        <asp:BoundField DataField="ciao" HeaderText="ciao" SortExpression="ciao" />
-                                        <asp:BoundField DataField="fgdhtrt" HeaderText="xxdf" SortExpression="fgdhtrt" />
-                                    </Columns>
-                                </asp:GridView>
+                                <asp:GridView ID="grdSTATO" runat="server" DataSourceID="sdsSTATO"></asp:GridView>
+                                <asp:SqlDataSource ID="sdsSTATO" runat="server"></asp:SqlDataSource>
                             </div>
                             <div class="col-md-3 text-center">
 

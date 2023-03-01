@@ -23,13 +23,13 @@ public class WsConfig : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void CONFIG_Update(int chiave, int costroprime, int perc1_10, int perc11_100, int perc101_1000, int perc1001)
+    public void CONFIG_Update(int chiave, int costoprime, int perc1_10, int perc11_100, int perc101_1000, int perc1001)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spCONFIG_Update";
         DB.cmd.Parameters.AddWithValue("chiave", chiave);
-        DB.cmd.Parameters.AddWithValue("costroprime", costroprime);
+        DB.cmd.Parameters.AddWithValue("costoprime", costoprime);
         DB.cmd.Parameters.AddWithValue("perc1_10", perc1_10);
         DB.cmd.Parameters.AddWithValue("perc11_100", perc11_100);
         DB.cmd.Parameters.AddWithValue("perc101_1000", perc101_1000);

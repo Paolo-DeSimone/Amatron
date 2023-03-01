@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -31,6 +31,7 @@ public class ORDINI
     }
 
     //richiamo il webservice fornendo tutti i parametri necessari
+    
     public void Insert()
     {      
         O.ORDINI_Insert(chiavecorriere, chiaveprodotto, chiavecliente, datatransazione, qta, numeroordine);

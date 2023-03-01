@@ -35,6 +35,10 @@ public class ORDINI
     {      
         O.ORDINI_Insert(chiavecorriere, chiaveprodotto, chiavecliente, datatransazione, qta, numeroordine);
     } 
+     public void Update()
+    {      
+        O.ORDINI_Update(chiave, datatransazione, qta, numeroordine);
+    } 
     
     public void Delete()
     {

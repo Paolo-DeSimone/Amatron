@@ -23,7 +23,7 @@ public class WsProdotti : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void PRODOTTI_Insert(int chiaveVENDITORE, int chiaveCATEGORIA, string titolo, string descrizione, float prezzo, int qnt, string datacaricamento, int percamatron)
+    public void PRODOTTI_Insert(int chiaveVENDITORE, int chiaveCATEGORIA, string titolo, string descrizione, float prezzo, int qta, string datacaricamento, int percamatron)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
@@ -33,7 +33,7 @@ public class WsProdotti : System.Web.Services.WebService
         DB.cmd.Parameters.AddWithValue("titolo", titolo);
         DB.cmd.Parameters.AddWithValue("descrizione", descrizione);
         DB.cmd.Parameters.AddWithValue("prezzo", prezzo);
-        DB.cmd.Parameters.AddWithValue("qnt", qnt);
+        DB.cmd.Parameters.AddWithValue("qta", qta);
         DB.cmd.Parameters.AddWithValue("datacaricamento", datacaricamento);
         DB.cmd.Parameters.AddWithValue("percamatron", percamatron);
         DB.EseguiSPNonRead();

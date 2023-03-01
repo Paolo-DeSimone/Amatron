@@ -16,7 +16,7 @@ public class PRODOTTI
     public string titolo;
     public string descrizione;
     public float prezzo;
-    public int qnt;
+    public int qta;
     public string datacaricamento;
     public int permacatron;
 
@@ -33,12 +33,12 @@ public class PRODOTTI
     //richiamo il webservice fornendo tutti i parametri necessari
     public void Insert()
     {
-        P.PRODOTTI_Insert(chiaveVENDITORE, chiaveCATEGORIA, titolo, descrizione, prezzo, qnt, datacaricamento, permacatron);
+        P.PRODOTTI_Insert(chiaveVENDITORE, chiaveCATEGORIA, titolo, descrizione, prezzo, qta, datacaricamento, permacatron);
     }
 
     public void Update()
     {
-        P.PRODOTTI_Update(chiave, chiaveVENDITORE, chiaveCATEGORIA, titolo, descrizione, prezzo, qnt, datacaricamento, permacatron);
+        P.PRODOTTI_Update(chiave, chiaveVENDITORE, chiaveCATEGORIA, titolo, descrizione, prezzo, qta, datacaricamento, permacatron);
     } 
     
     public void Delete()

@@ -10,7 +10,7 @@
             <s:element minOccurs="0" maxOccurs="1" name="titolo" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="descrizione" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="prezzo" type="s:float" />
-            <s:element minOccurs="1" maxOccurs="1" name="qnt" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="qta" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="datacaricamento" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="percamatron" type="s:int" />
           </s:sequence>

@@ -15,6 +15,7 @@ public class ORDINI
     public int qta;
     public string datatransazione;
     public int numeroordine;
+
     RifOrdini.WsOrdiniSoapClient R = new RifOrdini.WsOrdiniSoapClient();
 
     public ORDINI()
@@ -28,6 +29,11 @@ public class ORDINI
     {      
         R.ORDINI_Insert(chiavecorriere, chiaveprodotto, chiavecliente, datatransazione, qta, numeroordine);
     } 
+
+    public void Update()
+    {
+        R.Ordini_Update()
+    }
     
     public void Delete()
     {

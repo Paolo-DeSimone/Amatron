@@ -13,11 +13,12 @@ public partial class GestioneConfig : System.Web.UI.Page
         //esegue questo solo al primo avvio della pagina per recuperare i dati dal db
         if (!IsPostBack)
         {
+            CONFIG C = new CONFIG();
             //carico i dati dalla tabella config e li inserisco nei TextBox di GestioneConfig -MATTEO
             DataTable DT = new DataTable();
             //chiamo la funzione RecuperaDatiConfig
 
-            //DT = AMATRONADMIN.RecuperaDatiConfig();
+            DT = C.SelectAll();
 
 
             //DT = AMATRONADMIN.RecuperaDatiConfig();
@@ -39,15 +40,16 @@ public partial class GestioneConfig : System.Web.UI.Page
     protected void btnAccetta_Click(object sender, EventArgs e)
     {
         //Preparo i dati
-        AMATRONADMIN A = new AMATRONADMIN();
+        CONFIG C = new CONFIG();
         //inserisco nelle variabili i valori nei TextBox e li converto in int
-        A.COSTOPRIME = int.Parse(txtCostoPrime.Text.Trim());
-        A.PERC1_10 = int.Parse(txtPerc1_10.Text.Trim());
-        A.PERC11_100 = int.Parse(txtPerc11_100.Text.Trim());
-        A.PERC101_1000 = int.Parse(txtPerc101_1000.Text.Trim());
-        A.PERC1001 = int.Parse(txtPerc1001.Text.Trim());
+        C.costoprime = int.Parse(txtCostoPrime.Text.Trim());
+        C.perc1_10 = int.Parse(txtPerc1_10.Text.Trim());
+        C.perc11_100 = int.Parse(txtPerc11_100.Text.Trim());
+        C.perc101_1000 = int.Parse(txtPerc101_1000.Text.Trim());
+        C.perc1001 = int.Parse(txtPerc1001.Text.Trim());
         //chiamo la funzione
 
+        C.Update();
         //A.UpdateCONFIG();
 
         //test js per avviso a schermo

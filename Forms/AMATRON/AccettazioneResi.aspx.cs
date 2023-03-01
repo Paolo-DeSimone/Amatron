@@ -18,6 +18,10 @@ public partial class AccettazioneResi : System.Web.UI.Page
 
     protected void grigliaResi_SelectedIndexChanged(object sender, EventArgs e)
     {
+        //memorizzo la chiave del row selezionato
+        //AMATRONADMIN A = new AMATRONADMIN();
+        //A.chiave = grigliaResi.SelectedValue.ToString();
+
         //controllo di aver selezionato una riga
         if (grigliaResi.SelectedValue == null)
         {
@@ -94,5 +98,4 @@ public partial class AccettazioneResi : System.Web.UI.Page
             return;
         }
     }
-
 }

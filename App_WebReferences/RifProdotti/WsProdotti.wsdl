@@ -37,6 +37,17 @@
       <s:element name="PRODOTTI_UpdateResponse">
         <s:complexType />
       </s:element>
+      <s:element name="PRODOTTI_Update_QTA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="qta" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PRODOTTI_Update_QTAResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="PRODOTTI_Delete">
         <s:complexType>
           <s:sequence>
@@ -209,6 +220,12 @@
   <wsdl:message name="PRODOTTI_UpdateSoapOut">
     <wsdl:part name="parameters" element="tns:PRODOTTI_UpdateResponse" />
   </wsdl:message>
+  <wsdl:message name="PRODOTTI_Update_QTASoapIn">
+    <wsdl:part name="parameters" element="tns:PRODOTTI_Update_QTA" />
+  </wsdl:message>
+  <wsdl:message name="PRODOTTI_Update_QTASoapOut">
+    <wsdl:part name="parameters" element="tns:PRODOTTI_Update_QTAResponse" />
+  </wsdl:message>
   <wsdl:message name="PRODOTTI_DeleteSoapIn">
     <wsdl:part name="parameters" element="tns:PRODOTTI_Delete" />
   </wsdl:message>
@@ -272,6 +289,10 @@
       <wsdl:input message="tns:PRODOTTI_UpdateSoapIn" />
       <wsdl:output message="tns:PRODOTTI_UpdateSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="PRODOTTI_Update_QTA">
+      <wsdl:input message="tns:PRODOTTI_Update_QTASoapIn" />
+      <wsdl:output message="tns:PRODOTTI_Update_QTASoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="PRODOTTI_Delete">
       <wsdl:input message="tns:PRODOTTI_DeleteSoapIn" />
       <wsdl:output message="tns:PRODOTTI_DeleteSoapOut" />
@@ -322,6 +343,15 @@
     </wsdl:operation>
     <wsdl:operation name="PRODOTTI_Update">
       <soap:operation soapAction="http://tempuri.org/PRODOTTI_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PRODOTTI_Update_QTA">
+      <soap:operation soapAction="http://tempuri.org/PRODOTTI_Update_QTA" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -424,6 +454,15 @@
     </wsdl:operation>
     <wsdl:operation name="PRODOTTI_Update">
       <soap12:operation soapAction="http://tempuri.org/PRODOTTI_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PRODOTTI_Update_QTA">
+      <soap12:operation soapAction="http://tempuri.org/PRODOTTI_Update_QTA" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

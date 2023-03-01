@@ -1,4 +1,75 @@
-﻿/*CSS ORDINI E POPUP*/
+﻿
+/*CSS PAGINA PERSONALE CLIENTI*/
+
+.intestazione {
+    color: #B469FF;
+    font-family: Arial;
+    margin-left: 37%;
+}
+
+.misura {
+    text-align: center;
+}
+
+.margini {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.sposta {
+    margin-left: 200px;
+}
+
+.largh {
+    width: inherit;
+}
+
+.btnSalva {
+    width: 50%;
+    align-items: stretch;
+    background-color: #B469FF;
+    border: #B469FF;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+.hrdivider {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.hrdivider1 {
+    background-color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 10px;
+    position: absolute;
+    top: -0.7em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btnApri {
+    width: 200px;
+    margin-left: 85px;
+}
+
+
+
+
+.ordini {
+    margin: 10px auto;
+    width: 600px;
+    height: 200px;
+}
+
+
+
+
+
+
+
+/*CSS ORDINI E POPUP*/
 
 
 .ordini {

@@ -15,19 +15,19 @@ public partial class Default2 : System.Web.UI.Page
     public void Page_Load(object sender, EventArgs e)
     {
         string EMAIL = Session["EMAIL"].ToString();
-        string chiaveCLIENTE = Session["chiaveCLIENTE"].ToString();
 
-        if (Session["chiave"] == null)
+        if (Session["chiaveUSR"] == null)
         {
             return;
         }
 
 
-        string chiaveCLIENTI = Session["chiave"].ToString();
+        string chiaveCLIENTE = Session["chiaveUSR"].ToString();
 
-        if (string.IsNullOrEmpty(chiaveCLIENTI))
+
+        if (string.IsNullOrEmpty(chiaveCLIENTE))
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Nessun elemento selezionato');", true);
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Nessun elemento modificato');", true);
             return;
         }
 
@@ -35,9 +35,8 @@ public partial class Default2 : System.Web.UI.Page
         {
 
             CLIENTI CL = new CLIENTI();
-            CL.chiave = int.Parse(chiaveCLIENTI);
+            CL.chiave = int.Parse(chiaveCLIENTE);
             CL.SELECTBYKEY();
-
             txtEMAIL.Text = CL.DT.Rows[0]["EMAIL"].ToString();
             txtCognome.Text = CL.DT.Rows[0]["COGNOME"].ToString();
             txtNome.Text = CL.DT.Rows[0]["NOME"].ToString();
@@ -57,6 +56,8 @@ public partial class Default2 : System.Web.UI.Page
 
         CLIENTI CL = new CLIENTI();
         CL.chiave = int.Parse((Session["chiave"].ToString()));
+        CL.PRIME = bool.Parse(Session["PRIME"].ToString());
+        CL.SCADENZAPRIME = (Session["SCADENZAPRIME"].ToString());
         CL.EMAIL = txtEMAIL.Text;
         CL.COGNOME = txtCognome.Text;
         CL.NOME = txtNome.Text;
@@ -68,15 +69,7 @@ public partial class Default2 : System.Web.UI.Page
 
         CL.UPDATE();
 
-        //Serve per svuotare i campi una volta confermato
-
-        txtEMAIL.Text = "";
-        txtCognome.Text = "";
-        txtNome.Text = "";
-        txtIndirizzo.Text = "";
-        txtCitta.Text = "";
-        txtProvincia.Text = "";
-        txtCAP.Text = "";
-        txtTelefono.Text = "";     
+        ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Dati modificati con successo')", true);
+    
     }
 }

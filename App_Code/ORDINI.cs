@@ -28,13 +28,13 @@ public class ORDINI
     public void Insert()
     {      
         R.ORDINI_Insert(chiavecorriere, chiaveprodotto, chiavecliente, datatransazione, qta, numeroordine);
-    } 
+    }
 
     public void Update()
     {
         R.Ordini_Update()
     }
-    
+
     public void Delete()
     {
         R.ORDINI_Delete(chiave);

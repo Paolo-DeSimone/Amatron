@@ -5,15 +5,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <%--section--%>
     <section class="h-100 h-custom">
-        <div class="container text-align-center py-5 h-100">
-            <%--APPUNTO: text-align-center al posto di text-center--%>
+        <div class="container text-align-center py-5 h-100">         
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-lg-12 col-xl-12">
                     <%--card--%>
                     <div class="card rounded-3">
                         <div class="card-body p-4 p-md-5">
                             <h3 class="text-center mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Accettazione Resi</h3>
-                            <%--Tabella provvisoria per sistemare l'html, da sostituire con GridView--%>
+                          
                             <div class="row align-items-center">
                                 <div class="col-lg-8">
                                     <asp:GridView ID="grigliaResi" runat="server" AutoGenerateColumns="False" DataKeyNames="chiave" DataSourceID="SqlDataSource1" BackColor="White" BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" GridLines="Horizontal" OnSelectedIndexChanged="grigliaResi_SelectedIndexChanged">

@@ -37,4 +37,3 @@ public partial class Default2 : System.Web.UI.Page
         Response.Redirect("/Pagine/PagineContenuto/Operator/Dipendenti.aspx");
     }
 }
-}

@@ -18,22 +18,20 @@ public partial class Default2 : System.Web.UI.Page
     {
         //memorizzo la chiave del row selezionato
         ORDINI O= new ORDINI();    
-        O.chiave = grigliaOrdini.SelectedValue.ToString();
+        O.chiave = int.Parse(grigliaOrdini.SelectedValue.ToString());
     }
-
-
 
 
     protected void btnInvia_Click(object sender, EventArgs e)
     {
         //controlli formali
-        ORDINI O = new ORDINI;
-        if (A.chiave != null)
+        ORDINI O = new ORDINI();
+        if (O.chiave.ToString() != null)
         {
             //preparo i dati per l'invio nel db
-            O.ACCETTAZIONE = bool.Parse(ddlAccettaRifiuta.SelectedValue.ToString());
-            O.DATAEMISSIONE = DateTime.Now.ToString();
-            //O.Ordini_Update();
+            //O.ACCETTAZIONE = bool.Parse(ddlAccettaRifiuta.SelectedValue.ToString());
+            //O.DATAEMISSIONE = DateTime.Now.ToString();
+            O.Update();
 
             //invio una mail al cliente con la conferma dell'ordine
 

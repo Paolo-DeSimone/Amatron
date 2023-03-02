@@ -34,7 +34,12 @@
 
                         <asp:Label ID="lblTitolo" runat="server" Text="Prodotti esauriti:"></asp:Label>
                         <br />
-                        <asp:DropDownList ID="ddlProdotti" Class="btn btn-offwhite btn-outline-secondary" runat="server" Style="width: 160px;"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlProdotti" Class="btn btn-offwhite btn-outline-secondary" runat="server" Style="width: 160px;" DataSourceID="SdsProdotti" DataTextField="TITOLO" DataValueField="chiave"></asp:DropDownList>
+                        <asp:SqlDataSource ID="SdsProdotti" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="SELECT [chiave], [TITOLO] FROM [PRODOTTI] WHERE ([QTA] = 0) ORDER BY [TITOLO]">
+                            <SelectParameters>
+                                <asp:Parameter DefaultValue="0" Name="QTA" Type="Int32" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
                     </div>
                     <%-- Script che permette di accettare solo numeri nella textbox --%>
                     <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -52,11 +57,10 @@
                 <ajaxToolkit:FilteredTextBoxExtender ID="txtQuantita_FilteredTextBoxExtender" runat="server"
                     Enabled="True" TargetControlID="txtQuantita" FilterType="Numbers"></ajaxToolkit:FilteredTextBoxExtender>
                 <div class="col-md-12 mt-4">
-                    <asp:Button ID="btnAggiungi" Class="btn btn-block btn-purple" runat="server" Text="Aggiungi" />
+                    <asp:Button ID="btnAggiungi" Class="btn btn-block btn-purple" runat="server" Text="Aggiungi" OnClick="btnAggiungi_Click" />
                 </div>
             </div>
             </div>
-        </div>
     </form>
 </body>
 </html>

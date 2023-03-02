@@ -34,7 +34,7 @@ public class WsResi : System.Web.Services.WebService
         DB.cmd.Parameters.AddWithValue("DATARICHIESTA", datarichiesta);
         DB.cmd.Parameters.AddWithValue("DATAEMISSIONE", dataemissione);
         DB.EseguiSPNonRead();
-        DB.query = "spResi_Insert";
+        DB.query = "spRESI_Insert";
     }
 
     [WebMethod]
@@ -45,7 +45,7 @@ public class WsResi : System.Web.Services.WebService
         DB.cmd.Parameters.AddWithValue("chiave", chiave);     
         DB.cmd.Parameters.AddWithValue("ACCETTAZIONE", accettazione);     
         DB.cmd.Parameters.AddWithValue("DATAEMISSIONE", dataemissione);
-        DB.query = "spResi_Update";
+        DB.query = "spRESI_Update";
         DB.EseguiSPNonRead();
     }
 
@@ -55,7 +55,7 @@ public class WsResi : System.Web.Services.WebService
         DataTable dt = new DataTable();
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
-        DB.query = "spResi_SelectAll";
+        DB.query = "spRESI_SelectAll";
         dt.TableName = "SelectByAll";
         return DB.EseguiSPRead();
     }
@@ -66,7 +66,7 @@ public class WsResi : System.Web.Services.WebService
         DataTable dt = new DataTable();
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
-        DB.query = "spResi_SelectAll_DDL";
+        DB.query = "spRESI_SelectAll_DDL";
         dt.TableName = "SelectAllDDL";
         return DB.EseguiSPRead();
     }

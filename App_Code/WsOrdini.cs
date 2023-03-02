@@ -36,6 +36,18 @@ public class WsOrdini : System.Web.Services.WebService
         DB.EseguiSPNonRead();
         DB.query = "spORDINI_Insert";
     }
+    
+    [WebMethod]
+    public void ORDINI_Update(int chiave, string datatransazione, int qta, int numeroordine)
+    {
+        DATABASE DB = new DATABASE();       
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
+        DB.cmd.Parameters.AddWithValue("DATATRANSAZIONE", datatransazione);
+        DB.cmd.Parameters.AddWithValue("QTA", qta);
+        DB.cmd.Parameters.AddWithValue("NUMEROORDINE", numeroordine);
+        DB.EseguiSPNonRead();
+        DB.query = "spORDINI_Update";
+    }
 
     [WebMethod]
     public DataTable ORDINI_SelectAll()

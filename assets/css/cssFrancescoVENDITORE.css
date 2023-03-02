@@ -1,6 +1,5 @@
-﻿.CardMargine {
+.CardMargine {
     margin: 12vh auto;
-    width: 65vw;
 }
 
 .DescrizioneProdotto {
@@ -47,17 +46,20 @@
 
 .Popup {
     background-color: #8e53c9;
-    border-radius: 15px;
-    border-width: 3px;
+    border-radius: 10px;
+    border-width: 1px;
     border-style: solid;
     border-color: none;
-    padding-top: 10px;
-    padding-left: 5px;
+    padding-top:3px;
+    padding-left: 0px;
     padding-right: 5px;
-    width: 29%;
-    height: 48%;
+
+    width: 600px;
+    height: 510px;
     border:0px;
+
 }
+
 .PopupGestisciInventario {
     background-color: #FFFFFF;
     border-width: 3px;
@@ -67,8 +69,15 @@
     padding-top: 10px;
     padding-left: 5px;
     padding-right: 5px;
-    width: 31%;
-    height: 27%;
+    width: 350px;
+    height: 320px;
+}
+
+.popupBoxWrapper {
+    max-width: 550px;
+    width: 95%;
+    height:100%;
+
 }
 
 .Background {
@@ -97,15 +106,25 @@
 
 .close-btn2 {
     position: fixed;
-    top: 27%;
-    right: 36%;
+    top: 10%;
+    right: 28%;
 }
+
 .chiusura {
     background-color: #8e53c9;
-    border:none;
+    border: none;
 }
+
 .close-btn3 {
     position: fixed;
-    top: 39%;
-    right: 35%;
+    top: 25%;
+    right: 37%;
+}
+
+
+.popupBoxWrapper {
+    max-width: 545px;
+    width: 95%;
+    height: 95%;
+    max-height: 600px;
 }

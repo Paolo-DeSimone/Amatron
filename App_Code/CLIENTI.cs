@@ -20,99 +20,67 @@ public class CLIENTI
     public string PROVINCIA;
     public string CAP;
     public string TELEFONO;
+    RifClienti.WsClientiSoapClient CL = new RifClienti.WsClientiSoapClient();
     public DataTable DT = new DataTable();
+
 
     public CLIENTI()
     {
        
     }
 
+    //Metodo per inserire un nuovo cliente
     public void INSERT()
     {
-        DATABASE D = new DATABASE();
-        D.query = "spCLIENTI_Insert";
-        D.cmd.Parameters.AddWithValue("@EMAIL",EMAIL);
-        D.cmd.Parameters.AddWithValue("@PWD", PWD);
-        D.cmd.Parameters.AddWithValue("@PRIME", PRIME);
-        D.cmd.Parameters.AddWithValue("@SCADENZAPRIME", SCADENZAPRIME);
-        D.cmd.Parameters.AddWithValue("@COGNOME", COGNOME);
-        D.cmd.Parameters.AddWithValue("@NOME", NOME);
-        D.cmd.Parameters.AddWithValue("@EMAIL", EMAIL);
-        D.cmd.Parameters.AddWithValue("@INDIRIZZO", INDIRIZZO);
-        D.cmd.Parameters.AddWithValue("@CITTA", CITTA);
-        D.cmd.Parameters.AddWithValue("@PROVINCIA", PROVINCIA);
-        D.cmd.Parameters.AddWithValue("@CAP", CAP);
-        D.cmd.Parameters.AddWithValue("@TELEFONO", TELEFONO);
-        D.EseguiSPNonRead();
+     
+        CL.CLIENTI_Insert(EMAIL,PWD,PRIME,SCADENZAPRIME,COGNOME,NOME,INDIRIZZO,CITTA,PROVINCIA,CAP,TELEFONO);
+       
     }
 
-
+    //Metodo per verificare se le credenziali del cliente sono corrette
     public DataTable LOGIN()
     {
-
-        DATABASE D = new DATABASE();
-        DataTable DT = new DataTable();
-        D.query = "spCLIENTI_Login";
-        D.cmd.Parameters.AddWithValue("@EMAIL", EMAIL);
-        D.cmd.Parameters.AddWithValue("@PWD", PWD);
-        DT = D.EseguiSPRead();
+        DT = CL.CLIENTI_Login(EMAIL, PWD);
         return DT;
 
     }
 
-
+    //Metodo per selezionare tutto 
     public DataTable SELECTALL()
     {
-        DataTable DT = new DataTable();
-        DATABASE D = new DATABASE();
-        D.query = "spCLIENTI_SelectAll";
-        DT = D.EseguiSPRead();
+        DT = CL.CLIENTI_SelectAll();
         return DT;
 
     }
 
 
+    //Metodo per prendere i dati di un cliente dal DB
     public DataTable SELECTALL_DDL()
     {
-        DataTable DT = new DataTable();
-        DATABASE D = new DATABASE();
-        D.query = "spCLIENTI_SelectAll_DDL";
-        D.cmd.Parameters.AddWithValue("@NOME", NOME);
-        D.cmd.Parameters.AddWithValue("@COGNOME", COGNOME);
-        DT = D.EseguiSPRead();
+        DT = CL.CLIENTI_SelectAll_DDL();
         return DT;
 
     }
 
+
+    //Metodo per selezionare tramite la chiave
     public DataTable SELECTBYKEY()
     {
-        DATABASE D = new DATABASE();
-        D.query = "spCLIENTI_SelectByKey";
-        D.cmd.Parameters.AddWithValue("@chiave", chiave);
-        DT = D.EseguiSPRead();
+        DT = CL.CLIENTI_SelectByKey(chiave);
         return DT;
-
     }
 
+
+    //Metodo per modificare i dati del cliente
     public void UPDATE()
     {
-        DATABASE D = new DATABASE();
-        D.query = "spCLIENTI_Update";
-        D.cmd.Parameters.AddWithValue("@chiave", chiave);
-        D.cmd.Parameters.AddWithValue("@EMAIL", EMAIL);
-        D.cmd.Parameters.AddWithValue("@PWD", PWD);
-        D.cmd.Parameters.AddWithValue("@PRIME", PRIME);
-        D.cmd.Parameters.AddWithValue("@SCADENZAPRIME", SCADENZAPRIME);
-        D.cmd.Parameters.AddWithValue("@COGNOME", COGNOME);
-        D.cmd.Parameters.AddWithValue("@NOME", NOME);
-        D.cmd.Parameters.AddWithValue("@EMAIL", EMAIL);
-        D.cmd.Parameters.AddWithValue("@INDIRIZZO", INDIRIZZO);
-        D.cmd.Parameters.AddWithValue("@CITTA", CITTA);
-        D.cmd.Parameters.AddWithValue("@PROVINCIA", PROVINCIA);
-        D.cmd.Parameters.AddWithValue("@CAP", CAP);
-        D.cmd.Parameters.AddWithValue("@TELEFONO", TELEFONO);
-        D.EseguiSPNonRead();
+        CL.CLIENTI_Update(chiave, EMAIL,PWD,PRIME,SCADENZAPRIME,COGNOME,NOME,INDIRIZZO,CITTA,PROVINCIA,CAP,TELEFONO);
 
     }
-        
+
+
+    //Metodo per modificare i dati del cliente
+    public void CLIENTI_Prime()
+    {
+        CL.CLIENTI_Prime(chiave);   }
 }

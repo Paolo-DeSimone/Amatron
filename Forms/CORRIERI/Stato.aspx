@@ -22,19 +22,25 @@
                     </div>
                     <div class="card-body">
                         <div class="row" style="margin-top: 10px;">
-                            <div class="col-md-9" style="overflow: auto;">
-                                <asp:GridView ID="grdStato" runat="server" AutoGenerateColumns="False">
+                            <div class="col-md-9" style="overflow: auto; top: -1px; left: 0px; height: 94px;">
+                                <asp:GridView ID="grdSTATO" runat="server" DataSourceID="sdsSTATO" AutoGenerateColumns="False" DataKeyNames="chiaveSPEDIZIONE">
                                     <Columns>
-                                        <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
-                                        <asp:BoundField DataField="ciao" HeaderText="ciao" SortExpression="ciao" />
-                                        <asp:BoundField DataField="fgdhtrt" HeaderText="xxdf" SortExpression="fgdhtrt" />
+                                       
+                                        <asp:BoundField DataField="chiaveSPEDIZIONE" HeaderText="chiaveSPEDIZIONE" ReadOnly="True" SortExpression="chiaveSPEDIZIONE" />
+                                        <asp:BoundField DataField="STATO_SPEDIZIONE" HeaderText="STATO_SPEDIZIONE" SortExpression="STATO_SPEDIZIONE" />
+                                        <asp:BoundField DataField="DATA_ORA_SPEDIZIONE" HeaderText="DATA_ORA_SPEDIZIONE" SortExpression="DATA_ORA_SPEDIZIONE" />
+                                        <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATATRANSAZIONE" SortExpression="DATATRANSAZIONE" />
+                                        <asp:BoundField DataField="NUMERO_ORDINE" HeaderText="NUMERO_ORDINE" SortExpression="NUMERO_ORDINE" />
+                                        <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
+                                        <asp:CheckBoxField DataField="chiaveSPEDIZIONE" runat="server"  />
                                     </Columns>
                                 </asp:GridView>
+                                <asp:SqlDataSource ID="sdsSTATO" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSEDIZIONI_ORDINI_Select" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                             </div>
                             <div class="col-md-3 text-center">
 
                                     <%-- pulsante --%>
-                                    <asp:Button ID="btnStato" runat="server" class="btn btn-primary" Text="Stato Ordine" />
+                                    <asp:Button ID="btnStato" runat="server" class="btn btn-primary" Text="Aggiorna Stato" />
 
                                   
                                 </div>

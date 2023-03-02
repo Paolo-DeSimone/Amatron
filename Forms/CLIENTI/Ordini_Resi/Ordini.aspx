@@ -1,26 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Ordini.aspx.cs" Inherits="Ordini" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="Ordini.aspx.cs" Inherits="Ordini" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>  
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Ordini</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <link href="../../../assets/css/style.css" rel="stylesheet" />
-    <link href="../../../assets/css/cssCLIENTI.css" rel="stylesheet" />
-</head>
-<body>
-    <form id="form1" runat="server">
-
-        <div class="container">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+            <div class="container">
              <!-- CARD CON PRODOTTO -->
             <div class="card mb-3 ordini"">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="assets/images/pc.jpg" class="img-fluid rounded-start" alt="..." />
+                        <img src="/assets/images/pc.jpg" class="img-fluid rounded-start" alt="..." />
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -41,7 +30,7 @@
             <div class="card mb-3 ordini">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="assets/images/tabletjpg.jpg" class="img-fluid rounded-start" alt="..." />
+                        <img src="/assets/images/tabletjpg.jpg" class="img-fluid rounded-start" alt="..." />
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -61,7 +50,7 @@
             <div class="card mb-3 ordini" >
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="assets/images/telefono.jpg" class="img-fluid rounded-start" alt="..." />
+                        <img src="/assets/images/telefono.jpg" class="img-fluid rounded-start" alt="..." />
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -81,7 +70,7 @@
             <div class="card mb-3 ordini">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="assets/images/amatron-icon.png" class="img-fluid rounded-start" alt="..." />
+                        <img src="/assets/images/amatron-icon.png" class="img-fluid rounded-start" alt="..." />
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -101,7 +90,7 @@
             <div class="card mb-3 ordini" >
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="assets/images/amatron-icon.png" class="img-fluid rounded-start" alt="..." />
+                        <img src="/assets/images/amatron-icon.png" class="img-fluid rounded-start" alt="..." />
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -121,7 +110,7 @@
             <div class="card mb-3 ordini">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="assets/images/chiusura.png" class="img-fluid rounded-start" alt="..." />
+                        <img src="/assets/images/chiusura.png" class="img-fluid rounded-start" alt="..." />
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -141,7 +130,7 @@
             <div class="card mb-3 ordini" >
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="assets/images/amatron-icon.png" class="img-fluid rounded-start" alt="..." />
+                        <img src="/assets/images/amatron-icon.png" class="img-fluid rounded-start" alt="..." />
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -410,6 +399,228 @@
 
     <%-- contenuto del popup --%>
     <asp:Panel
+        ID="Panel12b"
+        runat="server"
+        CssClass="PopupReso"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe13b" src="ResoClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button26b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+        <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel1b"
+        runat="server"
+        CssClass="Popup"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe2b" src="RecensioneClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button15b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+    <%-- chiamata del popup --%>
+    <cc1:ModalPopupExtender ID="ModalPopupExtender1b" runat="server" PopupControlID="Reso" TargetControlID="btnReso"
+        CancelControlID="Button4" BackgroundCssClass="Background">
+    </cc1:ModalPopupExtender>
+
+    <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel2b"
+        runat="server"
+        CssClass="PopupReso"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe3b" src="ResoClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button16b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+        <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel3b"
+        runat="server"
+        CssClass="Popup"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe4b" src="RecensioneClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button17b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+    <%-- chiamata del popup --%>
+    <cc1:ModalPopupExtender ID="ModalPopupExtender2b" runat="server" PopupControlID="Reso" TargetControlID="btnReso"
+        CancelControlID="Button4" BackgroundCssClass="Background">
+    </cc1:ModalPopupExtender>
+
+    <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel4b"
+        runat="server"
+        CssClass="PopupReso"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe5b" src="ResoClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button18b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+        <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel5b"
+        runat="server"
+        CssClass="Popup"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe6b" src="RecensioneClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button19b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+    <%-- chiamata del popup --%>
+    <cc1:ModalPopupExtender ID="ModalPopupExtender3b" runat="server" PopupControlID="Reso" TargetControlID="btnReso"
+        CancelControlID="Button4" BackgroundCssClass="Background">
+    </cc1:ModalPopupExtender>
+
+    <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel6b"
+        runat="server"
+        CssClass="PopupReso"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe7b" src="ResoClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button20b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+        <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel7b"
+        runat="server"
+        CssClass="Popup"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe8b" src="RecensioneClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button21b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+    <%-- chiamata del popup --%>
+    <cc1:ModalPopupExtender ID="ModalPopupExtender4b" runat="server" PopupControlID="Reso" TargetControlID="btnReso"
+        CancelControlID="Button4" BackgroundCssClass="Background">
+    </cc1:ModalPopupExtender>
+
+    <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel8b"
+        runat="server"
+        CssClass="PopupReso"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe9b" src="ResoClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button22b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+        <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel9b"
+        runat="server"
+        CssClass="Popup"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe10b" src="RecensioneClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button23b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+    <%-- chiamata del popup --%>
+    <cc1:ModalPopupExtender ID="ModalPopupExtender5b" runat="server" PopupControlID="Reso" TargetControlID="btnReso"
+        CancelControlID="Button4" BackgroundCssClass="Background">
+    </cc1:ModalPopupExtender>
+
+    <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel10b"
+        runat="server"
+        CssClass="PopupReso"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe11b" src="ResoClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button24b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+        <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panel11b"
+        runat="server"
+        CssClass="Popup"
+        align="center"
+        Style="display: none">
+        <%--ci pensa lo script manager a renderlo visibile--%>
+
+        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+        <iframe style="width: 500px; height: 500px;" id="Iframe12b" src="RecensioneClientiPopup.aspx" runat="server"></iframe>
+        <br />
+        <asp:Button ID="Button25b" runat="server" Text="Close" />
+        <%--chiude il popup--%>
+    </asp:Panel>
+
+    <%-- chiamata del popup --%>
+    <cc1:ModalPopupExtender ID="ModalPopupExtender6b" runat="server" PopupControlID="Reso" TargetControlID="btnReso"
+        CancelControlID="Button4" BackgroundCssClass="Background">
+    </cc1:ModalPopupExtender>
+
+    <%-- contenuto del popup --%>
+    <asp:Panel
         ID="Panel12"
         runat="server"
         CssClass="PopupReso"
@@ -423,6 +634,5 @@
         <asp:Button ID="Button26" runat="server" Text="Close" />
         <%--chiude il popup--%>
     </asp:Panel>
-    </form>
-</body>
-</html>
+</asp:Content>
+

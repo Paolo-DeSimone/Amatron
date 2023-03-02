@@ -1,7 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.SqlClient;
+using System.Data;
+using System.Data.Sql;
+
 
 /// <summary>
 /// Descrizione di riepilogo per ORDINI
@@ -15,7 +19,11 @@ public class ORDINI
     public int qta;
     public string datatransazione;
     public int numeroordine;
-    RifOrdini.WsOrdiniSoapClient R = new RifOrdini.WsOrdiniSoapClient();
+    public bool ACCETTAZIONE;
+
+
+    //istanzio il web service fuori dalla funzione cosi non devo ripeterlo
+    RifOrdini.WsOrdiniSoapClient O = new RifOrdini.WsOrdiniSoapClient();
 
     public ORDINI()
     {
@@ -24,38 +32,56 @@ public class ORDINI
         //
     }
 
+    //richiamo il webservice fornendo tutti i parametri necessari
+
     public void Insert()
     {      
-        R.ORDINI_Insert(chiavecorriere, chiaveprodotto, chiavecliente, datatransazione, qta, numeroordine);
+
+        O.ORDINI_Insert(chiavecorriere, chiaveprodotto, chiavecliente, datatransazione, qta, numeroordine);
+    }
+ 
+     public void Update()
+    {      
+        O.ORDINI_Update(chiave, datatransazione, qta, numeroordine);
     } 
     
     public void Delete()
     {
-        R.ORDINI_Delete(chiave);
-    } 
-    
-    public void SelectAll()
-    {
-        R.ORDINI_SelectAll();
-    }
-    
-    public void SelectByKey()
-    {
-        R.ORDINI_SelectByKey(chiave);
+        O.ORDINI_Delete(chiave);
     }
 
-    public void SelectByCorriere()
+    public DataTable SelectAll()
     {
-        R.ORDINI_SelectByCorriere(chiavecorriere);
-    } 
-    
-    public void SelectByProdotto()
-    {
-        R.ORDINI_SelectByProdotto(chiaveprodotto);
+        DataTable dt = new DataTable();
+        O.ORDINI_SelectAll();
+        return dt;
     }
-    
-    public void SelectByCliente()
+
+    public DataTable SelectByKey()
     {
-        R.ORDINI_SelectByCliente(chiavecliente);
+        DataTable dt = new DataTable();
+        O.ORDINI_SelectByKey(chiave);
+        return dt;
+    }
+
+    public DataTable SelectByCorriere()
+    {
+        DataTable dt = new DataTable();
+        O.ORDINI_SelectByCorriere(chiavecorriere);
+        return dt;
+    }
+
+    public DataTable SelectByProdotto()
+    {
+        DataTable dt = new DataTable();
+        O.ORDINI_SelectByProdotto(chiaveprodotto);
+        return dt;
+    }
+
+    public DataTable SelectByCliente()
+    {
+        DataTable dt = new DataTable();
+        O.ORDINI_SelectByCliente(chiavecliente);
+        return dt;
     }
 }

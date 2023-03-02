@@ -82,7 +82,7 @@
     width:  25%;  
     border-radius: 20vh;
     margin-left: 72%;
-    background-color: #212529;
+    background-color: white;
     border-radius: 8px;
     box-shadow: 0px 0px 10px 0px #333;
     padding: 20px;
@@ -106,7 +106,7 @@
 .popupLogin p {
     margin-top: 40px;
     font-size: 22px;
-    color: #E6E6E6;
+    color: black;
 }
 
 .popupLogin .txtUSR {

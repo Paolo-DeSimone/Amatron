@@ -14,6 +14,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
 
     }
 
+
     [WebMethod]
     public static string Accedi(string USR, string PWD)
     {
@@ -32,4 +33,6 @@ public partial class AMATRON : System.Web.UI.MasterPage
             return "Utente non registrato";
         }
     }
+
+
 }

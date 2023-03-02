@@ -40,6 +40,7 @@ public class CLIENTI
     //Metodo per verificare se le credenziali del cliente sono corrette
     public DataTable LOGIN()
     {
+        DataTable DT = new DataTable();
         DT = CL.CLIENTI_Login(EMAIL, PWD);
         return DT;
 
@@ -48,6 +49,7 @@ public class CLIENTI
     //Metodo per selezionare tutto 
     public DataTable SELECTALL()
     {
+        DataTable DT=new DataTable();
         DT = CL.CLIENTI_SelectAll();
         return DT;
 
@@ -57,6 +59,7 @@ public class CLIENTI
     //Metodo per prendere i dati di un cliente dal DB
     public DataTable SELECTALL_DDL()
     {
+        DataTable DT=new DataTable();
         DT = CL.CLIENTI_SelectAll_DDL();
         return DT;
 
@@ -66,6 +69,7 @@ public class CLIENTI
     //Metodo per selezionare tramite la chiave
     public DataTable SELECTBYKEY()
     {
+        DataTable DT = new DataTable();
         DT = CL.CLIENTI_SelectByKey(chiave);
         return DT;
     }
@@ -82,5 +86,6 @@ public class CLIENTI
     //Metodo per modificare i dati del cliente
     public void CLIENTI_Prime()
     {
-        CL.CLIENTI_Prime(chiave);   }
+        CL.CLIENTI_Prime(chiave);
+    }
 }

@@ -4,25 +4,33 @@
     margin-right: 20px;
 }
 
-.carrello :hover {
+.carrello {
     color: #B469FF;
+}
+
+.carrello :hover {
+    color: white;
     cursor: pointer;
 }
 
-.nav-item :hover {
+.nav-link {
     color: #B469FF;
 }
 
-.nav-link :hover {
-
-    color: #B469FF;   
+.nav-link:hover {
+    color: white;   
 }
 
+
 .carrello {
-    color: grey;
+    /*color: #B469FF;*/
     width: 40px;
     height: 40px;
     margin-right: 20px;
+}
+
+.carrello:hover {
+    color:white;
 }
 
 .searchbar {
@@ -30,17 +38,6 @@
     color: #B469FF;
     margin: 0 auto;
 }
-
-    .searchbar :hover {
-        border-width: 3px;
-        border-color: #B469FF;
-    }
-
-    .searchbar :focus {
-        border-width: 3px;
-        border-color: #B469FF;
-    }
-
 
 .logoColor {
     border-color: #B469FF;
@@ -85,7 +82,7 @@
     width:  25%;  
     border-radius: 20vh;
     margin-left: 72%;
-    background-color: #212529;
+    background-color: white;
     border-radius: 8px;
     box-shadow: 0px 0px 10px 0px #333;
     padding: 20px;
@@ -99,7 +96,7 @@
 
 .popupLogin {
     position: absolute;
-    z-index: 1;
+    z-index: 3;
 }
 
 .popupLogin .chiusuraLogin {
@@ -109,7 +106,7 @@
 .popupLogin p {
     margin-top: 40px;
     font-size: 22px;
-    color: #E6E6E6;
+    color: black;
 }
 
 .popupLogin .txtUSR {
@@ -233,7 +230,7 @@
 .PopupReso {
     background-color: #212529;
     filter: alpha(opacity=30);
-    opacity: 0.8;
+    /*opacity: 0.8;*/
 }
 
 /*Css popup Inscrizione prime*/
@@ -251,8 +248,16 @@
 }
 
 .colore {
-    background-color: #212529;
+    background-color: white;
 
+}
+
+.card-text {
+    color:black;
+}
+
+.card-title {
+    color: black;
 }
 
 .inscriviti {
@@ -264,3 +269,15 @@
     height: 30%;
 }
 
+.w3-sidebar {
+    z-index: 2;
+}
+
+.mItem {
+    color: #B469FF;
+    padding-right: 10px;
+}
+
+.mItem:hover {
+    color: white;
+}

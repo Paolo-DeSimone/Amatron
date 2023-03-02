@@ -13,76 +13,108 @@ public partial class Default2 : System.Web.UI.Page
 
     }
 
-    protected void btnRegistra_Click(object sender, EventArgs e)
+    protected void btnRegistraCliente_Click(object sender, EventArgs e)
     {
-        if (txtEmail.Text == "" || txtPWD.Text == "" || txtIndirizzo.Text == "" || txtProvincia.Text == "" || txtCap.Text == "" || txtTelefono.Text == "" || txtCitta.Text == "")
+        if (txtEmailCliente.Text == "" || txtPWDCliente.Text == "" || txtIndirizzoCliente.Text == "" || txtProvinciaCliente.Text == "" || txtCapCliente.Text == "" || txtTelefonoCliente.Text == "" ||
+           txtCittaCliente.Text == "" || txtNomeCliente.Text == "" || txtCognomeCliente.Text == "")
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Riempire tutti i campi richiesti e riprovare');", true);
+            return;
+
+        }
+        else
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "Complimenti!", "alert('Registrato con successo!');", true);
+        }
+        
+        // Crea un'istanza della classe Clienti
+        CLIENTI C = new CLIENTI();
+        // Recupera i valori delle textbox
+        C.EMAIL = txtEmailCliente.Text;
+        C.PWD = txtPWDCliente.Text;
+        C.COGNOME = txtCognomeCliente.Text;
+        C.NOME = txtNomeCliente.Text;
+        C.INDIRIZZO = txtIndirizzoCliente.Text;
+        C.PROVINCIA = txtProvinciaCliente.Text;
+        C.CAP = txtCapCliente.Text;
+        C.TELEFONO = txtTelefonoCliente.Text;
+        C.CITTA= txtCittaCliente.Text;
+        C.PRIME = false;
+        C.SCADENZAPRIME = "";
+       
+        // Chiama il metodo Insert per inserire i dati nel database
+        C.INSERT();
+    }
+
+    protected void btnRegistraVenditore_Click(object sender, EventArgs e)
+    {
+        if (txtEmailVenditore.Text == "" || txtPWDVenditore.Text == "" || txtCittaVenditore.Text == "" || txtRagioneSocialeVenditore.Text == "" || txtIndirizzoVenditore.Text == "" || txtProvinciaVenditore.Text == "" ||
+          txtCapVenditore.Text == "" || txtPivaVenditore.Text == "")
         {
             ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Riempire tutti i campi richiesti e riprovare');", true);
             return;
         }
-        if (liCliente.Enabled == true)
+        else
         {
-            if (txtNome.Text == "" || txtCognome.Text == "")
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Riempire tutti i campi richiesti e riprovare');", true);
-                return;
-            }
-            // Crea un'istanza della classe Clienti
-            CLIENTI C = new CLIENTI();
-            // Recupera i valori delle textbox
-            C.EMAIL = txtEmail.Text;
-            C.PWD = txtPWD.Text;
-            C.COGNOME = txtCognome.Text;
-            C.NOME = txtNome.Text;
-            C.INDIRIZZO = txtIndirizzo.Text;
-            C.PROVINCIA = txtProvincia.Text;
-            C.CAP = txtCap.Text;
-            C.TELEFONO = txtTelefono.Text;
-            // Chiama il metodo Insert per inserire i dati nel database
-            C.INSERT();
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Registrato con successo!');", true);
+        }
+        // Crea un'istanza della classe venditori
+        VENDITORI V = new VENDITORI();
+        // Recupera i valori delle textbox
+        V.email = txtEmailVenditore.Text;
+        V.PWD = txtPWDVenditore.Text;
+        V.citta = txtCittaVenditore.Text;
+        V.ragionesociale = txtRagioneSocialeVenditore.Text;
+        V.indirizzo = txtIndirizzoVenditore.Text;
+        V.provincia = txtProvinciaVenditore.Text;
+        V.CAP = txtCapVenditore.Text;
+        V.piva = txtPivaVenditore.Text;
+        // Chiama il metodo Insert per inserire i dati nel database
+        V.Insert();
+    }
+
+    protected void btnRegistraCorriere_Click(object sender, EventArgs e)
+    {
+        if (txtEmailCorriere.Text == "" || txtPWDCorriere.Text == "" || txtRagioneSocialeCorriere.Text == "" || txtIndirizzoCorriere.Text == "" || txtProvinciaCorriere.Text == "" || txtCapCorriere.Text == "" ||
+         txtTelefonoCorriere.Text == "" || txtPivaCorriere.Text == "")
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Riempire tutti i campi richiesti e riprovare');", true);
+            return;
         }
         else
         {
-            if (txtPartitaIVA.Text == "" || txtRagioneSociale.Text == "")
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Riempire tutti i campi richiesti e riprovare');", true);
-                return;
-            }
-            if (liVenditore.Enabled == true)
-            {
-                // Crea un'istanza della classe venditori
-                VENDITORI V = new VENDITORI();
-                // Recupera i valori delle textbox
-                V.email = txtEmail.Text;
-                V.PWD = txtPWD.Text;
-                V.citta = txtCitta.Text;
-                V.ragionesociale = txtRagioneSociale.Text;
-                V.indirizzo = txtIndirizzo.Text;
-                V.provincia = txtProvincia.Text;
-                V.CAP = txtCap.Text;
-                V.piva = txtPartitaIVA.Text;
-                // Chiama il metodo Insert per inserire i dati nel database
-                V.Insert();
-            }
-            else if (liCorriere.Enabled == true)
-            {
-                CORRIERI COR = new CORRIERI();
-                // Recupera i valori delle textbox
-                COR.email = txtEmail.Text;
-                COR.PWD = txtPWD.Text;
-                COR.ragionesociale = txtRagioneSociale.Text;
-                COR.indirizzo = txtIndirizzo.Text;
-                COR.provincia = txtProvincia.Text;
-                COR.CAP = txtCap.Text;
-                COR.telefono = txtTelefono.Text;
-                COR.piva = txtPartitaIVA.Text;
-                // Chiama il metodo Insert per inserire i dati nel database
-                COR.CORRIERI_Insert();
-            }
-
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Registrato con successo!');", true);
         }
-
+        CORRIERI COR = new CORRIERI();
+        //  Recupera i valori delle textbox
+        COR.email = txtEmailCorriere.Text;
+        COR.PWD = txtPWDCorriere.Text;
+        COR.ragionesociale = txtRagioneSocialeCorriere.Text;
+        COR.indirizzo = txtIndirizzoCorriere.Text;
+        COR.provincia = txtProvinciaCorriere.Text;
+        COR.CAP = txtCapCorriere.Text;
+        COR.telefono = txtTelefonoCorriere.Text;
+        COR.piva = txtPivaCorriere.Text;
+        COR.citta= txtCittaCorriere.Text;
+        // Chiama il metodo Insert per inserire i dati nel database
+        COR.CORRIERI_Insert();
     }
 
-
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

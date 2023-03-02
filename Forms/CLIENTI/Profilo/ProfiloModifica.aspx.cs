@@ -15,6 +15,11 @@ public partial class Default2 : System.Web.UI.Page
     public void Page_Load(object sender, EventArgs e)
     {
 
+        if (Session["EMAIL"] == null)
+        {
+            return;
+        }
+
         string EMAIL = Session["EMAIL"].ToString();
 
         if (Session["chiaveUSR"] == null)

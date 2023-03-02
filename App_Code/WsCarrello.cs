@@ -104,4 +104,18 @@ public class WsCarrello : System.Web.Services.WebService
         dt.TableName = "SelectByProdotto";
         return dt;
     }
+
+    [WebMethod]
+    public DataTable CARRELLO_SelectLastItemInCart(int chiaveCLIENTE)
+    {
+        DATABASE DB = new DATABASE();
+        DataTable dt = new DataTable();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spv_JoinCARRELLO_PRODOTTI_SelectLastItemInCart";
+        DB.cmd.Parameters.AddWithValue("chiaveCLIENTE", chiaveCLIENTE);
+        dt = DB.EseguiSPRead();
+        dt.TableName = "SelectLastItemInCart";
+        return dt;
+    }
+
 }

@@ -38,7 +38,9 @@ public partial class AMATRON : System.Web.UI.MasterPage
     int sessionChiaveCliente = 1;
     int sessionChiaveProdotto = 1;
     int sessionQTA = 1;
-    public void AggiungiAlCarrello(int sessionChiaveCliente, int sessionChiaveProdotto, int sessionQTA)
+
+    [WebMethod]
+    public static void AggiungiAlCarrello(int sessionChiaveCliente, int sessionChiaveProdotto, int sessionQTA)
     {
         CARRELLO cart = new CARRELLO();
         cart.chiaveCLIENTE = sessionChiaveCliente;
@@ -46,8 +48,13 @@ public partial class AMATRON : System.Web.UI.MasterPage
         cart.QTA = sessionQTA;
         cart.INSERT();
 
-        // QUI CI VA UN SELECT LAST ITEM IN CHAT E SOTTO CI METTO DELLE VARIABILI AL POSTO DELL'HARD CODE E MI SERVE LA VITA PER QUESTO
-        
+        DataTable DT = new DataTable();
+        DT = cart.SelectLastItemInCart(sessionChiaveCliente);
+        string imgProdotto = DT.Rows[0]["imgProdotto"].ToString();
+        string TITOLO = DT.Rows[0]["TITOLO"].ToString();
+        string DESCRIZIONE = DT.Rows[0]["DESCRIZIONE"].ToString();
+        string QTA = DT.Rows[0]["QTA"].ToString();
+        string PREZZO = DT.Rows[0]["PREZZO"].ToString();
 
         carrelloProdotti.InnerHtml +=
             "<div class=\"card mx-2 my-2\">" +
@@ -65,10 +72,10 @@ public partial class AMATRON : System.Web.UI.MasterPage
             "<%--TITOLO E DESCRIZIONE--%>" +
             " <div class=\"col-sm-5\">" +
             "<p style=\"margin-top: 16px;\"></p>" +
-            "<asp:Literal ID=\"ltlTitoloProdottoCarrello\" runat=\"server\"></asp:Literal>" +
+            "<asp:Literal Text ="+TITOLO+ " ID =\"ltlTitoloProdottoCarrello\" runat=\"server\"></asp:Literal>" +
             "" +
             "<p style=\"margin: 4px;\"></p>" +
-            "<asp:Literal ID=\"lblDescrizioneProdottoCarrello\" runat=\"server\"></asp:Literal>" +
+            "<asp:Literal Text ="+DESCRIZIONE+" ID=\"lblDescrizioneProdottoCarrello\" runat=\"server\"></asp:Literal>" +
             "</div>" +
             "" +
             "<%--QUANTITà E PREZZO PRODOTTO--%>" +
@@ -77,7 +84,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
             "<asp:DropDownList ID=\"ddlQuantità\" runat=\"server\" class=\"w-50\"></asp:DropDownList>" +
             "<p style=\"margin: 0px;\"></p>" +
             "<asp:Label ID=\"lblPrezzo\" runat=\"server\" Text=\"Prezzo\"></asp:Label>" +
-            "<asp:Literal ID=\"ltlPrezzo\" runat=\"server\"></asp:Literal>"+
+            "<asp:Literal ID=\"ltlPrezzo\" runat=\"server\"></asp:Literal>" +
             "</div>" +
             "</div>" +
             "</div>" +

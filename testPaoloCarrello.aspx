@@ -21,9 +21,9 @@
     </script>
 
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    <%--STRATEGIA PER RENDERE IL CARRELLO DINAMICO, stabilita con Kevin:
+
+<%--STRATEGIA PER RENDERE IL CARRELLO DINAMICO, stabilita con Kevin:
 
         Premessa:è necessario fare una vista che prenda i dati delle tabelle CARRELLO e PRODOTTI LA FACCIO IO, PAOLO.
 
@@ -45,10 +45,7 @@
        ES: carrelloProdotti.InnerHtml += "<div '"+VariabileTitoloProdotto+"'>"
      */--%>
 
-
-    <asp:Button ID="testAddItem" runat="server" Text="Aggiunti prodotto in carrello" onclick="AggiungiAlCarrello()"/>
-
-
-
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <button ID="testAddItem" onclick="AggiungiAlCarrello()">salva</button>
 </asp:Content>
 

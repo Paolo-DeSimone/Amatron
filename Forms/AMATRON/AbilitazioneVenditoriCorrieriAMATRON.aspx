@@ -3,71 +3,74 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <link href="../../assets/css/AMATRON.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <asp:ScriptManager ID="ScriptManager1" runat="server">
-                </asp:ScriptManager>
     <div class="container mt-5">
-        <center><h2>Abilitazione Venditori e Corrieri</h2></center>
+        <center>
+            <h2>Abilitazione Venditori e Corrieri</h2>
+        </center>
         <div class="row mt-5">
             <div class="col-6">
-                <%--bottone per aprire popup abilita venditori--%>
                 <div class="card">
                     <div class="card-body backgroundCard">
                         <center>
-                        <asp:Button ID="btnAbilitaVenditori" class="text-center button" runat="server"  Text="Abilita venditori" />
+                            <h4>Abilita venditori</h4>
+                            <%--griglia dei venditori--%>
+                            <asp:GridView ID="grigliaVenditori" runat="server" DataSourceID="sdsVenditori" AutoGenerateColumns="False" DataKeyNames="chiave" OnSelectedIndexChanged="grigliaVenditori_SelectedIndexChanged">
+                                <Columns>
+                                    <asp:CommandField ShowSelectButton="True" ButtonType="Button" ControlStyle-CssClass="button"></asp:CommandField>
+                                    <asp:BoundField DataField="chiave" HeaderText="chiave" ReadOnly="True" Visible="False" SortExpression="chiave"></asp:BoundField>
+                                    <asp:BoundField DataField="RAGIONESOCIALE" HeaderText="RAGIONESOCIALE" SortExpression="RAGIONESOCIALE"></asp:BoundField>
+                                    <asp:BoundField DataField="PIVA" HeaderText="PIVA" SortExpression="PIVA" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="INDIRIZZO" HeaderText="INDIRIZZO" SortExpression="INDIRIZZO" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="PROVINCIA" HeaderText="PROVINCIA" SortExpression="PROVINCIA" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="CITTA" HeaderText="CITTA" SortExpression="CITTA" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="CAP" HeaderText="CAP" SortExpression="CAP" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="TELEFONO" HeaderText="TELEFONO" SortExpression="TELEFONO" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="EMAIL" HeaderText="EMAIL" SortExpression="EMAIL"></asp:BoundField>
+                                    <asp:BoundField DataField="PWD" HeaderText="PWD" SortExpression="PWD" Visible="False"></asp:BoundField>
+                                    <asp:CheckBoxField DataField="ABILITATO" HeaderText="ABILITATO" SortExpression="ABILITATO"></asp:CheckBoxField>
+                                </Columns>
+                            </asp:GridView>
+                            <asp:SqlDataSource runat="server" ID="sdsVenditori" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spVENDITORI_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                            <br />
+                            <%--pulsante per abilitare--%>
+                            <asp:Button ID="btnAbilitaVenditori" CssClass="button" runat="server" Text="Abilita" OnClick="btnAbilitaVenditori_Click" />
                         </center>
-                <%-- chiamata del popup --%>
-                <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnAbilitaVenditori"
-                    CancelControlID="btnChiudiPopup" BackgroundCssClass="BackgroundPopup">
-                </cc1:ModalPopupExtender>
-
-                <%-- contenuto del popup --%>
-                <asp:Panel
-                    ID="Panl1"
-                    runat="server"
-                    CssClass="Popup"
-                    align="center"
-                    Style="display: none">
-
-                    <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-                    <iframe style="width: 98%; height: 500px;" id="Iframe2" src="/Amatron/PopupAbilitaVenditoriAMATRON.aspx" runat="server"></iframe>
-                    <br />
-                    <asp:Button ID="btnChiudiPopup" CssClass="button" Style="height: 30px;" runat="server" Text="Chiudi"  />
-                    <%--chiude il popup--%>
-                </asp:Panel>
-                       
-
-
                     </div>
                 </div>
             </div>
+
+
             <div class="col-6">
-                 <%--bottone per aprire popup abilita corrieri--%>
                 <div class="card">
                     <div class="card-body backgroundCard">
                         <center>
-                        <asp:Button ID="btnAbilitaCorrieri" class="text-center button" runat="server"  Text="Abilita corrieri" />
+                            <h4>Abilita corrieri</h4>
+                            <%--griglia dei corrieri--%>
+                            <asp:GridView ID="grigliaCorrieri" runat="server" AutoGenerateColumns="False" DataKeyNames="chiave" DataSourceID="sdsCorrieri" OnSelectedIndexChanged="grigliaCorrieri_SelectedIndexChanged">
+                                <Columns>
+                                    <asp:CommandField ShowSelectButton="true" ButtonType="Button" ControlStyle-CssClass="button"></asp:CommandField>
+                                    <asp:BoundField DataField="chiave" HeaderText="chiave" ReadOnly="True" InsertVisible="False" SortExpression="chiave" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="RAGIONESOCIALE" HeaderText="RAGIONESOCIALE" SortExpression="RAGIONESOCIALE"></asp:BoundField>
+                                    <asp:BoundField DataField="EMAIL" HeaderText="EMAIL" SortExpression="EMAIL"></asp:BoundField>
+                                    <asp:BoundField DataField="PWD" HeaderText="PWD" SortExpression="PWD" Visible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="COSTOCORRIERE" HeaderText="COSTOCORRIERE" Visible="False" SortExpression="COSTOCORRIERE"></asp:BoundField>
+                                    <asp:CheckBoxField DataField="ABILITATO" HeaderText="ABILITATO" SortExpression="ABILITATO"></asp:CheckBoxField>
+                                    <asp:BoundField DataField="PIVA" HeaderText="PIVA" Visible="False" SortExpression="PIVA"></asp:BoundField>
+                                    <asp:BoundField DataField="INDIRIZZO" HeaderText="INDIRIZZO" Visible="False" SortExpression="INDIRIZZO"></asp:BoundField>
+                                    <asp:BoundField DataField="CITTA" HeaderText="CITTA" Visible="False" SortExpression="CITTA"></asp:BoundField>
+                                    <asp:BoundField DataField="PROVINCIA" HeaderText="PROVINCIA" Visible="False" SortExpression="PROVINCIA"></asp:BoundField>
+                                    <asp:BoundField DataField="CAP" HeaderText="CAP" Visible="False" SortExpression="CAP"></asp:BoundField>
+                                    <asp:BoundField DataField="TELEFONO" HeaderText="TELEFONO" Visible="False" SortExpression="TELEFONO"></asp:BoundField>
+                                </Columns>
+                            </asp:GridView>
+                            <asp:SqlDataSource runat="server" ID="sdsCorrieri" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCORRIERI_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                            <br />
+                            <%--pulsante per abilitare--%>
+                            <asp:Button ID="btnAbilitaCorrieri" CssClass="button" runat="server" Text="Abilita" OnClick="btnAbilitaCorrieri_Click" />
                         </center>
-                <%-- chiamata del popup --%>
-                <cc1:ModalPopupExtender ID="ModalPopupExtender1" runat="server" PopupControlID="Panl1" TargetControlID="btnAbilitaCorrieri"
-                    CancelControlID="btnChiudiPopup" BackgroundCssClass="BackgroundPopup">
-                </cc1:ModalPopupExtender>
-
-                <%-- contenuto del popup --%>
-                <asp:Panel
-                    ID="Panel1"
-                    runat="server"
-                    CssClass="Popup"
-                    align="center"
-                    Style="display: none">
-
-                    <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-                    <iframe style="width: 98%; height: 500px;" id="Iframe1" src="/Amatron/PopupAbilitaCorrieriAMATRON.aspx" runat="server"></iframe>
-                    <br />
-                    <asp:Button ID="Button2" CssClass="button" Style="height: 30px;" runat="server" Text="Chiudi"  />
-                    <%--chiude il popup--%>
-                </asp:Panel>
                     </div>
                 </div>
             </div>

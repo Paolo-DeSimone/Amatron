@@ -7,33 +7,54 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 
+
 public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
-        {
-            if (Session["chiave"] == null)
-            {
-                //serve solo per accedere alla pagina senza session durante i test
-                return;
-
-            }
-            string chiave = Session["chiave"].ToString();
-            CORRIERI C = new CORRIERI();
-            DataTable DT = C.CORRIERI_SelectByKey();
-        }
+        //string chiave = Session["chiave"].ToString();
+        //riga di prova per testing
+        int chiave = 1;
+        CORRIERI C = new CORRIERI();
+        C.chiave = chiave;
+        DataTable DT = C.CORRIERI_SelectByKey();
+        txtRAGIONESOCIALE.Text = DT.Rows[0]["RAGIONESOCIALE"].ToString();
+        txtPIVA.Text = DT.Rows[0]["PIVA"].ToString();
+        txtCOSTO.Text = DT.Rows[0]["COSTOCORRIERE"].ToString();
+        txtINDIRIZZO.Text = DT.Rows[0]["INDIRIZZO"].ToString();
+        txtCAP.Text = DT.Rows[0]["CAP"].ToString();
+        txtPROVINCIA.Text = DT.Rows[0]["PROVINCIA"].ToString();
+        txtCITTA.Text = DT.Rows[0]["CITTA"].ToString();
+        txtEMAIL.Text = DT.Rows[0]["EMAIL"].ToString();
+        txtNUMERO.Text = DT.Rows[0]["TELEFONO"].ToString();
     }
 
     protected void btnModifica_Click(object sender, EventArgs e)
     {
-        string chiave = Session["chiave"].ToString();
+        //string chiave = Session["chiave"].ToString();
+        //riga di prova per testing
+        int chiave = 1;
         CORRIERI C = new CORRIERI();
+        C.chiave = chiave;
+        C.ragionesociale = txtRAGIONESOCIALE.Text.Trim();
+        C.piva = txtPIVA.Text.Trim();
+        C.costocorriere = float.Parse(txtCOSTO.Text.Trim());
+        C.indirizzo = txtINDIRIZZO.Text.Trim();
+        C.CAP = txtCAP.Text.Trim(); 
+        C.provincia = txtPROVINCIA.Text.Trim(); 
+        C.citta= txtCITTA.Text.Trim();
+        C.email = txtEMAIL.Text.Trim();
+        C.telefono = txtNUMERO.Text.Trim();
+        //C.abilitato = Convert.ToBoolean(Session["Abilitato"]);
+        //riga da utilizzare solo in fase di testing
+        C.abilitato = true;
+        //C.PWD = Session["PWD"].ToString();
+        //riga da utilizzare solo in fase di testing
+        C.PWD = "luceombra";
         C.CORRIERI_Update();
+        //alert di prova per verifica funzionamento sp
+        ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Modifica effettuata!');", true);
     }
-
-
-
     protected void btnModPWD_Click(object sender, EventArgs e)
     {
         //controllo per stabilire se la password vecchia è uguale a quella nuova

@@ -10,9 +10,6 @@ public partial class Venditori_GestisciInventario : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
-
-
         string chiaveprodotto = ddlProdotti.SelectedValue;
         PRODOTTI P = new PRODOTTI();
        //P.chiave = int.Parse(chiaveprodotto);

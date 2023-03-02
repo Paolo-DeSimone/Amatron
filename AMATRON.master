@@ -170,8 +170,8 @@
                     <%--row prodotto e relativa card--%>
                     <div class="card mx-2 my-2">
                         <div class="card-body ">
-                            <div class="row" style="margin: 5px; padding: 5px; /*border: double; */">
-                                <%--IMMMAGINE PRODOTTO--%>
+                            <div class="row" style="margin: 5px; padding: 5px;">
+                                <%--IMMAGINE PRODOTTO--%>
                                 <div class="col-sm-4">
                                     <a href="Forms/AMATRON/AccettazioneOrdini.aspx" class="w3-bar-item w3-button">
                                         <img src="/assets/images/amatron-icon.png" class="w-75 h-75" />

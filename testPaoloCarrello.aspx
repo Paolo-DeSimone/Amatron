@@ -1,12 +1,31 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="testPaoloCarrello.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+
+    <script>
+        function AggiungiAlCarrello() {
+            $.ajax({
+                type: "POST",
+                url: "/AMATRON.master.cs/AggiungiAlCarrello",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (msg) {
+                    /*alert(msg.d);*/
+                    $('#txt1').val(msg.d);
+                },
+                error: function (req, status, err) {
+                    alert(req, status, err);
+                }
+            });
+        }
+    </script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <%--STRATEGIA PER RENDERE IL CARRELLO DINAMICO, stabilita con Kevin:
 
-        Premessa:è necessario fare una vista che prenda i dati delle tabelle CARRELLO e PRODOTTI.
+        Premessa:è necessario fare una vista che prenda i dati delle tabelle CARRELLO e PRODOTTI LA FACCIO IO, PAOLO.
 
         Quando uno clicca un qualsiasi bottone per aggiunere al carrello, scatta un onlick che attiva una funzione AJAX nella pagina del bottone.
 
@@ -27,13 +46,7 @@
      */--%>
 
 
-    <script>
-
-        function getProductKey() {
-
-        }
-
-    </script>
+    <asp:Button ID="testAddItem" runat="server" Text="Aggiunti prodotto in carrello" onclick="AggiungiAlCarrello()"/>
 
 
 

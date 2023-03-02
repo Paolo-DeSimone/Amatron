@@ -16,8 +16,8 @@
     transform: translateX(-50%);
 }
 
-.lblInBasso{
-    margin-bottom:-10px;
+.lblInBasso {
+    margin-bottom: -10px;
 }
 
 .scrollo::-webkit-scrollbar {
@@ -28,8 +28,9 @@
 .scrollo {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
-    
+}
+
 .lblCORRIERI {
-    float:left;
+    float: left;
 }
 

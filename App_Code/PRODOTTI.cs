@@ -39,8 +39,12 @@ public class PRODOTTI
     public void Update()
     {
         P.PRODOTTI_Update(chiave, chiaveVENDITORE, chiaveCATEGORIA, titolo, descrizione, prezzo, qta, datacaricamento, permacatron);
-    } 
-    
+    }
+    public void Update_QTA()
+    {
+        P.PRODOTTI_Update_QTA(chiave, qta);
+    }
+
     public void Delete()
     {
         P.PRODOTTI_Delete(chiave);

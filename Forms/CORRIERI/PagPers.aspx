@@ -24,6 +24,10 @@
                                 <asp:Label ID="Label2" class="form-label" runat="server" Text="Partita IVA:"></asp:Label>
                                 <asp:TextBox ID="txtPIVA" class="form-control form-control-sm"  runat="server" MaxLength="11"></asp:TextBox>
                             </div>
+                            <div class="col-2">
+                                <asp:Label ID="lblCOSTO" class="form-label" runat="server" Text="Costo:"></asp:Label>
+                                <asp:TextBox ID="txtCOSTO" class="form-control form-control-sm"  runat="server" MaxLength="11"></asp:TextBox>
+                            </div>
                         </div>
                         <div class="row text-center">
                             <div class="col">
@@ -48,7 +52,8 @@
                         <br />
                         <div style="position: relative;">
                             <hr class="hrdivider">
-                            <span class="hrdivider1">Recapiti                            </span>
+                            <span class="hrdivider1">Recapiti
+                            </span>
                         </div>
                         <br />
                         <div class="row text-center">

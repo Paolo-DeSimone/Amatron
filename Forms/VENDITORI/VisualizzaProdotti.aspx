@@ -158,7 +158,7 @@
         Style="display: none">
 
         <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-        <iframe style="width: 100%; height: 93%; aspect-ratio: 16/9; border-radius: 10px; border-color: #8e53c9 !important;" id="Iframe1" src="GestisciInventario.aspx" runat="server"></iframe>
+        <iframe style="width: 300px; height: 300px; aspect-ratio: 16/9; border-radius: 10px; border-color: #8e53c9 !important;" id="Iframe1" src="GestisciInventario.aspx" runat="server"></iframe>
         <br />
 
 

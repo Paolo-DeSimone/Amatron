@@ -47,16 +47,16 @@
 
 .Popup {
     background-color: #8e53c9;
-    border-radius: 15px;
-    border-width: 3px;
+    border-radius: 10px;
+    border-width: 1px;
     border-style: solid;
     border-color: none;
-    padding-top: 10px;
-    padding-left: 5px;
+    padding-top:3px;
+    padding-left: 0px;
     padding-right: 5px;
 
-    width: 560px;
-    height: 500px;
+    width: 600px;
+    height: 510px;
     border:0px;
 
 }
@@ -70,8 +70,8 @@
     padding-top: 10px;
     padding-left: 5px;
     padding-right: 5px;
-    width: 31%;
-    height: 27%;
+    width: 350px;
+    height: 320px;
 }
 
 .popupBoxWrapper {
@@ -107,8 +107,8 @@
 
 .close-btn2 {
     position: fixed;
-    top: 27%;
-    right: 36%;
+    top: 10%;
+    right: 28%;
 }
 
 .chiusura {
@@ -118,14 +118,14 @@
 
 .close-btn3 {
     position: fixed;
-    top: 39%;
-    right: 35%;
+    top: 25%;
+    right: 37%;
 }
 
 
 .popupBoxWrapper {
     max-width: 545px;
-    width:95%;
-    height: 95% ;
+    width: 95%;
+    height: 95%;
     max-height: 600px;
-
+}

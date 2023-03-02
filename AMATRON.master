@@ -171,10 +171,11 @@
                     </div>
                     <br />
                     <asp:Label class="cont testo" ID="Label2" runat="server" Text="Email"></asp:Label>
-                    <input type="text" class="txtUSR" id="txtUSR" placeholder="Email" name="uid" />
+                    <%--<asp:TextBox ID="txtEMAIL" runat="server"></asp:TextBox>--%>
+                    <input type="text" class="txtUSR" id="txtEMAIL" placeholder="Email" name="uid" runat="server" />
                     <br />
                     <asp:Label class="cont testo" ID="Label1" runat="server" Text="Password"></asp:Label>
-                    <input type="password" class="txtPWD" id="txtPWD" name="upass" placeholder="Password" />
+                    <input type="password" class="txtPWD" id="txtPWD" name="upass" placeholder="Password" runat="server"/>
                     <%--    <div class="form-check form-switch check">
                 <label class="bianco">
                     <input class="form-check-input" runat="server" type="checkbox" id="cliente" onchange="cbChange(this)" />
@@ -191,7 +192,8 @@
                     <asp:Label class="testo" ID="Label5" runat="server" Text="Sono un Corriere"></asp:Label>
                 </label>
             </div>--%>
-                    <input type="submit" class="btn masterButton" id="dologin" onclick="Accedi()" value="Login" />
+                    <asp:Button ID="btnLogin" CssClass="btn masterButton" OnClick="btnLogin_Click" Text="Login" runat="server" />
+                    <%--<input type="submit" class="btn masterButton" id="dologin" onclick="Accedi()" value="Login" />--%>
                 </div>
             </section>
 

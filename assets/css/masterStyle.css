@@ -18,6 +18,10 @@
     background-color: #B469FF;
 }
 
+.masterContent {
+    max-height: 90vh;
+}
+
 .masterHideScroll {
     overflow-y: scroll;
 }

@@ -49,7 +49,6 @@
     background-color: #8e53c9;
     border-radius: 10px;
     border-width: 1px;
-    border-style: solid;
     border-color: none;
     padding-top:3px;
     padding-left: 0px;
@@ -62,16 +61,20 @@
 }
 
 .PopupGestisciInventario {
-    background-color: #FFFFFF;
+    /* background-color: #FFFFFF;
     border-width: 3px;
-    border-radius: 15px;
-    border-style: solid;
     border-color: none;
     padding-top: 10px;
     padding-left: 5px;
     padding-right: 5px;
-    width: 350px;
-    height: 320px;
+    padding:5px;
+    width: 380px;
+    height: 200px;*/
+    background-color: #FFFFFF;
+    border-width: 3px;
+    border-color: black;
+    width: fit-content;
+    block-size: fit-content;
 }
 
 .popupBoxWrapper {
@@ -117,9 +120,16 @@
 }
 
 .close-btn3 {
-    position: fixed;
-    top: 25%;
-    right: 37%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+
 }
 
 
@@ -129,3 +139,19 @@
     height: 95%;
     max-height: 600px;
 }
+
+
+.titoloInventario{
+    margin-left: 25vw;
+}
+
+.marginetto{
+    margin-left: 40vw;
+}
+
+.center{
+    margin: auto;
+    padding: 8px;
+    padding: 8px;
+}
+

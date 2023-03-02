@@ -24,7 +24,7 @@
 
     <link href="/assets/css/style.css" rel="stylesheet" />
     <link href="/assets/css/cssCLIENTI.css" rel="stylesheet" />
-    <link href="/assets/css/carousel.css" rel="stylesheet" />
+    <%--<link href="/assets/css/carousel.css" rel="stylesheet" />--%>
     <link href="/assets/css/masterStyle.css" rel="stylesheet" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">

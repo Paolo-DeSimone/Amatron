@@ -18,7 +18,7 @@ public class PRODOTTI
     public float prezzo;
     public int qta;
     public string datacaricamento;
-    public int permacatron;
+    public int percamatron;
 
     //istanzio il web service fuori dalla funzione cosi non devo ripeterlo
     RifProdotti.WsProdottiSoapClient P = new RifProdotti.WsProdottiSoapClient();
@@ -33,12 +33,12 @@ public class PRODOTTI
     //richiamo il webservice fornendo tutti i parametri necessari
     public void Insert()
     {
-        P.PRODOTTI_Insert(chiaveVENDITORE, chiaveCATEGORIA, titolo, descrizione, prezzo, qta, datacaricamento, permacatron);
+        P.PRODOTTI_Insert(chiaveVENDITORE, chiaveCATEGORIA, titolo, descrizione, prezzo, qta, datacaricamento, percamatron);
     }
 
     public void Update()
     {
-        P.PRODOTTI_Update(chiave, chiaveVENDITORE, chiaveCATEGORIA, titolo, descrizione, prezzo, qta, datacaricamento, permacatron);
+        P.PRODOTTI_Update(chiave, chiaveVENDITORE, chiaveCATEGORIA, titolo, descrizione, prezzo, qta, datacaricamento, percamatron);
     }
     public void Update_QTA()
     {

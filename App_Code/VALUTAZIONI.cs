@@ -54,7 +54,7 @@ public class VALUTAZIONI
     public DataTable SelectByOrder()
     {
         DataTable dt = new DataTable();
-        V.VALUTAZIONI_SelectByOrder(chiave, chiaveordine);
+        V.VALUTAZIONI_SelectByOrder(chiaveordine);
         return dt;
     }
 }

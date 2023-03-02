@@ -33,11 +33,13 @@ public class ORDINI
     }
 
     //richiamo il webservice fornendo tutti i parametri necessari
-    
+
     public void Insert()
     {      
+
         O.ORDINI_Insert(chiavecorriere, chiaveprodotto, chiavecliente, datatransazione, qta, numeroordine);
-    } 
+    }
+ 
      public void Update()
     {      
         O.ORDINI_Update(chiave, datatransazione, qta, numeroordine);
@@ -46,15 +48,15 @@ public class ORDINI
     public void Delete()
     {
         O.ORDINI_Delete(chiave);
-    } 
-    
+    }
+
     public DataTable SelectAll()
     {
         DataTable dt = new DataTable();
         O.ORDINI_SelectAll();
         return dt;
     }
-    
+
     public DataTable SelectByKey()
     {
         DataTable dt = new DataTable();
@@ -75,7 +77,7 @@ public class ORDINI
         O.ORDINI_SelectByProdotto(chiaveprodotto);
         return dt;
     }
-    
+
     public DataTable SelectByCliente()
     {
         DataTable dt = new DataTable();

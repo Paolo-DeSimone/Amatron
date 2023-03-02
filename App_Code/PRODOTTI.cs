@@ -63,46 +63,46 @@ public class PRODOTTI
         P.PRODOTTI_SelectAll_DDL();
         return dt;
     }
-    
+
     public DataTable SelectByKey()
     {
         DataTable dt = new DataTable();
         P.PRODOTTI_SelectByKey(chiave);
         return dt;
     }
-    
+
     public DataTable SelectByVenditore()
     {
         DataTable dt = new DataTable();
         P.PRODOTTI_SelectByVenditore(chiaveVENDITORE);
         return dt;
     }
-    
+
     public DataTable SelectByCategoria()
     {
         DataTable dt = new DataTable();
         P.PRODOTTI_SelectByCategoria(chiaveCATEGORIA);
         return dt;
     }
-    
+
     public DataTable MAX20Novita()
     {
         DataTable dt = new DataTable();
-        P.PRODOTTI_MAX20Novità();
+        dt = P.PRODOTTI_MAX20Novità();
         return dt;
     }
-    
+
     public DataTable MAX20Valutazione()
     {
         DataTable dt = new DataTable();
-        P.PRODOTTI_MAX20Valutazione();
+        dt = P.PRODOTTI_MAX20Valutazione();
         return dt;
     }
-    
+
     public DataTable MAX20Venduti()
     {
         DataTable dt = new DataTable();
-        P.PRODOTTI_MAX20Venduti();
+        dt = P.PRODOTTI_MAX20Venduti();
         return dt;
     }
 }

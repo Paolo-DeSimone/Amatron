@@ -19,10 +19,10 @@ public class PRODOTTI
     public int qta;
     public string datacaricamento;
     public int percamatron;
-
-    //istanzio il web service fuori dalla funzione cosi non devo ripeterlo
     RifProdotti.WsProdottiSoapClient P = new RifProdotti.WsProdottiSoapClient();
 
+
+    //istanzio il web service fuori dalla funzione cosi non devo ripeterlo
     public PRODOTTI()
     {
         //
@@ -38,71 +38,81 @@ public class PRODOTTI
 
     public void Update()
     {
+
         P.PRODOTTI_Update(chiave, chiaveVENDITORE, chiaveCATEGORIA, titolo, descrizione, prezzo, qta, datacaricamento, percamatron);
     }
     public void Update_QTA()
     {
+
         P.PRODOTTI_Update_QTA(chiave, qta);
     }
 
     public void Delete()
     {
+
         P.PRODOTTI_Delete(chiave);
     }
 
     public DataTable SelectAll()
     {
+
         DataTable dt = new DataTable();
-        P.PRODOTTI_SelectAll();
+        dt = P.PRODOTTI_SelectAll();
         return dt;
     }
 
     public DataTable SelectAll_DDL()
     {
+
         DataTable dt = new DataTable();
-        P.PRODOTTI_SelectAll_DDL();
+        dt=P.PRODOTTI_SelectAll_DDL();
         return dt;
     }
     
     public DataTable SelectByKey()
     {
         DataTable dt = new DataTable();
-        P.PRODOTTI_SelectByKey(chiave);
+        dt = P.PRODOTTI_SelectByKey(chiave);
         return dt;
     }
     
     public DataTable SelectByVenditore()
     {
+
         DataTable dt = new DataTable();
-        P.PRODOTTI_SelectByVenditore(chiaveVENDITORE);
+        dt = P.PRODOTTI_SelectByVenditore(chiaveVENDITORE);
         return dt;
     }
     
     public DataTable SelectByCategoria()
     {
+
         DataTable dt = new DataTable();
-        P.PRODOTTI_SelectByCategoria(chiaveCATEGORIA);
+        dt = P.PRODOTTI_SelectByCategoria(chiaveCATEGORIA);
         return dt;
     }
     
     public DataTable MAX20Novita()
     {
+
         DataTable dt = new DataTable();
-        P.PRODOTTI_MAX20Novità();
+        dt = P.PRODOTTI_MAX20Novità();
         return dt;
     }
     
     public DataTable MAX20Valutazione()
     {
+
         DataTable dt = new DataTable();
-        P.PRODOTTI_MAX20Valutazione();
+        dt = P.PRODOTTI_MAX20Valutazione();
         return dt;
     }
     
     public DataTable MAX20Venduti()
     {
+
         DataTable dt = new DataTable();
-        P.PRODOTTI_MAX20Venduti();
+        dt = P.PRODOTTI_MAX20Venduti();
         return dt;
     }
 }

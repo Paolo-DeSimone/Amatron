@@ -43,12 +43,12 @@
                 </div>
             </div>
 
-            <div class="card col-md-2 offset-md-1" style="height:30vh">
+            <div class="card col-md-2 offset-md-1" style="height:35vh">
                 <div>
                     <h3 class="mt-4">Prezzo: <asp:Literal ID="litPrezzoDestra" runat="server" Text="€99,99"></asp:Literal></h3>
                     <p class="lead" style="color:black">Consegna senza costi aggiuntivi domani. Ordina entro 4 minuti</p>
                     Quantità:
-                    <asp:DropDownList ID="ddlCarrello" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlCarrello" runat="server" Class="form-control-sm" Height="20"></asp:DropDownList>
                 </div>
                 <div class="py-5" align="center">
                     <asp:Button ID="btnAggiungi" runat="server" Text="Aggiungi al carrello" class="btn masterButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" OnClick="btnAggiungi_Click"/>

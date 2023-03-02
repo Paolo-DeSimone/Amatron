@@ -45,19 +45,17 @@
 }
 
 .Popup {
-    background-color: #8e53c9;
     border-radius: 10px;
     border-width: 1px;
     border-style: solid;
     border-color: none;
-    padding-top:3px;
+    padding-top: 3px;
     padding-left: 0px;
     padding-right: 5px;
-
-    width: 600px;
+    width: 580px;
     height: 510px;
-    border:0px;
-
+    border: 0px;
+    position: relative;
 }
 
 .PopupGestisciInventario {
@@ -76,8 +74,7 @@
 .popupBoxWrapper {
     max-width: 550px;
     width: 95%;
-    height:100%;
-
+    height: 100%;
 }
 
 .Background {
@@ -99,19 +96,18 @@
 }
 
 .close-btn-wrapper {
-    position: relative;
-    width: 700px;
+    position: fixed;
     left: 30%;
 }
 
 .close-btn2 {
-    position: fixed;
+     position: fixed;
     top: 10%;
-    right: 28%;
+    right: 30%;
+
 }
 
 .chiusura {
-    background-color: #8e53c9;
     border: none;
 }
 
@@ -123,7 +119,7 @@
 
 
 .popupBoxWrapper {
-    max-width: 545px;
+    max-width: 605px;
     width: 95%;
     height: 95%;
     max-height: 600px;

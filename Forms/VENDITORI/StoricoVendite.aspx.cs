@@ -14,8 +14,7 @@ public partial class _Default : System.Web.UI.Page
         string titolo ="Bel Libro";
         float prezzo = 173;
         string categoria ="Libri";
-        string descrizione = "bel libro. interessante e intrattenente. adatto a tutti";
-        DateTime data = DateTime.Today;
+        string descrizione = "Bel libro. Interessante e intrattenente. Adatto a tutti";
 
         if (!IsPostBack)
         {

@@ -13,7 +13,7 @@
         Questa funziona attiva un metodo C# in master.cs che fa 2 cose:
 
         1) scrive un record in DB nella tabella CARRELLO. Questa tabella ha 4 campi: chiave (autoincrementante),chiaveCLIENTE, chiavePRODOTTO e QTA.
-           Gli ultimi 3 valori, saranno presi tramite session. chiaveCLIENTE e chiavePRODOTTO eistono già, QTA la creo io.
+           Gli ultimi 3 valori, saranno presi tramite session. chiaveCLIENTE e chiavePRODOTTO esistono già, QTA la creo io.
 
         2) aggiunge il prodotto al carrello nel sito di Amatron. 
         Ciò viene fatto utilizzando l'attributo InnerHtml del div con id carrelloProdotti in master

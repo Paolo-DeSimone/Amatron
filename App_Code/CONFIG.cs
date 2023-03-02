@@ -21,7 +21,7 @@ public class CONFIG
     }
     public void Update()
     {
-        C.CONFIG_Update(chiave, costoprime, perc1_10, perc11_100, perc101_1000, perc1001);
+        C.CONFIG_Update(costoprime, perc1_10, perc11_100, perc101_1000, perc1001);
     }
     public DataTable SelectAll()
     {

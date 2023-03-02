@@ -19,9 +19,10 @@
                 <h2>Iscrizione annuale
                     <br /> 
                     Gratuita</h2>
-                <a href="#" class="btn btn-primary">Iscriviti</a>
+                <asp:Button ID="btnIscriviti" class="btn btn-primary" runat="server" Text="Iscriviti" OnClick="btnIscriviti_Click" />
             </div>
         </div>
     </form>
 </body>
 </html>
+

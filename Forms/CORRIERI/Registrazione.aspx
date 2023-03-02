@@ -97,7 +97,7 @@
                                     <div class="col-lg-4"></div>
                                     <div class="col-lg-4">
                                         <center>
-                                            <asp:Button ID="btnRegistraCliente" runat="server" Text="Registrati" class="btn btn-sm masterButton" />
+                                            <asp:Button ID="btnRegistraCliente" runat="server" Text="Registrati" class="btn btn-sm masterButton" OnClick="btnRegistraCliente_Click" />
                                         </center>
                                     </div>
                                     <div class="col-lg-4"></div>
@@ -171,7 +171,7 @@
                                     <div class="col-lg-4"></div>
                                     <div class="col-lg-4">
                                         <center style="margin-top: 15px">
-                                            <asp:Button ID="btnRegistraVenditore" runat="server" Text="Registrati" class="btn btn-sm masterButton" Style="width: 50%" />
+                                            <asp:Button ID="btnRegistraVenditore" runat="server" Text="Registrati" class="btn btn-sm masterButton" Style="width: 50%"  OnClick="btnRegistraVenditore_Click"/>
                                         </center>
                                     </div>
                                     <div class="col-lg-4"></div>
@@ -252,7 +252,7 @@
                                     <div class="col-lg-4"></div>
                                     <div class="col-lg-4">
                                         <center style="margin-top: 15px">
-                                            <asp:Button ID="btnRegistraCorriere" runat="server" Text="Registrati" class="btn btn-sm masterButton" Style="width: 50%" />
+                                            <asp:Button ID="btnRegistraCorriere" runat="server" Text="Registrati" class="btn btn-sm masterButton" Style="width: 50%" OnClick="btnRegistraCorriere_Click" />
                                         </center>
                                     </div>
                                     <div class="col-lg-4"></div>

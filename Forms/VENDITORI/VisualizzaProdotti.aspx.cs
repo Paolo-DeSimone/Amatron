@@ -16,7 +16,7 @@ public partial class _Default : System.Web.UI.Page
             imgContainer.InnerHtml = "";
 
             //creiamo un ciclo for in cui gli diremo che finche i sarà minore del numero di prodotti che presenta un venditore allora creerà una delle col e delle row
-            for ( int i=0;i <10;i++ ) 
+            for ( int i=0;i <0;i++ ) 
             {
                 //qui andremo a sostituire i vari src e le proprietà .text dei textbox nel momento in cui andremo ad integrare gestore e DB
                 imgContainer.InnerHtml += " <div class=\" col-md-6 \">";
@@ -44,4 +44,9 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
+
+    protected void gridVisualizzaProdotti_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }

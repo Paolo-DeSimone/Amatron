@@ -18,7 +18,9 @@
         <div class="row">
             <div class="col-lg-5"></div>
             <div class="col-lg-2">
-                <center><h2>Registrazione</h2></center>
+                <center>
+                    <h2>Registrazione</h2>
+                </center>
             </div>
             <div class="col-lg-5"></div>
         </div>
@@ -27,11 +29,10 @@
             <div class="col-lg-6">
                 <div id="tabs">
                     <ul>
-                        <li style="width: 32%"><a href="#tabs-1" class="masterButton">Cliente</a></li>
-                        <li style="width: 32%"><a href="#tabs-2" class="masterButton">Venditore</a></li>
-                        <li style="width: 32%"><a href="#tabs-3" class="masterButton">Corriere</a></li>
+                        <li style="width: 32.9%"><a href="#tabs-1" class="masterButton" style="width:100%">Cliente</a></li>
+                        <li style="width: 32.85%"><a href="#tabs-2" class="masterButton" style="width:100%">Venditore</a></li>
+                        <li style="width: 32.9%"><a href="#tabs-3" class="masterButton" style="width:100%">Corriere</a></li>
                     </ul>
-
                     <div id="tabs-1">
                         <div class="card">
                             <div class="card-body">

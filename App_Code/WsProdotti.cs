@@ -56,6 +56,16 @@ public class WsProdotti : System.Web.Services.WebService
         DB.cmd.Parameters.AddWithValue("percamatron", percamatron);
         DB.EseguiSPNonRead();
     }
+    [WebMethod]
+    public void PRODOTTI_Update_QTA(int chiave, int qta)
+    {
+        DATABASE DB = new DATABASE();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spPRODOTTI_Update_QTA";
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
+        DB.cmd.Parameters.AddWithValue("qta", qta);
+        DB.EseguiSPNonRead();
+    }
 
     [WebMethod]
     public void PRODOTTI_Delete(int chiave)

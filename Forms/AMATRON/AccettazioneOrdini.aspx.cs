@@ -105,5 +105,6 @@ public partial class Default2 : System.Web.UI.Page
                 ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Ordine non selezionato.');", true);
                 return;
             }
+        }
     }
 }

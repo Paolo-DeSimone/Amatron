@@ -33,28 +33,28 @@ public class VALUTAZIONI
     public DataTable SelectAll()
     {
         DataTable dt = new DataTable();
-        V.VALUTAZIONI_SelectAll();
+        dt = V.VALUTAZIONI_SelectAll();
         return dt;
     }
 
     public DataTable SelectAll_DDL()
     {
         DataTable dt = new DataTable();
-        V.VALUTAZIONI_SelectAll_DDL();
+        dt = V.VALUTAZIONI_SelectAll_DDL();
         return dt;
     }
 
     public DataTable SelectByKey()
     {
         DataTable dt = new DataTable();
-        V.VALUTAZIONI_SelectByKey(chiave);
+        dt = V.VALUTAZIONI_SelectByKey(chiave);
         return dt;
     }
 
     public DataTable SelectByOrder()
     {
         DataTable dt = new DataTable();
-        V.VALUTAZIONI_SelectByOrder(chiave, chiaveordine);
+        dt = V.VALUTAZIONI_SelectByOrder(chiaveordine);
         return dt;
     }
 }

@@ -12,6 +12,8 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (!IsPostBack) 
+        {
         //string chiave = Session["chiave"].ToString();
         //riga di prova per testing
         int chiave = 1;
@@ -27,10 +29,16 @@ public partial class _Default : System.Web.UI.Page
         txtCITTA.Text = DT.Rows[0]["CITTA"].ToString();
         txtEMAIL.Text = DT.Rows[0]["EMAIL"].ToString();
         txtNUMERO.Text = DT.Rows[0]["TELEFONO"].ToString();
+        }
     }
 
     protected void btnModifica_Click(object sender, EventArgs e)
     {
+        if(txtRAGIONESOCIALE.Text.Trim() == "" || txtEMAIL.Text.Trim() == "" || txtCOSTO.Text.Trim() == "") 
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Completa i campi!');", true);
+            return;
+        }
         //string chiave = Session["chiave"].ToString();
         //riga di prova per testing
         int chiave = 1;
@@ -40,9 +48,9 @@ public partial class _Default : System.Web.UI.Page
         C.piva = txtPIVA.Text.Trim();
         C.costocorriere = float.Parse(txtCOSTO.Text.Trim());
         C.indirizzo = txtINDIRIZZO.Text.Trim();
-        C.CAP = txtCAP.Text.Trim(); 
-        C.provincia = txtPROVINCIA.Text.Trim(); 
-        C.citta= txtCITTA.Text.Trim();
+        C.CAP = txtCAP.Text.Trim();
+        C.provincia = txtPROVINCIA.Text.Trim();
+        C.citta = txtCITTA.Text.Trim();
         C.email = txtEMAIL.Text.Trim();
         C.telefono = txtNUMERO.Text.Trim();
         //C.abilitato = Convert.ToBoolean(Session["Abilitato"]);
@@ -57,21 +65,30 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void btnModPWD_Click(object sender, EventArgs e)
     {
+        //controllo se uno dei campi è vuoto, non apro la connessione al db
+        if (txtOldPWD.Text.Trim() == "" || txtNewPWD.Text.Trim() == "" || txtConfPWD.Text.Trim() == "") 
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Riempi tutti i campi!');", true);
+        }
+
         //controllo per stabilire se la password vecchia è uguale a quella nuova
         if (txtOldPWD.Text.Trim() == txtNewPWD.Text.Trim())
         {
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Inserisci una password diversa da quella vecchia!');", true);
             //inserire un alert che la password nuova è uguale alla password vecchia
         }
 
         //controllo per stabilire se la password di conferma è uguale a quella vecchia
         if (txtNewPWD.Text.Trim() != txtConfPWD.Text.Trim())
         {
-            //inserire un alert che avvisa che la password di conferma è diversa da quella nuova
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Password di conferma non corretta!');", true);
+            //inserire un alert che avvisa che la password di conferma è diversa da quella indicata nella txtbox sopra
         }
 
+        //stored procedure per cambiare password
         //inserire alert che avvisa del successo del cambio password
 
-        CORRIERI C = new CORRIERI();
-        C.CORRIERI_Update();
+        //CORRIERI C = new CORRIERI();
+        //C.CORRIERI_Update();
     }
 }

@@ -41,28 +41,28 @@ public class RESI
     public DataTable SelectAll()
     {
         DataTable dt = new DataTable();
-        R.Resi_SelectAll();
+        dt=R.Resi_SelectAll();
         return dt;
     }
 
     public DataTable SelectAll_DDL()
     {
         DataTable dt = new DataTable();
-        R.RESI_SelectAll_DDL();
+        dt = R.RESI_SelectAll_DDL();
         return dt;
     }
 
     public DataTable SelectByKey()
     {
         DataTable dt = new DataTable();
-        R.RESI_SelectByKey(chiave);
+        dt = R.RESI_SelectByKey(chiave);
         return dt;
     }
     
     public DataTable SelectByOrder()
     {
         DataTable dt = new DataTable();
-        R.RESI_SelectByOrder(chiaveOrdine);
+        dt = R.RESI_SelectByOrder(chiaveOrdine);
         return dt;
     }
 }

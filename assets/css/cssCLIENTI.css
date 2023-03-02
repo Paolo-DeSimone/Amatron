@@ -1,10 +1,15 @@
-﻿
+
 /*CSS PAGINA PERSONALE CLIENTI*/
 
 .intestazione {
-    color: #B469FF;
+    color: black;
     font-family: Arial;
-    margin-left: 37%;
+    margin-left:45%;
+    
+}
+
+.datiPersonali {
+    text-align:center;
 }
 
 .misura {
@@ -17,12 +22,13 @@
 }
 
 .sposta {
-    margin-left: 200px;
+    margin-left: 100px;
 }
 
 .largh {
-    width: inherit;
+    width: 100%;
 }
+
 
 .btnSalva {
     width: 50%;
@@ -30,8 +36,18 @@
     background-color: #B469FF;
     border: #B469FF;
     margin-top: 8px;
-    margin-left: 10px;
+    margin-left: 40px;
 }
+
+.btnnReso {
+    width: 59%;
+    align-items: stretch;
+    background-color: #B469FF;
+    border: #B469FF;
+    margin-top: 8px;
+    margin-left: 40px;
+}
+
 
 .hrdivider {
     font-weight: bold;
@@ -65,10 +81,21 @@
 
 
 
+
+
 /*CSS ORDINI E POPUP*/
 
 
+
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Rubik:300,400,500,700,900');
+
+
+
+.resoCl {
+    text-align:center;
+    margin-top: 10px;
+}
+
 
 * {
     margin: 0;
@@ -82,7 +109,7 @@ body {
     font-family: 'Rubik', sans-serif;
     font-size: 14px;
     font-weight: 400;
-    background: #eff6fa;
+    /*background: #eff6fa;*/
     color: #000000;
 }
 
@@ -177,6 +204,7 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
 
+
     h1::selection,
     h2::selection,
     h3::selection,
@@ -190,6 +218,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 section {
+
+h1::selection, 
+h2::selection, 
+h3::selection, 
+h4::selection, 
+h5::selection, 
+h6::selection
+{
+    
+}
+/*.form-control
+{
+    color: #db5246;
+}*/
+section
+{
+
     display: block;
     position: relative;
     box-sizing: border-box;

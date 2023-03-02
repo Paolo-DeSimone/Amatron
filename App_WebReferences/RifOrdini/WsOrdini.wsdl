@@ -141,6 +141,18 @@
       <s:element name="ORDINI_DeleteResponse">
         <s:complexType />
       </s:element>
+      <s:element name="ORDINI_GESTITO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="chiaveCorriere" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="gestito" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ORDINI_GESTITOResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="ORDINI_InsertSoapIn">
@@ -191,6 +203,12 @@
   <wsdl:message name="ORDINI_DeleteSoapOut">
     <wsdl:part name="parameters" element="tns:ORDINI_DeleteResponse" />
   </wsdl:message>
+  <wsdl:message name="ORDINI_GESTITOSoapIn">
+    <wsdl:part name="parameters" element="tns:ORDINI_GESTITO" />
+  </wsdl:message>
+  <wsdl:message name="ORDINI_GESTITOSoapOut">
+    <wsdl:part name="parameters" element="tns:ORDINI_GESTITOResponse" />
+  </wsdl:message>
   <wsdl:portType name="WsOrdiniSoap">
     <wsdl:operation name="ORDINI_Insert">
       <wsdl:input message="tns:ORDINI_InsertSoapIn" />
@@ -223,6 +241,10 @@
     <wsdl:operation name="ORDINI_Delete">
       <wsdl:input message="tns:ORDINI_DeleteSoapIn" />
       <wsdl:output message="tns:ORDINI_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ORDINI_GESTITO">
+      <wsdl:input message="tns:ORDINI_GESTITOSoapIn" />
+      <wsdl:output message="tns:ORDINI_GESTITOSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WsOrdiniSoap" type="tns:WsOrdiniSoap">
@@ -299,6 +321,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ORDINI_GESTITO">
+      <soap:operation soapAction="http://tempuri.org/ORDINI_GESTITO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WsOrdiniSoap12" type="tns:WsOrdiniSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -367,6 +398,15 @@
     </wsdl:operation>
     <wsdl:operation name="ORDINI_Delete">
       <soap12:operation soapAction="http://tempuri.org/ORDINI_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ORDINI_GESTITO">
+      <soap12:operation soapAction="http://tempuri.org/ORDINI_GESTITO" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

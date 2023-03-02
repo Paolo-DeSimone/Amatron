@@ -16,11 +16,13 @@
         <div class="card" style="display: flex; border-width: 0px;">
             <%-- creo la card di titolo e descrizione --%>
             <div class="card-header coloreHeader">
-                <h3><strong>
-                    <asp:Label ID="lblCaricaProdotti" runat="server" Text="CARICA PRODOTTI"></asp:Label></strong></h3>
+                <h3>
+                    <strong>
+                        <asp:Label ID="lblCaricaProdotti" runat="server" Text="CARICA PRODOTTI"></asp:Label>
+                    </strong>
+                </h3>
             </div>
             <div class="card-body btnVenditoriOffWhite" style="padding-bottom: 10px;">
-
                 <center>
                     <asp:Label ID="lblTitolo" runat="server" Text="Titolo:"></asp:Label>
                 </center>
@@ -41,7 +43,8 @@
                 <center>
                     <asp:Label ID="lblImmagine" runat="server" Text="Aggiungi immagini al prodotto:"></asp:Label>
                 </center>
-                <p></p>
+                <p>
+                </p>
                 <%-- creo una lit immagini che andrà popolata nel cs con la preview delle immagini caricate --%>
                 <asp:Literal ID="litImmagini" runat="server"></asp:Literal>
                 <p></p>
@@ -70,7 +73,6 @@
                     Enabled="True" TargetControlID="txtQuantita" FilterType="Numbers"></ajaxToolkit:FilteredTextBoxExtender>
                 <%--  </div>--%>
 
-
                 <div class="row">
                     <div class="col-sm-4 col-4">
                         <asp:Label ID="lblPrezzo" runat="server" class="margin-left:10px;" Text="Prezzo:"></asp:Label>
@@ -87,14 +89,15 @@
                         <asp:TextBox ID="txtPrezzo" runat="server" Style="margin: auto; width: 50px; margin-left: 10px;"></asp:TextBox>€
                     </div>
                     <div class="col-sm-6 col-6">
-                        <asp:DropDownList ID="ddlCategoria" runat="server" Style="margin: auto; width: 180px;"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlCategoria" runat="server" Style="margin: auto; width: 180px;" DataSourceID="sdsDdlProdotto" DataTextField="CATEGORIA" DataValueField="chiave"></asp:DropDownList>
+                        <asp:SqlDataSource ID="sdsDdlProdotto" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCATEGORIE_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                     </div>
                     <div class="col-sm-2 col-2">
                         <asp:TextBox ID="txtQuantita" runat="server" Style="margin: auto; width: 50px;" TextMode="Number"></asp:TextBox>
                     </div>
                 </div>
                 <center>
-                    <asp:Button ID="btnSalva" class="btn btnVenditoriPurple" runat="server" Text="Salva" />
+                    <asp:Button ID="btnSalva" class="btn btnVenditoriPurple" runat="server" Text="Salva" OnClick="btnSalva_Click" />
                 </center>
 
 

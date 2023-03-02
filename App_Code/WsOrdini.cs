@@ -122,4 +122,17 @@ public class WsOrdini : System.Web.Services.WebService
         DB.EseguiSPNonRead();        
     }
 
+    /// WebMethod creato per l'accettazione dell'ordine (George D.)
+    [WebMethod]
+    public void ORDINI_GESTITO(int chiave, int chiaveCorriere, bool gestito)
+    {
+        DATABASE DB = new DATABASE();
+        DB.cmd.Parameters.Clear();
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
+        DB.cmd.Parameters.AddWithValue("chiaveCORRIERE", chiaveCorriere);
+        DB.cmd.Parameters.AddWithValue("GESTITO", gestito);
+        DB.query = "spORDINI_GESTITO";
+        DB.EseguiSPNonRead();
+    }
+
 }

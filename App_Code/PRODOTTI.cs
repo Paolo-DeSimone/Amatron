@@ -68,14 +68,14 @@ public class PRODOTTI
         dt=P.PRODOTTI_SelectAll_DDL();
         return dt;
     }
-    
+
     public DataTable SelectByKey()
     {
         DataTable dt = new DataTable();
         dt = P.PRODOTTI_SelectByKey(chiave);
         return dt;
     }
-    
+
     public DataTable SelectByVenditore()
     {
 
@@ -83,7 +83,7 @@ public class PRODOTTI
         dt = P.PRODOTTI_SelectByVenditore(chiaveVENDITORE);
         return dt;
     }
-    
+
     public DataTable SelectByCategoria()
     {
 
@@ -91,7 +91,7 @@ public class PRODOTTI
         dt = P.PRODOTTI_SelectByCategoria(chiaveCATEGORIA);
         return dt;
     }
-    
+
     public DataTable MAX20Novita()
     {
 
@@ -99,7 +99,7 @@ public class PRODOTTI
         dt = P.PRODOTTI_MAX20Novità();
         return dt;
     }
-    
+
     public DataTable MAX20Valutazione()
     {
 
@@ -107,7 +107,7 @@ public class PRODOTTI
         dt = P.PRODOTTI_MAX20Valutazione();
         return dt;
     }
-    
+
     public DataTable MAX20Venduti()
     {
 

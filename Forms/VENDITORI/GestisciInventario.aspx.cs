@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -10,6 +10,14 @@ public partial class Venditori_GestisciInventario : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
+
+
+        string chiaveprodotto = ddlProdotti.SelectedValue;
+        PRODOTTI P = new PRODOTTI();
+       //P.chiave = int.Parse(chiaveprodotto);
+        DataTable DT = P.SelectByKey();
+       //ddlProdotti.SelectedValue = DT.Rows[0]["chiave"].ToString();
 
     }
 

@@ -26,10 +26,10 @@ public partial class Default2 : System.Web.UI.Page
 
                 }
                 string descrizione = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae leo nisi. Suspendisse vel risus ullamcorper, sodales nisi id, iaculis lorem. Nullam velit tellus, dignissim quis consequat sit amet, bibendum a orci. Praesent vulputate scelerisque nulla, eu scelerisque ipsum pharetra at. Etiam mattis quis magna id dapibus. Mauris convallis felis at tincidunt dictum.";
-                lit.InnerHtml += "<div class='col-lg-2' style='height: 300px;  overflow-y: scroll'>";
+                lit.InnerHtml += "<div class='col-lg-2 scrollo' style='height: 280px; width:150px; overflow-y: scroll; overflow-x: hidden'>";
                 //lit.InnerHtml += "<asp:ImageButton ID='ImageButton1' runat='server' CssClass='image' ImageUrl='/AsyncHandler.ashx?c=" + chiave + "' /> ";
                 //lit.InnerHtml += "<img id='" + chiave + "' onclick=\"showPopup(" + chiave + ",'" + titolo + "','" + descrizione + "')\" class='image' src='/AsyncHandler.ashx?c=" + chiave + "' />";
-                lit.InnerHtml += "<img src=\"/assets/images/nayuta.jpg\" width='200px'; height='200px'/>";
+                lit.InnerHtml += "<img src=\"/assets/images/nayuta.jpg\" width='100%'; height='150px'/>";
                 lit.InnerHtml += ""+descrizione+"";
                 lit.InnerHtml += "</div>"; 
                 if (i == 4)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.ServiceModel.Dispatcher;
 using System.Web;
@@ -22,22 +23,23 @@ public partial class Default2 : System.Web.UI.Page
         //{
         //    ddlCarrello.Attributes.Add(i.ToString(), i.ToString());
         //}
-
-        PRODOTTI P = new PRODOTTI { chiave = 1 };
-
         // Retrieve information about the product with the specified key
-        DataTable dt = P.SelectByKey();
-
+        //SqlDataAdapter da = new SqlDataAdapter();
+        //da.Fill(dt);
         // If the DataTable contains any rows, set the quantity of the product and add options to the dropdown list
-        //if (dt.Rows.Count > 0)
-        //{
-        //    P.qta = Convert.ToInt32(dt.Rows[1]["qta"]);
 
-        //    for (int i = 0; i <= P.qta; i++)
-        //    {
-        //        ddlCarrello.Items.Add(new ListItem(i.ToString(), i.ToString()));
-        //    }
-        //}
+        
+        PRODOTTI P = new PRODOTTI();
+        P.chiave = 1;
+        DataTable dt = P.SelectByKey();
+        P.qta = Convert.ToInt32(dt.Rows[0]["qta"]);
+        if (dt.Rows.Count > 0)
+        {
+            for (int i = 0; i <= P.qta; i++)
+            {
+                ddlCarrello.Items.Add(new ListItem(i.ToString(), i.ToString()));
+            }
+        }
 
         CLIENTI C = new CLIENTI();
         C.SELECTBYKEY();

@@ -1,7 +1,8 @@
 .CardMargine {
-    margin: 12vh auto;
+    margin: 6vh auto;
+    margin-left:38%;
+    margin-bottom:0%;
 }
-
 .DescrizioneProdotto {
     display: -webkit-box;
     text-overflow: ellipsis;

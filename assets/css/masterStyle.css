@@ -12,10 +12,25 @@
     align-items: stretch;
     background-color: #B469FF;
     border: #B469FF;
+    color: black;
 }
+
+    .masterButton:hover {
+        background-color: #B469FF !important;
+        color: white;
+    }
+
+    .masterButton:focus {
+        background-color: #B469FF !important;
+        color: white;
+    }
 
 .masterColorBG {
     background-color: #B469FF;
+}
+
+.masterContent {
+    max-height: 90vh;
 }
 
 .masterHideScroll {

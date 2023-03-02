@@ -53,35 +53,35 @@ public class ORDINI
     public DataTable SelectAll()
     {
         DataTable dt = new DataTable();
-        O.ORDINI_SelectAll();
+        dt=O.ORDINI_SelectAll();
         return dt;
     }
 
     public DataTable SelectByKey()
     {
         DataTable dt = new DataTable();
-        O.ORDINI_SelectByKey(chiave);
+        dt=O.ORDINI_SelectByKey(chiave);
         return dt;
     }
 
     public DataTable SelectByCorriere()
     {
         DataTable dt = new DataTable();
-        O.ORDINI_SelectByCorriere(chiavecorriere);
+        dt = O.ORDINI_SelectByCorriere(chiavecorriere);
         return dt;
     }
 
     public DataTable SelectByProdotto()
     {
         DataTable dt = new DataTable();
-        O.ORDINI_SelectByProdotto(chiaveprodotto);
+        dt = O.ORDINI_SelectByProdotto(chiaveprodotto);
         return dt;
     }
 
     public DataTable SelectByCliente()
     {
         DataTable dt = new DataTable();
-        O.ORDINI_SelectByCliente(chiavecliente);
+        dt = O.ORDINI_SelectByCliente(chiavecliente);
         return dt;
     }
 }

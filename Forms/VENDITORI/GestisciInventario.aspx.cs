@@ -12,9 +12,9 @@ public partial class Venditori_GestisciInventario : System.Web.UI.Page
     {
         string chiaveprodotto = ddlProdotti.SelectedValue;
         PRODOTTI P = new PRODOTTI();
-        P.chiave = int.Parse(chiaveprodotto);
+       //P.chiave = int.Parse(chiaveprodotto);
         DataTable DT = P.SelectByKey();
-        ddlProdotti.SelectedValue = DT.Rows[0]["chiave"].ToString();
+       //ddlProdotti.SelectedValue = DT.Rows[0]["chiave"].ToString();
     }
 
     protected void btnAggiungi_Click(object sender, EventArgs e)

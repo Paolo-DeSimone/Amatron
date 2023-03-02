@@ -2,9 +2,14 @@
 /*CSS PAGINA PERSONALE CLIENTI*/
 
 .intestazione {
-    color: #B469FF;
+    color: black;
     font-family: Arial;
-    margin-left: 37%;
+    margin-left:45%;
+    
+}
+
+.datiPersonali {
+    text-align:center;
 }
 
 .misura {
@@ -17,12 +22,13 @@
 }
 
 .sposta {
-    margin-left: 200px;
+    margin-left: 100px;
 }
 
 .largh {
-    width: inherit;
+    width: 100%;
 }
+
 
 .btnSalva {
     width: 50%;
@@ -30,8 +36,18 @@
     background-color: #B469FF;
     border: #B469FF;
     margin-top: 8px;
-    margin-left: 10px;
+    margin-left: 40px;
 }
+
+.btnnReso {
+    width: 59%;
+    align-items: stretch;
+    background-color: #B469FF;
+    border: #B469FF;
+    margin-top: 8px;
+    margin-left: 40px;
+}
+
 
 .hrdivider {
     font-weight: bold;
@@ -65,13 +81,22 @@
 
 
 
+
+
 /*CSS ORDINI E POPUP*/
+
 
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Rubik:300,400,500,700,900');
 
-*
-{
+.resoCl {
+    text-align:center;
+    margin-top: 10px;
+}
+
+
+
+* {
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
@@ -83,7 +108,7 @@ body
     font-family: 'Rubik', sans-serif;
     font-size: 14px;
     font-weight: 400;
-    background: #eff6fa;
+    /*background: #eff6fa;*/
     color: #000000;
 }
 div

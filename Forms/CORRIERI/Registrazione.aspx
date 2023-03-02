@@ -102,7 +102,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <center style="margin-top: 25px">
-                                <asp:Button ID="btnRegistra" runat="server" Text="Registrati" class="btn btn-primary btn-lg" Style="width: 50%" OnClick="btnRegistra_Click" />
+                                <asp:Button ID="btnRegistra" runat="server" Text="Registrati" class="btn btn-primary btn-lg" Style="width: 50%" OnClick="btnRegistra_Click"/>
                             </center>
                         </div>
                         <div class="col-lg-6">

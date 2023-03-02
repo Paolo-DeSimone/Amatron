@@ -64,7 +64,7 @@
                         <asp:DropDownList ID="ddlCategoria" Class="btn btn-secondary dropdown-toggle" runat="server" DataSourceID="SqlDataSource1" DataTextField="CATEGORIA" DataValueField="chiaveCATEGORIA">
                             <asp:ListItem></asp:ListItem>
                         </asp:DropDownList>
-                                <%--<asp:ListItem Enabled=”true” Text= “Select Subject” Value= “-1”></asp:ListItem>--%>
+                                <%--<asp:ListItem Enabled=ï¿½trueï¿½ Text= ï¿½Select Subjectï¿½ Value= ï¿½-1ï¿½></asp:ListItem>--%>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCATEGORIE_SelectByVenditore_DDL" SelectCommandType="StoredProcedure">
                             
                             
@@ -92,7 +92,11 @@
                 </div>
 
 
+    <div class="CardMargine">
 
+        <h2>
+            <asp:Label ID="lblStoricoVendite" runat="server" Text="Storico Vendite"></asp:Label>
+        </h2>
 
 
                 <div class="table-responsive">
@@ -122,6 +126,7 @@
                             <asp:Parameter DefaultValue="1" Name="chiaveVenditore" Type="Int32" />
                         </SelectParameters>
                     </asp:SqlDataSource>
+
                 </div>
             </div>
         </div>

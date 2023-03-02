@@ -89,7 +89,8 @@
                         <asp:TextBox ID="txtPrezzo" runat="server" Style="margin: auto; width: 50px; margin-left: 10px;"></asp:TextBox>€
                     </div>
                     <div class="col-sm-6 col-6">
-                        <asp:DropDownList ID="ddlCategoria" runat="server" Style="margin: auto; width: 180px;"></asp:DropDownList>
+                        <asp:DropDownList ID="ddlCategoria" runat="server" Style="margin: auto; width: 180px;" DataSourceID="sdsDdlProdotto" DataTextField="CATEGORIA" DataValueField="chiave"></asp:DropDownList>
+                        <asp:SqlDataSource ID="sdsDdlProdotto" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCATEGORIE_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                     </div>
                     <div class="col-sm-2 col-2">
                         <asp:TextBox ID="txtQuantita" runat="server" Style="margin: auto; width: 50px;" TextMode="Number"></asp:TextBox>

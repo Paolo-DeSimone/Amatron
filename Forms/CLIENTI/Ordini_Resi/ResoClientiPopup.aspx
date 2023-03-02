@@ -61,6 +61,7 @@
             </div>
 
             <!-- BOTTONE EFFETTUA RESO -->
+            <!-- non mandare l'ACCETTAZIONE perchè deve approvare AMATRON -->
 
             <div class="d-grid gap-2 col-6 mx-auto">
                 <asp:Button ID="btnReso" class="btn btn-primary" runat="server" Text="EFFETTUA RESO" />

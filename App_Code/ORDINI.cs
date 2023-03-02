@@ -19,7 +19,7 @@ public class ORDINI
     public int qta;
     public string datatransazione;
     public int numeroordine;
-    public bool ACCETTAZIONE;
+    public bool gestito;
 
 
     //istanzio il web service fuori dalla funzione cosi non devo ripeterlo
@@ -83,5 +83,11 @@ public class ORDINI
         DataTable dt = new DataTable();
         O.ORDINI_SelectByCliente(chiavecliente);
         return dt;
+    }
+
+    //Metodo inserito per la Gestione Ordini (George D.)
+    public void ORDINI_GESTITO()
+    {
+        O.ORDINI_GESTITO(chiave, chiavecorriere, gestito);
     }
 }

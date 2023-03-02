@@ -7,33 +7,52 @@
     <%--Visualizzazione statistiche corrieri--%>
     <div class="container mt-5">
         <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <center>
+                    <h2>Resoconto consegne</h2>
+                </center>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+        <div class="row">
             <div class="col-md-6 text-center">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Seleziona anno</h5>
-                        <p class="card-text">
-                            <asp:DropDownList ID="ddlAnni" runat="server">
-                                <asp:ListItem Text="2012" Value="2012"></asp:ListItem>
-                                <asp:ListItem Text="2013" Value="2013"></asp:ListItem>
-                                <asp:ListItem Text="2014" Value="2014"></asp:ListItem>
-                                <asp:ListItem Text="2015" Value="2015"></asp:ListItem>
-                                <asp:ListItem Text="2016" Value="2016"></asp:ListItem>
-                                <asp:ListItem Text="2017" Value="2017"></asp:ListItem>
-                                <asp:ListItem Text="2018" Value="2018"></asp:ListItem>
-                                <asp:ListItem Text="2019" Value="2019"></asp:ListItem>
-                                <asp:ListItem Text="2020" Value="2020"></asp:ListItem>
-                                <asp:ListItem Text="2021" Value="2021"></asp:ListItem>
-                                <asp:ListItem Text="2022" Value="2022"></asp:ListItem>
-                                <asp:ListItem Text="2023" Value="2023"></asp:ListItem>
-                            </asp:DropDownList>
-                        </p>
+                        <h4 class="card-title">Seleziona anno</h4>
+
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle masterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dropdown button
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </div>
+                        <asp:DropDownList ID="ddlAnni" runat="server">
+                            <asp:ListItem Text="2012" Value="2012"></asp:ListItem>
+                            <asp:ListItem Text="2013" Value="2013"></asp:ListItem>
+                            <asp:ListItem Text="2014" Value="2014"></asp:ListItem>
+                            <asp:ListItem Text="2015" Value="2015"></asp:ListItem>
+                            <asp:ListItem Text="2016" Value="2016"></asp:ListItem>
+                            <asp:ListItem Text="2017" Value="2017"></asp:ListItem>
+                            <asp:ListItem Text="2018" Value="2018"></asp:ListItem>
+                            <asp:ListItem Text="2019" Value="2019"></asp:ListItem>
+                            <asp:ListItem Text="2020" Value="2020"></asp:ListItem>
+                            <asp:ListItem Text="2021" Value="2021"></asp:ListItem>
+                            <asp:ListItem Text="2022" Value="2022"></asp:ListItem>
+                            <asp:ListItem Text="2023" Value="2023"></asp:ListItem>
+                        </asp:DropDownList>
+
                     </div>
                 </div>
             </div>
             <div class="col-md-6 text-center">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Seleziona mese</h5>
+                        <h4 class="card-title">Seleziona mese</h4>
                         <p class="card-text">
                             <asp:DropDownList ID="ddlMesi" runat="server">
                                 <asp:ListItem Text="Gennaio" Value="1"></asp:ListItem>
@@ -61,7 +80,7 @@
                         <h5 class="card-title">Griglia</h5>
                         <p class="card-text">
                             Qui ci andrà la griglia
-                            <asp:GridView ID="grigliaStatisticheCorrieri" runat="server"></asp:GridView>                            
+                            <asp:GridView ID="grigliaStatisticheCorrieri" runat="server"></asp:GridView>
                         </p>
                     </div>
                 </div>

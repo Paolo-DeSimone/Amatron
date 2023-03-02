@@ -27,7 +27,7 @@
                                             <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUMEROORDINE" SortExpression="NUMEROORDINE" />
                                         </Columns>
                                     </asp:GridView>  
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString2 %>" SelectCommand="SELECT [chiave], [chiaveCORRIERE], [chiavePRODOTTO], [chiaveCLIENTE], [DATATRANSAZIONE], [QTA], [NUMEROORDINE] FROM [ORDINI] ORDER BY [DATATRANSAZIONE], [chiavePRODOTTO]"></asp:SqlDataSource>
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="SELECT [chiave], [chiaveCORRIERE], [chiavePRODOTTO], [chiaveCLIENTE], [DATATRANSAZIONE], [QTA], [NUMEROORDINE] FROM [ORDINI] ORDER BY [DATATRANSAZIONE], [chiavePRODOTTO]"></asp:SqlDataSource>
                                 </div>
                                 <div class="col-lg-4">
                                     <asp:DropDownList ID="ddlAccettaRifiuta" runat="server">

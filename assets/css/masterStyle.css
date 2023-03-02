@@ -1,0 +1,59 @@
+﻿body {
+
+}
+
+.masterBorderColor {
+    border-color: #B469FF;
+    border-width: 5px;
+    border-radius: 20px;
+}
+
+.masterButton {
+    align-items: stretch;
+    background-color: #B469FF;
+    border: #B469FF;
+}
+
+.masterColorBG {
+    background-color: #B469FF;
+}
+
+.masterHideScroll {
+    overflow-y: scroll;
+}
+
+.masterHideScroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.masterHideScroll {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.masterHRdivider {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.masterHRdivider1 {
+    background-color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 10px;
+    position: absolute;
+    top: -0.7em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.masterPopup {
+
+}
+
+.masterPopupBG {
+    background-color: #212529;
+    filter: alpha(opacity=30);
+    opacity: 0.8;
+}

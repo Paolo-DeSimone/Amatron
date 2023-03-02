@@ -2,7 +2,6 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
     <link href="/assets/css/cssFrancescoVENDITORE.css" rel="stylesheet" />
 
     <script>
@@ -136,7 +135,7 @@
         Style="display: none">
 
         <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-        <iframe style="width: 100%; height: 93%; aspect-ratio: 16/9; border-radius: 10px; border-color: #8e53c9 !important;" id="Iframe1" src="GestisciInventario.aspx" runat="server"></iframe>
+        <iframe style="width: 300px; height: 300px; aspect-ratio: 16/9; border-radius: 10px; border-color: #8e53c9 !important;" id="Iframe1" src="GestisciInventario.aspx" runat="server"></iframe>
         <br />
 
 

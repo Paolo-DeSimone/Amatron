@@ -120,6 +120,16 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="CLIENTI_Prime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CLIENTI_PrimeResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="CLIENTI_InsertSoapIn">
@@ -158,6 +168,12 @@
   <wsdl:message name="CLIENTI_LoginSoapOut">
     <wsdl:part name="parameters" element="tns:CLIENTI_LoginResponse" />
   </wsdl:message>
+  <wsdl:message name="CLIENTI_PrimeSoapIn">
+    <wsdl:part name="parameters" element="tns:CLIENTI_Prime" />
+  </wsdl:message>
+  <wsdl:message name="CLIENTI_PrimeSoapOut">
+    <wsdl:part name="parameters" element="tns:CLIENTI_PrimeResponse" />
+  </wsdl:message>
   <wsdl:portType name="WsClientiSoap">
     <wsdl:operation name="CLIENTI_Insert">
       <wsdl:input message="tns:CLIENTI_InsertSoapIn" />
@@ -182,6 +198,10 @@
     <wsdl:operation name="CLIENTI_Login">
       <wsdl:input message="tns:CLIENTI_LoginSoapIn" />
       <wsdl:output message="tns:CLIENTI_LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CLIENTI_Prime">
+      <wsdl:input message="tns:CLIENTI_PrimeSoapIn" />
+      <wsdl:output message="tns:CLIENTI_PrimeSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WsClientiSoap" type="tns:WsClientiSoap">
@@ -240,6 +260,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CLIENTI_Prime">
+      <soap:operation soapAction="http://tempuri.org/CLIENTI_Prime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WsClientiSoap12" type="tns:WsClientiSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -290,6 +319,15 @@
     </wsdl:operation>
     <wsdl:operation name="CLIENTI_Login">
       <soap12:operation soapAction="http://tempuri.org/CLIENTI_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CLIENTI_Prime">
+      <soap12:operation soapAction="http://tempuri.org/CLIENTI_Prime" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

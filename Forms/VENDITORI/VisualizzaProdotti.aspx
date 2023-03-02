@@ -15,7 +15,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container">
         <%-- Titolo della pagina --%>
-        <div class="CardMargine">
+        <div class="CardMargine ">
             <h2>
                 <asp:Label ID="lblProdottiInVendita" runat="server" Text="Prodotti in vendita"></asp:Label>
             </h2>

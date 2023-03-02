@@ -53,7 +53,7 @@ public class WsProdotti : System.Web.Services.WebService
         DB.cmd.Parameters.AddWithValue("prezzo", prezzo);
         DB.cmd.Parameters.AddWithValue("qta", qta);
         DB.cmd.Parameters.AddWithValue("datacaricamento", datacaricamento);
-        DB.cmd.Parameters.AddWithValue("percamatron", percamatron);
+        DB.cmd.Parameters.AddWithValue("PERCAMATRON", percamatron);
         DB.EseguiSPNonRead();
     }
     [WebMethod]

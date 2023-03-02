@@ -51,8 +51,7 @@
                     <asp:DropDownList ID="ddlCarrello" runat="server"></asp:DropDownList>
                 </div>
                 <div class="py-5" align="center">
-                    <button id="btnAggiungi" runat="server" class="btn masterButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="Aggiungi()">
-                        Aggiungi al carrello</button>
+                    <asp:Button ID="btnAggiungi" runat="server" Text="Aggiungi al carrello" class="btn masterButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" OnClick="btnAggiungi_Click"/>
                 </div>
             </div>
         </div>

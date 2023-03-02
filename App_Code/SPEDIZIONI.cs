@@ -65,4 +65,13 @@ public class SPEDIZIONI
         return DT;
     }
 
+    /// <summary>
+    /// tramite questo metodo modifico lo stato 
+    /// </summary>
+    /// <returns>restituisce la parte successiva dello stato</returns>
+    public void SPEDIZIONI_UpdateStato()
+    {
+        S.SPEDIZIONI_UpdateStato(chiave);
+    }
+
 }

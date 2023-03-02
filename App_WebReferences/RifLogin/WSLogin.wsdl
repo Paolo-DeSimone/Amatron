@@ -2,18 +2,18 @@
 <wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
-      <s:element name="AMATRON_Login">
+      <s:element name="Login">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EMAIL" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="PWD" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="AMATRON_LoginResponse">
+      <s:element name="LoginResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="AMATRON_LoginResult">
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult">
               <s:complexType>
                 <s:sequence>
                   <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
@@ -26,22 +26,22 @@
       </s:element>
     </s:schema>
   </wsdl:types>
-  <wsdl:message name="AMATRON_LoginSoapIn">
-    <wsdl:part name="parameters" element="tns:AMATRON_Login" />
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
   </wsdl:message>
-  <wsdl:message name="AMATRON_LoginSoapOut">
-    <wsdl:part name="parameters" element="tns:AMATRON_LoginResponse" />
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
-  <wsdl:portType name="WsAmatronSoap">
-    <wsdl:operation name="AMATRON_Login">
-      <wsdl:input message="tns:AMATRON_LoginSoapIn" />
-      <wsdl:output message="tns:AMATRON_LoginSoapOut" />
+  <wsdl:portType name="WSLoginSoap">
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="WsAmatronSoap" type="tns:WsAmatronSoap">
+  <wsdl:binding name="WSLoginSoap" type="tns:WSLoginSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="AMATRON_Login">
-      <soap:operation soapAction="http://tempuri.org/AMATRON_Login" style="document" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -50,10 +50,10 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="WsAmatronSoap12" type="tns:WsAmatronSoap">
+  <wsdl:binding name="WSLoginSoap12" type="tns:WSLoginSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="AMATRON_Login">
-      <soap12:operation soapAction="http://tempuri.org/AMATRON_Login" style="document" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -62,12 +62,12 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="WsAmatron">
-    <wsdl:port name="WsAmatronSoap" binding="tns:WsAmatronSoap">
-      <soap:address location="http://localhost:50799/WebServices/WsAmatron.asmx" />
+  <wsdl:service name="WSLogin">
+    <wsdl:port name="WSLoginSoap" binding="tns:WSLoginSoap">
+      <soap:address location="http://localhost:50799/WebServices/WSLogin.asmx" />
     </wsdl:port>
-    <wsdl:port name="WsAmatronSoap12" binding="tns:WsAmatronSoap12">
-      <soap12:address location="http://localhost:50799/WebServices/WsAmatron.asmx" />
+    <wsdl:port name="WSLoginSoap12" binding="tns:WSLoginSoap12">
+      <soap12:address location="http://localhost:50799/WebServices/WSLogin.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

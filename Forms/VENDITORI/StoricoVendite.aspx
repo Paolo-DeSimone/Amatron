@@ -24,7 +24,6 @@
         .boxImg {
             object-fit: scale-down;
             width: 225px;
-            margin: auto;
             height: 225px;
         }
     </style>
@@ -50,7 +49,6 @@
                 <div class="row">
                     <%-- prima col --%>
                     <div id="imgContainer" class="row" runat="server">
-
                     </div>
                     <div class="col-md-6">
                         <div class="card" style="background-color: #f5f5f5; margin-bottom: 15px;">
@@ -58,16 +56,21 @@
 
                                 <%-- sezione immagine, l'immagine sarà centrata all'interno di un template 225x225 --%>
                                 <div class="col-md-5">
-                                    <img class="img-thumbnail boxImg" src="/assets/images/nayuta.jpg" />
+                                    <%--<img class="img-thumbnail boxImg" src="/assets/images/nayuta.jpg" />--%>
+                                    <asp:ImageButton ID="imgProdotto" class="img-thumbnail boxImg" src="/assets/images/nayuta.jpg" runat="server" />
                                 </div>
                                 <%--sezione contenuto, sarà allineato in basso e a sinistra, le dimensioni sono definite dai tag--%>
 
-                                <div class="col-md-7" style="text-align: left; align-self: end;">
+                                <div class="col-md-7" style="text-align: left;">
 
                                     <asp:Label ID="lblTitolo" Class="contenimentoTitolo" runat="server">
                                     <h5>
-                                        
+                                        <a href="../PRODOTTI/PaginaProdotto.aspx" class="text-dark">
                                        Chainsaw man volume unico gigante bellissimo incredibile impressionante
+
+                                        </a>
+
+                                        
                                         
 
                                     </h5>
@@ -78,13 +81,20 @@
 
                                     <asp:Label ID="lblCategoria" runat="server">
 
-                                     <h6>Manga</h6>
+                                     <h6> Manga</h6>
                                     </asp:Label>
 
 
                                     <asp:Label ID="lblDescrizione" class="DescrizioneProdotto" Style="" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non faucibus odio. Nulla at ultrices ex, ut ultrices eros."></asp:Label>
+                                    <div class="row mt-1">
+                                        <div class="col-6">
+                                            <asp:Label ID="lblDataVendita" class="text-secondary" runat="server" Text="18/2/2023"></asp:Label>
+                                        </div>
+                                        <div class="col-6 text-end mb-1">
+                                            <asp:Label ID="lblQuantita" class="text-secondary mr-4" runat="server" Text="Quantita: 2"></asp:Label>
+                                        </div>
 
-                                    <asp:Label ID="lblDataVendita" class="text-secondary" runat="server" Text="18/2/2023"></asp:Label>
+                                    </div>
 
                                 </div>
                             </div>

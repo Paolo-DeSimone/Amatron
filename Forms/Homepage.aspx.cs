@@ -11,6 +11,7 @@ public partial class Homepage : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
+
         // 20 novità caricate dal db 
         PRODOTTI P = new PRODOTTI();
         DataTable dt = P.MAX20Novita();
@@ -143,5 +144,6 @@ public partial class Homepage : System.Web.UI.Page
 
 
         //20 più votati caricati dal db
+
     }
 }

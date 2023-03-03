@@ -9,6 +9,11 @@ public partial class Homepage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        
+            if (Request.QueryString["msg"] == "success")
+            {
+                string script = @"notifySuccess('Registrato con successo!')";
+                ScriptManager.RegisterStartupScript(this, GetType(), "ShowSuccessNotification", script, true);
+                return;
+            }
     }
 }

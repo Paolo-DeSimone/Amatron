@@ -26,13 +26,19 @@
 }
 
 .notify-error {
-    color: #fefefe;
-    background: url(../images/notify/red_bg.png) /*../images/red_bg.png*/;
+    color: black;
+    font-weight: bold;
+    font-size: larger;
+    background-color: #e75f64;
+    height: 8%;
 }
 
 .notify-success {
-    color: #fefefe;
-    background: #CFC url(../images/notify/grn_bg.png) /*../images/grn_bg.png*/
+    color: black;
+    font-weight: bold;
+    font-size: larger;
+    background-color: #adff2f;
+    height: 8%;
 }
 
 .notify-warning {

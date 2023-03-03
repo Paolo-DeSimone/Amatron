@@ -2,26 +2,20 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
     <link href="/assets/css/cssFrancescoVENDITORE.css" rel="stylesheet" />
-
-    <script>
-        //Qui inseriremo lo script che ci permetterà di aprire una pagina prodotto del prodotto selezionato
-        //quando andremo a cliccare sulla sua img/card/titolo
-        
-        }
-    </script>
+    <link href="/assets/css/masterStyle.css" rel="stylesheet" />
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container">
-        <div class="card CardMargine ">
-            <%-- header --%>
-            <div class="card-header coloreHeader">
-                <%-- Label nella quale andremo a prendere il nome del venditore che apre la pagina
-                    Lo recupereremo da una session--%>
-                <h4><strong>
-                    <asp:Label ID="lblNomeVenditore" runat="server" Text="NOME VENDITORE"></asp:Label></strong></h4>
-            </div>
+        <%-- Titolo della pagina --%>
+        <div class="CardMargine ">
+            <h2>
+                <asp:Label ID="lblProdottiInVendita" runat="server" Text="Prodotti in vendita"></asp:Label>
+            </h2>
+        </div>
+        <div class="card">
+
             <%-- Body --%>
             <div class="card-body">
                 <%-- Nel body andranno inseriti i due pulsanti in alto: Uno inserisci ed uno modifica qta prodotto
@@ -32,20 +26,20 @@
                     <div class=" col-md-2 ">
                     </div>
                     <div class=" col-md-6">
-                        <asp:Button ID="btnAggiungiProdotto" class="btn btnVenditoriPurple" runat="server" Text="Aggiungi Nuovo Prodotto" />
+                        <asp:Button ID="btnAggiungiProdotto" class="btn masterButton" runat="server" Text="Aggiungi Nuovo Prodotto" />
                     </div>
                     <div class=" col-md-4 ">
-                        <asp:Button ID="btnModificaQtaProdotto" class="btn btnVenditoriPurple" runat="server" Text="Ricarica Prodotto" />
+                        <asp:Button ID="btnModificaQtaProdotto" class="btn masterButton" runat="server" Text="Ricarica Prodotto" />
                     </div>
                 </div>
                 <%-- Questo imgContainer ci servirà per popolare tutti i prodotti che ha a disposizione un venditore
                         popolando la row sottostante, abbiamo infati copiato le stesse div nel file .cs per ricreare il formato--%>
                 <div id="imgContainer" runat="server" class="row"></div>
-                <div class="row">
-                    <%-- prima colonna --%>
-                    <%-- Qui ci andranno i prodotti,con un ciclo andremo a riempire i vari spazi utili andando a recuperare tutti i prodotti 
+                <%-- <div class="row">--%>
+                <%-- prima colonna --%>
+                <%-- Qui ci andranno i prodotti,con un ciclo andremo a riempire i vari spazi utili andando a recuperare tutti i prodotti 
                         che ha messo in vendita il venditore--%>
-                    <div class=" col-md-6 ">
+                <%-- <div class=" col-md-6 ">
                         <div class="card cardIncard">
                             <div class="row">
                                 <div class="col-md-5">
@@ -67,13 +61,35 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>--%>
+                <div class="table-responsive">
+                    <%-- QUI INSERIRò LA GRIDVIEW AL POSTO DELLE COL E DELLE ROW PER POPOLARE LA PAGINA --%>
+                    <asp:GridView ID="gridVisualizzaProdotti" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed" DataKeyNames="chiave,chiave1" DataSourceID="sdsGRIDVisualizzaProdotti" OnSelectedIndexChanged="gridVisualizzaProdotti_SelectedIndexChanged">
+                        <Columns>
+                            <asp:BoundField DataField="chiave" HeaderText="chiave" InsertVisible="False" ReadOnly="True" SortExpression="chiave" Visible="False" />
+                            <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False" />
+                            <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" Visible="False" />
+                            <asp:BoundField DataField="TITOLO" HeaderText="TITOLO" SortExpression="TITOLO" />
+                            <asp:BoundField DataField="DESCRIZIONE" HeaderText="DESCRIZIONE" SortExpression="DESCRIZIONE" />
+                            <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
+                            <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
+                            <asp:BoundField DataField="DATACARICAMENTO" HeaderText="DATACARICAMENTO" SortExpression="DATACARICAMENTO" />
+                            <asp:BoundField DataField="PERCAMATRON" HeaderText="PERCAMATRON" SortExpression="PERCAMATRON" />
+                            <asp:BoundField DataField="chiave1" HeaderText="chiave1" InsertVisible="False" ReadOnly="True" SortExpression="chiave1" Visible="False" />
+                            <asp:BoundField DataField="CATEGORIA" HeaderText="CATEGORIA" SortExpression="CATEGORIA" />
+                        </Columns>
+                        <HeaderStyle BackColor="#B469FF" />
+                    </asp:GridView>
+                    <asp:SqlDataSource ID="sdsGRIDVisualizzaProdotti" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spPRODOTTI_SelectByVenditore" SelectCommandType="StoredProcedure">
+                        <SelectParameters>
+                            <asp:Parameter DefaultValue="1" Name="chiaveVENDITORE" Type="Int32" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
                 </div>
             </div>
         </div>
     </div>
-
-
+    <%-- </div>--%>
     <%-- Script Manager --%>
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
@@ -83,7 +99,7 @@
         PopupControlID="Panl1"
         TargetControlID="btnAggiungiProdotto"
         CancelControlID="btnChiudiPopup"
-        BackgroundCssClass="Background">
+        BackgroundCssClass="masterPopupBG">
     </cc1:ModalPopupExtender>
 
     <%-- contenuto del popup --%>
@@ -93,35 +109,27 @@
         CssClass="Popup"
         align="center"
         Style="display: none">
-
-
         <div class="popupBoxWrapper">
+
 
         
         <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
         <iframe style=" width: 560px; height: 500px;" id="Iframe2" src="AggiungiProdotti.aspx"  runat="server"></iframe>
+
         </div>
-            
-
         <br />
-
-
         <div class="close-btn-wrapper">
 
             <button id="btnChiudiPopup" class="prova chiusura close-btn2" runat="server" text="X">               x           </button>
         </div>
     </asp:Panel>
-    <%--chiude il popup--%>
-
-
     <%-- chiamata del popup --%>
     <cc1:ModalPopupExtender ID="ModalPopupExtender1" runat="server"
         PopupControlID="Panel1"
         TargetControlID="btnModificaQtaProdotto"
         CancelControlID="btnChiudiPopupInventario"
-        BackgroundCssClass="Background">
+        BackgroundCssClass="masterPopupBG">
     </cc1:ModalPopupExtender>
-
     <%-- contenuto del popup --%>
     <asp:Panel
         ID="Panel1"
@@ -129,8 +137,8 @@
         CssClass="PopupGestisciInventario"
         align="center"
         Style="display: none">
-
         <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+
         <iframe style="width: 300px; height: 300px; aspect-ratio: 16/9" id="Iframe1" src="GestisciInventario.aspx" runat="server"></iframe>
         <br />
 
@@ -139,7 +147,7 @@
             <button id="btnChiudiPopupInventario" class="prova chiusura close-btn3" runat="server" text="X"> x
             </button>
         </div>
-    </asp:Panel>
 
+    </asp:Panel>
 </asp:Content>
 

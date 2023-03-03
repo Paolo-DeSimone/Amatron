@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AggiungiProdotti.aspx.cs" Inherits="Venditori_AggiungiProdotti" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AggiungiProdotti.aspx.cs" Inherits="Venditori_AggiungiProdotti" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <!DOCTYPE html>
@@ -13,6 +13,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
         <center>
             <h2>
                 <asp:Label ID="lblCaricaProdotti" runat="server" Text="CARICA PRODOTTI"></asp:Label>
@@ -26,14 +27,17 @@
                         <asp:Label Class="form-label" ID="lblTitolo" runat="server" Text="Titolo:"></asp:Label>
                         <asp:TextBox Class="form-control-sm" ID="txtTitolo" Style="width: 480px;" runat="server"></asp:TextBox>
 
+
                     </div>
                     <div class="text-left">
                         <asp:Literal ID="ltlDescrizione" runat="server">Descrizione:</asp:Literal>
+
 
                         <asp:TextBox Class="form-control-sm" ID="txtDescrizione" Style="width: 480px;" runat="server" TextMode="MultiLine"></asp:TextBox>
                         <br />
                     </div>
                 </div>
+
 
                 <div class="provacentro">
                     <div class="text-left">
@@ -61,7 +65,9 @@
                 <%--  </div>--%>
 
 
+
                 <div class="text-left center row">
+
                     <div class="col-sm-4 col-4">
                         <asp:Label ID="lblPrezzo" runat="server" class="form-label" Text="Prezzo:"></asp:Label>
                     </div>
@@ -77,15 +83,19 @@
                         <asp:TextBox Class="form-control-sm" ID="txtPrezzo" runat="server" Style="width: 50px;"></asp:TextBox>€
                     </div>
                     <div class="col-sm-6 col-6">
+
                         <asp:DropDownList class="form-control" ID="ddlCategoria" runat="server" Style="width: 150px;" list="ddlCategoria" DataSourceID="sdsCategoria" DataTextField="CATEGORIA" DataValueField="chiave"></asp:DropDownList>
                         <asp:SqlDataSource ID="sdsCategoria" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="SELECT [chiave], [CATEGORIA] FROM [CATEGORIE]"></asp:SqlDataSource>
+
                     </div>
                     <div class="col-sm-2 col-2">
                         <asp:TextBox Class="form-control-sm" ID="txtQuantita" runat="server" Style="width: 40px;" TextMode="Number"></asp:TextBox>
                     </div>
                 </div>
                 <center>
+
                     <asp:Button ID="btnSalva" class="btn btnVenditoriPurple form-control" runat="server" Text="Salva" />
+
                 </center>
 
 

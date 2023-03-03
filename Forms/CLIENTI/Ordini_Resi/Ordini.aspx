@@ -16,11 +16,11 @@
                             <h5 class="card-title"> <asp:Label ID="lblTitolo" runat="server" Text="Label">HP Elitebook Folio, Notebook Pc portatile Pronto All'uso</asp:Label> </h5>
                             <p class="card-text">Display 14", Intel Core i7, Ram 8GB, SSD 240GB, Win 10Pro, Pacchetto Office 2021</p>
                              <%-- pulsante che apre il popup --%>
-            <asp:Button ID="btnRecensione" runat="server" Text="Lascia una recensione" class="btn btn-light" />
+            <asp:Button ID="btnRecensione" runat="server" Text="Lascia una recensione" class="btn masterButton" />
                                <%-- pulsante che apre il popup --%>
-            <asp:Button ID="btnReso" runat="server" Text="Effettua reso" class="btn btn-light" />
+            <asp:Button ID="btnReso" runat="server" Text="Effettua reso" class="btn masterButton" />
                             <p class="card-text">Prezzo:<asp:Label ID="lblPrezzo" runat="server" Text="Label">550€</asp:Label></p>
-                            <asp:Label ID="lblStato" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="lblStato" runat="server" Text=""></asp:Label>
                     </div>
                         </div>
                 </div>
@@ -145,7 +145,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+       
 
 
 
@@ -172,7 +172,7 @@
 
     <%-- chiamata del popup --%>
     <cc1:ModalPopupExtender ID="mp2" runat="server" PopupControlID="Reso" TargetControlID="btnReso"
-        CancelControlID="btnchiudi" BackgroundCssClass="Background">
+        CancelControlID="btn" BackgroundCssClass="Background">
     </cc1:ModalPopupExtender>
 
     <%-- contenuto del popup --%>
@@ -182,14 +182,16 @@
         CssClass="PopupReso"
         align="center"
         Style="display: none">
+        
         <%--ci pensa lo script manager a renderlo visibile--%>
 
         <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
         <iframe style="width: 600px; height: 450px;  -webkit-border-radius: 10px 10px 10px 10px;" id="Iframe1" src="ResoClientiPopup.aspx" runat="server"></iframe>
         <br />
-        <asp:Button ID="btnchiudi" runat="server" class="btn btn-light" Text="Close" />
+        <asp:Button ID="btn" runat="server" class="btn btn-secondary" Text="Chiudi" />
         <%--chiude il popup--%>
     </asp:Panel>
+        </div>
 
         <%-- contenuto del popup --%>
     <asp:Panel

@@ -54,5 +54,19 @@ public class WsImmagini : System.Web.Services.WebService
         DB.query = "spORDINI_Delete";
         DB.EseguiSPNonRead();
     }
+
+    [WebMethod]
+    public DataTable PRODOTTI_IMMAGINI_SelectByProdotto(int chiaveProdotto)
+    {
+        DATABASE DB = new DATABASE();
+        DataTable dt = new DataTable();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spPRODOTTI_IMMAGINI_SelectByProdotto";
+        DB.cmd.Parameters.AddWithValue("chiaveProdotto", chiaveProdotto);
+        dt = DB.EseguiSPRead();
+        dt.TableName = "PRIMGSelectByProdotto";
+        return dt;
+    }
+
 }
 

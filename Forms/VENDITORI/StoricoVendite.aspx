@@ -26,6 +26,12 @@
             width: 225px;
             height: 225px;
         }
+
+        .CardMargine {
+            margin: 6vh auto;
+            margin-left: 38%;
+            margin-bottom: 0%;
+        }
     </style>
 
 
@@ -34,117 +40,97 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <%--formattazione card--%>
-    <div class="container mt-5">
+
+    <div class="CardMargine">
+
+        <h2>
+            <asp:Label ID="lblStoricoVendite" runat="server" Text="Storico Vendite"></asp:Label>
+        </h2>
+
+    </div>
+    <div class="container">
         <div class="card">
-
-            <%--header--%>
-            <div class="card-header" style="background-color: #8e53c9">
-                <h4>
-                    <strong>Storico Venditore
-                    </strong>
-                </h4>
-            </div>
             <%-- Inizio body --%>
-            <div class="card-body" style="padding: 15px 15px 15px;">
+            <div class="card-body" style="width: 50%; padding: 15px 15px 15px;">
                 <div class="row">
-                    <%-- prima col --%>
-                    <div id="imgContainer" class="row" runat="server">
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card" style="background-color: #f5f5f5; margin-bottom: 15px;">
-                            <div class="row">
-
-                                <%-- sezione immagine, l'immagine sarà centrata all'interno di un template 225x225 --%>
-                                <div class="col-md-5">
-                                    <%--<img class="img-thumbnail boxImg" src="/assets/images/nayuta.jpg" />--%>
-                                    <asp:ImageButton ID="imgProdotto" class="img-thumbnail boxImg" src="/assets/images/nayuta.jpg" runat="server" />
-                                </div>
-                                <%--sezione contenuto, sarà allineato in basso e a sinistra, le dimensioni sono definite dai tag--%>
-
-                                <div class="col-md-7" style="text-align: left;">
-
-                                    <asp:Label ID="lblTitolo" Class="contenimentoTitolo" runat="server">
-                                    <h5>
-                                        <a href="../PRODOTTI/PaginaProdotto.aspx" class="text-dark">
-                                       Chainsaw man volume unico gigante bellissimo incredibile impressionante
-
-                                        </a>
-
-                                        
-                                        
-
-                                    </h5>
-                                    </asp:Label>
-                                    <asp:Label ID="lblPrezzo" runat="server">
-                                    <h5>100 euro</h5>
-                                    </asp:Label>
-
-                                    <asp:Label ID="lblCategoria" runat="server">
-
-                                     <h6> Manga</h6>
-                                    </asp:Label>
-
-
-                                    <asp:Label ID="lblDescrizione" class="DescrizioneProdotto" Style="" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non faucibus odio. Nulla at ultrices ex, ut ultrices eros."></asp:Label>
-                                    <div class="row mt-1">
-                                        <div class="col-6">
-                                            <asp:Label ID="lblDataVendita" class="text-secondary" runat="server" Text="18/2/2023"></asp:Label>
-                                        </div>
-                                        <div class="col-6 text-end mb-1">
-                                            <asp:Label ID="lblQuantita" class="text-secondary mr-4" runat="server" Text="Quantita: 2"></asp:Label>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-lg-6">
+                        <asp:Label ID="Label1" runat="server" Text="Titolo:"></asp:Label>
+                        <asp:TextBox ID="txtTitolo" Class="form-control" runat="server"></asp:TextBox>
                     </div>
 
-                    <%--seconda col--%>
+                    <div class="col-lg-6">
+                        <asp:Label ID="Label5" runat="server" Text="Categoria:"></asp:Label>
 
-                    <div class="col-md-6">
-                        <div class="card" style="background-color: #f5f5f5; margin-bottom: 15px;">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <img class="img-thumbnail boxImg" src="/assets/images/kurado.png" />
-                                </div>
-
-                                <div class="col-md-7" style="text-align: left; align-self: end;">
-
-                                    <asp:Label ID="Label1" Class="contenimentoTitolo" runat="server">
-                                    <h5>
-                                        
-                                       Final fantasy 7 edizione poveraccia che insomma devi essere un po' povero per comprarla
-                                        
-
-                                    </h5>
-                                    </asp:Label>
-                                    <asp:Label ID="Label2" runat="server">
-                                    <h5>45 euro</h5>
-                                    </asp:Label>
-
-                                    <asp:Label ID="Label3" runat="server">
-
-                                     <h6>Manga</h6>
-                                    </asp:Label>
-
-
-                                    <asp:Label ID="Label4" class="DescrizioneProdotto" Style="" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non faucibus odio. Nulla at ultrices ex, ut ultrices eros."></asp:Label>
-
-                                    <asp:Label ID="Label5" class="text-secondary" runat="server" Text="15/2/2023"></asp:Label>
-
-                                </div>
-                            </div>
-                        </div>
+                        <asp:DropDownList ID="ddlCategoria" Class="btn btn-secondary dropdown-toggle" runat="server" DataSourceID="SqlDataSource1" DataTextField="CATEGORIA" DataValueField="chiaveCATEGORIA">
+                            <asp:ListItem></asp:ListItem>
+                        </asp:DropDownList>
+                                <%--<asp:ListItem Enabled=�true� Text= �Select Subject� Value= �-1�></asp:ListItem>--%>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCATEGORIE_SelectByVenditore_DDL" SelectCommandType="StoredProcedure">
+                            
+                            
+                            <SelectParameters>
+                                <asp:Parameter DefaultValue="1" Name="chiaveVENDITORE" Type="Int32" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
                     </div>
 
+                    <div class="col-lg-12">
+                        <asp:Label ID="Label2" runat="server" Text="Numero Ordine"></asp:Label>
+                        <asp:TextBox ID="txtNOrdine" Class="form-control" runat="server"></asp:TextBox>
+
+                    </div>
+
+                    <div class="col-lg-6">
+                        <asp:Label ID="Label3" runat="server" Text="Data inizio"></asp:Label>
+                         <asp:TextBox ID="txtDInizio" Class="form-control" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="col-lg-6">
+                        <asp:Label ID="Label4" runat="server" Text="Data fine"></asp:Label>
+                         <asp:TextBox ID="txtDFine" Class="form-control" runat="server"></asp:TextBox>
+                    </div>
+
+                </div>
 
 
+    <div class="CardMargine">
+
+        <h2>
+            <asp:Label ID="lblStoricoVendite2" runat="server" Text="Storico Vendite"></asp:Label>
+        </h2>
+
+
+                <div class="table-responsive">
+                    <asp:GridView ID="GrigliaStoricoVendite" class="table" CssClass="table table-bordered table-condensed" runat="server" AutoGenerateColumns="False" DataSourceID="sdsGrigliaStorico">
+                        <Columns>
+                            <asp:BoundField DataField="chiavePRODOTTI" HeaderText="chiavePRODOTTI" SortExpression="chiavePRODOTTI" Visible="False" />
+                            <asp:BoundField DataField="chiaveORDINI" HeaderText="chiaveORDINI" SortExpression="chiaveORDINI" Visible="False" />
+                            <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False" />
+                            <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" Visible="False" />
+                            <asp:BoundField DataField="TITOLO" HeaderText="TITOLO" SortExpression="TITOLO" />
+                            <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
+                            <asp:BoundField DataField="PERCAMATRON" HeaderText="PERCAMATRON" SortExpression="PERCAMATRON" />
+                            <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATATRANSAZIONE" SortExpression="DATATRANSAZIONE" />
+                            <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
+                            <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUMEROORDINE" SortExpression="NUMEROORDINE" />
+                            <asp:BoundField DataField="CATEGORIA" HeaderText="CATEGORIA" SortExpression="CATEGORIA" />
+                        </Columns>
+                        <HeaderStyle BackColor="#B469FF" />
+                    </asp:GridView>
+                    <asp:SqlDataSource ID="sdsGrigliaStorico" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spPRODOTTI_ORDINI_CATEGORIA_Filter" SelectCommandType="StoredProcedure">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="txtTitolo" Name="TITOLO" PropertyName="Text" Type="String" />
+                            <asp:ControlParameter ControlID="ddlCategoria" Name="chiaveCATEGORIA" PropertyName="SelectedValue" Type="Int32" />
+                            <asp:ControlParameter ControlID="txtDInizio" Name="DATAINIZIO" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="txtDFine" Name="DATAFINE" PropertyName="Text" Type="DateTime" />
+                            <asp:ControlParameter ControlID="txtNOrdine" Name="NUMEROORDINE" PropertyName="Text" Type="Int32" />
+                            <asp:Parameter DefaultValue="1" Name="chiaveVenditore" Type="Int32" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
 
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </asp:Content>
 

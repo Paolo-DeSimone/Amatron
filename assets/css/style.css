@@ -230,7 +230,7 @@
 .PopupReso {
     background-color: #212529;
     filter: alpha(opacity=30);
-    opacity: 0.8;
+    /*opacity: 0.8;*/
 }
 
 /*Css popup Inscrizione prime*/
@@ -248,8 +248,16 @@
 }
 
 .colore {
-    background-color: #212529;
+    background-color: white;
 
+}
+
+.card-text {
+    color:black;
+}
+
+.card-title {
+    color: black;
 }
 
 .inscriviti {

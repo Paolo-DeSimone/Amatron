@@ -24,9 +24,6 @@
 
     <link href="/assets/css/style.css" rel="stylesheet" />
     <link href="/assets/css/cssCLIENTI.css" rel="stylesheet" />
-
-    <%--<link href="/assets/css/carousel.css" rel="stylesheet" />--%>
-
     <link href="/assets/css/masterStyle.css" rel="stylesheet" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
@@ -166,7 +163,7 @@
                 <%-- Questo è il contenuto del PopUp che si apre cliccando su SignUp --%>
                 <div class="popupLogin" id="loginform">
                     <div>
-                        <img style="height: 42px; margin-left: 28%" src="assets/images/amatron.png" />
+                        <img style="height: 42px; margin-left: 28%" src="/assets/images/amatron.png" />
                         <button onclick="closePopupLogin()" style="float: right;">
                             x
                         </button>

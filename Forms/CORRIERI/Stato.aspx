@@ -15,12 +15,13 @@
                             <div class="card-body">
                                 <div class="row align-items-center">
                                     <div class="col-md-8" style="overflow: auto; top: -1px; left: 0px; height: auto; width: auto;">
-                                        <asp:GridView ID="grdSTATO" class="table" runat="server" DataSourceID="sdsSTATO" AutoGenerateColumns="False" DataKeyNames="chiaveSPEDIZIONE" OnSelectedIndexChanged="grdSTATO_SelectedIndexChanged">
+                                        <asp:GridView ID="grdSTATO" class="table" runat="server" DataSourceID="sdsSTATO" AutoGenerateColumns="False" OnSelectedIndexChanged="grdSTATO_SelectedIndexChanged">
                                             <Columns>
 
-                                                <asp:CommandField ButtonType="Button" ShowSelectButton="True"  ControlStyle-CssClass="btn btn-sm masterButton" />
+                                                <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="btn btn-sm masterButton"/>
 
-                                                <asp:BoundField DataField="chiaveSPEDIZIONE" HeaderText="chiaveSPEDIZIONE" ReadOnly="True" SortExpression="chiaveSPEDIZIONE" Visible="False" />
+                                                <asp:BoundField DataField="chiaveCORRIERE" HeaderText="chiaveCORRIERE" SortExpression="chiaveCORRIERE" Visible="False" />
+                                                <asp:BoundField DataField="chiaveSPEDIZIONE" HeaderText="chiaveSPEDIZIONE" SortExpression="chiaveSPEDIZIONE" Visible="False" />
                                                 <asp:BoundField DataField="STATO_SPEDIZIONE" HeaderText="STATO_SPEDIZIONE" SortExpression="STATO_SPEDIZIONE" />
                                                 <asp:BoundField DataField="DATA_ORA_SPEDIZIONE" HeaderText="DATA_ORA_SPEDIZIONE" SortExpression="DATA_ORA_SPEDIZIONE" />
                                                 <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATATRANSAZIONE" SortExpression="DATATRANSAZIONE" />
@@ -29,7 +30,11 @@
                                             </Columns>
                                             <HeaderStyle BackColor="#B469FF" />
                                         </asp:GridView>
-                                        <asp:SqlDataSource ID="sdsSTATO" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSEDIZIONI_ORDINI_Select" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                                        <asp:SqlDataSource ID="sdsSTATO" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSEDIZIONI_ORDINI_Select" SelectCommandType="StoredProcedure">
+                                            <%--<SelectParameters>
+                                                <asp:SessionParameter Name="chiave" SessionField="chiaveUSR" Type="Int32" />
+                                            </SelectParameters>--%>
+                                        </asp:SqlDataSource>
                                     </div>
                                     <div class="col-lg-2">
 
@@ -40,10 +45,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div></center>
-                    </div>
+                        </div>
+                    </center>
                 </div>
             </div>
+        </div>
     </section>
 </asp:Content>
 

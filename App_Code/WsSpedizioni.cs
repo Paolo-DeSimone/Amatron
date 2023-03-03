@@ -74,12 +74,13 @@ public class WsSpedizioni : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void SPEDIZIONI_UpdateStato(int chiave)
+    public void SPEDIZIONI_UpdateStato(int chiave, string STATO)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spSPEDIZIONI_UpdateStato";
-        DB.cmd.Parameters.AddWithValue("chiave", chiave);
+        DB.cmd.Parameters.AddWithValue("chiaveSPEDIZIONE", chiave);
+        DB.cmd.Parameters.AddWithValue("STATOSPEDIZIONE", STATO);
         DB.EseguiSPNonRead();
     }
 }

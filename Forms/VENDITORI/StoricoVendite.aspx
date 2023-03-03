@@ -93,6 +93,13 @@
 
 
     <div class="CardMargine">
+
+
+        <h2>
+        </h2>
+
+
+
                 <div class="table-responsive">
                     <asp:GridView ID="GrigliaStoricoVendite" class="table" CssClass="table table-bordered table-condensed" runat="server" AutoGenerateColumns="False" DataSourceID="sdsGrigliaStorico">
                         <Columns>

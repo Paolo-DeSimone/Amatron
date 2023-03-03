@@ -3,6 +3,7 @@
 .hrdivider {
     font-weight: bold;
     font-size: 16px;
+    border-radius: 10px
 }
 
 .hrdivider1 {
@@ -14,6 +15,7 @@
     top: -0.7em;
     left: 50%;
     transform: translateX(-50%);
+    border-radius:10px
 }
 
 .lblInBasso {

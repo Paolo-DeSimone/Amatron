@@ -32,12 +32,12 @@
             <div class="col-lg-6">
                 <div id="tabs">
                     <ul>
-                        <li style="width: 32.9%"><a href="#tabs-1" class="masterButton" style="width:100%">Cliente</a></li>
+                        <li style="width: 32.9%"><a href="#tabs-1" class="masterButton" style="width:100%;" >Cliente</a></li>
                         <li style="width: 32.85%"><a href="#tabs-2" class="masterButton" style="width:100%">Venditore</a></li>
                         <li style="width: 32.9%"><a href="#tabs-3" class="masterButton" style="width:100%">Corriere</a></li>
                     </ul>
                     <div id="tabs-1">
-                        <div class="card">
+                        <div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-6">
@@ -111,7 +111,7 @@
                     </div>
 
                     <div id="tabs-2">
-                        <div class="card">
+                        <div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-6">
@@ -184,7 +184,7 @@
                         </div>
                     </div>
                     <div id="tabs-3">
-                        <div class="card">
+                        <div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-6">

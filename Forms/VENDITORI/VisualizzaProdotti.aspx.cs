@@ -47,6 +47,21 @@ public partial class _Default : System.Web.UI.Page
 
     protected void gridVisualizzaProdotti_SelectedIndexChanged(object sender, EventArgs e)
     {
+        ///prendo la chiave del prodotto selezionato e la metto nella session per portarlo al popup Gestisci inventario
+        Session["chiaveProdottoEsaurito"] = gridVisualizzaProdotti.SelectedValue.ToString();
+        string ProdottoDiversoDaZero = Session["chiaveProdottoEsaurito"].ToString();
+        if (ProdottoDiversoDaZero != 0.ToString())
+        {
+            //Qui andrà sostituito con un notify.js
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Non si possono restockare prodotti diversi da 0!');", true);
+            return;
+        }
+    }
+
+
+    protected void btnModificaQtaProdotto_Click(object sender, EventArgs e)
+    {
+        
 
     }
 }

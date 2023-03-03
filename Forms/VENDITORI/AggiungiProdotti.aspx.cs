@@ -22,7 +22,8 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
 
         if (txtDescrizione.Text.Trim() == "" || txtPrezzo.Text.Trim() == "")
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Errore');", true);
+            string notify = @"notifyError('Dati mancanti, riempire tutti i campi e riprovare')";
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnModifica_Click", notify, true);
             return;
         }
       
@@ -42,6 +43,9 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
 
         P.Insert();
         DataBind();
+        string script = @"notifySuccess('Modifica avvenuta con successo!')";
+        ScriptManager.RegisterStartupScript(this, GetType(), "btnSalva_Click", script, true);
+        return;
 
         DataTable dt = P.SelectAll();
         //int chiaveprodotto =int.Parse(dt.Rows[0]["chiave"].ToString());

@@ -82,11 +82,11 @@
 
                     <div class="col-lg-6">
                         <asp:Label ID="Label3" runat="server" Text="Data inizio"></asp:Label>
-                         <asp:TextBox ID="txtDInizio" Class="form-control" runat="server"></asp:TextBox>
+                         <asp:TextBox ID="txtDInizio" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
                     </div>
                     <div class="col-lg-6">
                         <asp:Label ID="Label4" runat="server" Text="Data fine"></asp:Label>
-                         <asp:TextBox ID="txtDFine" Class="form-control" runat="server"></asp:TextBox>
+                         <asp:TextBox ID="txtDFine" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
                     </div>
 
                 </div>
@@ -94,17 +94,19 @@
 
     <div class="CardMargine">
 
+
         <h2>
         </h2>
+
 
 
                 <div class="table-responsive">
                     <asp:GridView ID="GrigliaStoricoVendite" class="table" CssClass="table table-bordered table-condensed" runat="server" AutoGenerateColumns="False" DataSourceID="sdsGrigliaStorico">
                         <Columns>
-                            <asp:BoundField DataField="chiavePRODOTTI" HeaderText="chiavePRODOTTI" SortExpression="chiavePRODOTTI" Visible="False" />
-                            <asp:BoundField DataField="chiaveORDINI" HeaderText="chiaveORDINI" SortExpression="chiaveORDINI" Visible="False" />
-                            <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False" />
-                            <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" Visible="False" />
+                            <asp:BoundField DataField="chiavePRODOTTI" HeaderText="chiavePRODOTTI" SortExpression="chiavePRODOTTI" />
+                            <asp:BoundField DataField="chiaveORDINI" HeaderText="chiaveORDINI" SortExpression="chiaveORDINI" />
+                            <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" />
+                            <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" />
                             <asp:BoundField DataField="TITOLO" HeaderText="TITOLO" SortExpression="TITOLO" />
                             <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
                             <asp:BoundField DataField="PERCAMATRON" HeaderText="PERCAMATRON" SortExpression="PERCAMATRON" />

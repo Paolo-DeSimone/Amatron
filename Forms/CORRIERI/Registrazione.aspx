@@ -6,6 +6,8 @@
     <link href="/assets/css/styleCorrieri.css" rel="stylesheet" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="../../assets/js/notify.js"></script>
+    <link href="../../assets/css/notify.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
@@ -13,6 +15,7 @@
             $("#tabs").tabs();
         });
     </script>
+    <script src="Assets/js/notify.js"></script>
     <%--tabella per la registrazione--%>
     <div class="container mt-1">
         <div class="row">
@@ -98,7 +101,7 @@
                                     <div class="col-lg-4"></div>
                                     <div class="col-lg-4">
                                         <center>
-                                            <asp:Button ID="btnRegistraCliente" runat="server" Text="Registrati" class="btn btn-sm masterButton" OnClick="btnRegistraCliente_Click" />
+                                            <asp:Button ID="btnRegistraCliente" runat="server" Text="Registrati" class="btn btn-sm masterButton" OnClick="btnRegistraCliente_Click"/>
                                         </center>
                                     </div>
                                     <div class="col-lg-4"></div>
@@ -172,7 +175,7 @@
                                     <div class="col-lg-4"></div>
                                     <div class="col-lg-4">
                                         <center style="margin-top: 15px">
-                                            <asp:Button ID="btnRegistraVenditore" runat="server" Text="Registrati" class="btn btn-sm masterButton" Style="width: 50%"  OnClick="btnRegistraVenditore_Click"/>
+                                            <asp:Button ID="btnRegistraVenditore" runat="server" Text="Registrati" class="btn btn-sm masterButton" Style="width: 50%" OnClick="btnRegistraVenditore_Click" />
                                         </center>
                                     </div>
                                     <div class="col-lg-4"></div>

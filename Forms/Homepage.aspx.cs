@@ -10,6 +10,12 @@ public partial class Homepage : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Request.QueryString["msg"] == "success")
+        {
+            string script = @"notifySuccess('Registrato con successo!')";
+            ScriptManager.RegisterStartupScript(this, GetType(), "ShowSuccessNotification", script, true);
+            return;
+        }
 
         // 20 novità caricate dal db 
         PRODOTTI P = new PRODOTTI();
@@ -143,5 +149,6 @@ public partial class Homepage : System.Web.UI.Page
 
 
         //20 più votati caricati dal db
+
     }
 }

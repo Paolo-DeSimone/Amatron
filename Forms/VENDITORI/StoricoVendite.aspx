@@ -95,7 +95,6 @@
     <div class="CardMargine">
 
         <h2>
-            <%--<asp:Label ID="lblStoricoVendite" runat="server" Text="Storico Vendite"></asp:Label--%>>
         </h2>
 
 

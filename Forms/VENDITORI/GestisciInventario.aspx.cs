@@ -20,23 +20,24 @@ public partial class Venditori_GestisciInventario : System.Web.UI.Page
 
             if (!IsPostBack)
             {
+                //                                                                      CHIEDERE A KEVIN
+                // ++++++++++++++++++++++++++++++++++++++++++++++++++ QUESTION: Vogliamo far apparire qualche messaggio quando si seleziona un prodotto con una quantità superiore a 0?
+                // ++++++++++++++++++++++++++++++++++++++++++++++++++ QUESTION:Vogliamo far apparire un messaggio quando non si seleziona un prodotto ma si preme sul btn per il popup?
+                //                                                                      CHIEDERE A KEVIN
 
-                //DA LAVORARE SUL CONTROLLO PERCHè SE IL VALORE PASSATO NELLA SESSION è DIVERSO DA 0 ALLORA NON
-                //SARà DISPLAYATO E NON SARà NEMMENO POSSIBILE AGGIORNARLO
-                //AGGIUNGERE ANCHE I VARI ALERT CON NOTIFY.JS
-
+                
+                
                 if (Session["chiaveProdottoEsaurito"] == null)
                 {
-                    return;
-                }
-
-                string chiaveProdottoEsaurito = Session["chiaveProdottoEsaurito"].ToString();
-                if (chiaveProdottoEsaurito != 0.ToString())
-                {
                     txtQuantita.Text = "";
+                    btnAggiungi.Visible = false;
+                    //error
+                    //string script = @"notifyError('Non è stato selezionato nessun prodotto da rifornire')";
+                    //ScriptManager.RegisterStartupScript(this, GetType(), "Page_Load", script, true);
                     return;
                 }
-               
+                ///STO FACENDO VARIE PROVE PER IL CONTROLLO DELLE QUANTITà SETTATE A 0
+                string chiaveProdottoEsaurito = Session["chiaveProdottoEsaurito"].ToString();
                 //if (String.IsNullOrEmpty(chiavegriglia))
                 //{
                 //    ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Nessun elemento selezionato');", true);
@@ -49,9 +50,20 @@ public partial class Venditori_GestisciInventario : System.Web.UI.Page
                 P.chiave = int.Parse(chiaveProdottoEsaurito);
                 DataTable dt = new DataTable();
                 dt = P.SelectByKey();
+                string QTA = dt.Rows[0]["QTA"].ToString();
 
+                ///controllo se un prodotto ha valore QTA allora non gli facciamo vedere il btnSalva
+                if (QTA != 0.ToString())
+                {
 
-                txtQuantita.Text = dt.Rows[0]["QTA"].ToString();
+                    txtQuantita.Text = "";
+                    btnAggiungi.Visible = false;
+                    //string script = @"notifyError('Non è possibile rifornire dei prodotti che sono ancora disponibili')";
+                    //ScriptManager.RegisterStartupScript(this, GetType(), "Page_Load", script, true);
+                    return;
+                }
+
+                txtQuantita.Text = QTA.ToString();
             }
 
 
@@ -71,9 +83,14 @@ public partial class Venditori_GestisciInventario : System.Web.UI.Page
         {
             //Consultare Kevin se qui vogliamo dare un notify.js o cosa
         }
-
+        string script = @"notifyError('Non è possibile rifornire dei prodotti che sono ancora disponibili')";
+        ScriptManager.RegisterStartupScript(this, GetType(), "btnAggiungi_Click", script, true);
+        ///Salveremo la chiave del venditore presa dalla session in una variabile string/int in modo da assegnarla poi
+        ///al membro dato "chiave" di PRODOTTI
+        ///AL MOMENTO NON SALVA PERCHè GLI MANCA LA CHIAVE
         PRODOTTI P = new PRODOTTI();
         P.qta = int.Parse(txtQuantita.Text.ToString());
+        //P.chiave = int.Parse(Session["chiaveVenditore"]);
         P.Update_QTA();
         txtQuantita.Text = "";
     }

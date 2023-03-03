@@ -162,10 +162,5 @@ public partial class Homepage : System.Web.UI.Page
 
         //20 più votati caricati dal db
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> d72d9f9c6c581242391bd20353474d96873578c0
     }
 }

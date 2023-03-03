@@ -5,19 +5,14 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
 <link href="/assets/css/cssFrancescoVENDITORE.css" rel="stylesheet" />
 <link href="/assets/css/masterStyle.css" rel="stylesheet" />
+<script src="/assets/js/notify.js"></script>
+<link href="/assets/css/notify.css" rel="stylesheet" />
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Gestisci Inventario</title>
-    <style>
-        .btn-purple {
-            background-color: #a062de
-        }
+    <title>Gestisci Quantità</title>
 
-        .btn-offwhite {
-            background-color: #f1f1f1
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -31,8 +26,11 @@
             <div class=" col-7">
                 <div class="text-left">
                     <asp:Label ID="lblTitolo" runat="server" Text="Prodotti esauriti:"></asp:Label>
-                    <div class="dropdown">
+                    <%--<div class="dropdown">
                         <asp:DropDownList ID="ddlProdotti" Class="form-control form-control-sm" runat="server" Style="width: 160px;" DataSourceID="SdsProdotti" DataTextField="TITOLO" DataValueField="chiave"></asp:DropDownList>
+                    </div>--%>
+                    <div>
+                        <asp:TextBox ID="txtprovaDateTime" runat="server" TextMode="DateTimeLocal"></asp:TextBox>
                     </div>
                 </div>
             </div>
@@ -53,7 +51,7 @@
         <div class="">
             <br />
             <center>
-            <asp:Button ID="btnAggiungi" Class="btn masterButton" runat="server" Text="Salva" OnClick="btnAggiungi_Click" />
+                <asp:Button ID="btnAggiungi" Class="btn masterButton" runat="server" Text="Salva" OnClick="btnAggiungi_Click" />
             </center>
 
         </div>

@@ -83,6 +83,7 @@
                     </div>
                 </div>
 
+
                 <div class="col-lg-5">
                     <div class="row">
                         <div class="col-md-6">
@@ -123,6 +124,7 @@
                             <asp:Button ID="btnCerca" Class="btn masterButton" runat="server" Text="CERCA" OnClick="btnCerca_Click" />
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

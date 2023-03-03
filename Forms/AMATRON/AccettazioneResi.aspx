@@ -17,7 +17,7 @@
                                     <asp:GridView ID="grigliaResi" CssClass="table table-bordered table-condensed" runat="server" AutoGenerateColumns="False" DataSourceID="sdsTabellaResi" OnSelectedIndexChanged="grigliaResi_SelectedIndexChanged" DataKeyNames="chiaveRESO">
                                         <Columns>
                                             <asp:CommandField ShowSelectButton="True" />
-                                            <asp:BoundField DataField="chiaveRESO" HeaderText="chiaveRESO" SortExpression="chiaveRESO" Visible="False"/>
+                                            <asp:BoundField DataField="chiaveRESO" HeaderText="chiaveRESO" SortExpression="chiaveRESO" Visible="False" />
                                             <asp:BoundField DataField="chiaveORDINE" HeaderText="chiaveORDINE" SortExpression="chiaveORDINE" Visible="False" />
                                             <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" Visible="False" />
                                             <asp:BoundField DataField="chiaveCLIENTI" HeaderText="chiaveCLIENTI" SortExpression="chiaveCLIENTI" Visible="False" />
@@ -36,13 +36,10 @@
                                     <asp:SqlDataSource ID="sdsTabellaResi" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spRESI_ORDINI_PRODOTTI_CLIENTISelectByNUMERO_ORDINE" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                 </div>
                                 <div class="col-lg-1">
-                                    <asp:DropDownList ID="ddlAccettaRifiuta" class="form-control" runat="server">
-                                        <asp:ListItem Selected="True" Value="True" class="dropdown-item">Accetta</asp:ListItem>
-                                        <asp:ListItem Value="False" class="dropdown-item">Rifiuta</asp:ListItem>
-                                    </asp:DropDownList>
+                                    <asp:Button ID="btnAccetta" class="btn masterButton" runat="server" Text="Accetta" OnClick="btnAccetta_Click" />
                                 </div>
                                 <div class="col-lg-1">
-                                    <asp:Button ID="btnInvia" class="btn masterButton" runat="server" Text="Invia" OnClick="btnInvia_Click" />
+                                    <asp:Button ID="btnRifiuta" class="btn masterButton" runat="server" Text="Rifiuta" OnClick="btnRifiuta_Click" />
                                 </div>
                             </div>
                         </div>

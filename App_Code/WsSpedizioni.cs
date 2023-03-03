@@ -72,4 +72,14 @@ public class WsSpedizioni : System.Web.Services.WebService
         dt.TableName = "SelectByOrdine";
         return dt;
     }
+
+    [WebMethod]
+    public void SPEDIZIONI_UpdateStato(int chiave)
+    {
+        DATABASE DB = new DATABASE();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spSPEDIZIONI_UpdateStato";
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
+        DB.EseguiSPNonRead();
+    }
 }

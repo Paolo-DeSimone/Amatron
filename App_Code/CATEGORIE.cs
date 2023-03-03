@@ -48,7 +48,7 @@ public class CATEGORIE
     /// <returns>restituisce tutte le categorie</returns>
     public DataTable SelectAll()
     {
-        DataTable DT =C.CATEGORIE_SelectAll();
+        DataTable DT = C.CATEGORIE_SelectAll();
         return DT;
     }
 }

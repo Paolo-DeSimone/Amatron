@@ -14,20 +14,22 @@ public partial class Default2 : System.Web.UI.Page
 
     }
 
-    protected void grigliaOrdini_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        //memorizzo la chiave del row selezionato
-        ORDINI O = new ORDINI();
 
-        O.chiave = int.Parse(grigliaOrdini.SelectedValue.ToString());
-
-    }
-
-
-
+protected void grigliaOrdini_SelectedIndexChanged(object sender, EventArgs e)
+{
+    //        //controllo di aver selezionato una riga
+    //        if (grigliaOrdini.SelectedValue == null)
+    //        {
+    //            Session["chiaveOrdini"] = null;
+    //            return;
+    //        }
+    //        //faccio la session per passare la chiave
+    //        Session["chiaveOrdini"] = grigliaOrdini.SelectedValue.ToString();
+}
 
     protected void btnInvia_Click(object sender, EventArgs e)
     {
+
         //controlli formali
         ORDINI O = new ORDINI();
         if (O.chiave.ToString() != null)
@@ -106,6 +108,70 @@ public partial class Default2 : System.Web.UI.Page
                 return;
             }
         }
+
+
+        //        //controlli formali
+        //        ORDINI O= new ORDINI();
+        //        if (Session["chiaveOrdini"] != null)
+        //        {
+        //            //preparo i dati per l'invio nel db
+        //            O.chiave = int.Parse(Session["chiaveOrdini"].ToString());
+        //            O.gestito = bool.Parse(ddlAccettaRifiuta.SelectedValue.ToString());
+
+        //            //inizializzo la funzione
+        //            O.ORDINI_GESTITO();
+
+        //            //invio una mail al cliente con l'esito della richiesta di reso
+
+        //            //mi preparo per inviare la mail al cliente
+        //            SmtpClient client = new SmtpClient();
+
+        //            //imposto il server di invio della mail
+        //            client.Credentials = new NetworkCredential("generation@brovia.it", "!Pr0secc0!");
+        //            client.Port = 25;
+        //            client.Host = "brovia.it";
+        //            client.EnableSsl = false;
+
+        //            //se è stata accettata
+        //            if (O.gestito == true)
+        //            {
+        //                //imposto il messaggio
+        //                MailMessage mail = new MailMessage();
+        //                mail.From = new MailAddress("generation@brovia.it"); //mittente
+        //                mail.To.Add("matteo.scarnera27@gmail.com"); //destinatario // ---!!! NECESSARIO JOIN PER RECUPERARE MAIL UTENTE !!!---
+        //                mail.IsBodyHtml = true; //mail è scritta in html
+        //                mail.Subject = "Richiesta Reso AMATRON approvata"; //oggetto
+        //                                                                   //messaggio
+        //                mail.Body = "Gentile cliente;<br/>";
+        //                mail.Body += "La sua richiesta di reso per l'ordine /*INSERIRE NUMERO ORDINE*/ è stata accettata. Riceverà il suo rimborso a breve.<br/>";
+        //                mail.Body += "Da AMATRON, le auguriamo una buona giornata.";
+
+
+        //                client.Send(mail); //mando mail
+        //            }
+        //            //se è stata rifiutata
+        //            else
+        //            {
+        //                //imposto il messaggio
+        //                MailMessage mail = new MailMessage();
+        //                mail.From = new MailAddress("generation@brovia.it"); //mittente
+        //                mail.To.Add("matteo.scarnera27@gmail.com"); //destinatario // ---!!! NECESSARIO JOIN PER RECUPERARE MAIL UTENTE !!!---
+        //                mail.IsBodyHtml = true; //mail è scritta in html
+        //                mail.Subject = "Richiesta Reso AMATRON rifiutata"; //oggetto
+        //                                                                   //messaggio
+        //                mail.Body = "Gentile cliente;<br/>";
+        //                mail.Body += "La sua richiesta di reso per l'ordine /*INSERIRE NUMERO ORDINE*/ è stata rifiutata.<br/>";
+        //                mail.Body += "Da AMATRON, le auguriamo una buona giornata.";
+
+
+        //                client.Send(mail); //mando mail
+        //            }
+        //        }
+        //        else
+        //        {
+        //            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Ordine non selezionato.');", true);
+        //            return;
+        //        }
 
     }
 }

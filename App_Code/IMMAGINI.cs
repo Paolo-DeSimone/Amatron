@@ -38,7 +38,7 @@ public class IMMAGINI
     public DataTable SelectByKey()
     {
         DataTable DT = new DataTable(); 
-        I.IMMAGINI_SelectByKey(chiave);
+        DT=I.IMMAGINI_SelectByKey(chiave);
         return DT;
     }
     

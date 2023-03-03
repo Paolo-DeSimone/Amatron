@@ -41,6 +41,8 @@
             }
         });
     </script>
+    <script src="../../assets/js/notify.js"></script>
+    <link href="../../assets/css/notify.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="viewed">

@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
 {
@@ -26,7 +27,6 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
         //      passare i campi che mi servono prezzo categoria quantità ddl chiave anche le immagini
         //      titolo descrizione e per le immagini imgDB->
 
-
         P.chiaveCATEGORIA = int.Parse(ddlCategoria.SelectedValue.ToString());
         P.descrizione = txtDescrizione.Text.Trim();
         P.prezzo = int.Parse(txtPrezzo.Text.Trim());
@@ -37,5 +37,20 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
         P.Insert();
         DataBind();
 
+        // creo un array di byte da riempire con i bytes del file
+        byte[] ImgData = fileUpload1.FileBytes;
+
+        //imposto il titolo uguale al nome del file scelto
+        string titolo = fileUpload1.PostedFile.FileName;
+
+        // salvo il tipo di file scelto leggendo da fileupload
+        string tipo = fileUpload1.PostedFile.ContentType;
+
+        IMMAGINI I = new IMMAGINI();
+        I.titolo = titolo;
+        I.doc = ImgData;
+        I.tipo = tipo;
+        I.Insert();
+    
     }
 }

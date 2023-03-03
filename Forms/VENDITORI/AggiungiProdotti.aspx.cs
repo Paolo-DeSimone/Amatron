@@ -23,7 +23,7 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
         if (txtDescrizione.Text.Trim() == "" || txtPrezzo.Text.Trim() == "")
         {
             string notify = @"notifyError('Dati mancanti, riempire tutti i campi e riprovare')";
-            ScriptManager.RegisterStartupScript(this, GetType(), "btnModifica_Click", notify, true);
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnSalva_Click", notify, true);
             return;
         }
       

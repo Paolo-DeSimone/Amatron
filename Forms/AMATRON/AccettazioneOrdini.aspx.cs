@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
@@ -14,20 +14,22 @@ public partial class Default2 : System.Web.UI.Page
 
     }
 
-    protected void grigliaOrdini_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        //memorizzo la chiave del row selezionato
-        ORDINI O = new ORDINI();
 
-        O.chiave = int.Parse(grigliaOrdini.SelectedValue.ToString());
-
-    }
-
-
-
+protected void grigliaOrdini_SelectedIndexChanged(object sender, EventArgs e)
+{
+    //        //controllo di aver selezionato una riga
+    //        if (grigliaOrdini.SelectedValue == null)
+    //        {
+    //            Session["chiaveOrdini"] = null;
+    //            return;
+    //        }
+    //        //faccio la session per passare la chiave
+    //        Session["chiaveOrdini"] = grigliaOrdini.SelectedValue.ToString();
+}
 
     protected void btnInvia_Click(object sender, EventArgs e)
     {
+
         //controlli formali
         ORDINI O = new ORDINI();
         if (O.chiave.ToString() != null)

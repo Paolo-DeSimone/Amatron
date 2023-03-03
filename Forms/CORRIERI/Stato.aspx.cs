@@ -12,5 +12,21 @@ public partial class _Default : System.Web.UI.Page
 
     }
 
-    
+
+
+    protected void grdSTATO_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        string chiave = grdSTATO.SelectedValue.ToString();
+
+       SPEDIZIONI SPE = new SPEDIZIONI();
+        SPE.chiave = int.Parse(chiave);
+        
+    }
+
+    protected void btnStato_Click(object sender, EventArgs e)
+    {
+        string chiave = grdSTATO.SelectedValue.ToString();
+        SPEDIZIONI SPE = new SPEDIZIONI();
+        SPE.chiave = int.Parse(chiave);
+    }
 }

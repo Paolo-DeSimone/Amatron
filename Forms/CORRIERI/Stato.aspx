@@ -2,53 +2,48 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <link href="/assets/css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link rel="icon" type="image/png" sizes="64x64" href="/assets/images/amatron-icon.png" />
-    <link href="/assets/css/styleCorrieri.css" rel="stylesheet" />
-    <div class="container-lg mt-5">
-        <div class="row text-center">
-            <div class="col-12 mx-auto">
-                <div class="card bg-light mb-3 border rounded" style="background-color: #e4e4e4">
-                    <div class="card-header">
-                        <h5 class="card-title">Visualizzazione Ordini</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="row" style="margin-top: 10px;">
-                            <div class="col-md-9" style="overflow: auto; top: -1px; left: 0px; height: 94px;">
-                                <asp:GridView ID="grdSTATO" runat="server" DataSourceID="sdsSTATO" AutoGenerateColumns="False" DataKeyNames="chiaveSPEDIZIONE">
-                                    <Columns>
-                                       
-                                        <asp:BoundField DataField="chiaveSPEDIZIONE" HeaderText="chiaveSPEDIZIONE" ReadOnly="True" SortExpression="chiaveSPEDIZIONE" />
-                                        <asp:BoundField DataField="STATO_SPEDIZIONE" HeaderText="STATO_SPEDIZIONE" SortExpression="STATO_SPEDIZIONE" />
-                                        <asp:BoundField DataField="DATA_ORA_SPEDIZIONE" HeaderText="DATA_ORA_SPEDIZIONE" SortExpression="DATA_ORA_SPEDIZIONE" />
-                                        <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATATRANSAZIONE" SortExpression="DATATRANSAZIONE" />
-                                        <asp:BoundField DataField="NUMERO_ORDINE" HeaderText="NUMERO_ORDINE" SortExpression="NUMERO_ORDINE" />
-                                        <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
-                                        <asp:CheckBoxField DataField="chiaveSPEDIZIONE" runat="server"  />
-                                    </Columns>
-                                </asp:GridView>
-                                <asp:SqlDataSource ID="sdsSTATO" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSEDIZIONI_ORDINI_Select" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
-                            </div>
-                            <div class="col-md-3 text-center">
+    <section class="h-100 h-custom">
+        <div class="container mt-1">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h2>Visualizzazione Ordini</h2>
+                    <%-- card--%>
+                    <center>
+                        <div class="card w-75">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-md-8" style="overflow: auto; top: -1px; left: 0px; height: auto; width: auto;">
+                                        <asp:GridView ID="grdSTATO" class="table" runat="server" DataSourceID="sdsSTATO" AutoGenerateColumns="False" DataKeyNames="chiaveSPEDIZIONE" OnSelectedIndexChanged="grdSTATO_SelectedIndexChanged">
+                                            <Columns>
 
-                                    <%-- pulsante --%>
-                                    <asp:Button ID="btnStato" runat="server" class="btn btn-primary" Text="Aggiorna Stato" />
+                                                <asp:CommandField ButtonType="Button" ShowSelectButton="True"  ControlStyle-CssClass="btn btn-sm masterButton" />
 
-                                  
+                                                <asp:BoundField DataField="chiaveSPEDIZIONE" HeaderText="chiaveSPEDIZIONE" ReadOnly="True" SortExpression="chiaveSPEDIZIONE" Visible="False" />
+                                                <asp:BoundField DataField="STATO_SPEDIZIONE" HeaderText="STATO_SPEDIZIONE" SortExpression="STATO_SPEDIZIONE" />
+                                                <asp:BoundField DataField="DATA_ORA_SPEDIZIONE" HeaderText="DATA_ORA_SPEDIZIONE" SortExpression="DATA_ORA_SPEDIZIONE" />
+                                                <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATATRANSAZIONE" SortExpression="DATATRANSAZIONE" />
+                                                <asp:BoundField DataField="NUMERO_ORDINE" HeaderText="NUMERO_ORDINE" SortExpression="NUMERO_ORDINE" />
+                                                <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
+                                            </Columns>
+                                            <HeaderStyle BackColor="#B469FF" />
+                                        </asp:GridView>
+                                        <asp:SqlDataSource ID="sdsSTATO" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSEDIZIONI_ORDINI_Select" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                                    </div>
+                                    <div class="col-lg-2">
+
+
+                                        <%-- pulsante --%>
+                                        <asp:Button ID="btnStato" runat="server" class="btn btn-sm masterButton" Text="STATO SUCCESSIVO" OnClick="btnStato_Click" />
+
+                                    </div>
                                 </div>
-                        </div>
+                            </div>
+                        </div></center>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+    </section>
 </asp:Content>
 

@@ -1,9 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="ProfiloPersonaleVenditore.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <script src="../../assets/js/notify.js"></script>
+    <link href="../../assets/css/notify.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
- <%--Pagina di visualizzazione dati personali dei corrieri--%>
+    <%--Pagina di visualizzazione dati personali dei corrieri--%>
     <div class="container">
         <div class="text-center mt-1">
             <h2>Profilo Venditore</h2>

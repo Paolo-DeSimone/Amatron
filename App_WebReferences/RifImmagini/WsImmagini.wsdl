@@ -46,6 +46,27 @@
       <s:element name="IMMAGINI_DeleteResponse">
         <s:complexType />
       </s:element>
+      <s:element name="PRODOTTI_IMMAGINI_SelectByProdotto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiaveProdotto" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PRODOTTI_IMMAGINI_SelectByProdottoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PRODOTTI_IMMAGINI_SelectByProdottoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="IMMAGINI_SelectByKeySoapIn">
@@ -66,6 +87,12 @@
   <wsdl:message name="IMMAGINI_DeleteSoapOut">
     <wsdl:part name="parameters" element="tns:IMMAGINI_DeleteResponse" />
   </wsdl:message>
+  <wsdl:message name="PRODOTTI_IMMAGINI_SelectByProdottoSoapIn">
+    <wsdl:part name="parameters" element="tns:PRODOTTI_IMMAGINI_SelectByProdotto" />
+  </wsdl:message>
+  <wsdl:message name="PRODOTTI_IMMAGINI_SelectByProdottoSoapOut">
+    <wsdl:part name="parameters" element="tns:PRODOTTI_IMMAGINI_SelectByProdottoResponse" />
+  </wsdl:message>
   <wsdl:portType name="WsImmaginiSoap">
     <wsdl:operation name="IMMAGINI_SelectByKey">
       <wsdl:input message="tns:IMMAGINI_SelectByKeySoapIn" />
@@ -78,6 +105,10 @@
     <wsdl:operation name="IMMAGINI_Delete">
       <wsdl:input message="tns:IMMAGINI_DeleteSoapIn" />
       <wsdl:output message="tns:IMMAGINI_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PRODOTTI_IMMAGINI_SelectByProdotto">
+      <wsdl:input message="tns:PRODOTTI_IMMAGINI_SelectByProdottoSoapIn" />
+      <wsdl:output message="tns:PRODOTTI_IMMAGINI_SelectByProdottoSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WsImmaginiSoap" type="tns:WsImmaginiSoap">
@@ -109,6 +140,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="PRODOTTI_IMMAGINI_SelectByProdotto">
+      <soap:operation soapAction="http://tempuri.org/PRODOTTI_IMMAGINI_SelectByProdotto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WsImmaginiSoap12" type="tns:WsImmaginiSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -132,6 +172,15 @@
     </wsdl:operation>
     <wsdl:operation name="IMMAGINI_Delete">
       <soap12:operation soapAction="http://tempuri.org/IMMAGINI_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PRODOTTI_IMMAGINI_SelectByProdotto">
+      <soap12:operation soapAction="http://tempuri.org/PRODOTTI_IMMAGINI_SelectByProdotto" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

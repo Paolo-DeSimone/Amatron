@@ -16,8 +16,9 @@
     width: 100%;
     cursor: pointer;
     border: none;
-    padding: 17px 15px 15px 45px;
-    margin: 0;
+    padding: 5px 50px 10px 240px;
+    margin: 5%;
+    margin-left:25%;
     z-index: 9998;
 }
 .notify-notice {
@@ -26,13 +27,24 @@
 }
 
 .notify-error {
-    color: #fefefe;
-    background: url(../images/notify/red_bg.png) /*../images/red_bg.png*/;
+    color: black;
+    font-size: large;
+    background-color: #e75f64;
+    height: 7%;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-box-shadow: 2px 2px 5px 0 rgba(50, 50, 50, .5);
+    border-radius: 300px;
+    box-shadow:initial;
+    max-width:50%;
 }
 
 .notify-success {
-    color: #fefefe;
-    background: #CFC url(../images/notify/grn_bg.png) /*../images/grn_bg.png*/
+    color: black;
+    font-size: large;
+    background-color: #adff2f;
+    height: 7%;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-box-shadow: 2px 2px 5px 0 rgba(50, 50, 50, .5);
 }
 
 .notify-warning {

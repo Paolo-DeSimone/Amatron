@@ -1,15 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="PagPers.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="ProfiloPersonaleVenditore.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link href="/assets/css/styleCorrieri.css" rel="stylesheet" />
-    <script src="/assets/js/notify.js"></script>
-    <link href="/assets/css/notify.css" rel="stylesheet" />
+    <script src="../../assets/js/notify.js"></script>
+    <link href="../../assets/css/notify.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <%--Pagina di visualizzazione dati personali dei corrieri--%>
     <div class="container">
         <div class="text-center mt-1">
-            <h2>Profilo</h2>
+            <h2>Profilo Venditore</h2>
         </div>
         <div class="row">
             <div class="col-lg-2"></div>

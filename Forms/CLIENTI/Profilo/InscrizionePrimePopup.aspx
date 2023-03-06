@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="IscrizionePrimePopup.aspx.cs" Inherits="InscrizionePrimePopup" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="InscrizionePrimePopup.aspx.cs" Inherits="InscrizionePrimePopup" %>
 
 <!DOCTYPE html>
 
@@ -12,17 +12,16 @@
 <body class="colore">
     <form id="form1" runat="server">
         <div class="card colore bianco" >
-            <img src="../../../assets/images/amatron-prime.png" />
+            <img src="../assets/images/amatron-prime.png" />
             <div class="card-body">
                 <h5 class="card-title">Amatron Prime</h5>
-                <p class="card-text primeScritta">Amatron prime è un servizio che ti permetterà di avere uno sconto dell'1% su ogni prodotto acquistato.</p>
-                <h2 class="card-title">Iscrizione annuale
+                <p class="card-text">Amatron prime è un servizio che ti permetterà di avere uno sconto dell'1% su ogni prodotto acquistato.</p>
+                <h2>Iscrizione annuale
                     <br /> 
                     Gratuita</h2>
-                <asp:Button ID="btnIscriviti" class="btn btn-secondary btnSalva" runat="server" Text="Iscriviti" OnClick="btnIscriviti_Click" />
+                <a href="#" class="btn btn-primary">Iscriviti</a>
             </div>
         </div>
     </form>
 </body>
 </html>
-

@@ -103,4 +103,17 @@ public partial class AMATRON : System.Web.UI.MasterPage
         cart.INSERT();
     }
 
+    protected void btnLogin_Click(object sender, EventArgs e)
+    {
+        string EMAIL = txtEMAIL.Value.ToString();
+        string PWD = txtPWD.Value.ToString();
+
+        LOGIN login = new LOGIN();
+        DataTable DT = login.Login(EMAIL, PWD);
+
+        Session["chiaveUSR"] = DT.Rows[0]["chiave"];
+        Session["emailUSR"] = DT.Rows[0]["EMAIL"];
+        Session["pwdUSR"] = DT.Rows[0]["PWD"];
+        Session["tipoUSR"] = DT.Rows[0]["TIPO"];
+    }
 }

@@ -33,7 +33,7 @@ public class CARRELLO
     //Metodo per selezionare tutto nel carrello
     public DataTable SELECTALL()
     {
-        
+        DataTable DT = new DataTable();
         DT = C.CARRELLO_SelectAll();
         return DT;
     }
@@ -41,6 +41,7 @@ public class CARRELLO
     //Metodo che fa riferimento alla chiave cliente
     public DataTable SELECTBYCLIENTE()
     {
+        DataTable DT = new DataTable();
         DT = C.CARRELLO_SelectByCliente(chiaveCLIENTE);
         return DT;
     }
@@ -48,6 +49,7 @@ public class CARRELLO
     //Metodo per selezionare tramite la chiave
     public DataTable SELECTBYKEY()
     {
+        DataTable DT = new DataTable();
         DT = C.CARRELLO_SelectByKey(chiave);
         return DT;
     }
@@ -55,6 +57,7 @@ public class CARRELLO
     //Metodo per selezionare il prodotto
     public DataTable SELECTBYPRODOTTO()
     {
+        DataTable DT = new DataTable();
         DT = C.CARRELLO_SelectByProdotto(chiavePRODOTTO);
         return DT;
     }

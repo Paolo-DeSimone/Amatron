@@ -6,7 +6,7 @@
         function AggiungiAlCarrello() {
             $.ajax({
                 type: "POST",
-                url: "AMATRON.master.cs/AggiungiAlCarrello",
+                url: "/AMATRON.master.cs/AggiungiAlCarrello",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (msg) {

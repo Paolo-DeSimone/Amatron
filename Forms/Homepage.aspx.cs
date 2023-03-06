@@ -20,7 +20,9 @@ public partial class Homepage : System.Web.UI.Page
         //20 novità caricate dal db
         //PRODOTTI P = new PRODOTTI();
         //DataTable MAX = P.MAX20Novita();
-
+        
+        IMMAGINI I = new IMMAGINI();
+        //I.chiaveprodotto = int.Parse(MAX.Rows[0]["chiave"].ToString());
 
 
         //litImg.Text = "";
@@ -32,7 +34,6 @@ public partial class Homepage : System.Web.UI.Page
 
         //lblP1.Text = MAX.Rows[0]["PREZZO"].ToString();
         //lblT1.Text = MAX.Rows[0]["TITOLO"].ToString();
-
 
         //lblP2.Text = MAX.Rows[1]["PREZZO"].ToString();
         //lblT2.Text = MAX.Rows[1]["TITOLO"].ToString();
@@ -87,6 +88,9 @@ public partial class Homepage : System.Web.UI.Page
 
         //lblP19.Text = MAX.Rows[18]["PREZZO"].ToString();
         //lblT19.Text = MAX.Rows[18]["TITOLO"].ToString();
+
+        //lblP20.Text = MAX.Rows[19]["PREZZO"].ToString();
+        //lblT20.Text = MAX.Rows[19]["TITOLO"].ToString();
 
         //lblP20.Text = MAX.Rows[19]["PREZZO"].ToString();
         //lblT20.Text = MAX.Rows[19]["TITOLO"].ToString();

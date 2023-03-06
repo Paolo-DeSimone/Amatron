@@ -2,8 +2,11 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <script src="../../assets/js/notify.js"></script>
+    <link href="../../assets/css/notify.css" rel="stylesheet" />
     <link href="/assets/css/cssFrancescoVENDITORE.css" rel="stylesheet" />
     <link href="/assets/css/masterStyle.css" rel="stylesheet" />
+
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -113,15 +116,15 @@
         <div class="popupBoxWrapper">
 
 
-        
-        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-        <iframe style=" width: 560px; height: 500px;" id="Iframe2" src="AggiungiProdotti.aspx"  runat="server"></iframe>
+
+            <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+            <iframe style="width: 560px; height: 500px;" id="Iframe2" src="AggiungiProdotti.aspx" runat="server"></iframe>
 
         </div>
         <br />
         <div class="close-btn-wrapper">
 
-            <button id="btnChiudiPopup" class="prova chiusura close-btn2" runat="server" text="X">               x           </button>
+            <button id="btnChiudiPopup" class="prova chiusura close-btn2" runat="server" text="X">x           </button>
         </div>
     </asp:Panel>
     <%-- chiamata del popup --%>
@@ -145,7 +148,8 @@
 
 
         <div class="close-btn-wrapper">
-            <button id="btnChiudiPopupInventario" class="prova chiusura close-btn3" runat="server" text="X"> x
+            <button id="btnChiudiPopupInventario" class="prova chiusura close-btn3" runat="server" text="X">
+                x
             </button>
         </div>
 

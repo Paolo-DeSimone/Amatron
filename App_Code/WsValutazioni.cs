@@ -91,9 +91,9 @@ public class WsValutazioni : System.Web.Services.WebService
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);
-        DB.query = "spVALUTAZIONI_Media";      
-        dt.TableName = "MediaValutazioni";
+        DB.query = "spVALUTAZIONI_Media";         
         dt = DB.EseguiSPRead();
+        dt.TableName = "MediaValutazioni";
         return dt;
     }
 }

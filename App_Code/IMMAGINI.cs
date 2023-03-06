@@ -47,4 +47,11 @@ public class IMMAGINI
         DT = I.PRODOTTI_IMMAGINI_SelectByProdotto(chiaveprodotto);
         return DT;
     }
+
+    public DataTable SelectChiavi()
+    {
+        DataTable DT = new DataTable();
+        DT = I.IMMAGINI_SelectChiavi(chiaveprodotto);
+        return DT;
+    }
 }

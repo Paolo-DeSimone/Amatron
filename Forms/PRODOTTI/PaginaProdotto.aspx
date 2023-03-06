@@ -11,20 +11,11 @@
     <div class="container my-5">
         <div class="row">
             <div class="col-md-4">
-                <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <asp:Literal ID="litImg1" runat="server"></asp:Literal>
-                            <img src="/assets/images/kurado.png" class="d-block w-100" alt="Product Image 1" />
-                        </div>
-                        <div class="carousel-item">
-                            <asp:Literal ID="litImg2" runat="server"></asp:Literal>
-                            <img src="/assets/images/nayuta.jpg" class="d-block w-100" alt="Product Image 2" />
-                        </div>
-                        <div class="carousel-item">
-                            <asp:Literal ID="litImg3" runat="server"></asp:Literal>
-                            <img src="/assets/images/pc.jpg" class="d-block w-100" alt="Product Image 3" />
-                        </div>
+                <div id="productCarousel" class="carousel slide" data-bs-ride="carousel" >                
+                    <div class="carousel-inner" id="Carosello" runat="server" >
+                        
+                            
+                        
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span>
@@ -56,7 +47,7 @@
                 <br />
                 <p>Inserisci valutazione:</p>
                 <div>      
-                     <asp:ImageButton ID="yellowstar1"  Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" OnClick="whitestar2_Click" Visible="False" />
+                     <asp:ImageButton ID="yellowstar1"  Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" OnClick="whitestar1_Click" Visible="False" />
                     <asp:ImageButton ID="yellowstar2" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" OnClick="whitestar2_Click" Visible="False" />
                     <asp:ImageButton ID="yellowstar3" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" OnClick="whitestar3_Click" Visible="False" />
                     <asp:ImageButton ID="yellowstar4" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" OnClick="whitestar4_Click" Visible="False" />

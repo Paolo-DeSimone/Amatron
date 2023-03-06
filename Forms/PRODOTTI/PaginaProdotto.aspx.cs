@@ -17,9 +17,18 @@ public partial class Default2 : System.Web.UI.Page
     {
 
         PRODOTTI P = new PRODOTTI();
+        IMMAGINI I = new IMMAGINI();
         P.chiave = 1; //Session["chiaveProdotto"]
 
         DataTable dt = P.SelectByKey();
+        I.chiaveprodotto = 1; // Session["chiaveProdotto"]
+        DataTable IMGDT = I.SelectChiavi();
+        for (int i = 0; i < IMGDT.Rows.Count; i++)
+        {
+            Carosello.InnerHtml += " <div class=\"carousel-item active\">" +
+                "<img src='/GestoreImmagini.ashx?c=" + IMGDT.Rows[i]["chiave"] +"' class='d-block w-100' alt='Product Image 1'/>" +
+                "</div>";
+        }
         //litImg1
         //litImg2 Da fillare col gestore
         //litImg3
@@ -43,12 +52,12 @@ public partial class Default2 : System.Web.UI.Page
         }
 
         VALUTAZIONI V = new VALUTAZIONI();
-        V.chiave = 1; //Session["chiaveProdotto"]
+        V.chiaveprodotto = 1; //Session["chiaveProdotto"]
         DataTable DT = V.Media();
         
-        valstelle = Convert.ToInt32(DT.Rows[0]["MEDIA"].ToString()); 
-        
-        if (valstelle == 5)
+        valstelle = int.Parse(DT.Rows[0]["MEDIA"].ToString());
+
+        if (valstelle  == 5)
         {
             ystar1.Visible= true;
             ystar2.Visible= true;

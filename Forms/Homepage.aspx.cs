@@ -22,6 +22,7 @@ public partial class Homepage : System.Web.UI.Page
         //DataTable MAX = P.MAX20Novita();
 
 
+
         //litImg.Text = "";
         //foreach (DataRow r in MAX.Rows)
         //{
@@ -31,6 +32,7 @@ public partial class Homepage : System.Web.UI.Page
 
         //lblP1.Text = MAX.Rows[0]["PREZZO"].ToString();
         //lblT1.Text = MAX.Rows[0]["TITOLO"].ToString();
+
 
         //lblP2.Text = MAX.Rows[1]["PREZZO"].ToString();
         //lblT2.Text = MAX.Rows[1]["TITOLO"].ToString();
@@ -88,6 +90,7 @@ public partial class Homepage : System.Web.UI.Page
 
         //lblP20.Text = MAX.Rows[19]["PREZZO"].ToString();
         //lblT20.Text = MAX.Rows[19]["TITOLO"].ToString();
+
 
 
 

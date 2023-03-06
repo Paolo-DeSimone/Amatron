@@ -30,7 +30,8 @@ public class WsImmagini : System.Web.Services.WebService
         DB.query = "spIMMAGINI_SelectByKey";
         DB.cmd.Parameters.AddWithValue("chiave", chiave);
         dt.TableName = "SelectByKey";
-        return DB.EseguiSPRead();
+        dt = DB.EseguiSPRead();
+        return dt;
     }
 
     [WebMethod]
@@ -65,6 +66,19 @@ public class WsImmagini : System.Web.Services.WebService
         DB.cmd.Parameters.AddWithValue("chiaveProdotto", chiaveProdotto);
         dt = DB.EseguiSPRead();
         dt.TableName = "PRIMGSelectByProdotto";
+        return dt;
+    }
+
+    [WebMethod]
+    public DataTable IMMAGINI_SelectChiavi(int chiaveProdotto)
+    {
+        DATABASE DB = new DATABASE();
+        DataTable dt = new DataTable();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spIMMAGINI_SelectChiavi";
+        DB.cmd.Parameters.AddWithValue("chiaveProdotto", chiaveProdotto);
+        dt = DB.EseguiSPRead();
+        dt.TableName = "SelectChiavi";
         return dt;
     }
 

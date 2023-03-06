@@ -86,6 +86,13 @@ public class PRODOTTI
         dt = P.PRODOTTI_SelectByVenditore(chiaveVENDITORE);
         return dt;
     }
+    public DataTable SelectByImmagineVenditore()
+    {
+
+        DataTable dt = new DataTable();
+        dt = P.PRODOTTI_SelectByImmagineVenditore(chiaveVENDITORE);
+        return dt;
+    }
 
     public DataTable SelectByCategoria()
     {

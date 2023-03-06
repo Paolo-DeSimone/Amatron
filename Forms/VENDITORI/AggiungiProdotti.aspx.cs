@@ -44,18 +44,10 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
         P.titolo=txtTitolo.Text.Trim();
 
         P.Insert();
-
-        
-
-        DataTable dt = P.SelectAll();
-        int chiaveprodotto =int.Parse(dt.Rows[dt.Rows.Count-1]["chiave"].ToString());
-
         DataBind();
-        string script = @"notifySuccess('Modifica avvenuta con successo!')";
-        ScriptManager.RegisterStartupScript(this, GetType(), "btnSalva_Click", script, true);
-        return;
 
-
+        DataTable dt = P.SelectByImmagineVenditore();
+    
         // creo un array di byte da riempire con i bytes del file
         byte[] ImgData = fileUpload1.FileBytes;
 
@@ -66,13 +58,20 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
         string tipo = fileUpload1.PostedFile.ContentType;
 
         IMMAGINI I = new IMMAGINI();
-        I.chiaveprodotto = chiaveprodotto;
+       
+        //chiave prodotto riempie una casella 
+        I.chiaveprodotto = int.Parse(dt.Rows[0][0].ToString());
         I.titolo = titolo;
         I.doc = ImgData;
         I.tipo = tipo;
         I.Insert();
+        
+        DataBind();
+
+        string script = @"notifySuccess('Modifica avvenuta con successo!')";
+        ScriptManager.RegisterStartupScript(this, GetType(), "btnSalva_Click", script, true);
         reset();
-    
+        return;
     }
 
     protected void reset()

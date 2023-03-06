@@ -19,7 +19,10 @@ public class PRODOTTI
     public int qta;
     public string datacaricamento;
     public int percamatron;
+    public string searchTerm;
     RifProdotti.WsProdottiSoapClient P = new RifProdotti.WsProdottiSoapClient();
+    RifFiltra.WsFiltraSoapClient F = new RifFiltra.WsFiltraSoapClient();
+    
 
 
     //istanzio il web service fuori dalla funzione cosi non devo ripeterlo
@@ -113,6 +116,13 @@ public class PRODOTTI
 
         DataTable dt = new DataTable();
         dt = P.PRODOTTI_MAX20Venduti();
+        return dt;
+    }
+
+    public DataTable FILTRA()
+    {
+        DataTable dt = new DataTable();
+        dt = F.FILTRA(searchTerm);
         return dt;
     }
 }

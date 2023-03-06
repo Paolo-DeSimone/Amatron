@@ -60,14 +60,15 @@ public partial class AMATRON : System.Web.UI.MasterPage
                 "</div>" +
                 "</div>" +
                 "</div>" +
-                "</div>" +
-                "</div>" +
-                "";
+                //"</div>" +
+                "</div>";
+                
             }
         }
 
     }
 
+    
 
     [WebMethod]
     public static string Accedi(string USR, string PWD)
@@ -88,20 +89,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
         }
     }
 
-    [WebMethod]
-    public static void AggiungiAlCarrello()
-    {
-        // la session sarà una string e quindi bisognerà fare un parse perché i membri dato nella classe CARRELLO sono int
-        int sessionChiaveCliente = 1;
-        int sessionChiaveProdotto = 1;
-        int sessionQTA = 1;
 
-        CARRELLO cart = new CARRELLO();
-        cart.chiaveCLIENTE = sessionChiaveCliente;
-        cart.chiavePRODOTTO = sessionChiaveProdotto;
-        cart.QTA = sessionQTA;
-        cart.INSERT();
-    }
 
     protected void btnLogin_Click(object sender, EventArgs e)
     {
@@ -116,4 +104,20 @@ public partial class AMATRON : System.Web.UI.MasterPage
         Session["pwdUSR"] = DT.Rows[0]["PWD"];
         Session["tipoUSR"] = DT.Rows[0]["TIPO"];
     }
+
+    //[WebMethod]
+    //public static void AggiungiAlCarrello()
+    //{
+    //    // la session sarà una string e quindi bisognerà fare un parse perché i membri dato nella classe CARRELLO sono int
+    //    int sessionChiaveCliente = 1;
+    //    int sessionChiaveProdotto = 1;
+    //    int sessionQTA = 1;
+
+    //    CARRELLO cart = new CARRELLO();
+    //    cart.chiaveCLIENTE = sessionChiaveCliente;
+    //    cart.chiavePRODOTTO = sessionChiaveProdotto;
+    //    cart.QTA = sessionQTA;
+    //    cart.INSERT();
+    //}
+
 }

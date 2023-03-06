@@ -2,23 +2,25 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 
-    <script>
-        function AggiungiAlCarrello() {
-            $.ajax({
-                type: "POST",
-                url: "/AMATRON.master.cs/AggiungiAlCarrello",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (msg) {
-                    /*alert(msg.d);*/
-                    $('#txt1').val(msg.d);
-                },
-                error: function (req, status, err) {
-                    alert(req, status, err);
-                }
-            });
-        }
-    </script>
+ <script>
+     function AggiungiAlCarrello() {
+                $.ajax({
+                    type: "POST",
+                    url: "/testPaoloCarrello.aspx/AggiungiAlCarrello",
+                    //NON CAMBIARE I NOMI A,B,C SE NO NON FUNZIONA
+                    data: "{'a': '1', 'b' : '2', 'c' : '3'}",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (msg) {
+                        /*alert(msg.d);*/
+                        $('#txt1').val(msg.d);
+                    },
+                    error: function (req, status, err) {
+                        alert(req, status, err);
+                    }
+                });
+     }
+ </script>
 
 </asp:Content>
 
@@ -34,15 +36,10 @@
 
     Ora si parla di quando sono nella pagina prodotto e clicco su aggiungi al carrello: non voglio ricaricare la pagina per poterlo vedere.
     Quindi bisognerà usare JS in qualche modo per aggiungere l'ultimo prodotto al carrello.
-
-    PROBLEMI RISCONTRATI:
-    lato DB funziona tutto, manca solo da prendere in qualche modo l'ultima immagine e presentarla bene, ma ci penso dopo.
-
-    Inoltre non funziona l'AJAX del botton:, appare il popup object object e quindi nessun prodotto viene inserito in DB. In carrello rimangono sempre i due record di prova che ho.
-
      */--%>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <button id="testAddItem" onclick="AggiungiAlCarrello()">salva</button>
+    <%--Quando questo bottone viene premuto, viene inviata una richiesta al GestoreCarrello generico con 3 parametri con un certo valore (le due chiavie e la QTA ossia la quantità--%>
+    <button id="testAddItem" onclick="AggiungiAlCarrello()" <%-- href="/GestoreCarrello.ashx?chiaveCliente=1,chiaveProdotto=1,QTA=1"--%> >Add to cart</button>
 </asp:Content>
 

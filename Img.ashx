@@ -9,12 +9,16 @@ using System.Data.SqlClient;
 public class Img : IHttpHandler {
 
     public void ProcessRequest (HttpContext context) {
+
+        int chiave = int.Parse(context.Request.QueryString["c"].ToString());
+
         IMMAGINI I = new IMMAGINI();
         DataTable dt = new DataTable();
+        I.chiaveprodotto = chiave;
         dt = I.SelectByProdotto();
 
         // leggo i dati dell'immagine dalla datatable
-        string titolo = dt.Rows[0]["TITOLO"].ToString();
+        string titolo = dt.Rows[0]["TITOLO_IMMAGINE"].ToString();
         string tipo = dt.Rows[0]["TIPO"].ToString();
         byte[] ImgData = (byte[])dt.Rows[0]["DOC"];
 

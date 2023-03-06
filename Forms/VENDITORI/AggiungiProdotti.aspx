@@ -96,7 +96,7 @@
                 </div>
                 <center>
 
-                    <asp:Button ID="btnSalva" class="btn btnVenditoriPurple form-control" runat="server" Text="Salva" />
+                    <asp:Button ID="btnSalva" class="btn btnVenditoriPurple form-control" runat="server" Text="Salva" OnClick="btnSalva_Click" />
 
                 </center>
 

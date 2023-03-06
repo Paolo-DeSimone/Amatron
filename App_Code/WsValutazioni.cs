@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.DynamicData;
 using System.Web.Services;
 
 /// <summary>
@@ -53,7 +54,8 @@ public class WsValutazioni : System.Web.Services.WebService
         DB.cmd.Parameters.Clear();
         DB.query = "spVALUTAZIONI_SelectAll_DDL";
         dt.TableName = "SelectByAllDDL";
-        return DB.EseguiSPRead();
+        dt = DB.EseguiSPRead();
+        return dt;
     }
 
     [WebMethod]
@@ -65,7 +67,8 @@ public class WsValutazioni : System.Web.Services.WebService
         DB.cmd.Parameters.AddWithValue("chiave", chiave);
         DB.query = "spVALUTAZIONI_SelectByKey";
         dt.TableName = "ValutazioniSelectByKey";
-        return DB.EseguiSPRead();
+        dt = DB.EseguiSPRead();
+        return dt;
     }
 
     [WebMethod]
@@ -77,18 +80,20 @@ public class WsValutazioni : System.Web.Services.WebService
         DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);      
         DB.query = "spVALUTAZIONI_SelectByProdotto";
         dt.TableName = "SelectByProdotto";
-        return DB.EseguiSPRead();
+        dt = DB.EseguiSPRead();
+        return dt;
     }
 
     [WebMethod]
     public DataTable VALUTAZIONI_Media(int chiaveprodotto)
     {
-        DataTable dt = new DataTable();
+        DataTable dt = new DataTable();       
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);
-        DB.query = "spVALUTAZIONI_Media";
-        dt.TableName = "ValutazioniMedia";
-        return DB.EseguiSPRead();
+        DB.query = "spVALUTAZIONI_Media";      
+        dt.TableName = "MediaValutazioni";
+        dt = DB.EseguiSPRead();
+        return dt;
     }
 }

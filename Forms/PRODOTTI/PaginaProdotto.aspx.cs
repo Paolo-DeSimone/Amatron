@@ -185,6 +185,7 @@ public partial class Default2 : System.Web.UI.Page
     {
        VALUTAZIONI V = new VALUTAZIONI();
         //V.chiaveprodotto = Session["chiaveProdotto"]
+        V.chiaveprodotto = 1;
         V.stelle= stelle;
         V.commento = txtDescription.Text.Trim();
         V.datacommento = DateTime.Now.ToString();

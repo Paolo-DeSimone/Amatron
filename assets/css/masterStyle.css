@@ -25,6 +25,10 @@
         color: white;
     }
 
+.masterCardHeight {
+    height: 50vh;
+}
+
 .masterColorBG {
     background-color: #B469FF;
 }

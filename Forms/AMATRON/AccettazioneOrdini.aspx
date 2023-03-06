@@ -15,7 +15,7 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-12">
                                     <div style="overflow-y: scroll; height: 400px;">
-                                        <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server"  OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" DataKeyNames="chiaveOrdine">
+                                        <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server"  OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" DataKeyNames="chiave">
                                             <Columns>
                                                 <asp:CommandField ShowSelectButton="True" />
                                                 <asp:BoundField DataField="chiave" HeaderText="chiave" SortExpression="chiave" Visible="False" InsertVisible="False" ReadOnly="True" />

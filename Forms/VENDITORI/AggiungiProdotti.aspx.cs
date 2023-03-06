@@ -19,7 +19,7 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
     protected void btnSalva_Click(object sender, EventArgs e)
     {
         
-
+        //Controlli formali soliti
         if (txtDescrizione.Text.Trim() == "" || txtPrezzo.Text.Trim() == "")
         {
             ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Errore');", true);
@@ -41,10 +41,10 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
         P.titolo=txtTitolo.Text.Trim();
 
         P.Insert();
-        DataBind();
+        
 
         DataTable dt = P.SelectAll();
-        //int chiaveprodotto =int.Parse(dt.Rows[0]["chiave"].ToString());
+        int chiaveprodotto =int.Parse(dt.Rows[dt.Rows.Count-1]["chiave"].ToString());
 
         // creo un array di byte da riempire con i bytes del file
         byte[] ImgData = fileUpload1.FileBytes;
@@ -56,12 +56,12 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
         string tipo = fileUpload1.PostedFile.ContentType;
 
         IMMAGINI I = new IMMAGINI();
-        //I.chiaveprodotto = chiaveprodotto;
+        I.chiaveprodotto = chiaveprodotto;
         I.titolo = titolo;
         I.doc = ImgData;
         I.tipo = tipo;
         I.Insert();
-
+        reset();
     }
 
     protected void reset()

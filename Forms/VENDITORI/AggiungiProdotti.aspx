@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AggiungiProdotti.aspx.cs" Inherits="Venditori_AggiungiProdotti" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AggiungiProdotti.aspx.cs" Inherits="Venditori_AggiungiProdotti" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <!DOCTYPE html>
@@ -94,7 +94,7 @@
                 </div>
                 <center>
 
-                    <asp:Button ID="btnSalva" class="btn btnVenditoriPurple form-control" runat="server" Text="Salva" />
+                    <asp:Button ID="btnSalva" class="btn btnVenditoriPurple form-control" runat="server" Text="Salva" OnClick="btnSalva_Click" />
 
                 </center>
 

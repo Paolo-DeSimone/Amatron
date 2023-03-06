@@ -175,4 +175,6 @@ public class WsProdotti : System.Web.Services.WebService
         dt.TableName = "PRODOTTI_MAX20Venduti";
         return dt;
     }
+
+   
 }

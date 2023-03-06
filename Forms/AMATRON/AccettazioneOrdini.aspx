@@ -7,11 +7,11 @@
     <asp:ScriptManager runat="server"></asp:ScriptManager>
 
     <section class="h-100 h-custom">
-        <div class="container text-align-center py-5 h-100">
+        <div class="container text-align-center py-3 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-lg-12 col-xl-12">
                     <%--card--%>
-                    <h2 class="text-center mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Accettazione Ordini</h2>
+                    <h2 class="text-center py-2">Accettazione Ordini</h2>
                     <div class="card rounded-3">
                         <div class="card-body p-4 p-md-5">
                             <div class="row align-items-center">

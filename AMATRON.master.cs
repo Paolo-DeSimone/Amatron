@@ -129,26 +129,40 @@ public partial class AMATRON : System.Web.UI.MasterPage
         LOGIN login = new LOGIN();
         DataTable DT = login.Login(EMAIL, PWD);
 
-        Session["chiaveUSR"] = DT.Rows[0]["chiave"];
-        Session["emailUSR"] = DT.Rows[0]["EMAIL"];
-        Session["pwdUSR"] = DT.Rows[0]["PWD"];
-        Session["tipoUSR"] = DT.Rows[0]["TIPO"];
-
-        switch (DT.Rows[0]["TIPO"].ToString())
+        if(DT.Rows.Count != 0)
         {
-            case "A":
-                dropdownClienti.Visible = true;
-                break;
-            case "B":
-                dropdownVenditori.Visible = true;
-                break;
-            case "C":
-                dropdownCorrieri.Visible = true;
-                break;
-            case "D":
-                dropdownAmatron.Visible = true;
-                break;
+            Session["chiaveUSR"] = DT.Rows[0]["chiave"];
+            Session["emailUSR"] = DT.Rows[0]["EMAIL"];
+            Session["pwdUSR"] = DT.Rows[0]["PWD"];
+            Session["tipoUSR"] = DT.Rows[0]["TIPO"];
+
+            // temporary fix
+            dropdownAmatron.Visible = false;
+            dropdownClienti.Visible = false;
+            dropdownCorrieri.Visible = false;
+            dropdownVenditori.Visible = false;
+            //
+
+            switch (DT.Rows[0]["TIPO"].ToString())
+            {
+                case "A":
+                    dropdownClienti.Visible = true;
+                    break;
+                case "B":
+                    dropdownVenditori.Visible = true;
+                    break;
+                case "C":
+                    dropdownCorrieri.Visible = true;
+                    break;
+                case "D":
+                    dropdownAmatron.Visible = true;
+                    break;
+            }
+        } else
+        {
+            return;
         }
+        
     }
 
     //[WebMethod]

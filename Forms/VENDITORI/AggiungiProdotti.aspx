@@ -82,7 +82,7 @@
                 </div>
                 <div class="row text-left center">
                     <div class="col-sm-4 col-4">
-                        <asp:TextBox Class="form-control-sm" ID="txtPrezzo" runat="server" Style="width: 50px;"></asp:TextBox>€
+                        <asp:TextBox Class="form-control-sm" ID="txtPrezzo" runat="server" Style="width: 55px;"></asp:TextBox>€
                     </div>
                     <div class="col-sm-6 col-6">
 
@@ -91,7 +91,7 @@
 
                     </div>
                     <div class="col-sm-2 col-2">
-                        <asp:TextBox Class="form-control-sm" ID="txtQuantita" runat="server" Style="width: 40px;" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox Class="form-control-sm" ID="txtQuantita" runat="server" Style="width: 55px;" TextMode="Number"></asp:TextBox>
                     </div>
                 </div>
                 <center>

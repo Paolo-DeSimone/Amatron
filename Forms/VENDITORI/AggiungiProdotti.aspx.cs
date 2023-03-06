@@ -19,7 +19,7 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
     protected void btnSalva_Click(object sender, EventArgs e)
     {
         
-
+        //Controlli formali soliti
         if (txtDescrizione.Text.Trim() == "" || txtPrezzo.Text.Trim() == "")
         {
             string notify = @"notifyError('Dati mancanti, riempire tutti i campi e riprovare')";
@@ -45,44 +45,33 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
 
         P.Insert();
         DataBind();
+
+        DataTable dt = P.SelectByImmagineVenditore();
+    
+        // creo un array di byte da riempire con i bytes del file
+        byte[] ImgData = fileUpload1.FileBytes;
+
+        //imposto il titolo uguale al nome del file scelto
+        string titolo = fileUpload1.PostedFile.FileName;
+
+        // salvo il tipo di file scelto leggendo da fileupload
+        string tipo = fileUpload1.PostedFile.ContentType;
+
+        IMMAGINI I = new IMMAGINI();
+       
+        //chiave prodotto riempie una casella 
+        I.chiaveprodotto = int.Parse(dt.Rows[0][0].ToString());
+        I.titolo = titolo;
+        I.doc = ImgData;
+        I.tipo = tipo;
+        I.Insert();
+        
+        DataBind();
+
         string script = @"notifySuccess('Modifica avvenuta con successo!')";
         ScriptManager.RegisterStartupScript(this, GetType(), "btnSalva_Click", script, true);
+        reset();
         return;
-
-        //DataTable dt = P.SelectAll();
-        ////int chiaveprodotto =int.Parse(dt.Rows[0]["chiave"].ToString());
-
-        //// creo un array di byte da riempire con i bytes del file
-        //byte[] ImgData = fileUpload1.FileBytes;
-
-        ////imposto il titolo uguale al nome del file scelto
-        //string titolo = fileUpload1.PostedFile.FileName;
-
-        //// salvo il tipo di file scelto leggendo da fileupload
-        //string tipo = fileUpload1.PostedFile.ContentType;
-
-        //IMMAGINI I = new IMMAGINI();
-        ////I.chiaveprodotto = chiaveprodotto;
-        //I.titolo = titolo;
-        //I.doc = ImgData;
-        //I.tipo = tipo;
-        //I.Insert();
-
-        //// creo un array di byte da riempire con i bytes del file
-        //byte[] ImgData = fileUpload1.FileBytes;
-
-        ////imposto il titolo uguale al nome del file scelto
-        //string titolo = fileUpload1.PostedFile.FileName;
-
-        //// salvo il tipo di file scelto leggendo da fileupload
-        //string tipo = fileUpload1.PostedFile.ContentType;
-
-        //IMMAGINI I = new IMMAGINI();
-        //I.titolo = titolo;
-        //I.doc = ImgData;
-        //I.tipo = tipo;
-        //I.Insert();
-    
     }
 
     protected void reset()

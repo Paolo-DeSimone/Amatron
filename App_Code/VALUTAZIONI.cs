@@ -10,7 +10,7 @@ using System.Web.Services;
 /// </summary>
 public class VALUTAZIONI
 {
-    public int chiaveordine;
+    public int chiaveprodotto;
     public int stelle;
     public string commento;
     public string datacommento;
@@ -27,7 +27,7 @@ public class VALUTAZIONI
 
     public void Insert()
     {
-        V.VALUTAZIONI_Insert(chiaveordine, stelle, commento, datacommento);
+        V.VALUTAZIONI_Insert(chiaveprodotto, stelle, commento, datacommento);
     }
 
     public DataTable SelectAll()
@@ -51,10 +51,17 @@ public class VALUTAZIONI
         return dt;
     }
 
-    public DataTable SelectByOrder()
+    public DataTable SelectByProdotto()
     {
         DataTable dt = new DataTable();
-        dt = V.VALUTAZIONI_SelectByOrder(chiaveordine);
+        dt = V.VALUTAZIONI_SelectByProdotto(chiaveprodotto);
+        return dt;
+    }
+
+    public DataTable Media()
+    {
+        DataTable dt = new DataTable();
+        dt = V.VALUTAZIONI_Media(chiaveprodotto);
         return dt;
     }
 }

@@ -139,6 +139,20 @@ public class WsProdotti : System.Web.Services.WebService
         dt.TableName = "SelectbyCategoria";
         return dt;
     }
+    [WebMethod]
+    public DataTable PRODOTTI_SelectByImmagineVenditore(int chiaveVENDITORE)
+    {
+        DATABASE DB = new DATABASE();
+        DataTable dt = new DataTable();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spPRODOTTI_SelectByImmagineVenditore";
+        DB.cmd.Parameters.AddWithValue("chiaveVENDITORE", chiaveVENDITORE);
+        dt = DB.EseguiSPRead();
+        dt.TableName = "SelectbyImmagineVenditore";
+        return dt;
+    }
+
+    
 
     [WebMethod]
     public DataTable PRODOTTI_MAX20Novità()
@@ -175,4 +189,6 @@ public class WsProdotti : System.Web.Services.WebService
         dt.TableName = "PRODOTTI_MAX20Venduti";
         return dt;
     }
+
+   
 }

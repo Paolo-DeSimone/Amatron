@@ -154,49 +154,13 @@
                     </div>
                 </nav>
 
-                <%--CARRELLO. TO DO: make cart dynamic. When add in char button is clicked a new card in cart must be addes automatically with products data transported (title, price...)
-                    
-                    Per farc comparire l'immagine, il titolo ecc devo fare un select by key nel c#
-                    Devo trovare un modo di passare la key. 
-                    Questo lo sta facendo carmine in modo hard coded
-                    
-                  
-                --%>
                 <div class="w3-sidebar w3-bar-block w3-card w3-animate-right " style="display: none; right: 0; width: 500px;" id="rightMenu">
                     <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">&times;</button>
                     <%--QUESTO DIV SERVE PER QUANTO SPIEGATO IN testPaoloCarrello--%>
-                    <div id="carrelloProdotti" runat="server">
-                    </div>
-                    <%--row prodotto e relativa card--%>
-                    <div class="card mx-2 my-2">
-                        <div class="card-body ">
-                            <div class="row" style="margin: 5px; padding: 5px;">
-                                <%--IMMAGINE PRODOTTO--%>
-                                <div class="col-sm-4">
-                                    <a href="Forms/AMATRON/AccettazioneOrdini.aspx" class="w3-bar-item w3-button">
-                                        <img src="/assets/images/amatron-icon.png" class="w-75 h-75" />
-                                    </a>
-                                </div>
-                                <%--TITOLO E DESCRIZIONE--%>
-                                <div class="col-sm-5">
-                                    <p style="margin-top: 16px;"></p>
-                                    <asp:Literal ID="ltlTitoloProdottoCarrello" runat="server"></asp:Literal>
-
-                                    <p style="margin: 4px;"></p>
-                                    <asp:Literal ID="lblDescrizioneProdottoCarrello" runat="server"></asp:Literal>
-                                </div>
-                                <%--QUANTITà E PREZZO PRODOTTO--%>
-                                <div class="col-sm-3">
-                                    <asp:Label ID="lblQuantità" runat="server" Text="Quantità"></asp:Label>
-                                    <asp:DropDownList ID="ddlQuantità" runat="server" class="w-50"></asp:DropDownList>
-                                    <p style="margin: 0px;"></p>
-                                    <asp:Label ID="lblPrezzo" runat="server" Text="Prezzo"></asp:Label>
-                                    <asp:Literal ID="ltlPrezzo" runat="server"></asp:Literal>
-                                </div>
-                            </div>
+                        <div id="carrelloProdotti" runat="server">
                         </div>
-                    </div>
                 </div>
+
 
                 <%-- Questo è il contenuto del PopUp che si apre cliccando su SignUp --%>
                 <div class="popupLogin" id="loginform">

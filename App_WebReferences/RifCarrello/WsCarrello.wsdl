@@ -115,17 +115,17 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="CARRELLO_SelectLastItemInCart">
+      <s:element name="CARRELLO_SelectAllItemsInCart">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="chiaveCLIENTE" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="CARRELLO_SelectLastItemInCartResponse">
+      <s:element name="CARRELLO_SelectAllItemsInCartResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="CARRELLO_SelectLastItemInCartResult">
+            <s:element minOccurs="0" maxOccurs="1" name="CARRELLO_SelectAllItemsInCartResult">
               <s:complexType>
                 <s:sequence>
                   <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
@@ -180,11 +180,11 @@
   <wsdl:message name="CARRELLO_SelectByProdottoSoapOut">
     <wsdl:part name="parameters" element="tns:CARRELLO_SelectByProdottoResponse" />
   </wsdl:message>
-  <wsdl:message name="CARRELLO_SelectLastItemInCartSoapIn">
-    <wsdl:part name="parameters" element="tns:CARRELLO_SelectLastItemInCart" />
+  <wsdl:message name="CARRELLO_SelectAllItemsInCartSoapIn">
+    <wsdl:part name="parameters" element="tns:CARRELLO_SelectAllItemsInCart" />
   </wsdl:message>
-  <wsdl:message name="CARRELLO_SelectLastItemInCartSoapOut">
-    <wsdl:part name="parameters" element="tns:CARRELLO_SelectLastItemInCartResponse" />
+  <wsdl:message name="CARRELLO_SelectAllItemsInCartSoapOut">
+    <wsdl:part name="parameters" element="tns:CARRELLO_SelectAllItemsInCartResponse" />
   </wsdl:message>
   <wsdl:portType name="WsCarrelloSoap">
     <wsdl:operation name="CARRELLO_Insert">
@@ -215,9 +215,9 @@
       <wsdl:input message="tns:CARRELLO_SelectByProdottoSoapIn" />
       <wsdl:output message="tns:CARRELLO_SelectByProdottoSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="CARRELLO_SelectLastItemInCart">
-      <wsdl:input message="tns:CARRELLO_SelectLastItemInCartSoapIn" />
-      <wsdl:output message="tns:CARRELLO_SelectLastItemInCartSoapOut" />
+    <wsdl:operation name="CARRELLO_SelectAllItemsInCart">
+      <wsdl:input message="tns:CARRELLO_SelectAllItemsInCartSoapIn" />
+      <wsdl:output message="tns:CARRELLO_SelectAllItemsInCartSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WsCarrelloSoap" type="tns:WsCarrelloSoap">
@@ -285,8 +285,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CARRELLO_SelectLastItemInCart">
-      <soap:operation soapAction="http://tempuri.org/CARRELLO_SelectLastItemInCart" style="document" />
+    <wsdl:operation name="CARRELLO_SelectAllItemsInCart">
+      <soap:operation soapAction="http://tempuri.org/CARRELLO_SelectAllItemsInCart" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -360,8 +360,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="CARRELLO_SelectLastItemInCart">
-      <soap12:operation soapAction="http://tempuri.org/CARRELLO_SelectLastItemInCart" style="document" />
+    <wsdl:operation name="CARRELLO_SelectAllItemsInCart">
+      <soap12:operation soapAction="http://tempuri.org/CARRELLO_SelectAllItemsInCart" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

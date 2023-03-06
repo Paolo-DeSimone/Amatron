@@ -106,12 +106,13 @@ public class WsCarrello : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable CARRELLO_SelectLastItemInCart(int chiaveCLIENTE)
+    public DataTable CARRELLO_SelectAllItemsInCart(int chiaveCLIENTE)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
-        DB.query = "spv_JoinCARRELLO_PRODOTTI_SelectLastItemInCart";
+        //messo sp di test, bisogna prenere anche l'immagine da IMMAGINI
+        DB.query = "spv_JoinCARRELLO_PRODOTTI_SelectAllItemsInCart";
         DB.cmd.Parameters.AddWithValue("chiaveCLIENTE", chiaveCLIENTE);
         dt = DB.EseguiSPRead();
         dt.TableName = "SelectLastItemInCart";

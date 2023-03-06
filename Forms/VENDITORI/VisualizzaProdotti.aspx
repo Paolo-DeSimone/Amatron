@@ -2,8 +2,11 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <script src="../../assets/js/notify.js"></script>
+    <link href="../../assets/css/notify.css" rel="stylesheet" />
     <link href="/assets/css/cssFrancescoVENDITORE.css" rel="stylesheet" />
     <link href="/assets/css/masterStyle.css" rel="stylesheet" />
+
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -29,7 +32,7 @@
                         <asp:Button ID="btnAggiungiProdotto" class="btn masterButton" runat="server" Text="Aggiungi Nuovo Prodotto" />
                     </div>
                     <div class=" col-md-4 ">
-                        <asp:Button ID="btnModificaQtaProdotto" class="btn masterButton" runat="server" Text="Ricarica Prodotto" />
+                        <asp:Button ID="btnModificaQtaProdotto" class="btn masterButton" runat="server" Text="Ricarica Prodotto" OnClick="btnModificaQtaProdotto_Click" />
                     </div>
                 </div>
                 <%-- Questo imgContainer ci servirà per popolare tutti i prodotti che ha a disposizione un venditore
@@ -66,6 +69,7 @@
                     <%-- QUI INSERIRò LA GRIDVIEW AL POSTO DELLE COL E DELLE ROW PER POPOLARE LA PAGINA --%>
                     <asp:GridView ID="gridVisualizzaProdotti" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed" DataKeyNames="chiave,chiave1" DataSourceID="sdsGRIDVisualizzaProdotti" OnSelectedIndexChanged="gridVisualizzaProdotti_SelectedIndexChanged">
                         <Columns>
+                            <asp:CommandField ShowSelectButton="True" />
                             <asp:BoundField DataField="chiave" HeaderText="chiave" InsertVisible="False" ReadOnly="True" SortExpression="chiave" Visible="False" />
                             <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False" />
                             <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" Visible="False" />
@@ -82,7 +86,7 @@
                     </asp:GridView>
                     <asp:SqlDataSource ID="sdsGRIDVisualizzaProdotti" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spPRODOTTI_SelectByVenditore" SelectCommandType="StoredProcedure">
                         <SelectParameters>
-                            <asp:Parameter DefaultValue="1" Name="chiaveVENDITORE" Type="Int32" />
+                            <asp:Parameter DefaultValue="22" Name="chiaveVENDITORE" Type="Int32" />
                         </SelectParameters>
                     </asp:SqlDataSource>
                 </div>
@@ -112,15 +116,15 @@
         <div class="popupBoxWrapper">
 
 
-        
-        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-        <iframe style=" width: 560px; height: 500px;" id="Iframe2" src="AggiungiProdotti.aspx"  runat="server"></iframe>
+
+            <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+            <iframe style="width: 560px; height: 500px;" id="Iframe2" src="AggiungiProdotti.aspx" runat="server"></iframe>
 
         </div>
         <br />
         <div class="close-btn-wrapper">
 
-            <button id="btnChiudiPopup" class="prova chiusura close-btn2" runat="server" text="X">               x           </button>
+            <button id="btnChiudiPopup" class="prova chiusura close-btn2" runat="server" text="X">x           </button>
         </div>
     </asp:Panel>
     <%-- chiamata del popup --%>
@@ -144,7 +148,8 @@
 
 
         <div class="close-btn-wrapper">
-            <button id="btnChiudiPopupInventario" class="prova chiusura close-btn3" runat="server" text="X"> x
+            <button id="btnChiudiPopupInventario" class="prova chiusura close-btn3" runat="server" text="X">
+                x
             </button>
         </div>
 

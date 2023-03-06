@@ -23,10 +23,10 @@ public class WsValutazioni : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void VALUTAZIONI_Insert(int chiaveordine, int stelle, string commento, string datacommento)
+    public void VALUTAZIONI_Insert(int chiaveprodotto, int stelle, string commento, string datacommento)
     {
         DATABASE DB = new DATABASE();
-        DB.cmd.Parameters.AddWithValue("chiaveORDINE", chiaveordine);
+        DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);
         DB.cmd.Parameters.AddWithValue("STELLE", stelle);
         DB.cmd.Parameters.AddWithValue("COMMENTO", commento);
         DB.cmd.Parameters.AddWithValue("DATACOMMENTO", datacommento);
@@ -69,14 +69,14 @@ public class WsValutazioni : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable VALUTAZIONI_SelectByOrder(int chiaveordine)
+    public DataTable VALUTAZIONI_SelectByProdotto(int chiaveprodotto)
     {
         DataTable dt = new DataTable();
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
-        DB.cmd.Parameters.AddWithValue("chiaveORDINE", chiaveordine);      
-        DB.query = "spVALUTAZIONI_SelectByOrder";
-        dt.TableName = "SelectByOrder";
+        DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);      
+        DB.query = "spVALUTAZIONI_SelectByProdotto";
+        dt.TableName = "SelectByProdotto";
         return DB.EseguiSPRead();
     }
 }

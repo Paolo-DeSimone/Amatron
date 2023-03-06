@@ -11,9 +11,11 @@ using System.Web.UI.WebControls;
 public partial class Default2 : System.Web.UI.Page
 {
 
-
+    
     protected void Page_Load(object sender, EventArgs e)
     {
+        
+
         PRODOTTI P = new PRODOTTI();
         P.chiave = 1; //Session["chiaveProdotto"]
         DataTable dt = P.SelectByKey();
@@ -36,7 +38,7 @@ public partial class Default2 : System.Web.UI.Page
             for (int i = 1; i <= P.qta; i++)
             {
                 ddlCarrello.Items.Add(new ListItem(i.ToString(), i.ToString()));
-            }              
+            }
         }
     }
 
@@ -50,5 +52,57 @@ public partial class Default2 : System.Web.UI.Page
         C.QTA = int.Parse(ddlCarrello.SelectedValue.ToString());
         C.INSERT();
         return;
+    }
+
+
+    protected void whitestar1_Click(object sender, ImageClickEventArgs e)
+    {
+        string imagePath = Server.MapPath("~/assets/images/yellowstar.png");
+        whitestar1.ImageUrl = imagePath;
+        whitestar2.ImageUrl = "../../assets/images/whitestar.png";
+        whitestar3.ImageUrl = "../../assets/images/whitestar.png";
+        whitestar4.ImageUrl = "../../assets/images/whitestar.png";
+        whitestar5.ImageUrl = "../../assets/images/whitestar.png";
+        Label2.Text = "1 stella selezionata";
+    }
+
+    protected void whitestar2_Click(object sender, ImageClickEventArgs e)
+    {
+        whitestar1.ImageUrl = "../../assets/images/yellowstar.png";
+        whitestar2.ImageUrl = "../../assets/images/yellowstar.png";
+        whitestar3.ImageUrl = "../../assets/images/whitestar.png";
+        whitestar4.ImageUrl = "../../assets/images/whitestar.png";
+        whitestar5.ImageUrl = "../../assets/images/whitestar.png";
+        Label2.Text = "2 stelle selezionate";
+    }
+
+    protected void whitestar3_Click(object sender, ImageClickEventArgs e)
+    {
+        whitestar1.ImageUrl = "../../assets/images/yellowstar.png";
+        whitestar2.ImageUrl = "../../assets/images/yellowstar.png";
+        whitestar3.ImageUrl = "../../assets/images/yellowstar.png";
+        whitestar4.ImageUrl = "../../assets/images/whitestar.png";
+        whitestar5.ImageUrl = "../../assets/images/whitestar.png";
+        Label2.Text = "3 stelle selezionate";
+    }
+
+    protected void whitestar4_Click(object sender, ImageClickEventArgs e)
+    {
+        whitestar1.ImageUrl = "../../assets/images/yellowstar.png";
+        whitestar2.ImageUrl = "../../assets/images/yellowstar.png";
+        whitestar3.ImageUrl = "../../assets/images/yellowstar.png";
+        whitestar4.ImageUrl = "../../assets/images/yellowstar.png";
+        whitestar5.ImageUrl = "../../assets/images/whitestar.png";
+        Label2.Text = "4 stelle selezionate";
+    }
+
+    protected void whitestar5_Click(object sender, ImageClickEventArgs e)
+    {
+        whitestar1.ImageUrl = "../../assets/images/yellowstar.png";
+        whitestar2.ImageUrl = "../../assets/images/yellowstar.png";
+        whitestar3.ImageUrl = "../../assets/images/yellowstar.png";
+        whitestar4.ImageUrl = "../../assets/images/yellowstar.png";
+        whitestar5.ImageUrl = "../../assets/images/yellowstar.png";
+        Label2.Text = "5 stelle selezionate";
     }
 }

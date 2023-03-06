@@ -18,7 +18,7 @@
                                         <asp:GridView ID="grdSTATO" class="table" runat="server" DataSourceID="sdsSTATO" AutoGenerateColumns="False" DataKeyNames="chiaveSPEDIZIONE" OnSelectedIndexChanged="grdSTATO_SelectedIndexChanged">
                                             <Columns>
 
-                                                <asp:CommandField ButtonType="Button" ShowSelectButton="True" />
+                                                <asp:CommandField ButtonType="Button" ShowSelectButton="True"  ControlStyle-CssClass="btn btn-sm masterButton" />
 
                                                 <asp:BoundField DataField="chiaveSPEDIZIONE" HeaderText="chiaveSPEDIZIONE" ReadOnly="True" SortExpression="chiaveSPEDIZIONE" Visible="False" />
                                                 <asp:BoundField DataField="STATO_SPEDIZIONE" HeaderText="STATO_SPEDIZIONE" SortExpression="STATO_SPEDIZIONE" />
@@ -29,13 +29,13 @@
                                             </Columns>
                                             <HeaderStyle BackColor="#B469FF" />
                                         </asp:GridView>
-                                        <asp:SqlDataSource ID="sdsSTATO" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSEDIZIONI_ORDINI_Select" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                                        <asp:SqlDataSource ID="sdsSTATO" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSPEDIZIONI_ORDINI_Select" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                     </div>
                                     <div class="col-lg-2">
 
 
                                         <%-- pulsante --%>
-                                        <asp:Button ID="btnStato" runat="server" class="btn btn-sm masterButton" Text="Aggiorna Stato" OnClick="btnStato_Click" />
+                                        <asp:Button ID="btnStato" runat="server" class="btn btn-sm masterButton" Text="STATO SUCCESSIVO" OnClick="btnStato_Click" />
 
                                     </div>
                                 </div>

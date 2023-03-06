@@ -2,7 +2,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="/assets/css/styleCorrieri.css" rel="stylesheet" />
-    <script src="/assets/js/notify.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <%--Pagina di visualizzazione dati personali dei corrieri--%>
@@ -72,7 +71,7 @@
                             </div>
                         </div>
                         <div class="text-center mt-2">
-                            <asp:Button ID="btnModifica" class="btn btn-sm masterButton" runat="server" Text="Modifica i dati" OnClick="btnModifica_Click" />
+                            <asp:Button ID="btnModifica" class="btn masterButton" runat="server" Text="Modifica" OnClick="btnModifica_Click" />
                         </div>
                     </div>
                 </div>
@@ -103,7 +102,7 @@
                             </div>
                         </div>
                         <div class="text-center mt-2">
-                            <asp:Button ID="btnModPWD" class="btn btn-sm masterButton" runat="server" Text="Modifica Password" OnClick="btnModPWD_Click" />
+                            <asp:Button ID="btnModPWD" class="btn masterButton" runat="server" Text="Modifica" OnClick="btnModPWD_Click" />
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,6 @@
     <script>
         $(document).ready(function () {
 
-
             if ($('.bbb_viewed_slider').length) {
                 var viewedSlider = $('.bbb_viewed_slider');
 
@@ -42,6 +41,8 @@
             }
         });
     </script>
+    <script src="../../assets/js/notify.js"></script>
+    <link href="../../assets/css/notify.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="viewed">
@@ -54,7 +55,6 @@
                         </div>
                     </div>
 
-
                     <div class="bbb_viewed_slider_container">
                         <div class="owl-carousel owl-theme bbb_viewed_slider">
 
@@ -62,16 +62,12 @@
                                 <a href="paginastupida.aspx?c=">
                                     <div class="bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center">
                                         <div class="bbb_viewed_image">
-                                            <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924153/alcatel-smartphones-einsteiger-mittelklasse-neu-3m.jpg" alt="">
+                                            <asp:Literal ID="litImg" runat="server"></asp:Literal>
                                         </div>
                                         <div class="bbb_viewed_content text-center">
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP1" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT1" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -86,10 +82,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP2" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT2" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -104,10 +96,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP3" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT3" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -122,10 +110,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP4" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT4" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -140,10 +124,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP5" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT5" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -158,10 +138,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP6" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT6" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -176,10 +152,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP7" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT7" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -194,10 +166,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP8" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT8" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -212,10 +180,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP9" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT9" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -230,10 +194,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP10" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT10" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -248,10 +208,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP11" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT11" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -266,10 +222,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP12" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT12" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -284,10 +236,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP13" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT13" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -302,10 +250,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP14" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT14" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -320,10 +264,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP15" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT15" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -338,10 +278,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP16" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT16" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -356,10 +292,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP17" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT17" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -374,10 +306,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP18" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT18" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -392,10 +320,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP19" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT19" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -410,10 +334,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP20" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT20" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -447,10 +367,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP21" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT21" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -465,10 +381,6 @@
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP22" runat="server" Text=""></asp:Label></div>
                                             <div class="bbb_viewed_name"><asp:Label ID="lblT22" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -481,12 +393,8 @@
                                         </div>
                                         <div class="bbb_viewed_content text-center">
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP23" runat="server" Text=""></asp:Label></div>
-                                            <div class="bbb_viewed_name"><asp:Label ID="lblt23" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT23" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -498,13 +406,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924275/images.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹1379</div>
-                                            <div class="bbb_viewed_name"><a href="#">Huawei Power</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP24" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT24" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -516,13 +420,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924361/21HmjI5eVcL.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹225<span>₹300</span></div>
-                                            <div class="bbb_viewed_name"><a href="#">Sony Power</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP25" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT25" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -534,13 +434,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP26" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT26" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -552,13 +448,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP27" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT27" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -570,13 +462,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP28" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT28" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -588,13 +476,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP29" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT29" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -606,13 +490,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP30" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT30" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -624,13 +504,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP31" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT31" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -642,13 +518,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP32" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT32" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -660,13 +532,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP33" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT33" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -678,13 +546,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP34" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT34" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -696,13 +560,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP35" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT35" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -714,13 +574,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP36" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT36" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -732,13 +588,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP37" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT37" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -750,13 +602,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP38" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT38" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -768,13 +616,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP39" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT39" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -786,13 +630,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP40" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT40" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -824,13 +664,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924153/alcatel-smartphones-einsteiger-mittelklasse-neu-3m.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹12225<span>₹13300</span></div>
-                                            <div class="bbb_viewed_name"><a href="#">Alkatel Phone</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP41" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT41" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -842,13 +678,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924221/51_be7qfhil.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹30079</div>
-                                            <div class="bbb_viewed_name"><a href="#">Samsung LED</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP42" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT42" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -860,13 +692,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹22250</div>
-                                            <div class="bbb_viewed_name"><a href="#">Samsung Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP43" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT43" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -878,13 +706,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924275/images.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹1379</div>
-                                            <div class="bbb_viewed_name"><a href="#">Huawei Power</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP44" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT44" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -896,13 +720,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924361/21HmjI5eVcL.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹225<span>₹300</span></div>
-                                            <div class="bbb_viewed_name"><a href="#">Sony Power</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP45" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT45" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -914,13 +734,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP46" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT46" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -932,13 +748,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP47" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT47" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -950,13 +762,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP48" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT48" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -968,13 +776,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP49" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT49" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -986,13 +790,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP50" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT50" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -1004,13 +804,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP51" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT51" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -1022,13 +818,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP52" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT52" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -1040,13 +832,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP53" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT53" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -1058,13 +846,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP54" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT54" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -1076,13 +860,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP55" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT55" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -1094,13 +874,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP56" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT56" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -1112,13 +888,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP57" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT57" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -1130,13 +902,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP58" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT58" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -1148,13 +916,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP59" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT59" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>
@@ -1166,13 +930,9 @@
                                             <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924241/8fbb415a2ab2a4de55bb0c8da73c4172--ps.jpg" alt="">
                                         </div>
                                         <div class="bbb_viewed_content text-center">
-                                            <div class="bbb_viewed_price">₹13275</div>
-                                            <div class="bbb_viewed_name"><a href="#">Speedlink Mobile</a></div>
+                                            <div class="bbb_viewed_price"><asp:Label ID="lblP60" runat="server" Text=""></asp:Label></div>
+                                            <div class="bbb_viewed_name"><asp:Label ID="lblT60" runat="server" Text=""></asp:Label></div>
                                         </div>
-                                        <ul class="item_marks">
-                                            <li class="item_mark item_discount">-25%</li>
-                                            <li class="item_mark item_new">new</li>
-                                        </ul>
                                     </div>
                                 </a>
                             </div>

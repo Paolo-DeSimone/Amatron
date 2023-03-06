@@ -3,6 +3,7 @@
 .hrdivider {
     font-weight: bold;
     font-size: 16px;
+    border-radius: 10px
 }
 
 .hrdivider1 {
@@ -14,10 +15,11 @@
     top: -0.7em;
     left: 50%;
     transform: translateX(-50%);
+    border-radius:10px
 }
 
-.lblInBasso{
-    margin-bottom:-10px;
+.lblInBasso {
+    margin-bottom: -10px;
 }
 
 .scrollo::-webkit-scrollbar {
@@ -28,8 +30,9 @@
 .scrollo {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
-    
+}
+
 .lblCORRIERI {
-    float:left;
+    float: left;
 }
 

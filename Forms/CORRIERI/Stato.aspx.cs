@@ -19,14 +19,14 @@ public partial class _Default : System.Web.UI.Page
         string chiave = grdSTATO.SelectedValue.ToString();
 
        SPEDIZIONI SPE = new SPEDIZIONI();
-        SPE.chiave = int.Parse(chiave);
-        //SPE.STATO = txtStato.Text.Trim();
-
-        //SPE.SPEDIZIONIMODIFICA();
+       SPE.chiave = int.Parse(chiave);
+        
     }
 
     protected void btnStato_Click(object sender, EventArgs e)
     {
-        //if (lblStato.)
+        string chiave = grdSTATO.SelectedValue.ToString();
+        SPEDIZIONI SPE = new SPEDIZIONI();
+        SPE.chiave = int.Parse(chiave);
     }
 }

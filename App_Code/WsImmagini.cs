@@ -41,8 +41,8 @@ public class WsImmagini : System.Web.Services.WebService
         DB.cmd.Parameters.AddWithValue("TITOLO", titolo);
         DB.cmd.Parameters.AddWithValue("DOC", doc);
         DB.cmd.Parameters.AddWithValue("TIPO", tipo);
-        DB.EseguiSPNonRead();
         DB.query = "spIMMAGINI_Insert";
+        DB.EseguiSPNonRead();
     }
 
     [WebMethod]
@@ -54,5 +54,19 @@ public class WsImmagini : System.Web.Services.WebService
         DB.query = "spORDINI_Delete";
         DB.EseguiSPNonRead();
     }
+
+    [WebMethod]
+    public DataTable PRODOTTI_IMMAGINI_SelectByProdotto(int chiaveProdotto)
+    {
+        DATABASE DB = new DATABASE();
+        DataTable dt = new DataTable();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spPRODOTTI_IMMAGINI_SelectByProdotto";
+        DB.cmd.Parameters.AddWithValue("chiaveProdotto", chiaveProdotto);
+        dt = DB.EseguiSPRead();
+        dt.TableName = "PRIMGSelectByProdotto";
+        return dt;
+    }
+
 }
 

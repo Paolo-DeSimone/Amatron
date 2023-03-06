@@ -13,30 +13,69 @@ public partial class _Default : System.Web.UI.Page
         if (!IsPostBack)
         {
             PRODOTTI P = new PRODOTTI();
+         
             DataTable dt = P.MAX20Novita();
             caroselNovita.InnerHtml = "";
-            int caunt = dt.Rows.Count;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 caroselNovita.InnerHtml += "<div class=\"owl-item\">" +
-                    "<a href = \"paginastupida.aspx?c=\">" +
+                    "<a href = \"PaginaProdotto.aspx?c="+ dt.Rows[i]["chiave"] +"\">" +
                     "<div class=\"bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center\">" +
                     "<div class=\"bbb_viewed_image\">" +
-                    "<h2>MAMMA</h2>" +
+                    "<img style=\"width:160px; height:160px;\" src='/Img.ashx?c=" + dt.Rows[i]["chiave"] + "' >" +
                     "</div>" +
                     "<div class=\"bbb_viewed_content text-center\">" +
-                    "<div class=\"bbb_viewed_price\"></div>" +
-                    "<div class=\"bbb_viewed_name\"></div>" +
+                    "<div class=\"bbb_viewed_price\">" + dt.Rows[i]["PREZZO"] + "</div>" +
+                    "<div class=\"bbb_viewed_name\">" + dt.Rows[i]["TITOLO"] + "</div>" +
                     "</div>" +
-                    "<ul class=\"item_marks\">" +
-                    "<li class=\"item_mark item_discount\">-25%</li>" +
-                    "<li class=\"item_mark item_new\">new</li>" +
-                    "</ul>" +
                     "</div>" +
                     "</a>" +
                     "</div>";
             }
-            int a = 0;
+
+            DataTable VENDUTI = P.MAX20Venduti();
+            caroselPiuVenduti.InnerHtml = "";
+            for (int i = 0; i < VENDUTI.Rows.Count; i++)
+            {
+                P.chiave = int.Parse(VENDUTI.Rows[i]["chiavePRODOTTO"].ToString());
+                DataTable RIS = P.SelectByKey();
+
+                caroselPiuVenduti.InnerHtml += "<div class=\"owl-item\">" +
+                    "<a href = \"PaginaProdotto.aspx?c=" + VENDUTI.Rows[i]["chiavePRODOTTO"] +"\">" +
+                    "<div class=\"bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center\">" +
+                    "<div class=\"bbb_viewed_image\">" +
+                    "<img style=\"width:150px; height:150px;\"  src='/Img.ashx?c=" + VENDUTI.Rows[i]["chiavePRODOTTO"] + "' >" +
+                    "</div>" +
+                    "<div class=\"bbb_viewed_content text-center\">" +
+                    "<div class=\"bbb_viewed_price\">" + RIS.Rows[0]["PREZZO"] + "</div>" +
+                    "<div class=\"bbb_viewed_name\">" + RIS.Rows[0]["TITOLO"] + "</div>" +
+                    "</div>" +
+                    "</div>" +
+                    "</a>" +
+                    "</div>";
+            }
+
+            DataTable VOTATI = P.MAX20Valutazione();
+            caroselpiuVotati.InnerHtml = "";
+            for (int i = 0; i < VOTATI.Rows.Count; i++)
+            {
+                P.chiave = int.Parse(VOTATI.Rows[i]["chiavePRODOTTO"].ToString());
+                DataTable RISULTATO = P.SelectByKey();
+
+                caroselpiuVotati.InnerHtml += "<div class=\"owl-item\">" + 
+                    "<a href = \"PaginaProdotto.aspx?c=" + VENDUTI.Rows[i]["chiavePRODOTTO"] + "\">" +
+                    "<div class=\"bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center\">" +
+                    "<div class=\"bbb_viewed_image\">" +
+                    "<img style=\"width:150px; height:150px;\" src='/Img.ashx?c=" + VOTATI.Rows[i]["chiavePRODOTTO"] + "' >" +
+                    "</div>" +
+                    "<div class=\"bbb_viewed_content text-center\">" +
+                    "<div class=\"bbb_viewed_price\">" + RISULTATO.Rows[0]["PREZZO"] + "</div>" +
+                    "<div class=\"bbb_viewed_name\">" + RISULTATO.Rows[0]["TITOLO"] + "</div>" +
+                    "</div>" +
+                    "</div>" +
+                    "</a>" +
+                    "</div>";
+            }
         }
     }
 }

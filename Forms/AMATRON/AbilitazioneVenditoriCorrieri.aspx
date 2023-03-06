@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="AbilitazioneVenditoriCorrieriAMATRON.aspx.cs" Inherits="_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="AbilitazioneVenditoriCorrieri.aspx.cs" Inherits="_Default" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -30,7 +30,7 @@
                                 <ContentTemplate>
                                     <asp:GridView ID="grigliaVenditori" CssClass="table" runat="server" DataSourceID="sdsVenditori" AutoGenerateColumns="False" DataKeyNames="chiave" OnSelectedIndexChanged="grigliaVenditori_SelectedIndexChanged">
                                         <Columns>
-                                            <asp:CommandField ShowSelectButton="True" ButtonType="Button"></asp:CommandField>
+                                            <asp:CommandField ShowSelectButton="True"></asp:CommandField>
                                             <asp:BoundField DataField="chiave" HeaderText="chiave" ReadOnly="True" Visible="False" SortExpression="chiave"></asp:BoundField>
                                             <asp:BoundField DataField="RAGIONESOCIALE" HeaderText="RAGIONESOCIALE" SortExpression="RAGIONESOCIALE"></asp:BoundField>
                                             <asp:BoundField DataField="PIVA" HeaderText="PIVA" SortExpression="PIVA" Visible="False"></asp:BoundField>
@@ -74,7 +74,7 @@
                                 <ContentTemplate>
                                     <asp:GridView ID="grigliaCorrieri" Class="table" runat="server" AutoGenerateColumns="False" DataKeyNames="chiave" DataSourceID="sdsCorrieri" OnSelectedIndexChanged="grigliaCorrieri_SelectedIndexChanged">
                                         <Columns>
-                                            <asp:CommandField ShowSelectButton="true" ButtonType="Button"></asp:CommandField>
+                                            <asp:CommandField ShowSelectButton="true"></asp:CommandField>
                                             <asp:BoundField DataField="chiave" HeaderText="chiave" ReadOnly="True" InsertVisible="False" SortExpression="chiave" Visible="False"></asp:BoundField>
                                             <asp:BoundField DataField="RAGIONESOCIALE" HeaderText="RAGIONESOCIALE" SortExpression="RAGIONESOCIALE"></asp:BoundField>
                                             <asp:BoundField DataField="EMAIL" HeaderText="EMAIL" SortExpression="EMAIL"></asp:BoundField>

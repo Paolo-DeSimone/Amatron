@@ -41,8 +41,8 @@ public class WsImmagini : System.Web.Services.WebService
         DB.cmd.Parameters.AddWithValue("TITOLO", titolo);
         DB.cmd.Parameters.AddWithValue("DOC", doc);
         DB.cmd.Parameters.AddWithValue("TIPO", tipo);
-        DB.EseguiSPNonRead();
         DB.query = "spIMMAGINI_Insert";
+        DB.EseguiSPNonRead();
     }
 
     [WebMethod]

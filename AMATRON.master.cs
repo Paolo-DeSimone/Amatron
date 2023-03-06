@@ -21,6 +21,8 @@ public partial class AMATRON : System.Web.UI.MasterPage
             dropdownClienti.Visible = false;
             dropdownCorrieri.Visible = false;
             dropdownVenditori.Visible = false;
+            accessIn.Visible = true;
+            accessOut.Visible = false;
 
             if (Session["chiaveUSR"] != null)
             {
@@ -40,6 +42,8 @@ public partial class AMATRON : System.Web.UI.MasterPage
                         dropdownAmatron.Visible = true;
                         break;
                 }
+                accessIn.Visible = false;
+                accessOut.Visible = true;
                 caricaCarrello(int.Parse(Session["chiaveUSR"].ToString()));
             }
             
@@ -158,6 +162,9 @@ public partial class AMATRON : System.Web.UI.MasterPage
                     dropdownAmatron.Visible = true;
                     break;
             }
+
+            accessIn.Visible = false;
+            accessOut.Visible = true;
         } else
         {
             return;

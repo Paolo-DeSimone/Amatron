@@ -109,15 +109,14 @@
                             </div>
 
                             <%--  SIGN UP E SIGN IN--%>
-                            <ul class="nav navbar-nav navbar-right">
+                            <ul class="nav navbar-nav navbar-right" id="accessIn" runat="server">
                                 <li class="nav-item"><a class="nav-link" href="/Forms/CORRIERI/Registrazione.aspx">Registrati</a></li>
-                                <li>&nbsp;</li>
                                 <li class="nav-item"><a class="nav-link" href="#" id="show_popup" onclick="showpopup()">Accedi</a></li>
-                                <li>&nbsp;</li>
-                                <li>&nbsp;</li>
-                                <li>&nbsp;</li>
-                                <li>&nbsp;</li>
                             </ul>
+
+                            <div class="nav-item pr-2" id="accessOut" runat="server">
+                                <a class="nav-link">Log Out</a>
+                            </div>
 
                             <!-- DROPDOWN PER OPERAZIONI UTENTE -->
                             <div class="dropdown" id="dropdownClienti" runat="server">
@@ -134,8 +133,6 @@
                                 <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">User Actions
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/AggiungiProdotti.aspx">Aggiungi Prodotto</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/GestisciInventario.aspx">Gestisci Inventario</a></li>
                                     <li><a class="dropdown-item" href="/Forms/VENDITORI/StoricoVendite.aspx">Storico Vendite</a></li>
                                     <li><a class="dropdown-item" href="/Forms/VENDITORI/VisualizzaProdotti.aspx">Visualizza Prodotti</a></li>
                                 </ul>                               

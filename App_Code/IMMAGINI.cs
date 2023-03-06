@@ -17,13 +17,12 @@ public class IMMAGINI
         //
     }
 
-    RifImmagini.WsImmaginiSoapClient I = new RifImmagini.WsImmaginiSoapClient();
     public int chiave;
     public int chiaveprodotto;
     public string titolo;
     public byte[] doc;
     public string tipo;
-
+    RifImmagini.WsImmaginiSoapClient I = new RifImmagini.WsImmaginiSoapClient();
 
     public void Insert()
     {
@@ -37,9 +36,15 @@ public class IMMAGINI
 
     public DataTable SelectByKey()
     {
-        DataTable DT = new DataTable(); 
-        DT=I.IMMAGINI_SelectByKey(chiave);
+        DataTable DT = new DataTable();
+        DT = I.IMMAGINI_SelectByKey(chiave);
         return DT;
     }
-    
+
+    public DataTable SelectByProdotto()
+    {
+        DataTable DT = new DataTable();
+        DT = I.PRODOTTI_IMMAGINI_SelectByProdotto(chiaveprodotto);
+        return DT;
+    }
 }

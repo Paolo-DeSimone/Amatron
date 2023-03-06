@@ -4,7 +4,6 @@
     <script>
         $(document).ready(function () {
 
-
             if ($('.bbb_viewed_slider').length) {
                 var viewedSlider = $('.bbb_viewed_slider');
 
@@ -56,7 +55,6 @@
                         </div>
                     </div>
 
-
                     <div class="bbb_viewed_slider_container">
                         <div class="owl-carousel owl-theme bbb_viewed_slider">
 
@@ -64,7 +62,7 @@
                                 <a href="paginastupida.aspx?c=">
                                     <div class="bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center">
                                         <div class="bbb_viewed_image">
-                                            <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560924153/alcatel-smartphones-einsteiger-mittelklasse-neu-3m.jpg" alt="">
+                                            <asp:Literal ID="lit" runat="server"></asp:Literal>
                                         </div>
                                         <div class="bbb_viewed_content text-center">
                                             <div class="bbb_viewed_price"><asp:Label ID="lblP1" runat="server" Text=""></asp:Label></div>

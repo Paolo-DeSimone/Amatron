@@ -91,6 +91,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="VALUTAZIONI_Media">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiaveprodotto" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VALUTAZIONI_MediaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VALUTAZIONI_MediaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="VALUTAZIONI_InsertSoapIn">
@@ -123,6 +144,12 @@
   <wsdl:message name="VALUTAZIONI_SelectByProdottoSoapOut">
     <wsdl:part name="parameters" element="tns:VALUTAZIONI_SelectByProdottoResponse" />
   </wsdl:message>
+  <wsdl:message name="VALUTAZIONI_MediaSoapIn">
+    <wsdl:part name="parameters" element="tns:VALUTAZIONI_Media" />
+  </wsdl:message>
+  <wsdl:message name="VALUTAZIONI_MediaSoapOut">
+    <wsdl:part name="parameters" element="tns:VALUTAZIONI_MediaResponse" />
+  </wsdl:message>
   <wsdl:portType name="WsValutazioniSoap">
     <wsdl:operation name="VALUTAZIONI_Insert">
       <wsdl:input message="tns:VALUTAZIONI_InsertSoapIn" />
@@ -143,6 +170,10 @@
     <wsdl:operation name="VALUTAZIONI_SelectByProdotto">
       <wsdl:input message="tns:VALUTAZIONI_SelectByProdottoSoapIn" />
       <wsdl:output message="tns:VALUTAZIONI_SelectByProdottoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VALUTAZIONI_Media">
+      <wsdl:input message="tns:VALUTAZIONI_MediaSoapIn" />
+      <wsdl:output message="tns:VALUTAZIONI_MediaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WsValutazioniSoap" type="tns:WsValutazioniSoap">
@@ -192,6 +223,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="VALUTAZIONI_Media">
+      <soap:operation soapAction="http://tempuri.org/VALUTAZIONI_Media" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WsValutazioniSoap12" type="tns:WsValutazioniSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -233,6 +273,15 @@
     </wsdl:operation>
     <wsdl:operation name="VALUTAZIONI_SelectByProdotto">
       <soap12:operation soapAction="http://tempuri.org/VALUTAZIONI_SelectByProdotto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VALUTAZIONI_Media">
+      <soap12:operation soapAction="http://tempuri.org/VALUTAZIONI_Media" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

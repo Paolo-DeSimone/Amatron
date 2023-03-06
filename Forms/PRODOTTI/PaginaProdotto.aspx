@@ -41,6 +41,12 @@
                         <asp:Literal ID="litProdotto" runat="server" Text="Titolo del Prodotto"></asp:Literal></h3>
                     <h4>
                         <asp:Literal ID="litCategoria" runat="server" Text="Categoria"></asp:Literal></h4>
+                    <asp:ImageButton ID="ystar1"  Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="False" />
+                    <asp:ImageButton ID="ystar2" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="False" />
+                    <asp:ImageButton ID="ystar3" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="False" />
+                    <asp:ImageButton ID="ystar4" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="False" />
+                    <asp:ImageButton ID="ystar5" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="False" />
+            
                     <h3 class="mt-4">Prezzo:
                         <asp:Literal ID="litPrezzoCentro" runat="server" Text="€99,99"></asp:Literal></h3>
                     <p class="lead" style="color: black">
@@ -49,21 +55,26 @@
                 </div>
                 <br />
                 <p>Inserisci valutazione:</p>
-                <div></div>
-                <p>
-                    <asp:ImageButton ID="whitestar1" Class="star" runat="server" src="../../assets/images/whitestar.png" Width="20px" Height="20px" OnClick="whitestar1_Click" />
-                    <asp:ImageButton ID="whitestar2" Class="star" runat="server" src="../../assets/images/whitestar.png" Width="20px" Height="20px" OnClick="whitestar2_Click" />
-                    <asp:ImageButton ID="whitestar3" Class="star" runat="server" src="../../assets/images/whitestar.png" Width="20px" Height="20px" OnClick="whitestar3_Click" />
-                    <asp:ImageButton ID="whitestar4" Class="star" runat="server" src="../../assets/images/whitestar.png" Width="20px" Height="20px" OnClick="whitestar4_Click" />
-                    <asp:ImageButton ID="whitestar5" Class="star" runat="server" src="../../assets/images/whitestar.png" Width="20px" Height="20px" OnClick="whitestar5_Click" />
-                </p>
+                <div>      
+                     <asp:ImageButton ID="yellowstar1"  Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" OnClick="whitestar2_Click" Visible="False" />
+                    <asp:ImageButton ID="yellowstar2" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" OnClick="whitestar2_Click" Visible="False" />
+                    <asp:ImageButton ID="yellowstar3" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" OnClick="whitestar3_Click" Visible="False" />
+                    <asp:ImageButton ID="yellowstar4" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" OnClick="whitestar4_Click" Visible="False" />
+                    <asp:ImageButton ID="yellowstar5" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" OnClick="whitestar5_Click" Visible="False" />
+            
+                    <asp:ImageButton ID="whitestar1" Class="star" runat="server" src="/assets/images/whitestar.png" Width="20px" Height="20px" OnClick="whitestar1_Click" />
+                    <asp:ImageButton ID="whitestar2" Class="star" runat="server" src="/assets/images/whitestar.png" Width="20px" Height="20px" OnClick="whitestar2_Click" />
+                    <asp:ImageButton ID="whitestar3" Class="star" runat="server" src="/assets/images/whitestar.png" Width="20px" Height="20px" OnClick="whitestar3_Click" />
+                    <asp:ImageButton ID="whitestar4" Class="star" runat="server" src="/assets/images/whitestar.png" Width="20px" Height="20px" OnClick="whitestar4_Click" />
+                    <asp:ImageButton ID="whitestar5" Class="star" runat="server" src="/assets/images/whitestar.png" Width="20px" Height="20px" OnClick="whitestar5_Click" />
+                      </div>
                 <p>
                     <asp:Label ID="Label1" runat="server" Text="Valutazioni:"></asp:Label>
                     <asp:Label ID="Label2" runat="server" Text=""></asp:Label>
                     <asp:TextBox ID="txtDescription" class="form-control" runat="server" BorderColor="Black" TextMode="MultiLine"></asp:TextBox>
                 </p>
                 <div align="center">
-                    <asp:Button ID="btnRecensione" runat="server" Text="Aggiungi recensione" class="btn masterButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" OnClick="btnAggiungi_Click" />
+                    <asp:Button ID="btnRecensione" runat="server" Text="Aggiungi recensione" class="btn masterButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" OnClick="btnRecensione_Click" />
                 </div>
         </div>
         <%-- colonna --%>

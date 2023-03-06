@@ -64,7 +64,7 @@ public class WsValutazioni : System.Web.Services.WebService
         DB.cmd.Parameters.Clear();
         DB.cmd.Parameters.AddWithValue("chiave", chiave);
         DB.query = "spVALUTAZIONI_SelectByKey";
-        dt.TableName = "SelectByKey";
+        dt.TableName = "ValutazioniSelectByKey";
         return DB.EseguiSPRead();
     }
 
@@ -77,6 +77,18 @@ public class WsValutazioni : System.Web.Services.WebService
         DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);      
         DB.query = "spVALUTAZIONI_SelectByProdotto";
         dt.TableName = "SelectByProdotto";
+        return DB.EseguiSPRead();
+    }
+
+    [WebMethod]
+    public DataTable VALUTAZIONI_Media(int chiaveprodotto)
+    {
+        DataTable dt = new DataTable();
+        DATABASE DB = new DATABASE();
+        DB.cmd.Parameters.Clear();
+        DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);
+        DB.query = "spVALUTAZIONI_Media";
+        dt.TableName = "ValutazioniMedia";
         return DB.EseguiSPRead();
     }
 }

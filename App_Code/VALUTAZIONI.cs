@@ -57,4 +57,11 @@ public class VALUTAZIONI
         dt = V.VALUTAZIONI_SelectByProdotto(chiaveprodotto);
         return dt;
     }
+
+    public DataTable Media()
+    {
+        DataTable dt = new DataTable();
+        dt = V.VALUTAZIONI_Media(chiaveprodotto);
+        return dt;
+    }
 }

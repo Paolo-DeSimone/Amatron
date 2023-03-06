@@ -39,7 +39,7 @@ public class SPEDIZIONI
     public DataTable SPEDIZIONI_SelectByKey()
     {
         DataTable DT = new DataTable();
-        S.SPEDIZIONI_SelectByKey(chiave);
+        DT=S.SPEDIZIONI_SelectByKey(chiave);
         return DT;
     }
 
@@ -50,7 +50,7 @@ public class SPEDIZIONI
     public DataTable SPEDIZIONI_SelectByOrdine()
     {
         DataTable DT = new DataTable();
-        S.SPEDIZIONI_SelectByOrdine(chiave);
+        DT=S.SPEDIZIONI_SelectByOrdine(chiave);
         return DT;
     }
 
@@ -61,8 +61,17 @@ public class SPEDIZIONI
     public DataTable SPEDIZIONI_SelectAll()
     {
         DataTable DT = new DataTable();
-        S.SPEDIZIONI_SelectAll();
+        DT=S.SPEDIZIONI_SelectAll();
         return DT;
+    }
+
+    /// <summary>
+    /// tramite questo metodo modifico lo stato 
+    /// </summary>
+    /// <returns>restituisce la parte successiva dello stato</returns>
+    public void SPEDIZIONI_UpdateStato()
+    {
+        S.SPEDIZIONI_UpdateStato(chiave);
     }
 
 }

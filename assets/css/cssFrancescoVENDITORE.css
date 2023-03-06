@@ -1,7 +1,8 @@
 .CardMargine {
-    margin: 12vh auto;
+    margin: 6vh auto;
+    margin-left:38%;
+    margin-bottom:0%;
 }
-
 .DescrizioneProdotto {
     display: -webkit-box;
     text-overflow: ellipsis;
@@ -45,39 +46,39 @@
 }
 
 .Popup {
-    background-color: #8e53c9;
-    border-radius: 15px;
-    border-width: 3px;
-    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
     border-color: none;
-    padding-top: 10px;
-    padding-left: 5px;
+    padding-top: 3px;
+    padding-left: 0px;
     padding-right: 5px;
-
-    width: 560px;
-    height: 500px;
-    border:0px;
-
+    width: 580px;
+    height: 510px;
+    border: 0px;
+    position: relative;
 }
 
 .PopupGestisciInventario {
-    background-color: #FFFFFF;
+    /* background-color: #FFFFFF;
     border-width: 3px;
-    border-radius: 15px;
-    border-style: solid;
     border-color: none;
     padding-top: 10px;
     padding-left: 5px;
     padding-right: 5px;
-    width: 31%;
-    height: 27%;
+    padding:5px;
+    width: 380px;
+    height: 200px;*/
+    background-color: #FFFFFF;
+    border-width: 3px;
+    border-color: black;
+    width: fit-content;
+    block-size: fit-content;
 }
 
 .popupBoxWrapper {
     max-width: 550px;
     width: 95%;
-    height:100%;
-
+    height: 100%;
 }
 
 .Background {
@@ -99,32 +100,51 @@
 }
 
 .close-btn-wrapper {
-    position: relative;
-    width: 700px;
+    position: fixed;
     left: 30%;
 }
 
 .close-btn2 {
-    position: fixed;
-    top: 27%;
-    right: 36%;
+     position: fixed;
+    top: 10%;
+    right: 30%;
+
 }
 
 .chiusura {
-    background-color: #8e53c9;
     border: none;
 }
 
 .close-btn3 {
-    position: fixed;
-    top: 39%;
-    right: 35%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+
 }
 
 
 .popupBoxWrapper {
-    max-width: 545px;
-    width:95%;
-    height: 95% ;
+    max-width: 605px;
+    width: 95%;
+    height: 95%;
     max-height: 600px;
+}
+.titoloInventario{
+    margin-left: 25vw;
+}
 
+.marginetto{
+    margin-left: 40vw;
+}
+
+.center{
+    margin: auto;
+    padding: 8px;
+    padding: 8px;
+}

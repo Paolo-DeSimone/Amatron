@@ -19,7 +19,7 @@ public class ORDINI
     public int qta;
     public string datatransazione;
     public int numeroordine;
-    public bool ACCETTAZIONE;
+    public bool gestito;
 
 
     //istanzio il web service fuori dalla funzione cosi non devo ripeterlo
@@ -33,58 +33,61 @@ public class ORDINI
     }
 
     //richiamo il webservice fornendo tutti i parametri necessari
-    
+
     public void Insert()
     {      
 
-        R.ORDINI_Insert(chiavecorriere, chiaveprodotto, chiavecliente, datatransazione, qta, numeroordine);
+        O.ORDINI_Insert(chiavecorriere, chiaveprodotto, chiavecliente, datatransazione, qta, numeroordine);
     }
-
-       
-    
+ 
      public void Update()
     {      
         O.ORDINI_Update(chiave, datatransazione, qta, numeroordine);
     } 
     
-
     public void Delete()
     {
         O.ORDINI_Delete(chiave);
-    } 
-    
+    }
+
     public DataTable SelectAll()
     {
         DataTable dt = new DataTable();
-        O.ORDINI_SelectAll();
+        dt=O.ORDINI_SelectAll();
         return dt;
     }
-    
+
     public DataTable SelectByKey()
     {
         DataTable dt = new DataTable();
-        O.ORDINI_SelectByKey(chiave);
+        dt=O.ORDINI_SelectByKey(chiave);
         return dt;
     }
 
     public DataTable SelectByCorriere()
     {
         DataTable dt = new DataTable();
-        O.ORDINI_SelectByCorriere(chiavecorriere);
+        dt = O.ORDINI_SelectByCorriere(chiavecorriere);
         return dt;
     }
 
     public DataTable SelectByProdotto()
     {
         DataTable dt = new DataTable();
-        O.ORDINI_SelectByProdotto(chiaveprodotto);
+        dt = O.ORDINI_SelectByProdotto(chiaveprodotto);
         return dt;
     }
-    
+
     public DataTable SelectByCliente()
     {
         DataTable dt = new DataTable();
-        O.ORDINI_SelectByCliente(chiavecliente);
+        dt = O.ORDINI_SelectByCliente(chiavecliente);
         return dt;
+    }
+
+    //Metodo inserito per la Gestione Ordini (George D.)
+    public void ORDINI_GESTITO()
+    {
+        O.ORDINI_GESTITO(chiave, chiavecorriere, gestito);
     }
 }

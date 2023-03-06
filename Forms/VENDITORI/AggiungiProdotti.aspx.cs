@@ -22,7 +22,8 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
         //Controlli formali soliti
         if (txtDescrizione.Text.Trim() == "" || txtPrezzo.Text.Trim() == "")
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Errore');", true);
+            string notify = @"notifyError('Dati mancanti, riempire tutti i campi e riprovare')";
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnSalva_Click", notify, true);
             return;
         }
       
@@ -32,7 +33,9 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
         //      passare i campi che mi servono prezzo categoria quantità ddl chiave anche le immagini
         //      titolo descrizione e per le immagini imgDB->
 
+
         P.chiaveVENDITORE = int.Parse(Session["chiaveUSR"].ToString());
+
         P.chiaveCATEGORIA = int.Parse(ddlCategoria.SelectedValue.ToString());
         P.descrizione = txtDescrizione.Text.Trim();
         P.prezzo = int.Parse(txtPrezzo.Text.Trim());
@@ -41,10 +44,17 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
         P.titolo=txtTitolo.Text.Trim();
 
         P.Insert();
+
         
 
         DataTable dt = P.SelectAll();
         int chiaveprodotto =int.Parse(dt.Rows[dt.Rows.Count-1]["chiave"].ToString());
+
+        DataBind();
+        string script = @"notifySuccess('Modifica avvenuta con successo!')";
+        ScriptManager.RegisterStartupScript(this, GetType(), "btnSalva_Click", script, true);
+        return;
+
 
         // creo un array di byte da riempire con i bytes del file
         byte[] ImgData = fileUpload1.FileBytes;
@@ -62,6 +72,7 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
         I.tipo = tipo;
         I.Insert();
         reset();
+    
     }
 
     protected void reset()

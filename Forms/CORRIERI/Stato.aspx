@@ -29,7 +29,7 @@
                                             </Columns>
                                             <HeaderStyle BackColor="#B469FF" />
                                         </asp:GridView>
-                                        <asp:SqlDataSource ID="sdsSTATO" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSEDIZIONI_ORDINI_Select" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                                        <asp:SqlDataSource ID="sdsSTATO" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSPEDIZIONI_ORDINI_Select" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                     </div>
                                     <div class="col-lg-2">
 

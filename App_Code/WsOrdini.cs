@@ -24,7 +24,7 @@ public class WsOrdini : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void ORDINI_Insert(int chiavecorriere, int chiaveprodotto, int chiavecliente,string datatransazione, int qta, int numeroordine)
+    public void ORDINI_Insert(int chiavecorriere, int chiaveprodotto, int chiavecliente, string datatransazione, int qta, int numeroordine)
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.AddWithValue("chiaveCORRIERE", chiavecorriere);
@@ -36,11 +36,11 @@ public class WsOrdini : System.Web.Services.WebService
         DB.EseguiSPNonRead();
         DB.query = "spORDINI_Insert";
     }
-    
+
     [WebMethod]
     public void ORDINI_Update(int chiave, string datatransazione, int qta, int numeroordine)
     {
-        DATABASE DB = new DATABASE();       
+        DATABASE DB = new DATABASE();
         DB.cmd.Parameters.AddWithValue("chiave", chiave);
         DB.cmd.Parameters.AddWithValue("DATATRANSAZIONE", datatransazione);
         DB.cmd.Parameters.AddWithValue("QTA", qta);
@@ -57,7 +57,8 @@ public class WsOrdini : System.Web.Services.WebService
         DB.cmd.Parameters.Clear();
         DB.query = "spORDINI_SelectAll";
         dt.TableName = "SelectByAll";
-        return DB.EseguiSPRead();
+        dt = DB.EseguiSPRead();
+        return dt;
     }
 
     [WebMethod]
@@ -70,7 +71,8 @@ public class WsOrdini : System.Web.Services.WebService
         DB.cmd.Parameters.AddWithValue("chiave", chiave);
         // DB.cmd.Parameters.AddWithValue();
         dt.TableName = "SelectByKey";
-        return DB.EseguiSPRead();
+        dt=DB.EseguiSPRead();
+        return dt;
     }
 
     [WebMethod]
@@ -83,7 +85,8 @@ public class WsOrdini : System.Web.Services.WebService
         dt.TableName = "SelectByCorriere";
         DB.cmd.Parameters.AddWithValue("chiaveCORRIERE", chiavecorriere);
         // DB.cmd.Parameters.AddWithValue();
-        return DB.EseguiSPRead();
+        dt=DB.EseguiSPRead();
+        return dt;
     }
 
     [WebMethod]
@@ -96,7 +99,8 @@ public class WsOrdini : System.Web.Services.WebService
         DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);
         // DB.cmd.Parameters.AddWithValue();
         dt.TableName = "SelectByProdotto";
-        return DB.EseguiSPRead();
+        dt=DB.EseguiSPRead();
+        return dt;
 
     }
 
@@ -109,7 +113,8 @@ public class WsOrdini : System.Web.Services.WebService
         DB.query = "spORDINI_SelectByCliente";
         DB.cmd.Parameters.AddWithValue("chiaveCLIENTE", chiavecliente);
         dt.TableName = "SelectByKey";
-        return DB.EseguiSPRead();
+        dt = DB.EseguiSPRead();
+        return dt;
     }
 
     [WebMethod]
@@ -119,7 +124,7 @@ public class WsOrdini : System.Web.Services.WebService
         DB.cmd.Parameters.Clear();
         DB.query = "spORDINI_Delete";
         DB.cmd.Parameters.AddWithValue("chiave", chiave);
-        DB.EseguiSPNonRead();        
+        DB.EseguiSPNonRead();
     }
 
     /// WebMethod creato per l'accettazione dell'ordine (George D.)

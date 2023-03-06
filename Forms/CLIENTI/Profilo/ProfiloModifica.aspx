@@ -86,43 +86,74 @@
                     </div>
                 </div>
 
+                <%--Amatron prime card--%>
+                <div class="col-lg-4">
+                    <div class="card colore bianco ">
+                        <img src="../../../assets/images/amatron-prime.png" />
+                        <div class="card-body">
+                        </div>
 
-                <div class="card colore bianco larghezza">
-                    <img src="../../../assets/images/amatron-prime.png" />
-                    <div class="card-body">
+                        <%-- POPUP--%>
+
+                        <%-- Introduzione di uno script manager --%>
+                        <asp:ScriptManager ID="ScriptManager1" runat="server">
+                        </asp:ScriptManager>
+
+                        <%-- pulsante che apre il popup --%>
+                        <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" />
+                        <br />
+
+                        <%-- chiamata del popup --%>
+                        <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnApri"
+                            CancelControlID="btnChiudi" BackgroundCssClass="Background">
+                        </cc1:ModalPopupExtender>
+
+                        <%-- contenuto del popup --%>
+                        <asp:Panel
+                            ID="Panl1"
+                            runat="server"
+                            CssClass="Popup"
+                            align="center"
+                            Style="display: none">
+                            <%--ci pensa lo script manager a renderlo visibile--%>
+
+                            <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+                            <iframe style="width: 550px; height: 373px; -webkit-border-radius: 10px 10px 10px 10px;" id="if2" src="../Profilo/IscrizionePrimePopup.aspx" runat="server"></iframe>
+                            <br />
+                            <%--chiude il popup--%>
+                            <asp:Button ID="btnChiudi" class="btn btn-secondary" runat="server" Text="Chiudi" />
+                        </asp:Panel>
                     </div>
 
 
-                    <%-- POPUP--%>
-
-                    <%-- Introduzione di uno script manager --%>
-                    <asp:ScriptManager ID="ScriptManager1" runat="server">
-                    </asp:ScriptManager>
-
-                    <%-- pulsante che apre il popup --%>
-                    <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" />
-                    <br />
-
-                    <%-- chiamata del popup --%>
-                    <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnApri"
-                        CancelControlID="btnChiudi" BackgroundCssClass="Background">
-                    </cc1:ModalPopupExtender>
-
-                    <%-- contenuto del popup --%>
-                    <asp:Panel
-                        ID="Panl1"
-                        runat="server"
-                        CssClass="Popup"
-                        align="center"
-                        Style="display: none">
-                        <%--ci pensa lo script manager a renderlo visibile--%>
-
-                        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-                        <iframe style="width: 550px; height: 373px; -webkit-border-radius: 10px 10px 10px 10px;" id="if2" src="../Profilo/IscrizionePrimePopup.aspx" runat="server"></iframe>
-                        <br />
-                        <%--chiude il popup--%>
-                        <asp:Button ID="btnChiudi" class="btn btn-secondary" runat="server" Text="Chiudi" />
-                    </asp:Panel>
+                    <div class="card mt-3">
+                        <div class="card-header text-center">
+                            <h4 class="card-title">Cambia Password</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col">
+                                    <asp:Label ID="lblOldPWD" Style="float: left;" runat="server" Text="Vecchia Password:"></asp:Label>
+                                    <asp:TextBox ID="txtOldPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col">
+                                    <asp:Label ID="lblNewPWD" Style="float: left;" runat="server" Text="Nuova Password:"></asp:Label>
+                                    <asp:TextBox ID="txtNewPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col">
+                                    <asp:Label ID="lblConfPWD" Style="float: left;" runat="server" Text="Conferma Password:"></asp:Label>
+                                    <asp:TextBox ID="txtConfPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="text-center mt-2">
+                                <asp:Button ID="btnModPWD" class="btn masterButton" runat="server" Text="Modifica" OnClick="btnModPWD_Click" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

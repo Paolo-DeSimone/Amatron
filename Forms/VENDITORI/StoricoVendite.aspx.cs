@@ -12,14 +12,11 @@ public partial class _Default : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
-        GrigliaStoricoVendite.DataBind();
+    }
 
-        if (!IsPostBack)
-        {
+    protected void btnCerca_Click(object sender, EventArgs e)
+    {
+        this.GrigliaStoricoVendite.DataBind();
 
-        ddlCategoria.SelectedIndex = -1;
-        }
-
-        
     }
 }

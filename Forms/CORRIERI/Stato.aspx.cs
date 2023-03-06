@@ -19,7 +19,7 @@ public partial class _Default : System.Web.UI.Page
         string chiave = grdSTATO.SelectedValue.ToString();
 
        SPEDIZIONI SPE = new SPEDIZIONI();
-        SPE.chiave = int.Parse(chiave);
+       SPE.chiave = int.Parse(chiave);
         
     }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -24,7 +25,7 @@ public partial class _Default : System.Web.UI.Page
         }
         //faccio la session per passare la chiave
         Session["chiaveSPEDIZIONE"] = grdSTATO.SelectedValue.ToString();
-        Session["STATO_SPEDIZIONE"] = grdSTATO.SelectedRow.Cells[2].Text;
+        Session["STATO_SPEDIZIONE"] = grdSTATO.SelectedRow.Cells[3].Text;
     }
 
     protected void btnStato_Click(object sender, EventArgs e)
@@ -33,6 +34,25 @@ public partial class _Default : System.Web.UI.Page
         SPE.chiave = int.Parse(Session["chiaveSPEDIZIONE"].ToString());
         SPE.STATO = Session["STATO_SPEDIZIONE"].ToString();
         SPE.SPEDIZIONI_UpdateStato();
-        DataBind();
+        DataTable DT = SPE.SPEDIZIONI_SelectByKey();
+        //string STATO = ;
+        
+        switch(SPE.STATO)
+        {
+            case "B":
+
+                break;
+
+            case "C":
+
+                break;
+
+            case "D":
+
+                break;
+
+        }
+
+       //DataBind();
     }
 }

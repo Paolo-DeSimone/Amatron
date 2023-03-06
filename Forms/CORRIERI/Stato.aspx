@@ -15,7 +15,7 @@
                             <div class="card-body">
                                 <div class="row align-items-center">
                                     <div class="col-md-8" style="overflow: auto; top: -1px; left: 0px; height: auto; width: auto;">
-                                        <asp:GridView ID="grdSTATO" class="table" runat="server" DataSourceID="sdsSTATO" AutoGenerateColumns="False" OnSelectedIndexChanged="grdSTATO_SelectedIndexChanged">
+                                        <asp:GridView ID="grdSTATO" class="table" runat="server" DataSourceID="sdsSTATO" AutoGenerateColumns="False" OnSelectedIndexChanged="grdSTATO_SelectedIndexChanged" DataKeyNames="chiaveSPEDIZIONE">
                                             <Columns>
 
                                                 <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="btn btn-sm masterButton"/>

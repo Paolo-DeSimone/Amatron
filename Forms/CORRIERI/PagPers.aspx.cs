@@ -36,7 +36,7 @@ public partial class _Default : System.Web.UI.Page
         //controlli formali
         if (txtRAGIONESOCIALE.Text.Trim() == "" || txtEMAIL.Text.Trim() == "" || txtCOSTO.Text.Trim() == "")
         {
-            string scripterr = @"notifyError('Campi vuoti!')"; //messaggio di errore
+            string scripterr = @"notifyError('Riempi tutti i campi!')"; //messaggio di errore
             ScriptManager.RegisterStartupScript(this, GetType(), "btnModifica_Click", scripterr, true);
             return;
         }
@@ -92,7 +92,7 @@ public partial class _Default : System.Web.UI.Page
         CP.TIPO = Session["tipoUSR"].ToString();
         CP.PWD = ED.Encode(txtConfPWD.Text.Trim());
         CP.ChangePwd();
-        string script4 = @"notifySuccess('Modifiche effettuate')"; //messaggio di successo
+        string script4 = @"notifySuccess('Password cambiata con successo!')"; //messaggio di successo
         ScriptManager.RegisterStartupScript(this, GetType(), "btnModPWD_Click", script4, true);
     }
 }

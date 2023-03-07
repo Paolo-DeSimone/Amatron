@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.DynamicData;
 using System.Web.Services;
 
 /// <summary>
@@ -23,15 +24,15 @@ public class WsValutazioni : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void VALUTAZIONI_Insert(int chiaveordine, int stelle, string commento, string datacommento)
+    public void VALUTAZIONI_Insert(int chiaveprodotto, int stelle, string commento, string datacommento)
     {
         DATABASE DB = new DATABASE();
-        DB.cmd.Parameters.AddWithValue("chiaveORDINE", chiaveordine);
+        DB.query = "spVALUTAZIONI_Insert";
+        DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);
         DB.cmd.Parameters.AddWithValue("STELLE", stelle);
         DB.cmd.Parameters.AddWithValue("COMMENTO", commento);
         DB.cmd.Parameters.AddWithValue("DATACOMMENTO", datacommento);
         DB.EseguiSPNonRead();
-        DB.query = "spVALUTAZIONI_Insert";
     }
 
     [WebMethod]
@@ -53,7 +54,8 @@ public class WsValutazioni : System.Web.Services.WebService
         DB.cmd.Parameters.Clear();
         DB.query = "spVALUTAZIONI_SelectAll_DDL";
         dt.TableName = "SelectByAllDDL";
-        return DB.EseguiSPRead();
+        dt = DB.EseguiSPRead();
+        return dt;
     }
 
     [WebMethod]
@@ -62,21 +64,36 @@ public class WsValutazioni : System.Web.Services.WebService
         DataTable dt = new DataTable();
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
-        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         DB.query = "spVALUTAZIONI_SelectByKey";
-        dt.TableName = "SelectByKey";
-        return DB.EseguiSPRead();
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
+        dt.TableName = "ValutazioniSelectByKey";
+        dt = DB.EseguiSPRead();
+        return dt;
     }
 
     [WebMethod]
-    public DataTable VALUTAZIONI_SelectByOrder(int chiaveordine)
+    public DataTable VALUTAZIONI_SelectByProdotto(int chiaveprodotto)
     {
         DataTable dt = new DataTable();
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
-        DB.cmd.Parameters.AddWithValue("chiaveORDINE", chiaveordine);      
-        DB.query = "spVALUTAZIONI_SelectByOrder";
-        dt.TableName = "SelectByOrder";
-        return DB.EseguiSPRead();
+        DB.query = "spVALUTAZIONI_SelectByProdotto";
+        DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);      
+        dt.TableName = "SelectByProdotto";
+        dt = DB.EseguiSPRead();
+        return dt;
+    }
+
+    [WebMethod]
+    public DataTable VALUTAZIONI_Media(int chiaveprodotto)
+    {
+        DataTable dt = new DataTable();       
+        DATABASE DB = new DATABASE();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spVALUTAZIONI_Media";         
+        DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);
+        dt = DB.EseguiSPRead();
+        dt.TableName = "MediaValutazioni";
+        return dt;
     }
 }

@@ -29,19 +29,20 @@ public class WsImmagini : System.Web.Services.WebService
         DB.cmd.Parameters.Clear();
         DB.query = "spIMMAGINI_SelectByKey";
         DB.cmd.Parameters.AddWithValue("chiave", chiave);
+        dt = DB.EseguiSPRead();
         dt.TableName = "SelectByKey";
-        return DB.EseguiSPRead();
+        return dt;
     }
 
     [WebMethod]
     public void IMMAGINI_Insert(int chiaveprodotto, string titolo, byte[] doc, string tipo)
     {
         DATABASE DB = new DATABASE();
+        DB.query = "spIMMAGINI_Insert";
         DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);
         DB.cmd.Parameters.AddWithValue("TITOLO", titolo);
         DB.cmd.Parameters.AddWithValue("DOC", doc);
         DB.cmd.Parameters.AddWithValue("TIPO", tipo);
-        DB.query = "spIMMAGINI_Insert";
         DB.EseguiSPNonRead();
     }
 
@@ -50,8 +51,8 @@ public class WsImmagini : System.Web.Services.WebService
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
-        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         DB.query = "spORDINI_Delete";
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         DB.EseguiSPNonRead();
     }
 
@@ -68,5 +69,16 @@ public class WsImmagini : System.Web.Services.WebService
         return dt;
     }
 
+    [WebMethod]
+    public DataTable IMMAGINI_SelectChiavi(int chiaveProdotto)
+    {
+        DATABASE DB = new DATABASE();
+        DataTable dt = new DataTable();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spIMMAGINI_SelectChiavi";
+        DB.cmd.Parameters.AddWithValue("chiaveProdotto", chiaveProdotto);
+        dt = DB.EseguiSPRead();
+        dt.TableName = "SelectChiavi";
+        return dt;
+    }
 }
-

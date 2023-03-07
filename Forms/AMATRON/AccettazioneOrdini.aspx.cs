@@ -15,21 +15,21 @@ public partial class Default2 : System.Web.UI.Page
     }
 
 
-    //protected void grigliaOrdini_SelectedIndexChanged(object sender, EventArgs e)
-    //{
-    //    //controllo di aver selezionato una riga
-    //    if (grigliaOrdini.SelectedValue == null)
-    //    {
-    //        Session["chiaveORDINE"] = null;
-    //        return;
-    //    }
-    //    //faccio la session per passare la chiave
-    //    Session["chiaveORDINE"] = grigliaOrdini.SelectedValue.ToString();
-    //    Session["NUMEROORDINE"] = grigliaOrdini.SelectedRow.Cells[6].Text; //cell del numero ordine
-    //    Session["NOMINATIVO"] = grigliaOrdini.SelectedRow.Cells[].Text; //cell del nominativo
-    //    Session["EMAIL"] = grigliaOrdini.SelectedRow.Cells[].Text; //cell dell'email 
-    //    Session["GESTITO"] = grigliaOrdini.SelectedRow.Cells[7].Text; //cell della data emissione
-    //}
+    protected void grigliaOrdini_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        //controllo di aver selezionato una riga
+        if (grigliaOrdini.SelectedValue == null)
+        {
+            Session["chiaveORDINE"] = null;
+            return;
+        }
+        //faccio la session per passare la chiave
+        Session["chiaveORDINE"] = grigliaOrdini.SelectedValue.ToString();
+        Session["NUMEROORDINE"] = grigliaOrdini.SelectedRow.Cells[6].Text; //cell del numero ordine
+        Session["NOMINATIVO"] = grigliaOrdini.SelectedRow.Cells[3].Text; //cell del nominativo
+        Session["EMAIL"] = grigliaOrdini.SelectedRow.Cells[2].Text; //cell dell'email 
+        Session["GESTITO"] = grigliaOrdini.SelectedRow.Cells[7].Text; //cell della data emissione
+    }
 
     ////funzione per controllare se il l'ordine selezionato è già stato gestito o meno
     ////a seconda del contenuto della string restituta da controlloOrdine()

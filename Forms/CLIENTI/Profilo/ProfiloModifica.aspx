@@ -90,6 +90,8 @@
                 <div class="col-lg-4">
                     <div class="card colore bianco ">
                         <img src="../../../assets/images/amatron-prime.png" />
+                        <p class="card-text primeScritta">Amatron prime è un servizio che ti permetterà di avere uno sconto dell'1% su ogni prodotto acquistato.</p>
+                        <h4 style="text-align:center" class="card-title">Iscrizione annuale €29,99!</h4>
                         <div class="card-body">
                         </div>
 
@@ -154,6 +156,12 @@
                             </div>
                         </div>
                     </div>
+
+
+
+
+
+
                 </div>
             </div>
         </div>

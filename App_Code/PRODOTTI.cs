@@ -132,4 +132,11 @@ public class PRODOTTI
         dt = F.FILTRA(searchTerm);
         return dt;
     }
+
+    public DataTable Max20RandomCategoria()
+    {
+        DataTable DT = new DataTable();
+        DT = P.IMMAGINI_Max20RandomCategoria(chiaveCATEGORIA);
+        return DT;
+    }
 }

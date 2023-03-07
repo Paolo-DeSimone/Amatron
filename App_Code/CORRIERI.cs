@@ -26,6 +26,7 @@ public class CORRIERI
 
     public int anno;
     public int mese;
+    public string TotaleRicaviCorriere;
 
     RifCorrieri.WsCorrieriSoapClient C = new WsCorrieriSoapClient();
     public CORRIERI()

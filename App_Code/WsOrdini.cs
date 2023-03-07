@@ -140,4 +140,17 @@ public class WsOrdini : System.Web.Services.WebService
         DB.EseguiSPNonRead();
     }
 
+    [WebMethod]
+    public DataTable CLIENTI_ProdottoAcquistato(int chiaveProdotto, int chiaveCliente)
+    {
+        DATABASE DB = new DATABASE();
+        DataTable dt = new DataTable();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spCLIENTI_ProdottoAcquistato";
+        DB.cmd.Parameters.AddWithValue("chiaveProdotto", chiaveProdotto);
+        DB.cmd.Parameters.AddWithValue("chiaveCliente", chiaveCliente);
+        dt = DB.EseguiSPRead();
+        dt.TableName = "ProdottoAcquistato";
+        return dt;
+    }
 }

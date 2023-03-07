@@ -29,8 +29,8 @@ public class WsImmagini : System.Web.Services.WebService
         DB.cmd.Parameters.Clear();
         DB.query = "spIMMAGINI_SelectByKey";
         DB.cmd.Parameters.AddWithValue("chiave", chiave);
-        dt.TableName = "SelectByKey";
         dt = DB.EseguiSPRead();
+        dt.TableName = "SelectByKey";
         return dt;
     }
 

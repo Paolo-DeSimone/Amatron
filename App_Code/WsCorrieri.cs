@@ -124,4 +124,18 @@ public class WsCorrieri : System.Web.Services.WebService
         DB.EseguiSPNonRead();
     }
 
+    [WebMethod]
+    public DataTable CORRIERI_CountSPEDIZIONI(int chiave, int anno, int mese)
+    {
+        DATABASE DB = new DATABASE();
+        DataTable dt = new DataTable();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spCORRIERI_CountSPEDIZIONI";
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
+        DB.cmd.Parameters.AddWithValue("anno", anno);
+        DB.cmd.Parameters.AddWithValue("mese", mese);
+        dt = DB.EseguiSPRead();
+        dt.TableName = "CountSPEDIZIONI";
+        return dt;
+    }
 }

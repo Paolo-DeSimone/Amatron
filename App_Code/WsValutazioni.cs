@@ -27,12 +27,12 @@ public class WsValutazioni : System.Web.Services.WebService
     public void VALUTAZIONI_Insert(int chiaveprodotto, int stelle, string commento, string datacommento)
     {
         DATABASE DB = new DATABASE();
+        DB.query = "spVALUTAZIONI_Insert";
         DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);
         DB.cmd.Parameters.AddWithValue("STELLE", stelle);
         DB.cmd.Parameters.AddWithValue("COMMENTO", commento);
         DB.cmd.Parameters.AddWithValue("DATACOMMENTO", datacommento);
         DB.EseguiSPNonRead();
-        DB.query = "spVALUTAZIONI_Insert";
     }
 
     [WebMethod]

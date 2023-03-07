@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 public partial class Default2 : System.Web.UI.Page
 {
-    int stelle;
+    public static int stelle;
     int valstelle;
 
     protected void Page_Load(object sender, EventArgs e)
@@ -26,7 +26,7 @@ public partial class Default2 : System.Web.UI.Page
         for (int i = 0; i < IMGDT.Rows.Count; i++)
         {
             Carosello.InnerHtml += " <div class=\"carousel-item active\">" +
-                "<img src='/GestoreImmagini.ashx?c=" + IMGDT.Rows[i]["chiave"] +"' class='d-block w-100' alt='Product Image 1'/>" +
+                "<img src='/GestoreImmagini.ashx?c=" + IMGDT.Rows[i]["chiave"] +"' class='d-block w-100' style='width:600px; height:450px' alt='Product Image 1'/>" +
                 "</div>";
         }
         //litImg1
@@ -40,7 +40,7 @@ public partial class Default2 : System.Web.UI.Page
         CATEGORIE CA = new CATEGORIE();
         CA.chiave = Convert.ToInt32(dt.Rows[0]["chiaveCategoria"]);
         DataTable dtCa = CA.SelectByKey();
-        litCategoria.Text = dtCa.Rows[0]["Categoria"].ToString();
+        litCategoria.Text = "Categoria: " + dtCa.Rows[0]["Categoria"].ToString();
 
         P.qta = Convert.ToInt32(dt.Rows[0]["qta"]);
         if (dt.Rows.Count > 0)
@@ -98,6 +98,8 @@ public partial class Default2 : System.Web.UI.Page
         //C.chiaveCLIENTE = Session["chiaveCliente"];
         C.QTA = int.Parse(ddlCarrello.SelectedValue.ToString());
         C.INSERT();
+        string script = @"notifyError('Prodotto aggiunto al carrello')";
+        ScriptManager.RegisterStartupScript(this, GetType(), "btnAggiungi_Click", script, true);
         return;
     }
 
@@ -192,12 +194,26 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void btnRecensione_Click(object sender, EventArgs e)
     {
-       VALUTAZIONI V = new VALUTAZIONI();
+
+        ORDINI O = new ORDINI();
+        //O.chiavecliente = Session["chiaveCliente"];
+        //O.chiaveprodotto = Session["chiaveProdotto"];
+        DataTable dt = O.SelectProdottoAcquistato();
+        if(dt.Rows.Count > 0 )
+        { 
+        VALUTAZIONI V = new VALUTAZIONI();
         //V.chiaveprodotto = Session["chiaveProdotto"]
         V.chiaveprodotto = 1;
         V.stelle= stelle;
         V.commento = txtDescription.Text.Trim();
         V.datacommento = DateTime.Now.ToString();
-        V.Insert();
+        V.Insert();       
+        }
+        else
+        {
+            string script = @"notifyError('Non hai comprato questo prodotto')";
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnRecensione_Click", script, true);
+            return;
+        }
     }
 }

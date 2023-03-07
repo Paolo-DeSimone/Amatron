@@ -264,17 +264,16 @@
             </section>
 
             <div class="masterHideScroll masterContent">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
+                <div class="masterPlaceholder">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
                 <section>
-                    <div style="background-color: black; color: white; min-height: 300px;">
+                    <div style="background-color: black; color: white; min-height: 300px; margin-top: 50px;">
                         FOOTER TEXT
                     </div>
                 </section>
             </div>
-
-
-
         </div>
     </form>
 </body>

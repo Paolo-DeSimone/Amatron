@@ -119,3 +119,7 @@ body {
     right: 0 !important;
     left: auto !important;
 }
+
+.masterPlaceholder {
+    min-height: 40vh;
+}

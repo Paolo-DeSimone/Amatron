@@ -9,7 +9,7 @@
     <%--Pagina di visualizzazione dati personali dei corrieri--%>
     <div class="container">
         <div class="text-center mt-1">
-            <h2>Profilo</h2>
+            <h2 id="titolo" runat="server"></h2>
         </div>
         <div class="row">
             <div class="col-lg-2"></div>
@@ -52,8 +52,8 @@
                         <div class="row mt-2">
                             <div class="col-5"></div>
                             <div class="col-2 text-center">
-                                <asp:Label ID="lblCOSTO" Class="lblCORRIERI" runat="server" Text="Costo:"></asp:Label>
-                                <asp:TextBox ID="txtCOSTO" class="form-control form-control-sm" runat="server" MaxLength="11"></asp:TextBox>
+                                <asp:Label ID="lblCOSTO" Class="lblCORRIERI" runat="server" Text="Costo per spedizione:"></asp:Label>
+                                <asp:TextBox ID="txtCOSTO" class="form-control form-control-sm" runat="server" MaxLength="6"></asp:TextBox>
                             </div>
                         </div>
                         <p></p>

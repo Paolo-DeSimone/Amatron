@@ -75,7 +75,6 @@ public partial class _Default : System.Web.UI.Page
                 E.body = "Il tuo ordine è STATO CONSEGNATO";
                 E.SendEmail();
                 break;
-
         }
 
         DataBind();

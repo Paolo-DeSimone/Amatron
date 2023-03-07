@@ -12,11 +12,6 @@ public partial class AMATRON : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        // !IsPostBack fa si che il codice in esso compreso venga caricato solo al caricamento della pagina e NON al ricaricare della pagina dovuto al click di elementi come bottoni, griglie...
-        // Se non lo si mette, quando uno clicca un bottone tipo "aggiungi al carrello" tutto quel che è compreso dentro InnerHtml comprare nella pagina prodotto e NON nel carrello.
-        if (!IsPostBack)
-        {
-
             dropdownAmatron.Visible = false;
             dropdownClienti.Visible = false;
             dropdownCorrieri.Visible = false;
@@ -44,9 +39,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
                 }
                 accessIn.Visible = false;
                 accessOut.Visible = true;
-                caricaCarrello(int.Parse(Session["chiaveUSR"].ToString()));
-            }
-            
+                caricaCarrello(int.Parse(Session["chiaveUSR"].ToString()));                   
         }
 
     }
@@ -60,9 +53,10 @@ public partial class AMATRON : System.Web.UI.MasterPage
 
         // Dentro il div con id "carrelloProdotti" dentro AMATRON.master, fai comparire tutto quel che c'è in carrelloProdotti.InnerHtml (InnerHtml permette di scrivere codice HTML dentro il C#)
         // Uso un ciclo for che itera per il numero di row in DT ( DT.Rows.Count) così da far comparire in carrello ogni singolo oggetto della DT
+        string s = "";
         for (int i = 0; i < DT.Rows.Count; i++)
         {
-            carrelloProdotti.InnerHtml +=
+            s +=
             "<div class=\"card mx-1 my-1\">" +
             "<div class=\"card-body \">" +
             "<div class=\"row\" style=\"margin: 5px; padding: 5px;\">" +
@@ -98,13 +92,14 @@ public partial class AMATRON : System.Web.UI.MasterPage
             "</div>" +
             //"</div>" +
             "</div>";
-
         }
+        litCarrello.Text = s;
+
     }
 
     
 
-    [WebMethod]
+    [WebMethod/*(EnableSession = true)*/] 
     public static string Accedi(string USR, string PWD)
     {
         UTENTI U = new UTENTI();
@@ -115,6 +110,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
 
         if (DT.Rows.Count != 0)
         {
+            //HttpContext.Current.Session["chiaveUSR"] = DT.Rows[0]["chiave"];
             return "Benvenuto";
         }
         else
@@ -162,9 +158,10 @@ public partial class AMATRON : System.Web.UI.MasterPage
                     dropdownAmatron.Visible = true;
                     break;
             }
-
+    
             accessIn.Visible = false;
             accessOut.Visible = true;
+            Response.Redirect("/Forms/Homepage.aspx");
         } else
         {
             return;

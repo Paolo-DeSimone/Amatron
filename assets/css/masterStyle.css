@@ -12,21 +12,25 @@
     align-items: stretch;
     background-color: #B469FF;
     border: #B469FF;
-    color: black;
+    color: white;
 }
 
     .masterButton:hover {
         background-color: #B469FF !important;
-        color: white;
+        color: blue;
     }
 
     .masterButton:focus {
         background-color: #B469FF !important;
-        color: white;
+        color: blue;
     }
 
 .masterCardHeight {
     max-height: 50vh;
+}
+
+.masterColorText {
+    color: #B469FF;
 }
 
 .masterColorBG {
@@ -68,11 +72,36 @@
 }
 
 .masterPopup {
-
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: none;
+    padding-top: 5px;
+    padding-left: 0px;
+    padding-right: 5px;
+    width: fit-content;
+    height: fit-content;
+    border: 0px;
+    position: relative;
 }
 
 .masterPopupBG {
     background-color: #212529;
     filter: alpha(opacity=30);
     opacity: 0.8;
+}
+
+.masterBottoneChiusura {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+.masterCarousel {
+    background-color: #ebebeb;
+    padding: 10px;
 }

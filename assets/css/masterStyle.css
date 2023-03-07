@@ -1,4 +1,4 @@
-﻿body {
+body {
 
 }
 
@@ -90,6 +90,13 @@
     opacity: 0.8;
 }
 
+
+.dropdownlist {
+    background-color: transparent;
+    border: none;
+    color: #B469FF;
+}
+
 .masterBottoneChiusura {
     position: absolute;
     top: 0;
@@ -105,3 +112,4 @@
     background-color: #ebebeb;
     padding: 10px;
 }
+

@@ -158,9 +158,10 @@ public partial class AMATRON : System.Web.UI.MasterPage
                     dropdownAmatron.Visible = true;
                     break;
             }
-
+    
             accessIn.Visible = false;
             accessOut.Visible = true;
+            Response.Redirect("/Forms/Homepage.aspx");
         } else
         {
             return;

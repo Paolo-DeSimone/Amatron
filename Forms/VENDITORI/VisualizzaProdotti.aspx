@@ -121,7 +121,7 @@
     <asp:Panel
         ID="Panl1"
         runat="server"
-        CssClass="Popup"
+        CssClass="masterPopup"
         align="center"
         Style="display: none">
         <div class="popupBoxWrapper">
@@ -151,7 +151,7 @@
     <asp:Panel
         ID="Panel1"
         runat="server"
-        CssClass="PopupGestisciInventario"
+        CssClass="masterPopup"
         align="center"
         Style="display: none">
         <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>

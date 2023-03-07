@@ -99,10 +99,8 @@
                             <%--  BARRA DI RICERCA--%>
                             <div class="input-group searchbar">
                                 <button class="btn dropdown-toggle masterButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tutte le Categorie</button>
-                                <ul class="dropdown-menu" style="background-color: #212529">
-                                    <li><a class="dropdown-item bianco" href="#">Action</a></li>
-                                    <li><a class="dropdown-item bianco" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item bianco" href="#">Something else here</a></li>
+                                <ul class="dropdown-menu" style="background-color: #212529" id="categorieDropdown" runat="server">
+                                    
                                 </ul>
                                 <input class="form-control" type="search" placeholder="Cerca" aria-label="Cerca" />
                                 <button class="btn masterButton input-group-append" type="submit">Cerca</button>

@@ -1,4 +1,4 @@
-﻿<%@ WebHandler Language="C#" Class="Img" %>
+<%@ WebHandler Language="C#" Class="Img" %>
 
 using System;
 using System.Web;
@@ -21,6 +21,7 @@ public class Img : IHttpHandler {
         string titolo = dt.Rows[0]["TITOLO_IMMAGINE"].ToString();
         string tipo = dt.Rows[0]["TIPO"].ToString();
         byte[] ImgData = (byte[])dt.Rows[0]["DOC"];
+
 
         // mi serve il codice per ricostruire l'immagine in formato web/http
         context.Response.Buffer = true;

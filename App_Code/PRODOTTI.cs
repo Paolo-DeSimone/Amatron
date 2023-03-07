@@ -126,10 +126,17 @@ public class PRODOTTI
         return dt;
     }
 
-    public DataTable FILTRA()
+    public DataTable FILTRA(string c, string p)
     {
         DataTable dt = new DataTable();
-        dt = F.FILTRA(searchTerm);
+        dt = F.FILTRA(c, p);
         return dt;
+    }
+
+    public DataTable Max20RandomCategoria()
+    {
+        DataTable DT = new DataTable();
+        DT = P.IMMAGINI_Max20RandomCategoria(chiaveCATEGORIA);
+        return DT;
     }
 }

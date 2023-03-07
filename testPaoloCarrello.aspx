@@ -2,13 +2,14 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 
- <script>
-     function AggiungiAlCarrello() {
-                $.ajax({
-                    type: "POST",
-                    url: "/testPaoloCarrello.aspx/AggiungiAlCarrello",
+    <script>
+        function AggiungiAlCarrello() {
+            $.ajax({
+                type: "POST",
+                url: "/testPaoloCarrello.aspx/AggiungiAlCarrello",
                     //NON CAMBIARE I NOMI A,B,C SE NO NON FUNZIONA
-                    data: "{'a': '1', 'b' : '2', 'c' : '3'}",
+                    <%--BISOGNA CAMBIARE I VALORI NELLA FUNZIONE JS E METTERCI LE SESSION DI chiaveCliente, chiaveProdotto E QTA per renderlo dinamico--%>
+                    data: "{'a': '28', 'b' : '2', 'c' : '3'}",
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (msg) {
@@ -19,8 +20,8 @@
                         alert(req, status, err);
                     }
                 });
-     }
- </script>
+        }
+    </script>
 
 </asp:Content>
 
@@ -39,7 +40,7 @@
      */--%>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <%--Quando questo bottone viene premuto, viene inviata una richiesta al GestoreCarrello generico con 3 parametri con un certo valore (le due chiavie e la QTA ossia la quantità--%>
-    <button id="testAddItem" onclick="AggiungiAlCarrello()" <%-- href="/GestoreCarrello.ashx?chiaveCliente=1,chiaveProdotto=1,QTA=1"--%> >Add to cart</button>
+    <%--BISOGNA CAMBIARE I VALORI NELLA FUNZIONE JS E METTERCI LE SESSION DI chiaveCliente, chiaveProdotto E QTA per renderlo dinamico--%>
+    <button id="testAddItem" onclick="AggiungiAlCarrello()">Add to cart</button>
 </asp:Content>
 

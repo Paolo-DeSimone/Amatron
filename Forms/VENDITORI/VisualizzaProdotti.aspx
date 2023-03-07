@@ -5,18 +5,17 @@
     <link href="/assets/css/cssFrancescoVENDITORE.css" rel="stylesheet" />
     <link href="/assets/css/masterStyle.css" rel="stylesheet" />
     <link href="/assets/css/notify.css" rel="stylesheet" />
-
     <script src="/assets/js/notify.js"></script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
- <script>
-     var modal = document.getElementById('ModalPopupExtender1')
-     $(function () {
-         $
-     })
-     
- </script>
+    <script>
+        var modal = document.getElementById('ModalPopupExtender1')
+        $(function () {
+            $
+        })
+
+    </script>
     <div class="container">
         <%-- Titolo della pagina --%>
         <div class="CardMargine ">
@@ -30,13 +29,13 @@
             <div class="card-body">
                 <%-- Nel body andranno inseriti i due pulsanti in alto: Uno inserisci ed uno modifica qta prodotto
                     Subito sotto i button ci saranno tutti i prodotti messi in vendita dal venditore con titolo e descrizione--%>
-                <div class="row mb-4">
+                <div class="row mb-4 text-center">
                     <%-- I due button saranno due PopUp --%>
-
-                    <div class=" col-md-2 ">
-                    </div>
-                    <div class=" col-md-6">
+                    <div class=" col-md-4">
                         <asp:Button ID="btnAggiungiProdotto" class="btn masterButton" runat="server" Text="Aggiungi Nuovo Prodotto" />
+                    </div>
+                    <div class=" col-md-4 ">
+                        <asp:Button ID="btnAggiungiImmagini" class="btn masterButton" runat="server" Text="Aggiungi Immagine" OnClick="btnAggiungiImmagini_Click" />
                     </div>
                     <div class=" col-md-4 ">
                         <asp:Button ID="btnModificaQtaProdotto" class="btn masterButton" runat="server" Text="Ricarica Prodotto" OnClick="btnModificaQtaProdotto_Click" />
@@ -72,10 +71,19 @@
                             </div>
                         </div>
                     </div>--%>
-                <div class="table-responsive">
+                <div class="table-responsive" style="overflow-y: scroll;width:100%; height:500px; ">
+                   
                     <%-- QUI INSERIRò LA GRIDVIEW AL POSTO DELLE COL E DELLE ROW PER POPOLARE LA PAGINA --%>
                     <asp:GridView ID="gridVisualizzaProdotti" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed" DataKeyNames="chiave,chiave1" DataSourceID="sdsGRIDVisualizzaProdotti" OnSelectedIndexChanged="gridVisualizzaProdotti_SelectedIndexChanged">
                         <Columns>
+                            <%--<asp:TemplateField>
+                            <HeaderTemplate>
+                                <asp:CheckBox ID="chkHeader" runat="server" AutoPostBack="true" Text="Seleziona Tutto" />
+                            </HeaderTemplate>
+                                <ItemTemplate>
+                                    <asp:CheckBox ID="chkVuoto" runat="server" Text="Seleziona" OnCheckedChanged="chkVuoto_CheckedChanged" />
+                                </ItemTemplate>
+                            </asp:TemplateField>--%>
                             <asp:CommandField ShowSelectButton="True" />
                             <asp:BoundField DataField="chiave" HeaderText="chiave" InsertVisible="False" ReadOnly="True" SortExpression="chiave" Visible="False" />
                             <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False" />
@@ -89,7 +97,7 @@
                             <asp:BoundField DataField="chiave1" HeaderText="chiave1" InsertVisible="False" ReadOnly="True" SortExpression="chiave1" Visible="False" />
                             <asp:BoundField DataField="CATEGORIA" HeaderText="CATEGORIA" SortExpression="CATEGORIA" />
                         </Columns>
-                        <SelectedRowStyle BackColor="Red" />
+                        <SelectedRowStyle BackColor="#B469FF" />
                         <HeaderStyle BackColor="#B469FF" />
                     </asp:GridView>
                     <asp:SqlDataSource ID="sdsGRIDVisualizzaProdotti" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spPRODOTTI_SelectByVenditore" SelectCommandType="StoredProcedure">
@@ -98,9 +106,7 @@
                         </SelectParameters>
                     </asp:SqlDataSource>
                 </div>
-                <div>
-                    <asp:Button ID="PROVA" runat="server" Text="PROVA" OnClick="PROVA_Click" />
-                </div>
+                
             </div>
         </div>
     </div>
@@ -121,7 +127,7 @@
     <asp:Panel
         ID="Panl1"
         runat="server"
-        CssClass="Popup"
+        CssClass="masterPopup"
         align="center"
         Style="display: none">
         <div class="popupBoxWrapper">
@@ -129,13 +135,18 @@
 
 
             <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-            <iframe style="width: 560px; height: 500px;" id="Iframe2" src="AggiungiProdotti.aspx" runat="server"></iframe>
+            <iframe style="width: 560px; height: 500px; border-radius: 10px;" id="Iframe2" src="AggiungiProdotti.aspx" runat="server"></iframe>
 
         </div>
         <br />
         <div class="close-btn-wrapper">
 
-            <button id="btnChiudiPopup" class="prova chiusura close-btn2" runat="server" text="X">x           </button>
+            <button id="btnChiudiPopup" class="prova chiusura close-btn2" runat="server">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+            </button>
         </div>
     </asp:Panel>
     <%-- chiamata del popup --%>
@@ -145,13 +156,12 @@
         CancelControlID="btnChiudiPopupInventario"
         BackgroundCssClass="masterPopupBG"
         Enabled="false">
-
     </cc1:ModalPopupExtender>
     <%-- contenuto del popup --%>
     <asp:Panel
         ID="Panel1"
         runat="server"
-        CssClass="PopupGestisciInventario"
+        CssClass="masterPopup"
         align="center"
         Style="display: none">
         <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
@@ -166,6 +176,42 @@
             </button>
         </div>
 
+    </asp:Panel>
+
+    <%-- chiamata del popup --%>
+    <cc1:ModalPopupExtender ID="ModalPopupExtender2" runat="server"
+        PopupControlID="Panl3"
+        TargetControlID="btnAggiungiImmagini"
+        CancelControlID="btnChiudiImmagini"
+        BackgroundCssClass="masterPopupBG"
+        Enabled="false">
+    </cc1:ModalPopupExtender>
+
+    <%-- contenuto del popup --%>
+    <asp:Panel
+        ID="Panl3"
+        runat="server"
+        CssClass="masterPopup"
+        align="center"
+        Style="display: none">
+        <div class="popupBoxWrapper">
+
+
+
+            <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+            <iframe style="width: 500px; height: 300px; aspect-ratio: 16/9; border-radius: 10px;" id="Iframe3" src="AggiungiImmagini.aspx" runat="server"></iframe>
+
+        </div>
+        <br />
+        <div class="close-btn-wrapper">
+
+            <button id="btnChiudiImmagini" class="prova chiusura close-btn3" runat="server">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+            </button>
+        </div>
     </asp:Panel>
 </asp:Content>
 

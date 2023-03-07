@@ -140,6 +140,19 @@ public class WsOrdini : System.Web.Services.WebService
     }
 
     [WebMethod]
+    public DataTable ORDINI_GESTISCI(int chiave)
+    {
+        DATABASE DB = new DATABASE();
+        DataTable dt = new DataTable();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spORDINI_GESTISCI";
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
+        dt = DB.EseguiSPRead();
+        dt.TableName = "OrdiniGestisci";
+        return dt;
+    }
+
+    [WebMethod]
     public DataTable CLIENTI_ProdottoAcquistato(int chiaveProdotto, int chiaveCliente)
     {
         DATABASE DB = new DATABASE();

@@ -1,28 +1,25 @@
 ﻿using Microsoft.SqlServer.Server;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 public partial class AMATRON : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        // !IsPostBack fa si che il codice in esso compreso venga caricato solo al caricamento della pagina e NON al ricaricare della pagina dovuto al click di elementi come bottoni, griglie...
-        // Se non lo si mette, quando uno clicca un bottone tipo "aggiungi al carrello" tutto quel che è compreso dentro InnerHtml comprare nella pagina prodotto e NON nel carrello.
-        if (!IsPostBack)
-        {
-
             dropdownAmatron.Visible = false;
             dropdownClienti.Visible = false;
             dropdownCorrieri.Visible = false;
             dropdownVenditori.Visible = false;
+            iconaCarrello.Visible = false;
             accessIn.Visible = true;
-            accessOut.Visible = false;
 
             if (Session["chiaveUSR"] != null)
             {
@@ -31,6 +28,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
                 {
                     case "A":
                         dropdownClienti.Visible = true;
+                        iconaCarrello.Visible = true;
                         break;
                     case "B":
                         dropdownVenditori.Visible = true;
@@ -42,14 +40,15 @@ public partial class AMATRON : System.Web.UI.MasterPage
                         dropdownAmatron.Visible = true;
                         break;
                 }
+                litUtente.Text = "Logged as " + Session["emailUSR"].ToString();
                 accessIn.Visible = false;
-                accessOut.Visible = true;
                 caricaCarrello(int.Parse(Session["chiaveUSR"].ToString()));
+            } else
+            {
+                litUtente.Text = "";
             }
-            
-        }
 
-    }
+        }
 
     private void caricaCarrello(int chiaveUSR)
     {
@@ -60,17 +59,18 @@ public partial class AMATRON : System.Web.UI.MasterPage
 
         // Dentro il div con id "carrelloProdotti" dentro AMATRON.master, fai comparire tutto quel che c'è in carrelloProdotti.InnerHtml (InnerHtml permette di scrivere codice HTML dentro il C#)
         // Uso un ciclo for che itera per il numero di row in DT ( DT.Rows.Count) così da far comparire in carrello ogni singolo oggetto della DT
+        string s = "";
         for (int i = 0; i < DT.Rows.Count; i++)
         {
-            carrelloProdotti.InnerHtml +=
+            s +=
             "<div class=\"card mx-1 my-1\">" +
             "<div class=\"card-body \">" +
-            "<div class=\"row\" style=\"margin: 5px; padding: 5px;\">" +
-            "<div class=\"row\" style=\"margin: 5px; padding: 5px;\">" +
+            "<div class=\"row\" style=\"margin: 0px; padding: 0px;\">" +
+            "<div class=\"row\" style=\"margin: 0px; padding: 0px;\">" +
             "" +
             " <div class=\"col-sm-4\">" +
-            "<a href=\"Forms/AMATRON/AccettazioneOrdini.aspx\" class=\"w3-bar-item w3-button\">" +
-            "<img src=\"/assets/images/amatron-icon.png\" class=\"w-75 h-75\" />" +
+            "<a href=\"Forms/PRODOTTI/PaginaProdotto.aspx?c="+ DT.Rows[i]["chiavePRODOTTO"].ToString() + "\" class=\"w3-bar-item w3-button\">" +
+            "<img src=\"/Img.ashx?c=" + DT.Rows[i]["chiavePRODOTTO"].ToString() +"\" class=\"w-50 h-50\" />" +
             "</a>" +
             "</div>" +
             "" +
@@ -98,13 +98,14 @@ public partial class AMATRON : System.Web.UI.MasterPage
             "</div>" +
             //"</div>" +
             "</div>";
-
         }
+        litCarrello.Text = s;
+
     }
 
-    
 
-    [WebMethod]
+
+    [WebMethod/*(EnableSession = true)*/] 
     public static string Accedi(string USR, string PWD)
     {
         UTENTI U = new UTENTI();
@@ -115,6 +116,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
 
         if (DT.Rows.Count != 0)
         {
+            //HttpContext.Current.Session["chiaveUSR"] = DT.Rows[0]["chiave"];
             return "Benvenuto";
         }
         else
@@ -133,7 +135,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
         LOGIN login = new LOGIN();
         DataTable DT = login.Login(EMAIL, PWD);
 
-        if(DT.Rows.Count != 0)
+        if (DT.Rows.Count != 0)
         {
             Session["chiaveUSR"] = DT.Rows[0]["chiave"];
             Session["emailUSR"] = DT.Rows[0]["EMAIL"];
@@ -151,6 +153,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
             {
                 case "A":
                     dropdownClienti.Visible = true;
+                    iconaCarrello.Visible = true;
                     break;
                 case "B":
                     dropdownVenditori.Visible = true;
@@ -162,15 +165,15 @@ public partial class AMATRON : System.Web.UI.MasterPage
                     dropdownAmatron.Visible = true;
                     break;
             }
-    
+            litUtente.Text = "Logged as " + Session["emailUSR"].ToString();
             accessIn.Visible = false;
-            accessOut.Visible = true;
             Response.Redirect("/Forms/Homepage.aspx");
-        } else
+        }
+        else
         {
             return;
         }
-        
+
     }
 
     //[WebMethod]
@@ -188,4 +191,11 @@ public partial class AMATRON : System.Web.UI.MasterPage
     //    cart.INSERT();
     //}
 
+
+    protected void btnCerca_Click(object sender, EventArgs e)
+    {
+        //Session["searchTerm"] = searchBar.Value.ToString();
+        string p = searchBar.Value.ToString() != "" ? searchBar.Value.ToString() : "*";
+        Response.Redirect("/Forms/PRODOTTI/RicercaProd.aspx?c="+ ddlCategorie.SelectedValue.ToString() + "&p=" + p);
+    }
 }

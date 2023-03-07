@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AMATRON.master.cs" Inherits="AMATRON" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AMATRON.master.cs" Inherits="AMATRON" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -98,10 +98,17 @@
 
                             <%--  BARRA DI RICERCA--%>
                             <div class="input-group searchbar">
+
+
+                                <asp:DropDownList ID="ddlCategorie" class="btn dropdown-toggle" CssClass="dropdownlist" runat="server" DataSourceID="sdsCategorie" DataTextField="CATEGORIA" DataValueField="chiave"></asp:DropDownList>
+                                <asp:SqlDataSource ID="sdsCategorie" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCATEGORIE_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+
+
                                 <button class="btn dropdown-toggle masterButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tutte le Categorie</button>
                                 <ul class="dropdown-menu" style="background-color: #212529" id="categorieDropdown" runat="server">
                                     
                                 </ul>
+                                
                                 <input class="form-control" type="search" placeholder="Cerca" aria-label="Cerca" />
                                 <button class="btn masterButton input-group-append" type="submit">Cerca</button>
                             </div>

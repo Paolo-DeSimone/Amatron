@@ -76,4 +76,17 @@ public partial class _Default : System.Web.UI.Page
         ModalPopupExtender1.Enabled = false;
 
     }
+
+    protected void btnAggiungiImmagini_Click(object sender, EventArgs e)
+    {
+        if (gridVisualizzaProdotti.SelectedValue == null)
+        {
+            return;
+        }
+        else
+        {
+            ModalPopupExtender2.Enabled = true;
+            ModalPopupExtender2.Show();
+        }
+    }
 }

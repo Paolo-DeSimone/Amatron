@@ -14,3 +14,12 @@
     background-color: #212529;
     color: #ffffff;
 }
+
+.chart {
+    height: 440px;
+}
+
+.tablescroll {
+    overflow-x: scroll;
+    overflow-y: scroll;
+}

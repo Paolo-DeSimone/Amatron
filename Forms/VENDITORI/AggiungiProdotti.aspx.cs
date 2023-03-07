@@ -42,6 +42,7 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
         P.datacaricamento = DateTime.Now.ToString();
         P.qta = int.Parse(txtQuantita.Text.Trim());
         P.titolo=txtTitolo.Text.Trim();
+        //P.percamatron
 
         P.Insert();
         DataBind();

@@ -43,27 +43,37 @@ public partial class _Default : System.Web.UI.Page
         //    }
         //}
     }
-
-
     protected void gridVisualizzaProdotti_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        ///prendo la chiave del prodotto selezionato e la metto nella session per portarlo al popup Gestisci inventario
+    {///prendo la chiave del prodotto selezionato e la metto nella session per portarlo al popup Gestisci inventario
         Session["chiaveProdottoEsaurito"] = gridVisualizzaProdotti.SelectedValue.ToString();
-        string ProdottoDiversoDaZero = Session["chiaveProdottoEsaurito"].ToString();
-        if (ProdottoDiversoDaZero != 0.ToString())
-        {
-            //Qui andrà sostituito con un notify.js
-            //error
-            //string notify = @"notifyError('Non è stato selezionato nessun prodotto da rifornire')";
-            //ScriptManager.RegisterStartupScript(this, GetType(), "gridVisualizzaProdotti_click", notify, true);
-            //return;
-        }
     }
 
 
     protected void btnModificaQtaProdotto_Click(object sender, EventArgs e)
     {
+        if (gridVisualizzaProdotti.SelectedValue == null) 
+        {
+            return;
+        }
+        else
+        {
+            ModalPopupExtender1.Enabled = true;
+            ModalPopupExtender1.Show();
+        }
 
+    }
+
+    protected void PROVA_Click(object sender, EventArgs e)
+    {
+        string script = "notifySuccess('Modifica avvenuta con successo!');";
+        ScriptManager.RegisterStartupScript(this, GetType(), "btnAggiungi_Click", script, true);
+        return;
+    }
+    public void closePopup()
+    {
+        Session.Remove("chiaveProdottoEsaurito");
+        ModalPopupExtender1.Hide();
+        ModalPopupExtender1.Enabled = false;
 
     }
 }

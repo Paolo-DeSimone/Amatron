@@ -15,26 +15,26 @@ public partial class Default2 : System.Web.UI.Page
     }
 
 
-    //protected void grigliaOrdini_SelectedIndexChanged(object sender, EventArgs e)
-    //{
-    //    //controllo di aver selezionato una riga
-    //    if (grigliaOrdini.SelectedValue == null)
-    //    {
-    //        Session["chiaveORDINE"] = null;
-    //        return;
-    //    }
-    //    //faccio la session per passare la chiave
-    //    Session["chiaveORDINE"] = grigliaOrdini.SelectedValue.ToString();
-    //    Session["NUMEROORDINE"] = grigliaOrdini.SelectedRow.Cells[6].Text; //cell del numero ordine
-    //    Session["NOMINATIVO"] = grigliaOrdini.SelectedRow.Cells[].Text; //cell del nominativo
-    //    Session["EMAIL"] = grigliaOrdini.SelectedRow.Cells[].Text; //cell dell'email 
-    //    Session["GESTITO"] = grigliaOrdini.SelectedRow.Cells[7].Text; //cell della data emissione
-    //}
+    protected void grigliaOrdini_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        //controllo di aver selezionato una riga
+        if (grigliaOrdini.SelectedValue == null)
+        {
+            Session["chiaveORDINE"] = null;
+            return;
+        }
+        //faccio la session per passare la chiave
+        Session["chiaveORDINE"] = grigliaOrdini.SelectedValue.ToString();
+        Session["NUMEROORDINE"] = grigliaOrdini.SelectedRow.Cells[6].Text; //cell del numero ordine
+        Session["NOMINATIVO"] = grigliaOrdini.SelectedRow.Cells[3].Text; //cell del nominativo
+        Session["EMAIL"] = grigliaOrdini.SelectedRow.Cells[2].Text; //cell dell'email 
+        Session["GESTITO"] = grigliaOrdini.SelectedRow.Cells[7].Text; //cell della data emissione
+    }
 
-    ////funzione per controllare se il l'ordine selezionato è già stato gestito o meno
-    ////a seconda del contenuto della string restituta da controlloOrdine()
-    ////l'accettazione/rifiuto dell'ordine va a buon fine o meno, e restituisce un alert con contenuto
-    ////a seconda della situazione presentata
+    //funzione per controllare se il l'ordine selezionato è già stato gestito o meno
+    //a seconda del contenuto della string restituta da controlloOrdine()
+    //l'accettazione/rifiuto dell'ordine va a buon fine o meno, e restituisce un alert con contenuto
+    //a seconda della situazione presentata
     //protected string controlloOrdine()
     //{
     //    //controlli formali
@@ -73,8 +73,8 @@ public partial class Default2 : System.Web.UI.Page
     //    }
     //}
 
-    ////funzione per l'update sul db di RESI
-    ////gli passo il valore bool accettazione che varia a seconda del button premuto dall'utente
+    //funzione per l'update sul db di RESI
+    //gli passo il valore bool accettazione che varia a seconda del button premuto dall'utente
     //protected void resoUpdate(bool accettazione)
     //{
     //    RESI R = new RESI();
@@ -166,4 +166,9 @@ public partial class Default2 : System.Web.UI.Page
     //    }
     //    client.Send(mail); //mando mail
     //}
+
+    protected void grigliaOrdini_SelectedIndexChanged1(object sender, EventArgs e)
+    {
+        
+    }
 }

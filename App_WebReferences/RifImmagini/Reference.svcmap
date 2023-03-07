@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="fe3236e7-087d-4bed-96cc-9490519e9b63" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="3756a6f8-5377-4d77-8721-bd8cb8041906" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="http://localhost:50799/WebServices/WsImmagini.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WsImmagini.wsdl" MetadataType="Wsdl" ID="f14ceb5b-97bf-4620-b104-bc7fbf0ebf33" SourceId="1" SourceUrl="http://localhost:50799/WebServices/WsImmagini.asmx?wsdl" />
-    <MetadataFile FileName="WsImmagini.disco" MetadataType="Disco" ID="21710a3a-62d7-42eb-8a8d-239d7de42e24" SourceId="1" SourceUrl="http://localhost:50799/WebServices/WsImmagini.asmx?disco" />
+    <MetadataFile FileName="WsImmagini.wsdl" MetadataType="Wsdl" ID="86a3b6a0-7548-4fd9-bea5-61dc586ed94d" SourceId="1" SourceUrl="http://localhost:50799/WebServices/WsImmagini.asmx?wsdl" />
+    <MetadataFile FileName="WsImmagini.disco" MetadataType="Disco" ID="ffcc1b1d-d9a4-41e1-a42b-2e86ee8ec5bf" SourceId="1" SourceUrl="http://localhost:50799/WebServices/WsImmagini.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

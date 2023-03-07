@@ -1,4 +1,4 @@
-﻿body {
+body {
 
 }
 
@@ -72,7 +72,16 @@
 }
 
 .masterPopup {
-
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: none;
+    padding-top: 5px;
+    padding-left: 0px;
+    padding-right: 5px;
+    width: fit-content;
+    height: fit-content;
+    border: 0px;
+    position: relative;
 }
 
 .masterPopupBG {
@@ -81,7 +90,26 @@
     opacity: 0.8;
 }
 
+
+.dropdownlist {
+    background-color: transparent;
+    border: none;
+    color: #B469FF;
+}
+
+.masterBottoneChiusura {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
 .masterCarousel {
     background-color: #ebebeb;
     padding: 10px;
 }
+

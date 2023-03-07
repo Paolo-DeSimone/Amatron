@@ -1,29 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="ReportAMATRON.aspx.cs" Inherits="ReportAMATRON" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="ReportAMATRON.aspx.cs" Inherits="ReportAMATRON" %>
 
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<%--    <script>
-        function getDATAMensile() {
-            $.ajax({
-                type: "POST",
-                url: "ReportAMATRON.aspx/dataMensile",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (DATAMensile) {
-                    $('#Text1').val(DATAMensile.d);
-                },
-                error: function (req, status, err) {
-                    alert(req, status, err);
-                }
-            });
-        }
-    </script>--%>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <input id="Text1" visible="false" runat="server" type="number" />
+    <input id="Text1" visible="false" runat="server" type="text" />
     <input id="Text2" visible="false" runat="server" type="text" />
     <input id="Text3" visible="false" runat="server" type="text" />
     <section class="h-100 h-custom">
@@ -50,6 +34,8 @@
                                             <%--grafico--%>
                                             <div class="row">
                                                 <div>
+                                                </div>
+                                                    <canvas id="chartMensile"></canvas>
                                                 </div>
                                             </div>
                                         </div>
@@ -89,7 +75,6 @@
                                     <div class="card-body p-4 p-md-5">
                                         <%--grafico--%>
                                         <div>
-                                            
                                         </div>
                                     </div>
                                 </div>

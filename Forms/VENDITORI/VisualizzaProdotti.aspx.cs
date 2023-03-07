@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -7,8 +8,12 @@ using System.Web.UI.WebControls;
 
 public partial class _Default : System.Web.UI.Page
 {
+
     protected void Page_Load(object sender, EventArgs e)
-    {//lavoriamo sul postback true
+    {
+       
+        
+        //lavoriamo sul postback true
         //if (!IsPostBack)
         //{
         //    //qui diciamo alla div con id imgContainer che il suo InnerHtml è "" ossia vuoto
@@ -42,16 +47,22 @@ public partial class _Default : System.Web.UI.Page
 
         //    }
         //}
+        //if (btnClicked == true)
+        //{
+        //    string script = "notifySuccess('Modifica avvenuta con successo!');";
+        //    ScriptManager.RegisterStartupScript(this, this.GetType(), "closePopup", script, true);
+
+        //}
     }
+
+
     protected void gridVisualizzaProdotti_SelectedIndexChanged(object sender, EventArgs e)
     {///prendo la chiave del prodotto selezionato e la metto nella session per portarlo al popup Gestisci inventario
         Session["chiaveProdottoEsaurito"] = gridVisualizzaProdotti.SelectedValue.ToString();
     }
-
-
     protected void btnModificaQtaProdotto_Click(object sender, EventArgs e)
     {
-        if (gridVisualizzaProdotti.SelectedValue == null) 
+        if (gridVisualizzaProdotti.SelectedValue == null)
         {
             return;
         }
@@ -61,6 +72,19 @@ public partial class _Default : System.Web.UI.Page
             ModalPopupExtender1.Show();
         }
 
+
+        //bool btnClicked = Convert.ToBoolean(Session["btnClicked"]);
+
+        //if (btnClicked)
+        //{
+        //    Session["btnClicked"] = false;
+        //    return;
+        //}
+        //else
+        //{
+        //    Session["btnClicked"] = true;
+        //    return;
+        //}
     }
 
     protected void PROVA_Click(object sender, EventArgs e)
@@ -69,11 +93,19 @@ public partial class _Default : System.Web.UI.Page
         ScriptManager.RegisterStartupScript(this, GetType(), "btnAggiungi_Click", script, true);
         return;
     }
+
     public void closePopup()
     {
+
         Session.Remove("chiaveProdottoEsaurito");
         ModalPopupExtender1.Hide();
         ModalPopupExtender1.Enabled = false;
-
     }
+
+
+    //protected void chkVuoto_CheckedChanged(object sender, EventArgs e)
+    //{
+    //    CheckBox chkStatus =(CheckBox)sender;
+    //    GridViewRow row = (GridViewRow)chkStatus.NamingContainer;
+    //}
 }

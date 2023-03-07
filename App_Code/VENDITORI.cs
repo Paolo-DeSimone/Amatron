@@ -22,6 +22,14 @@ public class VENDITORI
     public string email;
     public string PWD;
     public bool abilitato;
+
+    //per webservices Storico Vendite
+    public string DInizio;
+    public string DFine;
+    public string TITOLO;
+    public int chiaveCATEGORIA;
+    public int chiaveORDINI;
+
     RifVenditori.WsVenditoriSoapClient V = new RifVenditori.WsVenditoriSoapClient();
     public VENDITORI()
     {
@@ -87,5 +95,17 @@ public class VENDITORI
     public void Abilita()
     {
         V.VENDITORI_Abilita(chiave);
+    }
+
+    public DataTable ORDINI_SelectAll()
+    {
+        DataTable DT = V.VENDITORI_ORDINI_SelectAll(chiave);
+        return DT;
+    }
+
+    public DataTable VENDITORI_Filter()
+    {
+        DataTable DT = V.VENDITORI_ORDINI_Filter(chiave, TITOLO, chiaveCATEGORIA, chiaveORDINI, DInizio, DFine);
+        return DT;
     }
 }

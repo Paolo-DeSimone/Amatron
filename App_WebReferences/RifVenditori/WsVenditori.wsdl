@@ -128,6 +128,53 @@
       <s:element name="VENDITORI_AbilitaResponse">
         <s:complexType />
       </s:element>
+      <s:element name="VENDITORI_ORDINI_SelectAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VENDITORI_ORDINI_SelectAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VENDITORI_ORDINI_SelectAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VENDITORI_ORDINI_Filter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TITOLO" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="chiaveCATEGORIA" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="chiaveORDINI" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DInizio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DFine" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VENDITORI_ORDINI_FilterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VENDITORI_ORDINI_FilterResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="VENDITORI_InsertSoapIn">
@@ -172,6 +219,18 @@
   <wsdl:message name="VENDITORI_AbilitaSoapOut">
     <wsdl:part name="parameters" element="tns:VENDITORI_AbilitaResponse" />
   </wsdl:message>
+  <wsdl:message name="VENDITORI_ORDINI_SelectAllSoapIn">
+    <wsdl:part name="parameters" element="tns:VENDITORI_ORDINI_SelectAll" />
+  </wsdl:message>
+  <wsdl:message name="VENDITORI_ORDINI_SelectAllSoapOut">
+    <wsdl:part name="parameters" element="tns:VENDITORI_ORDINI_SelectAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="VENDITORI_ORDINI_FilterSoapIn">
+    <wsdl:part name="parameters" element="tns:VENDITORI_ORDINI_Filter" />
+  </wsdl:message>
+  <wsdl:message name="VENDITORI_ORDINI_FilterSoapOut">
+    <wsdl:part name="parameters" element="tns:VENDITORI_ORDINI_FilterResponse" />
+  </wsdl:message>
   <wsdl:portType name="WsVenditoriSoap">
     <wsdl:operation name="VENDITORI_Insert">
       <wsdl:input message="tns:VENDITORI_InsertSoapIn" />
@@ -200,6 +259,14 @@
     <wsdl:operation name="VENDITORI_Abilita">
       <wsdl:input message="tns:VENDITORI_AbilitaSoapIn" />
       <wsdl:output message="tns:VENDITORI_AbilitaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_ORDINI_SelectAll">
+      <wsdl:input message="tns:VENDITORI_ORDINI_SelectAllSoapIn" />
+      <wsdl:output message="tns:VENDITORI_ORDINI_SelectAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_ORDINI_Filter">
+      <wsdl:input message="tns:VENDITORI_ORDINI_FilterSoapIn" />
+      <wsdl:output message="tns:VENDITORI_ORDINI_FilterSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WsVenditoriSoap" type="tns:WsVenditoriSoap">
@@ -267,6 +334,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="VENDITORI_ORDINI_SelectAll">
+      <soap:operation soapAction="http://tempuri.org/VENDITORI_ORDINI_SelectAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_ORDINI_Filter">
+      <soap:operation soapAction="http://tempuri.org/VENDITORI_ORDINI_Filter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WsVenditoriSoap12" type="tns:WsVenditoriSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -326,6 +411,24 @@
     </wsdl:operation>
     <wsdl:operation name="VENDITORI_Abilita">
       <soap12:operation soapAction="http://tempuri.org/VENDITORI_Abilita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_ORDINI_SelectAll">
+      <soap12:operation soapAction="http://tempuri.org/VENDITORI_ORDINI_SelectAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VENDITORI_ORDINI_Filter">
+      <soap12:operation soapAction="http://tempuri.org/VENDITORI_ORDINI_Filter" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

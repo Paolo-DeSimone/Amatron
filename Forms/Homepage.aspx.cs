@@ -19,7 +19,7 @@ public partial class Homepage : System.Web.UI.Page
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 caroselNovita.InnerHtml += "<div class=\"owl-item\">" +
-                    "<a href = \"PaginaProdotto.aspx?c=" + dt.Rows[i]["chiave"] + "\">" +
+                    "<a href = \"/Forms/PRODOTTI/PaginaProdotto.aspx?c=" + dt.Rows[i]["chiave"] + "\">" +
                     "<div class=\"bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center\">" +
                     "<div class=\"bbb_viewed_image\">" +
                     "<img style=\"width:160px; height:160px;\" src='/Img.ashx?c=" + dt.Rows[i]["chiave"] + "' >" +
@@ -42,7 +42,7 @@ public partial class Homepage : System.Web.UI.Page
                 DataTable RIS = P.SelectByKey();
 
                 caroselPiuVenduti.InnerHtml += "<div class=\"owl-item\">" +
-                    "<a href = \"PaginaProdotto.aspx?c=" + VENDUTI.Rows[i]["chiavePRODOTTO"] + "\">" +
+                    "<a href = \"/Forms/PRODOTTI/PaginaProdotto.aspx?c=" + VENDUTI.Rows[i]["chiavePRODOTTO"] + "\">" +
                     "<div class=\"bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center\">" +
                     "<div class=\"bbb_viewed_image\">" +
                     "<img style=\"width:150px; height:150px;\"  src='/Img.ashx?c=" + VENDUTI.Rows[i]["chiavePRODOTTO"] + "' >" +
@@ -64,7 +64,7 @@ public partial class Homepage : System.Web.UI.Page
                 DataTable RISULTATO = P.SelectByKey();
 
                 caroselpiuVotati.InnerHtml += "<div class=\"owl-item\">" +
-                    "<a href = \"PaginaProdotto.aspx?c=" + VENDUTI.Rows[i]["chiavePRODOTTO"] + "\">" +
+                    "<a href = \"/Forms/PRODOTTI/PaginaProdotto.aspx?c=" + VENDUTI.Rows[i]["chiavePRODOTTO"] + "\">" +
                     "<div class=\"bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center\">" +
                     "<div class=\"bbb_viewed_image\">" +
                     "<img style=\"width:150px; height:150px;\" src='/Img.ashx?c=" + VOTATI.Rows[i]["chiavePRODOTTO"] + "' >" +

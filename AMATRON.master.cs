@@ -165,6 +165,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
     
             accessIn.Visible = false;
             accessOut.Visible = true;
+            Response.Redirect("/Forms/Homepage.aspx");
         } else
         {
             return;

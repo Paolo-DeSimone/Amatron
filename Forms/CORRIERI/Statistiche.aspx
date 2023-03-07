@@ -61,7 +61,7 @@
             <div class="col-lg-6 text-center">
                 <div class="card">
                     <div class="card-body">
-                        <asp:Button ID="btnResocontoCorriere" runat="server" CssClass="btn masterButton" Text="Resoconto:" />
+                        <asp:Button ID="btnResocontoCorriere" runat="server" CssClass="btn masterButton" Text="Resoconto:" OnClick="btnResocontoCorriere_Click" />
                         <p></p>
                         <asp:Label ID="lblResocontoCorriere" runat="server" Text=""></asp:Label>
                         <p class="card-text">

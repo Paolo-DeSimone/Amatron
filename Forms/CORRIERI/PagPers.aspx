@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="PagPers.aspx.cs" Inherits="_Default" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="PagPers.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="/assets/css/styleCorrieri.css" rel="stylesheet" />
@@ -56,8 +56,8 @@
                         <div class="row mt-2">
                             <div class="col-5"></div>
                             <div class="col-2 text-center">
-                                <asp:Label ID="lblCOSTO" Class="lblCORRIERI" runat="server" Text="Costo:"></asp:Label>
-                                <asp:TextBox ID="txtCOSTO" class="form-control form-control-sm" runat="server" MaxLength="11"></asp:TextBox>
+                                <asp:Label ID="lblCOSTO" Class="lblCORRIERI" runat="server" Text="Costo per spedizione:"></asp:Label>
+                                <asp:TextBox ID="txtCOSTO" class="form-control form-control-sm" runat="server" MaxLength="6"></asp:TextBox>
                             </div>
                         </div>
                         <p></p>

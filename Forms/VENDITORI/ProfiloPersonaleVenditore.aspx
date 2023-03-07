@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script src="../../assets/js/notify.js"></script>
     <link href="../../assets/css/notify.css" rel="stylesheet" />
+    <link href="../../assets/css/masterStyle.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <%--Pagina di visualizzazione dati personali dei corrieri--%>

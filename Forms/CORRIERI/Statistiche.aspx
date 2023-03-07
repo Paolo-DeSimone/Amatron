@@ -7,10 +7,17 @@
     <%--Visualizzazione statistiche corrieri--%>
     <div class="container mt-5">
         <div class="row">
+            <div class="col-lg-3"></div>
+            <center>
+                <div id="benvenutoCorriere" class="col-lg-6" runat="server"></div>
+            </center>
+            <div class="col-lg-3"></div>
+        </div>
+        <div class="row">
             <div class="col-lg-4"></div>
             <div class="col-lg-4">
                 <center>
-                    <h2>Resoconto consegne</h2>
+                    <h4>Resoconto consegne</h4>
                 </center>
             </div>
             <div class="col-lg-4"></div>
@@ -37,7 +44,7 @@
                         <h4 class="card-title">Seleziona mese</h4>
                         <center>
                             <p class="card-text">
-                                <asp:DropDownList CssClass="form-select" Style="width: auto" ID="ddlMesi" runat="server" DataTextField="MESE" DataValueField="MESE" DataSourceID="sdsMese" AutoPostBack="True"></asp:DropDownList>
+                                <asp:DropDownList CssClass="form-select" Style="width: auto" ID="ddlMesi" runat="server" DataTextField="MESE" DataValueField="NUMEROMESE" DataSourceID="sdsMese" AutoPostBack="True"></asp:DropDownList>
                                 <asp:SqlDataSource runat="server" ID="sdsMese" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSPEDIZIONI_DATAORA_Month" SelectCommandType="StoredProcedure">
                                     <SelectParameters>
                                         <asp:ControlParameter ControlID="ddlAnni" PropertyName="SelectedValue" Name="anno" Type="Int32"></asp:ControlParameter>
@@ -59,7 +66,7 @@
                         <asp:Label ID="lblResocontoCorriere" runat="server" Text=""></asp:Label>
                         <p class="card-text">
                             <center>
-                                <asp:GridView ID="grigliaStatisticheCorrieri" runat="server" DataSourceID="sdsStatisticheCorrieri" AutoGenerateColumns="false">
+                                <asp:GridView ID="grigliaStatisticheCorrieri" runat="server" CssClass="table table-bordered table-condensed" DataSourceID="sdsStatisticheCorrieri" AutoGenerateColumns="false">
                                     <Columns>
                                         <asp:BoundField DataField="chiaveCORRIERE" HeaderText="chiaveCORRIERE" ReadOnly="True" SortExpression="chiaveCORRIERE" Visible="False" />
                                         <asp:BoundField DataField="chiaveORDINE" HeaderText="chiaveORDINE" ReadOnly="True" SortExpression="chiaveORDINE" Visible="False" />
@@ -73,7 +80,7 @@
                             <asp:SqlDataSource runat="server" ID="sdsStatisticheCorrieri" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spv_JoinCORRIERI_SPEDIZIONI" SelectCommandType="StoredProcedure">
                                 <SelectParameters>
                                     <asp:SessionParameter SessionField="chiaveUSR" Name="chiave" Type="Int32"></asp:SessionParameter>
-                                <asp:ControlParameter ControlID="ddlAnni" PropertyName="SelectedValue" Name="anno" Type="Int32"></asp:ControlParameter>
+                                    <asp:ControlParameter ControlID="ddlAnni" PropertyName="SelectedValue" Name="anno" Type="Int32"></asp:ControlParameter>
                                     <asp:ControlParameter ControlID="ddlMesi" PropertyName="SelectedValue" Name="mese" Type="Int32"></asp:ControlParameter>
                                 </SelectParameters>
                             </asp:SqlDataSource>

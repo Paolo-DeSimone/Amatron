@@ -20,7 +20,8 @@ public partial class Default2 : System.Web.UI.Page
         IMMAGINI I = new IMMAGINI();
         P.chiave = 1; //Session["chiaveProdotto"]
 
-        DataTable dt = P.SelectByKey();
+        DataTable dt = new DataTable();
+        dt = P.SelectByKey();
         I.chiaveprodotto = 1; // Session["chiaveProdotto"]
         DataTable IMGDT = I.SelectChiavi();
         for (int i = 0; i < IMGDT.Rows.Count; i++)
@@ -86,6 +87,28 @@ public partial class Default2 : System.Web.UI.Page
         if(valstelle == 1)
         {
             ystar1.Visible= true;
+        }
+
+        P.chiaveCATEGORIA = int.Parse(dt.Rows[0]["chiaveCATEGORIA"].ToString());
+        DataTable CAROSEL = P.Max20RandomCategoria();
+
+        caroselProdottiSimili.InnerHtml = "";
+        for (int i = 0; i < dt.Rows.Count; i++)
+        {
+            caroselProdottiSimili.InnerHtml += "<div class=\"owl-item\">" +
+                "<a href = \"PaginaProdotto.aspx?c=" + dt.Rows[i]["chiave"] + "\">" +
+                "<div class=\"bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center\">" +
+                "<div class=\"bbb_viewed_image\">" +
+                "<img style=\"width:160px; height:160px;\" src='/ImgCaroselProdotti.ashx?c=" + CAROSEL.Rows[i]["chiaveIMMAGINI"] + "' >" +
+                "</div>" +
+                "<div class=\"bbb_viewed_content text-center\">" +
+                "<div class=\"bbb_viewed_name\">" + dt.Rows[i]["TITOLO"] + "</div>" +
+                "<div class=\"bbb_viewed_price\"><b>€" + dt.Rows[i]["PREZZO"] + "</b></div>" +
+                "<div class=\"bbb_viewed_name\">" + CAROSEL.Rows[i]["chiaveCATEGORIA"] + "</div>" +
+                "</div>" +
+                "</div>" +
+                "</a>" +
+                "</div>";
         }
     }
 

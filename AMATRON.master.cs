@@ -21,8 +21,8 @@ public partial class AMATRON : System.Web.UI.MasterPage
             dropdownClienti.Visible = false;
             dropdownCorrieri.Visible = false;
             dropdownVenditori.Visible = false;
+            iconaCarrello.Visible = false;
             accessIn.Visible = true;
-            accessOut.Visible = false;
 
             if (Session["chiaveUSR"] != null)
             {
@@ -31,6 +31,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
                 {
                     case "A":
                         dropdownClienti.Visible = true;
+                        iconaCarrello.Visible = true;
                         break;
                     case "B":
                         dropdownVenditori.Visible = true;
@@ -42,11 +43,14 @@ public partial class AMATRON : System.Web.UI.MasterPage
                         dropdownAmatron.Visible = true;
                         break;
                 }
+                litUtente.Text = "Logged as " + Session["emailUSR"].ToString();
                 accessIn.Visible = false;
-                accessOut.Visible = true;
                 caricaCarrello(int.Parse(Session["chiaveUSR"].ToString()));
+            } else
+            {
+                litUtente.Text = "";
             }
-            
+
         }
 
     }
@@ -102,7 +106,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
         }
     }
 
-    
+
 
     [WebMethod]
     public static string Accedi(string USR, string PWD)
@@ -133,7 +137,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
         LOGIN login = new LOGIN();
         DataTable DT = login.Login(EMAIL, PWD);
 
-        if(DT.Rows.Count != 0)
+        if (DT.Rows.Count != 0)
         {
             Session["chiaveUSR"] = DT.Rows[0]["chiave"];
             Session["emailUSR"] = DT.Rows[0]["EMAIL"];
@@ -151,6 +155,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
             {
                 case "A":
                     dropdownClienti.Visible = true;
+                    iconaCarrello.Visible = true;
                     break;
                 case "B":
                     dropdownVenditori.Visible = true;
@@ -162,15 +167,15 @@ public partial class AMATRON : System.Web.UI.MasterPage
                     dropdownAmatron.Visible = true;
                     break;
             }
-    
+            litUtente.Text = "Logged as " + Session["emailUSR"].ToString();
             accessIn.Visible = false;
-            accessOut.Visible = true;
             Response.Redirect("/Forms/Homepage.aspx");
-        } else
+        }
+        else
         {
             return;
         }
-        
+
     }
 
     //[WebMethod]

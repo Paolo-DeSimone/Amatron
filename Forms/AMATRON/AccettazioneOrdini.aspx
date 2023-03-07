@@ -22,17 +22,18 @@
                                                 <asp:CommandField ButtonType="Button" ShowSelectButton="True">
                                                 <ControlStyle CssClass="btn masterButton" />
                                                 </asp:CommandField>
+                                                <asp:BoundField DataField="chiaveORDINE" HeaderText="chiaveORDINE" SortExpression="chiaveORDINE" Visible="False" />
                                                 <asp:BoundField DataField="NUMERO_ORDINE" HeaderText="NUMERO_ORDINE" SortExpression="NUMERO_ORDINE" />
                                                 <asp:BoundField DataField="chiaveCORRIERE" HeaderText="chiaveCORRIERE" SortExpression="chiaveCORRIERE" Visible="False" />
-                                                <asp:BoundField DataField="EMAIL_CORRIERI" HeaderText="EMAIL_CORRIERI" SortExpression="EMAIL_CORRIERI" />
+                                                <asp:BoundField DataField="EMAIL_CORRIERI" HeaderText="EMAIL_CORRIERI" SortExpression="EMAIL_CORRIERI" Visible="False" />
                                                 <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATATRANSAZIONE" SortExpression="DATATRANSAZIONE" />
                                                 <asp:BoundField DataField="COGNOME" HeaderText="COGNOME" SortExpression="COGNOME" />
                                                 <asp:BoundField DataField="NOME" HeaderText="NOME" SortExpression="NOME" />
-                                                <asp:BoundField DataField="EMAIL_CLIENTI" HeaderText="EMAIL_CLIENTI" SortExpression="EMAIL_CLIENTI" />
+                                                <asp:BoundField DataField="EMAIL_CLIENTI" HeaderText="EMAIL_CLIENTI" SortExpression="EMAIL_CLIENTI" Visible="False" />
                                                 <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" Visible="False" />
                                                 <asp:BoundField DataField="TITOLO" HeaderText="TITOLO" SortExpression="TITOLO" />
                                                 <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
-                                                <asp:BoundField DataField="EMAIL_VENDITORE" HeaderText="EMAIL_VENDITORE" SortExpression="EMAIL_VENDITORE" />
+                                                <asp:BoundField DataField="EMAIL_VENDITORE" HeaderText="EMAIL_VENDITORE" SortExpression="EMAIL_VENDITORE" Visible="False" />
                                                 <asp:CheckBoxField DataField="GESTITO" HeaderText="GESTITO" SortExpression="GESTITO" />
                                             </Columns>
                                             <HeaderStyle BackColor="#B469FF" />
@@ -40,7 +41,7 @@
                                     </div>
                                 </div>
                                 <div align="center" class="col-lg-1 align-items-center">
-                                    <asp:Button ID="btnAccetta" class="btn masterButton" runat="server" Text="Accetta" />
+                                    <asp:Button ID="btnAccetta" class="btn masterButton" runat="server" Text="Accetta" OnClick="btnAccetta_Click" />
                                     <br />
                                     <br />
                                     <asp:Button ID="btnRifiuta" class="btn masterButton" runat="server" Text="Rifiuta" />
@@ -52,9 +53,6 @@
             </div>
         </div>
         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_GESTISCI" SelectCommandType="StoredProcedure">
-            <SelectParameters>
-                <asp:ControlParameter ControlID="grigliaOrdini" Name="chiave" PropertyName="SelectedValue" Type="Int32" />
-            </SelectParameters>
         </asp:SqlDataSource>
     </section>
 

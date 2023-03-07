@@ -27,12 +27,12 @@ public class WsValutazioni : System.Web.Services.WebService
     public void VALUTAZIONI_Insert(int chiaveprodotto, int stelle, string commento, string datacommento)
     {
         DATABASE DB = new DATABASE();
+        DB.query = "spVALUTAZIONI_Insert";
         DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);
         DB.cmd.Parameters.AddWithValue("STELLE", stelle);
         DB.cmd.Parameters.AddWithValue("COMMENTO", commento);
         DB.cmd.Parameters.AddWithValue("DATACOMMENTO", datacommento);
         DB.EseguiSPNonRead();
-        DB.query = "spVALUTAZIONI_Insert";
     }
 
     [WebMethod]
@@ -64,8 +64,8 @@ public class WsValutazioni : System.Web.Services.WebService
         DataTable dt = new DataTable();
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
-        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         DB.query = "spVALUTAZIONI_SelectByKey";
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         dt.TableName = "ValutazioniSelectByKey";
         dt = DB.EseguiSPRead();
         return dt;
@@ -77,8 +77,8 @@ public class WsValutazioni : System.Web.Services.WebService
         DataTable dt = new DataTable();
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
-        DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);      
         DB.query = "spVALUTAZIONI_SelectByProdotto";
+        DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);      
         dt.TableName = "SelectByProdotto";
         dt = DB.EseguiSPRead();
         return dt;
@@ -90,8 +90,8 @@ public class WsValutazioni : System.Web.Services.WebService
         DataTable dt = new DataTable();       
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
-        DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);
         DB.query = "spVALUTAZIONI_Media";         
+        DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);
         dt = DB.EseguiSPRead();
         dt.TableName = "MediaValutazioni";
         return dt;

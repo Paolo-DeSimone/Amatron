@@ -97,4 +97,11 @@ public class ORDINI
     {
         O.ORDINI_GESTITO(chiave, chiavecorriere, gestito);
     }
+
+    public DataTable ORDINI_GESTISCI()
+    {
+        DataTable dt = new DataTable();
+        dt = O.ORDINI_GESTISCI(chiave);
+        return dt;
+    }
 }

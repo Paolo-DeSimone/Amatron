@@ -1,23 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="ReportAMATRON.aspx.cs" Inherits="ReportAMATRON" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="ReportAMATRON.aspx.cs" Inherits="ReportAMATRON" %>
+
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        //function getDATAMensile() {
-        //    $.ajax({
-        //        type: "POST",
-        //        url: "ReportAMATRON.aspx/dataMensile",
-        //        contentType: "application/json; charset=utf-8",
-        //        dataType: "json",
-        //        success: function (DATAMensile) {
-        //            $('#Text1').val(DATAMensile.d);
-        //        },
-        //        error: function (req, status, err) {
-        //            alert(req, status, err);
-        //        }
-        //    });
-        //}
-    </script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -48,43 +34,9 @@
                                             <%--grafico--%>
                                             <div class="row">
                                                 <div>
+                                                </div>
                                                     <canvas id="chartMensile"></canvas>
                                                 </div>
-                                                <script>
-                                                    const ctxMensile = document.getElementById('chartMensile');
-                                                    const DATAMensile = document.getElementById("Text1");
-
-                                                    new Chart(ctxMensile, {
-                                                        type: 'bar',
-                                                        data: {
-                                                            labels: ['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre'],
-                                                            datasets: [{
-                                                                data: [DATAMensile],
-                                                                borderWidth: 1,
-                                                                borderColor: '#B469FF',
-                                                                backgroundColor: '#cc99ff'
-                                                            }]
-                                                        },
-                                                        options: {
-                                                            scales: {
-                                                                y: {
-                                                                    beginAtZero: true,
-                                                                    title: {
-                                                                        display: true,
-                                                                        align: 'center',
-                                                                        text: '# di Prodotti venduti'
-                                                                    }
-                                                                },
-
-                                                            },
-                                                            plugins: {
-                                                                legend: {
-                                                                    display: false
-                                                                }
-                                                            }
-                                                        }
-                                                    });
-                                                </script>
                                             </div>
                                         </div>
                                     </div>
@@ -98,41 +50,15 @@
                                             <%--grafico--%>
                                             <div class="row text-center">
                                                 <div>
-                                                    <canvas id="chartAnnuale"></canvas>
+                                                    <asp:Chart ID="chartMensile" runat="server">
+                                                        <Series>
+                                                            <asp:Series Name="Series1"></asp:Series>
+                                                        </Series>
+                                                        <ChartAreas>
+                                                            <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
+                                                        </ChartAreas>
+                                                    </asp:Chart>
                                                 </div>
-                                                <script>
-                                                    const ctxAnnuale = document.getElementById('chartAnnuale');
-
-                                                    new Chart(ctxAnnuale, {
-                                                        type: 'line',
-                                                        data: {
-                                                            labels: ['2020', '2021', '2022', '2023'],
-                                                            datasets: [{
-                                                                data: [12, 19, 3, 5],
-                                                                borderWidth: 1,
-                                                                borderColor: '#B469FF',
-                                                                backgroundColor: '#cc99ff'
-                                                            }]
-                                                        },
-                                                        options: {
-                                                            scales: {
-                                                                y: {
-                                                                    beginAtZero: true,
-                                                                    title: {
-                                                                        display: true,
-                                                                        align: 'center',
-                                                                        text: '# di Prodotti venduti'
-                                                                    }
-                                                                }
-                                                            },
-                                                            plugins: {
-                                                                legend: {
-                                                                    display: false
-                                                                }
-                                                            }
-                                                        }
-                                                    });
-                                                </script>
                                             </div>
                                         </div>
                                     </div>
@@ -149,40 +75,7 @@
                                     <div class="card-body p-4 p-md-5">
                                         <%--grafico--%>
                                         <div>
-                                            <canvas id="chartCategoria"></canvas>
                                         </div>
-                                        <script>
-                                            const ctxCategoria = document.getElementById('chartCategoria');
-
-                                            new Chart(ctxCategoria, {
-                                                type: 'bar',
-                                                data: {
-                                                    labels: ['Elettronica', 'Cibo', 'Bevande', 'Arredamento', 'Editoria', 'Gioielli', 'App e Giochi', 'Bellezza', 'Moda Donna', 'Moda Uomo', 'Cancelleria ', 'Casa e Cucina', 'Film e TV', 'CD, DVD e vinili', 'Libri', 'Elettrodomestici', 'Cura della persona', 'Videogiochi', 'Accessori da viaggio', 'Valigie. Zaini e Borsoni', 'Prima infanzia', 'Giardinaggio'],
-                                                    datasets: [{
-                                                        data: [12, 19, 3, 5, 2, 3, 7, 3, 9, 14, 55, 23, 67, 19, 23, 54, 37, 16, 34, 74, 34, 13],
-                                                        borderWidth: 1,
-                                                        backgroundColor: '#cc99ff'
-                                                    }]
-                                                },
-                                                options: {
-                                                    scales: {
-                                                        y: {
-                                                            beginAtZero: true,
-                                                            title: {
-                                                                display: true,
-                                                                align: 'center',
-                                                                text: '# di Prodotti venduti'
-                                                            }
-                                                        }
-                                                    },
-                                                    plugins: {
-                                                        legend: {
-                                                            display: false
-                                                        }
-                                                    }
-                                                }
-                                            });
-                                        </script>
                                     </div>
                                 </div>
                             </div>

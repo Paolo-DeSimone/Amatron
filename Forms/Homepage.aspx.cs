@@ -25,8 +25,9 @@ public partial class Homepage : System.Web.UI.Page
                     "<img style=\"width:160px; height:160px;\" src='/Img.ashx?c=" + dt.Rows[i]["chiave"] + "' >" +
                     "</div>" +
                     "<div class=\"bbb_viewed_content text-center\">" +
-                    "<div class=\"bbb_viewed_price\">" + dt.Rows[i]["PREZZO"] + "</div>" +
                     "<div class=\"bbb_viewed_name\">" + dt.Rows[i]["TITOLO"] + "</div>" +
+                    "<div class=\"bbb_viewed_price\"><b>€" + dt.Rows[i]["PREZZO"] + "</b></div>" +
+                    "<div class=\"bbb_viewed_name\">"+ dt.Rows[i]["chiaveCATEGORIA"] +"</div>" +
                     "</div>" +
                     "</div>" +
                     "</a>" +

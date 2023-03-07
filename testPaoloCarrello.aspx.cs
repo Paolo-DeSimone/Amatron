@@ -20,6 +20,9 @@ public partial class _Default : System.Web.UI.Page
     //NON CAMBIARE I NOMI A,B,C SE NO NON FUNZIONA
     public static void AggiungiAlCarrello(int a, int b, int c)
     {
+        a = 1;
+        b = 1;
+        c = 1;
         CARRELLO cart = new CARRELLO();
         cart.chiaveCLIENTE = a;
         cart.chiavePRODOTTO = b;

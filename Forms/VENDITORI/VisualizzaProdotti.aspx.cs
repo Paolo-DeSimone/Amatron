@@ -71,7 +71,6 @@ public partial class _Default : System.Web.UI.Page
             ModalPopupExtender1.Enabled = true;
             ModalPopupExtender1.Show();
         }
-        contatore =1;
 
 
         //bool btnClicked = Convert.ToBoolean(Session["btnClicked"]);

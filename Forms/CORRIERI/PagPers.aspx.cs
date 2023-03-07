@@ -33,6 +33,7 @@ public partial class _Default : System.Web.UI.Page
             //txtCITTA.Text = DT.Rows[0]["CITTA"].ToString();
             //txtEMAIL.Text = DT.Rows[0]["EMAIL"].ToString();
             //txtNUMERO.Text = DT.Rows[0]["TELEFONO"].ToString();
+
         }
     }
 

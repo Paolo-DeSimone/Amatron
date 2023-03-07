@@ -135,7 +135,7 @@ public class WsCorrieri : System.Web.Services.WebService
         DB.cmd.Parameters.AddWithValue("anno", anno);
         DB.cmd.Parameters.AddWithValue("mese", mese);
         dt = DB.EseguiSPRead();
-        dt.TableName = "CountSPEDIZIONI";
+        dt.TableName = "TotaleRicaviCorriere";
         return dt;
     }
 }

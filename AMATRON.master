@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AMATRON.master.cs" Inherits="AMATRON" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AMATRON.master.cs" Inherits="AMATRON" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -98,42 +98,69 @@
 
                             <%--  BARRA DI RICERCA--%>
                             <div class="input-group searchbar">
+
+
                                 <asp:DropDownList ID="ddlCategorie" class="btn dropdown-toggle" CssClass="dropdownlist" runat="server" DataSourceID="sdsCategorie" DataTextField="CATEGORIA" DataValueField="chiave"></asp:DropDownList>
                                 <asp:SqlDataSource ID="sdsCategorie" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCATEGORIE_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+
+
+                                <button class="btn dropdown-toggle masterButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tutte le Categorie</button>
+                                <ul class="dropdown-menu" style="background-color: #212529" id="categorieDropdown" runat="server">
+                                    
+                                </ul>
+                                
                                 <input class="form-control" type="search" placeholder="Cerca" aria-label="Cerca" />
                                 <button class="btn masterButton input-group-append" type="submit">Cerca</button>
                             </div>
 
                             <%--  SIGN UP E SIGN IN--%>
-                            <ul class="nav navbar-nav navbar-right">
+                            <ul class="nav navbar-nav navbar-right" id="accessIn" runat="server">
                                 <li class="nav-item"><a class="nav-link" href="/Forms/CORRIERI/Registrazione.aspx">Registrati</a></li>
-                                <li>&nbsp;</li>
                                 <li class="nav-item"><a class="nav-link" href="#" id="show_popup" onclick="showpopup()">Accedi</a></li>
-                                <li>&nbsp;</li>
-                                <li>&nbsp;</li>
-                                <li>&nbsp;</li>
-                                <li>&nbsp;</li>
                             </ul>
 
+                            <div class="nav-item pr-2" id="accessOut" runat="server">
+                                <a class="nav-link">Log Out</a>
+                            </div>
+
                             <!-- DROPDOWN PER OPERAZIONI UTENTE -->
-                            <div class="dropdown">
-                                <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">User Actions
+                            <div class="dropdown" id="dropdownClienti" runat="server">
+                                <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Gestione
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AbilitazioneVenditoriCorrieriAMATRON.aspx">Abilita Utenti</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneOrdini.aspx">Accetta Ordini</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneResi.aspx">Accetta Resi</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/AMATRON/GestioneConfig.aspx">Gestisci Config</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Ordini_Resi/Ordini.aspx">Ordini</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Profilo/ProfiloModifica.aspx">Profilo Cliente</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/PRODOTTI/PaginaProdotto.aspx">Prodotto Test</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="dropdown" id="dropdownVenditori" runat="server">
+                                <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">Gestione
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/StoricoVendite.aspx">Storico Vendite</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/VisualizzaProdotti.aspx">Visualizza Prodotti</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="dropdown" id="dropdownCorrieri" runat="server">
+                                <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">Gestione
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/PagPers.aspx">Profilo Corriere</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/Statistiche.aspx">Statistiche</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/Stato.aspx">Stato Ordine</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/PRODOTTI/PaginaProdotto.aspx">Prodotto Test</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/AggiungiProdotti.aspx">Aggiungi Prodotto</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/GestisciInventario.aspx">Gestisci Inventario</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/StoricoVendite.aspx">Storico Vendite</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/VisualizzaProdotti.aspx">Visualizza Prodotti</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="dropdown" id="dropdownAmatron" runat="server">
+                                <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">Gestione
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AbilitazioneVenditoriCorrieri.aspx">Abilita Utenti</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneOrdini.aspx">Accetta Ordini</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneResi.aspx">Accetta Resi</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/AMATRON/GestioneConfig.aspx">Gestisci Config</a></li>
                                 </ul>
                             </div>
 
@@ -151,44 +178,67 @@
 
                 <div class="w3-sidebar w3-bar-block w3-card w3-animate-right " style="display: none; right: 0; width: 500px;" id="rightMenu">
                     <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">&times;</button>
-                    <a href="#" class="w3-bar-item w3-button">Link 1</a>
-                    <a href="#" class="w3-bar-item w3-button">Link 2</a>
-                    <a href="#" class="w3-bar-item w3-button">Link 3</a>
+                    <%--QUESTO DIV SERVE PER QUANTO SPIEGATO IN testPaoloCarrello--%>
+                    <div>
+                        <asp:Literal ID="litCarrello" runat="server"></asp:Literal>
+                    </div>
                 </div>
 
-                <%-- Questo è il contenuto del PopUp che si apre cliccando su SignUp --%>
+                <%--POPUP DI LOGIN, SI APRE CLICCANDO "ACCEDI"--%>
                 <div class="popupLogin" id="loginform">
+                    <%--row img e btn chiusura popup--%>
+                    <div class="row">
+                        <div class="col-lg-9 col-md-9 col-sm-9">
+                            <img style="" class="img-fluid" src="/assets/images/amatron.png" />
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                            <button onclick="closePopupLogin()" style="float: right; border: none; background: none;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <p style="margin: 6px;"></p>
+                    <%--row lbl e txt dell'email--%>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <asp:Label class="cont testo" ID="lblEMAIL" runat="server" Text="Email"></asp:Label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="text" class="" id="txtEMAIL" placeholder="Email" name="uid" runat="server" />
+                        </div>
+                    </div>
+                    <p style="margin: 3px;"></p>
+                    <%--row lbl e txt della password--%>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <asp:Label class="cont testo" ID="lblPWD" runat="server" Text="Password"></asp:Label>
+                        </div>
+                        <div class="col-sm-8">
+                            <input type="password" class="" id="txtPWD" name="upass" placeholder="Password" runat="server" />
+                        </div>
+                    </div>
+                    <p style="margin: 6px;"></p>
+                    <%--row con redirect "RecuperaPWD.aspx" e btn login--%>
+                    <div class="row">
+                        <div class="col-sm-7">
+                        </div>
+                        <div class="col-sm-2" style="margin-left: 15px;">
+                            <asp:Button ID="btnLogin" CssClass="btn masterButton" OnClick="btnLogin_Click" Text="Login" runat="server" />
+                        </div>
+                        <div class="mx-auto">
+                            <hr class="masterColorBG masterColorText" style="height: 3px; margin-top: 40px;" />
+                            <a class="cont testo" href="#">Recupera password</a>
+                        </div>
+                    </div>
+
                     <div>
-                        <img style="height: 42px; margin-left: 28%" src="/assets/images/amatron.png" />
-                        <button onclick="closePopupLogin()" style="float: right;">
-                            x
-                        </button>
                     </div>
                     <br />
-                    <asp:Label class="cont testo" ID="Label2" runat="server" Text="Email"></asp:Label>
-                    <%--<asp:TextBox ID="txtEMAIL" runat="server"></asp:TextBox>--%>
-                    <input type="text" class="txtUSR" id="txtEMAIL" placeholder="Email" name="uid" runat="server" />
                     <br />
-                    <asp:Label class="cont testo" ID="Label1" runat="server" Text="Password"></asp:Label>
-                    <input type="password" class="txtPWD" id="txtPWD" name="upass" placeholder="Password" runat="server"/>
-                    <%--    <div class="form-check form-switch check">
-                <label class="bianco">
-                    <input class="form-check-input" runat="server" type="checkbox" id="cliente" onchange="cbChange(this)" />
-                    <asp:Label class="testo" ID="Label3" runat="server" Text="Sono un Cliente"></asp:Label>
-                </label>
-                <br />
-                <label class="bianco">
-                    <input class="form-check-input" runat="server" type="checkbox" id="venditore" onchange="cbChange(this)" />
-                    <asp:Label class="testo" ID="Label4" runat="server" Text=" Sono un Venditore"></asp:Label>
-                </label>
-                <br />
-                <label class="bianco">
-                    <input class="form-check-input" runat="server" type="checkbox" id="corriere" onchange="cbChange(this)" />
-                    <asp:Label class="testo" ID="Label5" runat="server" Text="Sono un Corriere"></asp:Label>
-                </label>
-            </div>--%>
-                    <asp:Button ID="btnLogin" CssClass="btn masterButton" OnClick="btnLogin_Click" Text="Login" runat="server" />
-                    <%--<input type="submit" class="btn masterButton" id="dologin" onclick="Accedi()" value="Login" />--%>
+
                 </div>
             </section>
 

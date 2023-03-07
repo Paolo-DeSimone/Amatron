@@ -63,6 +63,13 @@ public class ORDINI
         dt=O.ORDINI_SelectByKey(chiave);
         return dt;
     }
+    
+    public DataTable SelectProdottoAcquistato()
+    {
+        DataTable dt = new DataTable();
+        dt = O.CLIENTI_ProdottoAcquistato(chiaveprodotto, chiavecliente);
+        return dt;
+    }
 
     public DataTable SelectByCorriere()
     {
@@ -89,5 +96,12 @@ public class ORDINI
     public void ORDINI_GESTITO()
     {
         O.ORDINI_GESTITO(chiave, chiavecorriere, gestito);
+    }
+
+    public DataTable ORDINI_GESTISCI()
+    {
+        DataTable dt = new DataTable();
+        dt = O.ORDINI_GESTISCI(chiave);
+        return dt;
     }
 }

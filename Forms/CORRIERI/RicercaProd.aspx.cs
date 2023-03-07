@@ -20,13 +20,13 @@ public partial class Default2 : System.Web.UI.Page
         P.searchTerm = Session["searchTerm"].ToString();
         DataTable dt = P.FILTRA();
 
-
         if (!IsPostBack)
         {
             lit.InnerHtml = "";
 
             //P.searchTerm = Session[searchTerm]; //qui ci andrà la Session[searchTerm]
 
+            DataTable dt = P.FILTRA();
             //variabile j inserita solo per testare il caricamento immagini. Va tolta quando verranno caricate le immagini e i prodotti dal db
             for (int j = 0; j < dt.Rows.Count; j++)
 
@@ -38,8 +38,6 @@ public partial class Default2 : System.Web.UI.Page
                     lit.InnerHtml += "<div class='col-lg-1'></div>";
 
                 }
-
-
 
                 string prezzo = dt.Rows[j]["prezzo"].ToString();
                 string descrizione = dt.Rows[j]["descrizione"].ToString();

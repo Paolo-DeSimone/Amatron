@@ -71,7 +71,7 @@ public class SPEDIZIONI
     /// <returns>restituisce la parte successiva dello stato</returns>
     public void SPEDIZIONI_UpdateStato()
     {
-        S.SPEDIZIONI_UpdateStato(chiave);
+        S.SPEDIZIONI_UpdateStato(chiave,STATO);
     }
 
 }

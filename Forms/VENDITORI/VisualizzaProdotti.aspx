@@ -2,14 +2,21 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <script src="../../assets/js/notify.js"></script>
-    <link href="../../assets/css/notify.css" rel="stylesheet" />
     <link href="/assets/css/cssFrancescoVENDITORE.css" rel="stylesheet" />
     <link href="/assets/css/masterStyle.css" rel="stylesheet" />
+    <link href="/assets/css/notify.css" rel="stylesheet" />
 
+    <script src="/assets/js/notify.js"></script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+ <script>
+     var modal = document.getElementById('ModalPopupExtender1')
+     $(function () {
+         $
+     })
+     
+ </script>
     <div class="container">
         <%-- Titolo della pagina --%>
         <div class="CardMargine ">
@@ -65,10 +72,19 @@
                             </div>
                         </div>
                     </div>--%>
-                <div class="table-responsive">
+                <div class="table-responsive" style="overflow-y: scroll;width:100%; height:500px; ">
+                   
                     <%-- QUI INSERIRò LA GRIDVIEW AL POSTO DELLE COL E DELLE ROW PER POPOLARE LA PAGINA --%>
                     <asp:GridView ID="gridVisualizzaProdotti" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed" DataKeyNames="chiave,chiave1" DataSourceID="sdsGRIDVisualizzaProdotti" OnSelectedIndexChanged="gridVisualizzaProdotti_SelectedIndexChanged">
                         <Columns>
+                            <%--<asp:TemplateField>
+                            <HeaderTemplate>
+                                <asp:CheckBox ID="chkHeader" runat="server" AutoPostBack="true" Text="Seleziona Tutto" />
+                            </HeaderTemplate>
+                                <ItemTemplate>
+                                    <asp:CheckBox ID="chkVuoto" runat="server" Text="Seleziona" OnCheckedChanged="chkVuoto_CheckedChanged" />
+                                </ItemTemplate>
+                            </asp:TemplateField>--%>
                             <asp:CommandField ShowSelectButton="True" />
                             <asp:BoundField DataField="chiave" HeaderText="chiave" InsertVisible="False" ReadOnly="True" SortExpression="chiave" Visible="False" />
                             <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False" />
@@ -82,14 +98,16 @@
                             <asp:BoundField DataField="chiave1" HeaderText="chiave1" InsertVisible="False" ReadOnly="True" SortExpression="chiave1" Visible="False" />
                             <asp:BoundField DataField="CATEGORIA" HeaderText="CATEGORIA" SortExpression="CATEGORIA" />
                         </Columns>
+                        <SelectedRowStyle BackColor="#B469FF" />
                         <HeaderStyle BackColor="#B469FF" />
                     </asp:GridView>
                     <asp:SqlDataSource ID="sdsGRIDVisualizzaProdotti" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spPRODOTTI_SelectByVenditore" SelectCommandType="StoredProcedure">
                         <SelectParameters>
-                            <asp:Parameter DefaultValue="22" Name="chiaveVENDITORE" Type="Int32" />
+                            <asp:SessionParameter DefaultValue="" Name="chiaveVENDITORE" SessionField="chiaveUSR" Type="Int32" />
                         </SelectParameters>
                     </asp:SqlDataSource>
                 </div>
+                
             </div>
         </div>
     </div>
@@ -110,7 +128,7 @@
     <asp:Panel
         ID="Panl1"
         runat="server"
-        CssClass="Popup"
+        CssClass="masterPopup"
         align="center"
         Style="display: none">
         <div class="popupBoxWrapper">
@@ -132,13 +150,15 @@
         PopupControlID="Panel1"
         TargetControlID="btnModificaQtaProdotto"
         CancelControlID="btnChiudiPopupInventario"
-        BackgroundCssClass="masterPopupBG">
+        BackgroundCssClass="masterPopupBG"
+        Enabled="false">
+
     </cc1:ModalPopupExtender>
     <%-- contenuto del popup --%>
     <asp:Panel
         ID="Panel1"
         runat="server"
-        CssClass="PopupGestisciInventario"
+        CssClass="masterPopup"
         align="center"
         Style="display: none">
         <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
@@ -148,7 +168,7 @@
 
 
         <div class="close-btn-wrapper">
-            <button id="btnChiudiPopupInventario" class="prova chiusura close-btn3" runat="server" text="X">
+            <button id="btnChiudiPopupInventario" class="prova chiusura close-btn3" runat="server" text="">
                 x
             </button>
         </div>

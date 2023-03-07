@@ -131,7 +131,7 @@
                             <div class="dropdown" id="dropdownClienti" runat="server">
                                 <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Gestione
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <ul class="dropdown-menu dmenu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Ordini_Resi/Ordini.aspx">Ordini</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Profilo/ProfiloModifica.aspx">Profilo Cliente</a></li>
                                     <li><a class="dropdown-item" href="/Forms/PRODOTTI/PaginaProdotto.aspx">Prodotto Test</a></li>
@@ -142,7 +142,8 @@
                             <div class="dropdown" id="dropdownVenditori" runat="server">
                                 <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">Gestione
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <ul class="dropdown-menu dmenu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/ProfiloPersonaleVenditore.aspx">Profilo Venditore</a></li>
                                     <li><a class="dropdown-item" href="/Forms/VENDITORI/StoricoVendite.aspx">Storico Vendite</a></li>
                                     <li><a class="dropdown-item" href="/Forms/VENDITORI/VisualizzaProdotti.aspx">Visualizza Prodotti</a></li>
                                     <li><a class="dropdown-item" href="/Forms/LogOut.aspx">Log Out</a></li>
@@ -152,7 +153,7 @@
                             <div class="dropdown" id="dropdownCorrieri" runat="server">
                                 <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">Gestione
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <ul class="dropdown-menu dmenu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/PagPers.aspx">Profilo Corriere</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/Statistiche.aspx">Statistiche</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/Stato.aspx">Stato Ordine</a></li>
@@ -163,7 +164,7 @@
                             <div class="dropdown" id="dropdownAmatron" runat="server">
                                 <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">Gestione
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <ul class="dropdown-menu dmenu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="/Forms/AMATRON/AbilitazioneVenditoriCorrieri.aspx">Abilita Utenti</a></li>
                                     <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneOrdini.aspx">Accetta Ordini</a></li>
                                     <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneResi.aspx">Accetta Resi</a></li>

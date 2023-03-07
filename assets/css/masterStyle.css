@@ -115,3 +115,7 @@ body {
     padding: 10px;
 }
 
+.dmenu {
+    right: 0 !important;
+    left: auto !important;
+}

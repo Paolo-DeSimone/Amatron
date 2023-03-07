@@ -93,17 +93,17 @@ public partial class Default2 : System.Web.UI.Page
         DataTable CAROSEL = P.Max20RandomCategoria();
 
         caroselProdottiSimili.InnerHtml = "";
-        for (int i = 0; i < dt.Rows.Count; i++)
+        for (int i = 0; i < CAROSEL.Rows.Count; i++)
         {
             caroselProdottiSimili.InnerHtml += "<div class=\"owl-item\">" +
-                "<a href = \"PaginaProdotto.aspx?c=" + dt.Rows[i]["chiave"] + "\">" +
+                "<a href = \"PaginaProdotto.aspx?c=" + CAROSEL.Rows[i]["chiavePRODOTTO"] + "\">" +
                 "<div class=\"bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center\">" +
                 "<div class=\"bbb_viewed_image\">" +
-                "<img style=\"width:160px; height:160px;\" src='/ImgCaroselProdotti.ashx?c=" + CAROSEL.Rows[i]["chiaveIMMAGINI"] + "' >" +
+                "<img style=\"width:160px; height:160px;\" src='/Img.ashx?c=" + CAROSEL.Rows[i]["chiavePRODOTTO"] + "' >" +
                 "</div>" +
                 "<div class=\"bbb_viewed_content text-center\">" +
-                "<div class=\"bbb_viewed_name\">" + dt.Rows[i]["TITOLO"] + "</div>" +
-                "<div class=\"bbb_viewed_price\"><b>€" + dt.Rows[i]["PREZZO"] + "</b></div>" +
+                "<div class=\"bbb_viewed_name\">" + CAROSEL.Rows[i]["TITOLO"] + "</div>" +
+                "<div class=\"bbb_viewed_price\"><b>€" + CAROSEL.Rows[i]["PREZZO"] + "</b></div>" +
                 "<div class=\"bbb_viewed_name\">" + CAROSEL.Rows[i]["chiaveCATEGORIA"] + "</div>" +
                 "</div>" +
                 "</div>" +

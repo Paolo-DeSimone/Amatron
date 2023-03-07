@@ -26,8 +26,8 @@ public class WsCorrieri : System.Web.Services.WebService
     public void CORRIERI_Insert(string email, string PWD, bool abilitato, float costocorriere, string ragionesociale, string piva, string indirizzo, string citta, string provincia, string CAP, string telefono)
     {
         DATABASE DB = new DATABASE();
-        DB.cmd.Parameters.Clear();
         DB.query = "spCORRIERI_Insert";
+        DB.cmd.Parameters.Clear();
         DB.cmd.Parameters.AddWithValue("email", email);     
         DB.cmd.Parameters.AddWithValue("PWD", PWD);     
         DB.cmd.Parameters.AddWithValue("abilitato", abilitato);     
@@ -46,8 +46,8 @@ public class WsCorrieri : System.Web.Services.WebService
     public void CORRIERI_Update(int chiave, string email, string PWD, bool abilitato, float costocorriere, string ragionesociale, string piva, string indirizzo, string citta, string provincia, string CAP, string telefono)
     {
         DATABASE DB = new DATABASE();
-        DB.cmd.Parameters.Clear();
         DB.query = "spCORRIERI_Update";
+        DB.cmd.Parameters.Clear();
         DB.cmd.Parameters.AddWithValue("chiave", chiave);
         DB.cmd.Parameters.AddWithValue("email", email);
         DB.cmd.Parameters.AddWithValue("PWD", PWD);
@@ -124,4 +124,18 @@ public class WsCorrieri : System.Web.Services.WebService
         DB.EseguiSPNonRead();
     }
 
+    [WebMethod]
+    public DataTable CORRIERI_CountSPEDIZIONI(int chiave, int anno, int mese)
+    {
+        DATABASE DB = new DATABASE();
+        DataTable dt = new DataTable();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spCORRIERI_CountSPEDIZIONI";
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
+        DB.cmd.Parameters.AddWithValue("anno", anno);
+        DB.cmd.Parameters.AddWithValue("mese", mese);
+        dt = DB.EseguiSPRead();
+        dt.TableName = "CountSPEDIZIONI";
+        return dt;
+    }
 }

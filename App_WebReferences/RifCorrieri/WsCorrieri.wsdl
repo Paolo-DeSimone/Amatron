@@ -130,6 +130,29 @@
       <s:element name="CORRIERI_AbilitaResponse">
         <s:complexType />
       </s:element>
+      <s:element name="CORRIERI_CountSPEDIZIONI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="anno" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="mese" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CORRIERI_CountSPEDIZIONIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CORRIERI_CountSPEDIZIONIResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="CORRIERI_InsertSoapIn">
@@ -174,6 +197,12 @@
   <wsdl:message name="CORRIERI_AbilitaSoapOut">
     <wsdl:part name="parameters" element="tns:CORRIERI_AbilitaResponse" />
   </wsdl:message>
+  <wsdl:message name="CORRIERI_CountSPEDIZIONISoapIn">
+    <wsdl:part name="parameters" element="tns:CORRIERI_CountSPEDIZIONI" />
+  </wsdl:message>
+  <wsdl:message name="CORRIERI_CountSPEDIZIONISoapOut">
+    <wsdl:part name="parameters" element="tns:CORRIERI_CountSPEDIZIONIResponse" />
+  </wsdl:message>
   <wsdl:portType name="WsCorrieriSoap">
     <wsdl:operation name="CORRIERI_Insert">
       <wsdl:input message="tns:CORRIERI_InsertSoapIn" />
@@ -202,6 +231,10 @@
     <wsdl:operation name="CORRIERI_Abilita">
       <wsdl:input message="tns:CORRIERI_AbilitaSoapIn" />
       <wsdl:output message="tns:CORRIERI_AbilitaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_CountSPEDIZIONI">
+      <wsdl:input message="tns:CORRIERI_CountSPEDIZIONISoapIn" />
+      <wsdl:output message="tns:CORRIERI_CountSPEDIZIONISoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WsCorrieriSoap" type="tns:WsCorrieriSoap">
@@ -269,6 +302,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CORRIERI_CountSPEDIZIONI">
+      <soap:operation soapAction="http://tempuri.org/CORRIERI_CountSPEDIZIONI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WsCorrieriSoap12" type="tns:WsCorrieriSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -328,6 +370,15 @@
     </wsdl:operation>
     <wsdl:operation name="CORRIERI_Abilita">
       <soap12:operation soapAction="http://tempuri.org/CORRIERI_Abilita" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CORRIERI_CountSPEDIZIONI">
+      <soap12:operation soapAction="http://tempuri.org/CORRIERI_CountSPEDIZIONI" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

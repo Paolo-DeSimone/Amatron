@@ -26,32 +26,12 @@ public partial class Default2 : System.Web.UI.Page
         {
             return;
         }
-
-
-        string chiaveCLIENTE = Session["chiaveUSR"].ToString();
-
-
-        if (string.IsNullOrEmpty(chiaveCLIENTE))
-        {
-            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Nessun elemento modificato');", true);
-            return;
-        }
-
+      
+      
         if (!IsPostBack)
         {
 
-            CLIENTI CL = new CLIENTI();
-            CL.chiave = int.Parse(chiaveCLIENTE);
-            CL.SELECTBYKEY();
-            txtEMAIL.Text = CL.DT.Rows[0]["EMAIL"].ToString();
-            txtCognome.Text = CL.DT.Rows[0]["COGNOME"].ToString();
-            txtNome.Text = CL.DT.Rows[0]["NOME"].ToString();
-            txtIndirizzo.Text = CL.DT.Rows[0]["INDIRIZZO"].ToString();
-            txtCitta.Text = CL.DT.Rows[0]["CITTA"].ToString();
-            txtProvincia.Text = CL.DT.Rows[0]["PROVINCIA"].ToString();
-            txtCAP.Text = CL.DT.Rows[0]["CAP"].ToString();
-            txtTelefono.Text = CL.DT.Rows[0]["TELEFONO"].ToString();
-            
+           
 
         }
 
@@ -111,5 +91,47 @@ public partial class Default2 : System.Web.UI.Page
         CP.ChangePwd();
         string script3 = @"notifyError('Password cambiata con successo!')";
         ScriptManager.RegisterStartupScript(this, GetType(), "btnModPWD_Click", script3, true);
+    }
+
+    protected void btnModifica_Click(object sender, EventArgs e)
+    {
+        if (Session["EMAIL"] == null)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Nessun elemento modificato');", true);
+
+            return;
+        }
+
+        string EMAIL = Session["EMAIL"].ToString();
+
+        if (Session["chiaveUSR"] == null)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Nessun elemento modificato');", true);
+
+            return;
+        }
+
+        string chiaveCLIENTE = Session["chiaveUSR"].ToString();
+        if (string.IsNullOrEmpty(chiaveCLIENTE))
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Nessun elemento modificato');", true);
+            return;
+        }
+        CLIENTI CL = new CLIENTI();
+        CL.chiave = int.Parse(chiaveCLIENTE);
+       
+        DataTable DT = CL.SELECTBYKEY();
+        txtEMAIL.Text = CL.DT.Rows[0]["EMAIL"].ToString();        
+        txtCognome.Text = CL.DT.Rows[0]["COGNOME"].ToString();
+        txtNome.Text = CL.DT.Rows[0]["NOME"].ToString();
+        txtIndirizzo.Text = CL.DT.Rows[0]["INDIRIZZO"].ToString();
+        txtCitta.Text = CL.DT.Rows[0]["CITTA"].ToString();
+        txtProvincia.Text = CL.DT.Rows[0]["PROVINCIA"].ToString();
+        txtCAP.Text = CL.DT.Rows[0]["CAP"].ToString();
+        txtTelefono.Text = CL.DT.Rows[0]["TELEFONO"].ToString();
+
+
+
+
     }
 }

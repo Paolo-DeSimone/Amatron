@@ -76,7 +76,7 @@
 
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <asp:Button ID="btnModifica" runat="server" Text="Modifica" class="btn masterButton" />
+                                    <asp:Button ID="btnModifica" runat="server" Text="Modifica" class="btn masterButton" OnClick="btnModifica_Click" />
                                 </div>
                                 <div class="col-lg-6">
                                     <asp:Button ID="btnSalva" runat="server" Text="Salva" class="btn masterButton" OnClick="btnSalva_Click" />

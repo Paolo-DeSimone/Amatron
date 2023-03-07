@@ -4,7 +4,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="../../assets/css/masterStyle.css" rel="stylesheet" />
-    <script src="../../assets/js/notify.js"></script>    <link href="../../assets/css/notify.css" rel="stylesheet" />
+    <script src="../../assets/js/notify.js"></script>
+    <link href="../../assets/css/notify.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container mt-5">

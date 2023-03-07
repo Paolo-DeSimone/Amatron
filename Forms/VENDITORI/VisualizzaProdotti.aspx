@@ -72,10 +72,19 @@
                             </div>
                         </div>
                     </div>--%>
-                <div class="table-responsive">
+                <div class="table-responsive" style="overflow-y: scroll;width:100%; height:500px; ">
+                   
                     <%-- QUI INSERIRò LA GRIDVIEW AL POSTO DELLE COL E DELLE ROW PER POPOLARE LA PAGINA --%>
                     <asp:GridView ID="gridVisualizzaProdotti" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed" DataKeyNames="chiave,chiave1" DataSourceID="sdsGRIDVisualizzaProdotti" OnSelectedIndexChanged="gridVisualizzaProdotti_SelectedIndexChanged">
                         <Columns>
+                            <%--<asp:TemplateField>
+                            <HeaderTemplate>
+                                <asp:CheckBox ID="chkHeader" runat="server" AutoPostBack="true" Text="Seleziona Tutto" />
+                            </HeaderTemplate>
+                                <ItemTemplate>
+                                    <asp:CheckBox ID="chkVuoto" runat="server" Text="Seleziona" OnCheckedChanged="chkVuoto_CheckedChanged" />
+                                </ItemTemplate>
+                            </asp:TemplateField>--%>
                             <asp:CommandField ShowSelectButton="True" />
                             <asp:BoundField DataField="chiave" HeaderText="chiave" InsertVisible="False" ReadOnly="True" SortExpression="chiave" Visible="False" />
                             <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False" />
@@ -89,7 +98,7 @@
                             <asp:BoundField DataField="chiave1" HeaderText="chiave1" InsertVisible="False" ReadOnly="True" SortExpression="chiave1" Visible="False" />
                             <asp:BoundField DataField="CATEGORIA" HeaderText="CATEGORIA" SortExpression="CATEGORIA" />
                         </Columns>
-                        <SelectedRowStyle BackColor="Red" />
+                        <SelectedRowStyle BackColor="#B469FF" />
                         <HeaderStyle BackColor="#B469FF" />
                     </asp:GridView>
                     <asp:SqlDataSource ID="sdsGRIDVisualizzaProdotti" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spPRODOTTI_SelectByVenditore" SelectCommandType="StoredProcedure">
@@ -98,9 +107,7 @@
                         </SelectParameters>
                     </asp:SqlDataSource>
                 </div>
-                <div>
-                    <asp:Button ID="PROVA" runat="server" Text="PROVA" OnClick="PROVA_Click" />
-                </div>
+                
             </div>
         </div>
     </div>

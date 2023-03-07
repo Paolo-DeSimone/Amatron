@@ -12,7 +12,7 @@ public partial class Default2 : System.Web.UI.Page
 {
     int stelle;
     int valstelle;
-
+   
     protected void Page_Load(object sender, EventArgs e)
     {
 

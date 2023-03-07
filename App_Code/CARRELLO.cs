@@ -68,4 +68,14 @@ public class CARRELLO
         C.CARRELLO_Update(chiave, QTA);
     }
 
+    /// <summary>
+    /// Seleziona l'ultimo prodotto aggiunto nel carrello del cliente. Fatto da Paolo 02/03.
+    /// </summary>
+    /// <returns></returns>
+    public DataTable SelectAllItemsInCart(int chiaveCLIENTE)
+    {
+       DT = C.CARRELLO_SelectAllItemsInCart(chiaveCLIENTE);
+       return DT;
+    }
+
 }

@@ -10,13 +10,17 @@ using RifChangePwd;
 
 public partial class _Default : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
+    //protected void Page_Load(object sender, EventArgs e)
+    //{
+
+    //    if (!IsPostBack)
+    //    {
+    //        string chiave = Session["chiaveUSR"].ToString();
+
 
         if (!IsPostBack)
         {
             //string chiave = Session["chiaveUSR"].ToString();
-
             //CORRIERI C = new CORRIERI();
             //C.chiave = int.Parse(chiave);
             //DataTable DT = C.CORRIERI_SelectByKey();
@@ -33,10 +37,9 @@ public partial class _Default : System.Web.UI.Page
             //txtCITTA.Text = DT.Rows[0]["CITTA"].ToString();
             //txtEMAIL.Text = DT.Rows[0]["EMAIL"].ToString();
             //txtNUMERO.Text = DT.Rows[0]["TELEFONO"].ToString();
-
-
         }
     }
+
 
     protected void btnModifica_Click(object sender, EventArgs e)
     {

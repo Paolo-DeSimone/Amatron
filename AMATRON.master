@@ -109,36 +109,54 @@
                             </div>
 
                             <%--  SIGN UP E SIGN IN--%>
-                            <ul class="nav navbar-nav navbar-right">
+                            <ul class="nav navbar-nav navbar-right" id="accessIn" runat="server">
                                 <li class="nav-item"><a class="nav-link" href="/Forms/CORRIERI/Registrazione.aspx">Registrati</a></li>
-                                <li>&nbsp;</li>
                                 <li class="nav-item"><a class="nav-link" href="#" id="show_popup" onclick="showpopup()">Accedi</a></li>
-                                <li>&nbsp;</li>
-                                <li>&nbsp;</li>
-                                <li>&nbsp;</li>
-                                <li>&nbsp;</li>
                             </ul>
 
+                            <div class="nav-item pr-2" id="accessOut" runat="server">
+                                <a class="nav-link">Log Out</a>
+                            </div>
+
                             <!-- DROPDOWN PER OPERAZIONI UTENTE -->
-                            <div class="dropdown">
+                            <div class="dropdown" id="dropdownClienti" runat="server">
                                 <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">User Actions
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AbilitazioneVenditoriCorrieriAMATRON.aspx">Abilita Utenti</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneOrdini.aspx">Accetta Ordini</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneResi.aspx">Accetta Resi</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/AMATRON/GestioneConfig.aspx">Gestisci Config</a></li>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Ordini_Resi/Ordini.aspx">Ordini</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Profilo/ProfiloModifica.aspx">Profilo Cliente</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/PRODOTTI/PaginaProdotto.aspx">Prodotto Test</a></li>
+                                </ul>                                
+                            </div>
+
+                            <div class="dropdown" id="dropdownVenditori" runat="server">
+                                <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">User Actions
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/StoricoVendite.aspx">Storico Vendite</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/VisualizzaProdotti.aspx">Visualizza Prodotti</a></li>
+                                </ul>                               
+                            </div>
+
+                            <div class="dropdown" id="dropdownCorrieri" runat="server">
+                                <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">User Actions
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/PagPers.aspx">Profilo Corriere</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/Statistiche.aspx">Statistiche</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/Stato.aspx">Stato Ordine</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/PRODOTTI/PaginaProdotto.aspx">Prodotto Test</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/AggiungiProdotti.aspx">Aggiungi Prodotto</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/GestisciInventario.aspx">Gestisci Inventario</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/StoricoVendite.aspx">Storico Vendite</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/VisualizzaProdotti.aspx">Visualizza Prodotti</a></li>
-                                </ul>
+                                </ul>                              
+                            </div>
+
+                            <div class="dropdown" id="dropdownAmatron" runat="server">
+                                <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">User Actions
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AbilitazioneVenditoriCorrieri.aspx">Abilita Utenti</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneOrdini.aspx">Accetta Ordini</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneResi.aspx">Accetta Resi</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/AMATRON/GestioneConfig.aspx">Gestisci Config</a></li>
+                                </ul>                               
                             </div>
 
                             <%--  ICONA CARRELLO--%>
@@ -155,10 +173,11 @@
 
                 <div class="w3-sidebar w3-bar-block w3-card w3-animate-right " style="display: none; right: 0; width: 500px;" id="rightMenu">
                     <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">&times;</button>
-                    <a href="#" class="w3-bar-item w3-button">Link 1</a>
-                    <a href="#" class="w3-bar-item w3-button">Link 2</a>
-                    <a href="#" class="w3-bar-item w3-button">Link 3</a>
+                    <%--QUESTO DIV SERVE PER QUANTO SPIEGATO IN testPaoloCarrello--%>
+                        <div id="carrelloProdotti" runat="server">
+                        </div>
                 </div>
+
 
                 <%-- Questo è il contenuto del PopUp che si apre cliccando su SignUp --%>
                 <div class="popupLogin" id="loginform">

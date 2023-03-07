@@ -2,14 +2,21 @@
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <script src="../../assets/js/notify.js"></script>
-    <link href="../../assets/css/notify.css" rel="stylesheet" />
     <link href="/assets/css/cssFrancescoVENDITORE.css" rel="stylesheet" />
     <link href="/assets/css/masterStyle.css" rel="stylesheet" />
+    <link href="/assets/css/notify.css" rel="stylesheet" />
 
+    <script src="/assets/js/notify.js"></script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+ <script>
+     var modal = document.getElementById('ModalPopupExtender1')
+     $(function () {
+         $
+     })
+     
+ </script>
     <div class="container">
         <%-- Titolo della pagina --%>
         <div class="CardMargine ">
@@ -82,13 +89,17 @@
                             <asp:BoundField DataField="chiave1" HeaderText="chiave1" InsertVisible="False" ReadOnly="True" SortExpression="chiave1" Visible="False" />
                             <asp:BoundField DataField="CATEGORIA" HeaderText="CATEGORIA" SortExpression="CATEGORIA" />
                         </Columns>
+                        <SelectedRowStyle BackColor="Red" />
                         <HeaderStyle BackColor="#B469FF" />
                     </asp:GridView>
                     <asp:SqlDataSource ID="sdsGRIDVisualizzaProdotti" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spPRODOTTI_SelectByVenditore" SelectCommandType="StoredProcedure">
                         <SelectParameters>
-                            <asp:Parameter DefaultValue="22" Name="chiaveVENDITORE" Type="Int32" />
+                            <asp:SessionParameter DefaultValue="" Name="chiaveVENDITORE" SessionField="chiaveUSR" Type="Int32" />
                         </SelectParameters>
                     </asp:SqlDataSource>
+                </div>
+                <div>
+                    <asp:Button ID="PROVA" runat="server" Text="PROVA" OnClick="PROVA_Click" />
                 </div>
             </div>
         </div>
@@ -132,7 +143,9 @@
         PopupControlID="Panel1"
         TargetControlID="btnModificaQtaProdotto"
         CancelControlID="btnChiudiPopupInventario"
-        BackgroundCssClass="masterPopupBG">
+        BackgroundCssClass="masterPopupBG"
+        Enabled="false">
+
     </cc1:ModalPopupExtender>
     <%-- contenuto del popup --%>
     <asp:Panel
@@ -148,7 +161,7 @@
 
 
         <div class="close-btn-wrapper">
-            <button id="btnChiudiPopupInventario" class="prova chiusura close-btn3" runat="server" text="X">
+            <button id="btnChiudiPopupInventario" class="prova chiusura close-btn3" runat="server" text="">
                 x
             </button>
         </div>

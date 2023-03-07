@@ -122,7 +122,7 @@ public class PRODOTTI
     public DataTable FILTRA()
     {
         DataTable dt = new DataTable();
-        dt = F.FILTRA(searchTerm);
+        dt = F.FILTRA(chiaveCATEGORIA, chiave);
         return dt;
     }
 }

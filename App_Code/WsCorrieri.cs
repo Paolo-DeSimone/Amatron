@@ -26,8 +26,8 @@ public class WsCorrieri : System.Web.Services.WebService
     public void CORRIERI_Insert(string email, string PWD, bool abilitato, float costocorriere, string ragionesociale, string piva, string indirizzo, string citta, string provincia, string CAP, string telefono)
     {
         DATABASE DB = new DATABASE();
-        DB.cmd.Parameters.Clear();
         DB.query = "spCORRIERI_Insert";
+        DB.cmd.Parameters.Clear();
         DB.cmd.Parameters.AddWithValue("email", email);     
         DB.cmd.Parameters.AddWithValue("PWD", PWD);     
         DB.cmd.Parameters.AddWithValue("abilitato", abilitato);     
@@ -46,8 +46,8 @@ public class WsCorrieri : System.Web.Services.WebService
     public void CORRIERI_Update(int chiave, string email, string PWD, bool abilitato, float costocorriere, string ragionesociale, string piva, string indirizzo, string citta, string provincia, string CAP, string telefono)
     {
         DATABASE DB = new DATABASE();
-        DB.cmd.Parameters.Clear();
         DB.query = "spCORRIERI_Update";
+        DB.cmd.Parameters.Clear();
         DB.cmd.Parameters.AddWithValue("chiave", chiave);
         DB.cmd.Parameters.AddWithValue("email", email);
         DB.cmd.Parameters.AddWithValue("PWD", PWD);

@@ -38,11 +38,11 @@ public class WsImmagini : System.Web.Services.WebService
     public void IMMAGINI_Insert(int chiaveprodotto, string titolo, byte[] doc, string tipo)
     {
         DATABASE DB = new DATABASE();
+        DB.query = "spIMMAGINI_Insert";
         DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);
         DB.cmd.Parameters.AddWithValue("TITOLO", titolo);
         DB.cmd.Parameters.AddWithValue("DOC", doc);
         DB.cmd.Parameters.AddWithValue("TIPO", tipo);
-        DB.query = "spIMMAGINI_Insert";
         DB.EseguiSPNonRead();
     }
 
@@ -51,8 +51,8 @@ public class WsImmagini : System.Web.Services.WebService
     {
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
-        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         DB.query = "spORDINI_Delete";
+        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         DB.EseguiSPNonRead();
     }
 

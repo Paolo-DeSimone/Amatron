@@ -45,7 +45,7 @@ public class WsClienti : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public void CLIENTI_Update(int chiave, string email, string PWD, bool prime, string scadenzaprime, string cognome, string nome, string indirizzo, string citta, string provincia, string CAP, string telefono)
+    public void CLIENTI_Update(int chiave, string email, string PWD,string cognome, string nome, string indirizzo, string citta, string provincia, string CAP, string telefono)
     {
         DATABASE DB = new DATABASE();      
         DB.cmd.Parameters.Clear();
@@ -53,8 +53,6 @@ public class WsClienti : System.Web.Services.WebService
         DB.cmd.Parameters.AddWithValue("chiave", chiave);
         DB.cmd.Parameters.AddWithValue("email", email);
         DB.cmd.Parameters.AddWithValue("PWD", PWD);
-        DB.cmd.Parameters.AddWithValue("prime", prime);
-        DB.cmd.Parameters.AddWithValue("scadenzaprime", scadenzaprime);
         DB.cmd.Parameters.AddWithValue("cognome", cognome);
         DB.cmd.Parameters.AddWithValue("nome", nome);
         DB.cmd.Parameters.AddWithValue("indirizzo", indirizzo);

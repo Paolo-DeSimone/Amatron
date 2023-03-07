@@ -129,7 +129,7 @@ public class WsVenditori : System.Web.Services.WebService
         DATABASE D = new DATABASE();
         D.cmd.Parameters.Clear();
         D.query = "spORDINI_PRODOTTI_CATEGORIA_SelectByVenditore";
-        D.cmd.Parameters.AddWithValue("chiave", chiave);
+        D.cmd.Parameters.AddWithValue("chiaveVENDITORE", chiave);
         DT = D.EseguiSPRead();
         DT.TableName = "VOSelectAll";
         return DT;
@@ -145,7 +145,7 @@ public class WsVenditori : System.Web.Services.WebService
         D.cmd.Parameters.AddWithValue("TITOLO", TITOLO);
         D.cmd.Parameters.AddWithValue("chiaveORDINI", chiaveORDINI);
         D.cmd.Parameters.AddWithValue("chiaveCATEGORIA", chiaveCATEGORIA);
-        D.cmd.Parameters.AddWithValue("chiaveVENDITORE", 22);
+        D.cmd.Parameters.AddWithValue("chiaveVENDITORE", chiave);
 
         if (string.IsNullOrWhiteSpace(DInizio))
         {

@@ -153,6 +153,27 @@
       <s:element name="ORDINI_GESTITOResponse">
         <s:complexType />
       </s:element>
+      <s:element name="ORDINI_GESTISCI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ORDINI_GESTISCIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ORDINI_GESTISCIResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="CLIENTI_ProdottoAcquistato">
         <s:complexType>
           <s:sequence>
@@ -231,6 +252,12 @@
   <wsdl:message name="ORDINI_GESTITOSoapOut">
     <wsdl:part name="parameters" element="tns:ORDINI_GESTITOResponse" />
   </wsdl:message>
+  <wsdl:message name="ORDINI_GESTISCISoapIn">
+    <wsdl:part name="parameters" element="tns:ORDINI_GESTISCI" />
+  </wsdl:message>
+  <wsdl:message name="ORDINI_GESTISCISoapOut">
+    <wsdl:part name="parameters" element="tns:ORDINI_GESTISCIResponse" />
+  </wsdl:message>
   <wsdl:message name="CLIENTI_ProdottoAcquistatoSoapIn">
     <wsdl:part name="parameters" element="tns:CLIENTI_ProdottoAcquistato" />
   </wsdl:message>
@@ -273,6 +300,10 @@
     <wsdl:operation name="ORDINI_GESTITO">
       <wsdl:input message="tns:ORDINI_GESTITOSoapIn" />
       <wsdl:output message="tns:ORDINI_GESTITOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ORDINI_GESTISCI">
+      <wsdl:input message="tns:ORDINI_GESTISCISoapIn" />
+      <wsdl:output message="tns:ORDINI_GESTISCISoapOut" />
     </wsdl:operation>
     <wsdl:operation name="CLIENTI_ProdottoAcquistato">
       <wsdl:input message="tns:CLIENTI_ProdottoAcquistatoSoapIn" />
@@ -355,6 +386,15 @@
     </wsdl:operation>
     <wsdl:operation name="ORDINI_GESTITO">
       <soap:operation soapAction="http://tempuri.org/ORDINI_GESTITO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ORDINI_GESTISCI">
+      <soap:operation soapAction="http://tempuri.org/ORDINI_GESTISCI" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -448,6 +488,15 @@
     </wsdl:operation>
     <wsdl:operation name="ORDINI_GESTITO">
       <soap12:operation soapAction="http://tempuri.org/ORDINI_GESTITO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ORDINI_GESTISCI">
+      <soap12:operation soapAction="http://tempuri.org/ORDINI_GESTISCI" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

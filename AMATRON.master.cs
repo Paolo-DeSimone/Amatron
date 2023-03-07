@@ -1,11 +1,13 @@
 ﻿using Microsoft.SqlServer.Server;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 public partial class AMATRON : System.Web.UI.MasterPage
@@ -189,4 +191,11 @@ public partial class AMATRON : System.Web.UI.MasterPage
     //    cart.INSERT();
     //}
 
+
+    protected void btnCerca_Click(object sender, EventArgs e)
+    {
+        //Session["searchTerm"] = searchBar.Value.ToString();
+        string p = searchBar.Value.ToString() != "" ? searchBar.Value.ToString() : "*";
+        Response.Redirect("/Forms/PRODOTTI/RicercaProd.aspx?c="+ ddlCategorie.SelectedValue.ToString() + "&p=" + p);
+    }
 }

@@ -100,16 +100,19 @@
                             <div class="input-group searchbar">
 
 
-                                <asp:DropDownList ID="ddlCategorie" class="btn dropdown-toggle" CssClass="dropdownlist" runat="server" DataSourceID="sdsCategorie" DataTextField="CATEGORIA" DataValueField="chiave"></asp:DropDownList>
+                                <asp:DropDownList ID="ddlCategorie" CssClass="btn dropdown-toggle masterButton" runat="server" DataSourceID="sdsCategorie" DataTextField="CATEGORIA" DataValueField="CATEGORIA" AppendDataBoundItems="True">
+                                    <asp:ListItem Text="Tutte le Categorie" Value="*"></asp:ListItem>
+                                </asp:DropDownList>
                                 <asp:SqlDataSource ID="sdsCategorie" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCATEGORIE_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
 
-
+                                <%--
                                 <button class="btn dropdown-toggle masterButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tutte le Categorie</button>
                                 <ul class="dropdown-menu" style="background-color: #212529" id="categorieDropdown" runat="server">
-                                </ul>
-                                
-                                <input class="form-control" type="search" placeholder="Cerca" aria-label="Cerca" />
-                                <button class="btn masterButton input-group-append" type="submit">Cerca</button>
+
+                                </ul>--%>
+
+                                <input id="searchBar" class="form-control" type="search" placeholder="Cerca" aria-label="Cerca" runat="server" />
+                                <asp:Button ID="btnCerca" CssClass="btn masterButton input-group-append" Text="Cerca" runat="server" OnClick="btnCerca_Click" />
                             </div>
 
                             <div class="nav navbar-nav navbar-right masterColorText" runat="server">
@@ -132,7 +135,7 @@
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Ordini_Resi/Ordini.aspx">Ordini</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Profilo/ProfiloModifica.aspx">Profilo Cliente</a></li>
                                     <li><a class="dropdown-item" href="/Forms/PRODOTTI/PaginaProdotto.aspx">Prodotto Test</a></li>
-                                    <li><a class="dropdown-item">Log Out</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/LogOut.aspx">Log Out</a></li>
                                 </ul>
                             </div>
 
@@ -142,7 +145,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="/Forms/VENDITORI/StoricoVendite.aspx">Storico Vendite</a></li>
                                     <li><a class="dropdown-item" href="/Forms/VENDITORI/VisualizzaProdotti.aspx">Visualizza Prodotti</a></li>
-                                    <li><a class="dropdown-item">Log Out</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/LogOut.aspx">Log Out</a></li>
                                 </ul>
                             </div>
 
@@ -153,7 +156,7 @@
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/PagPers.aspx">Profilo Corriere</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/Statistiche.aspx">Statistiche</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/Stato.aspx">Stato Ordine</a></li>
-                                    <li><a class="dropdown-item">Log Out</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/LogOut.aspx">Log Out</a></li>
                                 </ul>
                             </div>
 
@@ -165,7 +168,7 @@
                                     <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneOrdini.aspx">Accetta Ordini</a></li>
                                     <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneResi.aspx">Accetta Resi</a></li>
                                     <li><a class="dropdown-item" href="/Forms/AMATRON/GestioneConfig.aspx">Gestisci Config</a></li>
-                                    <li><a class="dropdown-item">Log Out</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/LogOut.aspx">Log Out</a></li>
                                 </ul>
                             </div>
 
@@ -262,7 +265,14 @@
             <div class="masterHideScroll masterContent">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
+                <section>
+                    <div style="background-color: black; color: white; min-height: 300px;">
+                        FOOTER TEXT
+                    </div>
+                </section>
             </div>
+
+
 
         </div>
     </form>

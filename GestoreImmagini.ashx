@@ -14,10 +14,11 @@ public class GestoreImmagini : HttpTaskAsyncHandler
         int chiave = int.Parse(context.Request.QueryString["c"].ToString());
         IMMAGINI I = new IMMAGINI();
         DataTable dt = new DataTable();
-        dt = I.SelectByKey();
+        I.chiaveprodotto = chiave;
+        dt = I.SelectByProdotto();
 
         // leggo i dati dell'immagine dalla datatable
-        string titolo = dt.Rows[0]["TITOLO"].ToString();
+        string titolo = dt.Rows[0]["TITOLO_IMMAGINE"].ToString();
         byte[] ImgData = (byte[])dt.Rows[0]["DOC"];
         string tipo = dt.Rows[0]["TIPO"].ToString();
 

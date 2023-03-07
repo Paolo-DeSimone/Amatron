@@ -72,3 +72,10 @@
     filter: alpha(opacity=30);
     opacity: 0.8;
 }
+
+.dropdownlist {
+    background-color: transparent;
+    border: none;
+    color: #B469FF;
+}
+

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -104,9 +104,24 @@ public partial class _Default : System.Web.UI.Page
     }
 
 
+    protected void btnAggiungiImmagini_Click(object sender, EventArgs e)
+    {
+        if (gridVisualizzaProdotti.SelectedValue == null)
+        {
+            return;
+        }
+        else
+        {
+            ModalPopupExtender2.Enabled = true;
+            ModalPopupExtender2.Show();
+        }
+    }
+
+
     //protected void chkVuoto_CheckedChanged(object sender, EventArgs e)
     //{
     //    CheckBox chkStatus =(CheckBox)sender;
     //    GridViewRow row = (GridViewRow)chkStatus.NamingContainer;
     //}
+
 }

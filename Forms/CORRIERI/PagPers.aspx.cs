@@ -15,24 +15,25 @@ public partial class _Default : System.Web.UI.Page
 
         if (!IsPostBack)
         {
-            string chiave = Session["chiaveUSR"].ToString();
+            //string chiave = Session["chiaveUSR"].ToString();
 
-            CORRIERI C = new CORRIERI();
-            C.chiave = int.Parse(chiave);
-            DataTable DT = C.CORRIERI_SelectByKey();
-            string RagioneSociale = DT.Rows[0]["RagioneSociale"].ToString();
-            //titolo della pagina con ragionesociale di chi si logga
-            //titolo.InnerHtml = "<h2>Profilo di " + RagioneSociale + "</h2>";
-            C.chiave = int.Parse(chiave);
-            txtRAGIONESOCIALE.Text = DT.Rows[0]["RAGIONESOCIALE"].ToString();
-            txtPIVA.Text = DT.Rows[0]["PIVA"].ToString();
-            txtCOSTO.Text = DT.Rows[0]["COSTOCORRIERE"].ToString();
-            txtINDIRIZZO.Text = DT.Rows[0]["INDIRIZZO"].ToString();
-            txtCAP.Text = DT.Rows[0]["CAP"].ToString();
-            txtPROVINCIA.Text = DT.Rows[0]["PROVINCIA"].ToString();
-            txtCITTA.Text = DT.Rows[0]["CITTA"].ToString();
-            txtEMAIL.Text = DT.Rows[0]["EMAIL"].ToString();
-            txtNUMERO.Text = DT.Rows[0]["TELEFONO"].ToString();
+            //CORRIERI C = new CORRIERI();
+            //C.chiave = int.Parse(chiave);
+            //DataTable DT = C.CORRIERI_SelectByKey();
+            //string RagioneSociale = DT.Rows[0]["RagioneSociale"].ToString();
+            ////titolo della pagina con ragionesociale di chi si logga
+            //// titolo.InnerHtml = "<h2>Profilo di " + RagioneSociale + "</h2>";
+            //C.chiave = int.Parse(chiave);
+            //txtRAGIONESOCIALE.Text = DT.Rows[0]["RAGIONESOCIALE"].ToString();
+            //txtPIVA.Text = DT.Rows[0]["PIVA"].ToString();
+            //txtCOSTO.Text = DT.Rows[0]["COSTOCORRIERE"].ToString();
+            //txtINDIRIZZO.Text = DT.Rows[0]["INDIRIZZO"].ToString();
+            //txtCAP.Text = DT.Rows[0]["CAP"].ToString();
+            //txtPROVINCIA.Text = DT.Rows[0]["PROVINCIA"].ToString();
+            //txtCITTA.Text = DT.Rows[0]["CITTA"].ToString();
+            //txtEMAIL.Text = DT.Rows[0]["EMAIL"].ToString();
+            //txtNUMERO.Text = DT.Rows[0]["TELEFONO"].ToString();
+
         }
     }
 

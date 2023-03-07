@@ -44,87 +44,98 @@
     <div class="CardMargine">
 
         <h2>
-            <asp:Label ID="lblStoricoVendite" runat="server" Text="Storico Vendite"></asp:Label>
+            <asp:Label ID="lblStoricoVendite" runat="server" Text="Storico Vendite del Venditore"></asp:Label>
         </h2>
 
     </div>
-    <div class="card" style="width: 80%; margin: 0 auto;">
+    <div class="card" style="width: 70%; margin: 0 auto;">
         <%-- Inizio body --%>
         <div class="card-body">
+
             <div class="row">
-                <div class="col-lg-8">
-                    <div class="table-responsive" style="overflow-y: scroll;width:100%; height:500px;">
-                        <asp:GridView ID="GrigliaStoricoVendite" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed" >
+
+                <div class="col-lg-3">
+                    <asp:Label ID="Label1" runat="server" Text="Prodotto:"></asp:Label>
+                </div>
+                <div class="col-lg-2">
+
+                    <asp:Label ID="Label5" runat="server" Text="Categoria:"></asp:Label>
+                </div>
+
+                <div class="col-lg-2">
+
+                    <asp:Label ID="Label2" runat="server" Text="Numero Ordine"></asp:Label>
+                </div>
+
+                <div class="col-lg-2">
+
+                    <asp:Label ID="Label3" runat="server" Text="Data inizio"></asp:Label>
+                </div>
+
+                <div class="col-lg-2">
+
+                    <asp:Label ID="Label4" runat="server" Text="Data fine"></asp:Label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <asp:TextBox ID="txtTitolo" Class="form-control" runat="server"></asp:TextBox>
+                </div>
+                <div class="col-lg-2">
+                    <div class="dropdown">
+                        <asp:DropDownList ID="ddlCategoria" AppendDataBoundItems="true" Class="form-control form-control" runat="server" DataSourceID="SqlDataSource1" DataTextField="CATEGORIA" DataValueField="chiaveCATEGORIA">
+                            <asp:ListItem Selected="True" Value="0">Seleziona</asp:ListItem>
+                        </asp:DropDownList>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCATEGORIE_SelectByVenditore_DDL" SelectCommandType="StoredProcedure">
+
+                            <SelectParameters>
+                                <asp:SessionParameter DefaultValue="" Name="chiaveVENDITORE" SessionField="chiaveUSR" Type="Int32" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <asp:DropDownList ID="ddlNOrdine" AppendDataBoundItems="true" Class="form-control form-control" runat="server" DataSourceID="SqlDataSource2" DataTextField="NUMEROORDINE" DataValueField="chiaveORDINI">
+                        <asp:ListItem Value="0">Seleziona</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_PRODOTTI_CATEGORIA_SelectDDL" SelectCommandType="StoredProcedure">
+                        <SelectParameters>
+                            <asp:SessionParameter DefaultValue="" Name="chiaveVENDITORE" SessionField="chiaveUSR" Type="Int32" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                </div>
+                <div class="col-lg-2">
+                    <asp:TextBox ID="txtDInizio" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
+                </div>
+                <div class="col-lg-2">
+                    <asp:TextBox ID="txtDFine" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
+
+                </div>
+
+                <div class="col-lg-1">
+
+                    <asp:Button ID="btnCerca" Class="btn masterButton" runat="server" Text="CERCA" OnClick="btnCerca_Click" />
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-lg-10">
+                    <div class="table-responsive" style="overflow-y: scroll; width: 100%; height: 500px;">
+                        <asp:GridView ID="GrigliaStoricoVendite" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed">
                             <Columns>
                                 <asp:BoundField DataField="chiavePRODOTTI" HeaderText="chiavePRODOTTI" SortExpression="chiavePRODOTTI" Visible="False" />
                                 <asp:BoundField DataField="chiaveORDINI" HeaderText="chiaveORDINI" SortExpression="chiaveORDINI" Visible="False" />
                                 <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False" />
                                 <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" Visible="False" />
-                                <asp:BoundField DataField="TITOLO" HeaderText="TITOLO" SortExpression="TITOLO" />
+                                <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
                                 <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
-                                <asp:BoundField DataField="PERCAMATRON" HeaderText="PERCAMATRON" SortExpression="PERCAMATRON" />
-                                <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATATRANSAZIONE" SortExpression="DATATRANSAZIONE" ApplyFormatInEditMode="true" DataFormatString="{0:d}"/>
+                                <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" SortExpression="PERCAMATRON" />
+                                <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATA VEND" SortExpression="DATATRANSAZIONE" ApplyFormatInEditMode="true" DataFormatString="{0:d}" />
                                 <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
-                                <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUMEROORDINE" SortExpression="NUMEROORDINE" />
+                                <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUM. ORD." SortExpression="NUMEROORDINE" />
                                 <asp:BoundField DataField="CATEGORIA" HeaderText="CATEGORIA" SortExpression="CATEGORIA" />
                             </Columns>
                             <HeaderStyle BackColor="#B469FF" />
-                        </asp:GridView>       
-                    </div>
-                </div>
-
-
-                <div class="col-lg-4">
-                    <div class="row mt-2">
-                        <div class="col-md-8">
-                            <asp:Label ID="Label1" runat="server" Text="Titolo:"></asp:Label>
-                            <asp:TextBox ID="txtTitolo" Class="form-control" runat="server"></asp:TextBox>
-                        </div>
-
-                        <div class="col-md-4">
-                            <asp:Label ID="Label5" runat="server" Text="Categoria:"></asp:Label>
-                            <div class="dropdown">
-                                <asp:DropDownList ID="ddlCategoria" AppendDataBoundItems="true" Class="form-control form-control" runat="server" DataSourceID="SqlDataSource1" DataTextField="CATEGORIA" DataValueField="chiaveCATEGORIA">
-                                    <asp:ListItem Selected="True" Value="0">Seleziona</asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCATEGORIE_SelectByVenditore_DDL" SelectCommandType="StoredProcedure">
-
-                                    <SelectParameters>
-                                        <asp:Parameter DefaultValue="22" Name="chiaveVENDITORE" Type="Int32" />
-                                    </SelectParameters>
-                                </asp:SqlDataSource>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-md-8 mt-3">
-                            <asp:Label ID="Label2" runat="server" Text="Numero Ordine"></asp:Label>
-                            <asp:DropDownList ID="ddlNOrdine" AppendDataBoundItems="true"  Class="form-control form-control" runat="server" DataSourceID="SqlDataSource2" DataTextField="NUMEROORDINE" DataValueField="chiaveORDINI">
-                                <asp:ListItem Value="0">Seleziona</asp:ListItem>
-                            </asp:DropDownList>
-                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_PRODOTTI_CATEGORIA_SelectDDL" SelectCommandType="StoredProcedure">
-                                <SelectParameters>
-                                    <asp:Parameter DefaultValue="22" Name="chiaveVENDITORE" Type="Int32" />
-                                </SelectParameters>
-                            </asp:SqlDataSource>
-                        </div>
-                    </div>
-                    <div class="row mt-2">
-                        <div class="col-md-6 mt-3">
-                            <asp:Label ID="Label3" runat="server" Text="Data inizio"></asp:Label>
-                            <asp:TextBox ID="txtDInizio" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
-                        </div>
-                        <div class="col-md-6 mt-3">
-                            <asp:Label ID="Label4" runat="server" Text="Data fine"></asp:Label>
-                            <asp:TextBox ID="txtDFine" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
-                        </div>
-                    </div>
-
-                    <div class="row mt-2">
-
-                        <div class="col-md-12 mt-3 text-end">
-                            <asp:Button ID="btnCerca" Class="btn masterButton" runat="server" Text="CERCA" OnClick="btnCerca_Click" />
-                        </div>
+                        </asp:GridView>
                     </div>
                 </div>
             </div>

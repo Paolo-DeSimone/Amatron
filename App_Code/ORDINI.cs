@@ -104,4 +104,11 @@ public class ORDINI
         dt = O.ORDINI_GESTISCI(chiave);
         return dt;
     }
+
+    public DataTable CORRIERI_CHIAVERandom()
+    {
+        DataTable dt = new DataTable();
+        dt = O.CORRIERI_CHIAVERandom();
+        return dt;
+    }
 }

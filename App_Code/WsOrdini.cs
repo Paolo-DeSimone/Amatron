@@ -165,4 +165,16 @@ public class WsOrdini : System.Web.Services.WebService
         dt.TableName = "ProdottoAcquistato";
         return dt;
     }
+
+    [WebMethod]
+    public DataTable CORRIERI_CHIAVERandom()
+    {
+        DATABASE DB = new DATABASE();
+        DataTable dt = new DataTable();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spCORRIERI_CHIAVERandom";
+        dt = DB.EseguiSPRead();
+        dt.TableName = "CORRIERI_CHIAVERandom";
+        return dt;
+    }
 }

@@ -78,8 +78,7 @@ public class CLIENTI
     //Metodo per modificare i dati del cliente
     public void UPDATE()
     {
-        CL.CLIENTI_Update(chiave, EMAIL,PWD,PRIME,SCADENZAPRIME,COGNOME,NOME,INDIRIZZO,CITTA,PROVINCIA,CAP,TELEFONO);
-
+        CL.CLIENTI_Update(chiave,EMAIL,PWD,PRIME,SCADENZAPRIME,COGNOME,NOME,INDIRIZZO,CITTA,PROVINCIA,CAP,TELEFONO);
     }
 
 

@@ -15,59 +15,54 @@
                 <div class="col-lg-3"></div>
                 <center>
                     <div class="card w-80">
-                        <div class="card-body">
-                            <div class="row align-items-center">
-                                <div class="col-md-8" style="overflow: auto; top: -1px; left: 0px; height: auto; width: auto;">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-md-3">
+                                        <asp:DropDownList ID="ddlSTATO" runat="server" CssClass="form-select" Style="width: auto" AutoPostBack="True">
+                                            <asp:ListItem Value="S">Seleziona</asp:ListItem>
+                                            <asp:ListItem Value="A">A - Ordine in Preparazione</asp:ListItem>
+                                            <asp:ListItem Value="B">B - Consegna presa in carico</asp:ListItem>
+                                            <asp:ListItem Value="C">C - Prodotto in consegna</asp:ListItem>
+                                            <asp:ListItem Value="D">D - Prodotto consegnato</asp:ListItem>
+                                        </asp:DropDownList>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <%-- pulsante --%>
+                                        <asp:Button ID="btnStato" runat="server" class="btn btn-sm masterButton" Text="STATO SUCCESSIVO" OnClick="btnStato_Click" />
 
-
-                                    <asp:GridView ID="grdSTATO" class="table" runat="server" CssClass="table table-bordered table-condensed" DataSourceID="sdsSTATO" AutoGenerateColumns="False" OnSelectedIndexChanged="grdSTATO_SelectedIndexChanged" DataKeyNames="chiaveSPEDIZIONE">
-                                        <Columns>
-
-                                            <asp:TemplateField>
-                                                <HeaderTemplate>
-                                                     <asp:CheckBox ID="CheckALL" runat="server" AutoPostBack="true" OncheckedChanged="CheckALL_CheckedChanged"/>
-                                                </HeaderTemplate>
-                                                <ItemTemplate>
-                                                    <asp:CheckBox ID="Check" runat="server" OnCheckedChanged="Check_CheckedChanged"/>
-
-                                                </ItemTemplate>
-                                            </asp:TemplateField>
-
-                                            <asp:BoundField DataField="chiaveCORRIERE" HeaderText="chiaveCORRIERE" SortExpression="chiaveCORRIERE" Visible="False" />
-                                            <asp:BoundField DataField="chiaveSPEDIZIONE" HeaderText="chiaveSPEDIZIONE" SortExpression="chiaveSPEDIZIONE" Visible="False" />
-                                            <asp:BoundField DataField="STATO_SPEDIZIONE" HeaderText="STATO SPEDIZIONE" SortExpression="STATO_SPEDIZIONE" />
-                                            <asp:BoundField DataField="DATA_SPEDIZIONE" HeaderText="DATA SPEDIZIONE" SortExpression="DATA_SPEDIZIONE" ReadOnly="True" />
-                                            <asp:BoundField DataField="DATA_TRANSAZIONE" HeaderText="DATA TRANSAZIONE" SortExpression="DATA_TRANSAZIONE" ReadOnly="True" />
-                                            <asp:BoundField DataField="EMAIL_CLIENTI" HeaderText="EMAIL CLIENTI" SortExpression="EMAIL_CLIENTI" />
-                                            <asp:BoundField DataField="NUMERO_ORDINE" HeaderText="N. ORDINE" SortExpression="NUMERO_ORDINE" />
-                                            <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
-
-                                        </Columns>
-                                        <HeaderStyle BackColor="#B469FF" />
-                                    </asp:GridView>
-                                    <asp:SqlDataSource ID="sdsSTATO" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSPEDIZIONI_ORDINI_Select" SelectCommandType="StoredProcedure">
-                                        <SelectParameters>
-                                            <asp:SessionParameter Name="chiave" SessionField="chiaveUSR" Type="Int32" />
-                                            <asp:ControlParameter ControlID="ddlSTATO" Name="STATO" PropertyName="SelectedValue" Type="String" />
-                                        </SelectParameters>
-                                    </asp:SqlDataSource>
+                                    </div>
                                 </div>
-                                <div class="col-md-1">
+                                <div class="row align-items-center">
+                                    <div class="col-md-8" style="overflow: auto; top: -1px; left: 0px; height: auto; width: auto;">
 
-                                    <asp:DropDownList ID="ddlSTATO" runat="server" CssClass="form-select" Style="width: auto" AutoPostBack="True">
-                                        <asp:ListItem Value="S">Seleziona</asp:ListItem>
-                                        <asp:ListItem Value="A">A - Ordine in Preparazione</asp:ListItem>
-                                        <asp:ListItem Value="B">B - Consegna presa in carico</asp:ListItem>
-                                        <asp:ListItem Value="C">C - Prodotto in consegna</asp:ListItem>
-                                        <asp:ListItem Value="D">D - Prodotto consegnato</asp:ListItem>
-                                    </asp:DropDownList>
+                                        <br />
+                                        <asp:GridView ID="grdSTATO" class="table" runat="server" CssClass="table table-bordered table-condensed" DataSourceID="sdsSTATO" AutoGenerateColumns="False" OnSelectedIndexChanged="grdSTATO_SelectedIndexChanged" DataKeyNames="chiaveSPEDIZIONE">
+                                            <Columns>
 
-                                    <%-- pulsante --%>
-                                    <asp:Button ID="btnStato" runat="server" class="btn btn-sm masterButton" Text="STATO SUCCESSIVO" OnClick="btnStato_Click" />
+                                                <asp:CommandField ButtonType="Button" ShowSelectButton="True" />
+
+                                                <asp:BoundField DataField="chiaveCORRIERE" HeaderText="chiaveCORRIERE" SortExpression="chiaveCORRIERE" Visible="False" />
+                                                <asp:BoundField DataField="chiaveSPEDIZIONE" HeaderText="chiaveSPEDIZIONE" SortExpression="chiaveSPEDIZIONE" Visible="False" />
+                                                <asp:BoundField DataField="STATO_SPEDIZIONE" HeaderText="STATO SPEDIZIONE" SortExpression="STATO_SPEDIZIONE" />
+                                                <asp:BoundField DataField="DATA_TRANSAZIONE" HeaderText="DATA TRANSAZIONE" SortExpression="DATA_TRANSAZIONE" ReadOnly="True" />
+                                                <asp:BoundField DataField="DATA_SPEDIZIONE" HeaderText="DATA SPEDIZIONE" SortExpression="DATA_SPEDIZIONE" ReadOnly="True" />
+                                                <asp:BoundField DataField="EMAIL_CLIENTI" HeaderText="EMAIL CLIENTE" SortExpression="EMAIL_CLIENTI" />
+                                                <asp:BoundField DataField="NOME_CLIENTE" HeaderText="NOME CLIENTE" SortExpression="NOME_CLIENTE" ReadOnly="True" />
+                                                <asp:BoundField DataField="INDIRIZZO_CLIENTE" HeaderText="INDIRIZZO CLIENTE" SortExpression="INDIRIZZO_CLIENTE" ReadOnly="True" />
+
+                                            </Columns>
+                                            <HeaderStyle BackColor="#B469FF" />
+                                        </asp:GridView>
+                                        <asp:SqlDataSource ID="sdsSTATO" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSPEDIZIONI_ORDINI_Select" SelectCommandType="StoredProcedure">
+                                            <SelectParameters>
+                                                <asp:SessionParameter Name="chiave" SessionField="chiaveUSR" Type="Int32" />
+                                                <asp:ControlParameter ControlID="ddlSTATO" Name="STATO" PropertyName="SelectedValue" Type="String" />
+                                            </SelectParameters>
+                                        </asp:SqlDataSource>
+                                    </div>
 
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </center>
             </div>

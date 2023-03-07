@@ -22,10 +22,8 @@ public partial class _Default : System.Web.UI.Page
     }
 
 
-    protected void Check_CheckedChanged(object sender, EventArgs e)
+    protected void grdSTATO_SelectedIndexChanged(object sender, EventArgs e)
     {
-        CheckBox check = (CheckBox)sender;
-        GridViewRow row = (GridViewRow)check.NamingContainer;
         // controllo se viene selezionato la riga
         if (grdSTATO.SelectedValue == null)
         {
@@ -35,37 +33,6 @@ public partial class _Default : System.Web.UI.Page
         //faccio la session per passare la chiave
         Session["chiaveSPEDIZIONE"] = grdSTATO.SelectedValue.ToString();
         Session["STATO_SPEDIZIONE"] = grdSTATO.SelectedRow.Cells[3].Text;
-
-    }
-
-    protected void CheckALL_CheckedChanged(object sender, EventArgs e)
-    {
-        CheckBox checkALL = (CheckBox)grdSTATO.SelectedRow.FindControl("checkALL");
-        foreach (GridView row in grdSTATO.Rows)
-        {
-            CheckBox checkrow = (CheckBox)row.FindControl("Check");
-            if (checkALL.Checked == true)
-            {
-                checkALL.Checked = true;
-            }
-            else
-            {
-                checkrow.Checked = false;
-            }
-        }
-
-    }
-    protected void grdSTATO_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        // controllo se viene selezionato la riga
-        //if (grdSTATO.SelectedValue == null)
-        //{
-        //    Session["chiaveSPEDIZIONE"] = null;
-        //    return;
-        //}
-        ////faccio la session per passare la chiave
-        //Session["chiaveSPEDIZIONE"] = grdSTATO.SelectedValue.ToString();
-        //Session["STATO_SPEDIZIONE"] = grdSTATO.SelectedRow.Cells[3].Text;
     }
 
     protected void btnStato_Click(object sender, EventArgs e)
@@ -87,13 +54,14 @@ public partial class _Default : System.Web.UI.Page
         EMAIL E = new EMAIL();
         EMAIL EM = new EMAIL();
 
+
         switch (STATO)
         {
             case "B":
                 // invio EMAIL a AMATRON e al cliente dell'ordine aggiornandolo sullo stato
                 EM.mailTo = "giorgio.zucchetti00@gmail.com";
                 EM.subject = "AGGIORNAMENTO STATO";
-                EM.body = "PRESO IN CARICO L'ORDINE(n." + "  " + grdSTATO.SelectedRow.Cells[7].Text + ") di " + "  " + grdSTATO.SelectedRow.Cells[6].Text;
+                EM.body = "PRESO IN CARICO L'ORDINE di " + "  " + grdSTATO.SelectedRow.Cells[7].Text;
                 EM.SendEmail();
                 E.mailTo = grdSTATO.SelectedRow.Cells[6].Text;
                 E.subject = "AGGIORNAMENTO STATO";
@@ -107,7 +75,7 @@ public partial class _Default : System.Web.UI.Page
             case "C":
                 EM.mailTo = "giorgio.zucchetti00@gmail.com";
                 EM.subject = "AGGIORNAMENTO STATO";
-                EM.body = "IN CONSEGNA L'ORDINE(n." + "  " + grdSTATO.SelectedRow.Cells[7].Text + ") di " + "  " + grdSTATO.SelectedRow.Cells[6].Text;
+                EM.body = "IN CONSEGNA L'ORDINE di " + "  " + grdSTATO.SelectedRow.Cells[7].Text;
                 EM.SendEmail();
                 E.mailTo = grdSTATO.SelectedRow.Cells[6].Text;
                 E.subject = "AGGIORNAMENTO STATO";
@@ -121,7 +89,7 @@ public partial class _Default : System.Web.UI.Page
             case "D":
                 EM.mailTo = "giorgio.zucchetti00@gmail.com";
                 EM.subject = "AGGIORNAMENTO STATO";
-                EM.body = "CONSEGNATO L'ORDINE(n." + "  " + grdSTATO.SelectedRow.Cells[7].Text + ") di " + "  " + grdSTATO.SelectedRow.Cells[6].Text;
+                EM.body = "CONSEGNATO L'ORDINE di " + "  " + grdSTATO.SelectedRow.Cells[7].Text;
                 EM.SendEmail();
                 E.mailTo = grdSTATO.SelectedRow.Cells[6].Text;
                 E.subject = "AGGIORNAMENTO STATO";
@@ -135,5 +103,5 @@ public partial class _Default : System.Web.UI.Page
         DataBind();
     }
 
-    
+
 }

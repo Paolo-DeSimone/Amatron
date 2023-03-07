@@ -1,4 +1,4 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AMATRON.master.cs" Inherits="AMATRON" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AMATRON.master.cs" Inherits="AMATRON" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -104,8 +104,8 @@
                                     <li><a class="dropdown-item bianco" href="#">Another action</a></li>
                                     <li><a class="dropdown-item bianco" href="#">Something else here</a></li>
                                 </ul>
-                                <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
-                                <button class="btn masterButton input-group-append" type="submit">Search</button>
+                                <input class="form-control" type="search" placeholder="Cerca" aria-label="Cerca" />
+                                <button class="btn masterButton input-group-append" type="submit">Cerca</button>
                             </div>
 
                             <%--  SIGN UP E SIGN IN--%>
@@ -120,7 +120,7 @@
 
                             <!-- DROPDOWN PER OPERAZIONI UTENTE -->
                             <div class="dropdown" id="dropdownClienti" runat="server">
-                                <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">User Actions
+                                <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Gestione
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Ordini_Resi/Ordini.aspx">Ordini</a></li>
@@ -130,7 +130,7 @@
                             </div>
 
                             <div class="dropdown" id="dropdownVenditori" runat="server">
-                                <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">User Actions
+                                <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">Gestione
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="/Forms/VENDITORI/StoricoVendite.aspx">Storico Vendite</a></li>
@@ -139,7 +139,7 @@
                             </div>
 
                             <div class="dropdown" id="dropdownCorrieri" runat="server">
-                                <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">User Actions
+                                <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">Gestione
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/PagPers.aspx">Profilo Corriere</a></li>
@@ -149,7 +149,7 @@
                             </div>
 
                             <div class="dropdown" id="dropdownAmatron" runat="server">
-                                <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">User Actions
+                                <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">Gestione
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="/Forms/AMATRON/AbilitazioneVenditoriCorrieri.aspx">Abilita Utenti</a></li>
@@ -223,7 +223,7 @@
                             <asp:Button ID="btnLogin" CssClass="btn masterButton" OnClick="btnLogin_Click" Text="Login" runat="server" />
                         </div>
                         <div class="mx-auto">
-                            <hr />
+                            <hr class="masterColorBG masterColorText" style="height: 3px; margin-top: 40px;" />
                             <a class="cont testo" href="#">Recupera password</a>
                         </div>
                     </div>

@@ -22,7 +22,7 @@ public partial class _Default : System.Web.UI.Page
             DataTable DT = C.CORRIERI_SelectByKey();
             string RagioneSociale = DT.Rows[0]["RagioneSociale"].ToString();
             //titolo della pagina con ragionesociale di chi si logga
-            titolo.InnerHtml = "<h2>Profilo di " + RagioneSociale + "</h2>";
+            //titolo.InnerHtml = "<h2>Profilo di " + RagioneSociale + "</h2>";
             C.chiave = int.Parse(chiave);
             txtRAGIONESOCIALE.Text = DT.Rows[0]["RAGIONESOCIALE"].ToString();
             txtPIVA.Text = DT.Rows[0]["PIVA"].ToString();

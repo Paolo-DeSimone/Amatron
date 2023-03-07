@@ -98,14 +98,10 @@
 
                             <%--  BARRA DI RICERCA--%>
                             <div class="input-group searchbar">
-                                <button class="btn dropdown-toggle masterButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tutte le Categorie</button>
-                                <ul class="dropdown-menu" style="background-color: #212529">
-                                    <li><a class="dropdown-item bianco" href="#">Action</a></li>
-                                    <li><a class="dropdown-item bianco" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item bianco" href="#">Something else here</a></li>
-                                </ul>
-                                <input class="form-control" type="search" placeholder="Search" aria-label="Search" />
-                                <button class="btn masterButton input-group-append" type="submit">Search</button>
+                                <asp:DropDownList ID="ddlCategorie" class="btn dropdown-toggle" CssClass="dropdownlist" runat="server" DataSourceID="sdsCategorie" DataTextField="CATEGORIA" DataValueField="chiave"></asp:DropDownList>
+                                <asp:SqlDataSource ID="sdsCategorie" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCATEGORIE_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                                <input class="form-control" type="search" placeholder="Cerca" aria-label="Cerca" />
+                                <button class="btn masterButton input-group-append" type="submit">Cerca</button>
                             </div>
 
                             <%--  SIGN UP E SIGN IN--%>

@@ -107,6 +107,7 @@ public class ORDINI
         return dt;
     }
 
+
     //Metodo inserito per l'assegnazone del corriere (George D.)
     public DataTable CORRIERI_CHIAVERandom()
     {
@@ -114,4 +115,5 @@ public class ORDINI
         dt = O.CORRIERI_CHIAVERandom();
         return dt;
     }
+
 }

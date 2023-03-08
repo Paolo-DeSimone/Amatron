@@ -20,7 +20,7 @@
             </h2>
         </center>
         <div class="text-center">
-            <asp:Label Class="form-label" ID="lblImmagine" runat="server" Text="Aggiungi immagini al prodotto:"></asp:Label>
+            <asp:Label Class="form-label" ID="lblImmagine" runat="server" Text="Aggiungi immagini a"></asp:Label>
             <asp:Label ID="lblProdotto" runat="server" Text=""></asp:Label>
 
             <%-- creo una lit immagini che andrà popolata nel cs con la preview delle immagini caricate --%>

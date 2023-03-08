@@ -95,6 +95,8 @@ public partial class Default2 : System.Web.UI.Page
         caroselProdottiSimili.InnerHtml = "";
         for (int i = 0; i < CAROSEL.Rows.Count; i++)
         {
+            CA.chiave = int.Parse(CAROSEL.Rows[i]["chiaveCATEGORIA"].ToString());
+            DataTable CAT = CA.SelectByKey();
             caroselProdottiSimili.InnerHtml += "<div class=\"owl-item\">" +
                 "<a href = \"PaginaProdotto.aspx?c=" + CAROSEL.Rows[i]["chiavePRODOTTO"] + "\">" +
                 "<div class=\"bbb_viewed_item discount d-flex flex-column align-items-center justify-content-center text-center\">" +
@@ -102,9 +104,9 @@ public partial class Default2 : System.Web.UI.Page
                 "<img style=\"width:160px; height:160px;\" src='/Img.ashx?c=" + CAROSEL.Rows[i]["chiavePRODOTTO"] + "' >" +
                 "</div>" +
                 "<div class=\"bbb_viewed_content text-center\">" +
-                "<div class=\"bbb_viewed_name\">" + CAROSEL.Rows[i]["TITOLO"] + "</div>" +
+                "<div class=\"bbb_viewed_name\"><b>" + CAROSEL.Rows[i]["TITOLO"] + "</b></div>" +
                 "<div class=\"bbb_viewed_price\"><b>€" + CAROSEL.Rows[i]["PREZZO"] + "</b></div>" +
-                "<div class=\"bbb_viewed_name\">" + CAROSEL.Rows[i]["chiaveCATEGORIA"] + "</div>" +
+                "<div class=\"bbb_viewed_name\">" + CAT.Rows[0]["CATEGORIA"] + "</div>" +
                 "</div>" +
                 "</div>" +
                 "</a>" +

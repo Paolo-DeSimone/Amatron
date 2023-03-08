@@ -16,6 +16,10 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["chiaveUSR"] == null)
+        {
+            Response.Redirect("/Forms/Homepage.aspx");
+        }
 
         PRODOTTI P = new PRODOTTI();
         IMMAGINI I = new IMMAGINI();
@@ -55,37 +59,43 @@ public partial class Default2 : System.Web.UI.Page
         V.chiaveprodotto = int.Parse(HttpContext.Current.Request.QueryString["c"].ToString());
         DataTable DT = V.Media();
 
-        valstelle = int.Parse(DT.Rows[0]["MEDIA"].ToString());
+        if (String.IsNullOrEmpty(DT.Rows[0]["MEDIA"].ToString()))
+        {
 
-        if (valstelle == 5)
-        {
-            ystar1.Visible = true;
-            ystar2.Visible = true;
-            ystar3.Visible = true;
-            ystar4.Visible = true;
-            ystar5.Visible = true;
         }
-        if (valstelle == 4)
+        else
         {
-            ystar1.Visible = true;
-            ystar2.Visible = true;
-            ystar3.Visible = true;
-            ystar4.Visible = true;
-        }
-        if (valstelle == 3)
-        {
-            ystar1.Visible = true;
-            ystar2.Visible = true;
-            ystar3.Visible = true;
-        }
-        if (valstelle == 2)
-        {
-            ystar1.Visible = true;
-            ystar2.Visible = true;
-        }
-        if (valstelle == 1)
-        {
-            ystar1.Visible = true;
+            valstelle = int.Parse(DT.Rows[0]["MEDIA"].ToString());
+            if (valstelle == 5)
+            {
+                ystar1.Visible = true;
+                ystar2.Visible = true;
+                ystar3.Visible = true;
+                ystar4.Visible = true;
+                ystar5.Visible = true;
+            }
+            if (valstelle == 4)
+            {
+                ystar1.Visible = true;
+                ystar2.Visible = true;
+                ystar3.Visible = true;
+                ystar4.Visible = true;
+            }
+            if (valstelle == 3)
+            {
+                ystar1.Visible = true;
+                ystar2.Visible = true;
+                ystar3.Visible = true;
+            }
+            if (valstelle == 2)
+            {
+                ystar1.Visible = true;
+                ystar2.Visible = true;
+            }
+            if (valstelle == 1)
+            {
+                ystar1.Visible = true;
+            }
         }
 
         P.chiaveCATEGORIA = int.Parse(dt.Rows[0]["chiaveCATEGORIA"].ToString());

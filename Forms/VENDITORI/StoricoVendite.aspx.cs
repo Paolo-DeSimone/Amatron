@@ -16,8 +16,10 @@ public partial class _Default : System.Web.UI.Page
         {
             DataTable DT = new DataTable();
             VENDITORI V = new VENDITORI();
-            V.chiave = int.Parse(Session["chiaveUSR"].ToString());
-            DT= V.ORDINI_SelectAll();         
+            //V.chiave = int.Parse(Session["chiaveUSR"].ToString());
+            V.chiave = 22;
+
+            DT = V.ORDINI_SelectAll();         
             GrigliaStoricoVendite.DataSource = DT;         
             GrigliaStoricoVendite.DataBind();
         }
@@ -35,7 +37,8 @@ public partial class _Default : System.Web.UI.Page
         V.chiaveORDINI = int.Parse(ddlNOrdine.SelectedValue);
         V.DInizio = txtDInizio.Text;
         V.DFine = txtDFine.Text;
-        V.chiave = int.Parse(Session["chiaveUSR"].ToString());
+        //V.chiave = int.Parse(Session["chiaveUSR"].ToString());
+        V.chiave = 22;
         DT= V.VENDITORI_Filter();
 
         GrigliaStoricoVendite.DataSource = DT;

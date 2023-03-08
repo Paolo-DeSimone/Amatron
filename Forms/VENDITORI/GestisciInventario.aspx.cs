@@ -40,6 +40,7 @@ public partial class Venditori_GestisciInventario : System.Web.UI.Page
             if (QTA != 0.ToString())
             {
                 txtQuantita.Text = "";
+                lblQTANonZero.Text = "Il prodotto selezionato è ancora in vendita. Selezionare un prodotto esaurito";
                 btnAggiungi.Visible = false;
                 return;
             }

@@ -99,7 +99,7 @@ public class ORDINI
     }
 
 
-    //Metodo inserito per la grigliaORDINI (George D.)
+    //Metodo inserito per la grigliaORDINI(George D.)
     public DataTable ORDINI_GESTISCI()
     {
         DataTable dt = new DataTable();
@@ -115,5 +115,10 @@ public class ORDINI
         dt = O.CORRIERI_CHIAVERandom();
         return dt;
     }
-
+    public DataTable SelectByOrdineCliente()
+    {
+        DataTable dt = new DataTable();
+        dt = O.ORDINI_SelectOrdineCliente(chiavecliente);
+        return dt;
+    }
 }

@@ -15,18 +15,15 @@ public partial class Ordini : System.Web.UI.Page
             PRODOTTI P = new PRODOTTI();
             ORDINI O = new ORDINI();
             CLIENTI C = new CLIENTI();
-            DataTable dt = new DataTable();
-
-            O.chiavecliente = int.Parse(dt.Rows[0]["chiaveCLIENTE"].ToString());
-            dt = O.SelectAll();
-                
+            DataTable dt = O.SelectByOrdineCliente();
+            O.chiavecliente = int.Parse(dt.Rows[0]["chiavecliente"].ToString());
            // lblDescrizione = P.descrizione;
             cardprodotto.InnerHtml = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 cardprodotto.InnerHtml += " <div class=\"col-md-4\";>" +
                  //immagine
-                 "<img src='/GestoreImmagini.ashx?c=" + dt.Rows[i]["chiave"] + "' class='d-block w-100' style='width:600px; height:450px' alt='Product Image 1'/>" +
+                 "<img src='/GestoreImmagini.ashx?c=" + dt.Rows[i]["doc"] + "' class='d-block w-100' style='width:600px; height:450px' alt='Product Image 1'/>" +
                  "</div>" +
                  "<div class=\"col -md-8\"> " +
                  "<div class=\"card-body\">" +

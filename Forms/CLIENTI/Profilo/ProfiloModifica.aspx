@@ -21,179 +21,135 @@
     <div class="row">
         <div class="col-lg-5">
             <div class="sposta">
-                
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="masterTitle datiPersonali">Dati personali</h4>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="masterTitle datiPersonali">Dati personali</h4>
+                    </div>
+                    <div class="card-body text-align-left">
+                        <div class="row">
+                            <div class="col-lg-6 text-align-left">
+                                <asp:Literal ID="ltlCognome" runat="server">COGNOME</asp:Literal>
+                                <asp:TextBox ID="txtCognome" runat="server" class="form-control form-control-sm"></asp:TextBox>
+                            </div>
+                            <div class="col-lg-6">
+                                <asp:Literal ID="ltlNome" runat="server">NOME</asp:Literal>
+                                <asp:TextBox ID="txtNome" runat="server" class="form-control form-control-sm"></asp:TextBox>
+                            </div>
                         </div>
-                        <div class="card-body text-align-left">
-                            <div class="row">
-                                <div class="col-lg-6 text-align-left">
-                                    <asp:Literal ID="ltlCognome" runat="server">COGNOME</asp:Literal>
-                                    <asp:TextBox ID="txtCognome" runat="server" class="form-control form-control-sm"></asp:TextBox>
-                                </div>
-                                <div class="col-lg-6">
-                                    <asp:Literal ID="ltlNome" runat="server">NOME</asp:Literal>
-                                    <asp:TextBox ID="txtNome" runat="server" class="form-control form-control-sm"></asp:TextBox>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-9">
-                                    <asp:Literal ID="ltlIndirizzo" runat="server">INDIRIZZO</asp:Literal>
-                                    <asp:TextBox ID="txtIndirizzo" runat="server" class="form-control form-control-sm"></asp:TextBox>
-                                </div>
-
-                                <div class="col-lg-3">
-                                    <asp:Literal ID="ltlCAP" runat="server">CAP</asp:Literal>
-                                    <asp:TextBox ID="txtCAP" runat="server" class="form-control form-control-sm"></asp:TextBox>
-                                </div>
-                            </div>
-                            <div class="row ">
-                                <div class="col-lg-10">
-                                    <asp:Literal ID="ltlCitta" runat="server">CITTA'</asp:Literal>
-                                    <asp:TextBox ID="txtCitta" runat="server" class="form-control form-control-sm"></asp:TextBox>
-                                </div>
-
-                                <div class="col-lg-2">
-                                    <asp:Literal ID="ltlProvincia" runat="server">PROV</asp:Literal>
-                                    <asp:TextBox ID="txtProvincia" runat="server" class="form-control form-control-sm"></asp:TextBox>
-                                </div>
+                        <div class="row">
+                            <div class="col-lg-9">
+                                <asp:Literal ID="ltlIndirizzo" runat="server">INDIRIZZO</asp:Literal>
+                                <asp:TextBox ID="txtIndirizzo" runat="server" class="form-control form-control-sm"></asp:TextBox>
                             </div>
 
-                            <div class="row ">
-                                <div class="col-lg-6">
-                                    <asp:Literal ID="ltlEMAIL" runat="server">EMAIL</asp:Literal>
-                                    <asp:TextBox ID="txtEMAIL" runat="server" class="form-control form-control-sm"></asp:TextBox>
-                                </div>
-                                <div class="col-lg-6">
-                                    <asp:Literal ID="ltlTelefono" runat="server">TELEFONO</asp:Literal>
-                                    <asp:TextBox ID="txtTelefono" runat="server" class="form-control form-control-sm"></asp:TextBox>
-                                </div>
+                            <div class="col-lg-3">
+                                <asp:Literal ID="ltlCAP" runat="server">CAP</asp:Literal>
+                                <asp:TextBox ID="txtCAP" runat="server" class="form-control form-control-sm"></asp:TextBox>
                             </div>
-                            <br />
-                            <asp:Button ID="btnSalva" runat="server" Text="Salva" class="btn masterButton" OnClick="btnSalva_Click" />
                         </div>
+                        <div class="row ">
+                            <div class="col-lg-10">
+                                <asp:Literal ID="ltlCitta" runat="server">CITTA'</asp:Literal>
+                                <asp:TextBox ID="txtCitta" runat="server" class="form-control form-control-sm"></asp:TextBox>
+                            </div>
+
+                            <div class="col-lg-2">
+                                <asp:Literal ID="ltlProvincia" runat="server">PROV</asp:Literal>
+                                <asp:TextBox ID="txtProvincia" runat="server" class="form-control form-control-sm"></asp:TextBox>
+                            </div>
+                        </div>
+
+                        <div class="row ">
+                            <div class="col-lg-6">
+                                <asp:Literal ID="ltlEMAIL" runat="server">EMAIL</asp:Literal>
+                                <asp:TextBox ID="txtEMAIL" runat="server" class="form-control form-control-sm"></asp:TextBox>
+                            </div>
+                            <div class="col-lg-6">
+                                <asp:Literal ID="ltlTelefono" runat="server">TELEFONO</asp:Literal>
+                                <asp:TextBox ID="txtTelefono" runat="server" class="form-control form-control-sm"></asp:TextBox>
+                            </div>
+                        </div>
+                        <br />
+                        <asp:Button ID="btnSalva" runat="server" Text="Salva" class="btn masterButton" OnClick="btnSalva_Click" />
                     </div>
                 </div>
             </div>
-       
+        </div>
+
 
         <%--   CAMBIA PASSWORD--%>
-          <div class="col-lg-3">
-        <div class="card">
-           <div class="card-header text-center">
-                <h4 class="card-title">Cambia Password</h4>
-            </div>
-            <div class="card-body">
-                <div class="row text-center">
-                    <div class="col">
-                        <asp:Label ID="lblOldPWD" Style="float: left;" runat="server" Text="Vecchia Password:"></asp:Label>
-                        <asp:TextBox ID="txtOldPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
-
-                <%--Amatron prime card--%>
-                <div class="col-lg-4">
-                    <div class="card colore bianco ">
-                        <img src="../../../assets/images/amatron-prime.png" />
-                        <p class="card-text primeScritta">Amatron prime è un servizio che ti permetterà di avere uno sconto dell'<asp:Label ID="lblPrimeProMod" runat="server" Text=""></asp:Label>% su ogni prodotto acquistato.</p>
-                        <h4 style="text-align:center" class="card-title">Iscrizione annuale €29,99!</h4>
-                        <div class="card-body">
-                        </div>
-
-                        <%-- POPUP--%>
-
-                        <%-- Introduzione di uno script manager --%>
-                        <asp:ScriptManager ID="ScriptManager1" runat="server">
-                        </asp:ScriptManager>
-
-                        <%-- pulsante che apre il popup --%>
-                        <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" />
-                        <br />
-
-                        <%-- chiamata del popup --%>
-                        <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnApri"
-                            CancelControlID="btnChiudi" BackgroundCssClass="Background">
-                        </cc1:ModalPopupExtender>
-
-                        <%-- contenuto del popup --%>
-                        <asp:Panel
-                            ID="Panl1"
-                            runat="server"
-                            CssClass="Popup"
-                            align="center"
-                            Style="display: none">
-                            <%--ci pensa lo script manager a renderlo visibile--%>
-
-                            <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-                            <iframe style="width: 550px; height: 373px; -webkit-border-radius: 10px 10px 10px 10px;" id="if2" src="../Profilo/IscrizionePrimePopup.aspx" runat="server"></iframe>
-                            <br />
-                            <%--chiude il popup--%>
-                            <asp:Button ID="btnChiudi" class="btn btn-secondary" runat="server" Text="Chiudi" />
-                        </asp:Panel>
-
-                    </div>
-                </div>
-                <div class="row text-center">
-                    <div class="col">
-                        <asp:Label ID="lblNewPWD" Style="float: left;" runat="server" Text="Nuova Password:"></asp:Label>
-                        <asp:TextBox ID="txtNewPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
-                    </div>
-                </div>
-                <div class="row text-center">
-                    <div class="col">
-                        <asp:Label ID="lblConfPWD" Style="float: left;" runat="server" Text="Conferma Password:"></asp:Label>
-                        <asp:TextBox ID="txtConfPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
-                    </div>
-                </div>
-                <div class="text-right mt-2" style="text-align: right !important;">
-                    <asp:Button ID="btnModPWD" class="btn masterButton" runat="server" Text="Modifica" OnClick="btnModPWD_Click" />
-                </div>
-            </div>
-        </div>
-            </div>
-     
-   
-
-        <%--Amatron prime card--%>
         <div class="col-lg-3">
-            <div class="card colore bianco" style="height:278px; margin-right:20px;">
-                <img src="../../../assets/images/amatron-prime.png" />
-                <p class="card-text primeScritta">Amatron prime e' un servizio che ti permettera' di avere uno sconto dell'1% su ogni prodotto acquistato.</p>
-                <h4 style="text-align: center" class="card-title">Iscrizione annuale 29,99 euro!</h4>
+            <div class="card">
+                <div class="card-header text-center">
+                    <h4 class="card-title">Cambia Password</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col">
+                            <asp:Label ID="lblOldPWD" Style="float: left;" runat="server" Text="Vecchia Password:"></asp:Label>
+                            <asp:TextBox ID="txtOldPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
 
+                            <%--Amatron prime card--%>
+                            <div class="col-lg-4">
+                                <div class="card colore bianco ">
+                                    <img src="../../../assets/images/amatron-prime.png" />
+                                    <p class="card-text primeScritta">Amatron prime è un servizio che ti permetterà di avere uno sconto dell'<asp:Label ID="lblPrimeProMod" runat="server" Text=""></asp:Label>% su ogni prodotto acquistato.</p>
+                                    <h4 style="text-align: center" class="card-title">Iscrizione annuale €29,99!</h4>
+                                    <div class="card-body">
+                                    </div>
 
-                <%-- POPUP--%>
+                                    <%-- POPUP--%>
 
-                <%-- Introduzione di uno script manager --%>
-                <asp:ScriptManager ID="ScriptManager1" runat="server">
-                </asp:ScriptManager>
+                                    <%-- Introduzione di uno script manager --%>
+                                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                                    </asp:ScriptManager>
 
-                <%-- pulsante che apre il popup --%>
-                <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" />
-                <br />
+                                    <%-- pulsante che apre il popup --%>
+                                    <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" />
+                                    <br />
 
-                <%-- chiamata del popup --%>
-                <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnApri"
-                    CancelControlID="btnChiudi" BackgroundCssClass="Background">
-                </cc1:ModalPopupExtender>
+                                    <%-- chiamata del popup --%>
+                                    <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnApri"
+                                        CancelControlID="btnChiudi" BackgroundCssClass="Background">
+                                    </cc1:ModalPopupExtender>
 
-                <%-- contenuto del popup --%>
-                <asp:Panel
-                    ID="Panl1"
-                    runat="server"
-                    CssClass="Popup"
-                    align="center"
-                    Style="display: none">
-                    <%--ci pensa lo script manager a renderlo visibile--%>
+                                    <%-- contenuto del popup --%>
+                                    <asp:Panel
+                                        ID="Panl1"
+                                        runat="server"
+                                        CssClass="Popup"
+                                        align="center"
+                                        Style="display: none">
+                                        <%--ci pensa lo script manager a renderlo visibile--%>
 
-                    <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-                    <iframe style="width: 550px; height: 373px; -webkit-border-radius: 10px 10px 10px 10px;" id="if2" src="../Profilo/IscrizionePrimePopup.aspx" runat="server"></iframe>
-                    <br />
-                    <%--chiude il popup--%>
-                    <asp:Button ID="btnChiudi" class="btn btn-secondary" runat="server" Text="Chiudi" />
-                </asp:Panel>
+                                        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+                                        <iframe style="width: 550px; height: 373px; -webkit-border-radius: 10px 10px 10px 10px;" id="if2" src="../Profilo/IscrizionePrimePopup.aspx" runat="server"></iframe>
+                                        <br />
+                                        <%--chiude il popup--%>
+                                        <asp:Button ID="btnChiudi" class="btn btn-secondary" runat="server" Text="Chiudi" />
+                                    </asp:Panel>
+
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col">
+                                    <asp:Label ID="lblNewPWD" Style="float: left;" runat="server" Text="Nuova Password:"></asp:Label>
+                                    <asp:TextBox ID="txtNewPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col">
+                                    <asp:Label ID="lblConfPWD" Style="float: left;" runat="server" Text="Conferma Password:"></asp:Label>
+                                    <asp:TextBox ID="txtConfPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
+                                </div>
+                            </div>
+                            <div class="text-right mt-2" style="text-align: right !important;">
+                                <asp:Button ID="btnModPWD" class="btn masterButton" runat="server" Text="Modifica" OnClick="btnModPWD_Click" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-       </div>
-     
 </asp:Content>

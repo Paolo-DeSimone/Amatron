@@ -10,24 +10,31 @@ public partial class Forms_VENDITORI_AggiungiImmagini : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        //PRODOTTI P = new PRODOTTI();
+        //string chiaveprodotto = Session["chiaveProdottoEsaurito"].ToString();
+        //DataTable dt = P.SelectByKey();
+        //string titolo;
+        //titolo = P.titolo;
+        //lblProdotto.Text = titolo;
 
+        //DataTable DT = Session["chiaveProdottoEsaurito"];
+        //lblProdotto.Text = 
     }
 
     protected void btnSalva_Click(object sender, EventArgs e)
     {
         if (fileUpload1.HasFiles == false)
         {
-            //error
-            string notify = @"notifyError('Carica un file supportato)";
-            ScriptManager.RegisterStartupScript(this, GetType(), "btnSalva_Click", notify, true);
+            lblMessaggio.Text = "Caricare un formato di immagine supportata";
             return;
         }
 
         PRODOTTI P = new PRODOTTI();
 
         P.chiaveVENDITORE = int.Parse(Session["chiaveUSR"].ToString());
-
-        DataTable dt = P.SelectByImmagineVenditore();
+        string chiaveprodotto = Session["chiaveProdottoEsaurito"].ToString();
+        P.chiave = int.Parse(chiaveprodotto);
+        DataTable dt = P.SelectByKey();
 
         // creo un array di byte da riempire con i bytes del file
         byte[] ImgData = fileUpload1.FileBytes;

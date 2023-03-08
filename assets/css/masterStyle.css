@@ -115,6 +115,17 @@ body {
     padding: 10px;
 }
 
+<<<<<<< HEAD
 .provaFE{
     margin-right:1vw;
 }
+=======
+.dmenu {
+    right: 0 !important;
+    left: auto !important;
+}
+
+.masterPlaceholder {
+    min-height: 40vh;
+}
+>>>>>>> 794cee53bd284187def8d0519427f60e7a329904

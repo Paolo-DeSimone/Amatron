@@ -21,7 +21,6 @@
                                             <ContentTemplate>
                                                 <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" DataKeyNames="chiave">
                                                     <Columns>
-                                                        <asp:CommandField ShowSelectButton="True" />
                                                         <asp:BoundField DataField="chiave" HeaderText="chiave" SortExpression="chiave" Visible="False" InsertVisible="False" ReadOnly="True" />
                                                         <asp:BoundField DataField="chiaveCORRIERE" HeaderText="chiaveCORRIERE" SortExpression="chiaveCORRIERE" />
                                                         <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" />
@@ -30,7 +29,9 @@
                                                         <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
                                                         <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUMEROORDINE" SortExpression="NUMEROORDINE" />
                                                         <asp:BoundField DataField="GESTITO" HeaderText="GESTITO" SortExpression="GESTITO" />
+                                                        <asp:CommandField ShowSelectButton="True" ButtonType="Image" ControlStyle-Height="20px" ControlStyle-Width="24px" SelectImageUrl="../../assets/images/spunta_button.png" />
                                                     </Columns>
+                                                    <SelectedRowStyle BackColor="LightGray" />
                                                     <HeaderStyle BackColor="#B469FF" />
                                                 </asp:GridView>
                                             </ContentTemplate>

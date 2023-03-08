@@ -42,8 +42,9 @@ public class WsValutazioni : System.Web.Services.WebService
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spVALUTAZIONI_SelectAll";
+        dt = DB.EseguiSPRead();
         dt.TableName = "SelectByAll";
-        return DB.EseguiSPRead();
+        return dt;
     }
 
     [WebMethod]
@@ -53,8 +54,8 @@ public class WsValutazioni : System.Web.Services.WebService
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spVALUTAZIONI_SelectAll_DDL";
-        dt.TableName = "SelectByAllDDL";
         dt = DB.EseguiSPRead();
+        dt.TableName = "SelectByAllDDL";
         return dt;
     }
 
@@ -66,8 +67,8 @@ public class WsValutazioni : System.Web.Services.WebService
         DB.cmd.Parameters.Clear();
         DB.query = "spVALUTAZIONI_SelectByKey";
         DB.cmd.Parameters.AddWithValue("chiave", chiave);
-        dt.TableName = "ValutazioniSelectByKey";
         dt = DB.EseguiSPRead();
+        dt.TableName = "ValutazioniSelectByKey";
         return dt;
     }
 
@@ -79,8 +80,8 @@ public class WsValutazioni : System.Web.Services.WebService
         DB.cmd.Parameters.Clear();
         DB.query = "spVALUTAZIONI_SelectByProdotto";
         DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);      
-        dt.TableName = "SelectByProdotto";
         dt = DB.EseguiSPRead();
+        dt.TableName = "SelectByProdotto";
         return dt;
     }
 

@@ -1,9 +1,11 @@
 ﻿using System;
-using System.Activities.Expressions;
 using System.Collections.Generic;
 using System.Data;
-using System.Globalization;
+using System.Data.SqlClient;
 using System.Linq;
+using System.ServiceModel.Dispatcher;
+using System.Activities.Expressions;
+using System.Globalization;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -22,6 +24,12 @@ public partial class _Default : System.Web.UI.Page
             DT = V.ORDINI_SelectAll();         
             GrigliaStoricoVendite.DataSource = DT;         
             GrigliaStoricoVendite.DataBind();
+
+            DataTable DT2 = new DataTable();
+            DT2 = V.SelectByKey();
+
+            //IdentificaVenditore.InnerHtml = "";
+            //IdentificaVenditore.InnerHtml += "<h2> Storico Vendite del Venditore "+  +"</h2>";
         }
 
     }

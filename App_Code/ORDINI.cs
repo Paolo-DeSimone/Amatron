@@ -99,13 +99,15 @@ public class ORDINI
     }
 
 
-    //Metodo inserito per la grigliaORDINI (George D.)
+    //Metodo inserito per la grigliaORDINI(George D.)
     public DataTable ORDINI_GESTISCI()
     {
         DataTable dt = new DataTable();
         dt = O.ORDINI_GESTISCI();
         return dt;
     }
+
+
     //Metodo inserito per l'assegnazone del corriere (George D.)
     public DataTable CORRIERI_CHIAVERandom()
     {
@@ -114,10 +116,4 @@ public class ORDINI
         return dt;
     }
 
-    public DataTable CORRIERI_CHIAVERandom()
-    {
-        DataTable dt = new DataTable();
-        dt = O.CORRIERI_CHIAVERandom();
-        return dt;
-    }
 }

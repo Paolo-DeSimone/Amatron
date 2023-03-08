@@ -11,7 +11,7 @@ public class CATEGORIE
 /// </summary>
     public int chiave;
     public string categoria;
-    RifCategorie.WsCategorieSoapClient C = new RifCategorie.WsCategorieSoapClient();
+    rifCategorieOL.WsCategorieSoapClient C = new rifCategorieOL.WsCategorieSoapClient();
     public CATEGORIE()
     {
         //

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using RifChangePwd;
 
 /// <summary>
 /// Descrizione di riepilogo per CHANGEPWD
@@ -12,7 +11,7 @@ public class CHANGEPWD
     public string email;
     public string TIPO;
     public string PWD;
-    RifChangePwd.WsChangePwdSoapClient CP = new WsChangePwdSoapClient();
+    rifChangePwdOL.WsChangePwdSoapClient CP = new rifChangePwdOL.WsChangePwdSoapClient();
     public CHANGEPWD()
     {
         //

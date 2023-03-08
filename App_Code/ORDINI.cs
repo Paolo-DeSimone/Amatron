@@ -23,7 +23,7 @@ public class ORDINI
 
 
     //istanzio il web service fuori dalla funzione cosi non devo ripeterlo
-    RifOrdini.WsOrdiniSoapClient O = new RifOrdini.WsOrdiniSoapClient();
+    rifOrdiniOL.WsOrdiniSoapClient O = new rifOrdiniOL.WsOrdiniSoapClient();
 
     public ORDINI()
     {

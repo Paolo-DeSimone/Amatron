@@ -84,6 +84,19 @@ body {
     position: relative;
 }
 
+.PopUpQTA {
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: none;
+    padding-top: 5px;
+    padding-left: 0px;
+    padding-right: 5px;
+    width: fit-content;
+    height: fit-content;
+    border: 0px;
+    position: relative;
+}
+
 .masterPopupBG {
     background-color: #212529;
     filter: alpha(opacity=30);
@@ -115,6 +128,11 @@ body {
     padding: 10px;
 }
 
+
+.provaFE{
+    margin-right:1vw;
+}
+
 .dmenu {
     right: 0 !important;
     left: auto !important;
@@ -123,3 +141,4 @@ body {
 .masterPlaceholder {
     min-height: 40vh;
 }
+

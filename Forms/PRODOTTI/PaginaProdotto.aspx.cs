@@ -55,8 +55,8 @@ public partial class Default2 : System.Web.UI.Page
         V.chiaveprodotto = int.Parse(HttpContext.Current.Request.QueryString["c"].ToString());
         DataTable DT = V.Media();
 
-        valstelle = int.Parse(DT.Rows[0]["MEDIA"].ToString());
-
+        //valstelle = int.Parse(DT.Rows[0]["MEDIA"].ToString());
+        valstelle = 1;
         if (valstelle == 5)
         {
             ystar1.Visible = true;

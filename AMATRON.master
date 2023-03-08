@@ -138,7 +138,6 @@
 
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Ordini_Resi/Ordini.aspx">Ordini</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Profilo/ProfiloModifica.aspx">Profilo Cliente</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/PRODOTTI/PaginaProdotto.aspx">Prodotto Test</a></li>
                                     <li><a class="dropdown-item" href="/Forms/LogOut.aspx">Log Out</a></li>
                                 </ul>
                             </div>

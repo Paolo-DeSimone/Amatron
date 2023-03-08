@@ -86,7 +86,7 @@
                         <div class="col-lg-2">
                             <div class="dropdown">
                                 <asp:DropDownList ID="ddlCategoria" AppendDataBoundItems="true" Class="form-control form-control" runat="server" DataSourceID="SqlDataSource1" DataTextField="CATEGORIA" DataValueField="chiaveCATEGORIA">
-                                    <asp:ListItem Selected="True" Value="0">Seleziona</asp:ListItem>
+                                    <asp:ListItem Selected="True" Value="0">Tutte le categorie</asp:ListItem>
                                 </asp:DropDownList>
                                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCATEGORIE_SelectByVenditore_DDL" SelectCommandType="StoredProcedure">
 
@@ -98,7 +98,7 @@
                         </div>
                         <div class="col-lg-2">
                             <asp:DropDownList ID="ddlNOrdine" AppendDataBoundItems="true" Class="form-control form-control" runat="server" DataSourceID="SqlDataSource2" DataTextField="NUMEROORDINE" DataValueField="chiaveORDINI">
-                                <asp:ListItem Value="0">Seleziona</asp:ListItem>
+                                <asp:ListItem Value="0">Tutti gli ordini</asp:ListItem>
                             </asp:DropDownList>
                             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_PRODOTTI_CATEGORIA_SelectDDL" SelectCommandType="StoredProcedure">
                                 <SelectParameters>
@@ -116,7 +116,7 @@
 
                         <div class="col-lg-2 text-end">
 
-                            <asp:Button ID="btnCerca" Class="btn masterButton" runat="server" Text="CERCA" OnClick="btnCerca_Click" />
+                            <asp:Button ID="btnCerca" Class="btn masterButton" runat="server" Text="FILTRA" OnClick="btnCerca_Click" />
                         </div>
                     </div>
                     <div class="row mt-3">

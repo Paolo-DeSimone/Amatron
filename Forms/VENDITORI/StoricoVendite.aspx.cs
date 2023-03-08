@@ -16,20 +16,26 @@ public partial class _Default : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
+            //identifico il venditore dalla session
             DataTable DT = new DataTable();
             VENDITORI V = new VENDITORI();
             //V.chiave = int.Parse(Session["chiaveUSR"].ToString());
             V.chiave = 22;
 
+            //stored procedure per popolare la griglia con tutti i campi del venditore
             DT = V.ORDINI_SelectAll();         
             GrigliaStoricoVendite.DataSource = DT;         
             GrigliaStoricoVendite.DataBind();
 
+            //Visualizzo il nome del venditore sopra la card
             DataTable DT2 = new DataTable();
             DT2 = V.SelectByKey();
+            string NomeVenditore = DT2.Rows[0]["RAGIONESOCIALE"].ToString() ;
+            IdentificaVenditore.InnerHtml = "";
+            IdentificaVenditore.InnerHtml += "<h2> Storico Vendite del Venditore " + NomeVenditore + "</h2>";
 
-            //IdentificaVenditore.InnerHtml = "";
-            //IdentificaVenditore.InnerHtml += "<h2> Storico Vendite del Venditore "+  +"</h2>";
+
+
         }
 
     }
@@ -37,7 +43,7 @@ public partial class _Default : System.Web.UI.Page
     protected void btnCerca_Click(object sender, EventArgs e)
     {
 
-
+        //filtraggio dei campi del venditore in base alla ricerca
         DataTable DT = new DataTable();
         VENDITORI V = new VENDITORI();
         V.TITOLO = txtTitolo.Text;

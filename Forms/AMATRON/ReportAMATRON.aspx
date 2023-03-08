@@ -4,9 +4,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </asp:Content>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <input id="Text1" visible="false" runat="server" type="number" />
     <input id="Text2" visible="false" runat="server" type="text" />

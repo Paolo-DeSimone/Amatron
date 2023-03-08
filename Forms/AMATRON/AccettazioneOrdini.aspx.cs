@@ -18,7 +18,7 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void grigliaOrdini_SelectedIndexChanged(object sender, EventArgs e)
     {
-        
+       
     }
 
     protected void btnAccetta_Click(object sender, EventArgs e)

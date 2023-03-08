@@ -22,22 +22,12 @@
 }
 
 .sposta {
-    margin-left: 100px;
-}
-
-.largh {
-    width: 100%;
-}
-
-
-.btnSalva {
-    width: 50%;
-    align-items: stretch;
-    background-color: #B469FF;
-    border: #B469FF;
-    margin-top: 8px;
     margin-left: 40px;
 }
+
+
+
+
 
 .btnnReso {
     width: 59%;
@@ -78,8 +68,6 @@
     width: 600px;
     height: 200px;
 }
-
-
 
 
 
@@ -500,3 +488,4 @@ section
 .bbb_viewed_item.is_new .item_new {
     display: inline-block;
 }
+

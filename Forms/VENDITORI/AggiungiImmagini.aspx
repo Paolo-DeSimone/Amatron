@@ -21,12 +21,16 @@
         </center>
         <div class="text-center">
             <asp:Label Class="form-label" ID="lblImmagine" runat="server" Text="Aggiungi immagini al prodotto:"></asp:Label>
+            <asp:Label ID="lblProdotto" runat="server" Text=""></asp:Label>
 
             <%-- creo una lit immagini che andrà popolata nel cs con la preview delle immagini caricate --%>
             <asp:Literal ID="litImmagini" runat="server"></asp:Literal>
             <p></p>
             <center>
                 <asp:FileUpload Class="form-control" multiple="multiple" ID="fileUpload1" runat="server" Style="width: 480px;" accept=".png,.jpg,.jpeg,.gif" />
+                <br />
+                <asp:Label ID="lblMessaggio" runat="server" Text=""></asp:Label>
+                <br />
                 <asp:Button ID="btnSalva" class="btn btnVenditoriPurple form-control" runat="server" Text="Salva" OnClick="btnSalva_Click" />
             </center>
         </div>

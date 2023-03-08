@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="60b0bb95-804c-40ed-b5fe-6e52d3b1af6e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="d4650da3-daca-488b-981b-af7109e942e3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://amatronws.brovia.it/WebServices/WSAmatron.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://amatronws.brovia.it/WebServices/WSAmatron.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WSAmatron.disco" MetadataType="Disco" ID="568ee5ac-3f70-44f2-ac1f-6c1a2e979ac8" SourceId="1" SourceUrl="https://amatronws.brovia.it/WebServices/WSAmatron.asmx?disco" />
-    <MetadataFile FileName="WSAmatron.wsdl" MetadataType="Wsdl" ID="47ac1db2-9b61-40a2-8397-36cee92cdd36" SourceId="1" SourceUrl="https://amatronws.brovia.it/WebServices/WSAmatron.asmx?wsdl" />
+    <MetadataFile FileName="WSAmatron.disco" MetadataType="Disco" ID="f2cae7bf-e233-41b6-98b1-78a2fde0c518" SourceId="1" SourceUrl="https://amatronws.brovia.it/WebServices/WSAmatron.asmx?disco" />
+    <MetadataFile FileName="WSAmatron.wsdl" MetadataType="Wsdl" ID="6b552c6e-effd-4493-baa7-e5794db292df" SourceId="1" SourceUrl="https://amatronws.brovia.it/WebServices/WSAmatron.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

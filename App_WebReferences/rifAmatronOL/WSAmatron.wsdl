@@ -24,6 +24,78 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="AMATRON_GetAnno">
+        <s:complexType />
+      </s:element>
+      <s:element name="AMATRON_GetAnnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AMATRON_GetAnnoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMATRON_IncassiAnnuali">
+        <s:complexType />
+      </s:element>
+      <s:element name="AMATRON_IncassiAnnualiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AMATRON_IncassiAnnualiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMATRON_IncassiMensiliByAnno">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="anno" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMATRON_IncassiMensiliByAnnoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AMATRON_IncassiMensiliByAnnoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMATRON_IncassiPerCategoria">
+        <s:complexType />
+      </s:element>
+      <s:element name="AMATRON_IncassiPerCategoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AMATRON_IncassiPerCategoriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="AMATRON_LoginSoapIn">
@@ -32,10 +104,50 @@
   <wsdl:message name="AMATRON_LoginSoapOut">
     <wsdl:part name="parameters" element="tns:AMATRON_LoginResponse" />
   </wsdl:message>
+  <wsdl:message name="AMATRON_GetAnnoSoapIn">
+    <wsdl:part name="parameters" element="tns:AMATRON_GetAnno" />
+  </wsdl:message>
+  <wsdl:message name="AMATRON_GetAnnoSoapOut">
+    <wsdl:part name="parameters" element="tns:AMATRON_GetAnnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AMATRON_IncassiAnnualiSoapIn">
+    <wsdl:part name="parameters" element="tns:AMATRON_IncassiAnnuali" />
+  </wsdl:message>
+  <wsdl:message name="AMATRON_IncassiAnnualiSoapOut">
+    <wsdl:part name="parameters" element="tns:AMATRON_IncassiAnnualiResponse" />
+  </wsdl:message>
+  <wsdl:message name="AMATRON_IncassiMensiliByAnnoSoapIn">
+    <wsdl:part name="parameters" element="tns:AMATRON_IncassiMensiliByAnno" />
+  </wsdl:message>
+  <wsdl:message name="AMATRON_IncassiMensiliByAnnoSoapOut">
+    <wsdl:part name="parameters" element="tns:AMATRON_IncassiMensiliByAnnoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AMATRON_IncassiPerCategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:AMATRON_IncassiPerCategoria" />
+  </wsdl:message>
+  <wsdl:message name="AMATRON_IncassiPerCategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:AMATRON_IncassiPerCategoriaResponse" />
+  </wsdl:message>
   <wsdl:portType name="WsAmatronSoap">
     <wsdl:operation name="AMATRON_Login">
       <wsdl:input message="tns:AMATRON_LoginSoapIn" />
       <wsdl:output message="tns:AMATRON_LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_GetAnno">
+      <wsdl:input message="tns:AMATRON_GetAnnoSoapIn" />
+      <wsdl:output message="tns:AMATRON_GetAnnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_IncassiAnnuali">
+      <wsdl:input message="tns:AMATRON_IncassiAnnualiSoapIn" />
+      <wsdl:output message="tns:AMATRON_IncassiAnnualiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_IncassiMensiliByAnno">
+      <wsdl:input message="tns:AMATRON_IncassiMensiliByAnnoSoapIn" />
+      <wsdl:output message="tns:AMATRON_IncassiMensiliByAnnoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_IncassiPerCategoria">
+      <wsdl:input message="tns:AMATRON_IncassiPerCategoriaSoapIn" />
+      <wsdl:output message="tns:AMATRON_IncassiPerCategoriaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WsAmatronSoap" type="tns:WsAmatronSoap">
@@ -49,11 +161,83 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AMATRON_GetAnno">
+      <soap:operation soapAction="http://tempuri.org/AMATRON_GetAnno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_IncassiAnnuali">
+      <soap:operation soapAction="http://tempuri.org/AMATRON_IncassiAnnuali" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_IncassiMensiliByAnno">
+      <soap:operation soapAction="http://tempuri.org/AMATRON_IncassiMensiliByAnno" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_IncassiPerCategoria">
+      <soap:operation soapAction="http://tempuri.org/AMATRON_IncassiPerCategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WsAmatronSoap12" type="tns:WsAmatronSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="AMATRON_Login">
       <soap12:operation soapAction="http://tempuri.org/AMATRON_Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_GetAnno">
+      <soap12:operation soapAction="http://tempuri.org/AMATRON_GetAnno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_IncassiAnnuali">
+      <soap12:operation soapAction="http://tempuri.org/AMATRON_IncassiAnnuali" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_IncassiMensiliByAnno">
+      <soap12:operation soapAction="http://tempuri.org/AMATRON_IncassiMensiliByAnno" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_IncassiPerCategoria">
+      <soap12:operation soapAction="http://tempuri.org/AMATRON_IncassiPerCategoria" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -132,7 +132,7 @@
                                 <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Gestione
                                 </a>
 
-                                <ul class="dropdown-menu" style="margin-top: 1vw;" aria-labelledby="dropdownMenuButton1">
+                                
 
                                 <ul class="dropdown-menu dmenu" aria-labelledby="dropdownMenuButton1">
 

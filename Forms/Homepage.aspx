@@ -46,7 +46,7 @@
                         <img style="width: 100px" src="/assets/images/carmine_banner.png" />
                     </span>
                     <span>
-                        <h3 class="masterColorText">Ottieni lo sconto dell'1% sui tuoi acquisti con <i>Amatron Prime</i></h3>
+                        <h3 class="masterColorText">I prezzi dei nostri prodotti sono comprensivi dei costi di spedizione!</h3>
                     </span>
                 </div>
             </div>

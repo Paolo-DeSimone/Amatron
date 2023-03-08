@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,12 +6,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
-using RifChangePwd;
 
 public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
         if (!IsPostBack)
         {
             string chiave = Session["chiaveUSR"].ToString();
@@ -19,6 +19,10 @@ public partial class _Default : System.Web.UI.Page
             CORRIERI C = new CORRIERI();
             C.chiave = int.Parse(chiave);
             DataTable DT = C.CORRIERI_SelectByKey();
+            string RagioneSociale = DT.Rows[0]["RagioneSociale"].ToString();
+            //titolo della pagina con ragionesociale di chi si logga
+            titolo.InnerHtml = "<h2>Profilo di " + RagioneSociale + "</h2>";
+            C.chiave = int.Parse(chiave);
             txtRAGIONESOCIALE.Text = DT.Rows[0]["RAGIONESOCIALE"].ToString();
             txtPIVA.Text = DT.Rows[0]["PIVA"].ToString();
             txtCOSTO.Text = DT.Rows[0]["COSTOCORRIERE"].ToString();
@@ -30,6 +34,7 @@ public partial class _Default : System.Web.UI.Page
             txtNUMERO.Text = DT.Rows[0]["TELEFONO"].ToString();
         }
     }
+
 
     protected void btnModifica_Click(object sender, EventArgs e)
     {
@@ -55,14 +60,13 @@ public partial class _Default : System.Web.UI.Page
         C.abilitato = true;
         C.PWD = Session["pwdUSR"].ToString();
         C.CORRIERI_Update();
-        //alert di prova per verifica inserimento modifiche
         string script = @"notifySuccess('Modifiche effettuate')"; //messaggio di successo
         ScriptManager.RegisterStartupScript(this, GetType(), "btnModifica_Click", script, true);
     }
     protected void btnModPWD_Click(object sender, EventArgs e)
     {
 
-        //controllo se uno dei campi è vuoto, non apro la connessione al db
+        //controllo se uno dei campi è vuoto
         if (txtOldPWD.Text.Trim() == "" || txtNewPWD.Text.Trim() == "" || txtConfPWD.Text.Trim() == "")
         {
             string script1 = @"notifyError('Campi vuoti!')"; //messaggio di errore

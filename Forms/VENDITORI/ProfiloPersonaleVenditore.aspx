@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script src="../../assets/js/notify.js"></script>
     <link href="../../assets/css/notify.css" rel="stylesheet" />
+    <link href="../../assets/css/masterStyle.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <%--Pagina di visualizzazione dati personali dei corrieri--%>
@@ -51,13 +52,6 @@
                             <div class="col-2">
                                 <asp:Label ID="Label6" Class="lblCORRIERI" runat="server" Text="Provincia:"></asp:Label>
                                 <asp:TextBox ID="txtPROVINCIA" class="form-control form-control-sm" MaxLength="2" runat="server"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="row mt-2">
-                            <div class="col-5"></div>
-                            <div class="col-2 text-center">
-                                <asp:Label ID="lblCOSTO" Class="lblCORRIERI" runat="server" Text="Costo:"></asp:Label>
-                                <asp:TextBox ID="txtCOSTO" class="form-control form-control-sm" runat="server" MaxLength="11"></asp:TextBox>
                             </div>
                         </div>
                         <p></p>

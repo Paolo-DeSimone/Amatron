@@ -8,9 +8,29 @@
     <div class="container">
         <!-- CARD CON PRODOTTO -->
         <div class="card mb-3 ordini">
+<<<<<<< HEAD
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="/assets/images/pc.jpg" class="img-fluid rounded-start" alt="..." />
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <asp:Label ID="lblTitolo" runat="server" Text="Label">HP Elitebook Folio, Notebook Pc portatile Pronto All'uso</asp:Label>
+                        </h5>
+                        <p class="card-text">Display 14", Intel Core i7, Ram 8GB, SSD 240GB, Win 10Pro, Pacchetto Office 2021</p>
+                        <%-- pulsante che apre il popup --%>
+                        <asp:Button ID="btnRecensione" runat="server" Text="Lascia una recensione" class="btn masterButton" />
+                        <%-- pulsante che apre il popup --%>
+                        <asp:Button ID="btnReso" runat="server" Text="Effettua reso" class="btn masterButton" />
+                        <p class="card-text">Prezzo:<asp:Label ID="lblPrezzo" runat="server" Text="Label">550€</asp:Label></p>
+                        <asp:Label ID="lblStato" runat="server" Text=""></asp:Label>
+                    </div>
+=======
             <div class="row g-0" runat="server" id="cardprodotto">
                 <%--<div class="col-md-4";>
                     <img src="/assets/images/pc.jpg" class="img-fluid rounded-start" alt="..." />
+>>>>>>> 28d2d580b498f97a3d1379e6a9253f2cae705858
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">

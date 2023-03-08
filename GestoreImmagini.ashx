@@ -1,4 +1,4 @@
-﻿<%@ WebHandler Language="C#" Class="GestoreImmagini" %>
+<%@ WebHandler Language="C#" Class="GestoreImmagini" %>
 using System.Threading.Tasks;
 using System;
 using System.Web;

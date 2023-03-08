@@ -1,5 +1,5 @@
 .CardMargine {
-    margin: 6vh auto;
+    margin: 2vh auto;
     margin-left: 38%;
     margin-bottom: 0%;
 }
@@ -130,10 +130,38 @@
     outline: none;
 }
 
+.close-btnAggiungiProdotto {
+    display: block;
+    position: fixed;
+    top: 24%;
+    right: 36%;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+.close-btnAggiungiImg {
+    display: block;
+    position: fixed;
+    top: 34%;
+    right: 37%;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+}
+
 .close-btnQTAZero {
     position: fixed;
-    top:38%;
-    right:41%;
+    top: 38%;
+    right: 41%;
     background-color: Transparent;
     background-repeat: no-repeat;
     border: none;
@@ -171,7 +199,8 @@
     align-content: space-around;
     flex-wrap: wrap;
 }
-.FlexBoxlblQTAZero{
-    display:flex;
-    flex-wrap:wrap;
+
+.FlexBoxlblQTAZero {
+    display: flex;
+    flex-wrap: wrap;
 }

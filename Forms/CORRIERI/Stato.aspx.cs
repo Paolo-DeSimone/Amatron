@@ -32,12 +32,12 @@ public partial class _Default : System.Web.UI.Page
         }
         //faccio la session per passare la chiave
         Session["chiaveSPEDIZIONE"] = grdSTATO.SelectedValue.ToString();
-        Session["STATO_SPEDIZIONE"] = grdSTATO.SelectedRow.Cells[3].Text;
+        Session["STATO_SPEDIZIONE"] = grdSTATO.SelectedRow.Cells[2].Text;
     }
 
     protected void btnStato_Click(object sender, EventArgs e)
     {
-        if (grdSTATO.SelectedRow.Cells[3].Text == "D")
+        if (grdSTATO.SelectedRow.Cells[2].Text == "D")
         {
             string scripterr = @"notifyError('Prodotto già consegnato')"; //messaggio di errore
             ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripterr, true);

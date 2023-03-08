@@ -114,10 +114,4 @@ public class ORDINI
         return dt;
     }
 
-    public DataTable CORRIERI_CHIAVERandom()
-    {
-        DataTable dt = new DataTable();
-        dt = O.CORRIERI_CHIAVERandom();
-        return dt;
-    }
 }

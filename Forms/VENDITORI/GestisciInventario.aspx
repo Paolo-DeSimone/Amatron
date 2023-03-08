@@ -19,10 +19,10 @@
         // Aggiungi un gestore di eventi per il clic del pulsante di chiusura
         btnAggiungi.addEventListener("click", function () {
             // Trova la pagina di popup
-           Response.redirect("VisualizzaProdotti.aspx")
+            Response.redirect("VisualizzaProdotti.aspx")
 
             // Nascondi la pagina di popup impostando lo stile di visualizzazione su "none"
-            
+
         });
     </script>
 
@@ -36,28 +36,28 @@
             </h2>
         </div>
         <div class="row center">
-            <div class=" col-7">
-            </div>
-
             <asp:SqlDataSource ID="SdsProdotti" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="SELECT [chiave], [TITOLO] FROM [PRODOTTI] WHERE ([QTA] = 0) ORDER BY [TITOLO]">
                 <SelectParameters>
                     <asp:Parameter DefaultValue="0" Name="QTA" Type="Int32" />
                 </SelectParameters>
             </asp:SqlDataSource>
-
-            <div class=" col-3">
-                <div class="text-right">
+            <center>
+                <div class="FlexBoxF">
                     <asp:Label ID="lblQuantita" runat="server" Text="Quantità:"></asp:Label>
                     <asp:TextBox ID="txtQuantita" Class="form-control form-control-sm" runat="server" Style="width: 120px;" TextMode="Number"></asp:TextBox>
                 </div>
-            </div>
-        </div>
-        <div class="">
-            <br />
+            </center>
             <center>
-                <asp:Button ID="btnAggiungi" Class="btn masterButton" runat="server" Text="Salva" OnClick="btnAggiungi_Click" />
+
+                <div class="FlexBoxlblQTAZero">
+                    <asp:Label ID="lblQTANonZero" runat="server" Text=""></asp:Label>
+                </div>
             </center>
         </div>
+        <br />
+        <center>
+            <asp:Button ID="btnAggiungi" Class="btn masterButton" runat="server" Text="Salva" OnClick="btnAggiungi_Click" />
+        </center>
 
         <%-- Script che permette di accettare solo numeri nella textbox --%>
         <asp:ScriptManager ID="ScriptManager1" runat="server">

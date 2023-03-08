@@ -17,14 +17,15 @@ public partial class Ordini : System.Web.UI.Page
             CLIENTI C = new CLIENTI();
             DataTable dt = new DataTable();
 
-            dt = O.SelectAll();
             O.chiavecliente = int.Parse(dt.Rows[0]["chiaveCLIENTE"].ToString());
+            dt = O.SelectAll();
                 
            // lblDescrizione = P.descrizione;
             cardprodotto.InnerHtml = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 cardprodotto.InnerHtml += " <div class=\"col-md-4\";>" +
+                 //immagine
                  "<img src='/GestoreImmagini.ashx?c=" + dt.Rows[i]["chiave"] + "' class='d-block w-100' style='width:600px; height:450px' alt='Product Image 1'/>" +
                  "</div>" +
                  "<div class=\"col -md-8\"> " +

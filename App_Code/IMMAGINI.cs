@@ -22,7 +22,7 @@ public class IMMAGINI
     public string titolo;
     public byte[] doc;
     public string tipo;
-    RifImmagini.WsImmaginiSoapClient I = new RifImmagini.WsImmaginiSoapClient();
+    rifImmaginiOL.WsImmaginiSoapClient I = new rifImmaginiOL.WsImmaginiSoapClient();
 
     public void Insert()
     {

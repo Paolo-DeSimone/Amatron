@@ -10,7 +10,7 @@ public class CARRELLO
     public int chiaveCLIENTE;
     public int chiavePRODOTTO;
     public int QTA;
-    public RifCarrello.WsCarrelloSoapClient C = new RifCarrello.WsCarrelloSoapClient();
+    public rifCarrelloOL.WsCarrelloSoapClient C = new rifCarrelloOL.WsCarrelloSoapClient();
     public DataTable DT = new DataTable();
 
     public CARRELLO()

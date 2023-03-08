@@ -56,8 +56,8 @@ public class WsResi : System.Web.Services.WebService
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spRESI_SelectAll";
+        dt = DB.EseguiSPRead();
         dt.TableName = "SelectByAll";
-        dt= DB.EseguiSPRead();
         return dt;
     }
 
@@ -68,8 +68,8 @@ public class WsResi : System.Web.Services.WebService
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spRESI_SelectAll_DDL";
-        dt.TableName = "SelectAllDDL";
         dt = DB.EseguiSPRead();
+        dt.TableName = "SelectAllDDL";
         return dt ;
     }
     [WebMethod]
@@ -80,8 +80,8 @@ public class WsResi : System.Web.Services.WebService
         DB.cmd.Parameters.Clear();
         DB.query = "spRESI_SelectByKey";
         DB.cmd.Parameters.AddWithValue("chiave", chiave);
-        dt.TableName = "SelectByKey";
         dt =  DB.EseguiSPRead();
+        dt.TableName = "SelectByKey";
         return dt;
     }
 
@@ -93,8 +93,8 @@ public class WsResi : System.Web.Services.WebService
         DB.cmd.Parameters.Clear();
         DB.query = "spRESI_SelectByOrder";
         DB.cmd.Parameters.AddWithValue("chiaveOrdine", chiaveordine);
+        dt = DB.EseguiSPRead();
         dt.TableName = "SelectByOrder";
-        dt= DB.EseguiSPRead();
         return dt;
     }
 }

@@ -56,8 +56,8 @@ public class WsOrdini : System.Web.Services.WebService
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spORDINI_SelectAll";
-        dt.TableName = "SelectByAll";
         dt = DB.EseguiSPRead();
+        dt.TableName = "SelectByAll";
         return dt;
     }
 
@@ -70,8 +70,8 @@ public class WsOrdini : System.Web.Services.WebService
         DB.query = "spORDINI_SelectByKey";
         DB.cmd.Parameters.AddWithValue("chiave", chiave);
         // DB.cmd.Parameters.AddWithValue();
+        dt = DB.EseguiSPRead();
         dt.TableName = "SelectByKey";
-        dt=DB.EseguiSPRead();
         return dt;
     }
 
@@ -82,10 +82,9 @@ public class WsOrdini : System.Web.Services.WebService
         DATABASE DB = new DATABASE();
         DB.cmd.Parameters.Clear();
         DB.query = "spORDINI_SelectByCorriere";
-        dt.TableName = "SelectByCorriere";
         DB.cmd.Parameters.AddWithValue("chiaveCORRIERE", chiavecorriere);
-        // DB.cmd.Parameters.AddWithValue();
-        dt=DB.EseguiSPRead();
+        dt = DB.EseguiSPRead();
+        dt.TableName = "SelectByCorriere";
         return dt;
     }
 
@@ -97,9 +96,8 @@ public class WsOrdini : System.Web.Services.WebService
         DB.cmd.Parameters.Clear();
         DB.query = "spORDINI_SelectByProdotto";
         DB.cmd.Parameters.AddWithValue("chiavePRODOTTO", chiaveprodotto);
-        // DB.cmd.Parameters.AddWithValue();
-        dt.TableName = "SelectByProdotto";
         dt=DB.EseguiSPRead();
+        dt.TableName = "SelectByProdotto";
         return dt;
     }
 
@@ -111,8 +109,8 @@ public class WsOrdini : System.Web.Services.WebService
         DB.cmd.Parameters.Clear();
         DB.query = "spORDINI_SelectByCliente";
         DB.cmd.Parameters.AddWithValue("chiaveCLIENTE", chiavecliente);
-        dt.TableName = "SelectByKey";
         dt = DB.EseguiSPRead();
+        dt.TableName = "SelectByKey";
         return dt;
     }
 

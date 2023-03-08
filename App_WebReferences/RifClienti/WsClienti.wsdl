@@ -28,8 +28,6 @@
             <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="PWD" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="prime" type="s:boolean" />
-            <s:element minOccurs="0" maxOccurs="1" name="scadenzaprime" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="cognome" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="nome" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="indirizzo" type="s:string" />

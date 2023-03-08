@@ -152,8 +152,6 @@ public class WsProdotti : System.Web.Services.WebService
         return dt;
     }
 
-    
-
     [WebMethod]
     public DataTable PRODOTTI_MAX20Novità()
     {
@@ -202,5 +200,4 @@ public class WsProdotti : System.Web.Services.WebService
         dt.TableName = "SelectImgCategoria";
         return dt;
     }
-
 }

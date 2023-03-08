@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.ServiceModel.Dispatcher;
 using System.Web;
 using System.Web.UI;
@@ -12,27 +13,25 @@ public partial class Default2 : System.Web.UI.Page
 {
     public static int stelle;
     int valstelle;
-   
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
         PRODOTTI P = new PRODOTTI();
         IMMAGINI I = new IMMAGINI();
-        P.chiave = 1; //Session["chiaveProdotto"]
+        P.chiave = int.Parse(HttpContext.Current.Request.QueryString["c"].ToString());
 
         DataTable dt = new DataTable();
         dt = P.SelectByKey();
-        I.chiaveprodotto = 1; // Session["chiaveProdotto"]
+        I.chiaveprodotto = int.Parse(HttpContext.Current.Request.QueryString["c"].ToString());
         DataTable IMGDT = I.SelectChiavi();
         for (int i = 0; i < IMGDT.Rows.Count; i++)
         {
             Carosello.InnerHtml += " <div class=\"carousel-item active\">" +
-                "<img src='/GestoreImmagini.ashx?c=" + IMGDT.Rows[i]["chiave"] +"' class='d-block w-100' style='width:600px; height:450px' alt='Product Image 1'/>" +
+                "<img src='/GestoreImmagini.ashx?c=" + IMGDT.Rows[i]["chiave"] + "' class='d-block w-100' style='width:600px; height:450px' alt='Product Image 1'/>" +
                 "</div>";
         }
-        //litImg1
-        //litImg2 Da fillare col gestore
-        //litImg3
+
         litProdotto.Text = dt.Rows[0]["titolo"].ToString();
         litPrezzoCentro.Text = dt.Rows[0]["prezzo"].ToString();
         litPrezzoDestra.Text = dt.Rows[0]["prezzo"].ToString();
@@ -53,40 +52,40 @@ public partial class Default2 : System.Web.UI.Page
         }
 
         VALUTAZIONI V = new VALUTAZIONI();
-        V.chiaveprodotto = 1; //Session["chiaveProdotto"]
+        V.chiaveprodotto = int.Parse(HttpContext.Current.Request.QueryString["c"].ToString());
         DataTable DT = V.Media();
-        
+
         valstelle = int.Parse(DT.Rows[0]["MEDIA"].ToString());
 
-        if (valstelle  == 5)
+        if (valstelle == 5)
         {
-            ystar1.Visible= true;
-            ystar2.Visible= true;
-            ystar3.Visible= true;
-            ystar4.Visible= true;
-            ystar5.Visible= true;
+            ystar1.Visible = true;
+            ystar2.Visible = true;
+            ystar3.Visible = true;
+            ystar4.Visible = true;
+            ystar5.Visible = true;
         }
-        if(valstelle == 4)
+        if (valstelle == 4)
         {
-            ystar1.Visible= true;
-            ystar2.Visible= true;
-            ystar3.Visible= true;
-            ystar4.Visible= true;
+            ystar1.Visible = true;
+            ystar2.Visible = true;
+            ystar3.Visible = true;
+            ystar4.Visible = true;
         }
-        if(valstelle == 3)
+        if (valstelle == 3)
         {
-            ystar1.Visible= true;
-            ystar2.Visible= true;
-            ystar3.Visible= true;
-        } 
-        if(valstelle == 2)
-        {
-            ystar1.Visible= true;
-            ystar2.Visible= true;
+            ystar1.Visible = true;
+            ystar2.Visible = true;
+            ystar3.Visible = true;
         }
-        if(valstelle == 1)
+        if (valstelle == 2)
         {
-            ystar1.Visible= true;
+            ystar1.Visible = true;
+            ystar2.Visible = true;
+        }
+        if (valstelle == 1)
+        {
+            ystar1.Visible = true;
         }
 
         P.chiaveCATEGORIA = int.Parse(dt.Rows[0]["chiaveCATEGORIA"].ToString());
@@ -110,6 +109,18 @@ public partial class Default2 : System.Web.UI.Page
                 "</a>" +
                 "</div>";
         }
+
+
+        //DataTable REC = new DataTable();
+        //REC = P.SelectByKey();
+        //I.chiaveprodotto = 1; // Session["chiaveProdotto"]
+        //DataTable IMGDT = I.SelectChiavi();
+        //for (int i = 0; i < IMGDT.Rows.Count; i++)
+        //{
+        //    Carosello.InnerHtml += " <div class=\"carousel-item active\">" +
+        //        "<img src='/GestoreImmagini.ashx?c=" + IMGDT.Rows[i]["chiave"] + "' class='d-block w-100' style='width:600px; height:450px' alt='Product Image 1'/>" +
+        //        "</div>";
+        //}
     }
 
     protected void btnAggiungi_Click(object sender, EventArgs e)
@@ -117,8 +128,8 @@ public partial class Default2 : System.Web.UI.Page
         PRODOTTI P = new PRODOTTI();
         CARRELLO C = new CARRELLO();
 
-        //C.chiavePRODOTTO = //Session["chiaveProdotto"];
-        //C.chiaveCLIENTE = Session["chiaveCliente"];
+        C.chiavePRODOTTO = int.Parse(HttpContext.Current.Request.QueryString["c"].ToString());
+        C.chiaveCLIENTE = int.Parse(Session["chiaveUSR"].ToString());
         C.QTA = int.Parse(ddlCarrello.SelectedValue.ToString());
         C.INSERT();
         string script = @"notifyError('Prodotto aggiunto al carrello')";
@@ -150,7 +161,7 @@ public partial class Default2 : System.Web.UI.Page
         yellowstar1.Visible = true;
         whitestar2.Visible = false;
         yellowstar2.Visible = true;
-        
+
         yellowstar3.Visible = false;
         yellowstar4.Visible = false;
         yellowstar5.Visible = false;
@@ -219,18 +230,21 @@ public partial class Default2 : System.Web.UI.Page
     {
 
         ORDINI O = new ORDINI();
-        //O.chiavecliente = Session["chiaveCliente"];
-        //O.chiaveprodotto = Session["chiaveProdotto"];
-        DataTable dt = O.SelectProdottoAcquistato();
-        if(dt.Rows.Count > 0 )
-        { 
         VALUTAZIONI V = new VALUTAZIONI();
-        //V.chiaveprodotto = Session["chiaveProdotto"]
-        V.chiaveprodotto = 1;
-        V.stelle= stelle;
-        V.commento = txtDescription.Text.Trim();
-        V.datacommento = DateTime.Now.ToString();
-        V.Insert();       
+        O.chiavecliente = int.Parse(Session["chiaveUSR"].ToString());
+        O.chiaveprodotto = int.Parse(HttpContext.Current.Request.QueryString["c"].ToString());
+        DataTable dt = O.SelectProdottoAcquistato();
+
+        V.chiavecliente = int.Parse(Session["chiaveUSR"].ToString());
+        V.chiaveprodotto = int.Parse(HttpContext.Current.Request.QueryString["c"].ToString());
+        DataTable VADT = V.ProdottoRecensito();
+
+        if (dt.Rows.Count > 0 && VADT.Rows.Count == 0)
+        {
+            V.stelle = stelle;
+            V.commento = txtDescription.Text.Trim();
+            V.datacommento = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+            V.Insert();
         }
         else
         {

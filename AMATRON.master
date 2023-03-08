@@ -131,11 +131,11 @@
                             <div class="dropdown" id="dropdownClienti" runat="server">
                                 <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Gestione
                                 </a>
-<<<<<<< HEAD
-                                <ul class="dropdown-menu" style="margin-top: 1vw;" aria-labelledby="dropdownMenuButton1">
-=======
+
+                                
+
                                 <ul class="dropdown-menu dmenu" aria-labelledby="dropdownMenuButton1">
->>>>>>> 794cee53bd284187def8d0519427f60e7a329904
+
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Ordini_Resi/Ordini.aspx">Ordini</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Profilo/ProfiloModifica.aspx">Profilo Cliente</a></li>
                                     <li><a class="dropdown-item" href="/Forms/PRODOTTI/PaginaProdotto.aspx">Prodotto Test</a></li>

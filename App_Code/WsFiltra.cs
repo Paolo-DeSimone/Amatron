@@ -23,13 +23,14 @@ public class WsFiltra : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable FILTRA(string searchTerm)
+    public DataTable FILTRA(string c, string p)
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
         DB.query = "spFILTRA";
-        DB.cmd.Parameters.AddWithValue("searchTerm", searchTerm);
+        DB.cmd.Parameters.AddWithValue("c", c);
+        DB.cmd.Parameters.AddWithValue("p", p);
         dt = DB.EseguiSPRead();
         dt.TableName = "searchTerm";
         return dt;

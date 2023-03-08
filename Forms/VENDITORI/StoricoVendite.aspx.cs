@@ -14,16 +14,11 @@ public partial class _Default : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            int chiave = 22;
             DataTable DT = new DataTable();
-            DATABASE D = new DATABASE();
-            D.query = "spORDINI_PRODOTTI_CATEGORIA_SelectByVenditore";
-            D.cmd.Parameters.AddWithValue("chiaveVENDITORE", chiave);
-            DT = D.EseguiSPRead();
-            DT.TableName = "VOSelectAll";
-
-
-            GrigliaStoricoVendite.DataSource = DT;
+            VENDITORI V = new VENDITORI();
+            V.chiave = int.Parse(Session["chiaveUSR"].ToString());
+            DT= V.ORDINI_SelectAll();         
+            GrigliaStoricoVendite.DataSource = DT;         
             GrigliaStoricoVendite.DataBind();
         }
 
@@ -31,42 +26,17 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnCerca_Click(object sender, EventArgs e)
     {
-        string TITOLO = txtTitolo.Text;
-        int chiaveCATEGORIA = int.Parse(ddlCategoria.SelectedValue);
-        int chiaveORDINI = int.Parse(ddlNOrdine.SelectedValue);
-        string DInizio = txtDInizio.Text;
-        string DFine = txtDFine.Text;
-        int chiave = 22;
+
 
         DataTable DT = new DataTable();
-        DATABASE D = new DATABASE();
-
-        D.query = "spORDINI_PRODOTTI_CATEGORIA_Filter";
-        D.cmd.Parameters.AddWithValue("TITOLO", TITOLO);
-        D.cmd.Parameters.AddWithValue("chiaveORDINI", chiaveORDINI);
-        D.cmd.Parameters.AddWithValue("chiaveCATEGORIA", chiaveCATEGORIA);
-        D.cmd.Parameters.AddWithValue("chiaveVENDITORE", chiave);
-
-        if (string.IsNullOrWhiteSpace(DInizio))
-        {
-            D.cmd.Parameters.AddWithValue("STARTDATE", DBNull.Value);
-
-        }
-        else
-        {
-            D.cmd.Parameters.AddWithValue("STARTDATE", DateTime.Parse(DInizio));
-        }
-        if (string.IsNullOrWhiteSpace(DFine))
-        {
-            D.cmd.Parameters.AddWithValue("ENDDATE", DBNull.Value);
-
-        }
-        else
-        {
-            D.cmd.Parameters.AddWithValue("ENDDATE", DateTime.Parse(txtDFine.Text));
-
-        }
-        DT = D.EseguiSPRead();
+        VENDITORI V = new VENDITORI();
+        V.TITOLO = txtTitolo.Text;
+        V.chiaveCATEGORIA = int.Parse(ddlCategoria.SelectedValue);
+        V.chiaveORDINI = int.Parse(ddlNOrdine.SelectedValue);
+        V.DInizio = txtDInizio.Text;
+        V.DFine = txtDFine.Text;
+        V.chiave = int.Parse(Session["chiaveUSR"].ToString());
+        DT= V.VENDITORI_Filter();
 
         GrigliaStoricoVendite.DataSource = DT;
         GrigliaStoricoVendite.DataBind();

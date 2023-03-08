@@ -112,7 +112,7 @@ public class WsCarrello : System.Web.Services.WebService
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
         //messo sp di test, bisogna prenere anche l'immagine da IMMAGINI
-        DB.query = "spv_JoinCARRELLO_PRODOTTI_SelectAllItemsInCart";
+        DB.query = "spv_JoinCARRELLO_PRODOTTI_IMMAGINISelectAllItemsInCart";
         DB.cmd.Parameters.AddWithValue("chiaveCLIENTE", chiaveCLIENTE);
         dt = DB.EseguiSPRead();
         dt.TableName = "SelectLastItemInCart";

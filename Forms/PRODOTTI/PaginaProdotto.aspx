@@ -114,6 +114,55 @@
             </div>
         </div>
     </div>
+
+    <hr class="masterColorBG masterColorText" style="height: 6px;" />
+    <br />
+
+    <div class="container mt-1">
+        <div class="row">
+            <div class="card col-md-4 offset-md-5 scrollo border-0" style="height: fit-content">
+                <h3 class="text-center mb-4">Recensioni di altri clienti</h3>
+                <div class="card-header">
+                    <div class="card-body">
+                        <asp:Literal ID="litNomeCliente" runat="server" Text="Giovanni"></asp:Literal>
+                        <hr style="margin: 5px" />
+                        <div>
+                            <asp:ImageButton ID="RecStar1" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="true" />
+                            <asp:ImageButton ID="RecStar2" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="true" />
+                            <asp:ImageButton ID="RecStar3" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="true" />
+                            <asp:ImageButton ID="RecStar4" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="true" />
+                            <asp:ImageButton ID="RecStar5" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="False" />
+                            <p style="color: black">
+                                <asp:Literal ID="litDataRecensione" runat="server" Text="Recensito il 3 Febbraio 2023"></asp:Literal></p>
+                        </div>
+                        <hr style="margin: 5px" />
+                        <p style="color: black">
+                            <asp:Literal ID="litRecensione" runat="server" Text="Figo bello 5 stelle"></asp:Literal></p>
+                    </div>              
+                </div>
+
+                <div class="card-header">
+                    <div class="card-body">
+                        <asp:Literal ID="Literal1" runat="server" Text="Luca"></asp:Literal>
+                        <hr style="margin: 5px" />
+                        <div>
+                            <asp:ImageButton ID="ImageButton1" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="true" />
+                            <asp:ImageButton ID="ImageButton2" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="true" />
+                            <asp:ImageButton ID="ImageButton3" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="true" />
+                            <asp:ImageButton ID="ImageButton4" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="False" />
+                            <asp:ImageButton ID="ImageButton5" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="False" />
+                        </div>
+                        <hr style="margin: 5px" />
+                        <p style="color: black">
+                            <asp:Literal ID="Literal2" runat="server" Text="Assurdo e pazzesco"></asp:Literal></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
     <hr class="masterColorBG masterColorText" style="height: 6px;" />
     <br />
     <div style="clear: both; background-color: #ebebeb">

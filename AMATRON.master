@@ -141,8 +141,8 @@
                                 </a>
                                 <ul class="dropdown-menu dmenu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/PagPers.aspx">Profilo Corriere</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/CORRIERI/Statistiche.aspx">Statistiche</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/Stato.aspx">Stato Ordine</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/CORRIERI/Statistiche.aspx">Statistiche</a></li>
                                     <li><a class="dropdown-item" href="/Forms/LogOut.aspx">Log Out</a></li>
                                 </ul>
                             </div>
@@ -155,6 +155,7 @@
                                     <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneOrdini.aspx">Accetta Ordini</a></li>
                                     <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneResi.aspx">Accetta Resi</a></li>
                                     <li><a class="dropdown-item" href="/Forms/AMATRON/GestioneConfig.aspx">Gestisci Config</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/AMATRON/ReportAMATRON.aspx">Statistiche</a></li>
                                     <li><a class="dropdown-item" href="/Forms/LogOut.aspx">Log Out</a></li>
                                 </ul>
                             </div>
@@ -237,7 +238,7 @@
                         </div>
                         <div class="mx-auto">
                             <hr class="masterColorBG masterColorText" style="height: 3px; margin-top: 40px;" />
-                            <a class="cont testo" href="RecuperaPassword.aspx">Recupera password</a>
+                            <a class="cont testo" href="../RecuperaPassword.aspx">Recupera password</a>
                         </div>
                     </div>
 

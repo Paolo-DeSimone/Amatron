@@ -156,7 +156,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
         }
         else
         {
-            string script = @"notifyError('Dati mancanti, riempire tutti i campi e riprovare')";
+            string script = @"notifyError('Email o password errati riprova')";
             ScriptManager.RegisterStartupScript(this, GetType(), "btnLogin_Click", script, true);
             return;
         }

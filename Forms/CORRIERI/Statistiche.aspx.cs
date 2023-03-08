@@ -31,12 +31,13 @@ public partial class _Default : System.Web.UI.Page
         C.anno = int.Parse(ddlAnni.SelectedValue.ToString());
         C.mese = int.Parse(ddlMesi.SelectedValue.ToString());
         DT = C.CORRIERI_CountSPEDIZIONI();
-        if (DT.Rows[0]["TotaleRicaviCorriere"].ToString() == "")
+        if (DT.Rows.Count == 0)
         {
-            string scripterr = @"notifyError('Non ci sono ordini consegnati per il mese selezionato!')"; //messaggio di errore
-            ScriptManager.RegisterStartupScript(this, GetType(), "btnResocontoCorriere_Click", scripterr, true);
-            return;
+            lblResocontoCorriere.Text = "Non ci sono ordini consegnati per il mese selezionato. Controllare lo stato della spedizione.";
         }
-        lblResocontoCorriere.Text = "€ " + DT.Rows[0]["TotaleRicaviCorriere"].ToString();
+        else
+        {
+            lblResocontoCorriere.Text = "Il ricavo totale delle spedizioni consegnate nel mese selezionato è di € " + DT.Rows[0]["TotaleRicaviCorriere"].ToString();
+        }
     }
 }

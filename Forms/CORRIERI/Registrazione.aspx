@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="Registrazione.aspx.cs" Inherits="Default2" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="Registrazione.aspx.cs" Inherits="Default2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -34,7 +34,17 @@
         <div class="row">
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
-              <h3 style="text-align:center;">Crea un account</h3>
+        <h3 style="text-align:center;">Crea un account</h3>
+                <p>
+                    Effettua la registrazione per poter accedere al tuo profilo personale. Qui avrai la possibilità di iscriverti come cliente, venditore o corriere. 
+                    In base a come desideri iscriverti avrai la possibilità di compilare un form apposito che ti permetterà di sfruttare tutte le funzionalità di Amatron.
+                </p>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">           
                 <div id="tabs">
                     <ul>
                         <li style="width: 32.9%"><a href="#tabs-1" class="masterButton" style="width: 100%;">Cliente</a></li>
@@ -100,7 +110,7 @@
                                         <asp:TextBox ID="txtTelefonoCliente" runat="server" class="form-control form-control-sm"></asp:TextBox>
                                     </div>
                                     <div class="col-lg-6">
-                                        <asp:Button ID="Button1" runat="server" Text="Registrati" class="btn btn-sm masterButton" OnClick="btnRegistraCliente_Click" />
+                                        <asp:Button ID="btnRegistraCliente" runat="server" Text="Registrati" class="btn btn-sm masterButton mt-4" style="float:right" OnClick="btnRegistraCliente_Click" />
                                     </div>
                                 </div>
                             </div>
@@ -231,7 +241,7 @@
                                 <div class="row">
                                     <div class="col-lg-4"></div>
                                     <div class="col-lg-4">
-                                        <label class="lblInBasso">Costo:</label>
+                                        <label class="lblInBasso">Costo per spedizione:</label>
                                         <asp:TextBox ID="txtCostoCorriere" runat="server" class="form-control form-control-sm"></asp:TextBox>
                                     </div>
                                     <div class="col-lg-4"></div>

@@ -95,7 +95,7 @@
         <div class="row">
             <div class="card col-md-4 offset-md-5 scrollo border-0" style="height: fit-content">
                 <h3 class="text-center mb-4">Recensioni di altri clienti</h3>
-                <%--<div class="card-header">--%>
+                <div class="card-header">
                     <div class="card-body">
                         <asp:Literal ID="litNomeCliente" runat="server" Text="Giovanni"></asp:Literal>
                         <hr style="margin: 5px" />
@@ -111,12 +111,10 @@
                         <hr style="margin: 5px" />
                         <p style="color: black">
                             <asp:Literal ID="litRecensione" runat="server" Text="Figo bello 5 stelle"></asp:Literal></p>
-                    </div>
+                    </div>              
                 </div>
 
-                <hr class="masterColorBG masterColorText" style="height: 6px;" />
-
-               <%-- <div class="card-header">--%>
+                <div class="card-header">
                     <div class="card-body">
                         <asp:Literal ID="Literal1" runat="server" Text="Luca"></asp:Literal>
                         <hr style="margin: 5px" />

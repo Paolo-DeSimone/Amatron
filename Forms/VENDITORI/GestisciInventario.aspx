@@ -14,7 +14,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Gestisci Quantità</title>
     <script>
-        document.getElementById("btnAggiungi");        // Aggiungi un gestore di eventi per il clic del pulsante di chiusura        btnAggiungi.addEventListener("click", function () {            // Trova la pagina di popup           Response.redirect("VisualizzaProdotti.aspx")            // Nascondi la pagina di popup impostando lo stile di visualizzazione su "none"                    });
+        document.getElementById("btnAggiungi");
+
+        // Aggiungi un gestore di eventi per il clic del pulsante di chiusura
+        btnAggiungi.addEventListener("click", function () {
+            // Trova la pagina di popup
+           Response.redirect("VisualizzaProdotti.aspx")
+
+            // Nascondi la pagina di popup impostando lo stile di visualizzazione su "none"
+            
+        });
     </script>
 
 </head>

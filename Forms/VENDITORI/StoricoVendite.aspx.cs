@@ -12,36 +12,65 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //if (!IsPostBack)
-        //{
+        if (!IsPostBack)
+        {
+            int chiave = 22;
+            DataTable DT = new DataTable();
+            DATABASE D = new DATABASE();
+            D.query = "spORDINI_PRODOTTI_CATEGORIA_SelectByVenditore";
+            D.cmd.Parameters.AddWithValue("chiaveVENDITORE", chiave);
+            DT = D.EseguiSPRead();
+            DT.TableName = "VOSelectAll";
 
-        //    GrigliaStoricoVendite.DataSourceID = "sdsGrigliaStoricoVendite";
-        //    GrigliaStoricoVendite.DataBind();
-        //}
+
+            GrigliaStoricoVendite.DataSource = DT;
+            GrigliaStoricoVendite.DataBind();
+        }
 
     }
 
     protected void btnCerca_Click(object sender, EventArgs e)
     {
-        //GrigliaStoricoVendite.DataSourceID = "sdsGrigliaStoricoVendite";
+        string TITOLO = txtTitolo.Text;
+        int chiaveCATEGORIA = int.Parse(ddlCategoria.SelectedValue);
+        int chiaveORDINI = int.Parse(ddlNOrdine.SelectedValue);
+        string DInizio = txtDInizio.Text;
+        string DFine = txtDFine.Text;
+        int chiave = 22;
 
-
-        DataTable dt = new DataTable();
+        DataTable DT = new DataTable();
         DATABASE D = new DATABASE();
 
-        D.query= "spORDINI_PRODOTTI_CATEGORIA_Filter";
-        D.cmd.Parameters.AddWithValue("TITOLO", txtTitolo.Text);
-        D.cmd.Parameters.AddWithValue("chiaveCATEGORIA", ddlCategoria.SelectedIndex);
-        D.cmd.Parameters.AddWithValue("chiaveORDINE", ddlCategoria.SelectedIndex);
-        D.cmd.Parameters.AddWithValue("chiaveVENDITORE", 1);
-        D.cmd.Parameters.AddWithValue("STARTDATE", txtDInizio.Text);
-        D.cmd.Parameters.AddWithValue("ENDDATE", txtDFine.Text);
-        dt = D.EseguiSPRead();
+        D.query = "spORDINI_PRODOTTI_CATEGORIA_Filter";
+        D.cmd.Parameters.AddWithValue("TITOLO", TITOLO);
+        D.cmd.Parameters.AddWithValue("chiaveORDINI", chiaveORDINI);
+        D.cmd.Parameters.AddWithValue("chiaveCATEGORIA", chiaveCATEGORIA);
+        D.cmd.Parameters.AddWithValue("chiaveVENDITORE", chiave);
 
-        GrigliaStoricoVendite.DataSource = dt;
+        if (string.IsNullOrWhiteSpace(DInizio))
+        {
+            D.cmd.Parameters.AddWithValue("STARTDATE", DBNull.Value);
 
-        //ScriptManager.RegisterStartupScript(this, GetType(), "","alert('" +  + "')", true);
+        }
+        else
+        {
+            D.cmd.Parameters.AddWithValue("STARTDATE", DateTime.Parse(DInizio));
+        }
+        if (string.IsNullOrWhiteSpace(DFine))
+        {
+            D.cmd.Parameters.AddWithValue("ENDDATE", DBNull.Value);
+
+        }
+        else
+        {
+            D.cmd.Parameters.AddWithValue("ENDDATE", DateTime.Parse(txtDFine.Text));
+
+        }
+        DT = D.EseguiSPRead();
+
+        GrigliaStoricoVendite.DataSource = DT;
         GrigliaStoricoVendite.DataBind();
 
     }
+
 }

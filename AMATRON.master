@@ -99,7 +99,7 @@
                             <%--  BARRA DI RICERCA--%>
                             <div class="input-group searchbar">
 
-
+                                
                                 <asp:DropDownList ID="ddlCategorie" CssClass="btn dropdown-toggle masterButton" runat="server" DataSourceID="sdsCategorie" DataTextField="CATEGORIA" DataValueField="CATEGORIA" AppendDataBoundItems="True">
                                     <asp:ListItem Text="Tutte le Categorie" Value="*"></asp:ListItem>
                                 </asp:DropDownList>
@@ -115,14 +115,14 @@
                                 <asp:Button ID="btnCerca" CssClass="btn masterButton input-group-append" Text="Cerca" runat="server" OnClick="btnCerca_Click" />
                             </div>
 
-                            <div class="nav navbar-nav navbar-right masterColorText" runat="server">
+                            <div class="nav navbar-nav navbar-right provaFE masterColorText" runat="server">
                                 <asp:Literal ID="litUtente" Text="" runat="server"></asp:Literal>
                             </div>
                             &nbsp;
                             &nbsp;
 
                             <%--  SIGN UP E SIGN IN--%>
-                            <ul class="nav navbar-nav navbar-right" id="accessIn" runat="server">
+                            <ul class="nav navbar-nav navbar-right mItem" id="accessIn" runat="server">
                                 <li class="nav-item"><a class="nav-link" href="/Forms/CORRIERI/Registrazione.aspx">Registrati</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#" id="show_popup" onclick="showpopup()">Accedi</a></li>
                             </ul>
@@ -131,7 +131,11 @@
                             <div class="dropdown" id="dropdownClienti" runat="server">
                                 <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Gestione
                                 </a>
+<<<<<<< HEAD
+                                <ul class="dropdown-menu" style="margin-top: 1vw;" aria-labelledby="dropdownMenuButton1">
+=======
                                 <ul class="dropdown-menu dmenu" aria-labelledby="dropdownMenuButton1">
+>>>>>>> 794cee53bd284187def8d0519427f60e7a329904
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Ordini_Resi/Ordini.aspx">Ordini</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Profilo/ProfiloModifica.aspx">Profilo Cliente</a></li>
                                     <li><a class="dropdown-item" href="/Forms/PRODOTTI/PaginaProdotto.aspx">Prodotto Test</a></li>
@@ -146,6 +150,7 @@
                                     <li><a class="dropdown-item" href="/Forms/VENDITORI/ProfiloPersonaleVenditore.aspx">Profilo Venditore</a></li>
                                     <li><a class="dropdown-item" href="/Forms/VENDITORI/StoricoVendite.aspx">Storico Vendite</a></li>
                                     <li><a class="dropdown-item" href="/Forms/VENDITORI/VisualizzaProdotti.aspx">Visualizza Prodotti</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/ProfiloPersonaleVenditore.aspx">Profilo Personale</a></li>
                                     <li><a class="dropdown-item" href="/Forms/LogOut.aspx">Log Out</a></li>
                                 </ul>
                             </div>

@@ -24,6 +24,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="RECUPERAPWD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EMAIL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RECUPERAPWDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RECUPERAPWDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="LoginSoapIn">
@@ -32,10 +53,20 @@
   <wsdl:message name="LoginSoapOut">
     <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
+  <wsdl:message name="RECUPERAPWDSoapIn">
+    <wsdl:part name="parameters" element="tns:RECUPERAPWD" />
+  </wsdl:message>
+  <wsdl:message name="RECUPERAPWDSoapOut">
+    <wsdl:part name="parameters" element="tns:RECUPERAPWDResponse" />
+  </wsdl:message>
   <wsdl:portType name="WSLoginSoap">
     <wsdl:operation name="Login">
       <wsdl:input message="tns:LoginSoapIn" />
       <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RECUPERAPWD">
+      <wsdl:input message="tns:RECUPERAPWDSoapIn" />
+      <wsdl:output message="tns:RECUPERAPWDSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WSLoginSoap" type="tns:WSLoginSoap">
@@ -49,11 +80,29 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="RECUPERAPWD">
+      <soap:operation soapAction="http://tempuri.org/RECUPERAPWD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WSLoginSoap12" type="tns:WSLoginSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Login">
       <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RECUPERAPWD">
+      <soap12:operation soapAction="http://tempuri.org/RECUPERAPWD" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

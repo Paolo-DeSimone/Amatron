@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -64,6 +64,8 @@ public partial class _Default : System.Web.UI.Page
     {
         if (gridVisualizzaProdotti.SelectedValue == null)
         {
+            string script = "notifyError('Selezionare un Prodotto da modificare');";
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnAggiungi_Click", script, true);
             return;
         }
         else
@@ -71,6 +73,7 @@ public partial class _Default : System.Web.UI.Page
             ModalPopupExtender1.Enabled = true;
             ModalPopupExtender1.Show();
         }
+
 
 
         //bool btnClicked = Convert.ToBoolean(Session["btnClicked"]);
@@ -103,9 +106,24 @@ public partial class _Default : System.Web.UI.Page
     }
 
 
+    protected void btnAggiungiImmagini_Click(object sender, EventArgs e)
+    {
+        if (gridVisualizzaProdotti.SelectedValue == null)
+        {
+            return;
+        }
+        else
+        {
+            ModalPopupExtender2.Enabled = true;
+            ModalPopupExtender2.Show();
+        }
+    }
+
+
     //protected void chkVuoto_CheckedChanged(object sender, EventArgs e)
     //{
     //    CheckBox chkStatus =(CheckBox)sender;
     //    GridViewRow row = (GridViewRow)chkStatus.NamingContainer;
     //}
+
 }

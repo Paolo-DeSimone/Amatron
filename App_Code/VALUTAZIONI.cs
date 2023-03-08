@@ -11,12 +11,13 @@ using System.Web.Services;
 public class VALUTAZIONI
 {
     public int chiaveprodotto;
+    public int chiavecliente;
     public int stelle;
     public string commento;
     public string datacommento;
     public int chiave;
 
-    RifValutazioni.WsValutazioniSoapClient V = new RifValutazioni.WsValutazioniSoapClient();
+    rifValutazioniOL.WsValutazioniSoapClient V = new rifValutazioniOL.WsValutazioniSoapClient();
 
     public VALUTAZIONI()
     {
@@ -62,6 +63,20 @@ public class VALUTAZIONI
     {
         DataTable dt = new DataTable();
         dt = V.VALUTAZIONI_Media(chiaveprodotto);
+        return dt;
+    }
+    
+    public DataTable ProdottoRecensito()
+    {
+        DataTable dt = new DataTable();
+        dt = V.VALUTAZIONI_ProdottoRecensito(chiaveprodotto, chiavecliente);
+        return dt;
+    }
+    
+    public DataTable RecensioniClienti()
+    {
+        DataTable dt = new DataTable();
+        dt = V.VALUTAZIONI_RecensioniClienti(chiaveprodotto);
         return dt;
     }
 }

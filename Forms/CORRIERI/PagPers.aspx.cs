@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
-using RifChangePwd;
 
 public partial class _Default : System.Web.UI.Page
 {
@@ -22,7 +21,7 @@ public partial class _Default : System.Web.UI.Page
             DataTable DT = C.CORRIERI_SelectByKey();
             string RagioneSociale = DT.Rows[0]["RagioneSociale"].ToString();
             //titolo della pagina con ragionesociale di chi si logga
-            //titolo.InnerHtml = "<h2>Profilo di " + RagioneSociale + "</h2>";
+            titolo.InnerHtml = "<h2>Profilo di " + RagioneSociale + "</h2>";
             C.chiave = int.Parse(chiave);
             txtRAGIONESOCIALE.Text = DT.Rows[0]["RAGIONESOCIALE"].ToString();
             txtPIVA.Text = DT.Rows[0]["PIVA"].ToString();
@@ -35,6 +34,7 @@ public partial class _Default : System.Web.UI.Page
             txtNUMERO.Text = DT.Rows[0]["TELEFONO"].ToString();
         }
     }
+
 
     protected void btnModifica_Click(object sender, EventArgs e)
     {

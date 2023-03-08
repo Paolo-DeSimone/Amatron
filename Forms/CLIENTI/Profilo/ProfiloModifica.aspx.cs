@@ -11,58 +11,62 @@ using System.Data.SqlClient;
 public partial class Default2 : System.Web.UI.Page
 {
 
-    
+
     public void Page_Load(object sender, EventArgs e)
     {
-
-        if (Session["EMAIL"] == null)
+        if (Session["emailUSR"] == null)
         {
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Nessun elemento modificato');", true);
+
             return;
         }
 
-        string EMAIL = Session["EMAIL"].ToString();
+        string EMAIL = Session["emailUSR"].ToString();
 
         if (Session["chiaveUSR"] == null)
         {
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Nessun elemento modificato');", true);
+
             return;
         }
 
-
         string chiaveCLIENTE = Session["chiaveUSR"].ToString();
-
-
         if (string.IsNullOrEmpty(chiaveCLIENTE))
         {
             ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Nessun elemento modificato');", true);
             return;
         }
 
+
         if (!IsPostBack)
         {
 
             CLIENTI CL = new CLIENTI();
             CL.chiave = int.Parse(chiaveCLIENTE);
-            CL.SELECTBYKEY();
-            txtEMAIL.Text = CL.DT.Rows[0]["EMAIL"].ToString();
-            txtCognome.Text = CL.DT.Rows[0]["COGNOME"].ToString();
-            txtNome.Text = CL.DT.Rows[0]["NOME"].ToString();
-            txtIndirizzo.Text = CL.DT.Rows[0]["INDIRIZZO"].ToString();
-            txtCitta.Text = CL.DT.Rows[0]["CITTA"].ToString();
-            txtProvincia.Text = CL.DT.Rows[0]["PROVINCIA"].ToString();
-            txtCAP.Text = CL.DT.Rows[0]["CAP"].ToString();
-            txtTelefono.Text = CL.DT.Rows[0]["TELEFONO"].ToString();
-            
+
+            DataTable DT = CL.SELECTBYKEY();
+            txtEMAIL.Text = DT.Rows[0]["EMAIL"].ToString();
+            txtCognome.Text = DT.Rows[0]["COGNOME"].ToString();
+            txtNome.Text = DT.Rows[0]["NOME"].ToString();
+            txtIndirizzo.Text = DT.Rows[0]["INDIRIZZO"].ToString();
+            txtCitta.Text = DT.Rows[0]["CITTA"].ToString();
+            txtProvincia.Text = DT.Rows[0]["PROVINCIA"].ToString();
+            txtCAP.Text = DT.Rows[0]["CAP"].ToString();
+            txtTelefono.Text = DT.Rows[0]["TELEFONO"].ToString();
 
         }
-
+        CONFIG CONF = new CONFIG();
+        DataTable PRIME = CONF.SelectAll();
+        lblPrimeProMod.Text = PRIME.Rows[0]["COSTOPRIME"].ToString();
     }
     protected void btnSalva_Click(object sender, EventArgs e)
-    {     
+    {
 
         CLIENTI CL = new CLIENTI();
-        CL.chiave = int.Parse((Session["chiave"].ToString()));
-        CL.PRIME = bool.Parse(Session["PRIME"].ToString());
-        CL.SCADENZAPRIME = (Session["SCADENZAPRIME"].ToString());
+        CL.chiave = int.Parse((Session["chiaveUSR"].ToString()));
+        //CL.PRIME = bool.Parse(Session["PRIME"].ToString());
+        //CL.SCADENZAPRIME = (Session["SCADENZAPRIME"].ToString());
+        CL.PWD = txtConfPWD.Text;
         CL.EMAIL = txtEMAIL.Text;
         CL.COGNOME = txtCognome.Text;
         CL.NOME = txtNome.Text;
@@ -75,7 +79,7 @@ public partial class Default2 : System.Web.UI.Page
         CL.UPDATE();
 
         ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Dati modificati con successo')", true);
-    
+
     }
 
     protected void btnModPWD_Click(object sender, EventArgs e)
@@ -112,4 +116,6 @@ public partial class Default2 : System.Web.UI.Page
         string script3 = @"notifyError('Password cambiata con successo!')";
         ScriptManager.RegisterStartupScript(this, GetType(), "btnModPWD_Click", script3, true);
     }
+
+
 }

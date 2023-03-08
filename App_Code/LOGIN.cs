@@ -16,7 +16,8 @@ public class LOGIN
 
     public DataTable Login(string EMAIL, string PWD)
     {
-        RifLogin.WSLoginSoapClient c = new RifLogin.WSLoginSoapClient();
+        //RifLogin.WSLoginSoapClient c = new RifLogin.WSLoginSoapClient();
+        rifLoginOL.WSLoginSoapClient c = new rifLoginOL.WSLoginSoapClient();
         return c.Login(EMAIL, PWD);
     }
 }

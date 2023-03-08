@@ -18,7 +18,7 @@ public class RESI
     public string dataemissione;
 
     //istanzio il web service fuori dalla funzione cosi non devo ripeterlo
-    RifResi.WsResiSoapClient R = new RifResi.WsResiSoapClient();
+    rifResiOL.WsResiSoapClient R = new rifResiOL.WsResiSoapClient();
 
     public RESI()
     {

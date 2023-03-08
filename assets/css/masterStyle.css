@@ -84,6 +84,19 @@ body {
     position: relative;
 }
 
+.PopUpQTA {
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: none;
+    padding-top: 5px;
+    padding-left: 0px;
+    padding-right: 5px;
+    width: fit-content;
+    height: fit-content;
+    border: 0px;
+    position: relative;
+}
+
 .masterPopupBG {
     background-color: #212529;
     filter: alpha(opacity=30);
@@ -98,12 +111,14 @@ body {
 }
 
 .masterBottoneChiusura {
-    position: absolute;
+    border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    position: fixed;
+    float: right;
+    background: no-repeat;
     top: 0;
     right: 0;
-    background-color: Transparent;
-    background-repeat: no-repeat;
-    border: none;
     cursor: pointer;
     overflow: hidden;
     outline: none;
@@ -111,5 +126,19 @@ body {
 .masterCarousel {
     background-color: #ebebeb;
     padding: 10px;
+}
+
+
+.provaFE{
+    margin-right:1vw;
+}
+
+.dmenu {
+    right: 0 !important;
+    left: auto !important;
+}
+
+.masterPlaceholder {
+    min-height: 40vh;
 }
 

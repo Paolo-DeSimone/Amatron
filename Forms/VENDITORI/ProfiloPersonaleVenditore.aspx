@@ -15,6 +15,7 @@
                     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                 </svg>
                 Profilo Venditore</h2>
+            <p class="testo" style="text-align: center; color: black;">Benvenuto nella pagina del profilo personale</p>
         </div>
         <div class="row">
             <div class="col-lg-2"></div>
@@ -23,6 +24,7 @@
                     <div class="card-header text-center">
                         <h4 class="card-title">Dati personali</h4>
                     </div>
+
                     <div class="card-body">
                         <div class="row text-center">
                             <div class="col">
@@ -52,13 +54,6 @@
                             <div class="col-2">
                                 <asp:Label ID="Label6" Class="lblCORRIERI" runat="server" Text="Provincia:"></asp:Label>
                                 <asp:TextBox ID="txtPROVINCIA" class="form-control form-control-sm" MaxLength="2" runat="server"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="row mt-2">
-                            <div class="col-5"></div>
-                            <div class="col-2 text-center">
-                                <asp:Label ID="lblCOSTO" Class="lblCORRIERI" runat="server" Text="Costo:"></asp:Label>
-                                <asp:TextBox ID="txtCOSTO" class="form-control form-control-sm" runat="server" MaxLength="11"></asp:TextBox>
                             </div>
                         </div>
                         <p></p>

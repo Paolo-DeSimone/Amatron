@@ -118,6 +118,7 @@
                             <asp:Button ID="btnCerca" Class="btn masterButton" runat="server" Text="FILTRA" OnClick="btnCerca_Click" />
                         </div>
                     </div>
+
                 </div>
             </div>
 
@@ -145,11 +146,13 @@
                  </div>
                  <div class="col-lg-4">
                     <div class="table-responsive" style="width: 100%;">
+
                     <asp:GridView ID="GrigliaFatturatoVenditore" class="table" runat="server" CssClass="table table-bordered table-condensed" AutoGenerateColumns="False" DataSourceID="sdsGrigliaFatturatoVenditore">
                         <Columns>
                             <asp:BoundField DataField="GuadagnoLordo" HeaderText="GuadagnoLordo" ReadOnly="True" SortExpression="GuadagnoLordo" />
                             <asp:BoundField DataField="PercentualeAmatron" HeaderText="PercentualeAmatron" ReadOnly="True" SortExpression="PercentualeAmatron" />
                             <asp:BoundField DataField="GuadagnoNetto" HeaderText="GuadagnoNetto" ReadOnly="True" SortExpression="GuadagnoNetto" />
+
                         </Columns>
                         <HeaderStyle BackColor="#B469FF" />
                     </asp:GridView>
@@ -159,6 +162,7 @@
                         </SelectParameters>
                     </asp:SqlDataSource>
                 </div>
+
                 </div>
             </div>
         </div>

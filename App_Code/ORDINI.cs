@@ -23,7 +23,7 @@ public class ORDINI
 
 
     //istanzio il web service fuori dalla funzione cosi non devo ripeterlo
-    RifOrdini.WsOrdiniSoapClient O = new RifOrdini.WsOrdiniSoapClient();
+    rifOrdiniOL.WsOrdiniSoapClient O = new rifOrdiniOL.WsOrdiniSoapClient();
 
     public ORDINI()
     {
@@ -99,7 +99,7 @@ public class ORDINI
     }
 
 
-    //Metodo inserito per la grigliaORDINI (George D.)
+    //Metodo inserito per la grigliaORDINI(George D.)
     public DataTable ORDINI_GESTISCI()
     {
         DataTable dt = new DataTable();
@@ -113,4 +113,5 @@ public class ORDINI
         dt = O.CORRIERI_CHIAVERandom();
         return dt;
     }
+
 }

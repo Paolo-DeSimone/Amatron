@@ -64,7 +64,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
         {
             s +=
             "<div class=\"card mx-1 my-1\">" +
-            "<div class=\"card-body \">" +
+            "<div class=\"card-body \" style=\"padding: 5px; color: rgb(0,0,0);\r\n font-weight: 600;\r\n\">" +
             "<div class=\"row\" style=\"margin: 0px; padding: 0px;\">" +
             "<div class=\"row\" style=\"margin: 0px; padding: 0px;\">" +
             "" +
@@ -78,17 +78,24 @@ public partial class AMATRON : System.Web.UI.MasterPage
             "<p style=\"margin: 4px;\"></p>" +
             "" +
             "<div>" + //DIV di apertura
-            "<div>" + DT.Rows[i]["TITOLO"] + "</div>" +
+            "<div>" + DT.Rows[i]["TITOLOprodotto"] + "</div>" +
             "</div>" +
-            "<div>" + DT.Rows[i]["DESCRIZIONE"].ToString() + "</div>" +
+            "<div>" + DT.Rows[i]["DESCRIZIONEprodotto"].ToString() + "</div>" +
             "</div>" + //DIV di chiusura
             "" +
             "<div style=\"padding: 0px;\" class=\"col-sm-3\">" +
-            "" +
             "<div>" + //DIV di apertura
-            "<div>Quantità:" + DT.Rows[i]["QTA"] + "</div>" +
+            "" +
+            "<button onclick=\"closeRightMenu()\"  class=\"w3-bar-item w3-button w3-large\" style=\"padding: 0px; margin-left: 100px;\" >" +
+            "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-x-circle\">" +
+            "<path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\" />" +
+            "<path d=\"M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z\" />" +
+            "</svg>" +
+            "</button>" +
+            "" +
+            "<div>Quantità:" + DT.Rows[i]["QTAprodotto"] + "</div>" +
             "</div>" +
-            "<div>Prezzo:" + DT.Rows[i]["PREZZO"].ToString() + "€</div>" +
+            "<div>Prezzo:" + DT.Rows[i]["PREZZOprodotto"].ToString() + "€</div>" +
             "</div>" + //DIV di chiusura
             "" +
             "" +
@@ -171,6 +178,8 @@ public partial class AMATRON : System.Web.UI.MasterPage
         }
         else
         {
+            string script = @"notifyError('Dati mancanti, riempire tutti i campi e riprovare')";
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnLogin_Click", script, true);
             return;
         }
 

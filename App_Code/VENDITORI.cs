@@ -30,7 +30,7 @@ public class VENDITORI
     public int chiaveCATEGORIA;
     public int chiaveORDINI;
 
-    RifVenditori.WsVenditoriSoapClient V = new RifVenditori.WsVenditoriSoapClient();
+    rifVenditoriOL.WsVenditoriSoapClient V = new rifVenditoriOL.WsVenditoriSoapClient();
     public VENDITORI()
     {
 

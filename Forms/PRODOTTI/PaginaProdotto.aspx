@@ -1,6 +1,33 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="PaginaProdotto.aspx.cs" Inherits="Default2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+     <script>
+        $(document).ready(function () {
+
+            if ($('.bbb_viewed_slider').length) {
+                var viewedSlider = $('.bbb_viewed_slider');
+
+                viewedSlider.owlCarousel(
+                    {
+                        loop: true,
+                        margin: 30,
+                        autoplay: true,
+                        autoplayTimeout: 7000,
+                        nav: false,
+                        dots: false,
+                        responsive:
+                        {
+                            0: { items: 1 },
+                            575: { items: 2 },
+                            768: { items: 3 },
+                            991: { items: 4 },
+                            1199: { items: 5 }
+                        }
+                    }
+                );
+            }
+        });
+     </script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -95,7 +122,7 @@
                 <img style="width: 100px" src="/assets/images/carmine_banner.png" />
             </span>
             <span>
-                <h3 class="masterColorText">Ottieni lo sconto dell'1% sui tuoi acquisti con </h3>
+                <h3 class="masterColorText">I prezzi dei nostri prodotti sono comprensivi dei costi di spedizione!</h3>
             </span>
         </div>
     </div>
@@ -122,4 +149,3 @@
         </div>
     </div>
 </asp:Content>
-

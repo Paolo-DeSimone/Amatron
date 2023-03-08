@@ -15,29 +15,27 @@
                     <div class="card rounded-3">
                         <div class="card-body p-4 p-md-5">
                             <div class="row align-items-center">
-                                <div class="col-lg-11">
-                                    <div style="overflow-y: scroll; height: 500px;">
-                                        <asp:GridView CssClass="table table-bordered table-condensed" ID="grigliaOrdini" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged1">
-                                            <Columns>
-                                                <asp:CommandField ButtonType="Button" ShowSelectButton="True">
-                                                <ControlStyle CssClass="btn masterButton" />
-                                                </asp:CommandField>
-                                                <asp:BoundField DataField="chiaveORDINE" HeaderText="chiaveORDINE" SortExpression="chiaveORDINE" Visible="False" />
-                                                <asp:BoundField DataField="NUMERO_ORDINE" HeaderText="NUMERO_ORDINE" SortExpression="NUMERO_ORDINE" />
-                                                <asp:BoundField DataField="chiaveCORRIERE" HeaderText="chiaveCORRIERE" SortExpression="chiaveCORRIERE" Visible="False" />
-                                                <asp:BoundField DataField="EMAIL_CORRIERI" HeaderText="EMAIL_CORRIERI" SortExpression="EMAIL_CORRIERI" Visible="False" />
-                                                <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATATRANSAZIONE" SortExpression="DATATRANSAZIONE" />
-                                                <asp:BoundField DataField="COGNOME" HeaderText="COGNOME" SortExpression="COGNOME" />
-                                                <asp:BoundField DataField="NOME" HeaderText="NOME" SortExpression="NOME" />
-                                                <asp:BoundField DataField="EMAIL_CLIENTI" HeaderText="EMAIL_CLIENTI" SortExpression="EMAIL_CLIENTI" Visible="False" />
-                                                <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" Visible="False" />
-                                                <asp:BoundField DataField="TITOLO" HeaderText="TITOLO" SortExpression="TITOLO" />
-                                                <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
-                                                <asp:BoundField DataField="EMAIL_VENDITORE" HeaderText="EMAIL_VENDITORE" SortExpression="EMAIL_VENDITORE" Visible="False" />
-                                                <asp:CheckBoxField DataField="GESTITO" HeaderText="GESTITO" SortExpression="GESTITO" />
-                                            </Columns>
-                                            <HeaderStyle BackColor="#B469FF" />
-                                        </asp:GridView>
+                                <div class="col-lg-12">
+                                    <div class="masterHideScroll masterCardHeight">
+                                        <asp:UpdatePanel runat="server">
+                                            <ContentTemplate>
+                                                <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" DataKeyNames="chiave">
+                                                    <Columns>
+                                                        <asp:BoundField DataField="chiave" HeaderText="chiave" SortExpression="chiave" Visible="False" InsertVisible="False" ReadOnly="True" />
+                                                        <asp:BoundField DataField="chiaveCORRIERE" HeaderText="chiaveCORRIERE" SortExpression="chiaveCORRIERE" />
+                                                        <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" />
+                                                        <asp:BoundField DataField="chiaveCLIENTE" HeaderText="chiaveCLIENTE" SortExpression="chiaveCLIENTE" />
+                                                        <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATATRANSAZIONE" SortExpression="DATATRANSAZIONE" />
+                                                        <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
+                                                        <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUMEROORDINE" SortExpression="NUMEROORDINE" />
+                                                        <asp:BoundField DataField="GESTITO" HeaderText="GESTITO" SortExpression="GESTITO" />
+                                                        <asp:CommandField ShowSelectButton="True" ButtonType="Image" ControlStyle-Height="20px" ControlStyle-Width="24px" SelectImageUrl="../../assets/images/spunta_button.png" />
+                                                    </Columns>
+                                                    <SelectedRowStyle BackColor="LightGray" />
+                                                    <HeaderStyle BackColor="#B469FF" />
+                                                </asp:GridView>
+                                            </ContentTemplate>
+                                        </asp:UpdatePanel>
                                     </div>
                                 </div>
                                 <div align="center" class="col-lg-1 align-items-center">

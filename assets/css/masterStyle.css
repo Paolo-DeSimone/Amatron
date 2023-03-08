@@ -1,4 +1,4 @@
-﻿body {
+body {
 
 }
 
@@ -90,6 +90,13 @@
     opacity: 0.8;
 }
 
+
+.dropdownlist {
+    background-color: transparent;
+    border: none;
+    color: #B469FF;
+}
+
 .masterBottoneChiusura {
     border-style: none;
     border-color: inherit;
@@ -106,4 +113,8 @@
 .masterCarousel {
     background-color: #ebebeb;
     padding: 10px;
+}
+
+.provaFE{
+    margin-right:1vw;
 }

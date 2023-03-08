@@ -122,29 +122,32 @@
                     <div class="row mt-3">
                         <div class="col-lg-12">
                             <div class="table-responsive" style="overflow-y: scroll; width: 100%;">
-                                <asp:GridView ID="GrigliaStoricoVendite" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed">
+                                <asp:GridView ID="GrigliaStoricoVendite" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed" DataSourceID="sdsGrigliaFatturatoVenditore">
                                     <Columns>
-                                        <asp:BoundField DataField="chiavePRODOTTI" HeaderText="chiavePRODOTTI" SortExpression="chiavePRODOTTI" Visible="False" />
-                                        <asp:BoundField DataField="chiaveORDINI" HeaderText="chiaveORDINI" SortExpression="chiaveORDINI" Visible="False" />
-                                        <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False" />
-                                        <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" Visible="False" />
-                                        <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
-                                        <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
-                                        <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" SortExpression="PERCAMATRON" />
-                                        <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATA VEND" SortExpression="DATATRANSAZIONE" ApplyFormatInEditMode="true" DataFormatString="{0:d}" />
-                                        <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
-                                        <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUM. ORD." SortExpression="NUMEROORDINE" />
-                                        <asp:BoundField DataField="CATEGORIA" HeaderText="CATEGORIA" SortExpression="CATEGORIA" />
+                                        <asp:BoundField DataField="GuadagnoLordo" HeaderText="GuadagnoLordo" SortExpression="GuadagnoLordo" ReadOnly="True" />
+                                        <asp:BoundField DataField="PercentualeAmatron" HeaderText="PercentualeAmatron" SortExpression="PercentualeAmatron" ReadOnly="True" />
+                                        <asp:BoundField DataField="GuadagnoNetto" HeaderText="GuadagnoNetto" SortExpression="GuadagnoNetto" ReadOnly="True" />
                                     </Columns>
                                     <HeaderStyle BackColor="#B469FF" />
                                 </asp:GridView>
+                                <asp:SqlDataSource ID="sdsGrigliaFatturatoVenditore" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_PRODOTTI_CATEGORIA_Fatturato" SelectCommandType="StoredProcedure">
+                                    <SelectParameters>
+                                        <asp:SessionParameter DefaultValue="" Name="chiaveVENDITORE" SessionField="chiaveUSR" Type="Int32" />
+                                    </SelectParameters>
+                                </asp:SqlDataSource>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-3">
 
-                    <asp:GridView ID="GrigliaFatturatoVenditore" runat="server"></asp:GridView>
+                    <asp:GridView ID="GrigliaFatturatoVenditore" runat="server" AutoGenerateColumns="False" DataSourceID="sdsGrigliaFatturatoVenditore">
+                        <Columns>
+                            <asp:BoundField DataField="GuadagnoLordo" HeaderText="GuadagnoLordo" ReadOnly="True" SortExpression="GuadagnoLordo" />
+                            <asp:BoundField DataField="PercentualeAmatron" HeaderText="PercentualeAmatron" ReadOnly="True" SortExpression="PercentualeAmatron" />
+                            <asp:BoundField DataField="GuadagnoNetto" HeaderText="GuadagnoNetto" ReadOnly="True" SortExpression="GuadagnoNetto" />
+                        </Columns>
+                    </asp:GridView>
 
 
                 </div>

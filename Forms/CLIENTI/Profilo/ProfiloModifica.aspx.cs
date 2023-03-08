@@ -16,8 +16,8 @@ public partial class Default2 : System.Web.UI.Page
     {
         if (Session["emailUSR"] == null)
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Nessun elemento modificato');", true);
-
+            string script = @"notifyError('Utente non registrato')";
+            ScriptManager.RegisterStartupScript(this, GetType(), "Page_Load", script, true);
             return;
         }
 
@@ -25,15 +25,16 @@ public partial class Default2 : System.Web.UI.Page
 
         if (Session["chiaveUSR"] == null)
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Nessun elemento modificato');", true);
-
+            string script = @"notifyError('Utente non registrato')";
+            ScriptManager.RegisterStartupScript(this, GetType(), "Page_Load", script, true);
             return;
         }
 
         string chiaveCLIENTE = Session["chiaveUSR"].ToString();
         if (string.IsNullOrEmpty(chiaveCLIENTE))
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Nessun elemento modificato');", true);
+            string script = @"notifyError('Utente non registrato')";
+            ScriptManager.RegisterStartupScript(this, GetType(), "Page_Load", script, true);
             return;
         }
 
@@ -78,7 +79,8 @@ public partial class Default2 : System.Web.UI.Page
 
         CL.UPDATE();
 
-        ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Dati modificati con successo')", true);
+        string script = @"notifyError('Riempi tutti i campi!')";
+        ScriptManager.RegisterStartupScript(this, GetType(), "btnSalva_Click", script, true);
 
     }
 

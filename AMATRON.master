@@ -118,7 +118,7 @@
                             <div class="dropdown" id="dropdownClienti" runat="server">
                                 <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Gestione
                                 </a>
-                                <ul class="dropdown-menu dmenu"  aria-labelledby="dropdownMenuButton1">
+                                <ul class="dropdown-menu dmenu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Ordini_Resi/Ordini.aspx">Ordini</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Profilo/ProfiloModifica.aspx">Profilo Cliente</a></li>
                                     <li><a class="dropdown-item" href="/Forms/LogOut.aspx">Log Out</a></li>
@@ -132,7 +132,6 @@
                                     <li><a class="dropdown-item" href="/Forms/VENDITORI/ProfiloPersonaleVenditore.aspx">Profilo Venditore</a></li>
                                     <li><a class="dropdown-item" href="/Forms/VENDITORI/StoricoVendite.aspx">Storico Vendite</a></li>
                                     <li><a class="dropdown-item" href="/Forms/VENDITORI/VisualizzaProdotti.aspx">Visualizza Prodotti</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/VENDITORI/ProfiloPersonaleVenditore.aspx">Profilo Personale</a></li>
                                     <li><a class="dropdown-item" href="/Forms/LogOut.aspx">Log Out</a></li>
                                 </ul>
                             </div>
@@ -238,7 +237,7 @@
                         </div>
                         <div class="mx-auto">
                             <hr class="masterColorBG masterColorText" style="height: 3px; margin-top: 40px;" />
-                            <a class="cont testo" href="#">Recupera password</a>
+                            <a class="cont testo" href="RecuperaPassword.aspx">Recupera password</a>
                         </div>
                     </div>
 
@@ -250,15 +249,99 @@
             </section>
 
             <div class="masterHideScroll masterContent">
-                <div class="masterPlaceholder">
+                <div>
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
+
+                    <%--Da qui comincia il Footer--%>
+                    <%--<section>--%>
+                    <%--Da qui comincia il Footer--%>
+                    <%--<section>--%>
+                    <footer>
+                        <div class="container wrap">
+                            <div class="row">
+                                <div class="column">
+                                    <div class="footer-widget about-widget">
+                                        <h2 class="widget-title">About</h2>
+                                        <p>Qui ci andrà una breve introduzione di Amatron</p>
+                                        <div class="cards">
+                                            <i class="fa-brands fa-paypal"></i>
+                                        </div>
+                                        <p><span><i class="fa-solid fa-lock"></i></span>Pagamenti Online in sicurezza</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+
+
+                                    <div class="col-lg-4">
+                                        <div class="footer-widget categories-widget">
+                                            <h2 class="widget-title">Categories</h2>
+                                            <ul>
+                                                <li><a href="#">Clothing</a></li>
+                                                <li><a href="#">Lingerie</a></li>
+                                                <li><a href="#">Footwear</a></li>
+                                                <li><a href="#">Hand Bag</a></li>
+                                                <li><a href="#">Jwellery</a></li>
+                                                <li><a href="#">Belt</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <div class="footer-widget information-widget">
+                                            <h2 class="widget-title">Informations</h2>
+                                            <ul>
+                                                <li><a href="#">About Us</a></li>
+                                                <li><a href="#">Contact Us</a></li>
+                                                <li><a href="#">Term & Condition</a></li>
+                                                <li><a href="#">Return & Exchange</a></li>
+                                                <li><a href="#">Shipping & Delivery</a></li>
+                                                <li><a href="#">Private Policy</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="footer-widget">
+                                            <h2 class="widget-title">Contact</h2>
+                                            <div class="contact-address">
+                                                <i class="fa-sharp fa-solid fa-location-dot"></i>Address: XYZ, New Delhi, India. Pin-Code : 110005
+                                       
+                                            </div>
+                                            <div class="contact-number">
+                                                <i class="fa-solid fa-phone"></i>Phone : +91 123456789
+                                       
+                                            </div>
+                                            <div class="contact-email">
+                                                <i class="fa-solid fa-envelope"></i>Email: contact@amatron.com
+                                       
+                                            </div>
+                                            <div class="social-widget">
+                                                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                                <a href="#"><i class="fa-brands fa-discord"></i></a>
+                                                <a href="#"><i class="fa-brands fa-github"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="copyright">
+                            <div class="container">
+                                <p>
+                                    Copyright ©
+                                   
+                                <script type="text/javascript">document.write(new Date().getFullYear());</script>
+                                    Amatron.com, Inc. All Right reserved | Design made with <i class="fa-solid fa-heart"></i>by <a href="#" target="_blank">AGANAWAY</a>
+                                </p>
+                            </div>
+                        </div>
+                    </footer>
                 </div>
-                <section>
-                    <div style="background-color: black; color: white; min-height: 300px; margin-top: 50px;">
-                        FOOTER TEXT
-                    </div>
-                </section>
+                <%--</section>--%>
             </div>
         </div>
     </form>

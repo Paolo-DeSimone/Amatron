@@ -15,27 +15,33 @@
                     <div class="card rounded-3">
                         <div class="card-body p-4 p-md-5">
                             <div class="row align-items-center">
-                                <div class="col-lg-12">
+                                <div class="col-lg-11">
                                     <div class="masterHideScroll masterCardHeight">
                                         <asp:UpdatePanel runat="server">
                                             <ContentTemplate>
-                                                <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" DataKeyNames="chiave">
+                                                <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged" AutoGenerateColumns="False" DataSourceID="SqlDataSource2">
                                                     <Columns>
-                                                        <asp:BoundField DataField="chiave" HeaderText="chiave" SortExpression="chiave" Visible="False" InsertVisible="False" ReadOnly="True" />
-                                                        <asp:BoundField DataField="chiaveCORRIERE" HeaderText="chiaveCORRIERE" SortExpression="chiaveCORRIERE" />
-                                                        <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" />
-                                                        <asp:BoundField DataField="chiaveCLIENTE" HeaderText="chiaveCLIENTE" SortExpression="chiaveCLIENTE" />
+                                                        <asp:BoundField DataField="NUMERO_ORDINE" HeaderText="N°ORDINE" SortExpression="NUMERO_ORDINE" />
+                                                        <asp:BoundField DataField="COGNOME_CLIENTI" HeaderText="COGNOME CLIENTE" SortExpression="COGNOME_CLIENTI" />
+                                                        <asp:BoundField DataField="NOME_CLIENTI" HeaderText="NOME CLIENTE" SortExpression="NOME_CLIENTI" />
+                                                        <asp:BoundField DataField="EMAIL_CLIENTI" HeaderText="EMAIL_CLIENTI" SortExpression="EMAIL_CLIENTI" Visible="False" />
+                                                        <asp:BoundField DataField="RAGIONE_SOCIALE" HeaderText="RAG.SOCIALE" SortExpression="RAGIONE_SOCIALE" />
+                                                        <asp:BoundField DataField="EMAIL_VENDITORE" HeaderText="EMAIL_VENDITORE" SortExpression="EMAIL_VENDITORE" Visible="False" />
                                                         <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATATRANSAZIONE" SortExpression="DATATRANSAZIONE" />
+                                                        <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
                                                         <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
-                                                        <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUMEROORDINE" SortExpression="NUMEROORDINE" />
-                                                        <asp:BoundField DataField="GESTITO" HeaderText="GESTITO" SortExpression="GESTITO" />
-                                                        <asp:CommandField ShowSelectButton="True" ButtonType="Image" ControlStyle-Height="20px" ControlStyle-Width="24px" SelectImageUrl="../../assets/images/spunta_button.png" />
+                                                        <asp:BoundField DataField="EMAIL_CORRIERI" HeaderText="EMAIL_CORRIERI" SortExpression="EMAIL_CORRIERI" Visible="False" />
+                                                        <asp:BoundField DataField="STATO_SPEDIZIONE" HeaderText="STATO" SortExpression="STATO_SPEDIZIONE" />
+                                                        <asp:CommandField ButtonType="Image" SelectImageUrl="~/assets/images/spunta_button.png" ShowSelectButton="True">
+                                                        <ControlStyle Height="20px" Width="24px" />
+                                                        </asp:CommandField>
                                                     </Columns>
                                                     <SelectedRowStyle BackColor="LightGray" />
                                                     <HeaderStyle BackColor="#B469FF" />
                                                 </asp:GridView>
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
+                                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_GESTISCI" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                     </div>
                                 </div>
                                 <div align="center" class="col-lg-1 align-items-center">
@@ -50,8 +56,6 @@
                 </div>
             </div>
         </div>
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_GESTISCI" SelectCommandType="StoredProcedure">
-        </asp:SqlDataSource>
     </section>
 
 </asp:Content>

@@ -16,9 +16,8 @@ public partial class Default2 : System.Web.UI.Page
         PRODOTTI P = new PRODOTTI();
 
         int i = 0;
-        Session["searchTerm"] = "corpo";
-        P.searchTerm = Session["searchTerm"].ToString();
-        DataTable dt = P.FILTRA();
+        string c = Request.QueryString["c"].ToString();
+        string p = Request.QueryString["p"].ToString();
 
         if (!IsPostBack)
         {
@@ -26,10 +25,9 @@ public partial class Default2 : System.Web.UI.Page
 
             //P.searchTerm = Session[searchTerm]; //qui ci andrà la Session[searchTerm]
 
-            DataTable dt = P.FILTRA();
+            DataTable dt = P.FILTRA(c, p);
             //variabile j inserita solo per testare il caricamento immagini. Va tolta quando verranno caricate le immagini e i prodotti dal db
             for (int j = 0; j < dt.Rows.Count; j++)
-
             {
 
                 if (i == 0)
@@ -44,12 +42,16 @@ public partial class Default2 : System.Web.UI.Page
                 lit.InnerHtml += "<div class='col-lg-2 scrollo' style='height: 350px; overflow-y: scroll; overflow-x: hidden'>";
                 //lit.InnerHtml += "<asp:ImageButton ID='ImageButton1' runat='server' CssClass='image' ImageUrl='/AsyncHandler.ashx?c=" + chiave + "' /> ";
                 //lit.InnerHtml += "<img id='" + chiave + "' onclick=\"showPopup(" + chiave + ",'" + titolo + "','" + descrizione + "')\" class='image' src='/AsyncHandler.ashx?c=" + chiave + "' />";
-                lit.InnerHtml += "<img src='/GestoreImmagini.ashx?c=" + dt.Rows[j]["chiave"] + "' class='d-block w-100' alt='Product Image 1' style='width:600px;height:450px'/>";
+                lit.InnerHtml += "<a href='/Forms/PRODOTTI/PaginaProdotto.aspx?c=" + dt.Rows[j]["chiave"] +"' >";
+                lit.InnerHtml += "<img src='/Img.ashx?c=" + dt.Rows[j]["chiave"] + "' class='d-block w-100' alt='Product Image 1' style='height:200px'/>";
                 lit.InnerHtml += "<p>";
-                lit.InnerHtml += "" + prezzo + "";
+                lit.InnerHtml += "€" + prezzo + "";
                 lit.InnerHtml += "</p>";
+                lit.InnerHtml += "<p>Cat.:&nbsp;" + dt.Rows[j]["CATEGORIA"] + "</p>";
                 lit.InnerHtml += "" + descrizione + "";
+                lit.InnerHtml += "</a>";
                 lit.InnerHtml += "</div>";
+                
                 if (i == 4)
                 {
                     lit.InnerHtml += "<div class='col-lg-1'></div>";
@@ -66,11 +68,4 @@ public partial class Default2 : System.Web.UI.Page
             }
         }
     }
-
 }
-
-
-
-
-
-

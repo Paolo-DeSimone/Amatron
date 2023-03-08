@@ -126,10 +126,10 @@ public class PRODOTTI
         return dt;
     }
 
-    public DataTable FILTRA()
+    public DataTable FILTRA(string c, string p)
     {
         DataTable dt = new DataTable();
-        dt = F.FILTRA(searchTerm);
+        dt = F.FILTRA(c, p);
         return dt;
     }
 

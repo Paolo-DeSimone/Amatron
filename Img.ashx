@@ -1,4 +1,4 @@
-﻿<%@ WebHandler Language="C#" Class="Img" %>
+<%@ WebHandler Language="C#" Class="Img" %>
 
 using System;
 using System.Web;
@@ -17,12 +17,13 @@ public class Img : IHttpHandler {
         I.chiaveprodotto = chiave;
         dt = I.SelectByProdotto();
 
-        //leggo i dati dell'immagine dalla datatable
+        // leggo i dati dell'immagine dalla datatable
         string titolo = dt.Rows[0]["TITOLO_IMMAGINE"].ToString();
         string tipo = dt.Rows[0]["TIPO"].ToString();
         byte[] ImgData = (byte[])dt.Rows[0]["DOC"];
 
-        //mi serve il codice per ricostruire l'immagine in formato web/http
+
+        // mi serve il codice per ricostruire l'immagine in formato web/http
         context.Response.Buffer = true;
         context.Response.Charset = "";
         context.Response.AppendHeader("Content-Disposition", "attachement; filename=" + titolo);

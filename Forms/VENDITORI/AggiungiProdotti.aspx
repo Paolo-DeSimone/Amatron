@@ -48,7 +48,7 @@
                         <%-- creo una lit immagini che andrà popolata nel cs con la preview delle immagini caricate --%>
                         <asp:Literal ID="litImmagini" runat="server"></asp:Literal>
                         <p></p>
-                        <asp:FileUpload Class="form-control" ID="fileUpload1" runat="server" Style="width: 480px;" accept=".png,.jpg,.jpeg,.gif" />
+                        <asp:FileUpload Class="form-control" multiple="multiple" ID="fileUpload1" runat="server" Style="width: 480px;" accept=".png,.jpg,.jpeg,.gif" />
                     </div>
                 </div>
 
@@ -68,7 +68,7 @@
 
 
 
-                <div class="text-left center row">
+                <div class="text-left center row" style="margin-left: 0px; margin-right: 0px;">
 
                     <div class="col-sm-4 col-4">
                         <asp:Label ID="lblPrezzo" runat="server" class="form-label" Text="Prezzo:"></asp:Label>
@@ -80,7 +80,7 @@
                         <asp:Label Class="form-label" ID="lblQuantita" runat="server" Text="Quantità:"></asp:Label>
                     </div>
                 </div>
-                <div class="row text-left center">
+                <div class="row text-left center" style="margin-left: 0px; margin-right: 0px;">
                     <div class="col-sm-4 col-4">
                         <asp:TextBox Class="form-control-sm" ID="txtPrezzo" runat="server" Style="width: 65px;"></asp:TextBox>€
                     </div>

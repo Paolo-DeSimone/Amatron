@@ -81,6 +81,4 @@ public class WsImmagini : System.Web.Services.WebService
         dt.TableName = "SelectChiavi";
         return dt;
     }
-
 }
-

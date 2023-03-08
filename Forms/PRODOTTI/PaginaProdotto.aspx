@@ -183,7 +183,6 @@
                 <div class="col">
                     <div class="bbb_viewed_title_container">
                         <h3 class="bbb_viewed_title masterColorText">
-                            <img style="width: 80px" src="/assets/images/icon_new.png" />
                             <span>Prodotti simili</span>
                         </h3>
                         <div class="bbb_viewed_nav_container">

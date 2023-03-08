@@ -122,7 +122,7 @@
                     <div class="row mt-3">
                         <div class="col-lg-12">
                             <div class="table-responsive" style="overflow-y: scroll; width: 100%;">
-                                <asp:GridView ID="GrigliaStoricoVendite" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed" DataSourceID="sdsGrigliaFatturatoVenditore">
+                                <asp:GridView ID="GrigliaStoricoVendite" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed">
                                     <Columns>
                                         <asp:BoundField DataField="GuadagnoLordo" HeaderText="GuadagnoLordo" SortExpression="GuadagnoLordo" ReadOnly="True" />
                                         <asp:BoundField DataField="PercentualeAmatron" HeaderText="PercentualeAmatron" SortExpression="PercentualeAmatron" ReadOnly="True" />

@@ -4,9 +4,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <input id="Text1" visible="false" runat="server" type="number" />
     <input id="Text2" visible="false" runat="server" type="text" />
@@ -102,12 +101,12 @@
                                         <%--grafico--%>
                                         <div>
                                             <center>
-                                                <asp:Chart ID="chartIncassiCategoria" runat="server" DataSourceID="sdsIncassiCategoria" Palette="None" PaletteCustomColors="180, 105, 255" Width="1000px" >
+                                                <asp:Chart ID="chartIncassiCategoria" runat="server" DataSourceID="sdsIncassiCategoria" Palette="None" PaletteCustomColors="180, 105, 255" Width="1000px">
                                                     <Series>
-                                                        <asp:Series Name="Series1" XValueMember="CATEGORIA" YValueMembers="GUADAGNO_TOTALE" ></asp:Series>
+                                                        <asp:Series Name="Series1" XValueMember="CATEGORIA" YValueMembers="GUADAGNO_TOTALE"></asp:Series>
                                                     </Series>
                                                     <ChartAreas>
-                                                        <asp:ChartArea Name="ChartArea1" ></asp:ChartArea>
+                                                        <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
                                                     </ChartAreas>
                                                 </asp:Chart>
                                                 <asp:SqlDataSource ID="sdsIncassiCategoria" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spAMATRON_IncassiPerCategoria" SelectCommandType="StoredProcedure"></asp:SqlDataSource>

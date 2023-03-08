@@ -16,6 +16,10 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["chiaveUSR"] == null)
+        {
+            Response.Redirect("/Forms/Homepage.aspx");
+        }
 
         PRODOTTI P = new PRODOTTI();
         IMMAGINI I = new IMMAGINI();

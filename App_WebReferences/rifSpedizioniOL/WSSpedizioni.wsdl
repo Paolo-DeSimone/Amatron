@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SPEDIZIONI_Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="chiaveOrdine" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="stato" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataora" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SPEDIZIONI_InsertResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SPEDIZIONI_SelectAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="SPEDIZIONI_SelectAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SPEDIZIONI_SelectAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SPEDIZIONI_SelectByKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SPEDIZIONI_SelectByKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SPEDIZIONI_SelectByKeyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SPEDIZIONI_SelectByOrdine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SPEDIZIONI_SelectByOrdineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SPEDIZIONI_SelectByOrdineResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SPEDIZIONI_UpdateStato">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="STATO" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SPEDIZIONI_UpdateStatoResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SPEDIZIONI_InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:SPEDIZIONI_Insert" />
+  </wsdl:message>
+  <wsdl:message name="SPEDIZIONI_InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:SPEDIZIONI_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="SPEDIZIONI_SelectAllSoapIn">
+    <wsdl:part name="parameters" element="tns:SPEDIZIONI_SelectAll" />
+  </wsdl:message>
+  <wsdl:message name="SPEDIZIONI_SelectAllSoapOut">
+    <wsdl:part name="parameters" element="tns:SPEDIZIONI_SelectAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="SPEDIZIONI_SelectByKeySoapIn">
+    <wsdl:part name="parameters" element="tns:SPEDIZIONI_SelectByKey" />
+  </wsdl:message>
+  <wsdl:message name="SPEDIZIONI_SelectByKeySoapOut">
+    <wsdl:part name="parameters" element="tns:SPEDIZIONI_SelectByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="SPEDIZIONI_SelectByOrdineSoapIn">
+    <wsdl:part name="parameters" element="tns:SPEDIZIONI_SelectByOrdine" />
+  </wsdl:message>
+  <wsdl:message name="SPEDIZIONI_SelectByOrdineSoapOut">
+    <wsdl:part name="parameters" element="tns:SPEDIZIONI_SelectByOrdineResponse" />
+  </wsdl:message>
+  <wsdl:message name="SPEDIZIONI_UpdateStatoSoapIn">
+    <wsdl:part name="parameters" element="tns:SPEDIZIONI_UpdateStato" />
+  </wsdl:message>
+  <wsdl:message name="SPEDIZIONI_UpdateStatoSoapOut">
+    <wsdl:part name="parameters" element="tns:SPEDIZIONI_UpdateStatoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsSpedizioniSoap">
+    <wsdl:operation name="SPEDIZIONI_Insert">
+      <wsdl:input message="tns:SPEDIZIONI_InsertSoapIn" />
+      <wsdl:output message="tns:SPEDIZIONI_InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SPEDIZIONI_SelectAll">
+      <wsdl:input message="tns:SPEDIZIONI_SelectAllSoapIn" />
+      <wsdl:output message="tns:SPEDIZIONI_SelectAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SPEDIZIONI_SelectByKey">
+      <wsdl:input message="tns:SPEDIZIONI_SelectByKeySoapIn" />
+      <wsdl:output message="tns:SPEDIZIONI_SelectByKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SPEDIZIONI_SelectByOrdine">
+      <wsdl:input message="tns:SPEDIZIONI_SelectByOrdineSoapIn" />
+      <wsdl:output message="tns:SPEDIZIONI_SelectByOrdineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SPEDIZIONI_UpdateStato">
+      <wsdl:input message="tns:SPEDIZIONI_UpdateStatoSoapIn" />
+      <wsdl:output message="tns:SPEDIZIONI_UpdateStatoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsSpedizioniSoap" type="tns:WsSpedizioniSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SPEDIZIONI_Insert">
+      <soap:operation soapAction="http://tempuri.org/SPEDIZIONI_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SPEDIZIONI_SelectAll">
+      <soap:operation soapAction="http://tempuri.org/SPEDIZIONI_SelectAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SPEDIZIONI_SelectByKey">
+      <soap:operation soapAction="http://tempuri.org/SPEDIZIONI_SelectByKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SPEDIZIONI_SelectByOrdine">
+      <soap:operation soapAction="http://tempuri.org/SPEDIZIONI_SelectByOrdine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SPEDIZIONI_UpdateStato">
+      <soap:operation soapAction="http://tempuri.org/SPEDIZIONI_UpdateStato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsSpedizioniSoap12" type="tns:WsSpedizioniSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SPEDIZIONI_Insert">
+      <soap12:operation soapAction="http://tempuri.org/SPEDIZIONI_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SPEDIZIONI_SelectAll">
+      <soap12:operation soapAction="http://tempuri.org/SPEDIZIONI_SelectAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SPEDIZIONI_SelectByKey">
+      <soap12:operation soapAction="http://tempuri.org/SPEDIZIONI_SelectByKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SPEDIZIONI_SelectByOrdine">
+      <soap12:operation soapAction="http://tempuri.org/SPEDIZIONI_SelectByOrdine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SPEDIZIONI_UpdateStato">
+      <soap12:operation soapAction="http://tempuri.org/SPEDIZIONI_UpdateStato" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsSpedizioni">
+    <wsdl:port name="WsSpedizioniSoap" binding="tns:WsSpedizioniSoap">
+      <soap:address location="https://amatronws.brovia.it/WebServices/WSSpedizioni.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsSpedizioniSoap12" binding="tns:WsSpedizioniSoap12">
+      <soap12:address location="https://amatronws.brovia.it/WebServices/WSSpedizioni.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -21,7 +21,6 @@
                                             <ContentTemplate>
                                                 <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" DataKeyNames="chiave">
                                                     <Columns>
-                                                        <asp:CommandField ShowSelectButton="True" />
                                                         <asp:BoundField DataField="chiave" HeaderText="chiave" SortExpression="chiave" Visible="False" InsertVisible="False" ReadOnly="True" />
                                                         <asp:BoundField DataField="chiaveCORRIERE" HeaderText="chiaveCORRIERE" SortExpression="chiaveCORRIERE" />
                                                         <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" />
@@ -30,20 +29,19 @@
                                                         <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
                                                         <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUMEROORDINE" SortExpression="NUMEROORDINE" />
                                                         <asp:BoundField DataField="GESTITO" HeaderText="GESTITO" SortExpression="GESTITO" />
+                                                        <asp:CommandField ShowSelectButton="True" ButtonType="Image" ControlStyle-Height="20px" ControlStyle-Width="24px" SelectImageUrl="../../assets/images/spunta_button.png" />
                                                     </Columns>
+                                                    <SelectedRowStyle BackColor="LightGray" />
                                                     <HeaderStyle BackColor="#B469FF" />
                                                 </asp:GridView>
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
                                     </div>
-                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                 </div>
-                            </div>
-                            <div class="row align-items-center">
-                                <div class="col-lg-6">
-                                    <asp:Button ID="btnAccetta" class="btn masterButton" runat="server" Text="Accetta" />
-                                </div>
-                                <div class="col-lg-6">
+                                <div align="center" class="col-lg-1 align-items-center">
+                                    <asp:Button ID="btnAccetta" class="btn masterButton" runat="server" Text="Accetta" OnClick="btnAccetta_Click" />
+                                    <br />
+                                    <br />
                                     <asp:Button ID="btnRifiuta" class="btn masterButton" runat="server" Text="Rifiuta" />
                                 </div>
                             </div>
@@ -52,6 +50,8 @@
                 </div>
             </div>
         </div>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_GESTISCI" SelectCommandType="StoredProcedure">
+        </asp:SqlDataSource>
     </section>
 
 </asp:Content>

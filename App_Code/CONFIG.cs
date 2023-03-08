@@ -14,7 +14,7 @@ public class CONFIG
     public int perc101_1000;
     public int perc1001;
     public DataTable DT = new DataTable();
-    RifConfig.WsConfigSoapClient C = new RifConfig.WsConfigSoapClient();
+    rifConfigOL.WsConfigSoapClient C = new rifConfigOL.WsConfigSoapClient();
     public CONFIG()
     {
 

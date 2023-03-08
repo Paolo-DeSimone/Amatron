@@ -20,7 +20,7 @@ public class CLIENTI
     public string PROVINCIA;
     public string CAP;
     public string TELEFONO;
-    RifClienti.WsClientiSoapClient CL = new RifClienti.WsClientiSoapClient();
+    rifClientiOL.WsClientiSoapClient CL = new rifClientiOL.WsClientiSoapClient();
     public DataTable DT = new DataTable();
 
 
@@ -78,7 +78,7 @@ public class CLIENTI
     //Metodo per modificare i dati del cliente
     public void UPDATE()
     {
-        CL.CLIENTI_Update(chiave,EMAIL,PWD,PRIME,SCADENZAPRIME,COGNOME,NOME,INDIRIZZO,CITTA,PROVINCIA,CAP,TELEFONO);
+        CL.CLIENTI_Update(chiave,EMAIL,PWD,COGNOME,NOME,INDIRIZZO,CITTA,PROVINCIA,CAP,TELEFONO);
     }
 
 

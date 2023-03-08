@@ -14,13 +14,15 @@
             <div class="col-lg-3"></div>
         </div>
         <div class="row">
-            <div class="col-lg-4"></div>
-            <div class="col-lg-4">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
                 <center>
                     <h4>Resoconto consegne</h4>
+                    <p>Il presente grafico presenta solamente le spedizioni che sono state già consegnate</p>
                 </center>
+                
             </div>
-            <div class="col-lg-4"></div>
+            <div class="col-lg-3"></div>
         </div>
         <div class="row">
             <div class="col-lg-3"></div>

@@ -15,7 +15,7 @@
             <img src="../../../assets/images/amatron-prime.png" />
             <div class="card-body">
                 <h5 class="card-title">Amatron Prime</h5>
-                <p class="card-text primeScritta">Amatron prime è un servizio che ti permetterà di avere uno sconto dell'1% su ogni prodotto acquistato.</p>
+                <p class="card-text primeScritta">Amatron prime &egrave; un servizio che ti permetter&agrave; di avere uno sconto dell'<asp:Label ID="lblPrimepopup" runat="server" Text=""></asp:Label>% su ogni prodotto acquistato.</p>
                 <h2 class="card-title">Iscrizione annuale gratuita! </h2>
                     <br /> 
                     

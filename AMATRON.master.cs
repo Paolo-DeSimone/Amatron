@@ -112,28 +112,6 @@ public partial class AMATRON : System.Web.UI.MasterPage
 
 
 
-    [WebMethod/*(EnableSession = true)*/] 
-    public static string Accedi(string USR, string PWD)
-    {
-        UTENTI U = new UTENTI();
-        U.username = USR;
-        U.password = PWD;
-        DataTable DT = new DataTable();
-        DT = U.Login();
-
-        if (DT.Rows.Count != 0)
-        {
-            //HttpContext.Current.Session["chiaveUSR"] = DT.Rows[0]["chiave"];
-            return "Benvenuto";
-        }
-        else
-        {
-            return "Utente non registrato";
-        }
-    }
-
-
-
     protected void btnLogin_Click(object sender, EventArgs e)
     {
         string EMAIL = txtEMAIL.Value.ToString();
@@ -178,7 +156,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
         }
         else
         {
-            string script = @"notifyError('Dati mancanti, riempire tutti i campi e riprovare')";
+            string script = @"notifyError('Email o password errati riprova')";
             ScriptManager.RegisterStartupScript(this, GetType(), "btnLogin_Click", script, true);
             return;
         }

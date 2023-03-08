@@ -116,4 +116,11 @@ public class ORDINI
         return dt;
     }
 
+    public DataTable SelectByOrdineCliente()
+    {
+        DataTable dt = new DataTable();
+        dt = O.ORDINI_SelectOrdineCliente(chiavecliente);
+        return dt;
+    }
+
 }

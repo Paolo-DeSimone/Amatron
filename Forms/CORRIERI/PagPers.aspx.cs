@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
-using RifChangePwd;
 
 public partial class _Default : System.Web.UI.Page
 {

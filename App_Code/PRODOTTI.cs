@@ -20,8 +20,8 @@ public class PRODOTTI
     public string datacaricamento;
     public int percamatron;
     public string searchTerm;
-    RifProdotti.WsProdottiSoapClient P = new RifProdotti.WsProdottiSoapClient();
-    RifFiltra.WsFiltraSoapClient F = new RifFiltra.WsFiltraSoapClient();
+    rifProdottiOL.WsProdottiSoapClient P = new rifProdottiOL.WsProdottiSoapClient();
+    rifFiltraOL.WsFiltraSoapClient F = new rifFiltraOL.WsFiltraSoapClient();
     
 
 

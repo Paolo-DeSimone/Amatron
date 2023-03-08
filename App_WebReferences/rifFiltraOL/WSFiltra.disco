@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="https://amatronws.brovia.it/WebServices/WSFiltra.asmx?wsdl" docRef="https://amatronws.brovia.it/WebServices/WSFiltra.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="https://amatronws.brovia.it/WebServices/WSFiltra.asmx" xmlns:q1="http://tempuri.org/" binding="q1:WsFiltraSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="https://amatronws.brovia.it/WebServices/WSFiltra.asmx" xmlns:q2="http://tempuri.org/" binding="q2:WsFiltraSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

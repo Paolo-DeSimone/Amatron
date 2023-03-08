@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Resi_Insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiaveordine" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="descrizione" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="qtaresa" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="accettazione" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="datarichiesta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataemissione" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Resi_InsertResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Resi_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="accettazione" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="dataemissione" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Resi_UpdateResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Resi_SelectAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="Resi_SelectAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Resi_SelectAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RESI_SelectAll_DDL">
+        <s:complexType />
+      </s:element>
+      <s:element name="RESI_SelectAll_DDLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RESI_SelectAll_DDLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RESI_SelectByKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RESI_SelectByKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RESI_SelectByKeyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RESI_SelectByOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiaveordine" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RESI_SelectByOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RESI_SelectByOrderResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Resi_InsertSoapIn">
+    <wsdl:part name="parameters" element="tns:Resi_Insert" />
+  </wsdl:message>
+  <wsdl:message name="Resi_InsertSoapOut">
+    <wsdl:part name="parameters" element="tns:Resi_InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resi_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:Resi_Update" />
+  </wsdl:message>
+  <wsdl:message name="Resi_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:Resi_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Resi_SelectAllSoapIn">
+    <wsdl:part name="parameters" element="tns:Resi_SelectAll" />
+  </wsdl:message>
+  <wsdl:message name="Resi_SelectAllSoapOut">
+    <wsdl:part name="parameters" element="tns:Resi_SelectAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="RESI_SelectAll_DDLSoapIn">
+    <wsdl:part name="parameters" element="tns:RESI_SelectAll_DDL" />
+  </wsdl:message>
+  <wsdl:message name="RESI_SelectAll_DDLSoapOut">
+    <wsdl:part name="parameters" element="tns:RESI_SelectAll_DDLResponse" />
+  </wsdl:message>
+  <wsdl:message name="RESI_SelectByKeySoapIn">
+    <wsdl:part name="parameters" element="tns:RESI_SelectByKey" />
+  </wsdl:message>
+  <wsdl:message name="RESI_SelectByKeySoapOut">
+    <wsdl:part name="parameters" element="tns:RESI_SelectByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="RESI_SelectByOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:RESI_SelectByOrder" />
+  </wsdl:message>
+  <wsdl:message name="RESI_SelectByOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:RESI_SelectByOrderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WsResiSoap">
+    <wsdl:operation name="Resi_Insert">
+      <wsdl:input message="tns:Resi_InsertSoapIn" />
+      <wsdl:output message="tns:Resi_InsertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Resi_Update">
+      <wsdl:input message="tns:Resi_UpdateSoapIn" />
+      <wsdl:output message="tns:Resi_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Resi_SelectAll">
+      <wsdl:input message="tns:Resi_SelectAllSoapIn" />
+      <wsdl:output message="tns:Resi_SelectAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RESI_SelectAll_DDL">
+      <wsdl:input message="tns:RESI_SelectAll_DDLSoapIn" />
+      <wsdl:output message="tns:RESI_SelectAll_DDLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RESI_SelectByKey">
+      <wsdl:input message="tns:RESI_SelectByKeySoapIn" />
+      <wsdl:output message="tns:RESI_SelectByKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RESI_SelectByOrder">
+      <wsdl:input message="tns:RESI_SelectByOrderSoapIn" />
+      <wsdl:output message="tns:RESI_SelectByOrderSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WsResiSoap" type="tns:WsResiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Resi_Insert">
+      <soap:operation soapAction="http://tempuri.org/Resi_Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Resi_Update">
+      <soap:operation soapAction="http://tempuri.org/Resi_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Resi_SelectAll">
+      <soap:operation soapAction="http://tempuri.org/Resi_SelectAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RESI_SelectAll_DDL">
+      <soap:operation soapAction="http://tempuri.org/RESI_SelectAll_DDL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RESI_SelectByKey">
+      <soap:operation soapAction="http://tempuri.org/RESI_SelectByKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RESI_SelectByOrder">
+      <soap:operation soapAction="http://tempuri.org/RESI_SelectByOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WsResiSoap12" type="tns:WsResiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Resi_Insert">
+      <soap12:operation soapAction="http://tempuri.org/Resi_Insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Resi_Update">
+      <soap12:operation soapAction="http://tempuri.org/Resi_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Resi_SelectAll">
+      <soap12:operation soapAction="http://tempuri.org/Resi_SelectAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RESI_SelectAll_DDL">
+      <soap12:operation soapAction="http://tempuri.org/RESI_SelectAll_DDL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RESI_SelectByKey">
+      <soap12:operation soapAction="http://tempuri.org/RESI_SelectByKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RESI_SelectByOrder">
+      <soap12:operation soapAction="http://tempuri.org/RESI_SelectByOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WsResi">
+    <wsdl:port name="WsResiSoap" binding="tns:WsResiSoap">
+      <soap:address location="https://amatronws.brovia.it/WebServices/WSResi.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WsResiSoap12" binding="tns:WsResiSoap12">
+      <soap12:address location="https://amatronws.brovia.it/WebServices/WSResi.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

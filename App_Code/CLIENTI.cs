@@ -20,7 +20,7 @@ public class CLIENTI
     public string PROVINCIA;
     public string CAP;
     public string TELEFONO;
-    RifClienti.WsClientiSoapClient CL = new RifClienti.WsClientiSoapClient();
+    rifClientiOL.WsClientiSoapClient CL = new rifClientiOL.WsClientiSoapClient();
     public DataTable DT = new DataTable();
 
 

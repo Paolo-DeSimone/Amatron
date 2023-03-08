@@ -23,14 +23,23 @@ public class WsFiltra : System.Web.Services.WebService
     }
 
     [WebMethod]
+<<<<<<< HEAD
     public DataTable FILTRA(int chiaveProdotti, int chiaveCategorie)
+=======
+    public DataTable FILTRA(string c, string p)
+>>>>>>> a7f7603e955c12c823a34c63b81d145f49123cc1
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
         DB.query = "spFILTRA";
+<<<<<<< HEAD
         DB.cmd.Parameters.AddWithValue("p", chiaveProdotti);
         DB.cmd.Parameters.AddWithValue("c", chiaveCategorie);
+=======
+        DB.cmd.Parameters.AddWithValue("c", c);
+        DB.cmd.Parameters.AddWithValue("p", p);
+>>>>>>> a7f7603e955c12c823a34c63b81d145f49123cc1
         dt = DB.EseguiSPRead();
         dt.TableName = "searchTerm";
         return dt;

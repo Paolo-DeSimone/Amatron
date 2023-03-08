@@ -68,16 +68,20 @@ public partial class _Default : System.Web.UI.Page
         //controllo per vedere se già abilitato
         if (V.abilitato == true)
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Venditore già abilitato');", true);
+            //error
+            string script = @"notifyError('Venditore gia abilitato')"; //messaggio di errore
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnAbilitaVenditori_Click", script, true);
             return;
-            
+
         }
         else 
         {
             V.Abilita();
             client.Send(mail); //mando mail
-            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Venditore abilitato');", true);
-            
+                               //error
+            string script = @"notifySuccess('Venditore abilitato')"; //messaggio di successo
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnAbilitaVenditori_Click", script, true);
+
         }
         grigliaVenditori.DataBind();
 
@@ -137,7 +141,8 @@ public partial class _Default : System.Web.UI.Page
         //controllo per vedere se già abilitato
         if (C.abilitato == true)
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Venditore già abilitato');", true);
+            string script = @"notifyError('Corriere gia abilitato')"; //messaggio di errore
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnAbilitaCorrieri_Click", script, true);
             return;
 
         }
@@ -146,7 +151,8 @@ public partial class _Default : System.Web.UI.Page
             
             C.CORRIERI_Abilita();
             client.Send(mail); //mando mail
-            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Venditore abilitato');", true);
+            string script = @"notifySuccess('Corriere abilitato')"; //messaggio di successo
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnAbilitaCorrieri_Click", script, true);
 
         }
         grigliaCorrieri.DataBind();

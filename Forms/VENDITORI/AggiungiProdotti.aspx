@@ -1,10 +1,12 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AggiungiProdotti.aspx.cs" Inherits="Venditori_AggiungiProdotti" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AggiungiProdotti.aspx.cs" Inherits="Venditori_AggiungiProdotti" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <script src="../../assets/js/notify.js"></script>
+    <link href="../../assets/css/notify.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="/assets/css/ValerioVenditore.css" rel="stylesheet" />
     <%--    <link href="/assets/css/cssFrancescoVENDITORE.css" rel="stylesheet" />--%>
@@ -46,7 +48,7 @@
                         <%-- creo una lit immagini che andrà popolata nel cs con la preview delle immagini caricate --%>
                         <asp:Literal ID="litImmagini" runat="server"></asp:Literal>
                         <p></p>
-                        <asp:FileUpload Class="form-control" ID="fileUpload1" runat="server" Style="width: 480px;" accept=".png,.jpg,.jpeg,.gif" />
+                        <asp:FileUpload Class="form-control" multiple="multiple" ID="fileUpload1" runat="server" Style="width: 480px;" accept=".png,.jpg,.jpeg,.gif" />
                     </div>
                 </div>
 
@@ -66,7 +68,7 @@
 
 
 
-                <div class="text-left center row">
+                <div class="text-left center row" style="margin-left: 0px; margin-right: 0px;">
 
                     <div class="col-sm-4 col-4">
                         <asp:Label ID="lblPrezzo" runat="server" class="form-label" Text="Prezzo:"></asp:Label>
@@ -78,9 +80,9 @@
                         <asp:Label Class="form-label" ID="lblQuantita" runat="server" Text="Quantità:"></asp:Label>
                     </div>
                 </div>
-                <div class="row text-left center">
+                <div class="row text-left center" style="margin-left: 0px; margin-right: 0px;">
                     <div class="col-sm-4 col-4">
-                        <asp:TextBox Class="form-control-sm" ID="txtPrezzo" runat="server" Style="width: 50px;"></asp:TextBox>€
+                        <asp:TextBox Class="form-control-sm" ID="txtPrezzo" runat="server" Style="width: 65px;"></asp:TextBox>€
                     </div>
                     <div class="col-sm-6 col-6">
 
@@ -89,12 +91,12 @@
 
                     </div>
                     <div class="col-sm-2 col-2">
-                        <asp:TextBox Class="form-control-sm" ID="txtQuantita" runat="server" Style="width: 40px;" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox Class="form-control-sm" ID="txtQuantita" runat="server" Style="width: 65px;" TextMode="Number"></asp:TextBox>
                     </div>
                 </div>
                 <center>
 
-                    <asp:Button ID="btnSalva" class="btn btnVenditoriPurple form-control" runat="server" Text="Salva" />
+                    <asp:Button ID="btnSalva" class="btn btnVenditoriPurple form-control" runat="server" Text="Salva" OnClick="btnSalva_Click" />
 
                 </center>
 

@@ -86,6 +86,13 @@ public class PRODOTTI
         dt = P.PRODOTTI_SelectByVenditore(chiaveVENDITORE);
         return dt;
     }
+    public DataTable SelectByImmagineVenditore()
+    {
+
+        DataTable dt = new DataTable();
+        dt = P.PRODOTTI_SelectByImmagineVenditore(chiaveVENDITORE);
+        return dt;
+    }
 
     public DataTable SelectByCategoria()
     {
@@ -119,10 +126,21 @@ public class PRODOTTI
         return dt;
     }
 
-    public DataTable FILTRA()
+    public DataTable FILTRA(string c, string p)
     {
         DataTable dt = new DataTable();
+<<<<<<< HEAD
         dt = F.FILTRA(chiaveCATEGORIA, chiave);
+=======
+        dt = F.FILTRA(c, p);
+>>>>>>> a7f7603e955c12c823a34c63b81d145f49123cc1
         return dt;
+    }
+
+    public DataTable Max20RandomCategoria()
+    {
+        DataTable DT = new DataTable();
+        DT = P.IMMAGINI_Max20RandomCategoria(chiaveCATEGORIA);
+        return DT;
     }
 }

@@ -23,6 +23,11 @@ public class CORRIERI
     public string provincia;
     public string CAP;
     public string telefono;
+
+    public int anno;
+    public int mese;
+    public string TotaleRicaviCorriere;
+
     RifCorrieri.WsCorrieriSoapClient C = new WsCorrieriSoapClient();
     public CORRIERI()
     {
@@ -91,5 +96,11 @@ public class CORRIERI
     public void CORRIERI_Abilita()
     {
         C.CORRIERI_Abilita(chiave);
+    }
+
+    public DataTable CORRIERI_CountSPEDIZIONI()
+    {
+        DataTable DT = C.CORRIERI_CountSPEDIZIONI(chiave, anno, mese);
+        return DT;
     }
 }

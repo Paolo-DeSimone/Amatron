@@ -6,6 +6,8 @@
     <link href="/assets/css/styleCorrieri.css" rel="stylesheet" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="../../assets/js/notify.js"></script>
+    <link href="../../assets/css/notify.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
@@ -13,6 +15,7 @@
             $("#tabs").tabs();
         });
     </script>
+    <script src="Assets/js/notify.js"></script>
     <%--tabella per la registrazione--%>
     <div class="container mt-1">
         <div class="row">
@@ -29,12 +32,12 @@
             <div class="col-lg-6">
                 <div id="tabs">
                     <ul>
-                        <li style="width: 32.9%"><a href="#tabs-1" class="masterButton" style="width:100%">Cliente</a></li>
-                        <li style="width: 32.85%"><a href="#tabs-2" class="masterButton" style="width:100%">Venditore</a></li>
-                        <li style="width: 32.9%"><a href="#tabs-3" class="masterButton" style="width:100%">Corriere</a></li>
+                        <li style="width: 32.9%"><a href="#tabs-1" class="masterButton" style="width: 100%;">Cliente</a></li>
+                        <li style="width: 32.85%"><a href="#tabs-2" class="masterButton" style="width: 100%">Venditore</a></li>
+                        <li style="width: 32.9%"><a href="#tabs-3" class="masterButton" style="width: 100%">Corriere</a></li>
                     </ul>
                     <div id="tabs-1">
-                        <div class="card">
+                        <div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-6">
@@ -81,34 +84,26 @@
                                         <asp:TextBox ID="txtProvinciaCliente" runat="server" class="form-control form-control-sm" MaxLength="2"></asp:TextBox>
                                     </div>
                                 </div>
-                                <div style="position: relative;" class="mt-2">
+                                <%--                                <div style="position: relative;" class="mt-2">
                                     <hr class="hrdivider opacity-100" />
                                     <span class="hrdivider1">Recapiti
                                     </span>
-                                </div>
+                                </div>--%>
                                 <div class="row">
-                                    <div class="col-lg-3"></div>
                                     <div class="col-lg-6">
                                         <label class="lblInBasso">Telefono:</label>
                                         <asp:TextBox ID="txtTelefonoCliente" runat="server" class="form-control form-control-sm"></asp:TextBox>
                                     </div>
-                                    <div class="col-lg-3"></div>
-                                </div>
-                                <div class="row mt-2">
-                                    <div class="col-lg-4"></div>
-                                    <div class="col-lg-4">
-                                        <center>
-                                            <asp:Button ID="btnRegistraCliente" runat="server" Text="Registrati" class="btn btn-sm masterButton" OnClick="btnRegistraCliente_Click" />
-                                        </center>
+                                    <div class="col-lg-6">
+                                        <asp:Button ID="Button1" runat="server" Text="Registrati" class="btn btn-sm masterButton" OnClick="btnRegistraCliente_Click" />
                                     </div>
-                                    <div class="col-lg-4"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div id="tabs-2">
-                        <div class="card">
+                        <div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-6">
@@ -172,7 +167,7 @@
                                     <div class="col-lg-4"></div>
                                     <div class="col-lg-4">
                                         <center style="margin-top: 15px">
-                                            <asp:Button ID="btnRegistraVenditore" runat="server" Text="Registrati" class="btn btn-sm masterButton" Style="width: 50%"  OnClick="btnRegistraVenditore_Click"/>
+                                            <asp:Button ID="btnRegistraVenditore" runat="server" Text="Registrati" class="btn btn-sm masterButton" Style="width: 50%" OnClick="btnRegistraVenditore_Click" />
                                         </center>
                                     </div>
                                     <div class="col-lg-4"></div>
@@ -181,7 +176,7 @@
                         </div>
                     </div>
                     <div id="tabs-3">
-                        <div class="card">
+                        <div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-lg-6">

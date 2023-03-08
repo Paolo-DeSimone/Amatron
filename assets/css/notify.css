@@ -16,23 +16,40 @@
     width: 100%;
     cursor: pointer;
     border: none;
-    padding: 17px 15px 15px 45px;
-    margin: 0;
+    padding: 7.5px;
+    text-align: center;
+    margin: 5%;
+    margin-left: 25%;
     z-index: 9998;
 }
+
 .notify-notice {
     color: #fefefe;
     background: url(../images/notify/blk_bg.png) /*../images/blk_bg.png*/;
 }
 
 .notify-error {
-    color: #fefefe;
-    background: url(../images/notify/red_bg.png) /*../images/red_bg.png*/;
+    color: black;
+    font-size: 24px;
+    background-color: #e75f64;
+    height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-box-shadow: 2px 2px 5px 0 rgba(50, 50, 50, .5);
+    border-radius: 300px;
+    box-shadow: initial;
+    max-width: 50%;
 }
 
 .notify-success {
-    color: #fefefe;
-    background: #CFC url(../images/notify/grn_bg.png) /*../images/grn_bg.png*/
+    color: black;
+    font-size: 24px;
+    background-color: #adff2f;
+    height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-box-shadow: 2px 2px 5px 0 rgba(50, 50, 50, .5);
+    border-radius: 300px;
+    box-shadow: initial;
+    max-width: 50%;
 }
 
 .notify-warning {

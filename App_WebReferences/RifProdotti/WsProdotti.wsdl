@@ -155,6 +155,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="PRODOTTI_SelectByImmagineVenditore">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiaveVENDITORE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PRODOTTI_SelectByImmagineVenditoreResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PRODOTTI_SelectByImmagineVenditoreResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="PRODOTTI_MAX20Novità">
         <s:complexType />
       </s:element>
@@ -196,6 +217,27 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="PRODOTTI_MAX20VendutiResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IMMAGINI_Max20RandomCategoria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiaveCATEGORIA" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IMMAGINI_Max20RandomCategoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IMMAGINI_Max20RandomCategoriaResult">
               <s:complexType>
                 <s:sequence>
                   <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
@@ -262,6 +304,12 @@
   <wsdl:message name="PRODOTTI_SelectByCategoriaSoapOut">
     <wsdl:part name="parameters" element="tns:PRODOTTI_SelectByCategoriaResponse" />
   </wsdl:message>
+  <wsdl:message name="PRODOTTI_SelectByImmagineVenditoreSoapIn">
+    <wsdl:part name="parameters" element="tns:PRODOTTI_SelectByImmagineVenditore" />
+  </wsdl:message>
+  <wsdl:message name="PRODOTTI_SelectByImmagineVenditoreSoapOut">
+    <wsdl:part name="parameters" element="tns:PRODOTTI_SelectByImmagineVenditoreResponse" />
+  </wsdl:message>
   <wsdl:message name="PRODOTTI_MAX20NovitàSoapIn">
     <wsdl:part name="parameters" element="tns:PRODOTTI_MAX20Novità" />
   </wsdl:message>
@@ -279,6 +327,12 @@
   </wsdl:message>
   <wsdl:message name="PRODOTTI_MAX20VendutiSoapOut">
     <wsdl:part name="parameters" element="tns:PRODOTTI_MAX20VendutiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMMAGINI_Max20RandomCategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:IMMAGINI_Max20RandomCategoria" />
+  </wsdl:message>
+  <wsdl:message name="IMMAGINI_Max20RandomCategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:IMMAGINI_Max20RandomCategoriaResponse" />
   </wsdl:message>
   <wsdl:portType name="WsProdottiSoap">
     <wsdl:operation name="PRODOTTI_Insert">
@@ -317,6 +371,10 @@
       <wsdl:input message="tns:PRODOTTI_SelectByCategoriaSoapIn" />
       <wsdl:output message="tns:PRODOTTI_SelectByCategoriaSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="PRODOTTI_SelectByImmagineVenditore">
+      <wsdl:input message="tns:PRODOTTI_SelectByImmagineVenditoreSoapIn" />
+      <wsdl:output message="tns:PRODOTTI_SelectByImmagineVenditoreSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="PRODOTTI_MAX20Novità">
       <wsdl:input message="tns:PRODOTTI_MAX20NovitàSoapIn" />
       <wsdl:output message="tns:PRODOTTI_MAX20NovitàSoapOut" />
@@ -328,6 +386,10 @@
     <wsdl:operation name="PRODOTTI_MAX20Venduti">
       <wsdl:input message="tns:PRODOTTI_MAX20VendutiSoapIn" />
       <wsdl:output message="tns:PRODOTTI_MAX20VendutiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IMMAGINI_Max20RandomCategoria">
+      <wsdl:input message="tns:IMMAGINI_Max20RandomCategoriaSoapIn" />
+      <wsdl:output message="tns:IMMAGINI_Max20RandomCategoriaSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WsProdottiSoap" type="tns:WsProdottiSoap">
@@ -413,6 +475,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="PRODOTTI_SelectByImmagineVenditore">
+      <soap:operation soapAction="http://tempuri.org/PRODOTTI_SelectByImmagineVenditore" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="PRODOTTI_MAX20Novità">
       <soap:operation soapAction="http://tempuri.org/PRODOTTI_MAX20Novità" style="document" />
       <wsdl:input>
@@ -433,6 +504,15 @@
     </wsdl:operation>
     <wsdl:operation name="PRODOTTI_MAX20Venduti">
       <soap:operation soapAction="http://tempuri.org/PRODOTTI_MAX20Venduti" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMMAGINI_Max20RandomCategoria">
+      <soap:operation soapAction="http://tempuri.org/IMMAGINI_Max20RandomCategoria" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -524,6 +604,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="PRODOTTI_SelectByImmagineVenditore">
+      <soap12:operation soapAction="http://tempuri.org/PRODOTTI_SelectByImmagineVenditore" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="PRODOTTI_MAX20Novità">
       <soap12:operation soapAction="http://tempuri.org/PRODOTTI_MAX20Novità" style="document" />
       <wsdl:input>
@@ -544,6 +633,15 @@
     </wsdl:operation>
     <wsdl:operation name="PRODOTTI_MAX20Venduti">
       <soap12:operation soapAction="http://tempuri.org/PRODOTTI_MAX20Venduti" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IMMAGINI_Max20RandomCategoria">
+      <soap12:operation soapAction="http://tempuri.org/IMMAGINI_Max20RandomCategoria" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

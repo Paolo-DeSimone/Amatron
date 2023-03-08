@@ -44,93 +44,102 @@
     <div class="CardMargine">
 
         <h2>
-            <asp:Label ID="lblStoricoVendite" runat="server" Text="Storico Vendite"></asp:Label>
+            <asp:Label ID="lblStoricoVendite" runat="server" Text="Storico Vendite del Venditore"></asp:Label>
         </h2>
 
     </div>
-    <div class="container">
-        <div class="card">
-            <%-- Inizio body --%>
-            <div class="card-body" style="width: 50%; padding: 15px 15px 15px;">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <asp:Label ID="Label1" runat="server" Text="Titolo:"></asp:Label>
-                        <asp:TextBox ID="txtTitolo" Class="form-control" runat="server"></asp:TextBox>
-                    </div>
+    <div class="card" style="width: 70%; margin: 0 auto;">
+        <%-- Inizio body --%>
+        <div class="card-body">
 
-                    <div class="col-lg-6">
-                        <asp:Label ID="Label5" runat="server" Text="Categoria:"></asp:Label>
+            <div class="row">
 
-                        <asp:DropDownList ID="ddlCategoria" Class="btn btn-secondary dropdown-toggle" runat="server" DataSourceID="SqlDataSource1" DataTextField="CATEGORIA" DataValueField="chiaveCATEGORIA">
-                            <asp:ListItem></asp:ListItem>
+                <div class="col-lg-3">
+                    <asp:Label ID="Label1" runat="server" Text="Prodotto:"></asp:Label>
+                </div>
+                <div class="col-lg-2">
+
+                    <asp:Label ID="Label5" runat="server" Text="Categoria:"></asp:Label>
+                </div>
+
+                <div class="col-lg-2">
+
+                    <asp:Label ID="Label2" runat="server" Text="Numero Ordine"></asp:Label>
+                </div>
+
+                <div class="col-lg-2">
+
+                    <asp:Label ID="Label3" runat="server" Text="Data inizio"></asp:Label>
+                </div>
+
+                <div class="col-lg-2">
+
+                    <asp:Label ID="Label4" runat="server" Text="Data fine"></asp:Label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <asp:TextBox ID="txtTitolo" Class="form-control" runat="server"></asp:TextBox>
+                </div>
+                <div class="col-lg-2">
+                    <div class="dropdown">
+                        <asp:DropDownList ID="ddlCategoria" AppendDataBoundItems="true" Class="form-control form-control" runat="server" DataSourceID="SqlDataSource1" DataTextField="CATEGORIA" DataValueField="chiaveCATEGORIA">
+                            <asp:ListItem Selected="True" Value="0">Seleziona</asp:ListItem>
                         </asp:DropDownList>
-                                <%--<asp:ListItem Enabled=�true� Text= �Select Subject� Value= �-1�></asp:ListItem>--%>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCATEGORIE_SelectByVenditore_DDL" SelectCommandType="StoredProcedure">
-                            
-                            
+
                             <SelectParameters>
-                                <asp:Parameter DefaultValue="1" Name="chiaveVENDITORE" Type="Int32" />
+                                <asp:SessionParameter DefaultValue="" Name="chiaveVENDITORE" SessionField="chiaveUSR" Type="Int32" />
                             </SelectParameters>
                         </asp:SqlDataSource>
                     </div>
-
-                    <div class="col-lg-12">
-                        <asp:Label ID="Label2" runat="server" Text="Numero Ordine"></asp:Label>
-                        <asp:TextBox ID="txtNOrdine" Class="form-control" runat="server"></asp:TextBox>
-
-                    </div>
-
-                    <div class="col-lg-6">
-                        <asp:Label ID="Label3" runat="server" Text="Data inizio"></asp:Label>
-                         <asp:TextBox ID="txtDInizio" Class="form-control" runat="server"></asp:TextBox>
-                    </div>
-                    <div class="col-lg-6">
-                        <asp:Label ID="Label4" runat="server" Text="Data fine"></asp:Label>
-                         <asp:TextBox ID="txtDFine" Class="form-control" runat="server"></asp:TextBox>
-                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <asp:DropDownList ID="ddlNOrdine" AppendDataBoundItems="true" Class="form-control form-control" runat="server" DataSourceID="SqlDataSource2" DataTextField="NUMEROORDINE" DataValueField="chiaveORDINI">
+                        <asp:ListItem Value="0">Seleziona</asp:ListItem>
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_PRODOTTI_CATEGORIA_SelectDDL" SelectCommandType="StoredProcedure">
+                        <SelectParameters>
+                            <asp:SessionParameter DefaultValue="" Name="chiaveVENDITORE" SessionField="chiaveUSR" Type="Int32" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+                </div>
+                <div class="col-lg-2">
+                    <asp:TextBox ID="txtDInizio" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
+                </div>
+                <div class="col-lg-2">
+                    <asp:TextBox ID="txtDFine" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
 
                 </div>
 
+                <div class="col-lg-1">
 
-    <div class="CardMargine">
-
-        <h2>
-            <asp:Label ID="lblStoricoVendite2" runat="server" Text="Storico Vendite"></asp:Label>
-        </h2>
-
-
-                <div class="table-responsive">
-                    <asp:GridView ID="GrigliaStoricoVendite" class="table" CssClass="table table-bordered table-condensed" runat="server" AutoGenerateColumns="False" DataSourceID="sdsGrigliaStorico">
-                        <Columns>
-                            <asp:BoundField DataField="chiavePRODOTTI" HeaderText="chiavePRODOTTI" SortExpression="chiavePRODOTTI" Visible="False" />
-                            <asp:BoundField DataField="chiaveORDINI" HeaderText="chiaveORDINI" SortExpression="chiaveORDINI" Visible="False" />
-                            <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False" />
-                            <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" Visible="False" />
-                            <asp:BoundField DataField="TITOLO" HeaderText="TITOLO" SortExpression="TITOLO" />
-                            <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
-                            <asp:BoundField DataField="PERCAMATRON" HeaderText="PERCAMATRON" SortExpression="PERCAMATRON" />
-                            <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATATRANSAZIONE" SortExpression="DATATRANSAZIONE" />
-                            <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
-                            <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUMEROORDINE" SortExpression="NUMEROORDINE" />
-                            <asp:BoundField DataField="CATEGORIA" HeaderText="CATEGORIA" SortExpression="CATEGORIA" />
-                        </Columns>
-                        <HeaderStyle BackColor="#B469FF" />
-                    </asp:GridView>
-                    <asp:SqlDataSource ID="sdsGrigliaStorico" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spPRODOTTI_ORDINI_CATEGORIA_Filter" SelectCommandType="StoredProcedure">
-                        <SelectParameters>
-                            <asp:ControlParameter ControlID="txtTitolo" Name="TITOLO" PropertyName="Text" Type="String" />
-                            <asp:ControlParameter ControlID="ddlCategoria" Name="chiaveCATEGORIA" PropertyName="SelectedValue" Type="Int32" />
-                            <asp:ControlParameter ControlID="txtDInizio" Name="DATAINIZIO" PropertyName="Text" Type="DateTime" />
-                            <asp:ControlParameter ControlID="txtDFine" Name="DATAFINE" PropertyName="Text" Type="DateTime" />
-                            <asp:ControlParameter ControlID="txtNOrdine" Name="NUMEROORDINE" PropertyName="Text" Type="Int32" />
-                            <asp:Parameter DefaultValue="1" Name="chiaveVenditore" Type="Int32" />
-                        </SelectParameters>
-                    </asp:SqlDataSource>
-
+                    <asp:Button ID="btnCerca" Class="btn masterButton" runat="server" Text="CERCA" OnClick="btnCerca_Click" />
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-lg-10">
+                    <div class="table-responsive" style="overflow-y: scroll; width: 100%; height: 500px;">
+                        <asp:GridView ID="GrigliaStoricoVendite" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed">
+                            <Columns>
+                                <asp:BoundField DataField="chiavePRODOTTI" HeaderText="chiavePRODOTTI" SortExpression="chiavePRODOTTI" Visible="False" />
+                                <asp:BoundField DataField="chiaveORDINI" HeaderText="chiaveORDINI" SortExpression="chiaveORDINI" Visible="False" />
+                                <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False" />
+                                <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" Visible="False" />
+                                <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
+                                <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
+                                <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" SortExpression="PERCAMATRON" />
+                                <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATA VEND" SortExpression="DATATRANSAZIONE" ApplyFormatInEditMode="true" DataFormatString="{0:d}" />
+                                <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
+                                <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUM. ORD." SortExpression="NUMEROORDINE" />
+                                <asp:BoundField DataField="CATEGORIA" HeaderText="CATEGORIA" SortExpression="CATEGORIA" />
+                            </Columns>
+                            <HeaderStyle BackColor="#B469FF" />
+                        </asp:GridView>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </asp:Content>
 

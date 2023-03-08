@@ -1,4 +1,4 @@
-﻿<%@ WebHandler Language="C#" Class="GestoreImmagini" %>
+<%@ WebHandler Language="C#" Class="GestoreImmagini" %>
 using System.Threading.Tasks;
 using System;
 using System.Web;
@@ -14,8 +14,8 @@ public class GestoreImmagini : HttpTaskAsyncHandler
         int chiave = int.Parse(context.Request.QueryString["c"].ToString());
         IMMAGINI I = new IMMAGINI();
         DataTable dt = new DataTable();
-        I.chiaveprodotto = chiave;
-        dt = I.SelectByProdotto();
+        I.chiave = chiave;
+        dt = I.SelectByKey();
 
         // leggo i dati dell'immagine dalla datatable
         string titolo = dt.Rows[0]["TITOLO_IMMAGINE"].ToString();

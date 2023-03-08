@@ -16,9 +16,9 @@
             <div class="card-body">
                 <h5 class="card-title">Amatron Prime</h5>
                 <p class="card-text primeScritta">Amatron prime è un servizio che ti permetterà di avere uno sconto dell'1% su ogni prodotto acquistato.</p>
-                <h2 class="card-title">Iscrizione annuale
+                <h2 class="card-title">Iscrizione annuale gratuita! </h2>
                     <br /> 
-                    Gratuita</h2>
+                    
                 <asp:Button ID="btnIscriviti" class="btn btn-secondary btnSalva" runat="server" Text="Iscriviti" OnClick="btnIscriviti_Click" />
             </div>
         </div>

@@ -5,6 +5,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
+    <div class="container">
+        <h2>Risulato della ricerca:</h2>
+    </div>
+
     <div class="container mt-5">
         <div id="lit" runat="server">
         </div>

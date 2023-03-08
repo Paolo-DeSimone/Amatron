@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +12,7 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
         if (!IsPostBack)
         {
             string chiave = Session["chiaveUSR"].ToString();
@@ -19,6 +20,10 @@ public partial class _Default : System.Web.UI.Page
             CORRIERI C = new CORRIERI();
             C.chiave = int.Parse(chiave);
             DataTable DT = C.CORRIERI_SelectByKey();
+            string RagioneSociale = DT.Rows[0]["RagioneSociale"].ToString();
+            //titolo della pagina con ragionesociale di chi si logga
+            titolo.InnerHtml = "<h2>Profilo di " + RagioneSociale + "</h2>";
+            C.chiave = int.Parse(chiave);
             txtRAGIONESOCIALE.Text = DT.Rows[0]["RAGIONESOCIALE"].ToString();
             txtPIVA.Text = DT.Rows[0]["PIVA"].ToString();
             txtCOSTO.Text = DT.Rows[0]["COSTOCORRIERE"].ToString();
@@ -31,12 +36,14 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
+
     protected void btnModifica_Click(object sender, EventArgs e)
     {
         //controlli formali
         if (txtRAGIONESOCIALE.Text.Trim() == "" || txtEMAIL.Text.Trim() == "" || txtCOSTO.Text.Trim() == "")
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Completa i campi!');", true);
+            string scripterr = @"notifyError('Riempi tutti i campi!')"; //messaggio di errore
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnModifica_Click", scripterr, true);
             return;
         }
 
@@ -51,40 +58,46 @@ public partial class _Default : System.Web.UI.Page
         C.citta = txtCITTA.Text.Trim();
         C.email = txtEMAIL.Text.Trim();
         C.telefono = txtNUMERO.Text.Trim();
-        //C.abilitato = Convert.ToBoolean(Session["Abilitato"]);
-        //riga da utilizzare solo in fase di testing
         C.abilitato = true;
         C.PWD = Session["pwdUSR"].ToString();
         C.CORRIERI_Update();
-        //alert di prova per verifica inserimento modifiche
-        ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Modifica effettuata!');", true);
+        string script = @"notifySuccess('Modifiche effettuate')"; //messaggio di successo
+        ScriptManager.RegisterStartupScript(this, GetType(), "btnModifica_Click", script, true);
     }
     protected void btnModPWD_Click(object sender, EventArgs e)
     {
 
-        //controllo se uno dei campi è vuoto, non apro la connessione al db
+        //controllo se uno dei campi è vuoto
         if (txtOldPWD.Text.Trim() == "" || txtNewPWD.Text.Trim() == "" || txtConfPWD.Text.Trim() == "")
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Riempi tutti i campi!');", true);
+            string script1 = @"notifyError('Campi vuoti!')"; //messaggio di errore
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnModPWD_Click", script1, true);
+            return;
         }
 
         //controllo per stabilire se la password vecchia è uguale a quella nuova
         if (Session["pwdUSR"].ToString() == txtNewPWD.Text.Trim())
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Inserisci una password diversa da quella vecchia!');", true);
+            string script2 = @"notifyError('Inserisci una password diversa da quella vecchia!')"; //messaggio di errore
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnModPWD_Click", script2, true);
+            return;
         }
 
-        //controllo per stabilire se la password di conferma è uguale a quella vecchia
+        //controllo per stabilire se la password di conferma è uguale a quella inserita
         if (txtNewPWD.Text.Trim() != txtConfPWD.Text.Trim())
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Password di conferma non corretta!');", true);
+            string script3 = @"notifyError('Password di conferma non corretta!')"; //messaggio di errore
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnModPWD_Click", script3, true);
+            return;
         }
 
         CHANGEPWD CP = new CHANGEPWD();
+        EncodeDecode ED = new EncodeDecode();
         CP.email = Session["emailUSR"].ToString();
         CP.TIPO = Session["tipoUSR"].ToString();
-        CP.PWD = txtConfPWD.Text.Trim();
+        CP.PWD = ED.Encode(txtConfPWD.Text.Trim());
         CP.ChangePwd();
-        ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Password cambiata con successo!');", true);
+        string script4 = @"notifySuccess('Password cambiata con successo!')"; //messaggio di successo
+        ScriptManager.RegisterStartupScript(this, GetType(), "btnModPWD_Click", script4, true);
     }
 }

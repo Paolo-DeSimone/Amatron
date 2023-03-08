@@ -119,7 +119,7 @@
             </div>
             <div class="row mt-3">
                 <div class="col-lg-10">
-                    <div class="table-responsive" style="overflow-y: scroll; width: 100%; height: 500px;">
+                    <div class="table-responsive" style="overflow-y: scroll; width: 100%;">
                         <asp:GridView ID="GrigliaStoricoVendite" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed">
                             <Columns>
                                 <asp:BoundField DataField="chiavePRODOTTI" HeaderText="chiavePRODOTTI" SortExpression="chiavePRODOTTI" Visible="False" />

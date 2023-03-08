@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
-using RifSpedizioni;
 
 /// <summary>
 /// Descrizione di riepilogo per SPEDIZIONI
@@ -15,7 +14,7 @@ public class SPEDIZIONI
     public int chiaveORDINE;
     public string STATO;
     public string DATAORA;
-    RifSpedizioni.WsSpedizioniSoapClient S = new WsSpedizioniSoapClient();
+    rifSpedizioniOL.WsSpedizioniSoapClient S = new rifSpedizioniOL.WsSpedizioniSoapClient();
     public SPEDIZIONI()
     {
         //

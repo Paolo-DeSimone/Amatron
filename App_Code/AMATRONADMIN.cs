@@ -10,7 +10,7 @@ public class AMATRONADMIN
 { 
     public string email;
     public string PWD;
-    RifAmatron.WsAmatronSoapClient A = new RifAmatron.WsAmatronSoapClient();
+    rifAmatronOL.WsAmatronSoapClient A = new rifAmatronOL.WsAmatronSoapClient();
 
     public AMATRONADMIN()
     {

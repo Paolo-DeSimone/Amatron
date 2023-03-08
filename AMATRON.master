@@ -186,6 +186,8 @@
                 </nav>
 
                 <div class="w3-sidebar w3-bar-block w3-card w3-animate-right " style="display: none; right: 0; width: 500px;" id="rightMenu">
+
+                    <%--row con icona carrello, barra separatoria e btn con redirect a cassa.aspx--%>
                     <div class="row">
                         <div class="col-lg-2" style="vertical-align: central; margin: auto; font-weight: 600; font-size: medium; padding-left: 20px;">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="#B469FF" class="bi bi-cart4 carrello" viewBox="0 0 16 16">
@@ -206,8 +208,10 @@
 
                     </div>
                     <hr class="masterColorBG masterColorText" style="height: 3px; margin: 10px">
-                    <input style="margin-left: 6px; margin-bottom: 7px; width: 145px;" type="button" runat="server" class="masterBorderColor masterButton" value="Vai alla cassa" id="btnVaiAllaCassa" />
-                    <%--QUESTO DIV SERVE PER QUANTO SPIEGATO IN testPaoloCarrello--%>
+                    <a href="/Forms/Cassa.aspx">
+                        <input style="margin-left: 6px; margin-bottom: 7px; width: 145px;" type="button" runat="server" class="masterBorderColor masterButton" value="Vai alla cassa" id="btnVaiAllaCassa" />
+                    </a>
+                    <%--QUESTO DIV carica gli item in carrello usando litCarrello.InnerHtml--%>
                     <div>
                         <asp:Literal ID="litCarrello" runat="server"></asp:Literal>
                     </div>

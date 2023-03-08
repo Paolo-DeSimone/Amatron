@@ -114,9 +114,5 @@ public class ORDINI
         return dt;
     }
 
-<<<<<<< HEAD
-    
-=======
- 
->>>>>>> cbfe51e3c2631828364c087bed72d17f224eb2c2
+
 }

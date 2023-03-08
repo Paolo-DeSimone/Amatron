@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 public partial class Default2 : System.Web.UI.Page
 {
 
-    
+
     public void Page_Load(object sender, EventArgs e)
     {
         if (Session["emailUSR"] == null)
@@ -35,9 +35,9 @@ public partial class Default2 : System.Web.UI.Page
         {
             ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Nessun elemento modificato');", true);
             return;
-        }     
-      
-      
+        }
+
+
         if (!IsPostBack)
         {
 
@@ -55,11 +55,13 @@ public partial class Default2 : System.Web.UI.Page
             txtTelefono.Text = DT.Rows[0]["TELEFONO"].ToString();
 
         }
-
+        CONFIG CONF = new CONFIG();
+        DataTable PRIME = CONF.SelectAll();
+        lblPrimeProMod.Text = PRIME.Rows[0]["COSTOPRIME"].ToString();
     }
     protected void btnSalva_Click(object sender, EventArgs e)
     {
-      
+
         CLIENTI CL = new CLIENTI();
         CL.chiave = int.Parse((Session["chiaveUSR"].ToString()));
         //CL.PRIME = bool.Parse(Session["PRIME"].ToString());
@@ -77,7 +79,7 @@ public partial class Default2 : System.Web.UI.Page
         CL.UPDATE();
 
         ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Dati modificati con successo')", true);
-    
+
     }
 
     protected void btnModPWD_Click(object sender, EventArgs e)
@@ -115,5 +117,5 @@ public partial class Default2 : System.Web.UI.Page
         ScriptManager.RegisterStartupScript(this, GetType(), "btnModPWD_Click", script3, true);
     }
 
-    
+
 }

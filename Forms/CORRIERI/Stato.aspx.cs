@@ -11,16 +11,18 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        int chiave = int.Parse(Session["chiaveUSR"].ToString());
-        grdSTATO.DataBind();
-        CORRIERI C = new CORRIERI();
-        C.chiave = chiave;
-        DataTable DT = new DataTable();
-        DT = C.CORRIERI_SelectByKey();
-        string RagioneSociale = DT.Rows[0]["RagioneSociale"].ToString();
-        OrdiniCorriere.InnerHtml = "<h2>Spedizioni del Corriere " + RagioneSociale + "</h2>";
+        if (!IsPostBack)
+        {
+            int chiave = int.Parse(Session["chiaveUSR"].ToString());
+            grdSTATO.DataBind();
+            CORRIERI C = new CORRIERI();
+            C.chiave = chiave;
+            DataTable DT = new DataTable();
+            DT = C.CORRIERI_SelectByKey();
+            string RagioneSociale = DT.Rows[0]["RagioneSociale"].ToString();
+            OrdiniCorriere.InnerHtml = "<h2>Spedizioni del Corriere " + RagioneSociale + "</h2>";
+        }
     }
-
 
     protected void grdSTATO_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -30,14 +32,18 @@ public partial class _Default : System.Web.UI.Page
             Session["chiaveSPEDIZIONE"] = null;
             return;
         }
+        SPEDIZIONI SPE = new SPEDIZIONI();
+        SPE.chiave = int.Parse(grdSTATO.SelectedValue.ToString());
+        DataTable DT = SPE.SPEDIZIONI_SelectByKey();
+        Session["STATO_SPEDIZIONE"] = DT.Rows[0]["STATO"].ToString();
         //faccio la session per passare la chiave
         Session["chiaveSPEDIZIONE"] = grdSTATO.SelectedValue.ToString();
-        Session["STATO_SPEDIZIONE"] = grdSTATO.SelectedRow.Cells[2].Text;
+        //Session["STATO_SPEDIZIONE"] = grdSTATO.SelectedRow.Cells[3].Text;
     }
 
     protected void btnStato_Click(object sender, EventArgs e)
     {
-        if (grdSTATO.SelectedRow.Cells[2].Text == "D")
+        if (grdSTATO.SelectedRow.Cells[3].Text == "Prodotto consegnato")
         {
             string scripterr = @"notifyError('Prodotto già consegnato')"; //messaggio di errore
             ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripterr, true);

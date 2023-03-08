@@ -140,13 +140,12 @@ public class WsOrdini : System.Web.Services.WebService
     }
 
     [WebMethod]
-    public DataTable ORDINI_GESTISCI(int chiave)
+    public DataTable ORDINI_GESTISCI()
     {
         DATABASE DB = new DATABASE();
         DataTable dt = new DataTable();
         DB.cmd.Parameters.Clear();
         DB.query = "spORDINI_GESTISCI";
-        DB.cmd.Parameters.AddWithValue("chiave", chiave);
         dt = DB.EseguiSPRead();
         dt.TableName = "OrdiniGestisci";
         return dt;
@@ -163,6 +162,18 @@ public class WsOrdini : System.Web.Services.WebService
         DB.cmd.Parameters.AddWithValue("chiaveCliente", chiaveCliente);
         dt = DB.EseguiSPRead();
         dt.TableName = "ProdottoAcquistato";
+        return dt;
+    }
+
+    [WebMethod]
+    public DataTable CORRIERI_CHIAVERandom()
+    {
+        DATABASE DB = new DATABASE();
+        DataTable dt = new DataTable();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spCORRIERI_CHIAVERandom";
+        dt = DB.EseguiSPRead();
+        dt.TableName = "CORRIERI_CHIAVERandom";
         return dt;
     }
 }

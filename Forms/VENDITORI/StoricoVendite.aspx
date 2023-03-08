@@ -51,9 +51,9 @@
     <div class="card" style="width: 80%; margin: 0 auto;">
         <%-- Inizio body --%>
         <div class="card-body">
-
             <div class="row">
-                <div class="col-9">
+
+                <div class="col-8">
                     <div class="row">
                         <div class="col-lg-2">
                             <asp:Label ID="Label1" runat="server" Text="Prodotto:"></asp:Label>
@@ -118,52 +118,49 @@
                             <asp:Button ID="btnCerca" Class="btn masterButton" runat="server" Text="FILTRA" OnClick="btnCerca_Click" />
                         </div>
                     </div>
-                    <div class="row mt-3">
-                        <div class="col-lg-12">
-                            <div class="table-responsive" style="overflow-y: scroll; width: 100%;">
-                                <asp:GridView ID="GrigliaStoricoVendite" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed">
-                                    <Columns>
-                                        <asp:BoundField DataField="chiavePRODOTTI" HeaderText="chiavePRODOTTI" SortExpression="chiavePRODOTTI" Visible="False" />
-                                        <asp:BoundField DataField="chiaveORDINI" HeaderText="chiaveORDINI" SortExpression="chiaveORDINI" Visible="False" />
-                                        <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False" />
-                                        <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" Visible="False" />
-                                        <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
-                                        <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
-                                        <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" SortExpression="PERCAMATRON" />
-                                        <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATA VEND" SortExpression="DATATRANSAZIONE" ApplyFormatInEditMode="true" DataFormatString="{0:d}" />
-                                        <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
-                                        <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUM. ORD." SortExpression="NUMEROORDINE" />
-                                        <asp:BoundField DataField="CATEGORIA" HeaderText="CATEGORIA" SortExpression="CATEGORIA" />
-                                    </Columns>
-                                        <headerstyle backcolor="#B469FF" />
-                                </asp:GridView>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <div class="col-3">
+            </div>
 
+
+            <div class="row mt-3">
+                <div class="col-lg-8">
+                    <div class="table-responsive" style="overflow-y: scroll; width: 100%;">
+                        <asp:GridView ID="GrigliaStoricoVendite" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed">
+                            <Columns>
+                                <asp:BoundField DataField="chiavePRODOTTI" HeaderText="chiavePRODOTTI" SortExpression="chiavePRODOTTI" Visible="False" />
+                                <asp:BoundField DataField="chiaveORDINI" HeaderText="chiaveORDINI" SortExpression="chiaveORDINI" Visible="False" />
+                                <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False" />
+                                <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" Visible="False" />
+                                <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
+                                <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
+                                <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" SortExpression="PERCAMATRON" />
+                                <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATA VEND" SortExpression="DATATRANSAZIONE" ApplyFormatInEditMode="true" DataFormatString="{0:d}" />
+                                <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
+                                <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUM. ORD." SortExpression="NUMEROORDINE" />
+                                <asp:BoundField DataField="CATEGORIA" HeaderText="CATEGORIA" SortExpression="CATEGORIA" />
+                            </Columns>
+                            <HeaderStyle BackColor="#B469FF" />
+                        </asp:GridView>
+                    </div>
+                 </div>
+                 <div class="col-lg-4">
+                    <div class="table-responsive" style="width: 100%;">
                     <asp:GridView ID="GrigliaFatturatoVenditore" class="table" runat="server" CssClass="table table-bordered table-condensed" AutoGenerateColumns="False" DataSourceID="sdsGrigliaFatturatoVenditore">
                         <Columns>
                             <asp:BoundField DataField="GuadagnoLordo" HeaderText="GuadagnoLordo" ReadOnly="True" SortExpression="GuadagnoLordo" />
                             <asp:BoundField DataField="PercentualeAmatron" HeaderText="PercentualeAmatron" ReadOnly="True" SortExpression="PercentualeAmatron" />
                             <asp:BoundField DataField="GuadagnoNetto" HeaderText="GuadagnoNetto" ReadOnly="True" SortExpression="GuadagnoNetto" />
-                       
-                            </Columns>
-                            <HeaderStyle BackColor="#B469FF" />
+                        </Columns>
+                        <HeaderStyle BackColor="#B469FF" />
                     </asp:GridView>
-
-
                     <asp:SqlDataSource ID="sdsGrigliaFatturatoVenditore" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_PRODOTTI_CATEGORIA_Fatturato" SelectCommandType="StoredProcedure">
                         <SelectParameters>
-                            <asp:SessionParameter DefaultValue="" Name="chiaveVENDITORE" SessionField="chiaveUSR" Type="Int32" />
+                            <asp:SessionParameter DefaultValue="22" Name="chiaveVENDITORE" SessionField="chiaveUSR" Type="Int32" />
                         </SelectParameters>
                     </asp:SqlDataSource>
-
-
+                </div>
                 </div>
             </div>
         </div>
-    </div>
 </asp:Content>
 

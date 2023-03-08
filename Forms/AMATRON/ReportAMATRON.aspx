@@ -3,24 +3,6 @@
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<%--    <script>
-        function getDATAMensile() {
-            $.ajax({
-                type: "POST",
-                url: "ReportAMATRON.aspx/dataMensile",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (DATAMensile) {
-                    $('#Text1').val(DATAMensile.d);
-                },
-                error: function (req, status, err) {
-                    alert(req, status, err);
-                }
-            });
-        }
-    </script>--%>
-
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <input id="Text1" visible="false" runat="server" type="number" />
@@ -43,13 +25,29 @@
                                         <div class="card-body p-4 p-md-5">
                                             <div class="row text-center">
                                                 <div class="col-lg-12">
-                                                    <asp:Literal ID="ltrFiltroAnno" runat="server">Anno:</asp:Literal>
-                                                    <asp:DropDownList ID="ddlFiltroAnnoMensile" runat="server"></asp:DropDownList>
+                                                    <asp:Literal ID="ltrFiltroAnno" runat="server" Text="Anno:"></asp:Literal>
+                                                    <asp:DropDownList ID="ddlFiltroAnnoMensile" runat="server" DataSourceID="sdsGetAnno" DataTextField="ANNO" DataValueField="ANNO" AutoPostBack="True"></asp:DropDownList>
+                                                    <asp:SqlDataSource ID="sdsGetAnno" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spAMATRON_GetAnno" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                                 </div>
                                             </div>
                                             <%--grafico--%>
                                             <div class="row">
                                                 <div>
+                                                    <center>
+                                                        <asp:Chart ID="chartIncassiMensili" runat="server" Palette="None" PaletteCustomColors="180, 105, 255" Width="450px" DataSourceID="odsIncassiMensile">
+                                                            <Series>
+                                                                <asp:Series Name="Series1"></asp:Series>
+                                                            </Series>
+                                                            <ChartAreas>
+                                                                <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
+                                                            </ChartAreas>
+                                                        </asp:Chart>
+                                                        <asp:ObjectDataSource ID="odsIncassiMensile" runat="server" SelectMethod="AMATRON_IncassiMensiliByAnno" TypeName="rifAmatronOL.WsAmatronSoapClient">
+                                                            <SelectParameters>
+                                                                <asp:ControlParameter ControlID="ddlFiltroAnnoMensile" DefaultValue="2022" Name="anno" PropertyName="SelectedValue" Type="Int32" />
+                                                            </SelectParameters>
+                                                        </asp:ObjectDataSource>
+                                                    </center>
                                                 </div>
                                             </div>
                                         </div>
@@ -64,14 +62,17 @@
                                             <%--grafico--%>
                                             <div class="row text-center">
                                                 <div>
-                                                    <asp:Chart ID="chartMensile" runat="server">
-                                                        <Series>
-                                                            <asp:Series Name="Series1"></asp:Series>
-                                                        </Series>
-                                                        <ChartAreas>
-                                                            <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
-                                                        </ChartAreas>
-                                                    </asp:Chart>
+                                                    <center>
+                                                        <asp:Chart ID="chartIncassiAnnuali" runat="server" DataSourceID="sdsIncassiAnnuali" Palette="None" PaletteCustomColors="180, 105, 255" Width="450px">
+                                                            <Series>
+                                                                <asp:Series Name="Series1" ChartType="Line" XValueMember="ANNO" YValueMembers="GUADAGNO_TOTALE"></asp:Series>
+                                                            </Series>
+                                                            <ChartAreas>
+                                                                <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
+                                                            </ChartAreas>
+                                                        </asp:Chart>
+                                                        <asp:SqlDataSource ID="sdsIncassiAnnuali" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spAMATRON_IncassiAnnuali" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                                                    </center>
                                                 </div>
                                             </div>
                                         </div>
@@ -89,7 +90,17 @@
                                     <div class="card-body p-4 p-md-5">
                                         <%--grafico--%>
                                         <div>
-                                            
+                                            <center>
+                                                <asp:Chart ID="chartIncassiCategoria" runat="server" DataSourceID="sdsIncassiCategoria" Palette="None" PaletteCustomColors="180, 105, 255" Width="1000px" >
+                                                    <Series>
+                                                        <asp:Series Name="Series1" XValueMember="CATEGORIA" YValueMembers="GUADAGNO_TOTALE" ></asp:Series>
+                                                    </Series>
+                                                    <ChartAreas>
+                                                        <asp:ChartArea Name="ChartArea1" ></asp:ChartArea>
+                                                    </ChartAreas>
+                                                </asp:Chart>
+                                                <asp:SqlDataSource ID="sdsIncassiCategoria" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spAMATRON_IncassiPerCategoria" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                                            </center>
                                         </div>
                                     </div>
                                 </div>

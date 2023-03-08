@@ -89,6 +89,9 @@ public partial class Homepage : System.Web.UI.Page
                     "</a>" +
                     "</div>";
             }
+            CONFIG CONF = new CONFIG();
+            DataTable PRIME = CONF.SelectAll();
+            lblPrime.Text = PRIME.Rows[0]["COSTOPRIME"].ToString();
         }
     }
 }

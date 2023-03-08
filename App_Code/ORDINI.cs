@@ -115,5 +115,10 @@ public class ORDINI
         dt = O.CORRIERI_CHIAVERandom();
         return dt;
     }
-
+    public DataTable SelectByOrdineCliente()
+    {
+        DataTable dt = new DataTable();
+        dt = O.ORDINI_SelectOrdineCliente(chiavecliente);
+        return dt;
+    }
 }

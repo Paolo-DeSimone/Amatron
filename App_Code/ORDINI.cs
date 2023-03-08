@@ -23,7 +23,7 @@ public class ORDINI
 
 
     //istanzio il web service fuori dalla funzione cosi non devo ripeterlo
-    RifOrdini.WsOrdiniSoapClient O = new RifOrdini.WsOrdiniSoapClient();
+    rifOrdiniOL.WsOrdiniSoapClient O = new rifOrdiniOL.WsOrdiniSoapClient();
 
     public ORDINI()
     {
@@ -107,6 +107,13 @@ public class ORDINI
         return dt;
     }
     //Metodo inserito per l'assegnazone del corriere (George D.)
+    public DataTable CORRIERI_CHIAVERandom()
+    {
+        DataTable dt = new DataTable();
+        dt = O.CORRIERI_CHIAVERandom();
+        return dt;
+    }
+
     public DataTable CORRIERI_CHIAVERandom()
     {
         DataTable dt = new DataTable();

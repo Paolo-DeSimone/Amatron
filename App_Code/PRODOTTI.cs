@@ -129,11 +129,7 @@ public class PRODOTTI
     public DataTable FILTRA(string c, string p)
     {
         DataTable dt = new DataTable();
-<<<<<<< HEAD
-        dt = F.FILTRA(chiaveCATEGORIA, chiave);
-=======
         dt = F.FILTRA(c, p);
->>>>>>> a7f7603e955c12c823a34c63b81d145f49123cc1
         return dt;
     }
 

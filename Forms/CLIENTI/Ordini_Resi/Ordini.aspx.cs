@@ -16,7 +16,7 @@ public partial class Ordini : System.Web.UI.Page
             ORDINI O = new ORDINI();
             CLIENTI C = new CLIENTI();
             DataTable dt = O.SelectByOrdineCliente();
-            O.chiavecliente = int.Parse(dt.Rows[0]["chiavecliente"].ToString());
+            O.chiavecliente = int.Parse(Session["chiaveUSR"].ToString());
            // lblDescrizione = P.descrizione;
             cardprodotto.InnerHtml = "";
             for (int i = 0; i < dt.Rows.Count; i++)

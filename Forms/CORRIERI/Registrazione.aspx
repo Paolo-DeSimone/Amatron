@@ -25,11 +25,16 @@
                     <h2>Registrazione</h2>
                 </center>
             </div>
+            <br />
+            <center>
+                <p class="testo" style="text-align:center; color:black;">Benvenuto nella pagina di registrazione di Amatron!</p>
+            </center>
             <div class="col-lg-5"></div>
         </div>
         <div class="row">
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
+              <h3 style="text-align:center;">Crea un account</h3>
                 <div id="tabs">
                     <ul>
                         <li style="width: 32.9%"><a href="#tabs-1" class="masterButton" style="width: 100%;">Cliente</a></li>

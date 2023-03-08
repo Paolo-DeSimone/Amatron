@@ -1,4 +1,4 @@
-<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AMATRON.master.cs" Inherits="AMATRON" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AMATRON.master.cs" Inherits="AMATRON" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -238,7 +238,7 @@
                         </div>
                         <div class="mx-auto">
                             <hr class="masterColorBG masterColorText" style="height: 3px; margin-top: 40px;" />
-                            <a class="cont testo" href="#">Recupera password</a>
+                            <a class="cont testo" href="RecuperaPassword.aspx">Recupera password</a>
                         </div>
                     </div>
 

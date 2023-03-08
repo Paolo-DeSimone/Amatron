@@ -27,7 +27,7 @@
             <p></p>
             <center>
                 <asp:FileUpload Class="form-control" multiple="multiple" ID="fileUpload1" runat="server" Style="width: 480px;" accept=".png,.jpg,.jpeg,.gif" />
-                <asp:Button ID="btnSalva" class="btn btnVenditoriPurple form-control" runat="server" Text="Salva" />
+                <asp:Button ID="btnSalva" class="btn btnVenditoriPurple form-control" runat="server" Text="Salva" OnClick="btnSalva_Click" />
             </center>
         </div>
     </form>

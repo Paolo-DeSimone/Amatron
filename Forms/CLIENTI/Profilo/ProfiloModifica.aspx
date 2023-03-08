@@ -89,6 +89,47 @@
                     <div class="col">
                         <asp:Label ID="lblOldPWD" Style="float: left;" runat="server" Text="Vecchia Password:"></asp:Label>
                         <asp:TextBox ID="txtOldPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
+
+                <%--Amatron prime card--%>
+                <div class="col-lg-4">
+                    <div class="card colore bianco ">
+                        <img src="../../../assets/images/amatron-prime.png" />
+                        <p class="card-text primeScritta">Amatron prime è un servizio che ti permetterà di avere uno sconto dell'<asp:Label ID="lblPrimeProMod" runat="server" Text=""></asp:Label>% su ogni prodotto acquistato.</p>
+                        <h4 style="text-align:center" class="card-title">Iscrizione annuale €29,99!</h4>
+                        <div class="card-body">
+                        </div>
+
+                        <%-- POPUP--%>
+
+                        <%-- Introduzione di uno script manager --%>
+                        <asp:ScriptManager ID="ScriptManager1" runat="server">
+                        </asp:ScriptManager>
+
+                        <%-- pulsante che apre il popup --%>
+                        <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" />
+                        <br />
+
+                        <%-- chiamata del popup --%>
+                        <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnApri"
+                            CancelControlID="btnChiudi" BackgroundCssClass="Background">
+                        </cc1:ModalPopupExtender>
+
+                        <%-- contenuto del popup --%>
+                        <asp:Panel
+                            ID="Panl1"
+                            runat="server"
+                            CssClass="Popup"
+                            align="center"
+                            Style="display: none">
+                            <%--ci pensa lo script manager a renderlo visibile--%>
+
+                            <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+                            <iframe style="width: 550px; height: 373px; -webkit-border-radius: 10px 10px 10px 10px;" id="if2" src="../Profilo/IscrizionePrimePopup.aspx" runat="server"></iframe>
+                            <br />
+                            <%--chiude il popup--%>
+                            <asp:Button ID="btnChiudi" class="btn btn-secondary" runat="server" Text="Chiudi" />
+                        </asp:Panel>
+
                     </div>
                 </div>
                 <div class="row text-center">

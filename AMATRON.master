@@ -26,6 +26,9 @@
     <link href="/assets/css/cssCLIENTI.css" rel="stylesheet" />
     <link href="/assets/css/masterStyle.css" rel="stylesheet" />
 
+    <script src="/assets/js/notify.js"></script>
+    <link href="/assets/css/notify.css" rel="stylesheet" />
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <script>
@@ -59,22 +62,6 @@
             $("#loginform").css({ "visibility": "hidden", "display": "none" });
         }
 
-        function Accedi() {
-            $.ajax({
-                type: "POST",
-                url: "Home.aspx/Accedi",
-                data: "{'USR': '" + $('#txtUSR').val() + "', 'PWD' : '" + $('#txtPWD').val() + "'}",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (msg) {
-                    notifySuccess(msg.d);
-                },
-                error: function (req, status, err) {
-                    alert(req, status, err);
-                }
-            });
-        }
-
         //function cbChange(obj) {
         //    var cbs = document.getElementsByClassName("form-check-input");
         //    for (var i = 0; i < cbs.length; i++) {
@@ -99,7 +86,7 @@
                             <%--  BARRA DI RICERCA--%>
                             <div class="input-group searchbar">
 
-                                
+
                                 <asp:DropDownList ID="ddlCategorie" CssClass="btn dropdown-toggle masterButton" runat="server" DataSourceID="sdsCategorie" DataTextField="CATEGORIA" DataValueField="CATEGORIA" AppendDataBoundItems="True">
                                     <asp:ListItem Text="Tutte le Categorie" Value="*"></asp:ListItem>
                                 </asp:DropDownList>
@@ -131,14 +118,9 @@
                             <div class="dropdown" id="dropdownClienti" runat="server">
                                 <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Gestione
                                 </a>
-
-                                
-
-                                <ul class="dropdown-menu dmenu" aria-labelledby="dropdownMenuButton1">
-
+                                <ul class="dropdown-menu dmenu"  aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Ordini_Resi/Ordini.aspx">Ordini</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CLIENTI/Profilo/ProfiloModifica.aspx">Profilo Cliente</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/PRODOTTI/PaginaProdotto.aspx">Prodotto Test</a></li>
                                     <li><a class="dropdown-item" href="/Forms/LogOut.aspx">Log Out</a></li>
                                 </ul>
                             </div>
@@ -197,7 +179,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                                     <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                                </svg><a ></a>
+                                </svg><a></a>
                             </button>
                         </div>
                         <div class="col-lg-11" style="text-align: center">
@@ -256,7 +238,7 @@
                         </div>
                         <div class="mx-auto">
                             <hr class="masterColorBG masterColorText" style="height: 3px; margin-top: 40px;" />
-                            <a class="cont testo" href="#">Recupera password</a>
+                            <a class="cont testo" href="RecuperaPassword.aspx">Recupera password</a>
                         </div>
                     </div>
 
@@ -264,7 +246,6 @@
                     </div>
                     <br />
                     <br />
-
                 </div>
             </section>
 

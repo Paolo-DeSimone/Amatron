@@ -16,7 +16,7 @@ public class VALUTAZIONI
     public string datacommento;
     public int chiave;
 
-    RifValutazioni.WsValutazioniSoapClient V = new RifValutazioni.WsValutazioniSoapClient();
+    rifValutazioniOL.WsValutazioniSoapClient V = new rifValutazioniOL.WsValutazioniSoapClient();
 
     public VALUTAZIONI()
     {

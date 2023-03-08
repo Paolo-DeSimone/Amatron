@@ -72,9 +72,11 @@ public partial class Venditori_GestisciInventario : System.Web.UI.Page
         P.chiave = int.Parse(Session["chiaveProdottoEsaurito"].ToString());
         //Eseguo il metoto Update_QTA() per aggiornare la quantità del prodotto
         P.Update_QTA();
+
         //Mando a schermo una notifica di avvenuta modifica
         Session["chiaveProdottoEsaurito"] = "";
         ScriptManager.RegisterStartupScript(this, this.GetType(), "closePopup", "window.parent.location.href='/Forms/VENDITORI/VisualizzaProdotti.aspx';", true);
+
         
     }
 }

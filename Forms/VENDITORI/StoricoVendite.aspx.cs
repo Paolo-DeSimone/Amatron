@@ -12,36 +12,35 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //if (!IsPostBack)
-        //{
-
-        //    GrigliaStoricoVendite.DataSourceID = "sdsGrigliaStoricoVendite";
-        //    GrigliaStoricoVendite.DataBind();
-        //}
+        if (!IsPostBack)
+        {
+            DataTable DT = new DataTable();
+            VENDITORI V = new VENDITORI();
+            V.chiave = int.Parse(Session["chiaveUSR"].ToString());
+            DT= V.ORDINI_SelectAll();         
+            GrigliaStoricoVendite.DataSource = DT;         
+            GrigliaStoricoVendite.DataBind();
+        }
 
     }
 
     protected void btnCerca_Click(object sender, EventArgs e)
     {
-        //GrigliaStoricoVendite.DataSourceID = "sdsGrigliaStoricoVendite";
 
 
-        DataTable dt = new DataTable();
-        DATABASE D = new DATABASE();
+        DataTable DT = new DataTable();
+        VENDITORI V = new VENDITORI();
+        V.TITOLO = txtTitolo.Text;
+        V.chiaveCATEGORIA = int.Parse(ddlCategoria.SelectedValue);
+        V.chiaveORDINI = int.Parse(ddlNOrdine.SelectedValue);
+        V.DInizio = txtDInizio.Text;
+        V.DFine = txtDFine.Text;
+        V.chiave = int.Parse(Session["chiaveUSR"].ToString());
+        DT= V.VENDITORI_Filter();
 
-        D.query= "spORDINI_PRODOTTI_CATEGORIA_Filter";
-        D.cmd.Parameters.AddWithValue("TITOLO", txtTitolo.Text);
-        D.cmd.Parameters.AddWithValue("chiaveCATEGORIA", ddlCategoria.SelectedIndex);
-        D.cmd.Parameters.AddWithValue("chiaveORDINE", ddlCategoria.SelectedIndex);
-        D.cmd.Parameters.AddWithValue("chiaveVENDITORE", 1);
-        D.cmd.Parameters.AddWithValue("STARTDATE", txtDInizio.Text);
-        D.cmd.Parameters.AddWithValue("ENDDATE", txtDFine.Text);
-        dt = D.EseguiSPRead();
-
-        GrigliaStoricoVendite.DataSource = dt;
-
-        //ScriptManager.RegisterStartupScript(this, GetType(), "","alert('" +  + "')", true);
+        GrigliaStoricoVendite.DataSource = DT;
         GrigliaStoricoVendite.DataBind();
 
     }
+
 }

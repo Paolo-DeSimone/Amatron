@@ -190,5 +190,17 @@ public class WsProdotti : System.Web.Services.WebService
         return dt;
     }
 
-   
+    [WebMethod]
+    public DataTable IMMAGINI_Max20RandomCategoria(int chiaveCATEGORIA)
+    {
+        DATABASE DB = new DATABASE();
+        DataTable dt = new DataTable();
+        DB.cmd.Parameters.Clear();
+        DB.query = "spIMMAGINI_Max20RandomCategoria";
+        DB.cmd.Parameters.AddWithValue("chiaveCATEGORIA", chiaveCATEGORIA);
+        dt = DB.EseguiSPRead();
+        dt.TableName = "SelectImgCategoria";
+        return dt;
+    }
+
 }

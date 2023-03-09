@@ -28,27 +28,31 @@ public partial class Ordini : System.Web.UI.Page
                 //"<div class=\"col-md-2\" style=\"width:1px\"> </div>" +
                 "<div class=\"col-md-6\">" +
                 //immagine
+                "<div class=\"card-body\">" +
                 "<img src='/Img.ashx?c=" + dt.Rows[i]["chiaveimmagine"].ToString() + "'class=\"immagine\" '/>" +
+                "</div>" +
                 "</div>" +
                 "<div class=\"col-md-6\"> " +
                 "<div class=\"card-body\">" +
-                "<h5 class=\"card-title\">" +
+                "<h3 class=\"card-title\">" +
                 //lblTitolo Prodotto
                 "<label id=\"lblTitolo" + i + "\" runat=\"server\">" + dt.Rows[i]["titolo"] + "</label>" +
-                "</h5>" +
+                "</h3>" +
                 //descrizione
-                "<p class=\"card-text\">Display 14\"" + dt.Rows[i]["descrizione"] + "</p>" +
-                "<button id=\"btnRecensione" + i + "\" runat=\"server\" class=\"btn masterButton\" style=\"margin-right:10px\">Lascia una recensione</button>" +
-                "<button id=\"btnReso" + i + "\" runat=\"server\" class=\"btn masterButton\">Effettua reso</button>" +
+                "<p class=\"card-text\">" + dt.Rows[i]["descrizione"] + "</p>" +
                 //Prezzo
-                "<p class=\"card-text\">Prezzo:<asp:Label ID=\"lblPrezzo" + i + "\" runat=\"server\" Text=\"Label\"/>" + dt.Rows[i]["prezzo"] + "</p>" +
+                "<p class=\"card-text\">Prezzo:<label id=\"lblPrezzo" + i + "\" runat=\"server\"></label>" + " &euro;" + dt.Rows[i]["prezzo"] + "</p>" +
+                "<button id=\"btnRecensione" + i + "\" runat=\"server\" class=\"btn masterButton\" style=\"margin-right:20px\">Lascia una recensione</button>" +
+                "<button id=\"btnReso" + i + "\" runat=\"server\" class=\"btn masterButton\">Effettua reso</button>" +
                 //Stato
-                "<label id=\"lbl" + i + "\" runat=\"server\">stato della spedizione: </label>" +
-                "<label id=\"lblStato" + i + "\" runat=\"server\">" + dt.Rows[i]["stato"] + "</label>" +
+                "<label class=\"mt-3\" id=\"lbl" + i + "\" runat=\"server\">Stato della spedizione:</label>" + " " +
+                "<label id=\"lblStato" + i + "\" runat=\"server\">" + dt.Rows[i]["statosp"] + "</label>" +
                 "</div>" +
                 "</div>" +
                 //"<div class=\"col-md-2\" style=\"width:1px\"> </div>" +
-                "</div>";
+                "</div>" +
+                "<hr class=\"opacity-100\"style=\"border-color:lightgray;\"/>";
+                
                 // "</div>";
             }
             s = cardprodotto.InnerHtml;

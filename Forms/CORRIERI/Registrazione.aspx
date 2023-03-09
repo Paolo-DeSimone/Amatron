@@ -37,7 +37,7 @@
         <h3 style="text-align:center;">Crea un account</h3>
                 <p>
                     Effettua la registrazione per poter accedere al tuo profilo personale. Qui avrai la possibilità di iscriverti come cliente, venditore o corriere. 
-                    In base a come desideri iscriverti avrai la possibilità di compilare un form apposito che ti permetterà di sfruttare tutte le funzionalità di Amatron.
+                    In base a come desideri iscriverti avrai la possibilit&agrave; di compilare un form apposito che ti permetter&agrave; di sfruttare tutte le funzionalità di Amatron.
                 </p>
             </div>
             <div class="col-lg-3"></div>

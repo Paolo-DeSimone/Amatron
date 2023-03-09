@@ -81,7 +81,7 @@ body {
     width: fit-content;
     height: fit-content;
     border: 0px;
-    position: relative;
+    position: absolute;
 }
 
 .PopUpQTA {
@@ -239,3 +239,7 @@ social-widget a:hover {
             text-decoration: none;
             color: #d2d2d2;
         }
+
+.masterNoHover:hover{
+    background-color: transparent !important;
+}

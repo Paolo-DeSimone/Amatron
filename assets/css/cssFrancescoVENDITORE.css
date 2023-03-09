@@ -119,10 +119,16 @@
 }
 
 .close-btn3 {
+<<<<<<< HEAD
+    position: absolute;
+    top: 0;
+    right: 0;
+=======
     display: block;
     position: fixed;
     top: 10%;
     right: 29%;
+>>>>>>> cfaa6f04141b310595961e08d6f3dd7706c6c4a5
     background-color: Transparent;
     background-repeat: no-repeat;
     border: none;
@@ -132,10 +138,9 @@
 }
 
 .close-btnAggiungiProdotto {
-    display: block;
-    position: fixed;
-    top: 24%;
-    right: 36%;
+    position: absolute;
+    top: 0;
+    right: 0;
     background-color: Transparent;
     background-repeat: no-repeat;
     border: none;
@@ -145,10 +150,9 @@
 }
 
 .close-btnAggiungiImg {
-    display: block;
-    position: fixed;
-    top: 34%;
-    right: 37%;
+    position: absolute;
+    top: 0;
+    right: 0;
     background-color: Transparent;
     background-repeat: no-repeat;
     border: none;
@@ -157,13 +161,22 @@
     outline: none;
 }
 
-}
+
 
 .close-btnQTAZero {
+<<<<<<< HEAD
+    position: absolute;
+    top: 0;
+    right: 0;
+=======
     position: fixed;
-    top: 24%;
-    right: 31%;
-    float: right;
+
+    top: 35%;
+    right: 38%;
+>>>>>>> cfaa6f04141b310595961e08d6f3dd7706c6c4a5
+    background-color: Transparent;
+    background-repeat: no-repeat;
+
     border: none;
     background: none;
 }

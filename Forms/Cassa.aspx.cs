@@ -36,12 +36,21 @@ public partial class _Default : System.Web.UI.Page
             CARRELLO CR = new CARRELLO();
             DataTable dt = CR.SelectAllItemsInCart(int.Parse(Session["chiaveUSR"].ToString()));
 
+<<<<<<< HEAD
             //grigliaOrdini.DataBind();
             foreach(GridViewRow r in grigliaOrdini.Rows)
             {
                 r.Cells[0].Text = "<img src=\"/Img.ashx?c=" + r.Cells[1].Text.ToString() +"\" />";
             }
 >>>>>>> 946c4a8d25fa5abf8ade2c7492eed65f3989e0de
+=======
+            
+        }
+        grigliaOrdini.DataBind();
+        foreach (GridViewRow r in grigliaOrdini.Rows)
+        {
+            r.Cells[0].Text = "<img src=\"/Img.ashx?c=" + r.Cells[1].Text.ToString() + "\" />";
+>>>>>>> b8e06cb7711fbbf6a3edb88d090e9a2c21b0ddb4
         }
 
     }

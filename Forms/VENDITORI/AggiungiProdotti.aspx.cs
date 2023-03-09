@@ -22,12 +22,12 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
         //Controlli formali soliti
         if (txtDescrizione.Text.Trim() == "" || txtPrezzo.Text.Trim() == "")
         {
-            string notify = @"notifyError('Dati mancanti, riempire tutti i campi e riprovare')";
-            ScriptManager.RegisterStartupScript(this, GetType(), "btnSalva_Click", notify, true);
-            return;
-
-            //ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Dati mancanti, riempire tutti i campi e riprovare');", true);
+            //string notify = @"notifyError('Dati mancanti, riempire tutti i campi e riprovare')";
+            //ScriptManager.RegisterStartupScript(this, GetType(), "btnSalva_Click", notify, true);
             //return;
+
+            ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Dati mancanti, riempire tutti i campi e riprovare');", true);
+            return;
 
         }
 
@@ -105,8 +105,10 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
         
         DataBind();
 
-        string script = @"notifySuccess('Modifica avvenuta con successo!')";
-        ScriptManager.RegisterStartupScript(this, GetType(), "btnSalva_Click", script, true);
+        //string script = @"notifySuccess('Modifica avvenuta con successo!')";
+        //ScriptManager.RegisterStartupScript(this, GetType(), "btnSalva_Click", script, true);
+        ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Modifica avvenuta con successo!');", true);
+        return;
         reset();
         return;
     }

@@ -14,11 +14,11 @@
     <section class="h-100 h-custom">
         <div class="container text-align-center py-5 h-100">
             <%--Card grande per contenere le altre card--%>
+            <h2 class="text-center py-2">Report AMATRON</h2>
             <div class="card rounded-3">
                 <div class="card-body p-4 p-md-5">
                     <div class="row d-flex justify-content-center align-items-center h-100">
                         <div class="col-lg-12 col-xl-12">
-                            <h2 class="text-center mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Report AMATRON</h2>
                             <%--Card Report Mensile--%>
                             <div class="row">
                                 <div class="card rounded-3">
@@ -59,7 +59,8 @@
                                             <%--Dettagli Dati Tabella--%>
                                             <div class="col-lg-6 text-center align-items-center text-align-center" style="padding-top: 17px;">
                                                 <div class="masterHideScroll masterCardHeight">
-                                                    <asp:GridView ID="grdIncassiMensili" runat="server" CssClass="table table-bordered table-condensed" AutoGenerateColumns="False" DataSourceID="sdsIncassiMensili"> <HeaderStyle BackColor="#B469FF" />
+                                                    <asp:GridView ID="grdIncassiMensili" runat="server" CssClass="table table-bordered table-condensed" AutoGenerateColumns="False" DataSourceID="sdsIncassiMensili">
+                                                        <HeaderStyle BackColor="#B469FF" />
                                                         <Columns>
                                                             <asp:BoundField DataField="MESE" HeaderText="MESE" ReadOnly="True" SortExpression="MESE" />
                                                             <asp:BoundField DataField="GUADAGNO_TOTALE" HeaderText="GUADAGNO TOTALE" ReadOnly="True" SortExpression="GUADAGNO_TOTALE" />
@@ -79,6 +80,7 @@
                     <%--Card Report Annuale--%>
                     <div class="row d-flex justify-content-center align-items-center h-100">
                         <div class="card rounded-3">
+                            <br />
                             <h4 class="card-title text-center mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Incassi Annuali</h4>
                             <div class="card-body p-4 p-md-5">
                                 <%--grafico--%>
@@ -97,7 +99,8 @@
                                         </center>
                                     </div>
                                     <div class="col-lg-6 align-items-center text-align-center" style="padding-top: 17px;">
-                                        <asp:GridView ID="grdIncassiAnnuali" CssClass="table table-bordered table-condensed" runat="server" AutoGenerateColumns="False" DataSourceID="sdsIncassiAnnuali"><HeaderStyle BackColor="#B469FF" />
+                                        <asp:GridView ID="grdIncassiAnnuali" CssClass="table table-bordered table-condensed" runat="server" AutoGenerateColumns="False" DataSourceID="sdsIncassiAnnuali">
+                                            <HeaderStyle BackColor="#B469FF" />
                                             <Columns>
                                                 <asp:BoundField DataField="ANNO" HeaderText="ANNO" ReadOnly="True" SortExpression="ANNO" />
                                                 <asp:BoundField DataField="GUADAGNO_TOTALE" HeaderText="GUADAGNO TOTALE" ReadOnly="True" SortExpression="GUADAGNO_TOTALE" />

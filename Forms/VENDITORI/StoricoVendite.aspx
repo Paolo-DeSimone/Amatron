@@ -132,7 +132,7 @@
                                     <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False" />
                                     <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" Visible="False" />
                                     <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
-                                    <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
+                                    <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" DataFormatString="{0:C}" SortExpression="PREZZO" />
                                     <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" SortExpression="PERCAMATRON" />
                                     <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATA VEND" SortExpression="DATATRANSAZIONE" ApplyFormatInEditMode="true" DataFormatString="{0:d}" />
                                     <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
@@ -148,9 +148,9 @@
 
                             <asp:GridView ID="GrigliaFatturatoVenditore" class="table" runat="server" CssClass="table table-bordered table-condensed" AutoGenerateColumns="False" DataSourceID="sdsGrigliaFatturatoVenditore">
                                 <Columns>
-                                    <asp:BoundField DataField="GuadagnoLordo" HeaderText="GuadagnoLordo" ReadOnly="True" SortExpression="GuadagnoLordo" />
-                                    <asp:BoundField DataField="PercentualeAmatron" HeaderText="PercentualeAmatron" ReadOnly="True" SortExpression="PercentualeAmatron" />
-                                    <asp:BoundField DataField="GuadagnoNetto" HeaderText="GuadagnoNetto" ReadOnly="True" SortExpression="GuadagnoNetto" />
+                                    <asp:BoundField DataField="GuadagnoLordo" HeaderText="Guad. Lordo" ReadOnly="True" DataFormatString="{0:C}" SortExpression="GuadagnoLordo" />
+                                    <asp:BoundField DataField="PercentualeAmatron" HeaderText="Costo %Amatron" ReadOnly="True" DataFormatString="{0:C}" SortExpression="PercentualeAmatron" />
+                                    <asp:BoundField DataField="GuadagnoNetto" HeaderText="Guad. Netto" ReadOnly="True" DataFormatString="{0:C}" SortExpression="GuadagnoNetto" />
 
                                 </Columns>
                                 <HeaderStyle BackColor="#B469FF" />

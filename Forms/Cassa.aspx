@@ -25,7 +25,12 @@
                     <div class="card rounded-3">
                         <div class="card-body p-4 p-md-5">
                             <div class="row align-items-center">
-                                <div class="col-lg-11">
+                                <div class="col-lg-11 center align-items-center justify-content-center text-align-center">
+                                    <div style="width:fit-content">
+                                        <a href="/Forms/AMATRON/PopupPaypalAMATRON.aspx">
+                                            <input type="button" runat="server" class="btn masterButton <%--masterBorderColor masterButton--%>" value="Concludi ordine" id="btnConcludiOrdine" />
+                                        </a>
+                                    </div>
                                     <div class="masterHideScroll masterCardHeight">
                                         <div>
                                             <asp:Label ID="lblgrigliaCassa" runat="server" Text=""></asp:Label>
@@ -52,19 +57,17 @@
                                                 <asp:BoundField DataField="TITOLOprodotto" HeaderText="TITOLOprodotto" SortExpression="TITOLOprodotto" />
                                                 <asp:BoundField DataField="DESCRIZIONEprodotto" HeaderText="DESCRIZIONEprodotto" SortExpression="DESCRIZIONEprodotto" />
                                                 <asp:BoundField DataField="PREZZOprodotto" HeaderText="PREZZOprodotto" ReadOnly="True" SortExpression="PREZZOprodotto" />
+<<<<<<< HEAD
                                                 
 >>>>>>> 946c4a8d25fa5abf8ade2c7492eed65f3989e0de
+=======
+
+>>>>>>> b8e06cb7711fbbf6a3edb88d090e9a2c21b0ddb4
                                             </Columns>
                                         </asp:GridView>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div align="center" class="col-lg-1 align-items-center">
-                            <p></p>
-                            <a href="/Forms/AMATRON/PopupPaypalAMATRON.aspx">
-                                <input type="button" runat="server" class="btn masterButton <%--masterBorderColor masterButton--%>" value="Concludi ordine" id="btnConcludiOrdine" />
-                            </a>
                         </div>
                     </div>
                 </div>

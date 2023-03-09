@@ -12,6 +12,10 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (!IsPostBack)
+        {
+            benvenutoCorriere.InnerHtml = "";
+        }
         int chiave = int.Parse(Session["chiaveUSR"].ToString());
         //grigliaStatisticheCorrieri.DataBind();
         CORRIERI C = new CORRIERI();
@@ -19,7 +23,7 @@ public partial class _Default : System.Web.UI.Page
         DataTable DT = new DataTable();
         DT = C.CORRIERI_SelectByKey();
         string RagioneSociale = DT.Rows[0]["RagioneSociale"].ToString();
-        benvenutoCorriere.InnerHtml = "<h2>Statistiche del corriere " + RagioneSociale + "</h2>";
+        benvenutoCorriere.InnerHtml = "<h2>Statistiche del corriere <b>" + RagioneSociale + "</b></h2>";
     }
 
 

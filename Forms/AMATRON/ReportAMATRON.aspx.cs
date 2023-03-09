@@ -22,7 +22,6 @@ public partial class ReportAMATRON : System.Web.UI.Page
 
     protected void ddlFiltroAnnoMensile_SelectedIndexChanged(object sender, EventArgs e)
     {
-
         chartIncassiMensili.DataBind();
     }
 }

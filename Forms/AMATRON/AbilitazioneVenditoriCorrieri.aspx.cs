@@ -13,19 +13,12 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (txtFiltraVenditori.Text.Trim() == "")
-        {
-            grigliaVenditori.DataSourceID = "sdsVenditori";
-            grigliaVenditori.DataBind();
-        }
-        else grigliaVenditori.DataSourceID = "sdsVenditoriFiltra";
 
-        if (txtFiltraCorrieri.Text.Trim() == "")
-        {
-            grigliaCorrieri.DataSourceID = "sdsCorrieri";
-            grigliaCorrieri.DataBind();
-        }
-        else grigliaCorrieri.DataSourceID = "sdsCorrieriFiltra";
+        grigliaVenditori.DataSourceID = "sdsVenditori";
+        grigliaVenditori.DataBind();
+
+        grigliaCorrieri.DataSourceID = "sdsCorrieri";
+        grigliaCorrieri.DataBind();
     }
 
 
@@ -99,6 +92,16 @@ public partial class _Default : System.Web.UI.Page
 
 
     }
+    protected void btnFiltraVenditori_Click(object sender, EventArgs e)
+    {
+        if (txtFiltraVenditori.Text.Trim() == "")
+        {
+            grigliaVenditori.DataSourceID = "sdsVenditori";
+            grigliaVenditori.DataBind();
+        }
+        else grigliaVenditori.DataSourceID = "sdsVenditoriFiltra";
+
+    }
 
 
 
@@ -169,11 +172,16 @@ public partial class _Default : System.Web.UI.Page
         }
         grigliaCorrieri.DataBind();
     }
+    protected void btnFiltraCorrieri_Click(object sender, EventArgs e)
+    {
+        if (txtFiltraCorrieri.Text.Trim() == "")
+        {
+            grigliaCorrieri.DataSourceID = "sdsCorrieri";
+            grigliaCorrieri.DataBind();
+        }
+        else grigliaCorrieri.DataSourceID = "sdsCorrieriFiltra";
+    }
 
-    //protected void txtFiltraVenditori_TextChanged(object sender, EventArgs e)
-    //{
-    //    VENDITORI V = new VENDITORI();
-    //    V.venditore = txtFiltraVenditori.Text.Trim();
-    //    DataTable filtra = V.FiltraVenditori();
-    //}
+
+
 }

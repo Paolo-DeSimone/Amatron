@@ -47,6 +47,7 @@
 
 .logo {
     height: 50px;
+    margin-left: 2
 }
 
 .dMenu {
@@ -219,11 +220,7 @@
     margin-left:85px;
 }
 
-.ordini {
-    margin: 10px auto;
-    width: 600px;
-    height: 200px;
-}
+
 
 .PopupReso {
     background-color: #212529;

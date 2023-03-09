@@ -72,40 +72,40 @@ public partial class _Default : System.Web.UI.Page
             case "A":
                 SPE.STATO = "B";
                 // invio EMAIL a AMATRON e al cliente dell'ordine aggiornandolo sullo stato
-                EM.mailTo = "giorgio.zucchetti00@gmail.com";
-                EM.subject = "AGGIORNAMENTO STATO";
-                EM.body = "PRESO IN CARICO L'ORDINE di " + "  " + grdSTATO.SelectedRow.Cells[7].Text;
-                EM.SendEmail();
-                E.mailTo = grdSTATO.SelectedRow.Cells[6].Text;
-                E.subject = "AGGIORNAMENTO STATO";
-                E.body = "Il tuo ordine è stato PRESO IN CARICO";
-                E.SendEmail();
+                //EM.mailTo = "giorgio.zucchetti00@gmail.com";
+                //EM.subject = "AGGIORNAMENTO STATO";
+                //EM.body = "PRESO IN CARICO L'ORDINE di " + "  " + grdSTATO.SelectedRow.Cells[7].Text;
+                //EM.SendEmail();
+                //E.mailTo = grdSTATO.SelectedRow.Cells[6].Text;
+                //E.subject = "AGGIORNAMENTO STATO";
+                //E.body = "Il tuo ordine è stato PRESO IN CARICO";
+                //E.SendEmail();
                 string scripter1 = @"notifySuccess('Consegna Presa in Carico')"; //messaggio di stato
                 ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripter1, true);
                 break;
             case "B":
                 SPE.STATO = "C";
-                EM.mailTo = "giorgio.zucchetti00@gmail.com";
-                EM.subject = "AGGIORNAMENTO STATO";
-                EM.body = "IN CONSEGNA L'ORDINE di " + "  " + grdSTATO.SelectedRow.Cells[7].Text;
-                EM.SendEmail();
-                E.mailTo = grdSTATO.SelectedRow.Cells[6].Text;
-                E.subject = "AGGIORNAMENTO STATO";
-                E.body = "Il tuo ordine è IN CONSEGNA";
-                E.SendEmail();
+                //EM.mailTo = "giorgio.zucchetti00@gmail.com";
+                //EM.subject = "AGGIORNAMENTO STATO";
+                //EM.body = "IN CONSEGNA L'ORDINE di " + "  " + grdSTATO.SelectedRow.Cells[7].Text;
+                //EM.SendEmail();
+                //E.mailTo = grdSTATO.SelectedRow.Cells[6].Text;
+                //E.subject = "AGGIORNAMENTO STATO";
+                //E.body = "Il tuo ordine è IN CONSEGNA";
+                //E.SendEmail();
                 string scripter2 = @"notifySuccess('Prodotto in Consegna')"; //messaggio di stato
                 ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripter2, true);
                 break;
             case "C":
                 SPE.STATO = "D";
-                EM.mailTo = "giorgio.zucchetti00@gmail.com";
-                EM.subject = "AGGIORNAMENTO STATO";
-                EM.body = "CONSEGNATO L'ORDINE di " + "  " + grdSTATO.SelectedRow.Cells[7].Text;
-                EM.SendEmail();
-                E.mailTo = grdSTATO.SelectedRow.Cells[6].Text;
-                E.subject = "AGGIORNAMENTO STATO";
-                E.body = "Il tuo ordine è STATO CONSEGNATO";
-                E.SendEmail();
+                //EM.mailTo = "giorgio.zucchetti00@gmail.com";
+                //EM.subject = "AGGIORNAMENTO STATO";
+                //EM.body = "CONSEGNATO L'ORDINE di " + "  " + grdSTATO.SelectedRow.Cells[7].Text;
+                //EM.SendEmail();
+                //E.mailTo = grdSTATO.SelectedRow.Cells[6].Text;
+                //E.subject = "AGGIORNAMENTO STATO";
+                //E.body = "Il tuo ordine è STATO CONSEGNATO";
+                //E.SendEmail();
                 string scripter3 = @"notifySuccess('Prodotto Consegnato')"; //messaggio di stato
                 ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripter3, true);
                 break;

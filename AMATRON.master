@@ -279,10 +279,7 @@
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                     </asp:ContentPlaceHolder>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e4dd1e3fe56d2b443d128fe1e775a43e5715ebab
                     <%--Da qui comincia il Footer--%>
                     <%--<section>--%>
                     <%--Da qui comincia il Footer--%>
@@ -293,7 +290,7 @@
                                 <div class="column">
                                     <div class="footer-widget about-widget">
                                         <h2 class="widget-title">About</h2>
-<<<<<<< HEAD
+
                                         <p>Amatron è sempre al fianco di chi ricerca i prodotti migliori al miglior prezzo sul mercato</p>
                                         <div class="cards">
                                         </div>
@@ -303,13 +300,7 @@
                                                 <path d="M14.06 3.713c.12-1.071-.093-1.832-.702-2.526C12.628.356 11.312 0 9.626 0H4.734a.7.7 0 0 0-.691.59L2.005 13.509a.42.42 0 0 0 .415.486h2.756l-.202 1.28a.628.628 0 0 0 .62.726H8.14c.429 0 .793-.31.862-.731l.025-.13.48-3.043.03-.164.001-.007a.351.351 0 0 1 .348-.297h.38c1.266 0 2.425-.256 3.345-.91.379-.27.712-.603.993-1.005a4.942 4.942 0 0 0 .88-2.195c.242-1.246.13-2.356-.57-3.154a2.687 2.687 0 0 0-.76-.59l-.094-.061ZM6.543 8.82a.695.695 0 0 1 .321-.079H8.3c2.82 0 5.027-1.144 5.672-4.456l.003-.016c.217.124.4.27.548.438.546.623.679 1.535.45 2.71-.272 1.397-.866 2.307-1.663 2.874-.802.57-1.842.815-3.043.815h-.38a.873.873 0 0 0-.863.734l-.03.164-.48 3.043-.024.13-.001.004a.352.352 0 0 1-.348.296H5.595a.106.106 0 0 1-.105-.123l.208-1.32.845-5.214Z" />
                                             </svg>
                                         </p>
-=======
-                                        <p>Qui ci andrà una breve introduzione di Amatron</p>
-                                        <div class="cards">
-                                            <i class="fa-brands fa-paypal"></i>
-                                        </div>
-                                        <p><span><i class="fa-solid fa-lock"></i></span>Pagamenti Online in sicurezza</p>
->>>>>>> e4dd1e3fe56d2b443d128fe1e775a43e5715ebab
+
                                     </div>
                                 </div>
                                 <div class="row">
@@ -317,30 +308,21 @@
 
                                     <div class="col-lg-4">
                                         <div class="footer-widget categories-widget">
-<<<<<<< HEAD
+
                                             <h2 class="widget-title">Categorie</h2>
                                             <ul>
                                                 <li><a href="#">Videogiochi</a></li>
                                                 <li><a href="#">Elettronica</a></li>
                                                 <li><a href="#">Food</a></li>
                                                 <li><a href="#">Arredamento</a></li>
-=======
-                                            <h2 class="widget-title">Categories</h2>
-                                            <ul>
-                                                <li><a href="#">Clothing</a></li>
-                                                <li><a href="#">Lingerie</a></li>
-                                                <li><a href="#">Footwear</a></li>
-                                                <li><a href="#">Hand Bag</a></li>
-                                                <li><a href="#">Jwellery</a></li>
-                                                <li><a href="#">Belt</a></li>
->>>>>>> e4dd1e3fe56d2b443d128fe1e775a43e5715ebab
+
                                             </ul>
                                         </div>
                                     </div>
 
                                     <div class="col-lg-4">
                                         <div class="footer-widget information-widget">
-<<<<<<< HEAD
+
                                             <h2 class="widget-title">Informazioni</h2>
                                             <ul>
                                                 <li><a href="#">About Us</a></li>
@@ -349,22 +331,13 @@
                                                 <li><a href="#">Resi</a></li>
                                                 <li><a href="#">Spedizione & Consegna</a></li>
                                                 <li><a href="#">Privacy Policy</a></li>
-=======
-                                            <h2 class="widget-title">Informations</h2>
-                                            <ul>
-                                                <li><a href="#">About Us</a></li>
-                                                <li><a href="#">Contact Us</a></li>
-                                                <li><a href="#">Term & Condition</a></li>
-                                                <li><a href="#">Return & Exchange</a></li>
-                                                <li><a href="#">Shipping & Delivery</a></li>
-                                                <li><a href="#">Private Policy</a></li>
->>>>>>> e4dd1e3fe56d2b443d128fe1e775a43e5715ebab
+
                                             </ul>
                                         </div>
                                     </div>
                                     <div class="col-lg-4">
                                         <div class="footer-widget">
-<<<<<<< HEAD
+
                                             <h2 class="widget-title">Contatti</h2>
                                             <div class="contact-address">
                                                 <i class="fa-sharp fa-solid fa-location-dot"></i>Indirizzo: via Dei Martiri, Cavarzere, Italia. CAP: 30014
@@ -372,25 +345,14 @@
                                             </div>
                                             <div class="contact-number">
                                                 <i class="fa-solid fa-phone"></i>Telefono: +39 123456789
-=======
-                                            <h2 class="widget-title">Contact</h2>
-                                            <div class="contact-address">
-                                                <i class="fa-sharp fa-solid fa-location-dot"></i>Address: XYZ, New Delhi, India. Pin-Code : 110005
-                                       
-                                            </div>
-                                            <div class="contact-number">
-                                                <i class="fa-solid fa-phone"></i>Phone : +91 123456789
->>>>>>> e4dd1e3fe56d2b443d128fe1e775a43e5715ebab
+
                                        
                                             </div>
                                             <div class="contact-email">
                                                 <i class="fa-solid fa-envelope"></i>Email: contact@amatron.com
                                        
                                             </div>
-<<<<<<< HEAD
-                                     
-=======
->>>>>>> e4dd1e3fe56d2b443d128fe1e775a43e5715ebab
+
                                             <div class="social-widget">
                                                 <a href="#"><i class="fa-brands fa-facebook"></i></a>
                                                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -399,8 +361,8 @@
                                                 <a href="#"><i class="fa-brands fa-discord"></i></a>
                                                 <a href="#"><i class="fa-brands fa-github"></i></a>
                                             </div>
-                                        </div>
-                                    </div>
+                        </div>
+                        </div>
                                 </div>
                             </div>
                         </div>
@@ -411,22 +373,17 @@
                                     Copyright ©
                                    
                                 <script type="text/javascript">document.write(new Date().getFullYear());</script>
-<<<<<<< HEAD
+
                                     Amatron.com, Inc. All Right reserved | Design made by <a href="#" target="_blank">AGANAWAY</a>
-=======
-                                    Amatron.com, Inc. All Right reserved | Design made with <i class="fa-solid fa-heart"></i>by <a href="#" target="_blank">AGANAWAY</a>
->>>>>>> e4dd1e3fe56d2b443d128fe1e775a43e5715ebab
+
                                 </p>
                             </div>
                         </div>
                     </footer>
-<<<<<<< HEAD
+
                     <%--</section>--%>
                 </div>
-=======
-                </div>
-                <%--</section>--%>
->>>>>>> e4dd1e3fe56d2b443d128fe1e775a43e5715ebab
+
             </div>
         </div>
     </form>

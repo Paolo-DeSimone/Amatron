@@ -9,7 +9,9 @@
         <div class="row text-center">
             <h4 id="OrdiniCorriere" runat="server"></h4>
         </div>
-        <div class="col-lg-3"></div>
+        <div style="text-align:center; color:black; margin: 0 auto;" class="testo">
+            Benvenuto nella pagina dei corrieri qui puoi visualizzare e cambiare lo stato delle tue spedizioni.
+        </div>
         <center>
             <div class="col-lg-10 text-center">
                 <div class="card">

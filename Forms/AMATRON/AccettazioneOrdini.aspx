@@ -53,7 +53,7 @@
 
                                     </div>
                                     <div class="col-lg-2 text-end">
-                                        <asp:Button ID="btnCerca" Class="btn masterButton" runat="server" Text="Filtra" OnClick="btnCerca_Click" />
+                                        <asp:Button ID="btnCerca" Class="btn masterButton" runat="server" Text="Filtra" />
                                     </div>
                                     <div class="col-lg-2 align-items-center text-end">
                                         <asp:Button ID="btnAccetta" class="btn masterButton" runat="server" Text="Accetta" OnClick="btnAccetta_Click" />

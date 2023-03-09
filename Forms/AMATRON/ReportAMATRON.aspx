@@ -4,11 +4,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<<<<<<< HEAD
     </asp:Content>
-=======
-</asp:Content>
->>>>>>> e4dd1e3fe56d2b443d128fe1e775a43e5715ebab
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <section class="h-100 h-custom">

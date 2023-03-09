@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="AbilitazioneVenditoriCorrieri.aspx.cs" Inherits="_Default" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="AbilitazioneVenditoriCorrieri.aspx.cs" Inherits="_Default" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -67,7 +67,6 @@
                 </div>
             </div>
 
-
             <div class="col-6">
                 <div class="card">
                     <div class="card-header">
@@ -113,13 +112,13 @@
                             </asp:SqlDataSource>
                         </div>
                         <%--pulsante per abilitare--%>
+
                         <div class="text-center mt-2" style="float: right;">
+
                             <asp:Button ID="btnAbilitaCorrieri" CssClass="btn masterButton" runat="server" Text="Abilita" OnClick="btnAbilitaCorrieri_Click" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </asp:Content>
-

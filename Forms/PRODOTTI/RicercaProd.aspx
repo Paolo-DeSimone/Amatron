@@ -13,13 +13,13 @@
             Risultato della ricerca:</h2>
     </div>
 
-    <div style="clear: both; background-color: #ebebeb">
+    <div style="clear: both; background-color: #ebebeb; height:52px;">
         <div class="d-flex justify-content-center align-items-center text-align-center">
             <span>
                 <img style="width: 100px" src="/assets/images/carmine_banner.png" />
             </span>
             <span>
-                <h3 class="masterColorText">Puoi accostare i tuoi prodotti con <img style="width:250px; height:80px;" src="../../assets/images/paypall.png" /> </h3>
+                <h3 class="masterColorText">Puoi acquistare i tuoi prodotti con <img style="height:30px;" src="../../assets/images/paypall.png" /> </h3>
             </span>
         </div>
     </div>

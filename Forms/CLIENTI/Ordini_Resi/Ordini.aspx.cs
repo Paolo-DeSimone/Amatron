@@ -19,7 +19,7 @@ public partial class Ordini : System.Web.UI.Page
             CLIENTI C = new CLIENTI();
             O.chiavecliente = int.Parse(Session["chiaveUSR"].ToString());
             DataTable dt = O.SelectByOrdineCliente();
-           // lblDescrizione = P.descrizione;
+            // lblDescrizione = P.descrizione;
             cardprodotto.InnerHtml = "";
             string s = "";
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -34,7 +34,7 @@ public partial class Ordini : System.Web.UI.Page
                 "<div class=\"card-body\">" +
                 "<h5 class=\"card-title\">" +
                 //lblTitolo Prodotto
-                "<label id=\"lblTitolo"+ i + "\" runat=\"server\">" + dt.Rows[i]["titolo"] + "</label>" +
+                "<label id=\"lblTitolo" + i + "\" runat=\"server\">" + dt.Rows[i]["titolo"] + "</label>" +
                 "</h5>" +
                 //descrizione
                 "<p class=\"card-text\">Display 14\"" + dt.Rows[i]["descrizione"] + "</p>" +
@@ -49,7 +49,7 @@ public partial class Ordini : System.Web.UI.Page
                 "</div>" +
                 //"<div class=\"col-md-2\" style=\"width:1px\"> </div>" +
                 "</div>";
-               // "</div>";
+                // "</div>";
             }
             s = cardprodotto.InnerHtml;
         }

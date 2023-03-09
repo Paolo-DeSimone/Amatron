@@ -31,7 +31,8 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-2">
-                                        <asp:TextBox ID="txtUtente" Class="form-control" runat="server"></asp:TextBox>
+                                            <asp:DropDownList ID="ddlUTENTE" runat="server" CssClass="form-select" DataSourceID="SqlDataSource1" DataTextField="Column1" DataValueField="chiaveCLIENTE"></asp:DropDownList>
+                                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_CLIENTI_ddl" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                     </div>
                                     <div class="col-lg-2">
                                         <div class="dropdown">
@@ -65,26 +66,12 @@
                                     <div class="masterHideScroll masterCardHeight">
                                         <asp:UpdatePanel runat="server">
                                             <ContentTemplate>
-                                                <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged" AutoGenerateColumns="False" DataSourceID="SqlDataSource2">
-                                                    <Columns>
-                                                        <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUM ORD" SortExpression="NUMEROORDINE" />
-                                                        <asp:BoundField DataField="COGNOME" HeaderText="COGNOME" SortExpression="COGNOME" />
-                                                        <asp:BoundField DataField="NOME" HeaderText="NOME" SortExpression="NOME" />
-                                                        <asp:BoundField DataField="EMAIL_CLIENTI" HeaderText="EMAIL_CLIENTI" SortExpression="EMAIL_CLIENTI" Visible="False" />
-                                                        <asp:BoundField DataField="RAGIONESOCIALE" HeaderText="RAG.SOC.VEND." SortExpression="RAGIONESOCIALE" />
-                                                        <asp:BoundField DataField="EMAIL_VENDITORI" HeaderText="EMAIL_VENDITORI" SortExpression="EMAIL_VENDITORI" Visible="False" />
-                                                        <asp:BoundField DataField="DATATRANSAZIONE_ORDINI" HeaderText="DATA TRANSAZIONE" SortExpression="DATATRANSAZIONE_ORDINI" />
-                                                        <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
-                                                        <asp:BoundField DataField="QTA_ORDINI" HeaderText="QTA" SortExpression="QTA_ORDINI" />
-                                                        <asp:BoundField DataField="EMAIL_CORRIERI" HeaderText="EMAIL_CORRIERI" SortExpression="EMAIL_CORRIERI" Visible="False" />
-                                                        <asp:BoundField DataField="STATO" HeaderText="STATO" SortExpression="STATO" />
-                                                        <asp:CommandField ButtonType="Image" SelectImageUrl="~/assets/images/spunta_button.png" ShowSelectButton="True">
-                                                            <ControlStyle Height="20px" Width="24px" />
-                                                        </asp:CommandField>
-                                                    </Columns>
+                                                <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged" AutoGenerateColumns="False" DataSourceID="SqlDataSource3">
                                                     <SelectedRowStyle BackColor="LightGray" />
                                                     <HeaderStyle BackColor="#B469FF" />
                                                 </asp:GridView>
+                                                <asp:SqlDataSource ID="SqlDataSource4" runat="server"></asp:SqlDataSource>
+                                                <asp:SqlDataSource ID="SqlDataSource3" runat="server"></asp:SqlDataSource>
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
                                         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_GESTISCI" SelectCommandType="StoredProcedure"></asp:SqlDataSource>

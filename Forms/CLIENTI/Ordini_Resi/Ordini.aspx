@@ -5,19 +5,35 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div class="container">
+    <link href="/assets/css/cssGruppoWebservices.css" rel="stylesheet" />
+    <div align="center" class="container">
         <asp:Button ID="btnTemp" runat="server" Text="BTNTEMP" />
         <!-- CARD CON PRODOTTO -->
-        <div class="card mb-3 ordini">
-            <div class="row g-0" runat="server" id="cardprodotto">
-
+        <div class="d-flex justify-content-center align-items-center text-align-center">
+                    <span>
+                        <img style="width: 100px" src="/assets/images/carmine_banner.png" />
+                    </span>
+                        <h2>I tuoi Ordini</h2>
+                </div>
+        <br />
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div runat="server" id="cardprodotto">
+                        <%-- innerhtml --%>
+                    </div>
+                </div>
             </div>
+            <div class="col-md-2"></div>
         </div>
-         <%-- chiamata del popup --%>
+
+
+
+        <%-- chiamata del popup --%>
         <cc1:ModalPopupExtender ID="mp2" runat="server" PopupControlID="Reso" TargetControlID="btnTemp"
             CancelControlID="btn" BackgroundCssClass="Background">
         </cc1:ModalPopupExtender>
-
         <%-- contenuto del popup --%>
         <asp:Panel
             ID="Reso"
@@ -25,7 +41,6 @@
             CssClass="PopupReso"
             align="center"
             Style="display: none">
-
             <%--ci pensa lo script manager a renderlo visibile--%>
 
             <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
@@ -35,26 +50,7 @@
             <%--chiude il popup--%>
         </asp:Panel>
     </div>
-
-        <asp:ScriptManager ID="ScriptManager1" runat="server">
-        </asp:ScriptManager>
-
-        <%-- recensione --%>
-        <%--    <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnRecensione"
-        CancelControlID="Button3" BackgroundCssClass="Background">
-    </cc1:ModalPopupExtender>
-
-    <asp:Panel
-        ID="Panl1"
-        runat="server"
-        CssClass="Popup"
-        align="center"
-        Style="display: none">
-   
-        <iframe style="width: 500px; height: 500px;" id="irm1" src="RecensioneClientiPopup.aspx" runat="server"></iframe>
-        <br />
-        <asp:Button ID="Button13" runat="server" Text="Close" />
-      
-    </asp:Panel>--%>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
 </asp:Content>
 

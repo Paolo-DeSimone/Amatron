@@ -62,21 +62,21 @@
             $("#loginform").css({ "visibility": "hidden", "display": "none" });
         }
 
-        function DiscardItemInCart() {
+        function DiscardItemInCart(c) {
             $.ajax({
                 type: "POST",
-                url: "/AMATRON.master.cs/DiscardItemInCart",
+                url: "/Forms/WM.aspx/DiscardItemInCart",
                     //NON CAMBIARE I NOMI A,B,C SE NO NON FUNZIONA
                     <%--BISOGNA CAMBIARE I VALORI NELLA FUNZIONE JS E METTERCI LE SESSION DI chiaveCliente, chiaveProdotto E QTA per renderlo dinamico--%>
-                data: "{'a': '', 'b' : '', 'c' : ''}",
+                data: "{'c': '"+c+"'}",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (msg) {
                     /*alert(msg.d);*/
                     $('#txt1').val(msg.d);
                 },
-                error: function (req, status, err) {
-                    alert(req, status, err);
+                error: function (msg) {
+                    alert(msg.d);
                 }
             });
         }
@@ -154,7 +154,7 @@
                                 </a>
                                 <ul class="dropdown-menu dmenu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/PagPers.aspx">Profilo Corriere</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/CORRIERI/Stato.aspx">Stato Ordine</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/CORRIERI/Stato.aspx">Stato Ordini</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/Statistiche.aspx">Statistiche</a></li>
                                     <li><a class="dropdown-item" href="/Forms/LogOut.aspx">Log Out</a></li>
                                 </ul>
@@ -198,7 +198,7 @@
                             <h3 style="margin-top: 16px;">Il tuo Carrello</h3>
                         </div>
                         <div class="col-lg-2" style="margin-top: 8px;">
-                            <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large" style="margin-left: 18px;">
+                            <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large masterNoHover" style="margin-left: 18px;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                                     <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />

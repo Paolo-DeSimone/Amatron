@@ -44,12 +44,13 @@
                                             <asp:BoundField DataField="chiaveCORRIERE" HeaderText="chiaveCORRIERE" SortExpression="chiaveCORRIERE" Visible="False" />
                                             <asp:BoundField DataField="chiaveSPEDIZIONE" HeaderText="chiaveSPEDIZIONE" SortExpression="chiaveSPEDIZIONE" Visible="False" />
                                             <asp:BoundField DataField="STATO_SPEDIZIONE" HeaderText="STATO_SPEDIZIONE" SortExpression="STATO_SPEDIZIONE" Visible="False" />
-                                            <asp:BoundField DataField="statosp" HeaderText="STATO SPEDIZIONE" SortExpression="statosp" ReadOnly="True" />
-                                            <asp:BoundField DataField="DATA_TRANSAZIONE" HeaderText="DATA VENDITA" SortExpression="DATA_TRANSAZIONE" ReadOnly="True" />
-                                            <asp:BoundField DataField="DATA_SPEDIZIONE" HeaderText="DATA SPEDIZIONE" SortExpression="DATA_SPEDIZIONE" ReadOnly="True" />
-                                            <asp:BoundField DataField="EMAIL_CLIENTI" HeaderText="EMAIL CLIENTE" SortExpression="EMAIL_CLIENTI" />
+                                            <asp:BoundField DataField="NUMERO_ORDINE" HeaderText="N. ORD" ReadOnly="True" SortExpression="NUMERO_ORDINE" />
                                             <asp:BoundField DataField="NOME_CLIENTE" HeaderText="NOME CLIENTE" SortExpression="NOME_CLIENTE" ReadOnly="True" />
                                             <asp:BoundField DataField="INDIRIZZO_CLIENTE" HeaderText="INDIRIZZO CLIENTE" ReadOnly="True" SortExpression="INDIRIZZO_CLIENTE" />
+                                            <asp:BoundField DataField="statosp" HeaderText="STATO SPEDIZIONE" SortExpression="statosp" ReadOnly="True" />
+                                            <asp:BoundField DataField="DATA_TRANSAZIONE" HeaderText="DATA VENDITA" SortExpression="DATA_TRANSAZIONE" ReadOnly="True" Visible="False"/>
+                                            <asp:BoundField DataField="DATA_SPEDIZIONE" HeaderText="DATA" SortExpression="DATA_SPEDIZIONE" ReadOnly="True" />
+                                            <asp:BoundField DataField="EMAIL_CLIENTI" HeaderText="EMAIL CLIENTE" SortExpression="EMAIL_CLIENTI" Visible="False"/>
                                             <asp:CommandField ShowSelectButton="True" ButtonType="Image" ControlStyle-Height="20px" ControlStyle-Width="24px" SelectImageUrl="../../assets/images/spunta_button.png" />
                                         </Columns>
                                         <SelectedRowStyle BackColor="LightGray" />

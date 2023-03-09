@@ -7,7 +7,7 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 
 public class AMATRONADMIN
-{ 
+{
     public string email;
     public string PWD;
     public int ANNO;
@@ -28,4 +28,11 @@ public class AMATRONADMIN
         A.AMATRON_Login(email, PWD);
         return dt;
     }
-}   
+
+    public DataTable IncassiMensiliByAnno()
+    {
+        DataTable dt = new DataTable();
+        dt = A.AMATRON_IncassiMensiliByAnno(ANNO);
+        return dt;
+    }
+}

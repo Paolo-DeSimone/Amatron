@@ -17,6 +17,8 @@
                         <div class="row align-items-center">
                             <div class="col-lg-2">
                                 <asp:Label ID="Label1" runat="server" Text="FILTRA I DATI PER:"></asp:Label>
+                            </div>
+                            <div class="col-lg-2">
                                 <asp:DropDownList ID="ddlSTATO" runat="server" CssClass="form-select" Style="width: auto" AutoPostBack="True">
                                     <asp:ListItem Value="S">TUTTE LE SPEDIZIONI</asp:ListItem>
                                     <asp:ListItem Value="A">A - Ordine in Preparazione</asp:ListItem>
@@ -25,9 +27,10 @@
                                     <asp:ListItem Value="D">D - Prodotto consegnato</asp:ListItem>
                                 </asp:DropDownList>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-2">
                                 <%-- pulsante --%>
-                                <asp:Button ID="btnStato" runat="server" class="btn btn-sm masterButton" Text="CONFERMA LO STATO AL PASSAGGIO SUCCESSIVO" OnClick="btnStato_Click" />
+                                <asp:Button ID="btnStato" runat="server" class="btn masterButton" Text="CONFERMA LO STATO AL PASSAGGIO SUCCESSIVO" OnClick="btnStato_Click" />
                             </div>
                         </div>
                         <div class="row text-center">

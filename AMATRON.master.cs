@@ -121,10 +121,6 @@ public partial class AMATRON : System.Web.UI.MasterPage
 
     }
 
-    public void DiscardItemInCart()
-    {
-        // da fare
-    }
 
     protected void btnLogin_Click(object sender, EventArgs e)
     {

@@ -19,36 +19,43 @@ public partial class Ordini : System.Web.UI.Page
             CLIENTI C = new CLIENTI();
             O.chiavecliente = int.Parse(Session["chiaveUSR"].ToString());
             DataTable dt = O.SelectByOrdineCliente();
-           // lblDescrizione = P.descrizione;
+            // lblDescrizione = P.descrizione;
             cardprodotto.InnerHtml = "";
-           // string s = "";
+            string s = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                cardprodotto.InnerHtml += "<div class=\"row\">" +
-                "<div class='col-md-4'>" +
+                cardprodotto.InnerHtml += "<div align=\"center\" class=\"row\">" +
+                //"<div class=\"col-md-2\" style=\"width:1px\"> </div>" +
+                "<div class=\"col-md-6\">" +
                 //immagine
-                "<img src='/Img.ashx?c=" + dt.Rows[i]["chiaveimmagine"].ToString() + "'class=\"w-100\" '/>" +
-                "</div>" +
-                "<div class=\"col-md-8\"> " +
                 "<div class=\"card-body\">" +
-                "<h5 class=\"card-title\">" +
+                "<img src='/Img.ashx?c=" + dt.Rows[i]["chiaveimmagine"].ToString() + "'class=\"immagine\" '/>" +
+                "</div>" +
+                "</div>" +
+                "<div class=\"col-md-6\"> " +
+                "<div class=\"card-body\">" +
+                "<h3 class=\"card-title\">" +
                 //lblTitolo Prodotto
-                "<asp:Label ID=\"lblTitolo\" runat=\"server\" Text=\"Label\">" + dt.Rows[i]["titolo"] + "</asp:Label>" +
-                "</h5>" +
+                "<label id=\"lblTitolo" + i + "\" runat=\"server\">" + dt.Rows[i]["titolo"] + "</label>" +
+                "</h3>" +
                 //descrizione
-                "<p class=\"card-text\">Display 14\"" + dt.Rows[i]["descrizione"] + "</p>" +
-                "<asp:Button ID=\"btnRecensione\"runat=\"server\"Text=\"Lascia una recensione\" class=\"btn masterButton\"/>" +
-                "<asp:Button ID=\"btnReso\"runat=\"server\"Text=\"Effettua reso\"class='btn masterButton'/>"  +
+                "<p class=\"card-text\">" + dt.Rows[i]["descrizione"] + "</p>" +
                 //Prezzo
-                "<p class=\"card-text\">Prezzo:<asp:Label ID='lblPrezzo' runat='server' Text='Label'>" + dt.Rows[i]["prezzo"] + "</p>" +
+                "<p class=\"card-text\">Prezzo:<label id=\"lblPrezzo" + i + "\" runat=\"server\"></label>" + " &euro;" + dt.Rows[i]["prezzo"] + "</p>" +
+                "<button id=\"btnRecensione" + i + "\" runat=\"server\" class=\"btn masterButton\" style=\"margin-right:20px\">Lascia una recensione</button>" +
+                "<button id=\"btnReso" + i + "\" runat=\"server\" class=\"btn masterButton\">Effettua reso</button>" +
                 //Stato
-                "<asp:Label ID=\"lblStato\" runat=\"server\" Text=\"\">" + dt.Rows[i]["stato"] + "</asp:Label>" +
+                "<label class=\"mt-3\" id=\"lbl" + i + "\" runat=\"server\">Stato della spedizione:</label>" + " " +
+                "<label id=\"lblStato" + i + "\" runat=\"server\">" + dt.Rows[i]["statosp"] + "</label>" +
                 "</div>" +
                 "</div>" +
-                "</div>";
-               // "</div>";
+                //"<div class=\"col-md-2\" style=\"width:1px\"> </div>" +
+                "</div>" +
+                "<hr class=\"opacity-100\"style=\"border-color:lightgray;\"/>";
+                
+                // "</div>";
             }
-           // s = cardprodotto.InnerHtml;
+            s = cardprodotto.InnerHtml;
         }
     }
 }

@@ -30,15 +30,13 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    
+    <div class="viewed">
         <div class="container">
             <div style="width: 100%; height: 300px; text-align: center">
                 <p style="width: 50%;">
                     <h3 class="masterColorText">Ottieni lo sconto dell'<asp:Label ID="lblPrime" runat="server" Text=""></asp:Label>% sui tuoi acquisti con <i><b>Amatron Prime</b></i></h3>
                 </p>
-               
-
-                <img style="float:inherit" src="/assets/images/andrea_melange.png" />
+                <img style="margin-left:200px;" src="/assets/images/andrea_melange.png" />
                 <img style="float: right" src="/assets/images/donna_indica_2.png" />
             </div>
             <div style="clear: both; background-color: #ebebeb">

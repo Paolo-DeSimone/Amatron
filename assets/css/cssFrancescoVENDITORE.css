@@ -119,9 +119,9 @@
 }
 
 .close-btn3 {
-    position: fixed;
-    top: 24%;
-    right: 31%;
+    position: absolute;
+    top: 0;
+    right: 0;
     background-color: Transparent;
     background-repeat: no-repeat;
     border: none;
@@ -131,9 +131,9 @@
 }
 
 .close-btnAggiungiProdotto {
-    position: fixed;
-    top: 24%;
-    right: 36%;
+    position: absolute;
+    top: 0;
+    right: 0;
     background-color: Transparent;
     background-repeat: no-repeat;
     border: none;
@@ -143,9 +143,9 @@
 }
 
 .close-btnAggiungiImg {
-    position: fixed;
-    top: 34%;
-    right: 37%;
+    position: absolute;
+    top: 0;
+    right: 0;
     background-color: Transparent;
     background-repeat: no-repeat;
     border: none;
@@ -157,9 +157,9 @@
 
 
 .close-btnQTAZero {
-    position: fixed;
-    top: 35%;
-    right: 38%;
+    position: absolute;
+    top: 0;
+    right: 0;
     background-color: Transparent;
     background-repeat: no-repeat;
     border: none;

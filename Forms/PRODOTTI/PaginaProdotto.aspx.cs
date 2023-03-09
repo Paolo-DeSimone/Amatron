@@ -16,10 +16,7 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["chiaveUSR"] == null)
-        {
-            Response.Redirect("/Forms/Homepage.aspx");
-        }
+      
 
         PRODOTTI P = new PRODOTTI();
         IMMAGINI I = new IMMAGINI();
@@ -158,6 +155,12 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void btnAggiungi_Click(object sender, EventArgs e)
     {
+        if (Session["chiaveUSR"] == null)
+        {
+           
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "notifyError('Per aggiungere un prodotto al carrello occorre eseguire il Login');",true);
+            return;
+        }
         PRODOTTI P = new PRODOTTI();
         CARRELLO C = new CARRELLO();
 
@@ -261,7 +264,12 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void btnRecensione_Click(object sender, EventArgs e)
     {
+        if (Session["chiaveUSR"] == null)
+        {
 
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "notifyError('Non puoi lasciare una recensione se non hai effettuato il Login');", true);
+            return;
+        }
         ORDINI O = new ORDINI();
         VALUTAZIONI V = new VALUTAZIONI();
         O.chiavecliente = int.Parse(Session["chiaveUSR"].ToString());
@@ -277,6 +285,7 @@ public partial class Default2 : System.Web.UI.Page
             V.stelle = stelle;
             V.commento = txtDescription.Text.Trim();
             V.datacommento = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+            V.chiavecliente = int.Parse(Session["chiaveUSR"].ToString());
             V.Insert();
         }
         else

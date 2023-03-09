@@ -20,7 +20,7 @@ public partial class _Default : System.Web.UI.Page
             DataTable DT = new DataTable();
             DT = C.CORRIERI_SelectByKey();
             string RagioneSociale = DT.Rows[0]["RagioneSociale"].ToString();
-            OrdiniCorriere.InnerHtml = "<h2>Spedizioni del Corriere " + RagioneSociale + "</h2>";
+            OrdiniCorriere.InnerHtml = "<h2>Spedizioni del Corriere <b>" + RagioneSociale + "</b></h2>";
         }
     }
 

@@ -9,14 +9,28 @@
     <div align="center" class="container">
         <asp:Button ID="btnTemp" runat="server" Text="BTNTEMP" />
         <!-- CARD CON PRODOTTO -->
-        <div class="card">
-            <div runat="server" id="cardprodotto">
-                <%-- innerhtml --%>
+        <div class="d-flex justify-content-center align-items-center text-align-center">
+                    <span>
+                        <img style="width: 100px" src="/assets/images/carmine_banner.png" />
+                    </span>
+                        <h2>I tuoi Ordini</h2>
+                </div>
+        <br />
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div runat="server" id="cardprodotto">
+                        <%-- innerhtml --%>
+                    </div>
+                </div>
             </div>
+            <div class="col-md-2"></div>
         </div>
 
 
-         <%-- chiamata del popup --%>
+
+        <%-- chiamata del popup --%>
         <cc1:ModalPopupExtender ID="mp2" runat="server" PopupControlID="Reso" TargetControlID="btnTemp"
             CancelControlID="btn" BackgroundCssClass="Background">
         </cc1:ModalPopupExtender>
@@ -36,7 +50,7 @@
             <%--chiude il popup--%>
         </asp:Panel>
     </div>
-        <asp:ScriptManager ID="ScriptManager1" runat="server">
-        </asp:ScriptManager>
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
 </asp:Content>
 

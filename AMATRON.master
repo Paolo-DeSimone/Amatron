@@ -154,7 +154,7 @@
                                 </a>
                                 <ul class="dropdown-menu dmenu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/PagPers.aspx">Profilo Corriere</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/CORRIERI/Stato.aspx">Stato Ordine</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/CORRIERI/Stato.aspx">Stato Ordini</a></li>
                                     <li><a class="dropdown-item" href="/Forms/CORRIERI/Statistiche.aspx">Statistiche</a></li>
                                     <li><a class="dropdown-item" href="/Forms/LogOut.aspx">Log Out</a></li>
                                 </ul>

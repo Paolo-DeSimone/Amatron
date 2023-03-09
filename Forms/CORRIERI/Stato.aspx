@@ -46,7 +46,7 @@
                                             <asp:BoundField DataField="STATO_SPEDIZIONE" HeaderText="STATO_SPEDIZIONE" SortExpression="STATO_SPEDIZIONE" Visible="False" />
                                             <asp:BoundField DataField="statosp" HeaderText="STATO SPEDIZIONE" SortExpression="statosp" ReadOnly="True" />
                                             <asp:BoundField DataField="DATA_TRANSAZIONE" HeaderText="DATA VENDITA" SortExpression="DATA_TRANSAZIONE" ReadOnly="True" />
-                                            <asp:BoundField DataField="DATA_SPEDIZIONE" HeaderText="DATA SPEDIZIONE" SortExpression="DATA_SPEDIZIONE" ReadOnly="True" />
+                                            <asp:BoundField DataField="DATA_SPEDIZIONE" HeaderText="DATA" SortExpression="DATA_SPEDIZIONE" ReadOnly="True" />
                                             <asp:BoundField DataField="EMAIL_CLIENTI" HeaderText="EMAIL CLIENTE" SortExpression="EMAIL_CLIENTI" />
                                             <asp:BoundField DataField="NOME_CLIENTE" HeaderText="NOME CLIENTE" SortExpression="NOME_CLIENTE" ReadOnly="True" />
                                             <asp:BoundField DataField="INDIRIZZO_CLIENTE" HeaderText="INDIRIZZO CLIENTE" ReadOnly="True" SortExpression="INDIRIZZO_CLIENTE" />

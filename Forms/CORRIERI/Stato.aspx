@@ -9,7 +9,9 @@
         <div class="row text-center">
             <h4 id="OrdiniCorriere" runat="server"></h4>
         </div>
-        <div class="col-lg-3"></div>
+        <div style="text-align:center; color:black; margin: 0 auto;" class="testo">
+            Benvenuto nella pagina dei corrieri qui puoi visualizzare e cambiare lo stato delle tue spedizioni.
+        </div>
         <center>
             <div class="col-lg-10 text-center">
                 <div class="card">
@@ -17,6 +19,8 @@
                         <div class="row align-items-center">
                             <div class="col-lg-2">
                                 <asp:Label ID="Label1" runat="server" Text="FILTRA I DATI PER:"></asp:Label>
+                            </div>
+                            <div class="col-lg-2">
                                 <asp:DropDownList ID="ddlSTATO" runat="server" CssClass="form-select" Style="width: auto" AutoPostBack="True">
                                     <asp:ListItem Value="S">TUTTE LE SPEDIZIONI</asp:ListItem>
                                     <asp:ListItem Value="A">A - Ordine in Preparazione</asp:ListItem>
@@ -25,9 +29,10 @@
                                     <asp:ListItem Value="D">D - Prodotto consegnato</asp:ListItem>
                                 </asp:DropDownList>
                             </div>
-                            <div class="col-lg-4">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-2">
                                 <%-- pulsante --%>
-                                <asp:Button ID="btnStato" runat="server" class="btn btn-sm masterButton" Text="CONFERMA LO STATO AL PASSAGGIO SUCCESSIVO" OnClick="btnStato_Click" />
+                                <asp:Button ID="btnStato" runat="server" class="btn masterButton" Text="CONFERMA LO STATO AL PASSAGGIO SUCCESSIVO" OnClick="btnStato_Click" />
                             </div>
                         </div>
                         <div class="row text-center">
@@ -39,12 +44,13 @@
                                             <asp:BoundField DataField="chiaveCORRIERE" HeaderText="chiaveCORRIERE" SortExpression="chiaveCORRIERE" Visible="False" />
                                             <asp:BoundField DataField="chiaveSPEDIZIONE" HeaderText="chiaveSPEDIZIONE" SortExpression="chiaveSPEDIZIONE" Visible="False" />
                                             <asp:BoundField DataField="STATO_SPEDIZIONE" HeaderText="STATO_SPEDIZIONE" SortExpression="STATO_SPEDIZIONE" Visible="False" />
-                                            <asp:BoundField DataField="statosp" HeaderText="STATO SPEDIZIONE" SortExpression="statosp" ReadOnly="True" />
-                                            <asp:BoundField DataField="DATA_TRANSAZIONE" HeaderText="DATA VENDITA" SortExpression="DATA_TRANSAZIONE" ReadOnly="True" />
-                                            <asp:BoundField DataField="DATA_SPEDIZIONE" HeaderText="DATA SPEDIZIONE" SortExpression="DATA_SPEDIZIONE" ReadOnly="True" />
-                                            <asp:BoundField DataField="EMAIL_CLIENTI" HeaderText="EMAIL CLIENTE" SortExpression="EMAIL_CLIENTI" />
+                                            <asp:BoundField DataField="NUMERO_ORDINE" HeaderText="N. ORD" ReadOnly="True" SortExpression="NUMERO_ORDINE" />
                                             <asp:BoundField DataField="NOME_CLIENTE" HeaderText="NOME CLIENTE" SortExpression="NOME_CLIENTE" ReadOnly="True" />
                                             <asp:BoundField DataField="INDIRIZZO_CLIENTE" HeaderText="INDIRIZZO CLIENTE" ReadOnly="True" SortExpression="INDIRIZZO_CLIENTE" />
+                                            <asp:BoundField DataField="statosp" HeaderText="STATO SPEDIZIONE" SortExpression="statosp" ReadOnly="True" />
+                                            <asp:BoundField DataField="DATA_TRANSAZIONE" HeaderText="DATA VENDITA" SortExpression="DATA_TRANSAZIONE" ReadOnly="True" Visible="False"/>
+                                            <asp:BoundField DataField="DATA_SPEDIZIONE" HeaderText="DATA" SortExpression="DATA_SPEDIZIONE" ReadOnly="True" />
+                                            <asp:BoundField DataField="EMAIL_CLIENTI" HeaderText="EMAIL CLIENTE" SortExpression="EMAIL_CLIENTI" Visible="False"/>
                                             <asp:CommandField ShowSelectButton="True" ButtonType="Image" ControlStyle-Height="20px" ControlStyle-Width="24px" SelectImageUrl="../../assets/images/spunta_button.png" />
                                         </Columns>
                                         <SelectedRowStyle BackColor="LightGray" />

@@ -78,4 +78,8 @@ public class CARRELLO
        return DT;
     }
 
+    public void DiscardItemInCart(int chiavePRODOTTO, int chiaveCLIENTE)
+    {
+        C.CARRELLO_DiscardItemInCart(chiavePRODOTTO, chiaveCLIENTE);
+    }
 }

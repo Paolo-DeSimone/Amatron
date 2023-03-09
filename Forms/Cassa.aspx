@@ -30,18 +30,19 @@
                                         <div>
                                             <asp:Label ID="lblgrigliaCassa" runat="server" Text=""></asp:Label>
                                         </div>
-                                        <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" DataSourceID="SqlDataSource2">
+                                        <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" AutoGenerateColumns="false" DataSourceID="SqlDataSource2">
                                             <Columns>
-                                                <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" />
-                                                <asp:BoundField DataField="QTAprodotto" HeaderText="QTAprodotto" SortExpression="QTAprodotto" ReadOnly="True" />
-                                                <asp:BoundField DataField="TITOLOprodotto" HeaderText="TITOLOprodotto" SortExpression="TITOLOprodotto" />
-                                                <asp:BoundField DataField="DESCRIZIONEprodotto" HeaderText="DESCRIZIONEprodotto" SortExpression="DESCRIZIONEprodotto" />
-                                                <asp:BoundField DataField="PREZZOprodotto" HeaderText="PREZZOprodotto" ReadOnly="True" SortExpression="PREZZOprodotto" />
                                                 <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="IMMAGINEprodotto" SortExpression="IMMAGINEprodotto">
                                                     <ItemTemplate>
                                                         <asp:Image ID="Image" runat="server" DataField="IMMAGINEprodotto" Mode="ReadOnly" ImageUrl="IMMAGINEprodotto" />
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
+                                                <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" />
+                                                <asp:BoundField DataField="QTAprodotto" HeaderText="QTAprodotto" SortExpression="QTAprodotto" ReadOnly="True" />
+                                                <asp:BoundField DataField="TITOLOprodotto" HeaderText="TITOLOprodotto" SortExpression="TITOLOprodotto" />
+                                                <asp:BoundField DataField="DESCRIZIONEprodotto" HeaderText="DESCRIZIONEprodotto" SortExpression="DESCRIZIONEprodotto" />
+                                                <asp:BoundField DataField="PREZZOprodotto" HeaderText="PREZZOprodotto" ReadOnly="True" SortExpression="PREZZOprodotto" />
+                                                
                                             </Columns>
                                             <SelectedRowStyle BackColor="LightGray" />
                                             <HeaderStyle BackColor="#B469FF" />

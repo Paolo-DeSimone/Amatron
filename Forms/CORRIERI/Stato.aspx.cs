@@ -53,7 +53,7 @@ public partial class _Default : System.Web.UI.Page
         }
 
         //controllo se lo stato della spedizione è già a prodotto consegnato, non faccio nulla
-        if (grdSTATO.SelectedRow.Cells[3].Text == "Prodotto consegnato")
+        if (Session["STATO_SPEDIZIONE"].ToString() == "D")
         {
             string scripterr = @"notifyError('Prodotto già consegnato')"; //messaggio di errore
             ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripterr, true);
@@ -63,7 +63,7 @@ public partial class _Default : System.Web.UI.Page
         SPEDIZIONI SPE = new SPEDIZIONI();
         SPE.chiaveORDINE = int.Parse(Session["chiaveORDINE"].ToString());
         string stato_pre_update = Session["STATO_SPEDIZIONE"].ToString();
-        SPE.DATAORA = DateTime.Now.ToString();
+        SPE.DATAORA = DateTime.Now.ToString("dd/MM/yy");
         EMAIL E = new EMAIL();
         EMAIL EM = new EMAIL();
 

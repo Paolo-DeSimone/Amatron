@@ -20,9 +20,13 @@
         <%-- Titolo della pagina --%>
         <div class="CardMargine ">
             <h2>
+               <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                    <path d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434L7.752.066ZM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567L4.25 7.504ZM7.5 9.933l-2.75 1.571v3.134l2.75-1.571V9.933Zm1 3.134 2.75 1.571v-3.134L8.5 9.933v3.134Zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567-2.742 1.567Zm2.242-2.433V3.504L8.5 5.076V8.21l2.75-1.572ZM7.5 8.21V5.076L4.75 3.504v3.134L7.5 8.21ZM5.258 2.643 8 4.21l2.742-1.567L8 1.076 5.258 2.643ZM15 9.933l-2.75 1.571v3.134L15 13.067V9.933ZM3.75 14.638v-3.134L1 9.933v3.134l2.75 1.571Z" />
+                </svg>
                 <asp:Label ID="lblProdottiInVendita" runat="server" Text="Prodotti in vendita"></asp:Label>
             </h2>
         </div>
+            <p>In questa sezione puoi aggiungere un nuovo prodotto da mettere in vendita, aggiungere pi&ugrave; foto ad un prodotto selezionabile dalla griglia e modificarne la quantit&agrave; una volta esaurito</p>
         <div class="card">
 
             <%-- Body --%>
@@ -71,8 +75,8 @@
                             </div>
                         </div>
                     </div>--%>
-                <div class="table-responsive" style="overflow-y: scroll;width:100%; height:500px; ">
-                   
+                <div class="table-responsive" style="overflow-y: scroll; width: 100%; height: 500px;">
+
                     <%-- QUI INSERIRò LA GRIDVIEW AL POSTO DELLE COL E DELLE ROW PER POPOLARE LA PAGINA --%>
                     <asp:GridView ID="gridVisualizzaProdotti" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed" DataKeyNames="chiave,chiave1" DataSourceID="sdsGRIDVisualizzaProdotti" OnSelectedIndexChanged="gridVisualizzaProdotti_SelectedIndexChanged">
                         <Columns>
@@ -95,7 +99,7 @@
                             <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" SortExpression="PERCAMATRON" />
                             <asp:BoundField DataField="chiave1" HeaderText="chiave1" InsertVisible="False" ReadOnly="True" SortExpression="chiave1" Visible="False" />
                             <asp:BoundField DataField="CATEGORIA" HeaderText="CATEGORIA" SortExpression="CATEGORIA" />
-                            <asp:CommandField ShowSelectButton="True" ButtonType="image"  SelectImageUrl="../../assets/images/spunta_button.png" ControlStyle-Height="20px" ControlStyle-Width="24px" />
+                            <asp:CommandField ShowSelectButton="True" ButtonType="image" SelectImageUrl="../../assets/images/spunta_button.png" ControlStyle-Height="20px" ControlStyle-Width="24px" />
                         </Columns>
                         <SelectedRowStyle BackColor="#adaaaa" />
                         <HeaderStyle BackColor="#B469FF" />
@@ -106,7 +110,7 @@
                         </SelectParameters>
                     </asp:SqlDataSource>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -141,7 +145,11 @@
         <br />
         <div class="close-btn-wrapper">
 
+<<<<<<< HEAD
+            <button id="btnChiudiPopup" class="close-btnAggiungiProdotto" runat="server">
+=======
             <button id="btnChiudiPopup" class="close-btn2" runat="server">
+>>>>>>> e4dd1e3fe56d2b443d128fe1e775a43e5715ebab
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                     <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
@@ -171,7 +179,7 @@
 
 
         <div class="close-btn-wrapper">
-            <button id="btnChiudiPopupInventario" class="close-btnQTAZero" runat="server" >
+            <button id="btnChiudiPopupInventario" class="close-btnQTAZero" runat="server">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                     <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />

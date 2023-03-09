@@ -164,10 +164,10 @@
                                 <a class="dropdown-toggle mItem" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">Gestione
                                 </a>
                                 <ul class="dropdown-menu dmenu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AbilitazioneVenditoriCorrieri.aspx">Abilita Utenti</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneOrdini.aspx">Accetta Ordini</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneResi.aspx">Accetta Resi</a></li>
-                                    <li><a class="dropdown-item" href="/Forms/AMATRON/GestioneConfig.aspx">Gestisci Config</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AbilitazioneVenditoriCorrieri.aspx">Abilitazione Utenti</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneOrdini.aspx">Accettazione Ordini</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/AMATRON/AccettazioneResi.aspx">Accettazione Resi</a></li>
+                                    <li><a class="dropdown-item" href="/Forms/AMATRON/GestioneConfig.aspx">Gestistione Config</a></li>
                                     <li><a class="dropdown-item" href="/Forms/AMATRON/ReportAMATRON.aspx">Statistiche</a></li>
                                     <li><a class="dropdown-item" href="/Forms/LogOut.aspx">Log Out</a></li>
                                 </ul>

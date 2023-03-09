@@ -25,7 +25,12 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
             string notify = @"notifyError('Dati mancanti, riempire tutti i campi e riprovare')";
             ScriptManager.RegisterStartupScript(this, GetType(), "btnSalva_Click", notify, true);
             return;
+
+            //ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Dati mancanti, riempire tutti i campi e riprovare');", true);
+            //return;
+
         }
+
       
         //      CAMPO DA AGGIORNARE
         PRODOTTI P = new PRODOTTI();

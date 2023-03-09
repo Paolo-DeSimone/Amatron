@@ -136,6 +136,17 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="CARRELLO_DiscardItemInCart">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiavePRODOTTO" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="chiaveCLIENTE" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CARRELLO_DiscardItemInCartResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="CARRELLO_InsertSoapIn">
@@ -186,6 +197,12 @@
   <wsdl:message name="CARRELLO_SelectAllItemsInCartSoapOut">
     <wsdl:part name="parameters" element="tns:CARRELLO_SelectAllItemsInCartResponse" />
   </wsdl:message>
+  <wsdl:message name="CARRELLO_DiscardItemInCartSoapIn">
+    <wsdl:part name="parameters" element="tns:CARRELLO_DiscardItemInCart" />
+  </wsdl:message>
+  <wsdl:message name="CARRELLO_DiscardItemInCartSoapOut">
+    <wsdl:part name="parameters" element="tns:CARRELLO_DiscardItemInCartResponse" />
+  </wsdl:message>
   <wsdl:portType name="WsCarrelloSoap">
     <wsdl:operation name="CARRELLO_Insert">
       <wsdl:input message="tns:CARRELLO_InsertSoapIn" />
@@ -218,6 +235,10 @@
     <wsdl:operation name="CARRELLO_SelectAllItemsInCart">
       <wsdl:input message="tns:CARRELLO_SelectAllItemsInCartSoapIn" />
       <wsdl:output message="tns:CARRELLO_SelectAllItemsInCartSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_DiscardItemInCart">
+      <wsdl:input message="tns:CARRELLO_DiscardItemInCartSoapIn" />
+      <wsdl:output message="tns:CARRELLO_DiscardItemInCartSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WsCarrelloSoap" type="tns:WsCarrelloSoap">
@@ -294,6 +315,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="CARRELLO_DiscardItemInCart">
+      <soap:operation soapAction="http://tempuri.org/CARRELLO_DiscardItemInCart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WsCarrelloSoap12" type="tns:WsCarrelloSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -362,6 +392,15 @@
     </wsdl:operation>
     <wsdl:operation name="CARRELLO_SelectAllItemsInCart">
       <soap12:operation soapAction="http://tempuri.org/CARRELLO_SelectAllItemsInCart" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CARRELLO_DiscardItemInCart">
+      <soap12:operation soapAction="http://tempuri.org/CARRELLO_DiscardItemInCart" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

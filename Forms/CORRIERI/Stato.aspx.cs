@@ -110,9 +110,6 @@ public partial class _Default : System.Web.UI.Page
                 ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripter3, true);
                 break;
         }
-
         DataBind();
     }
-
-
 }

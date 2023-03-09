@@ -25,9 +25,9 @@
                                     <asp:ListItem Value="D">D - Prodotto consegnato</asp:ListItem>
                                 </asp:DropDownList>
                             </div>
-                            <div class="col-lg-4">
+                            <div style="float:left;" class="col-lg-4">
                                 <%-- pulsante --%>
-                                <asp:Button ID="btnStato" runat="server" class="btn btn-sm masterButton" Text="CONFERMA LO STATO AL PASSAGGIO SUCCESSIVO" OnClick="btnStato_Click" />
+                                <asp:Button ID="btnStato" runat="server"  class="btn btn-sm masterButton" Text="CONFERMA LO STATO AL PASSAGGIO SUCCESSIVO"  OnClick="btnStato_Click" />
                             </div>
                         </div>
                         <div class="row text-center">

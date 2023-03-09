@@ -119,9 +119,10 @@
 }
 
 .close-btn3 {
-    position: fixed;
-    top: 24%;
-    right: 31%;
+    position: absolute;
+    top: 10%;
+    right: 30%;
+    float: right;
     background-color: Transparent;
     background-repeat: no-repeat;
     border: none;

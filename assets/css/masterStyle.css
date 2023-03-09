@@ -81,7 +81,7 @@ body {
     width: fit-content;
     height: fit-content;
     border: 0px;
-    position: relative;
+    position: absolute;
 }
 
 .PopUpQTA {

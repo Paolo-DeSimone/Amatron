@@ -42,6 +42,10 @@
                 </SelectParameters>
             </asp:SqlDataSource>
             <center>
+                <asp:Label ID="labelDescrizioneQTA" runat="server" Text="Qui puoi rifornire i prodotti esauriti"></asp:Label>
+            </center>
+            <br />
+            <center>
                 <div class="FlexBoxF">
                     <asp:Label ID="lblQuantita" runat="server" Text="Quantità:"></asp:Label>
                     <asp:TextBox ID="txtQuantita" Class="form-control form-control-sm" runat="server" Style="width: 120px;" TextMode="Number"></asp:TextBox>

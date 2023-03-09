@@ -46,7 +46,7 @@
                         </div>
                         <div class="row text-center mt-2">
                             <div class="col">
-                                <asp:Label ID="Label4" Class="lblCORRIERI" runat="server" Text="Città:"></asp:Label>
+                                <asp:Label ID="Label4" Class="lblCORRIERI" runat="server" Text="Citt&agrave;:"></asp:Label>
                                 <asp:TextBox ID="txtCITTA" class="form-control form-control-sm" runat="server"></asp:TextBox>
                             </div>
                             <div class="col-2">

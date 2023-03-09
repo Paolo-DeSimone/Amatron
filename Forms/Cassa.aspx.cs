@@ -21,6 +21,7 @@ public partial class _Default : System.Web.UI.Page
             DataTable DT = C.SELECTBYKEY();
             lblMostraIndirizzoConsegna.Text = DT.Rows[0]["INDIRIZZO"].ToString() + DT.Rows[0]["CITTA"].ToString() + DT.Rows[0]["PROVINCIA"].ToString();
 
+<<<<<<< HEAD
             //CARRELLO CR = new CARRELLO();
             //DataTable dt = CR.SelectAllItemsInCart(int.Parse(Session["chiaveUSR"].ToString()));
             //string s = "";
@@ -31,6 +32,16 @@ public partial class _Default : System.Web.UI.Page
             //   "<img src='/GestoreImmagini.ashx?c=" + dt.Rows[i]["IMMAGINEprodotto"] + "' class='d-block w-100' style='width:600px; height:450px' alt='Product Image 1'/>" +
             //   "</div>";
             //}
+=======
+            CARRELLO CR = new CARRELLO();
+            DataTable dt = CR.SelectAllItemsInCart(int.Parse(Session["chiaveUSR"].ToString()));
+
+            //grigliaOrdini.DataBind();
+            foreach(GridViewRow r in grigliaOrdini.Rows)
+            {
+                r.Cells[0].Text = "<img src=\"/Img.ashx?c=" + r.Cells[1].Text.ToString() +"\" />";
+            }
+>>>>>>> 946c4a8d25fa5abf8ade2c7492eed65f3989e0de
         }
 
     }

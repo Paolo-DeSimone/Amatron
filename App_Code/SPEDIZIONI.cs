@@ -28,7 +28,7 @@ public class SPEDIZIONI
 
     public void SPEDIZIONI_Insert()
     {
-        S.SPEDIZIONI_Insert(chiave, chiaveORDINE, STATO, DATAORA);
+        S.SPEDIZIONI_Insert(chiaveORDINE, STATO, DATAORA);
     }
 
     /// <summary>

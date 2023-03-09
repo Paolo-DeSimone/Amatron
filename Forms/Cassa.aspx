@@ -30,16 +30,30 @@
                                         <div>
                                             <asp:Label ID="lblgrigliaCassa" runat="server" Text=""></asp:Label>
                                         </div>
+<<<<<<< HEAD
                                         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spv_JoinCARRELLO_PRODOTTI_IMMAGINISelectAllItemsInCart" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                         <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" DataSourceID="SqlDataSource2">
                                             <Columns>
                                                 <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" Visible="False" />
 
+=======
+                                        <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" AutoGenerateColumns="false" DataSourceID="SqlDataSource2">
+                                            <Columns>
+>>>>>>> 946c4a8d25fa5abf8ade2c7492eed65f3989e0de
                                                 <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="IMMAGINEprodotto" SortExpression="IMMAGINEprodotto">
                                                     <ItemTemplate>
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
+<<<<<<< HEAD
 
+=======
+                                                <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" />
+                                                <asp:BoundField DataField="QTAprodotto" HeaderText="QTAprodotto" SortExpression="QTAprodotto" ReadOnly="True" />
+                                                <asp:BoundField DataField="TITOLOprodotto" HeaderText="TITOLOprodotto" SortExpression="TITOLOprodotto" />
+                                                <asp:BoundField DataField="DESCRIZIONEprodotto" HeaderText="DESCRIZIONEprodotto" SortExpression="DESCRIZIONEprodotto" />
+                                                <asp:BoundField DataField="PREZZOprodotto" HeaderText="PREZZOprodotto" ReadOnly="True" SortExpression="PREZZOprodotto" />
+                                                
+>>>>>>> 946c4a8d25fa5abf8ade2c7492eed65f3989e0de
                                             </Columns>
                                         </asp:GridView>
                                     </div>

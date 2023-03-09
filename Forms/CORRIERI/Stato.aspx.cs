@@ -39,6 +39,7 @@ public partial class _Default : System.Web.UI.Page
         Session["STATO_SPEDIZIONE"] = DT.Rows[0]["STATO"].ToString();
         //faccio la session per passare la chiave
         Session["chiaveSPEDIZIONE"] = grdSTATO.SelectedValue.ToString();
+        Session["chiaveORDINE"] = DT.Rows[0]["chiaveORDINE"].ToString();
     }
 
     protected void btnStato_Click(object sender, EventArgs e)
@@ -60,17 +61,16 @@ public partial class _Default : System.Web.UI.Page
         }
 
         SPEDIZIONI SPE = new SPEDIZIONI();
-        SPE.chiave = int.Parse(Session["chiaveSPEDIZIONE"].ToString());
-        SPE.STATO = Session["STATO_SPEDIZIONE"].ToString();
-        SPE.SPEDIZIONI_UpdateStato();
-        DataTable DT = SPE.SPEDIZIONI_SelectByKey();
-        string STATO = DT.Rows[0]["STATO"].ToString();
+        SPE.chiaveORDINE = int.Parse(Session["chiaveORDINE"].ToString());
+        string stato_pre_update = Session["STATO_SPEDIZIONE"].ToString();
+        SPE.DATAORA = DateTime.Now.ToString();
         EMAIL E = new EMAIL();
         EMAIL EM = new EMAIL();
 
-        switch (STATO)
+        switch (stato_pre_update)
         {
-            case "B":
+            case "A":
+                SPE.STATO = "B";
                 // invio EMAIL a AMATRON e al cliente dell'ordine aggiornandolo sullo stato
                 EM.mailTo = "giorgio.zucchetti00@gmail.com";
                 EM.subject = "AGGIORNAMENTO STATO";
@@ -83,8 +83,8 @@ public partial class _Default : System.Web.UI.Page
                 string scripter1 = @"notifySuccess('Consegna Presa in Carico')"; //messaggio di stato
                 ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripter1, true);
                 break;
-
-            case "C":
+            case "B":
+                SPE.STATO = "C";
                 EM.mailTo = "giorgio.zucchetti00@gmail.com";
                 EM.subject = "AGGIORNAMENTO STATO";
                 EM.body = "IN CONSEGNA L'ORDINE di " + "  " + grdSTATO.SelectedRow.Cells[7].Text;
@@ -96,8 +96,8 @@ public partial class _Default : System.Web.UI.Page
                 string scripter2 = @"notifySuccess('Prodotto in Consegna')"; //messaggio di stato
                 ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripter2, true);
                 break;
-
-            case "D":
+            case "C":
+                SPE.STATO = "D";
                 EM.mailTo = "giorgio.zucchetti00@gmail.com";
                 EM.subject = "AGGIORNAMENTO STATO";
                 EM.body = "CONSEGNATO L'ORDINE di " + "  " + grdSTATO.SelectedRow.Cells[7].Text;
@@ -110,6 +110,8 @@ public partial class _Default : System.Web.UI.Page
                 ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripter3, true);
                 break;
         }
+
+        SPE.SPEDIZIONI_Insert();
         DataBind();
     }
 }

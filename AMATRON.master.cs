@@ -14,41 +14,42 @@ public partial class AMATRON : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-            dropdownAmatron.Visible = false;
-            dropdownClienti.Visible = false;
-            dropdownCorrieri.Visible = false;
-            dropdownVenditori.Visible = false;
-            iconaCarrello.Visible = false;
-            accessIn.Visible = true;
+        dropdownAmatron.Visible = false;
+        dropdownClienti.Visible = false;
+        dropdownCorrieri.Visible = false;
+        dropdownVenditori.Visible = false;
+        iconaCarrello.Visible = false;
+        accessIn.Visible = true;
 
-            if (Session["chiaveUSR"] != null)
+        if (Session["chiaveUSR"] != null)
+        {
+            string tipoUSR = Session["tipoUSR"].ToString();
+            switch (tipoUSR)
             {
-                string tipoUSR = Session["tipoUSR"].ToString();
-                switch (tipoUSR)
-                {
-                    case "A":
-                        dropdownClienti.Visible = true;
-                        iconaCarrello.Visible = true;
-                        break;
-                    case "B":
-                        dropdownVenditori.Visible = true;
-                        break;
-                    case "C":
-                        dropdownCorrieri.Visible = true;
-                        break;
-                    case "D":
-                        dropdownAmatron.Visible = true;
-                        break;
-                }
-                litUtente.Text = "Logged as " + Session["emailUSR"].ToString();
-                accessIn.Visible = false;
-                caricaCarrello(int.Parse(Session["chiaveUSR"].ToString()));
-            } else
-            {
-                litUtente.Text = "";
+                case "A":
+                    dropdownClienti.Visible = true;
+                    iconaCarrello.Visible = true;
+                    break;
+                case "B":
+                    dropdownVenditori.Visible = true;
+                    break;
+                case "C":
+                    dropdownCorrieri.Visible = true;
+                    break;
+                case "D":
+                    dropdownAmatron.Visible = true;
+                    break;
             }
-
+            litUtente.Text = "Logged as " + Session["emailUSR"].ToString();
+            accessIn.Visible = false;
+            caricaCarrello(int.Parse(Session["chiaveUSR"].ToString()));
         }
+        else
+        {
+            litUtente.Text = "";
+        }
+
+    }
 
     private void caricaCarrello(int chiaveUSR)
     {
@@ -63,39 +64,41 @@ public partial class AMATRON : System.Web.UI.MasterPage
         for (int i = 0; i < DT.Rows.Count; i++)
         {
             s +=
-            "<div class=\"card mx-1 my-1\">" +
+            "<div id=\"itemInCart\"class=\"card mx-1 my-1\">" +
             "<div class=\"card-body \" style=\"padding: 5px; color: rgb(0,0,0);\r\n font-weight: 600;\r\n\">" +
             "<div class=\"row\" style=\"margin: 0px; padding: 0px;\">" +
             "<div class=\"row\" style=\"margin: 0px; padding: 0px;\">" +
             "" +
             " <div class=\"col-sm-4\">" +
-            "<a href=\"Forms/PRODOTTI/PaginaProdotto.aspx?c="+ DT.Rows[i]["chiavePRODOTTO"].ToString() + "\" class=\"w3-bar-item w3-button\">" +
-            "<img src=\"/Img.ashx?c=" + DT.Rows[i]["chiavePRODOTTO"].ToString() +"\" class=\"w-50 h-50\" />" +
-            "</a>" +
+                "<a href=\"Forms/PRODOTTI/PaginaProdotto.aspx?c=" + DT.Rows[i]["chiavePRODOTTO"].ToString() + "\" class=\"w3-bar-item w3-button\">" +
+                "<img src=\"/Img.ashx?c=" + DT.Rows[i]["chiavePRODOTTO"].ToString() + "\" class=\"w-50 h-50\" />" +
+                "</a>" +
             "</div>" +
             "" +
             " <div class=\"col-sm-5\">" +
             "<p style=\"margin: 4px;\"></p>" +
             "" +
             "<div>" + //DIV di apertura
-            "<div>" + DT.Rows[i]["TITOLOprodotto"] + "</div>" +
-            "</div>" +
-            "<div>" + DT.Rows[i]["DESCRIZIONEprodotto"].ToString() + "</div>" +
-            "</div>" + //DIV di chiusura
-            "" +
-            "<div style=\"padding: 0px;\" class=\"col-sm-3\">" +
+                "<div>" + DT.Rows[i]["TITOLOprodotto"] + "</div>" +
+                "</div>" +
+                "<div style=\"color: rgb(0,0,0);\r\n font-weight: 500;\r\n\">" + DT.Rows[i]["DESCRIZIONEprodotto"].ToString().Substring(0, 20) + "... </div>" +
+                "</div>" + //DIV di chiusura
+                "" +
+                "<div style=\"padding: 0px;\" class=\"col-sm-3\">" +
             "<div>" + //DIV di apertura
             "" +
-            "<button onclick=\"closeRightMenu()\"  class=\"w3-bar-item w3-button w3-large\" style=\"padding: 0px; margin-left: 100px;\" >" +
-            "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-x-circle\">" +
-            "<path d=\"M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z\" />" +
-            "<path d=\"M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z\" />" +
-            "</svg>" +
+            "<button onclick=\"DiscardItemInCart()\" class=\"w3-bar-item w3-button w3-large\" style=\"padding: 0px; margin-left: 100px;\" >" +
+                "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-trash3\" viewBox=\"0 0 16 16\">\r\n  " +
+                "<path d=\"M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01" +
+                " 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01" +
+                " 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1" +
+                " .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 " +
+                "4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z\"/>\r\n</svg>" +
             "</button>" +
             "" +
-            "<div>Quantità:" + DT.Rows[i]["QTAprodotto"] + "</div>" +
-            "</div>" +
-            "<div>Prezzo:" + DT.Rows[i]["PREZZOprodotto"].ToString() + "€</div>" +
+                "<div>Quantità:" + DT.Rows[i]["QTAprodotto"] + "</div>" +
+                "</div>" +
+                "<div>Prezzo:" + DT.Rows[i]["PREZZOprodotto"].ToString() + "€</div>" +
             "</div>" + //DIV di chiusura
             "" +
             "" +
@@ -108,9 +111,13 @@ public partial class AMATRON : System.Web.UI.MasterPage
         }
         litCarrello.Text = s;
 
+
     }
 
-
+    public void DiscardItemInCart()
+    {
+        // da fare
+    }
 
     protected void btnLogin_Click(object sender, EventArgs e)
     {
@@ -156,7 +163,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
         }
         else
         {
-            string script = @"notifyError('Dati mancanti, riempire tutti i campi e riprovare')";
+            string script = @"notifyError('Email o password errati riprova')";
             ScriptManager.RegisterStartupScript(this, GetType(), "btnLogin_Click", script, true);
             return;
         }
@@ -183,6 +190,6 @@ public partial class AMATRON : System.Web.UI.MasterPage
     {
         //Session["searchTerm"] = searchBar.Value.ToString();
         string p = searchBar.Value.ToString() != "" ? searchBar.Value.ToString() : "*";
-        Response.Redirect("/Forms/PRODOTTI/RicercaProd.aspx?c="+ ddlCategorie.SelectedValue.ToString() + "&p=" + p);
+        Response.Redirect("/Forms/PRODOTTI/RicercaProd.aspx?c=" + ddlCategorie.SelectedValue.ToString() + "&p=" + p);
     }
 }

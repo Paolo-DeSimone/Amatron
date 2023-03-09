@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="e912d6c8-3813-43e6-8f62-9eec10b98109" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="c75b3585-a6c5-4f2d-8fdf-08158ed8d5a6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="https://amatronws.brovia.it/WebServices/WSLogin.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WSLogin.wsdl" MetadataType="Wsdl" ID="e334ebc1-f835-4e0a-b932-faf68f24b98e" SourceId="1" SourceUrl="https://amatronws.brovia.it/WebServices/WSLogin.asmx?wsdl" />
-    <MetadataFile FileName="WSLogin.disco" MetadataType="Disco" ID="40222036-083e-4939-8c61-b13a27b4f6a2" SourceId="1" SourceUrl="https://amatronws.brovia.it/WebServices/WSLogin.asmx?disco" />
+    <MetadataFile FileName="WSLogin.wsdl" MetadataType="Wsdl" ID="66620ff5-ba8e-411f-ba14-6208c554cad3" SourceId="1" SourceUrl="https://amatronws.brovia.it/WebServices/WSLogin.asmx?wsdl" />
+    <MetadataFile FileName="WSLogin.disco" MetadataType="Disco" ID="d0926475-1fae-4131-8b6a-5c098bfe910d" SourceId="1" SourceUrl="https://amatronws.brovia.it/WebServices/WSLogin.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

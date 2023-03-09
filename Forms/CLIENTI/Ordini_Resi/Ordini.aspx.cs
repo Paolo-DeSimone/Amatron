@@ -21,7 +21,6 @@ public partial class Ordini : System.Web.UI.Page
             DataTable dt = O.SelectByOrdineCliente();
             // lblDescrizione = P.descrizione;
             cardprodotto.InnerHtml = "";
-            string s = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 cardprodotto.InnerHtml += "<div align=\"center\" class=\"row\">" +
@@ -42,8 +41,7 @@ public partial class Ordini : System.Web.UI.Page
                 "<p class=\"card-text\">" + dt.Rows[i]["descrizione"] + "</p>" +
                 //Prezzo
                 "<p class=\"card-text\">Prezzo:<label id=\"lblPrezzo" + i + "\" runat=\"server\"></label>" + " &euro;" + dt.Rows[i]["prezzo"] + "</p>" +
-                "<button id=\"btnRecensione" + i + "\" runat=\"server\" class=\"btn masterButton\" style=\"margin-right:20px\">Lascia una recensione</button>" +
-                "<button id=\"btnReso" + i + "\" runat=\"server\" class=\"btn masterButton\">Effettua reso</button>" +
+                
                 //Stato
                 "<label class=\"mt-3\" id=\"lbl" + i + "\" runat=\"server\">Stato della spedizione:</label>" + " " +
                 "<label id=\"lblStato" + i + "\" runat=\"server\">" + dt.Rows[i]["statosp"] + "</label>" +
@@ -55,7 +53,6 @@ public partial class Ordini : System.Web.UI.Page
                 
                 // "</div>";
             }
-            s = cardprodotto.InnerHtml;
         }
     }
 

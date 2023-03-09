@@ -11,16 +11,18 @@ public partial class Forms_VENDITORI_AggiungiImmagini : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["chiaveProdottoEsaurito"] == null)
+        {
+            return;
+        }
         PRODOTTI P = new PRODOTTI();
-        Session.Remove("chiaveProdottoEsaurito");
+        //Session.Remove("chiaveProdottoEsaurito");
         string chiaveprodotto = Session["chiaveProdottoEsaurito"].ToString();
         P.chiave = int.Parse(chiaveprodotto);
         DataTable DT = new DataTable();
         DT = P.SelectByKey();
         string titolo;
         titolo = DT.Rows[0]["TITOLO"].ToString();
-        //lblProdotto.Text = titolo;
-        //DataTable DT = Session["chiaveProdottoEsaurito"];
         lblProdotto.Text = titolo;
     }
 

@@ -94,12 +94,33 @@
                             <asp:TextBox ID="txtOldPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
 
                         </div>
-                        <%--Amatron prime card--%>
+                  
+                        <div class="row text-center">
+                            <div class="col">
+                                <asp:Label ID="lblNewPWD" Style="float: left;" runat="server" Text="Nuova Password:"></asp:Label>
+                                <asp:TextBox ID="txtNewPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col">
+                                <asp:Label ID="lblConfPWD" Style="float: left;" runat="server" Text="Conferma Password:"></asp:Label>
+                                <asp:TextBox ID="txtConfPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
+                            </div>
+                        </div>
+                        <div class="text-right mt-2" style="text-align: right !important;">
+                            <asp:Button ID="btnModPWD" class="btn masterButton" runat="server" Text="Modifica" OnClick="btnModPWD_Click" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+              <%--Amatron prime card--%>
                         <div class="col-lg-4">
                             <div class="card colore bianco ">
                                 <img src="../../../assets/images/amatron-prime.png" />
-                                <p class="card-text primeScritta">Amatron prime è un servizio che ti permetterà di avere uno sconto dell'<asp:Label ID="lblPrimeProMod" runat="server" Text=""></asp:Label>% su ogni prodotto acquistato.</p>
-                                <h4 style="text-align: center" class="card-title">Iscrizione annuale €29,99!</h4>
+                                <p class="card-text primeScritta">Amatron prime &egrave; un servizio che ti permetter&agrave; di avere uno sconto dell'<asp:Label ID="lblPrimeProMod" runat="server" Text=""></asp:Label>% su ogni prodotto acquistato.</p>
+                                <h4 style="text-align: center" class="card-title">Iscrizione annuale &euro;29,99!</h4>
                                 <div class="card-body">
                                 </div>
 
@@ -137,24 +158,5 @@
 
                             </div>
                         </div>
-                        <div class="row text-center">
-                            <div class="col">
-                                <asp:Label ID="lblNewPWD" Style="float: left;" runat="server" Text="Nuova Password:"></asp:Label>
-                                <asp:TextBox ID="txtNewPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="row text-center">
-                            <div class="col">
-                                <asp:Label ID="lblConfPWD" Style="float: left;" runat="server" Text="Conferma Password:"></asp:Label>
-                                <asp:TextBox ID="txtConfPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="text-right mt-2" style="text-align: right !important;">
-                            <asp:Button ID="btnModPWD" class="btn masterButton" runat="server" Text="Modifica" OnClick="btnModPWD_Click" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
     </div>
 </asp:Content>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="AbilitazioneVenditoriCorrieri.aspx.cs" Inherits="_Default" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="AbilitazioneVenditoriCorrieri.aspx.cs" Inherits="_Default" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -20,7 +20,8 @@
                 <div class="card">
                     <div class="card-header">
                         <center>
-                            <h4>Abilita Venditori</h4>
+                            <asp:TextBox ID="txtFiltraVenditori" CssClass="form" Style="float: left;" runat="server" AutoPostBack="true"></asp:TextBox>
+                            <h4 style="width:30%;">Abilita Venditori</h4>
                         </center>
                     </div>
                     <div class="card-body">
@@ -28,7 +29,7 @@
                             <%--griglia dei venditori--%>
                             <asp:UpdatePanel runat="server">
                                 <ContentTemplate>
-                                    <asp:GridView ID="grigliaVenditori" CssClass="table" runat="server" DataSourceID="sdsVenditori" AutoGenerateColumns="False" DataKeyNames="chiave" OnSelectedIndexChanged="grigliaVenditori_SelectedIndexChanged">
+                                    <asp:GridView ID="grigliaVenditori" CssClass="table table-bordered table-condensed" runat="server" DataSourceID="sdsVenditori" AutoGenerateColumns="False" DataKeyNames="chiave" OnSelectedIndexChanged="grigliaVenditori_SelectedIndexChanged">
                                         <Columns>
                                             <asp:BoundField DataField="chiave" HeaderText="chiave" ReadOnly="True" Visible="False" SortExpression="chiave"></asp:BoundField>
                                             <asp:BoundField DataField="RAGIONESOCIALE" HeaderText="RAGIONESOCIALE" SortExpression="RAGIONESOCIALE"></asp:BoundField>
@@ -52,9 +53,14 @@
                                 </ContentTemplate>
                             </asp:UpdatePanel>
                             <asp:SqlDataSource runat="server" ID="sdsVenditori" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spVENDITORI_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                            <asp:SqlDataSource runat="server" ID="sdsVenditoriFiltra" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spFILTRA_Venditori" SelectCommandType="StoredProcedure">
+                                <SelectParameters>
+                                    <asp:ControlParameter ControlID="txtFiltraVenditori" PropertyName="Text" Name="VENDITORI" Type="String"></asp:ControlParameter>
+                                </SelectParameters>
+                            </asp:SqlDataSource>
                         </div>
                         <%--pulsante per abilitare--%>
-                        <div class="py-2">
+                        <div class="text-center mt-2" style="float: right;">
                             <asp:Button ID="btnAbilitaVenditori" CssClass="btn masterButton" runat="server" Text="Abilita" OnClick="btnAbilitaVenditori_Click" />
                         </div>
                     </div>
@@ -65,7 +71,8 @@
                 <div class="card">
                     <div class="card-header">
                         <center>
-                            <h4>Abilita Corrieri</h4>
+                            <asp:TextBox ID="txtFiltraCorrieri" Style="float: left;" runat="server"></asp:TextBox>
+                            <h4 style="width:30%;">Abilita Corrieri</h4>
                         </center>
                     </div>
                     <div class="card-body">
@@ -73,7 +80,7 @@
                             <%--griglia dei corrieri--%>
                             <asp:UpdatePanel runat="server">
                                 <ContentTemplate>
-                                    <asp:GridView ID="grigliaCorrieri" Class="table" runat="server" AutoGenerateColumns="False" DataKeyNames="chiave" DataSourceID="sdsCorrieri" OnSelectedIndexChanged="grigliaCorrieri_SelectedIndexChanged">
+                                    <asp:GridView ID="grigliaCorrieri" Class="table table-bordered table-condensed" runat="server" AutoGenerateColumns="False" DataKeyNames="chiave" DataSourceID="sdsCorrieri" OnSelectedIndexChanged="grigliaCorrieri_SelectedIndexChanged">
                                         <Columns>
                                             <asp:BoundField DataField="chiave" HeaderText="chiave" ReadOnly="True" InsertVisible="False" SortExpression="chiave" Visible="False"></asp:BoundField>
                                             <asp:BoundField DataField="RAGIONESOCIALE" HeaderText="RAGIONESOCIALE" SortExpression="RAGIONESOCIALE"></asp:BoundField>
@@ -98,9 +105,16 @@
                                 </ContentTemplate>
                             </asp:UpdatePanel>
                             <asp:SqlDataSource runat="server" ID="sdsCorrieri" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCORRIERI_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                            <asp:SqlDataSource runat="server" ID="sdsCorrieriFiltra" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spFILTRA_Corrieri" SelectCommandType="StoredProcedure">
+                                <SelectParameters>
+                                    <asp:ControlParameter ControlID="txtFiltraCorrieri" PropertyName="Text" Name="CORRIERI" Type="String"></asp:ControlParameter>
+                                </SelectParameters>
+                            </asp:SqlDataSource>
                         </div>
                         <%--pulsante per abilitare--%>
-                        <div  class="py-2">
+
+                        <div class="text-center mt-2" style="float: right;">
+
                             <asp:Button ID="btnAbilitaCorrieri" CssClass="btn masterButton" runat="server" Text="Abilita" OnClick="btnAbilitaCorrieri_Click" />
                         </div>
                     </div>

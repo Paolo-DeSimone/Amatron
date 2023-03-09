@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -22,6 +22,7 @@ public class CORRIERI
     public string provincia;
     public string CAP;
     public string telefono;
+    public string corriere;
 
     public int anno;
     public int mese;
@@ -101,5 +102,12 @@ public class CORRIERI
     {
         DataTable DT = C.CORRIERI_CountSPEDIZIONI(chiave, anno, mese);
         return DT;
+    }
+
+    public DataTable FiltraCorrieri()
+    {
+        rifFiltraOL.WsFiltraSoapClient F = new rifFiltraOL.WsFiltraSoapClient();
+        DataTable dt = F.FILTRA_Corrieri(corriere);
+        return dt;
     }
 }

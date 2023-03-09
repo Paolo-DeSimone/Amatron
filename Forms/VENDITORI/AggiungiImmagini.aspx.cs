@@ -23,8 +23,6 @@ public partial class Forms_VENDITORI_AggiungiImmagini : System.Web.UI.Page
         DT = P.SelectByKey();
         string titolo;
         titolo = DT.Rows[0]["TITOLO"].ToString();
-        //lblProdotto.Text = titolo;
-        //DataTable DT = Session["chiaveProdottoEsaurito"];
         lblProdotto.Text = titolo;
     }
 

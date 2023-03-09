@@ -15,6 +15,7 @@
                 </svg>
                 Profilo Corriere&nbsp;<asp:Label ID="lblCORRIERE" runat="server" Text=""></asp:Label></h2>
         </div>
+        <p style="text-align:center; color:black;" class="testo">Benvenuto nella tua pagina personale</p>
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-6">

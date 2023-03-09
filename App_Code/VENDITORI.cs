@@ -22,6 +22,7 @@ public class VENDITORI
     public string email;
     public string PWD;
     public bool abilitato;
+    public string venditore;
 
     //per webservices Storico Vendite
     public string DInizio;
@@ -107,5 +108,12 @@ public class VENDITORI
     {
         DataTable DT = V.VENDITORI_ORDINI_Filter(chiave, TITOLO, chiaveCATEGORIA, chiaveORDINI, DInizio, DFine);
         return DT;
+    }
+
+    public DataTable FiltraVenditori()
+    {
+        rifFiltraOL.WsFiltraSoapClient F = new rifFiltraOL.WsFiltraSoapClient();
+        DataTable dt = F.FILTRA_Venditori(venditore);
+        return dt;
     }
 }

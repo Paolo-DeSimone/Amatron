@@ -107,8 +107,8 @@
 
 .close-btn2 {
     position: fixed;
-    top: 10%;
-    right: 30%;
+    top: 26%;
+    right: 31%;
     float: right;
     border: none;
     background: none;
@@ -119,9 +119,10 @@
 }
 
 .close-btn3 {
+    display: block;
     position: fixed;
-    top: 24%;
-    right: 31%;
+    top: 10%;
+    right: 29%;
     background-color: Transparent;
     background-repeat: no-repeat;
     border: none;
@@ -158,16 +159,24 @@
 
 .close-btnQTAZero {
     position: fixed;
+
     top: 35%;
     right: 38%;
     background-color: Transparent;
     background-repeat: no-repeat;
+
     border: none;
-    cursor: pointer;
-    overflow: hidden;
-    outline: none;
+    background: none;
 }
 
+.close-btn4 {
+    position: fixed;
+    top: 26%;
+    right: 32%;
+    float: right;
+    border: none;
+    background: none;
+}
 
 .popupBoxWrapper {
     /*    max-width: 900px;

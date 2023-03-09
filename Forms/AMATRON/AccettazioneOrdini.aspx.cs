@@ -12,9 +12,27 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        grigliaOrdini.DataSourceID = "SqlDataSource2";
+        grigliaOrdini.DataBind();
     }
 
+    protected void btnCerca_Click(object sender, EventArgs e)
+    {
+        ////filtraggio dei campi del venditore in base alla ricerca
+        //DataTable DT = new DataTable();
+        //ORDINI O = new ORDINI();  
+        //O.chiavecliente = int.Parse(ddlUTENTE.SelectedValue);
+        //O.STATO = int.Parse(ddlSTATO.SelectedValue);
+        //O.DInizio = txtDInizio.Text;
+        //O.DFine = txtDFine.Text;
+        //O.chiave = int.Parse(Session["chiaveUSR"].ToString());
+        ////V.chiave = 26;
+        //DT = O.ORDINI_CLIENTI_PRODOTTI_SPEDIZIONI_Filter();
+
+        //grigliaOrdini.DataSource = DT;
+        //grigliaOrdini.DataBind();
+        
+    }
 
     protected void grigliaOrdini_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -31,4 +49,5 @@ public partial class Default2 : System.Web.UI.Page
         O.chiavecorriere = int.Parse(DT.Rows[0]["chiave"].ToString());
         O.ORDINI_GESTITO();
     }
+
 }

@@ -123,16 +123,37 @@ public partial class Default2 : System.Web.UI.Page
         }
 
 
-        //DataTable REC = new DataTable();
-        //REC = P.SelectByKey();
-        //I.chiaveprodotto = 1; // Session["chiaveProdotto"]
-        //DataTable IMGDT = I.SelectChiavi();
-        //for (int i = 0; i < IMGDT.Rows.Count; i++)
-        //{
-        //    Carosello.InnerHtml += " <div class=\"carousel-item active\">" +
-        //        "<img src='/GestoreImmagini.ashx?c=" + IMGDT.Rows[i]["chiave"] + "' class='d-block w-100' style='width:600px; height:450px' alt='Product Image 1'/>" +
-        //        "</div>";
-        //}
+        DataTable REC = new DataTable();
+        V.chiaveprodotto = int.Parse(HttpContext.Current.Request.QueryString["c"].ToString());
+        REC = V.RecensioniClienti();
+        contenitoreRecensioni.InnerHtml = "";
+        for (int i = 0; i < REC.Rows.Count; i++)
+        {
+            contenitoreRecensioni.InnerHtml += "<div class=\"card mb-2\">" +
+
+                    "<div class=\"card-body\">" +
+                    "<label id = 'litNomeCliente'>" + REC.Rows[i]["CLIENTE"] + "</label>" +
+                        "<hr style = \"margin: 5px\" />" +
+                        "<div>";
+
+            for (int j = 0; j < int.Parse(REC.Rows[i]["STELLE"].ToString()); j++)
+            {
+                contenitoreRecensioni.InnerHtml += "<img style =\"width:20px; height:20px;\" src='/assets/images/yellowstar.png'>";
+            }
+            for (int k = int.Parse(REC.Rows[i]["STELLE"].ToString()); k < 5; k++)
+            {
+                contenitoreRecensioni.InnerHtml += "<img style =\"width:20px; height:20px;\" src='/assets/images/whitestar.png'>";
+            }
+            contenitoreRecensioni.InnerHtml += "<p style = 'color: black' > " +
+                                    "<label id = 'litDataRecensione'>" + REC.Rows[i]["DATACOMMENTO"] + "</label></p>" +
+                        "</div>" +
+                        "<hr style = 'margin: 5px' />" +
+                        "<p style='color: black' > " +
+                       "<label id = 'litRecensione'>" + REC.Rows[i]["COMMENTO"] + "</label></p>" +
+                   "</div>" +
+               "</div>";
+        }
+
     }
 
     protected void btnAggiungi_Click(object sender, EventArgs e)

@@ -21,10 +21,16 @@ public partial class _Default : System.Web.UI.Page
             DataTable DT = C.SELECTBYKEY();
             lblMostraIndirizzoConsegna.Text = DT.Rows[0]["INDIRIZZO"].ToString() + DT.Rows[0]["CITTA"].ToString() + DT.Rows[0]["PROVINCIA"].ToString();
 
-            CARRELLO CR = new CARRELLO();
-            DataTable dt = CR.SelectAllItemsInCart(int.Parse(Session["chiaveUSR"].ToString()));
-
-
+            //CARRELLO CR = new CARRELLO();
+            //DataTable dt = CR.SelectAllItemsInCart(int.Parse(Session["chiaveUSR"].ToString()));
+            //string s = "";
+            //for (int i = 0; i < dt.Rows.Count; i++)
+            //{
+            //    s += " <div class=\"col-md-4\";>" +
+            //   //immagine in griglia
+            //   "<img src='/GestoreImmagini.ashx?c=" + dt.Rows[i]["IMMAGINEprodotto"] + "' class='d-block w-100' style='width:600px; height:450px' alt='Product Image 1'/>" +
+            //   "</div>";
+            //}
         }
 
     }

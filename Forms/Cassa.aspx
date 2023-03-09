@@ -30,27 +30,18 @@
                                         <div>
                                             <asp:Label ID="lblgrigliaCassa" runat="server" Text=""></asp:Label>
                                         </div>
+                                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spv_JoinCARRELLO_PRODOTTI_IMMAGINISelectAllItemsInCart" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                         <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" DataSourceID="SqlDataSource2">
                                             <Columns>
-                                                <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" />
-                                                <asp:BoundField DataField="QTAprodotto" HeaderText="QTAprodotto" SortExpression="QTAprodotto" ReadOnly="True" />
-                                                <asp:BoundField DataField="TITOLOprodotto" HeaderText="TITOLOprodotto" SortExpression="TITOLOprodotto" />
-                                                <asp:BoundField DataField="DESCRIZIONEprodotto" HeaderText="DESCRIZIONEprodotto" SortExpression="DESCRIZIONEprodotto" />
-                                                <asp:BoundField DataField="PREZZOprodotto" HeaderText="PREZZOprodotto" ReadOnly="True" SortExpression="PREZZOprodotto" />
+                                                <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" Visible="False" />
+
                                                 <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="IMMAGINEprodotto" SortExpression="IMMAGINEprodotto">
                                                     <ItemTemplate>
-                                                        <asp:Image ID="Image" runat="server" DataField="IMMAGINEprodotto" Mode="ReadOnly" ImageUrl="IMMAGINEprodotto" />
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
+
                                             </Columns>
-                                            <SelectedRowStyle BackColor="LightGray" />
-                                            <HeaderStyle BackColor="#B469FF" />
                                         </asp:GridView>
-                                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spv_JoinCARRELLO_PRODOTTI_IMMAGINISelectAllItemsInCart" SelectCommandType="StoredProcedure">
-                                            <SelectParameters>
-                                                <asp:SessionParameter Name="chiaveCLIENTE" SessionField="chiaveUSR" Type="Int32" />
-                                            </SelectParameters>
-                                        </asp:SqlDataSource>
                                     </div>
                                 </div>
                             </div>

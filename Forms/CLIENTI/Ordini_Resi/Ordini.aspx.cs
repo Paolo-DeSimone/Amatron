@@ -41,17 +41,23 @@ public partial class Ordini : System.Web.UI.Page
                 "<p class=\"card-text\">" + dt.Rows[i]["descrizione"] + "</p>" +
                 //Prezzo
                 "<p class=\"card-text\">Prezzo:<label id=\"lblPrezzo" + i + "\" runat=\"server\"></label>" + " &euro;" + dt.Rows[i]["prezzo"] + "</p>" +
-                
                 //Stato
                 "<label class=\"mt-3\" id=\"lbl" + i + "\" runat=\"server\">Stato della spedizione:</label>" + " " +
                 "<label id=\"lblStato" + i + "\" runat=\"server\">" + dt.Rows[i]["statosp"] + "</label>" +
                 "</div>" +
+                "<a href=\"/Forms/PRODOTTI/PaginaProdotto.aspx?c="+dt.Rows[i]["chiaveprodotto"]+"\"><imput type=\"button\" class=\"btn masterButton\"/></a>" +
                 "</div>" +
                 //"<div class=\"col-md-2\" style=\"width:1px\"> </div>" +
                 "</div>" +
                 "<hr class=\"opacity-100\"style=\"border-color:lightgray;\"/>";
                 
                 // "</div>";
+
+
+                //Bottone = bottone recensione prodotto 
+                //"<a href=\"/Forms/CLIENTI/ResiOrdine.aspx?c="+dt.Rows[i]["chiaveprodotto"]+"\"><imput type=\"button\" class=\"btn masterButton\"/></a>" +
+                //prendere contesto da pagina resiordine e lo salvo in int "chiaveprodotto"
+                //creare pagina reso prodotto individuale
             }
         }
     }

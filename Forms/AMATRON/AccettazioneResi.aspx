@@ -25,12 +25,12 @@
                                                 <asp:BoundField DataField="chiaveORDINE" HeaderText="chiaveORDINE" SortExpression="chiaveORDINE" Visible="False" />
                                                 <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" Visible="False" />
                                                 <asp:BoundField DataField="chiaveCLIENTI" HeaderText="chiaveCLIENTI" SortExpression="chiaveCLIENTI" Visible="False" />
-                                                <asp:BoundField DataField="NUMERO_ORDINE" HeaderText="NUMERO_ORDINE" SortExpression="NUMERO_ORDINE" />
+                                                <asp:BoundField DataField="NUMERO_ORDINE" HeaderText="NUM ORD" SortExpression="NUMERO_ORDINE" />
                                                 <asp:BoundField DataField="NOMINATIVO" HeaderText="NOMINATIVO" SortExpression="NOMINATIVO" ReadOnly="True" />
                                                 <asp:BoundField DataField="EMAIL" HeaderText="EMAIL" SortExpression="EMAIL" />
-                                                <asp:BoundField DataField="TITOLO" HeaderText="TITOLO" SortExpression="TITOLO" />
-                                                <asp:BoundField DataField="DESCRIZIONE_RESO" HeaderText="DESCRIZIONE_RESO" SortExpression="DESCRIZIONE_RESO" />
-                                                <asp:BoundField DataField="QTARESA" HeaderText="QTARESA" SortExpression="QTARESA" />
+                                                <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
+                                                <asp:BoundField DataField="DESCRIZIONE_RESO" HeaderText="MOTIVO RESO" SortExpression="DESCRIZIONE_RESO" />
+                                                <asp:BoundField DataField="QTARESA" HeaderText="QTA RESA" SortExpression="QTARESA" />
                                                 <asp:BoundField DataField="DATARICHIESTA" HeaderText="DATARICHIESTA" SortExpression="DATARICHIESTA" />
                                                 <asp:BoundField DataField="DATAEMISSIONE" HeaderText="DATAEMISSIONE" SortExpression="DATAEMISSIONE" />
                                                 <asp:CommandField ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/assets/images/spunta_button.png">

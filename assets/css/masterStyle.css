@@ -17,12 +17,12 @@ body {
 
     .masterButton:hover {
         background-color: #B469FF !important;
-        color: blue;
+        color: white;
     }
 
     .masterButton:focus {
         background-color: #B469FF !important;
-        color: blue;
+        color: white;
     }
 
 .masterCardHeight {

@@ -20,4 +20,10 @@ public class LOGIN
         rifLoginOL.WSLoginSoapClient c = new rifLoginOL.WSLoginSoapClient();
         return c.Login(EMAIL, PWD);
     }
+
+    public DataTable RecuperaPassword(string EMAIL)
+    {
+        rifLoginOL.WSLoginSoapClient c = new rifLoginOL.WSLoginSoapClient();
+        return c.RECUPERAPWD(EMAIL);
+    }
 }

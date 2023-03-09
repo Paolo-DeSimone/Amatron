@@ -54,7 +54,7 @@ public partial class _Default : System.Web.UI.Page
         V.DFine = txtDFine.Text;
         V.chiave = int.Parse(Session["chiaveUSR"].ToString());
         //V.chiave = 22;
-        DT= V.VENDITORI_Filter();
+        DT = V.VENDITORI_Filter();
 
         GrigliaStoricoVendite.DataSource = DT;
         GrigliaStoricoVendite.DataBind();

@@ -61,8 +61,15 @@ public partial class AMATRON : System.Web.UI.MasterPage
         // Dentro il div con id "carrelloProdotti" dentro AMATRON.master, fai comparire tutto quel che c'è in carrelloProdotti.InnerHtml (InnerHtml permette di scrivere codice HTML dentro il C#)
         // Uso un ciclo for che itera per il numero di row in DT ( DT.Rows.Count) così da far comparire in carrello ogni singolo oggetto della DT
         string s = "";
+        
+
         for (int i = 0; i < DT.Rows.Count; i++)
         {
+            string desc = DT.Rows[i]["DESCRIZIONEprodotto"].ToString();
+            if (desc.Length > 50)
+            {
+                desc = desc.Substring(0, 50);
+            }
             s +=
             "<div id=\"itemInCart\"class=\"card mx-1 my-1\">" +
             "<div class=\"card-body \" style=\"padding: 5px; color: rgb(0,0,0);\r\n font-weight: 600;\r\n\">" +
@@ -70,7 +77,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
             "<div class=\"row\" style=\"margin: 0px; padding: 0px;\">" +
             "" +
             " <div class=\"col-sm-4\">" +
-                "<a href=\"Forms/PRODOTTI/PaginaProdotto.aspx?c=" + DT.Rows[i]["chiavePRODOTTO"].ToString() + "\" class=\"w3-bar-item w3-button\">" +
+                "<a href=\"Forms/PRODOTTI/PaginaProdotto.aspx?c=" + DT.Rows[i]["chiavePRODOTTO"].ToString() + "\" class=\"w3-bar-item w3-button masterNoHover\">" +
                 "<img src=\"/Img.ashx?c=" + DT.Rows[i]["chiavePRODOTTO"].ToString() + "\" class=\"w-50 h-50\" />" +
                 "</a>" +
             "</div>" +
@@ -81,13 +88,13 @@ public partial class AMATRON : System.Web.UI.MasterPage
             "<div>" + //DIV di apertura
                 "<div>" + DT.Rows[i]["TITOLOprodotto"] + "</div>" +
                 "</div>" +
-                "<div style=\"color: rgb(0,0,0);\r\n font-weight: 500;\r\n\">" + DT.Rows[i]["DESCRIZIONEprodotto"].ToString().Substring(0, 20) + "... </div>" +
+                "<div style=\"color: rgb(0,0,0);\r\n font-weight: 500;\r\n\">" + desc + "... </div>" +
                 "</div>" + //DIV di chiusura
                 "" +
                 "<div style=\"padding: 0px;\" class=\"col-sm-3\">" +
             "<div>" + //DIV di apertura
             "" +
-            "<button onclick=\"DiscardItemInCart()\" class=\"w3-bar-item w3-button w3-large\" style=\"padding: 0px; margin-left: 100px;\" >" +
+            "<button onclick=\"DiscardItemInCart(" + DT.Rows[i]["chiavePRODOTTO"].ToString() +")\" class=\"w3-bar-item w3-button w3-large masterNoHover\" style=\"padding: 0px; margin-left: 100px;\" >" +
                 "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\" fill=\"currentColor\" class=\"bi bi-trash3\" viewBox=\"0 0 16 16\">\r\n  " +
                 "<path d=\"M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01" +
                 " 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01" +
@@ -114,10 +121,6 @@ public partial class AMATRON : System.Web.UI.MasterPage
 
     }
 
-    public void DiscardItemInCart()
-    {
-        // da fare
-    }
 
     protected void btnLogin_Click(object sender, EventArgs e)
     {

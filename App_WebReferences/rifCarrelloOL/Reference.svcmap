@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="ed87d9c0-1daa-4e7e-8acb-d850bf29f7f9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="330e1b13-81a5-47d3-a2fc-6218056f8f77" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://amatronws.brovia.it/WebServices/WSCarrello.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://amatronws.brovia.it/WebServices/WSCarrello.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="WSCarrello.disco" MetadataType="Disco" ID="bde3b561-d982-44ff-a0e3-6d1b6f1b6a93" SourceId="1" SourceUrl="https://amatronws.brovia.it/WebServices/WSCarrello.asmx?disco" />
-    <MetadataFile FileName="WSCarrello.wsdl" MetadataType="Wsdl" ID="d8b31111-a125-4d19-b782-2b428b9f52ef" SourceId="1" SourceUrl="https://amatronws.brovia.it/WebServices/WSCarrello.asmx?wsdl" />
+    <MetadataFile FileName="WSCarrello.disco" MetadataType="Disco" ID="318b726f-e248-4cc8-9499-0c9f9ac67891" SourceId="1" SourceUrl="https://amatronws.brovia.it/WebServices/WSCarrello.asmx?disco" />
+    <MetadataFile FileName="WSCarrello.wsdl" MetadataType="Wsdl" ID="bddc5a7e-b71f-40e6-9101-e5ef1a75da47" SourceId="1" SourceUrl="https://amatronws.brovia.it/WebServices/WSCarrello.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

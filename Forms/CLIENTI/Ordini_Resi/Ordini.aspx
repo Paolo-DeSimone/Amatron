@@ -8,8 +8,9 @@
     <div class="container">
         <asp:Button ID="btnTemp" runat="server" Text="BTNTEMP" />
         <!-- CARD CON PRODOTTO -->
-        <div class="card mb-3 ordini">
-            <div class="row g-0" runat="server" id="cardprodotto">
+        <div class="card">
+            <div runat="server" id="cardprodotto">
+
 
             </div>
         </div>
@@ -35,26 +36,7 @@
             <%--chiude il popup--%>
         </asp:Panel>
     </div>
-
         <asp:ScriptManager ID="ScriptManager1" runat="server">
         </asp:ScriptManager>
-
-        <%-- recensione --%>
-        <%--    <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnRecensione"
-        CancelControlID="Button3" BackgroundCssClass="Background">
-    </cc1:ModalPopupExtender>
-
-    <asp:Panel
-        ID="Panl1"
-        runat="server"
-        CssClass="Popup"
-        align="center"
-        Style="display: none">
-   
-        <iframe style="width: 500px; height: 500px;" id="irm1" src="RecensioneClientiPopup.aspx" runat="server"></iframe>
-        <br />
-        <asp:Button ID="Button13" runat="server" Text="Close" />
-      
-    </asp:Panel>--%>
 </asp:Content>
 

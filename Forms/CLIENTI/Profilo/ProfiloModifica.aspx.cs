@@ -22,7 +22,6 @@ public partial class Default2 : System.Web.UI.Page
         if ( CLI.PRIME == true)
         {
             btnIscriviti.Visible = false;
-            return;
         }
 
         if (Session["emailUSR"] == null)

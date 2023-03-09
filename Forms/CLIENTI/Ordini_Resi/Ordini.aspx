@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="Ordini.aspx.cs" Inherits="Ordini" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="Ordini.aspx.cs" Inherits="Ordini" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -10,11 +10,15 @@
         <asp:Button ID="btnTemp" runat="server" Text="BTNTEMP" />
         <!-- CARD CON PRODOTTO -->
         <div class="d-flex justify-content-center align-items-center text-align-center">
-                    <span>
-                        <img style="width: 100px" src="/assets/images/carmine_banner.png" />
-                    </span>
-                        <h2>I tuoi Ordini</h2>
-                </div>
+            <span>
+                <img style="width: 100px" src="/assets/images/carmine_banner.png" />
+            </span>
+            <h2>I tuoi Ordini</h2>
+        </div>
+        <p class="testo" style="color: black;">Benvenuto nella pagina dei tuoi ordini</p>
+        <div style="margin-left: 700px;">
+            <asp:Button ID="btnresi" class="btn masterButton" runat="server" Text="Effetua Reso" OnClick="btnresi_Click" />
+        </div>
         <br />
         <div class="row">
             <div class="col-md-2"></div>
@@ -53,4 +57,3 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
 </asp:Content>
-

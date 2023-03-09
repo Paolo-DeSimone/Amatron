@@ -6,15 +6,23 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <link href="/assets/css/cssGruppoWebservices.css" rel="stylesheet" />
+    <script type="text/javascript">
+        <%--$(document).ready(function () {            var modalPopupExtender = $find('<%= mp2.ClientID %>');            var popupShown = false;                       $("[id^=btnReso]").click(function () {               if (!popupShown) {                   modalPopupExtender.show();                   popupShown = true;                                  }           });       });--%>
+        function apriPopUp() {
+            var modalPopupExtender = $find('<%= mp2.ClientID %>');            var popupShown = false;            $("[id^=btnReso]").click(function () {                if (!popupShown) {                    modalPopupExtender.show();                    popupShown = true;
+                }
+            });
+        }
+    </script>
     <div align="center" class="container">
         <asp:Button ID="btnTemp" runat="server" Text="BTNTEMP" />
         <!-- CARD CON PRODOTTO -->
         <div class="d-flex justify-content-center align-items-center text-align-center">
-                    <span>
-                        <img style="width: 100px" src="/assets/images/carmine_banner.png" />
-                    </span>
-                        <h2>I tuoi Ordini</h2>
-                </div>
+            <span>
+                <img style="width: 100px" src="/assets/images/carmine_banner.png" />
+            </span>
+            <h2>I tuoi Ordini</h2>
+        </div>
         <br />
         <div class="row">
             <div class="col-md-2"></div>
@@ -27,8 +35,6 @@
             </div>
             <div class="col-md-2"></div>
         </div>
-
-
 
         <%-- chiamata del popup --%>
         <cc1:ModalPopupExtender ID="mp2" runat="server" PopupControlID="Reso" TargetControlID="btnTemp"

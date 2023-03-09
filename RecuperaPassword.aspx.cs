@@ -33,6 +33,12 @@ public partial class _Default : System.Web.UI.Page
         DataTable dt = new DataTable();
         dt = L.RecuperaPassword(txtEmail.Text.Trim());
 
+        if (dt.Rows.Count == 0)
+        {
+            string scriptErr = @"notifyError('Email non registrata!')"; //messaggio di errore
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnModifica_Click", scriptErr, true);
+            return;
+        }
         string password = dt.Rows[0]["PWD"].ToString();
 
         //mi preparo per inviare la mail al venditore
@@ -50,16 +56,18 @@ public partial class _Default : System.Web.UI.Page
         mail.To.Add(txtEmail.Text.Trim()); //destinatario // 
         mail.IsBodyHtml = true; //mail è scritta in html
         mail.Subject = "Recupera PASSWORD"; //oggetto
-                                                           //messaggio
+                                            //messaggio
         mail.Body = "Gentile Utente;<br/>";
-        mail.Body += "La sua password &egrave; "+password+";<br/>";
+        mail.Body += "La sua password &egrave; " + password + ";<br/>";
         mail.Body += "Da AMATRON, le auguriamo una buona giornata.";
 
         client.Send(mail); //mando mail
-
         string script = @"notifySuccess('Email inviata correttamente!')"; //messaggio di errore
         ScriptManager.RegisterStartupScript(this, GetType(), "btnModifica_Click", script, true);
-
         Response.Redirect("Forms/Homepage.aspx");
+
+
+
+
     }
 }

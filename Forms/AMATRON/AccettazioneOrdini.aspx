@@ -21,17 +21,17 @@
                                             <ContentTemplate>
                                                 <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged" AutoGenerateColumns="False" DataSourceID="SqlDataSource2">
                                                     <Columns>
-                                                        <asp:BoundField DataField="NUMERO_ORDINE" HeaderText="N°ORDINE" SortExpression="NUMERO_ORDINE" />
+                                                        <asp:BoundField DataField="NUMERO_ORDINE" HeaderText="NUM ORD" SortExpression="NUMERO_ORDINE" />
                                                         <asp:BoundField DataField="COGNOME_CLIENTI" HeaderText="COGNOME CLIENTE" SortExpression="COGNOME_CLIENTI" />
                                                         <asp:BoundField DataField="NOME_CLIENTI" HeaderText="NOME CLIENTE" SortExpression="NOME_CLIENTI" />
                                                         <asp:BoundField DataField="EMAIL_CLIENTI" HeaderText="EMAIL_CLIENTI" SortExpression="EMAIL_CLIENTI" Visible="False" />
-                                                        <asp:BoundField DataField="RAGIONE_SOCIALE" HeaderText="RAG.SOCIALE" SortExpression="RAGIONE_SOCIALE" />
+                                                        <asp:BoundField DataField="RAGIONE_SOCIALE" HeaderText="RAG.SOC.VEND" SortExpression="RAGIONE_SOCIALE" />
                                                         <asp:BoundField DataField="EMAIL_VENDITORE" HeaderText="EMAIL_VENDITORE" SortExpression="EMAIL_VENDITORE" Visible="False" />
                                                         <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATATRANSAZIONE" SortExpression="DATATRANSAZIONE" />
                                                         <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
                                                         <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
                                                         <asp:BoundField DataField="EMAIL_CORRIERI" HeaderText="EMAIL_CORRIERI" SortExpression="EMAIL_CORRIERI" Visible="False" />
-                                                        <asp:BoundField DataField="STATO_SPEDIZIONE" HeaderText="STATO" SortExpression="STATO_SPEDIZIONE" />
+                                                        <asp:BoundField DataField="STATO_SPEDIZIONE" HeaderText="STATO SPED" SortExpression="STATO_SPEDIZIONE" />
                                                         <asp:CommandField ButtonType="Image" SelectImageUrl="~/assets/images/spunta_button.png" ShowSelectButton="True">
                                                         <ControlStyle Height="20px" Width="24px" />
                                                         </asp:CommandField>

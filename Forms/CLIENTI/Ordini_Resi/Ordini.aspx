@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="Ordini.aspx.cs" Inherits="Ordini" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="Ordini.aspx.cs" Inherits="Ordini" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -6,14 +6,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <link href="/assets/css/cssGruppoWebservices.css" rel="stylesheet" />
-    <script type="text/javascript">
-        <%--$(document).ready(function () {            var modalPopupExtender = $find('<%= mp2.ClientID %>');            var popupShown = false;                       $("[id^=btnReso]").click(function () {               if (!popupShown) {                   modalPopupExtender.show();                   popupShown = true;                                  }           });       });--%>
-        function apriPopUp() {
-            var modalPopupExtender = $find('<%= mp2.ClientID %>');            var popupShown = false;            $("[id^=btnReso]").click(function () {                if (!popupShown) {                    modalPopupExtender.show();                    popupShown = true;
-                }
-            });
-        }
-    </script>
     <div align="center" class="container">
         <asp:Button ID="btnTemp" runat="server" Text="BTNTEMP" />
         <!-- CARD CON PRODOTTO -->
@@ -22,6 +14,10 @@
                 <img style="width: 100px" src="/assets/images/carmine_banner.png" />
             </span>
             <h2>I tuoi Ordini</h2>
+        </div>
+        <p class="testo" style="color: black;">Benvenuto nella pagina dei tuoi ordini</p>
+        <div style="margin-left: 700px;">
+            <asp:Button ID="btnresi" class="btn masterButton" runat="server" Text="Effetua Reso" OnClick="btnresi_Click" />
         </div>
         <br />
         <div class="row">
@@ -35,6 +31,8 @@
             </div>
             <div class="col-md-2"></div>
         </div>
+
+
 
         <%-- chiamata del popup --%>
         <cc1:ModalPopupExtender ID="mp2" runat="server" PopupControlID="Reso" TargetControlID="btnTemp"
@@ -59,4 +57,3 @@
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
 </asp:Content>
-

@@ -28,7 +28,7 @@ public class VALUTAZIONI
 
     public void Insert()
     {
-        V.VALUTAZIONI_Insert(chiaveprodotto, stelle, commento, datacommento);
+        V.VALUTAZIONI_Insert(chiaveprodotto,chiavecliente, stelle, commento, datacommento);
     }
 
     public DataTable SelectAll()

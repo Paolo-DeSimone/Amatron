@@ -14,6 +14,16 @@ public partial class Default2 : System.Web.UI.Page
 
     public void Page_Load(object sender, EventArgs e)
     {
+        CLIENTI CLI = new CLIENTI();
+        CLI.chiave = int.Parse(Session["chiaveUSR"].ToString());
+        DataTable DT = new DataTable();
+        DT = CLI.SELECTBYKEY();
+        CLI.PRIME = Boolean.Parse(DT.Rows[0]["PRIME"].ToString());
+        if ( CLI.PRIME == true)
+        {
+            btnIscriviti.Visible = false;
+        }
+
         if (Session["emailUSR"] == null)
         {
             string script = @"notifyError('Utente non registrato')";
@@ -39,13 +49,15 @@ public partial class Default2 : System.Web.UI.Page
         }
 
 
+
+
         if (!IsPostBack)
         {
 
             CLIENTI CL = new CLIENTI();
             CL.chiave = int.Parse(chiaveCLIENTE);
 
-            DataTable DT = CL.SELECTBYKEY();
+            DT = CL.SELECTBYKEY();
             txtEMAIL.Text = DT.Rows[0]["EMAIL"].ToString();
             txtCognome.Text = DT.Rows[0]["COGNOME"].ToString();
             txtNome.Text = DT.Rows[0]["NOME"].ToString();
@@ -59,6 +71,12 @@ public partial class Default2 : System.Web.UI.Page
         CONFIG CONF = new CONFIG();
         DataTable PRIME = CONF.SelectAll();
         lblPrimeProMod.Text = PRIME.Rows[0]["COSTOPRIME"].ToString();
+
+        //DataTable DT = CL.SELECTBYKEY();
+        //CL.chiave = int.Parse(Session["chiaveUSR"].ToString());
+
+
+
     }
     protected void btnSalva_Click(object sender, EventArgs e)
     {
@@ -117,6 +135,27 @@ public partial class Default2 : System.Web.UI.Page
         CP.ChangePwd();
         string script3 = @"notifyError('Password cambiata con successo!')";
         ScriptManager.RegisterStartupScript(this, GetType(), "btnModPWD_Click", script3, true);
+    }
+
+
+
+
+
+    protected void btnIscriviti_Click(object sender, EventArgs e)
+    {
+        CLIENTI C = new CLIENTI();
+        C.chiave = int.Parse(Session["chiaveUSR"].ToString());
+        C.CLIENTI_Prime();
+
+        string script4 = @"notifySuccess('Iscrizione avvenuta con successo!')";
+        ScriptManager.RegisterStartupScript(this, GetType(), "btnIscriviti_Click", script4, true);
+        btnIscriviti.Visible = false;
+
+
+
+
+
+
     }
 
 

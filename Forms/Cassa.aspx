@@ -25,23 +25,29 @@
                     <div class="card rounded-3">
                         <div class="card-body p-4 p-md-5">
                             <div class="row align-items-center">
-                                <div class="col-lg-11">
+                                <div class="col-lg-11 center align-items-center justify-content-center text-align-center">
+                                    <div style="width:fit-content">
+                                        <a href="/Forms/AMATRON/PopupPaypalAMATRON.aspx">
+                                            <input type="button" runat="server" class="btn masterButton <%--masterBorderColor masterButton--%>" value="Concludi ordine" id="btnConcludiOrdine" />
+                                        </a>
+                                    </div>
                                     <div class="masterHideScroll masterCardHeight">
                                         <div>
                                             <asp:Label ID="lblgrigliaCassa" runat="server" Text=""></asp:Label>
                                         </div>
-                                        <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" DataSourceID="SqlDataSource2">
+                                        <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" AutoGenerateColumns="false" DataSourceID="SqlDataSource2">
                                             <Columns>
-                                                <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" />
-                                                <asp:BoundField DataField="QTAprodotto" HeaderText="QTAprodotto" SortExpression="QTAprodotto" ReadOnly="True" />
-                                                <asp:BoundField DataField="TITOLOprodotto" HeaderText="TITOLOprodotto" SortExpression="TITOLOprodotto" />
-                                                <asp:BoundField DataField="DESCRIZIONEprodotto" HeaderText="DESCRIZIONEprodotto" SortExpression="DESCRIZIONEprodotto" />
-                                                <asp:BoundField DataField="PREZZOprodotto" HeaderText="PREZZOprodotto" ReadOnly="True" SortExpression="PREZZOprodotto" />
                                                 <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="IMMAGINEprodotto" SortExpression="IMMAGINEprodotto">
                                                     <ItemTemplate>
                                                         <asp:Image ID="Image" runat="server" DataField="IMMAGINEprodotto" Mode="ReadOnly" ImageUrl="IMMAGINEprodotto" />
                                                     </ItemTemplate>
                                                 </asp:TemplateField>
+                                                <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" />
+                                                <asp:BoundField DataField="QTAprodotto" HeaderText="QTAprodotto" SortExpression="QTAprodotto" ReadOnly="True" />
+                                                <asp:BoundField DataField="TITOLOprodotto" HeaderText="TITOLOprodotto" SortExpression="TITOLOprodotto" />
+                                                <asp:BoundField DataField="DESCRIZIONEprodotto" HeaderText="DESCRIZIONEprodotto" SortExpression="DESCRIZIONEprodotto" />
+                                                <asp:BoundField DataField="PREZZOprodotto" HeaderText="PREZZOprodotto" ReadOnly="True" SortExpression="PREZZOprodotto" />
+
                                             </Columns>
                                             <SelectedRowStyle BackColor="LightGray" />
                                             <HeaderStyle BackColor="#B469FF" />
@@ -54,12 +60,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div align="center" class="col-lg-1 align-items-center">
-                            <p></p>
-                            <a href="/Forms/AMATRON/PopupPaypalAMATRON.aspx">
-                                <input type="button" runat="server" class="btn masterButton <%--masterBorderColor masterButton--%>" value="Concludi ordine" id="btnConcludiOrdine" />
-                            </a>
                         </div>
                     </div>
                 </div>

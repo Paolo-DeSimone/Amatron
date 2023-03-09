@@ -14,6 +14,11 @@ public partial class _Default : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
+        grigliaVenditori.DataSourceID = "sdsVenditori";
+        grigliaVenditori.DataBind();
+
+        grigliaCorrieri.DataSourceID = "sdsCorrieri";
+        grigliaCorrieri.DataBind();
     }
 
 
@@ -32,7 +37,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnAbilitaVenditori_Click(object sender, EventArgs e)
     {
-        
+
         //istanzio l'oggetto V
         VENDITORI V = new VENDITORI();
         //prendo la chiave
@@ -61,7 +66,7 @@ public partial class _Default : System.Web.UI.Page
         mail.IsBodyHtml = true; //mail è scritta in html
         mail.Subject = "Richiesta ABILITAZIONE approvata"; //oggetto
                                                            //messaggio
-        mail.Body = "Gentile "+V.ragionesociale+";<br/>";
+        mail.Body = "Gentile " + V.ragionesociale + ";<br/>";
         mail.Body += "La sua richiesta per l'abilitazione &egrave; stata accettata.<br/>";
         mail.Body += "Da AMATRON, le auguriamo una buona giornata.";
 
@@ -74,7 +79,7 @@ public partial class _Default : System.Web.UI.Page
             return;
 
         }
-        else 
+        else
         {
             V.Abilita();
             client.Send(mail); //mando mail
@@ -85,6 +90,16 @@ public partial class _Default : System.Web.UI.Page
         }
         grigliaVenditori.DataBind();
 
+
+    }
+    protected void btnFiltraVenditori_Click(object sender, EventArgs e)
+    {
+        if (txtFiltraVenditori.Text.Trim() == "")
+        {
+            grigliaVenditori.DataSourceID = "sdsVenditori";
+            grigliaVenditori.DataBind();
+        }
+        else grigliaVenditori.DataSourceID = "sdsVenditoriFiltra";
 
     }
 
@@ -134,7 +149,7 @@ public partial class _Default : System.Web.UI.Page
         mail.IsBodyHtml = true; //mail è scritta in html
         mail.Subject = "Richiesta ABILITAZIONE approvata"; //oggetto
                                                            //messaggio
-        mail.Body = "Gentile "+C.ragionesociale+";<br/>";
+        mail.Body = "Gentile " + C.ragionesociale + ";<br/>";
         mail.Body += "La sua richiesta per l'abilitazione &egrave; stata accettata.<br/>";
         mail.Body += "Da AMATRON, le auguriamo una buona giornata.";
 
@@ -148,7 +163,7 @@ public partial class _Default : System.Web.UI.Page
         }
         else
         {
-            
+
             C.CORRIERI_Abilita();
             client.Send(mail); //mando mail
             string script = @"notifySuccess('Corriere abilitato')"; //messaggio di successo
@@ -157,4 +172,16 @@ public partial class _Default : System.Web.UI.Page
         }
         grigliaCorrieri.DataBind();
     }
+    protected void btnFiltraCorrieri_Click(object sender, EventArgs e)
+    {
+        if (txtFiltraCorrieri.Text.Trim() == "")
+        {
+            grigliaCorrieri.DataSourceID = "sdsCorrieri";
+            grigliaCorrieri.DataBind();
+        }
+        else grigliaCorrieri.DataSourceID = "sdsCorrieriFiltra";
+    }
+
+
+
 }

@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.ServiceModel.Dispatcher;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.DataVisualization.Charting;
 using System.Web.UI.HtmlControls;
@@ -17,4 +20,8 @@ public partial class ReportAMATRON : System.Web.UI.Page
         chartIncassiCategoria.ChartAreas.FirstOrDefault().AxisX.Interval = 1;
     }
 
+    protected void ddlFiltroAnnoMensile_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        chartIncassiMensili.DataBind();
+    }
 }

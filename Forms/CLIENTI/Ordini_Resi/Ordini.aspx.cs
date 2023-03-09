@@ -55,4 +55,9 @@ public partial class Ordini : System.Web.UI.Page
             }
         }
     }
+
+    protected void btnresi_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("/Forms/CLIENTI/Ordini_Resi/ResiOrdine.aspx");
+    }
 }

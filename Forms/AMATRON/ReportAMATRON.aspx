@@ -6,7 +6,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    </asp:Content>
+</asp:Content>
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -29,7 +29,7 @@
                                             <%-- DDL Filtro Anno --%>
                                             <div class="col-lg-6 text-center justify-content-center align-items-center">
                                                 <asp:Literal ID="ltrFiltroAnno" runat="server" Text="Anno:"></asp:Literal>
-                                                <asp:DropDownList ID="ddlFiltroAnnoMensile" runat="server" DataSourceID="sdsGetAnno" DataTextField="ANNO" DataValueField="ANNO" AutoPostBack="True"></asp:DropDownList>
+                                                <asp:DropDownList ID="ddlFiltroAnnoMensile" runat="server" DataSourceID="sdsGetAnno" DataTextField="ANNO" DataValueField="ANNO" AutoPostBack="True" OnSelectedIndexChanged="ddlFiltroAnnoMensile_SelectedIndexChanged"></asp:DropDownList>
                                                 <asp:SqlDataSource ID="sdsGetAnno" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spAMATRON_GetAnno" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                             </div>
                                             <%-- DDL Filtro Anno --%>
@@ -55,66 +55,17 @@
                                                 </center>
                                             </div>
                                             <%--Grafico Incassi Mensili--%>
+
                                             <%--Dettagli Dati Tabella--%>
-                                            <div class="col-lg-6 align-items-center text-align-center">
-                                                <table class="table">
-                                                    <thread>
-                                                        <tr>
-                                                            <th scope="col">Mese</th>
-                                                            <th scope="col">Guadagno</th>
-                                                        </tr>
-                                                    </thread>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th scope="col">Gennaio</th>
-                                                            <td><asp:Literal ID="ltrGennaio" runat="server">ciao</asp:Literal></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="col">Febbraio</th>
-                                                            <td><asp:Literal ID="ltrFebbraio" runat="server">ciao</asp:Literal></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="col">Marzo</th>
-                                                            <td><asp:Literal ID="ltrMarzo" runat="server">ciao</asp:Literal></td>
-                                                        </tr>
-                                                         <tr>
-                                                            <th scope="col">Aprile</th>
-                                                            <td><asp:Literal ID="ltrAprile" runat="server">ciao</asp:Literal></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="col">Maggio</th>
-                                                            <td><asp:Literal ID="ltrlMaggio" runat="server">ciao</asp:Literal></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="col">Giugno</th>
-                                                            <td><asp:Literal ID="ltrGiugno" runat="server">ciao</asp:Literal></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="col">Luglio</th>
-                                                            <td><asp:Literal ID="ltrLuglio" runat="server">ciao</asp:Literal></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="col">Agosto</th>
-                                                            <td><asp:Literal ID="ltrAgosto" runat="server">ciao</asp:Literal></td>
-                                                        </tr>
-                                                         <tr>
-                                                            <th scope="col">Settembre</th>
-                                                            <td><asp:Literal ID="ltrSettembre" runat="server">ciao</asp:Literal></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="col">Ottobre</th>
-                                                            <td><asp:Literal ID="ltrOttobre" runat="server">ciao</asp:Literal></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="col">Novembre</th>
-                                                            <td><asp:Literal ID="ltrNovembre" runat="server">ciao</asp:Literal></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="col">Dicembre</th>
-                                                            <td><asp:Literal ID="ltrDicembre" runat="server">ciao</asp:Literal></td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                            <div class="col-lg-6 text-center align-items-center text-align-center" style="padding-top: 17px;">
+                                                <div class="masterHideScroll masterCardHeight">
+                                                    <asp:GridView ID="grdIncassiMensili" runat="server" CssClass="table table-bordered table-condensed" AutoGenerateColumns="False" DataSourceID="sdsIncassiMensili"> <HeaderStyle BackColor="#B469FF" />
+                                                        <Columns>
+                                                            <asp:BoundField DataField="MESE" HeaderText="MESE" ReadOnly="True" SortExpression="MESE" />
+                                                            <asp:BoundField DataField="GUADAGNO_TOTALE" HeaderText="GUADAGNO TOTALE" ReadOnly="True" SortExpression="GUADAGNO_TOTALE" />
+                                                        </Columns>
+                                                    </asp:GridView>
+                                                </div>
                                             </div>
                                             <%--Dettagli Dati Tabella--%>
                                         </div>
@@ -145,28 +96,13 @@
                                             <asp:SqlDataSource ID="sdsIncassiAnnuali" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spAMATRON_IncassiAnnuali" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                         </center>
                                     </div>
-                                    <div class="col-lg-6 align-items-center text-align-center">
-                                        <asp:Literal ID="Literal1" runat="server">ciao</asp:Literal>
-                                        <br />
-                                        <asp:Literal ID="Literal2" runat="server">ciao</asp:Literal>
-                                        <br />
-                                        <asp:Literal ID="Literal3" runat="server">ciao</asp:Literal>
-                                        <br />
-                                        <asp:Literal ID="Literal4" runat="server">ciao</asp:Literal>
-                                        <br />
-                                        <asp:Literal ID="Literal5" runat="server">ciao</asp:Literal>
-                                        <br />
-                                        <asp:Literal ID="Literal6" runat="server">ciao</asp:Literal>
-                                        <br />
-                                        <asp:Literal ID="Literal7" runat="server">ciao</asp:Literal>
-                                        <br />
-                                        <asp:Literal ID="Literal8" runat="server">ciao</asp:Literal>
-                                        <br />
-                                        <asp:Literal ID="Literal9" runat="server">ciao</asp:Literal>
-                                        <br />
-                                        <asp:Literal ID="Literal10" runat="server">ciao</asp:Literal>
-                                        <br />
-                                        <asp:Literal ID="Literal11" runat="server">ciao</asp:Literal>
+                                    <div class="col-lg-6 align-items-center text-align-center" style="padding-top: 17px;">
+                                        <asp:GridView ID="grdIncassiAnnuali" CssClass="table table-bordered table-condensed" runat="server" AutoGenerateColumns="False" DataSourceID="sdsIncassiAnnuali"><HeaderStyle BackColor="#B469FF" />
+                                            <Columns>
+                                                <asp:BoundField DataField="ANNO" HeaderText="ANNO" ReadOnly="True" SortExpression="ANNO" />
+                                                <asp:BoundField DataField="GUADAGNO_TOTALE" HeaderText="GUADAGNO TOTALE" ReadOnly="True" SortExpression="GUADAGNO_TOTALE" />
+                                            </Columns>
+                                        </asp:GridView>
                                     </div>
                                 </div>
                             </div>

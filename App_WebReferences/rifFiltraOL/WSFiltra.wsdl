@@ -24,6 +24,48 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="FILTRA_Corrieri">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CORRIERI" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FILTRA_CorrieriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FILTRA_CorrieriResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FILTRA_Venditori">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VENDITORI" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FILTRA_VenditoriResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FILTRA_VenditoriResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="FILTRASoapIn">
@@ -32,10 +74,30 @@
   <wsdl:message name="FILTRASoapOut">
     <wsdl:part name="parameters" element="tns:FILTRAResponse" />
   </wsdl:message>
+  <wsdl:message name="FILTRA_CorrieriSoapIn">
+    <wsdl:part name="parameters" element="tns:FILTRA_Corrieri" />
+  </wsdl:message>
+  <wsdl:message name="FILTRA_CorrieriSoapOut">
+    <wsdl:part name="parameters" element="tns:FILTRA_CorrieriResponse" />
+  </wsdl:message>
+  <wsdl:message name="FILTRA_VenditoriSoapIn">
+    <wsdl:part name="parameters" element="tns:FILTRA_Venditori" />
+  </wsdl:message>
+  <wsdl:message name="FILTRA_VenditoriSoapOut">
+    <wsdl:part name="parameters" element="tns:FILTRA_VenditoriResponse" />
+  </wsdl:message>
   <wsdl:portType name="WsFiltraSoap">
     <wsdl:operation name="FILTRA">
       <wsdl:input message="tns:FILTRASoapIn" />
       <wsdl:output message="tns:FILTRASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FILTRA_Corrieri">
+      <wsdl:input message="tns:FILTRA_CorrieriSoapIn" />
+      <wsdl:output message="tns:FILTRA_CorrieriSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FILTRA_Venditori">
+      <wsdl:input message="tns:FILTRA_VenditoriSoapIn" />
+      <wsdl:output message="tns:FILTRA_VenditoriSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WsFiltraSoap" type="tns:WsFiltraSoap">
@@ -49,11 +111,47 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="FILTRA_Corrieri">
+      <soap:operation soapAction="http://tempuri.org/FILTRA_Corrieri" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FILTRA_Venditori">
+      <soap:operation soapAction="http://tempuri.org/FILTRA_Venditori" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WsFiltraSoap12" type="tns:WsFiltraSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="FILTRA">
       <soap12:operation soapAction="http://tempuri.org/FILTRA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FILTRA_Corrieri">
+      <soap12:operation soapAction="http://tempuri.org/FILTRA_Corrieri" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FILTRA_Venditori">
+      <soap12:operation soapAction="http://tempuri.org/FILTRA_Venditori" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

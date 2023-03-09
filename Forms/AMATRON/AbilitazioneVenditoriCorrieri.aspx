@@ -61,7 +61,6 @@
                 </div>
             </div>
 
-
             <div class="col-6">
                 <div class="card">
                     <div class="card-header">
@@ -101,13 +100,11 @@
                             <asp:SqlDataSource runat="server" ID="sdsCorrieri" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCORRIERI_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                         </div>
                         <%--pulsante per abilitare--%>
-                        <div class="py-2">
+                        <div  class="py-2">
                             <asp:Button ID="btnAbilitaCorrieri" CssClass="btn masterButton" runat="server" Text="Abilita" OnClick="btnAbilitaCorrieri_Click" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 </asp:Content>
-

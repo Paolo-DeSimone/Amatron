@@ -168,4 +168,14 @@ public partial class AccettazioneResi : System.Web.UI.Page
         }
         client.Send(mail); //mando mail
     }
+
+    protected void btnCerca_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+    {
+
+    }
 }

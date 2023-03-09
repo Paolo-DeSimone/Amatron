@@ -7,9 +7,6 @@
 
     </asp:Content>
 
-
-
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <section class="h-100 h-custom">
         <div class="container text-align-center py-5 h-100">

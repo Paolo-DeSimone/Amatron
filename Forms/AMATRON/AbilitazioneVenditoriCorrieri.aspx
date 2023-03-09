@@ -19,10 +19,17 @@
             <div class="col-6">
                 <div class="card">
                     <div class="card-header">
-                        <center>
-                            <asp:TextBox ID="txtFiltraVenditori" CssClass="form" Style="float: left;" runat="server" AutoPostBack="true"></asp:TextBox>
-                            <h4 style="width:30%;">Abilita Venditori</h4>
-                        </center>
+                        <div class="row">
+                            <div class="col-6">
+                                <h4>Abilita Venditori</h4>
+                            </div>
+                            <div class="col-4 text-end">
+                                <asp:TextBox ID="txtFiltraVenditori" CssClass="form-control" runat="server" AutoPostBack="true"></asp:TextBox>
+                            </div>
+                            <div class="col-2 text-end">
+                                <asp:Button ID="btnFiltraVenditori" runat="server" CssClass="btn masterButton" Text="Filtra" OnClick="btnFiltraVenditori_Click" />
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="masterHideScroll masterCardHeight">
@@ -43,7 +50,7 @@
                                             <asp:BoundField DataField="PWD" HeaderText="PWD" SortExpression="PWD" Visible="False"></asp:BoundField>
                                             <asp:CheckBoxField DataField="ABILITATO" HeaderText="ABILITATO" SortExpression="ABILITATO"></asp:CheckBoxField>
                                             <asp:CommandField ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/assets/images/spunta_button.png">
-                                            <ControlStyle Height="20px" Width="25px" />
+                                                <ControlStyle Height="20px" Width="25px" />
                                             </asp:CommandField>
                                         </Columns>
                                         <HeaderStyle BackColor="#B469FF" />
@@ -71,10 +78,17 @@
             <div class="col-6">
                 <div class="card">
                     <div class="card-header">
-                        <center>
-                            <asp:TextBox ID="txtFiltraCorrieri" Style="float: left;" runat="server"></asp:TextBox>
-                            <h4 style="width:30%;">Abilita Corrieri</h4>
-                        </center>
+                        <div class="row">
+                            <div class="col-6">
+                                <h4>Abilita Corrieri</h4>
+                            </div>
+                            <div class="col-4 text-end">
+                                <asp:TextBox ID="txtFiltraCorrieri" class="form-control" AutoPostBack="true" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="col-2 text-end">
+                                <asp:Button ID="btnFiltraCorrieri" runat="server" CssClass="btn masterButton" Text="Filtra" OnClick="btnFiltraCorrieri_Click" />
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="masterHideScroll masterCardHeight">
@@ -96,7 +110,7 @@
                                             <asp:BoundField DataField="CAP" HeaderText="CAP" Visible="False" SortExpression="CAP"></asp:BoundField>
                                             <asp:BoundField DataField="TELEFONO" HeaderText="TELEFONO" Visible="False" SortExpression="TELEFONO"></asp:BoundField>
                                             <asp:CommandField ShowSelectButton="true" ButtonType="Image" SelectImageUrl="~/assets/images/spunta_button.png">
-                                            <ControlStyle Height="25px" Width="20px" />
+                                                <ControlStyle Height="20px" Width="25px" />
                                             </asp:CommandField>
                                         </Columns>
                                         <HeaderStyle BackColor="#B469FF" />

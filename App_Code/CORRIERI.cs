@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
-using RifCorrieri;
 
 
 /// <summary>
@@ -28,7 +27,7 @@ public class CORRIERI
     public int mese;
     public string TotaleRicaviCorriere;
 
-    RifCorrieri.WsCorrieriSoapClient C = new WsCorrieriSoapClient();
+    rifCorrieriOL.WsCorrieriSoapClient C = new rifCorrieriOL.WsCorrieriSoapClient();
     public CORRIERI()
     {
 
@@ -103,4 +102,6 @@ public class CORRIERI
         DataTable DT = C.CORRIERI_CountSPEDIZIONI(chiave, anno, mese);
         return DT;
     }
+
+
 }

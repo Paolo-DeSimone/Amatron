@@ -13,7 +13,7 @@
 
     <div class="container mt-5">
         <center>
-            <h2>Abilitazione Venditori e Corrieri</h2>
+            <h2>Abilita Venditori e Corrieri</h2>
         </center>
         <div class="row mt-5">
             <div class="col-6">
@@ -30,7 +30,6 @@
                                 <ContentTemplate>
                                     <asp:GridView ID="grigliaVenditori" CssClass="table" runat="server" DataSourceID="sdsVenditori" AutoGenerateColumns="False" DataKeyNames="chiave" OnSelectedIndexChanged="grigliaVenditori_SelectedIndexChanged">
                                         <Columns>
-                                            <asp:CommandField ShowSelectButton="True"></asp:CommandField>
                                             <asp:BoundField DataField="chiave" HeaderText="chiave" ReadOnly="True" Visible="False" SortExpression="chiave"></asp:BoundField>
                                             <asp:BoundField DataField="RAGIONESOCIALE" HeaderText="RAGIONESOCIALE" SortExpression="RAGIONESOCIALE"></asp:BoundField>
                                             <asp:BoundField DataField="PIVA" HeaderText="PIVA" SortExpression="PIVA" Visible="False"></asp:BoundField>
@@ -42,6 +41,9 @@
                                             <asp:BoundField DataField="EMAIL" HeaderText="EMAIL" SortExpression="EMAIL"></asp:BoundField>
                                             <asp:BoundField DataField="PWD" HeaderText="PWD" SortExpression="PWD" Visible="False"></asp:BoundField>
                                             <asp:CheckBoxField DataField="ABILITATO" HeaderText="ABILITATO" SortExpression="ABILITATO"></asp:CheckBoxField>
+                                            <asp:CommandField ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/assets/images/spunta_button.png">
+                                            <ControlStyle Height="20px" Width="25px" />
+                                            </asp:CommandField>
                                         </Columns>
                                         <HeaderStyle BackColor="#B469FF" />
                                         <SelectedRowStyle BackColor="#adaaaa" Font-Bold="True" />
@@ -74,7 +76,6 @@
                                 <ContentTemplate>
                                     <asp:GridView ID="grigliaCorrieri" Class="table" runat="server" AutoGenerateColumns="False" DataKeyNames="chiave" DataSourceID="sdsCorrieri" OnSelectedIndexChanged="grigliaCorrieri_SelectedIndexChanged">
                                         <Columns>
-                                            <asp:CommandField ShowSelectButton="true"></asp:CommandField>
                                             <asp:BoundField DataField="chiave" HeaderText="chiave" ReadOnly="True" InsertVisible="False" SortExpression="chiave" Visible="False"></asp:BoundField>
                                             <asp:BoundField DataField="RAGIONESOCIALE" HeaderText="RAGIONESOCIALE" SortExpression="RAGIONESOCIALE"></asp:BoundField>
                                             <asp:BoundField DataField="EMAIL" HeaderText="EMAIL" SortExpression="EMAIL"></asp:BoundField>
@@ -87,6 +88,9 @@
                                             <asp:BoundField DataField="PROVINCIA" HeaderText="PROVINCIA" Visible="False" SortExpression="PROVINCIA"></asp:BoundField>
                                             <asp:BoundField DataField="CAP" HeaderText="CAP" Visible="False" SortExpression="CAP"></asp:BoundField>
                                             <asp:BoundField DataField="TELEFONO" HeaderText="TELEFONO" Visible="False" SortExpression="TELEFONO"></asp:BoundField>
+                                            <asp:CommandField ShowSelectButton="true" ButtonType="Image" SelectImageUrl="~/assets/images/spunta_button.png">
+                                            <ControlStyle Height="25px" Width="20px" />
+                                            </asp:CommandField>
                                         </Columns>
                                         <HeaderStyle BackColor="#B469FF" />
                                         <SelectedRowStyle BackColor="#adaaaa" Font-Bold="True" />

@@ -168,6 +168,7 @@
     color: #B469FF;
     font-family: Arial;
     margin-left: 37%;
+    
 }
 
 .misura {
@@ -185,10 +186,7 @@
     margin-left: 200px;
 }
 
-.largh {
-    width: inherit;
-    
-}
+
 
 .btnSalva {
     width: 50%;
@@ -221,11 +219,7 @@
     margin-left:85px;
 }
 
-.ordini {
-    margin: 10px auto;
-    width: 600px;
-    height: 200px;
-}
+
 
 .PopupReso {
     background-color: #212529;
@@ -233,7 +227,7 @@
     /*opacity: 0.8;*/
 }
 
-/*Css popup Inscrizione prime*/
+/*Css popup iscrizione prime*/
 .Background {
     background-color: #212529;
     filter: alpha(opacity=30);
@@ -243,12 +237,14 @@
 .Popup {
     padding-top: 10px;
     padding-left: 10px;
-    width: 600px;
-    height: 600px;
+    width: 400px;
+    height: 400px;
+
 }
 
 .colore {
     background-color: white;
+    
 
 }
 
@@ -260,9 +256,6 @@
     color: black;
 }
 
-.inscriviti {
-    font-size: 30px;
-}
 
 .larghezza {
     width: 30%;
@@ -275,7 +268,7 @@
 
 .mItem {
     color: #B469FF;
-    padding-right: 10px;
+    margin-right: 2vw;
 }
 
 .mItem:hover {

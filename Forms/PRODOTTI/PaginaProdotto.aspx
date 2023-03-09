@@ -1,6 +1,33 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="PaginaProdotto.aspx.cs" Inherits="Default2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+     <script>
+        $(document).ready(function () {
+
+            if ($('.bbb_viewed_slider').length) {
+                var viewedSlider = $('.bbb_viewed_slider');
+
+                viewedSlider.owlCarousel(
+                    {
+                        loop: true,
+                        margin: 30,
+                        autoplay: true,
+                        autoplayTimeout: 7000,
+                        nav: false,
+                        dots: false,
+                        responsive:
+                        {
+                            0: { items: 1 },
+                            575: { items: 2 },
+                            768: { items: 3 },
+                            991: { items: 4 },
+                            1199: { items: 5 }
+                        }
+                    }
+                );
+            }
+        });
+     </script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -87,6 +114,55 @@
             </div>
         </div>
     </div>
+
+    <hr class="masterColorBG masterColorText" style="height: 6px;" />
+    <br />
+
+    <div class="container mt-1">
+        <div class="row">
+            <div class="card col-md-4 offset-md-5 scrollo border-0" style="height: fit-content">
+                <h3 class="text-center mb-4">Recensioni di altri clienti</h3>
+                <div class="card-header">
+                    <div class="card-body">
+                        <asp:Literal ID="litNomeCliente" runat="server" Text="Giovanni"></asp:Literal>
+                        <hr style="margin: 5px" />
+                        <div>
+                            <asp:ImageButton ID="RecStar1" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="true" />
+                            <asp:ImageButton ID="RecStar2" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="true" />
+                            <asp:ImageButton ID="RecStar3" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="true" />
+                            <asp:ImageButton ID="RecStar4" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="true" />
+                            <asp:ImageButton ID="RecStar5" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="False" />
+                            <p style="color: black">
+                                <asp:Literal ID="litDataRecensione" runat="server" Text="Recensito il 3 Febbraio 2023"></asp:Literal></p>
+                        </div>
+                        <hr style="margin: 5px" />
+                        <p style="color: black">
+                            <asp:Literal ID="litRecensione" runat="server" Text="Figo bello 5 stelle"></asp:Literal></p>
+                    </div>              
+                </div>
+
+                <div class="card-header">
+                    <div class="card-body">
+                        <asp:Literal ID="Literal1" runat="server" Text="Luca"></asp:Literal>
+                        <hr style="margin: 5px" />
+                        <div>
+                            <asp:ImageButton ID="ImageButton1" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="true" />
+                            <asp:ImageButton ID="ImageButton2" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="true" />
+                            <asp:ImageButton ID="ImageButton3" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="true" />
+                            <asp:ImageButton ID="ImageButton4" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="False" />
+                            <asp:ImageButton ID="ImageButton5" Class="star" runat="server" src="/assets/images/yellowstar.png" Width="20px" Height="20px" Visible="False" />
+                        </div>
+                        <hr style="margin: 5px" />
+                        <p style="color: black">
+                            <asp:Literal ID="Literal2" runat="server" Text="Assurdo e pazzesco"></asp:Literal></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
     <hr class="masterColorBG masterColorText" style="height: 6px;" />
     <br />
     <div style="clear: both; background-color: #ebebeb">
@@ -95,7 +171,7 @@
                 <img style="width: 100px" src="/assets/images/carmine_banner.png" />
             </span>
             <span>
-                <h3 class="masterColorText">Ottieni lo sconto dell'1% sui tuoi acquisti con </h3>
+                <h3 class="masterColorText">I prezzi dei nostri prodotti sono comprensivi dei costi di spedizione!</h3>
             </span>
         </div>
     </div>
@@ -107,7 +183,6 @@
                 <div class="col">
                     <div class="bbb_viewed_title_container">
                         <h3 class="bbb_viewed_title masterColorText">
-                            <img style="width: 80px" src="/assets/images/icon_new.png" />
                             <span>Prodotti simili</span>
                         </h3>
                         <div class="bbb_viewed_nav_container">
@@ -122,4 +197,3 @@
         </div>
     </div>
 </asp:Content>
-

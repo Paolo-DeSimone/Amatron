@@ -84,7 +84,6 @@
                                     <asp:CheckBox ID="chkVuoto" runat="server" Text="Seleziona" OnCheckedChanged="chkVuoto_CheckedChanged" />
                                 </ItemTemplate>
                             </asp:TemplateField>--%>
-                            <asp:CommandField ShowSelectButton="True" />
                             <asp:BoundField DataField="chiave" HeaderText="chiave" InsertVisible="False" ReadOnly="True" SortExpression="chiave" Visible="False" />
                             <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False" />
                             <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" Visible="False" />
@@ -92,12 +91,13 @@
                             <asp:BoundField DataField="DESCRIZIONE" HeaderText="DESCRIZIONE" SortExpression="DESCRIZIONE" />
                             <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
                             <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
-                            <asp:BoundField DataField="DATACARICAMENTO" HeaderText="DATACARICAMENTO" SortExpression="DATACARICAMENTO" />
-                            <asp:BoundField DataField="PERCAMATRON" HeaderText="PERCAMATRON" SortExpression="PERCAMATRON" />
+                            <asp:BoundField DataField="DATACARICAMENTO" HeaderText="DATA CARICAMENTO" SortExpression="DATACARICAMENTO" />
+                            <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" SortExpression="PERCAMATRON" />
                             <asp:BoundField DataField="chiave1" HeaderText="chiave1" InsertVisible="False" ReadOnly="True" SortExpression="chiave1" Visible="False" />
                             <asp:BoundField DataField="CATEGORIA" HeaderText="CATEGORIA" SortExpression="CATEGORIA" />
+                            <asp:CommandField ShowSelectButton="True" ButtonType="image"  SelectImageUrl="../../assets/images/spunta_button.png" ControlStyle-Height="20px" ControlStyle-Width="24px" />
                         </Columns>
-                        <SelectedRowStyle BackColor="#B469FF" />
+                        <SelectedRowStyle BackColor="#adaaaa" />
                         <HeaderStyle BackColor="#B469FF" />
                     </asp:GridView>
                     <asp:SqlDataSource ID="sdsGRIDVisualizzaProdotti" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spPRODOTTI_SelectByVenditore" SelectCommandType="StoredProcedure">
@@ -141,7 +141,7 @@
         <br />
         <div class="close-btn-wrapper">
 
-            <button id="btnChiudiPopup" class="prova chiusura close-btn2" runat="server">
+            <button id="btnChiudiPopup" class="close-btn2" runat="server">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                     <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
@@ -161,18 +161,21 @@
     <asp:Panel
         ID="Panel1"
         runat="server"
-        CssClass="masterPopup"
+        CssClass="PopUpQTA"
         align="center"
         Style="display: none">
         <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
 
-        <iframe style="width: 300px; height: 300px; aspect-ratio: 16/9" id="Iframe1" src="GestisciInventario.aspx" runat="server"></iframe>
+        <iframe style="width: 20vw; height: 24vh;" id="Iframe1" src="GestisciInventario.aspx" runat="server"></iframe>
         <br />
 
 
         <div class="close-btn-wrapper">
-            <button id="btnChiudiPopupInventario" class="prova chiusura close-btn3" runat="server" text="">
-                x
+            <button id="btnChiudiPopupInventario" class="close-btnQTAZero" runat="server" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
             </button>
         </div>
 

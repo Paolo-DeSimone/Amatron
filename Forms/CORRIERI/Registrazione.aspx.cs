@@ -54,7 +54,7 @@ public partial class Default2 : System.Web.UI.Page
           txtCapVenditore.Text == "" || txtPivaVenditore.Text == "")
         {
             //error
-            string script = @"notifySuccess('Dati mancanti, riempire tutti i campi e riprovare')";
+            string script = @"notifyError('Dati mancanti, riempire tutti i campi e riprovare')";
             ScriptManager.RegisterStartupScript(this, GetType(), "btnRegistraCliente_Click", script, true);
             return;
         }

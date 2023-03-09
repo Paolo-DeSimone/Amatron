@@ -64,6 +64,8 @@ public partial class _Default : System.Web.UI.Page
     {
         if (gridVisualizzaProdotti.SelectedValue == null)
         {
+            string script = "notifyError('Selezionare un Prodotto da modificare');";
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnAggiungi_Click", script, true);
             return;
         }
         else
@@ -108,6 +110,8 @@ public partial class _Default : System.Web.UI.Page
     {
         if (gridVisualizzaProdotti.SelectedValue == null)
         {
+            string script = "notifyError('Selezionare un Prodotto al quale aggiungere una o piu immagini');";
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnAggiungi_Click", script, true);
             return;
         }
         else

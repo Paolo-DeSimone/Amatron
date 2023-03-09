@@ -10,7 +10,12 @@ public class AMATRONADMIN
 { 
     public string email;
     public string PWD;
-    RifAmatron.WsAmatronSoapClient A = new RifAmatron.WsAmatronSoapClient();
+    public int ANNO;
+    public int MESI;
+    public float GUADAGNO_TOTALE;
+    public string CATEGORIA;
+
+    rifAmatronOL.WsAmatronSoapClient A = new rifAmatronOL.WsAmatronSoapClient();
 
     public AMATRONADMIN()
     {
@@ -23,4 +28,4 @@ public class AMATRONADMIN
         A.AMATRON_Login(email, PWD);
         return dt;
     }
-}
+}   

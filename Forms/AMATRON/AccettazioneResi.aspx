@@ -16,16 +16,12 @@
                     <h2 class="text-center py-2">Accettazione Resi</h2>
                     <div class="card rounded-3">
                         <div class="card-body p-4 p-md-5">
-
-                            <div class="col-10">
+                               <div class="col-10">
                                 <div class="row">
                                     <div class="col-lg-2">
-                                        <asp:Label ID="Label1" runat="server" Text="Cliente:"></asp:Label>
+                                        <asp:Label ID="Label5" runat="server" Text="Cliente:"></asp:Label>
                                     </div>
-                                     <div class="col-lg-2">
-                                        <asp:Label ID="Label5" runat="server" Text="Numero Ordine:"></asp:Label>
-                                    </div>
-
+                                    
                                     <div class="col-lg-2">
                                         <asp:Label ID="Label3" runat="server" Text="Seleziona richiesta da:"></asp:Label>
                                     </div>
@@ -40,14 +36,15 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-2">
-                                        <asp:TextBox ID="txtCliente" Class="form-control" runat="server"></asp:TextBox>
-                                    </div>
 
-                                    <div class="col-lg-2">
-                                        <asp:TextBox ID="txtNumeroOrdine" Class="form-control" runat="server" TextMode="Number"></asp:TextBox>
-                                        <asp:TextBox ID="txtNumeroOrdine" Class="form-control" runat="server"></asp:TextBox>
-                                    </div>
 
+                                            <asp:DropDownList ID="ddlUTENTE" AppendDataBoundItems="True" runat="server" CssClass="form-select" DataSourceID="SqlDataSource1" DataTextField="NOMINATIVO" DataValueField="chiaveORDINE">
+                                                <asp:ListItem Value="">Seleziona</asp:ListItem>
+                                            </asp:DropDownList>
+                                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spRESI_ORDINI_PRODOTTI_CLIENTI_Filter" SelectCommandType="StoredProcedure" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
+
+                                    </div>
+                                   
                                     <div class="col-lg-2">
                                         <asp:TextBox ID="txtDInizio" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
                                     </div>
@@ -57,9 +54,8 @@
                                     </div>
                                     <div class="col-lg-2 text-end">
 
-                                        <asp:Button ID="btnFiltra" Class="btn masterButton" runat="server" Text="Filtra" OnClick="btnFiltra_Click" />
 
-                                        <asp:Button ID="btnCerca" Class="btn masterButton" runat="server" Text="Filtra" />
+                                        <asp:Button ID="btnCerca" Class="btn masterButton" runat="server" Text="Filtra" OnClick="btnCerca_Click" />
 
                                     </div>
                                     <div class="col-lg-2 align-items-center text-end">
@@ -67,7 +63,7 @@
                                         <asp:Button ID="Button2" class="btn masterButton" runat="server" Text="Rifiuta" />
                                     </div>
                                 </div>
-                                <br />
+
                             </div>
 
                             <div class="row align-items-center">
@@ -97,7 +93,6 @@
                                         <asp:SqlDataSource ID="sdsTabellaResi" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spRESI_ORDINI_PRODOTTI_CLIENTISelectByNUMERO_ORDINE" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>

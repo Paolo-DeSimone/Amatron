@@ -12,23 +12,30 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        grigliaOrdini.DataSourceID = "SqlDataSource2";
+        //////filtraggio dei campi del venditore in base alla ricerca
+        DataTable DT = new DataTable();
+        ORDINI O = new ORDINI();
+        O.chiaveCLIENTE = int.Parse(ddlUTENTE.SelectedValue);
+        O.DInizio = txtDInizio.Text;
+        O.DFine = txtDFine.Text;
+        DT = O.ORDINI_FILTER();
+
+        grigliaOrdini.DataSource = DT;
         grigliaOrdini.DataBind();
     }
 
     protected void btnCerca_Click(object sender, EventArgs e)
     {
         //////filtraggio dei campi del venditore in base alla ricerca
-        //DataTable DT = new DataTable();
-        //ORDINI O = new ORDINI();
-        //int chiavecliente = int.Parse(ddlUTENTE.SelectedValue);
-        //int STATO = int.Parse(ddlSTATO.SelectedValue);
-        //string DInizio = txtDInizio.Text;
-        //string DFine = txtDFine.Text;
-        //DT = O.ORDINI_CLIENTI_PRODOTTI_SPEDIZIONI_Filter();
+        DataTable DT = new DataTable();
+        ORDINI O = new ORDINI();
+        O.chiaveCLIENTE = int.Parse(ddlUTENTE.SelectedValue);
+        O.DInizio = txtDInizio.Text;
+        O.DFine = txtDFine.Text;
+        DT = O.ORDINI_FILTER();
 
-        //grigliaOrdini.DataSource = DT;
-        //grigliaOrdini.DataBind();
+        grigliaOrdini.DataSource = DT;
+        grigliaOrdini.DataBind();
 
     }
 

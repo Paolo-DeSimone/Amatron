@@ -13,11 +13,14 @@ using System.Data.Sql;
 public class ORDINI
 {
     public int chiave;
+    public int chiaveCLIENTE;
     public int chiavecorriere;
     public int chiaveprodotto;
     public int chiavecliente;
     public int qta;
     public string datatransazione;
+    public string DInizio;
+    public string DFine;
     public int numeroordine;
     public bool gestito;
 
@@ -119,16 +122,16 @@ public class ORDINI
     public DataTable SelectByOrdineCliente()
     {
         DataTable dt = new DataTable();
-        dt = O.ORDINI_SelectOrdineCliente(chiavecliente);
+        dt = O.ORDINI_SelectOrdineCliente(chiaveCLIENTE);
         return dt;
     }
 
-    //public DataTable ORDINI_CLIENTI_PRODOTTI_SPEDIZIONI_Filter()
-    //{
-    //    //DataTable dt = new DataTable();
-    //    //dt = O.ORDINI_CLIENTI_PRODOTTI_SPEDIZIONI_Filter(chiaveCLIENTE, STATO, DInizio, DFine);
-    //    //return dt;
-    //}
+    public DataTable ORDINI_FILTER()
+    {
+        DataTable dt = new DataTable();
+        dt = O.ORDINI_Filter(chiaveCLIENTE, DInizio, DFine);
+        return dt;
+    }
 
 
 }

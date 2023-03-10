@@ -37,11 +37,11 @@ public partial class _Default : System.Web.UI.Page
         DT = C.CORRIERI_CountSPEDIZIONI();
         if (DT.Rows.Count == 0)
         {
-            lblResocontoCorriere.Text = "Non ci sono ordini consegnati per il mese selezionato. Controllare lo stato della spedizione.";
+            lblResocontoCorriere.Text = "<h4>Non ci sono ordini consegnati per il mese selezionato. Controllare lo stato della spedizione.</h4>";
         }
         else
         {
-            lblResocontoCorriere.Text = "Il ricavo totale delle spedizioni consegnate nel mese selezionato è di € " + DT.Rows[0]["TotaleRicaviCorriere"].ToString();
+            lblResocontoCorriere.Text = "<h4>Il ricavo totale delle spedizioni consegnate di questo mese è <b>&euro; " + DT.Rows[0]["TotaleRicaviCorriere"].ToString() + "</b></h4>";
         }
     }
 }

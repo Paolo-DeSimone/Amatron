@@ -43,7 +43,6 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnCerca_Click(object sender, EventArgs e)
     {
-
         //filtraggio dei campi del venditore in base alla ricerca
         DataTable DT = new DataTable();
         VENDITORI V = new VENDITORI();
@@ -58,7 +57,6 @@ public partial class _Default : System.Web.UI.Page
 
         GrigliaStoricoVendite.DataSource = DT;
         GrigliaStoricoVendite.DataBind();
-
     }
 
 }

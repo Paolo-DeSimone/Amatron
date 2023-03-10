@@ -29,7 +29,7 @@
 
         .CardMargine {
             margin: 6vh auto;
-            margin-left: 38%;
+            margin-left: 25%;
             margin-bottom: 0%;
         }
     </style>

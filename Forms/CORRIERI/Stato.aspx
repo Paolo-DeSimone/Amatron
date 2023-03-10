@@ -29,7 +29,12 @@
                                     <asp:ListItem Value="D">D - Prodotto consegnato</asp:ListItem>
                                 </asp:DropDownList>
                             </div>
-                            <div class="col-lg-3"></div>
+                            <div class="col-lg-2">
+                                <asp:TextBox ID="txtFiltraNomeCliente" class="form-control" AutoPostBack="true" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="col-lg-2">
+                                <asp:Button ID="btnFiltraNomeCliente" runat="server" CssClass="btn masterButton" Text="Filtra Per Nome" OnClick="btnFiltraNomeCliente_Click" />
+                            </div>
                             <div class="col-lg-2">
                                 <%-- pulsante --%>
                                 <asp:Button ID="btnStato" runat="server" class="btn masterButton" Text="CONFERMA LO STATO AL PASSAGGIO SUCCESSIVO" OnClick="btnStato_Click" />
@@ -56,6 +61,13 @@
                                         <SelectedRowStyle BackColor="LightGray" />
                                         <HeaderStyle BackColor="#B469FF" />
                                     </asp:GridView>
+                                    <asp:SqlDataSource ID="sdsFILTRA" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spFILTRA_nomeClienti" SelectCommandType="StoredProcedure">
+                                        <SelectParameters>
+                                            <asp:ControlParameter ControlID="txtFiltraNomeCliente" Name="NOME" PropertyName="Text" Type="String" />
+                                            <asp:SessionParameter Name="chiave" SessionField="chiaveUSR" Type="Int32" />
+                                            <asp:ControlParameter ControlID="ddlSTATO" Name="STATO" PropertyName="SelectedValue" Type="String" />
+                                        </SelectParameters>
+                                    </asp:SqlDataSource>
                                     <asp:SqlDataSource ID="sdsSTATO" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSPEDIZIONI_ORDINI_Select" SelectCommandType="StoredProcedure">
                                         <SelectParameters>
                                             <asp:SessionParameter Name="chiave" SessionField="chiaveUSR" Type="Int32" />

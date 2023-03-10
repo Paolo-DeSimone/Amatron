@@ -13,6 +13,7 @@ public partial class ResoClientiPopup : System.Web.UI.Page
     public static string chiaveordine;
     protected void Page_Load(object sender, EventArgs e)
     {
+
         if (Session["QTA"] != null || Session["TITOLO"] != null)
         {
             lblQta.Text = Session["QTA"].ToString();
@@ -46,5 +47,6 @@ public partial class ResoClientiPopup : System.Web.UI.Page
         R.datarichiesta = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
         R.dataemissione = "";
         R.Insert();
+
     }
 }

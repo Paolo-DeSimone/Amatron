@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="ResiOrdine.aspx.cs" Inherits="_Default" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="ResiOrdine.aspx.cs" Inherits="_Default" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -20,6 +21,7 @@
                             <div class="col">
                                 <br />
                                 <center>
+
                                     <asp:GridView ID="grdreso" class="table" runat="server" CssClass="table table-bordered table-condensed" AutoGenerateColumns="False" DataKeyNames="chiaveprodotto" DataSourceID="sdsResi" OnSelectedIndexChanged="grdreso_SelectedIndexChanged">
                                         <Columns>
                                              <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="IMMAGINEprodotto" SortExpression="IMMAGINEprodotto">
@@ -27,7 +29,9 @@
                                                     <asp:Image ID="Image" runat="server" DataField="IMMAGINE" Mode="ReadOnly" ImageUrl="IMMAGINEprodotto" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
+
                                             <asp:BoundField DataField="chiaveprodotto" HeaderText="chiaveprodotto" Visible="true" InsertVisible="False" SortExpression="chiaveprodotto"/>
+
                                             <asp:BoundField DataField="TITOLO" HeaderText="TITOLO" SortExpression="TITOLO" />
                                             <asp:BoundField DataField="DESCRIZIONE" HeaderText="DESCRIZIONE" SortExpression="DESCRIZIONE" />
                                             <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
@@ -43,6 +47,12 @@
                                             <asp:SessionParameter Name="chiaveCLIENTE" SessionField="chiaveUSR" Type="Int32" />
                                         </SelectParameters>
                                     </asp:SqlDataSource>
+
+                            </div>
+                            <div align="center">
+                                <asp:Button ID="btnReso" class="btn masterButton" runat="server" Text="Effettua Reso" OnClick="btnReso_Click"/>
+                                <asp:Button ID="btnRecensione" class="btn masterButton" runat="server" Text="Effettua Recensione" OnClick="btnRecensione_Click" />
+
                             </div>
                             <div align="center">
                                 <asp:Button ID="btnReso" class="btn masterButton" runat="server" Text="Effettua Reso" OnClick="btnReso_Click"/>

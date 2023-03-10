@@ -17,11 +17,6 @@
 </head>
 <body>
     <%--<form id="form1" runat="server">--%>
-    <div style="background-color: green; display: none"; id="transition">Grazie per il tuo pagamento!</div>
-        <input type="text" id="payInput" />
-        <button onclick="generatePayment(document.getElementById('payInput').value)">Paga</button>
-        <!-- Set up a container element for the button -->
-        <div id="paypal-button-container"></div>
         <script>
             function generatePayment(value) {
                 if (value == "") {
@@ -49,7 +44,14 @@
                         }
                     }).render('#paypal-button-container');
             }
+            window.onload = generatePayment;
         </script>
+    <div style="background-color: green; display: none"; id="transition">Grazie per il tuo pagamento!</div>
+        <%--<input type="text" id="payInput" />--%>
+        <%--<button onclick="generatePayment(document.getElementById('payInput').value)">Paga</button>--%>
+        <!-- Set up a container element for the button -->
+        <div id="paypal-button-container"></div>
+    
     <%--</form>--%>
 </body>
 </html>

@@ -42,7 +42,7 @@
     <%--formattazione card--%>
     <div class="container">
 
-        <div id="IdentificaVenditore" class="CardMargine" runat="server">
+        <div id="IdentificaVenditore" style="display: center; width: 65vw; margin: 4vh auto;" runat="server">
 
 
 

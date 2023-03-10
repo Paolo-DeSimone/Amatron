@@ -69,6 +69,7 @@
                         <asp:Button ID="btnResocontoCorriere" runat="server" CssClass="btn masterButton" Text="Resoconto:" OnClick="btnResocontoCorriere_Click" />
                         <p></p>
                         <asp:Label ID="lblResocontoCorriere" runat="server" Text=""></asp:Label>
+                        <hr style="opacity:100; background-color:darkgray"/>
                         <p class="card-text">
                             <center>
                                 <asp:GridView ID="grigliaStatisticheCorrieri" runat="server" CssClass="table table-bordered table-condensed" DataSourceID="sdsStatisticheCorrieri" AutoGenerateColumns="false">

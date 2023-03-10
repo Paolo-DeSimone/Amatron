@@ -19,8 +19,8 @@ public partial class _Default : System.Web.UI.Page
             //identifico il venditore dalla session
             DataTable DT = new DataTable();
             VENDITORI V = new VENDITORI();
-            V.chiave = int.Parse(Session["chiaveUSR"].ToString());
-            //V.chiave = 26;
+            //V.chiave = int.Parse(Session["chiaveUSR"].ToString());
+            V.chiave = 26;
 
             //stored procedure per popolare la griglia con tutti i campi del venditore
             DT = V.ORDINI_SelectAll();         
@@ -31,8 +31,8 @@ public partial class _Default : System.Web.UI.Page
             DataTable DT2 = new DataTable();
             DT2 = V.SelectByKey();
             string NomeVenditore = DT2.Rows[0]["RAGIONESOCIALE"].ToString() ;
-            IdentificaVenditore.InnerHtml = "";
-            IdentificaVenditore.InnerHtml += "<h2> Storico Vendite del Venditore " + NomeVenditore + "</h2>";
+            //IdentificaVenditore.InnerHtml = "";
+            IdentificaVenditore.InnerHtml = "<center><h2> Storico Vendite del Venditore " + NomeVenditore + "</h2></center>";
 
 
 
@@ -51,8 +51,8 @@ public partial class _Default : System.Web.UI.Page
         V.chiaveORDINI = int.Parse(ddlNOrdine.SelectedValue);
         V.DInizio = txtDInizio.Text;
         V.DFine = txtDFine.Text;
-        V.chiave = int.Parse(Session["chiaveUSR"].ToString());
-        //V.chiave = 26;
+        //V.chiave = int.Parse(Session["chiaveUSR"].ToString());
+        V.chiave = 26;
         DT = V.VENDITORI_Filter();
 
         GrigliaStoricoVendite.DataSource = DT;

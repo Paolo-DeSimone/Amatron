@@ -59,7 +59,7 @@
                                     <div class="masterHideScroll masterCardHeight">
                                         <asp:UpdatePanel runat="server">
                                             <ContentTemplate>
-                                                <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged" AutoGenerateColumns="False" DataSourceID="SqlDataSource3" DataKeyNames="chiaveORDINI">
+                                                <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged" AutoGenerateColumns="False" DataSourceID="SqlDataSource3">
                                                     <SelectedRowStyle BackColor="LightGray" />
                                                     <Columns>
                                                         <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUM ORD" SortExpression="NUMEROORDINE" />
@@ -69,7 +69,7 @@
                                                         <asp:BoundField DataField="DATATRANSAZIONE_ORDINI" HeaderText="DATAT TRANSAZIONE" SortExpression="DATATRANSAZIONE_ORDINI" />
                                                         <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
                                                         <asp:BoundField DataField="QTA_ORDINI" HeaderText="QTA" SortExpression="QTA_ORDINI" />
-                                                        <asp:BoundField DataField="STATO" HeaderText="STATO" SortExpression="STATO" Visible="False" />
+                                                        <asp:BoundField DataField="STATO" HeaderText="STATO" SortExpression="STATO" />
                                                         <asp:BoundField DataField="chiavePRODOTTI" HeaderText="chiavePRODOTTI" SortExpression="chiavePRODOTTI" Visible="False" />
                                                         <asp:BoundField DataField="EMAIL_CLIENTI" HeaderText="EMAIL_CLIENTI" SortExpression="EMAIL_CLIENTI" Visible="False" />
                                                         <asp:BoundField DataField="EMAIL_VENDITORI" HeaderText="EMAIL_VENDITORI" SortExpression="EMAIL_VENDITORI" Visible="False" />
@@ -88,6 +88,13 @@
                                                     <HeaderStyle BackColor="#B469FF" />
                                                 </asp:GridView>
                                                 <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString2 %>" SelectCommand="spORDINI_GESTISCI" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                                                    <SelectParameters>
+                                                        <asp:ControlParameter ControlID="ddlUTENTE" Name="chiaveCLIENTE" PropertyName="SelectedValue" Type="Int32" />
+                                                        <asp:ControlParameter ControlID="ddlSTATO" Name="STATO" PropertyName="SelectedValue" Type="String" />
+                                                        <asp:ControlParameter ControlID="txtDInizio" Name="STARTDATE" PropertyName="Text" Type="DateTime" />
+                                                        <asp:ControlParameter ControlID="txtDFine" Name="ENDDATE" PropertyName="Text" Type="DateTime" />
+                                                    </SelectParameters>
+                                                </asp:SqlDataSource>
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
                                         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_GESTISCI" SelectCommandType="StoredProcedure"></asp:SqlDataSource>

@@ -47,6 +47,6 @@ public partial class Default2 : System.Web.UI.Page
         O.chiavecorriere = int.Parse(DT.Rows[0]["chiave"].ToString());
         O.ORDINI_GESTITO();
         grigliaOrdini.DataBind();
-
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "notifySuccess('Corriere assegnato con successo');", true);
     }
 }

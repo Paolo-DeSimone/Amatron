@@ -35,17 +35,16 @@ public partial class Ordini : System.Web.UI.Page
                 "<div class=\"card-body\">" +
                 "<h3 class=\"card-title\">" +
                 //lblTitolo Prodotto
-                "<label id=\"lblTitolo" + i + "\" runat=\"server\">" + dt.Rows[i]["titolo"] + "</label>" +
+                "<b><label id=\"lblTitolo" + i + "\" runat=\"server\">" + dt.Rows[i]["titolo"] + "</label></b>" +
                 "</h3>" +
                 //descrizione
                 "<p class=\"card-text\">" + dt.Rows[i]["descrizione"] + "</p>" +
                 //Prezzo
-                "<p class=\"card-text\">Prezzo:<label id=\"lblPrezzo" + i + "\" runat=\"server\"></label>" + " &euro;" + dt.Rows[i]["prezzo"] + "</p>" +
+                "<p class=\"card-text\">Prezzo:<b><label id=\"lblPrezzo" + i + "\" runat=\"server\"></label>" + " &euro;" + dt.Rows[i]["prezzo"] + "</b></p>" +
                 //Stato
                 "<label class=\"mt-3\" id=\"lbl" + i + "\" runat=\"server\">Stato della spedizione:</label>" + " " +
-                "<label id=\"lblStato" + i + "\" runat=\"server\">" + dt.Rows[i]["statosp"] + "</label>" +
+                "<b><label id=\"lblStato" + i + "\" runat=\"server\">" + dt.Rows[i]["statosp"] + "</label></b>" +
                 "</div>" +
-                "<a href=\"/Forms/PRODOTTI/PaginaProdotto.aspx?c="+dt.Rows[i]["chiaveprodotto"]+"\"><imput type=\"button\" class=\"btn masterButton\"/></a>" +
                 "</div>" +
                 //"<div class=\"col-md-2\" style=\"width:1px\"> </div>" +
                 "</div>" +

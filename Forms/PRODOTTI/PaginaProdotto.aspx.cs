@@ -118,12 +118,16 @@ public partial class Default2 : System.Web.UI.Page
                 "</a>" +
                 "</div>";
         }
-
-
+            AggiornaRecensioni();
+    }
+     public void AggiornaRecensioni()
+    {
+        VALUTAZIONI V = new VALUTAZIONI();
         DataTable REC = new DataTable();
         V.chiaveprodotto = int.Parse(HttpContext.Current.Request.QueryString["c"].ToString());
         REC = V.RecensioniClienti();
         contenitoreRecensioni.InnerHtml = "";
+
         for (int i = 0; i < REC.Rows.Count; i++)
         {
             contenitoreRecensioni.InnerHtml += "<div class=\"card mb-2\">" +
@@ -149,10 +153,9 @@ public partial class Default2 : System.Web.UI.Page
                        "<label id = 'litRecensione'>" + REC.Rows[i]["COMMENTO"] + "</label></p>" +
                    "</div>" +
                "</div>";
+            
         }
-
     }
-
     protected void btnAggiungi_Click(object sender, EventArgs e)
     {
         if (Session["chiaveUSR"] == null)
@@ -361,10 +364,13 @@ public partial class Default2 : System.Web.UI.Page
             V.datacommento = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
             V.chiavecliente = int.Parse(Session["chiaveUSR"].ToString());
             V.Insert();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "notifySuccess('Prodotto recensito con successo!');", true);
+            AggiornaRecensioni();
+            return;
         }
         else
         {
-            string script = @"notifyError('Non hai comprato questo prodotto')";
+            string script = @"notifyError('Non hai comprato questo prodotto o lo hai già recensito')";
             ScriptManager.RegisterStartupScript(this, GetType(), "btnRecensione_Click", script, true);
             return;
         }

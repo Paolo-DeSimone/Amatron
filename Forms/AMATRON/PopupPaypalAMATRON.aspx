@@ -16,12 +16,14 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" /> 
 </head>
 <body>
-    <%--<form id="form1" runat="server">--%>
+    <form id="form1" runat="server">
         <script>
+
             function generatePayment(value) {
                 if (value == "") {
                     alert("inserire un'importo");
-                    return;
+                    FormData.
+                        return;
                 }
                 paypal
                     .Buttons({
@@ -44,14 +46,12 @@
                         }
                     }).render('#paypal-button-container');
             }
-            window.onload = generatePayment;
+           /*window.onload = generatePayment(document.getElementById('payInput').value);*/
         </script>
-    <div style="background-color: green; display: none"; id="transition">Grazie per il tuo pagamento!</div>
-        <%--<input type="text" id="payInput" />--%>
-        <%--<button onclick="generatePayment(document.getElementById('payInput').value)">Paga</button>--%>
-        <!-- Set up a container element for the button -->
+        <div style="background-color: green; display: none"; id="transition">Grazie per il tuo pagamento!</div>
+        <input type="text" id="payInput" />
+        <button onclick="generatePayment(document.getElementById('payInput').value)">Paga</button>
         <div id="paypal-button-container"></div>
-    
-    <%--</form>--%>
+    </form>
 </body>
 </html>

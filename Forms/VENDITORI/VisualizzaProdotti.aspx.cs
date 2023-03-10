@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,11 @@ using System.Web.UI.WebControls;
 public partial class _Default : System.Web.UI.Page
 {
 
+    
+
     protected void Page_Load(object sender, EventArgs e)
     {
-       
+
         
         //lavoriamo sul postback true
         //if (!IsPostBack)
@@ -62,10 +65,24 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void btnModificaQtaProdotto_Click(object sender, EventArgs e)
     {
+       
+        
+
         if (gridVisualizzaProdotti.SelectedValue == null)
         {
             string script = "notifyError('Selezionare un Prodotto da modificare');";
             ScriptManager.RegisterStartupScript(this, GetType(), "btnAggiungi_Click", script, true);
+            return;
+        }
+        PRODOTTI P = new PRODOTTI();
+        P.chiave = int.Parse(gridVisualizzaProdotti.SelectedValue.ToString());
+        DataTable dt = new DataTable();
+        dt = P.SelectByKey();
+        string QTA = dt.Rows[0]["QTA"].ToString();
+
+        if (QTA != 0.ToString())
+        {
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "notifyError('Il prodotto selezionato risulta ancora in vendita, selezionare un prodotto esaurito');", true);
             return;
         }
         else
@@ -73,6 +90,7 @@ public partial class _Default : System.Web.UI.Page
             ModalPopupExtender1.Enabled = true;
             ModalPopupExtender1.Show();
         }
+        
 
 
 
@@ -89,7 +107,7 @@ public partial class _Default : System.Web.UI.Page
         //    return;
         //}
     }
-
+   
     protected void PROVA_Click(object sender, EventArgs e)
     {
         string script = "notifySuccess('Modifica avvenuta con successo!');";

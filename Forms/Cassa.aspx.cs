@@ -9,10 +9,10 @@ using Microsoft.SqlServer.Server;
 using System.Collections;
 using System.Web.Services;
 using System.Web.UI.HtmlControls;
+using System.Reflection.Emit;
 
 public partial class _Default : System.Web.UI.Page
 {
-            int totaleCarrello;
     
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -25,17 +25,21 @@ public partial class _Default : System.Web.UI.Page
 
             CARRELLO CR = new CARRELLO();
             DataTable dt = CR.SelectAllItemsInCart(int.Parse(Session["chiaveUSR"].ToString()));
+
             //Session["TotaleCarrello"] = dt.Rows[0]
-            
+
             //for (int i = 0; i < grigliaOrdini.Rows.Count; i++)
             //{
             //    totaleCarrello = totaleCarrello + int.Parse(grigliaOrdini.Rows[i]["PREZZOprodotto"]);
             //}
-
-
+        float sum = 0;
+        for (int i = 0; i < grigliaOrdini.Rows.Count; ++i)
+        {
+            sum += float.Parse(grigliaOrdini.Rows[i].Cells[5].Text);
+        }
+            payInput.Text = "Il totale del carrello è di" + " " + " " + sum + " " + "&euro;";
         }
         grigliaOrdini.DataBind();
-
         //Session["TotaleCarrello"] = grigliaOrdini.Rows[i]["PREZZOprodotto"];
         foreach (GridViewRow r in grigliaOrdini.Rows)
         {
@@ -43,5 +47,20 @@ public partial class _Default : System.Web.UI.Page
             
         }
 
+
+    }
+
+    protected void paypalBottone_Click(object sender, EventArgs e)
+    {
+        ORDINI O = new ORDINI();
+        O.chiavecliente = int.Parse(Session["chiaveUSR"].ToString());
+        O.InsertFromCarrello();
+    }
+
+    protected void btnprova_Click(object sender, EventArgs e)
+    {
+        ORDINI O = new ORDINI();
+        O.chiavecliente = int.Parse(Session["chiaveUSR"].ToString());
+        O.InsertFromCarrello();
     }
 }

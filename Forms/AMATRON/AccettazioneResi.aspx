@@ -23,6 +23,11 @@
                                     </div>
                                     
                                     <div class="col-lg-2">
+                                        <asp:Label ID="Label3" runat="server" Text="Seleziona richiesta da:"></asp:Label>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <asp:Label ID="Label4" runat="server" Text="a:"></asp:Label>
+
                                         <asp:Label ID="Label3" runat="server" Text="Data richiesta:"></asp:Label>
                                     </div>
                                     <div class="col-lg-2">
@@ -32,10 +37,12 @@
                                 <div class="row">
                                     <div class="col-lg-2">
 
+
                                             <asp:DropDownList ID="ddlUTENTE" AppendDataBoundItems="True" runat="server" CssClass="form-select" DataSourceID="SqlDataSource1" DataTextField="NOMINATIVO" DataValueField="chiaveORDINE">
                                                 <asp:ListItem Value="">Seleziona</asp:ListItem>
                                             </asp:DropDownList>
                                             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spRESI_ORDINI_PRODOTTI_CLIENTI_Filter" SelectCommandType="StoredProcedure" OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>
+
                                     </div>
                                    
                                     <div class="col-lg-2">
@@ -47,7 +54,9 @@
                                     </div>
                                     <div class="col-lg-2 text-end">
 
+
                                         <asp:Button ID="btnCerca" Class="btn masterButton" runat="server" Text="Filtra" OnClick="btnCerca_Click" />
+
                                     </div>
                                     <div class="col-lg-2 align-items-center text-end">
                                         <asp:Button ID="Button1" class="btn masterButton" runat="server" Text="Accetta" OnClick="btnAccetta_Click" />

@@ -24,6 +24,9 @@ public partial class _Default : System.Web.UI.Page
             OrdiniCorriere.InnerHtml = "<h2>Spedizioni del Corriere <b>" + RagioneSociale + "</b></h2>";
         }
 
+        grdSTATO.DataSourceID = "sdsSTATO";
+        grdSTATO.DataBind();
+
     }
 
     protected void grdSTATO_SelectedIndexChanged(object sender, EventArgs e)
@@ -119,7 +122,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnFiltraNomeCliente_Click(object sender, EventArgs e)
     {
-        if (txtFiltraNomeCliente.Text.Trim() == "")
+        if (txtFiltraNomeCliente.Text.Trim() == "" || txtFiltraNomeCliente.Text ==null)
         {
             grdSTATO.DataSourceID = "sdsSTATO";
             grdSTATO.DataBind();

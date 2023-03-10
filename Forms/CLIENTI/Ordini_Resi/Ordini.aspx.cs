@@ -21,7 +21,6 @@ public partial class Ordini : System.Web.UI.Page
             DataTable dt = O.SelectByOrdineCliente();
             // lblDescrizione = P.descrizione;
             cardprodotto.InnerHtml = "";
-            string s = "";
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 cardprodotto.InnerHtml += "<div align=\"center\" class=\"row\">" +
@@ -42,20 +41,29 @@ public partial class Ordini : System.Web.UI.Page
                 "<p class=\"card-text\">" + dt.Rows[i]["descrizione"] + "</p>" +
                 //Prezzo
                 "<p class=\"card-text\">Prezzo:<label id=\"lblPrezzo" + i + "\" runat=\"server\"></label>" + " &euro;" + dt.Rows[i]["prezzo"] + "</p>" +
-                "<button id=\"btnRecensione" + i + "\" runat=\"server\" class=\"btn masterButton\" style=\"margin-right:20px\">Lascia una recensione</button>" +
-                "<button id=\"btnReso" + i + "\" runat=\"server\" class=\"btn masterButton\">Effettua reso</button>" +
                 //Stato
                 "<label class=\"mt-3\" id=\"lbl" + i + "\" runat=\"server\">Stato della spedizione:</label>" + " " +
                 "<label id=\"lblStato" + i + "\" runat=\"server\">" + dt.Rows[i]["statosp"] + "</label>" +
                 "</div>" +
+                "<a href=\"/Forms/PRODOTTI/PaginaProdotto.aspx?c="+dt.Rows[i]["chiaveprodotto"]+"\"><imput type=\"button\" class=\"btn masterButton\"/></a>" +
                 "</div>" +
                 //"<div class=\"col-md-2\" style=\"width:1px\"> </div>" +
                 "</div>" +
                 "<hr class=\"opacity-100\"style=\"border-color:lightgray;\"/>";
                 
                 // "</div>";
+
+
+                //Bottone = bottone recensione prodotto 
+                //"<a href=\"/Forms/CLIENTI/ResiOrdine.aspx?c="+dt.Rows[i]["chiaveprodotto"]+"\"><imput type=\"button\" class=\"btn masterButton\"/></a>" +
+                //prendere contesto da pagina resiordine e lo salvo in int "chiaveprodotto"
+                //creare pagina reso prodotto individuale
             }
-            s = cardprodotto.InnerHtml;
         }
+    }
+
+    protected void btnresi_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("/Forms/CLIENTI/Ordini_Resi/ResiOrdine.aspx");
     }
 }

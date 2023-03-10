@@ -16,6 +16,50 @@
                     <h2 class="text-center py-2">Accettazione Resi</h2>
                     <div class="card rounded-3">
                         <div class="card-body p-4 p-md-5">
+
+                            <div class="col-10">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <asp:Label ID="Label1" runat="server" Text="Cliente:"></asp:Label>
+                                    </div>
+                                     <div class="col-lg-2">
+                                        <asp:Label ID="Label5" runat="server" Text="Numero Ordine:"></asp:Label>
+                                    </div>
+
+                                    <div class="col-lg-2">
+                                        <asp:Label ID="Label3" runat="server" Text="Seleziona richiesta da:"></asp:Label>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <asp:Label ID="Label4" runat="server" Text="a:"></asp:Label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <asp:TextBox ID="txtCliente" Class="form-control" runat="server"></asp:TextBox>
+                                    </div>
+
+                                    <div class="col-lg-2">
+                                        <asp:TextBox ID="txtNumeroOrdine" Class="form-control" runat="server" TextMode="Number"></asp:TextBox>
+                                    </div>
+
+                                    <div class="col-lg-2">
+                                        <asp:TextBox ID="txtDInizio" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <asp:TextBox ID="txtDFine" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
+
+                                    </div>
+                                    <div class="col-lg-2 text-end">
+                                        <asp:Button ID="btnFiltra" Class="btn masterButton" runat="server" Text="Filtra" OnClick="btnFiltra_Click" />
+                                    </div>
+                                    <div class="col-lg-2 align-items-center text-end">
+                                        <asp:Button ID="Button1" class="btn masterButton" runat="server" Text="Accetta" OnClick="btnAccetta_Click" />
+                                        <asp:Button ID="Button2" class="btn masterButton" runat="server" Text="Rifiuta" />
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
+
                             <div class="row align-items-center">
                                 <div class="col-lg-11">
                                     <div style="overflow-y: scroll; height: 500px;">
@@ -43,12 +87,7 @@
                                         <asp:SqlDataSource ID="sdsTabellaResi" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spRESI_ORDINI_PRODOTTI_CLIENTISelectByNUMERO_ORDINE" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                     </div>
                                 </div>
-                                <div align="center" class="col-lg-1 align-items-center">
-                                    <asp:Button ID="btnAccetta" class="btn masterButton" runat="server" Text="Accetta" />
-                                    <br />
-                                    <br />
-                                    <asp:Button ID="btnRifiuta" class="btn masterButton" runat="server" Text="Rifiuta" />
-                                </div>
+
                             </div>
                         </div>
                     </div>

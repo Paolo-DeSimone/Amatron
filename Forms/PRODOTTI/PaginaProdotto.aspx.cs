@@ -168,7 +168,7 @@ public partial class Default2 : System.Web.UI.Page
         C.chiaveCLIENTE = int.Parse(Session["chiaveUSR"].ToString());
         C.QTA = int.Parse(ddlCarrello.SelectedValue.ToString());
         C.INSERT();
-        string script = @"notifyError('Prodotto aggiunto al carrello')";
+        string script = @"notifySuccess('Prodotto aggiunto al carrello')";
         ScriptManager.RegisterStartupScript(this, GetType(), "btnAggiungi_Click", script, true);
         caricaCarrello(int.Parse(Session["chiaveUSR"].ToString()));
         return;
@@ -305,12 +305,16 @@ public partial class Default2 : System.Web.UI.Page
         yellowstar1.Visible = true;
         whitestar2.Visible = false;
         yellowstar2.Visible = true;
+
+        whitestar3.Visible = false;
+        yellowstar3.Visible = true;
+
         whitestar4.Visible = false;
         yellowstar4.Visible = true;
 
         yellowstar5.Visible = false;
-
         whitestar5.Visible = true;
+
 
         Label2.Text = "4 stelle selezionate";
         stelle = 4;

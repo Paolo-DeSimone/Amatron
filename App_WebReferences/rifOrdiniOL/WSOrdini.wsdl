@@ -230,6 +230,50 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ORDINI_InsertFromCarrello">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiaveCliente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ORDINI_InsertFromCarrelloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ORDINI_InsertFromCarrelloResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ORDINI_Filter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiavecliente" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="DInizio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DFine" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ORDINI_FilterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ORDINI_FilterResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="ORDINI_InsertSoapIn">
@@ -310,6 +354,18 @@
   <wsdl:message name="ORDINI_SelectOrdineClienteSoapOut">
     <wsdl:part name="parameters" element="tns:ORDINI_SelectOrdineClienteResponse" />
   </wsdl:message>
+  <wsdl:message name="ORDINI_InsertFromCarrelloSoapIn">
+    <wsdl:part name="parameters" element="tns:ORDINI_InsertFromCarrello" />
+  </wsdl:message>
+  <wsdl:message name="ORDINI_InsertFromCarrelloSoapOut">
+    <wsdl:part name="parameters" element="tns:ORDINI_InsertFromCarrelloResponse" />
+  </wsdl:message>
+  <wsdl:message name="ORDINI_FilterSoapIn">
+    <wsdl:part name="parameters" element="tns:ORDINI_Filter" />
+  </wsdl:message>
+  <wsdl:message name="ORDINI_FilterSoapOut">
+    <wsdl:part name="parameters" element="tns:ORDINI_FilterResponse" />
+  </wsdl:message>
   <wsdl:portType name="WsOrdiniSoap">
     <wsdl:operation name="ORDINI_Insert">
       <wsdl:input message="tns:ORDINI_InsertSoapIn" />
@@ -362,6 +418,14 @@
     <wsdl:operation name="ORDINI_SelectOrdineCliente">
       <wsdl:input message="tns:ORDINI_SelectOrdineClienteSoapIn" />
       <wsdl:output message="tns:ORDINI_SelectOrdineClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ORDINI_InsertFromCarrello">
+      <wsdl:input message="tns:ORDINI_InsertFromCarrelloSoapIn" />
+      <wsdl:output message="tns:ORDINI_InsertFromCarrelloSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ORDINI_Filter">
+      <wsdl:input message="tns:ORDINI_FilterSoapIn" />
+      <wsdl:output message="tns:ORDINI_FilterSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WsOrdiniSoap" type="tns:WsOrdiniSoap">
@@ -483,6 +547,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ORDINI_InsertFromCarrello">
+      <soap:operation soapAction="http://tempuri.org/ORDINI_InsertFromCarrello" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ORDINI_Filter">
+      <soap:operation soapAction="http://tempuri.org/ORDINI_Filter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WsOrdiniSoap12" type="tns:WsOrdiniSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -596,6 +678,24 @@
     </wsdl:operation>
     <wsdl:operation name="ORDINI_SelectOrdineCliente">
       <soap12:operation soapAction="http://tempuri.org/ORDINI_SelectOrdineCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ORDINI_InsertFromCarrello">
+      <soap12:operation soapAction="http://tempuri.org/ORDINI_InsertFromCarrello" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ORDINI_Filter">
+      <soap12:operation soapAction="http://tempuri.org/ORDINI_Filter" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

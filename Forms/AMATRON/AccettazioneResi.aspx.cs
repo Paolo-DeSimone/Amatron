@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Mail;
@@ -13,7 +13,22 @@ public partial class AccettazioneResi : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (!IsPostBack)
+        {
+            DataTable DT = new DataTable();
+            AMATRONADMIN A = new AMATRONADMIN();
+            A.NOMINATIVO = txtCliente.Text.Trim();
+            if (txtNumeroOrdine.Text.Trim() == "")
+            {
+                txtNumeroOrdine.Text = "0";
+            }
+            A.NUMERO_ORDINE = int.Parse(txtNumeroOrdine.Text);
+            A.STARTDATE = txtDInizio.Text.Trim();
+            A.ENDDATE = txtDFine.Text.Trim();
+            DT = A.RESIFILTRA();
+            grigliaResi.DataSource = DT;
+            grigliaResi.DataBind();
+        }
     }
 
     protected void grigliaResi_SelectedIndexChanged(object sender, EventArgs e)
@@ -102,7 +117,7 @@ public partial class AccettazioneResi : System.Web.UI.Page
             //passo in resoUpdate il valore di sopra
             resoUpdate(R.accettazione);
             //mando la mail al cliente
-            mail(R.accettazione);
+            //mail(R.accettazione);
             DataBind();
         }
         //alert con il risultato di controlloReso() memorizzato nella string reso
@@ -123,7 +138,7 @@ public partial class AccettazioneResi : System.Web.UI.Page
             //passo in resoUpdate il valore di sopra
             resoUpdate(R.accettazione);
             //mando la mail al cliente
-            mail(R.accettazione);
+            //mail(R.accettazione);
             DataBind();
         }
         //alert con il risultato di controlloReso() memorizzato nella string reso
@@ -171,7 +186,32 @@ public partial class AccettazioneResi : System.Web.UI.Page
         client.Send(mail); //mando mail
     }
 
+    protected void btnCerca_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+    {
+
+    }
 
 
+    protected void btnFiltra_Click(object sender, EventArgs e)
+    {
+        AMATRONADMIN A = new AMATRONADMIN();
+        A.NOMINATIVO = txtCliente.Text.Trim();
+        if (txtNumeroOrdine.Text.Trim() == "")
+        {
+            txtNumeroOrdine.Text = "0";
+        }
+        A.NUMERO_ORDINE = int.Parse(txtNumeroOrdine.Text);
+        A.STARTDATE = txtDInizio.Text.Trim();
+        A.ENDDATE = txtDFine.Text.Trim();
+        DataTable DT2 = new DataTable();
+        DT2 = A.RESIFILTRA();
+        grigliaResi.DataSource = DT2;
+        grigliaResi.DataBind();
+    }
 
 }

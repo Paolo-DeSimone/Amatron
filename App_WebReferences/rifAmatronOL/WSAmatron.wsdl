@@ -96,6 +96,32 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="AMATRON_RESIFILTRA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nominativo" type="s:string" />
+
+            <s:element minOccurs="1" maxOccurs="1" name="numero_ordine" nillable="true" type="s:int" />
+
+            <s:element minOccurs="0" maxOccurs="1" name="startdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="enddate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AMATRON_RESIFILTRAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AMATRON_RESIFILTRAResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="AMATRON_LoginSoapIn">
@@ -128,6 +154,12 @@
   <wsdl:message name="AMATRON_IncassiPerCategoriaSoapOut">
     <wsdl:part name="parameters" element="tns:AMATRON_IncassiPerCategoriaResponse" />
   </wsdl:message>
+  <wsdl:message name="AMATRON_RESIFILTRASoapIn">
+    <wsdl:part name="parameters" element="tns:AMATRON_RESIFILTRA" />
+  </wsdl:message>
+  <wsdl:message name="AMATRON_RESIFILTRASoapOut">
+    <wsdl:part name="parameters" element="tns:AMATRON_RESIFILTRAResponse" />
+  </wsdl:message>
   <wsdl:portType name="WsAmatronSoap">
     <wsdl:operation name="AMATRON_Login">
       <wsdl:input message="tns:AMATRON_LoginSoapIn" />
@@ -148,6 +180,10 @@
     <wsdl:operation name="AMATRON_IncassiPerCategoria">
       <wsdl:input message="tns:AMATRON_IncassiPerCategoriaSoapIn" />
       <wsdl:output message="tns:AMATRON_IncassiPerCategoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_RESIFILTRA">
+      <wsdl:input message="tns:AMATRON_RESIFILTRASoapIn" />
+      <wsdl:output message="tns:AMATRON_RESIFILTRASoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WsAmatronSoap" type="tns:WsAmatronSoap">
@@ -197,6 +233,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AMATRON_RESIFILTRA">
+      <soap:operation soapAction="http://tempuri.org/AMATRON_RESIFILTRA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WsAmatronSoap12" type="tns:WsAmatronSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -238,6 +283,15 @@
     </wsdl:operation>
     <wsdl:operation name="AMATRON_IncassiPerCategoria">
       <soap12:operation soapAction="http://tempuri.org/AMATRON_IncassiPerCategoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AMATRON_RESIFILTRA">
+      <soap12:operation soapAction="http://tempuri.org/AMATRON_RESIFILTRA" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

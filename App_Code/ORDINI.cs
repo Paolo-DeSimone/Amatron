@@ -123,4 +123,12 @@ public class ORDINI
         return dt;
     }
 
+    public DataTable ORDINI_CLIENTI_PRODOTTI_SPEDIZIONI_Filter()
+    {
+        DataTable dt = new DataTable();
+        dt = O.ORDINI_CLIENTI_PRODOTTI_SPEDIZIONI_Filter(chiaveCLIENTE, STATO, DInizio, DFine);
+        return dt;
+    }
+
+
 }

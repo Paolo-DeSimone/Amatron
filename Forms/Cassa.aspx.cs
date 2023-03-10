@@ -23,8 +23,6 @@ public partial class _Default : System.Web.UI.Page
 
             CARRELLO CR = new CARRELLO();
             DataTable dt = CR.SelectAllItemsInCart(int.Parse(Session["chiaveUSR"].ToString()));
-
-            
         }
         grigliaOrdini.DataBind();
         foreach (GridViewRow r in grigliaOrdini.Rows)

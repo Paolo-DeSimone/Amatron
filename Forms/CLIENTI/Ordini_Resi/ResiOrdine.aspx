@@ -27,11 +27,12 @@
                                                     <asp:Image ID="Image" runat="server" DataField="IMMAGINE" Mode="ReadOnly" ImageUrl="IMMAGINEprodotto" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:BoundField DataField="chiaveprodotto" HeaderText="chiaveprodotto" InsertVisible="False" ReadOnly="True" SortExpression="chiaveprodotto" Visible="False" />
+                                            <asp:BoundField DataField="chiaveprodotto" HeaderText="chiaveprodotto" Visible="true" InsertVisible="False" SortExpression="chiaveprodotto"/>
                                             <asp:BoundField DataField="TITOLO" HeaderText="TITOLO" SortExpression="TITOLO" />
                                             <asp:BoundField DataField="DESCRIZIONE" HeaderText="DESCRIZIONE" SortExpression="DESCRIZIONE" />
                                             <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
                                             <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
+                                            <asp:BoundField DataField="chiaveordine" HeaderText="chiaveordine" Visible="true" InsertVisible="False" SortExpression="chiaveordine"/>
                                             <asp:CommandField ShowSelectButton="True" ButtonType="Image" ControlStyle-Height="20px" ControlStyle-Width="24px" SelectImageUrl="/assets/images/spunta_button.png" />
                                         </Columns>
                                         <SelectedRowStyle BackColor="LightGray" />

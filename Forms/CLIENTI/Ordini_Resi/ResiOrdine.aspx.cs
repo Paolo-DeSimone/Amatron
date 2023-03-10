@@ -10,14 +10,36 @@ public partial class _Default : System.Web.UI.Page
 {
     public static string chiaveordine;
     public static string chiave;
+
+        //string chiave = Session["chiaveUSR"].ToString();
+
     protected void Page_Load(object sender, EventArgs e)
     {
         grdreso.DataBind();
         sdsResi.DataBind();
 
+        foreach (GridViewRow r in grdreso.Rows)
+        {
+            r.Cells[0].Text = "<img src=\"/Img.ashx?c=" + r.Cells[1].Text.ToString() + "\" />";
+        }
     }
     protected void grdreso_SelectedIndexChanged(object sender, EventArgs e)
     {
+        GridViewRow row = grdreso.SelectedRow;
+        string qta = row.Cells[5].Text;
+        Session["QTA"] = qta;
+
+        string titolo = row.Cells[2].Text;
+        Session["TITOLO"] = titolo;
+
+        string prezzo = row.Cells[4].Text;
+        Session["PREZZO"] = prezzo;
+
+        string chiaveordine = row.Cells[6].Text;
+        Session["chiaveordine"] = chiaveordine;
+
+
+
         chiave = grdreso.SelectedValue.ToString();
     }
     protected void btnRecensione_Click(object sender, EventArgs e)
@@ -36,6 +58,7 @@ public partial class _Default : System.Web.UI.Page
         }
         mp1.Enabled = true;
         mp1.Show();
+
 
     }
 }

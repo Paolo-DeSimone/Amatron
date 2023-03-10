@@ -1,4 +1,5 @@
 <%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="ResiOrdine.aspx.cs" Inherits="_Default" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -29,11 +30,13 @@
                                                 </ItemTemplate>
                                             </asp:TemplateField>
 
-                                            <asp:BoundField DataField="chiaveprodotto" HeaderText="chiaveprodotto" InsertVisible="False" ReadOnly="True" SortExpression="chiaveprodotto" Visible="False" />
+                                            <asp:BoundField DataField="chiaveprodotto" HeaderText="chiaveprodotto" Visible="true" InsertVisible="False" SortExpression="chiaveprodotto"/>
+
                                             <asp:BoundField DataField="TITOLO" HeaderText="TITOLO" SortExpression="TITOLO" />
                                             <asp:BoundField DataField="DESCRIZIONE" HeaderText="DESCRIZIONE" SortExpression="DESCRIZIONE" />
                                             <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
                                             <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
+                                            <asp:BoundField DataField="chiaveordine" HeaderText="chiaveordine" Visible="true" InsertVisible="False" SortExpression="chiaveordine"/>
                                             <asp:CommandField ShowSelectButton="True" ButtonType="Image" ControlStyle-Height="20px" ControlStyle-Width="24px" SelectImageUrl="/assets/images/spunta_button.png" />
                                         </Columns>
                                         <SelectedRowStyle BackColor="LightGray" />
@@ -51,10 +54,10 @@
                                 <asp:Button ID="btnRecensione" class="btn masterButton" runat="server" Text="Effettua Recensione" OnClick="btnRecensione_Click" />
 
                             </div>
-                             <div align="center">
-                                    <asp:Button ID="btnAccetta" class="btn masterButton" runat="server" Text="Effettua Reso" />
-                                    <asp:Button ID="btnRifiuta" class="btn masterButton" runat="server" Text="Effettua Recensione" />
-                                </div>
+                            <div align="center">
+                                <asp:Button ID="btnReso" class="btn masterButton" runat="server" Text="Effettua Reso" OnClick="btnReso_Click"/>
+                                <asp:Button ID="btnRecensione" class="btn masterButton" runat="server" Text="Effettua Recensione" OnClick="btnRecensione_Click" />
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -12,6 +12,8 @@ using System.Web.UI.HtmlControls;
 
 public partial class _Default : System.Web.UI.Page
 {
+            int totaleCarrello;
+    
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -23,12 +25,22 @@ public partial class _Default : System.Web.UI.Page
 
             CARRELLO CR = new CARRELLO();
             DataTable dt = CR.SelectAllItemsInCart(int.Parse(Session["chiaveUSR"].ToString()));
+            //Session["TotaleCarrello"] = dt.Rows[0]
+            
+            //for (int i = 0; i < grigliaOrdini.Rows.Count; i++)
+            //{
+            //    totaleCarrello = totaleCarrello + int.Parse(grigliaOrdini.Rows[i]["PREZZOprodotto"]);
+            //}
 
-            //grigliaOrdini.DataBind();
-            foreach(GridViewRow r in grigliaOrdini.Rows)
-            {
-                r.Cells[0].Text = "<img src=\"/Img.ashx?c=" + r.Cells[1].Text.ToString() +"\" />";
-            }
+
+        }
+        grigliaOrdini.DataBind();
+
+        //Session["TotaleCarrello"] = grigliaOrdini.Rows[i]["PREZZOprodotto"];
+        foreach (GridViewRow r in grigliaOrdini.Rows)
+        {
+            r.Cells[0].Text = "<img src=\"/Img.ashx?c=" + r.Cells[1].Text.ToString() + "\" />";
+            
         }
 
     }

@@ -51,7 +51,7 @@ public partial class AMATRON : System.Web.UI.MasterPage
 
     }
 
-    private void caricaCarrello(int chiaveUSR)
+    public void caricaCarrello(int chiaveUSR)
     {
         CARRELLO c = new CARRELLO();
 
@@ -117,8 +117,6 @@ public partial class AMATRON : System.Web.UI.MasterPage
             "</div>";
         }
         litCarrello.Text = s;
-
-
     }
 
 

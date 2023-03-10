@@ -13,15 +13,17 @@ public partial class _Default : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
+            DataTable DT = new DataTable();
             int chiave = int.Parse(Session["chiaveUSR"].ToString());
             grdSTATO.DataBind();
             CORRIERI C = new CORRIERI();
             C.chiave = chiave;
-            DataTable DT = new DataTable();
+
             DT = C.CORRIERI_SelectByKey();
             string RagioneSociale = DT.Rows[0]["RagioneSociale"].ToString();
             OrdiniCorriere.InnerHtml = "<h2>Spedizioni del Corriere <b>" + RagioneSociale + "</b></h2>";
         }
+
     }
 
     protected void grdSTATO_SelectedIndexChanged(object sender, EventArgs e)
@@ -53,7 +55,7 @@ public partial class _Default : System.Web.UI.Page
         }
 
         //controllo se lo stato della spedizione è già a prodotto consegnato, non faccio nulla
-        if (grdSTATO.SelectedRow.Cells[3].Text == "Prodotto consegnato")
+        if (Session["STATO_SPEDIZIONE"].ToString() == "D")
         {
             string scripterr = @"notifyError('Prodotto già consegnato')"; //messaggio di errore
             ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripterr, true);
@@ -63,7 +65,7 @@ public partial class _Default : System.Web.UI.Page
         SPEDIZIONI SPE = new SPEDIZIONI();
         SPE.chiaveORDINE = int.Parse(Session["chiaveORDINE"].ToString());
         string stato_pre_update = Session["STATO_SPEDIZIONE"].ToString();
-        SPE.DATAORA = DateTime.Now.ToString();
+        SPE.DATAORA = DateTime.Now.ToString("dd/MM/yy");
         EMAIL E = new EMAIL();
         EMAIL EM = new EMAIL();
 
@@ -113,5 +115,15 @@ public partial class _Default : System.Web.UI.Page
 
         SPE.SPEDIZIONI_Insert();
         DataBind();
+    }
+
+    protected void btnFiltraNomeCliente_Click(object sender, EventArgs e)
+    {
+        if (txtFiltraNomeCliente.Text.Trim() == "")
+        {
+            grdSTATO.DataSourceID = "sdsSTATO";
+            grdSTATO.DataBind();
+        }
+        else grdSTATO.DataSourceID = "sdsFILTRA";
     }
 }

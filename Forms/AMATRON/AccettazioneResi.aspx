@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="AccettazioneResi.aspx.cs" Inherits="AccettazioneResi" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="AccettazioneResi.aspx.cs" Inherits="AccettazioneResi" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="../../assets/css/AMATRON.css" rel="stylesheet" />
@@ -16,7 +16,6 @@
                     <h2 class="text-center py-2">Accettazione Resi</h2>
                     <div class="card rounded-3">
                         <div class="card-body p-4 p-md-5">
-
                                <div class="col-10">
                                 <div class="row">
                                     <div class="col-lg-2">
@@ -32,6 +31,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-2">
+
                                             <asp:DropDownList ID="ddlUTENTE" AppendDataBoundItems="True" runat="server" CssClass="form-select" DataSourceID="SqlDataSource1" DataTextField="NOMINATIVO" DataValueField="chiaveORDINE">
                                                 <asp:ListItem Value="">Seleziona</asp:ListItem>
                                             </asp:DropDownList>
@@ -46,6 +46,7 @@
 
                                     </div>
                                     <div class="col-lg-2 text-end">
+
                                         <asp:Button ID="btnCerca" Class="btn masterButton" runat="server" Text="Filtra" OnClick="btnCerca_Click" />
                                     </div>
                                     <div class="col-lg-2 align-items-center text-end">
@@ -53,6 +54,7 @@
                                         <asp:Button ID="Button2" class="btn masterButton" runat="server" Text="Rifiuta" />
                                     </div>
                                 </div>
+
                             </div>
 
                             <div class="row align-items-center">
@@ -82,7 +84,6 @@
                                         <asp:SqlDataSource ID="sdsTabellaResi" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spRESI_ORDINI_PRODOTTI_CLIENTISelectByNUMERO_ORDINE" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                     </div>
                                 </div>
-                             
                             </div>
                         </div>
                     </div>

@@ -106,7 +106,8 @@ public partial class AccettazioneResi : System.Web.UI.Page
             DataBind();
         }
         //alert con il risultato di controlloReso() memorizzato nella string reso
-        ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('" + reso + "');", true);
+        string script = @"notifySuccess('Reso andato a buon fine')";
+        ScriptManager.RegisterStartupScript(this, GetType(), "btnAccetta_Click", script, true);
     }
 
     protected void btnRifiuta_Click(object sender, EventArgs e)
@@ -126,7 +127,8 @@ public partial class AccettazioneResi : System.Web.UI.Page
             DataBind();
         }
         //alert con il risultato di controlloReso() memorizzato nella string reso
-        ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('" + reso + "');", true);
+        string scripts = @"notifyError('Reso non andato a buon fine')";
+        ScriptManager.RegisterStartupScript(this, GetType(), "btnRifiuta_Click", scripts, true);
     }
 
     //funzione per mandare una mail al cliente con la revisione del reso
@@ -168,4 +170,8 @@ public partial class AccettazioneResi : System.Web.UI.Page
         }
         client.Send(mail); //mando mail
     }
+
+
+
+
 }

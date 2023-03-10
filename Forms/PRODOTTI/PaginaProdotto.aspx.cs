@@ -168,7 +168,7 @@ public partial class Default2 : System.Web.UI.Page
         C.chiaveCLIENTE = int.Parse(Session["chiaveUSR"].ToString());
         C.QTA = int.Parse(ddlCarrello.SelectedValue.ToString());
         C.INSERT();
-        string script = @"notifyError('Prodotto aggiunto al carrello')";
+        string script = @"notifySuccess('Prodotto aggiunto al carrello')";
         ScriptManager.RegisterStartupScript(this, GetType(), "btnAggiungi_Click", script, true);
         caricaCarrello(int.Parse(Session["chiaveUSR"].ToString()));
         return;

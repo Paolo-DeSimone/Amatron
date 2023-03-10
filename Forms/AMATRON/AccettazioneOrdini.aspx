@@ -20,7 +20,6 @@
                                         <asp:Label ID="Label5" runat="server" Text="Cliente:"></asp:Label>
                                     </div>
                                     <div class="col-lg-2">
-                                        <asp:Label ID="Label2" runat="server" Text="Stato Ordine:"></asp:Label>
                                     </div>
                                     <div class="col-lg-2">
                                         <asp:Label ID="Label3" runat="server" Text="Data inizio:"></asp:Label>
@@ -31,21 +30,12 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-2">
-                                            <asp:DropDownList ID="ddlUTENTE" AppendDataBoundItems="true" runat="server" CssClass="form-select" DataSourceID="SqlDataSource1" DataTextField="Column1" DataValueField="chiaveCLIENTE">
-                                                <asp:ListItem Value="">Seleziona</asp:ListItem>
-                                            </asp:DropDownList>
-                                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_CLIENTI_ddl" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                                        <asp:DropDownList ID="ddlUTENTE" AppendDataBoundItems="true" runat="server" CssClass="form-select" DataSourceID="SqlDataSource1" DataTextField="Column1" DataValueField="chiaveCLIENTE">
+                                            <asp:ListItem Value="">Seleziona</asp:ListItem>
+                                        </asp:DropDownList>
+                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_CLIENTI_ddl" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                     </div>
                                     <div class="col-lg-2">
-                                        <div class="dropdown">
-                                            <asp:DropDownList ID="ddlSTATO" runat="server" CssClass="form-select">
-                                                <asp:ListItem Value="S">Seleziona</asp:ListItem>
-                                                <asp:ListItem Value="A">A - Ordine in Preparazione</asp:ListItem>
-                                                <asp:ListItem Value="B">B - Consegna presa in carico</asp:ListItem>
-                                                <asp:ListItem Value="C">C - Prodotto in consegna</asp:ListItem>
-                                                <asp:ListItem Value="D">D - Prodotto consegnato</asp:ListItem>
-                                            </asp:DropDownList>
-                                        </div>
                                     </div>
                                     <div class="col-lg-2">
                                         <asp:TextBox ID="txtDInizio" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
@@ -59,10 +49,11 @@
                                     </div>
                                     <div class="col-lg-2 align-items-center text-end">
                                         <asp:Button ID="btnAccetta" class="btn masterButton" runat="server" Text="Accetta" OnClick="btnAccetta_Click" />
-                                        <asp:Button ID="btnRifiuta" class="btn masterButton" runat="server" Text="Rifiuta" />
                                     </div>
                                 </div>
                             </div>
+                            <BR />
+                            <BR />
                             <div class="row align-items-center">
                                 <div class="col-lg-12">
                                     <div class="masterHideScroll masterCardHeight">
@@ -75,7 +66,8 @@
                                                         <asp:BoundField DataField="COGNOME" HeaderText="COGNOME" SortExpression="COGNOME" />
                                                         <asp:BoundField DataField="NOME" HeaderText="NOME" SortExpression="NOME" />
                                                         <asp:BoundField DataField="RAGIONESOCIALE" HeaderText="RAG.SOC.VEND" SortExpression="RAGIONESOCIALE" />
-                                                        <asp:BoundField DataField="DATATRANSAZIONE_ORDINI" HeaderText="DATA TRANSAZIONE" SortExpression="DATATRANSAZIONE_ORDINI" />
+                                                        <asp:BoundField DataField="DATATRANSAZIONE_ORDINI" HeaderText="DATAT TRANSAZIONE" SortExpression="DATATRANSAZIONE_ORDINI" />
+                                                        <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
                                                         <asp:BoundField DataField="QTA_ORDINI" HeaderText="QTA" SortExpression="QTA_ORDINI" />
                                                         <asp:BoundField DataField="STATO" HeaderText="STATO" SortExpression="STATO" />
                                                         <asp:BoundField DataField="chiavePRODOTTI" HeaderText="chiavePRODOTTI" SortExpression="chiavePRODOTTI" Visible="False" />
@@ -84,17 +76,18 @@
                                                         <asp:BoundField DataField="EMAIL_CORRIERI" HeaderText="EMAIL_CORRIERI" SortExpression="EMAIL_CORRIERI" Visible="False" />
                                                         <asp:BoundField DataField="chiaveORDINI" HeaderText="chiaveORDINI" SortExpression="chiaveORDINI" Visible="False" />
                                                         <asp:BoundField DataField="chiaveCORRIERE" HeaderText="chiaveCORRIERE" SortExpression="chiaveCORRIERE" Visible="False" />
-                                                        <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" Visible="False" />
-                                                        <asp:BoundField DataField="chiaveCLIENTE" HeaderText="chiaveCLIENTE" SortExpression="chiaveCLIENTE" Visible="False" />
-                                                        <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False" />
-                                                        <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
-                                                         <asp:CommandField ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/assets/images/spunta_button.png">
-                                                    <ControlStyle Height="20px" Width="24px" />
-                                                </asp:CommandField>
+                                                        <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" Visible="False"/>
+                                                        <asp:BoundField DataField="chiaveCLIENTE" HeaderText="chiaveCLIENTE" SortExpression="chiaveCLIENTE" Visible="False"/>
+                                                        <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False"/>
+                                                        <asp:CheckBoxField DataField="GESTITO" HeaderText="STATO" SortExpression="GESTITO" />
+                                                        <asp:BoundField DataField="chiaveSPEDIZIONI" HeaderText="chiaveSPEDIZIONI" SortExpression="chiaveSPEDIZIONI" Visible="False"/>
+                                                        <asp:CommandField ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/assets/images/spunta_button.png">
+                                                            <ControlStyle Height="20px" Width="24px" />
+                                                        </asp:CommandField>
                                                     </Columns>
                                                     <HeaderStyle BackColor="#B469FF" />
                                                 </asp:GridView>
-                                                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_CLIENTI_PRODOTTI_SPEDIZIONI_Filter" SelectCommandType="StoredProcedure">
+                                                <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString2 %>" SelectCommand="spORDINI_GESTISCI" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                                     <SelectParameters>
                                                         <asp:ControlParameter ControlID="ddlUTENTE" Name="chiaveCLIENTE" PropertyName="SelectedValue" Type="Int32" />
                                                         <asp:ControlParameter ControlID="ddlSTATO" Name="STATO" PropertyName="SelectedValue" Type="String" />

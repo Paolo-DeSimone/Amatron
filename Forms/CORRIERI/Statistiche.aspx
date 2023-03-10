@@ -7,11 +7,11 @@
     <%--Visualizzazione statistiche corrieri--%>
     <div class="container mt-5">
         <div class="row">
-            <div class="col-lg-3"></div>
+            <div class="col-lg-1"></div>
             <center>
-                <div id="benvenutoCorriere" class="col-lg-6" runat="server"></div>
+                <div id="benvenutoCorriere" class="col-lg-10" runat="server"></div>
             </center>
-            <div class="col-lg-3"></div>
+            <div class="col-lg-1"></div>
         </div>
         <div class="row">
             <div class="col-lg-3"></div>
@@ -20,7 +20,7 @@
                     <h4>Resoconto consegne</h4>
                     <p>Il presente grafico presenta solamente le spedizioni che sono state già consegnate</p>
                 </center>
-                
+
             </div>
             <div class="col-lg-3"></div>
         </div>
@@ -63,9 +63,13 @@
             <div class="col-lg-6 text-center">
                 <div class="card">
                     <div class="card-body">
+                        <p>
+                            <asp:Label ID="lblResocontoDescrizione" runat="server" Text="Clicca su resoconto per sapere qual è il guadagno mensile delle tue spedizioni consegnate"></asp:Label>
+                        </p>
                         <asp:Button ID="btnResocontoCorriere" runat="server" CssClass="btn masterButton" Text="Resoconto:" OnClick="btnResocontoCorriere_Click" />
                         <p></p>
                         <asp:Label ID="lblResocontoCorriere" runat="server" Text=""></asp:Label>
+                        <hr style="opacity:100; background-color:darkgray"/>
                         <p class="card-text">
                             <center>
                                 <asp:GridView ID="grigliaStatisticheCorrieri" runat="server" CssClass="table table-bordered table-condensed" DataSourceID="sdsStatisticheCorrieri" AutoGenerateColumns="false">

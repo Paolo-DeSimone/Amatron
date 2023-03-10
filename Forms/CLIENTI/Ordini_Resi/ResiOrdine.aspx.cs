@@ -14,6 +14,7 @@ public partial class _Default : System.Web.UI.Page
     {
         grdreso.DataBind();
         sdsResi.DataBind();
+
     }
     protected void grdreso_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -35,5 +36,6 @@ public partial class _Default : System.Web.UI.Page
         }
         mp1.Enabled = true;
         mp1.Show();
+
     }
 }

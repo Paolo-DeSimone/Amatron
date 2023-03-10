@@ -18,17 +18,17 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void btnCerca_Click(object sender, EventArgs e)
     {
-        ////filtraggio dei campi del venditore in base alla ricerca
-        DataTable DT = new DataTable();
-        ORDINI O = new ORDINI();
-        int chiavecliente = int.Parse(ddlUTENTE.SelectedValue);
-        int STATO = int.Parse(ddlSTATO.SelectedValue);
-        string DInizio = txtDInizio.Text;
-        string DFine = txtDFine.Text;
-        DT = O.ORDINI_CLIENTI_PRODOTTI_SPEDIZIONI_Filter();
+        //////filtraggio dei campi del venditore in base alla ricerca
+        //DataTable DT = new DataTable();
+        //ORDINI O = new ORDINI();
+        //int chiavecliente = int.Parse(ddlUTENTE.SelectedValue);
+        //int STATO = int.Parse(ddlSTATO.SelectedValue);
+        //string DInizio = txtDInizio.Text;
+        //string DFine = txtDFine.Text;
+        //DT = O.ORDINI_CLIENTI_PRODOTTI_SPEDIZIONI_Filter();
 
-        grigliaOrdini.DataSource = DT;
-        grigliaOrdini.DataBind();
+        //grigliaOrdini.DataSource = DT;
+        //grigliaOrdini.DataBind();
 
     }
 
@@ -46,6 +46,7 @@ public partial class Default2 : System.Web.UI.Page
         DT = O.CORRIERI_CHIAVERandom();
         O.chiavecorriere = int.Parse(DT.Rows[0]["chiave"].ToString());
         O.ORDINI_GESTITO();
-    }
+        grigliaOrdini.DataBind();
 
+    }
 }

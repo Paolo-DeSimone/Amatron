@@ -1,6 +1,7 @@
 ﻿using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,7 +12,7 @@ public partial class _Default : System.Web.UI.Page
     public static string chiaveordine;
     public static string chiave;
 
-        //string chiave = Session["chiaveUSR"].ToString();
+    //string chiave = Session["chiaveUSR"].ToString();
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -38,6 +39,7 @@ public partial class _Default : System.Web.UI.Page
         string chiaveordine = row.Cells[6].Text;
         Session["chiaveordine"] = chiaveordine;
 
+        
 
 
         chiave = grdreso.SelectedValue.ToString();
@@ -50,6 +52,17 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void btnReso_Click(object sender, EventArgs e)
     {
+        RESI R = new RESI();
+        DataTable DT = new DataTable();
+        R.chiaveOrdine = int.Parse(Session["chiaveordine"].ToString());
+        DT = R.SelectCount();
+        if (DT.Rows.Count > 0)
+        {
+            //non funziona l'alert ma solo il return
+            string script = "notifyError('Hai già effettuato il reso per quest'ordine');";
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnReso_Click", script, true);
+            return;
+        }
         if (grdreso.SelectedValue == null)
         {
             string script = "notifyError('Selezionare un Prodotto per effettuare un reso');";
@@ -58,7 +71,5 @@ public partial class _Default : System.Web.UI.Page
         }
         mp1.Enabled = true;
         mp1.Show();
-
-
     }
 }

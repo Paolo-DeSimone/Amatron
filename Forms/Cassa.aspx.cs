@@ -25,8 +25,7 @@ public partial class _Default : System.Web.UI.Page
 
             CARRELLO CR = new CARRELLO();
             DataTable dt = CR.SelectAllItemsInCart(int.Parse(Session["chiaveUSR"].ToString()));
-<<<<<<< B-Gattolin
-=======
+
             //Session["TotaleCarrello"] = dt.Rows[0]
             
             //for (int i = 0; i < grigliaOrdini.Rows.Count; i++)
@@ -35,7 +34,7 @@ public partial class _Default : System.Web.UI.Page
             //}
 
 
->>>>>>> GB-WEBSERVICES
+
         }
         grigliaOrdini.DataBind();
 

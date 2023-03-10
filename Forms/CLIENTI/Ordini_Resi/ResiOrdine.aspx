@@ -54,10 +54,10 @@
                                 <asp:Button ID="btnRecensione" class="btn masterButton" runat="server" Text="Effettua Recensione" OnClick="btnRecensione_Click" />
 
                             </div>
-                            <div align="center">
+                            <%--<div align="center">
                                 <asp:Button ID="btnReso" class="btn masterButton" runat="server" Text="Effettua Reso" OnClick="btnReso_Click"/>
                                 <asp:Button ID="btnRecensione" class="btn masterButton" runat="server" Text="Effettua Recensione" OnClick="btnRecensione_Click" />
-                            </div>
+                            </div>--%>
                         </div>
                     </div>
                 </div>

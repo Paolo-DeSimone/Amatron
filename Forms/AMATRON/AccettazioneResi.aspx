@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="AccettazioneResi.aspx.cs" Inherits="AccettazioneResi" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="AccettazioneResi.aspx.cs" Inherits="AccettazioneResi" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="../../assets/css/AMATRON.css" rel="stylesheet" />
@@ -27,6 +27,11 @@
                                     </div>
 
                                     <div class="col-lg-2">
+                                        <asp:Label ID="Label3" runat="server" Text="Seleziona richiesta da:"></asp:Label>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <asp:Label ID="Label4" runat="server" Text="a:"></asp:Label>
+
                                         <asp:Label ID="Label3" runat="server" Text="Data richiesta:"></asp:Label>
                                     </div>
                                     <div class="col-lg-2">
@@ -39,6 +44,7 @@
                                     </div>
 
                                     <div class="col-lg-2">
+                                        <asp:TextBox ID="txtNumeroOrdine" Class="form-control" runat="server" TextMode="Number"></asp:TextBox>
                                         <asp:TextBox ID="txtNumeroOrdine" Class="form-control" runat="server"></asp:TextBox>
                                     </div>
 
@@ -50,7 +56,11 @@
 
                                     </div>
                                     <div class="col-lg-2 text-end">
+
+                                        <asp:Button ID="btnFiltra" Class="btn masterButton" runat="server" Text="Filtra" OnClick="btnFiltra_Click" />
+
                                         <asp:Button ID="btnCerca" Class="btn masterButton" runat="server" Text="Filtra" />
+
                                     </div>
                                     <div class="col-lg-2 align-items-center text-end">
                                         <asp:Button ID="Button1" class="btn masterButton" runat="server" Text="Accetta" OnClick="btnAccetta_Click" />

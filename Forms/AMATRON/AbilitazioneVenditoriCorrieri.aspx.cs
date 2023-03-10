@@ -100,6 +100,7 @@ public partial class _Default : System.Web.UI.Page
             grigliaVenditori.DataBind();
         }
         else grigliaVenditori.DataSourceID = "sdsVenditoriFiltra";
+        grigliaVenditori.DataBind();
 
     }
 
@@ -180,6 +181,8 @@ public partial class _Default : System.Web.UI.Page
             grigliaCorrieri.DataBind();
         }
         else grigliaCorrieri.DataSourceID = "sdsCorrieriFiltra";
+        grigliaCorrieri.DataBind();
+
     }
 
 

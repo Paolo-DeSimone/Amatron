@@ -23,8 +23,10 @@ public partial class _Default : System.Web.UI.Page
             string RagioneSociale = DT.Rows[0]["RagioneSociale"].ToString();
             OrdiniCorriere.InnerHtml = "<h2>Spedizioni del Corriere <b>" + RagioneSociale + "</b></h2>";
         }
+
         grdSTATO.DataSourceID = "sdsSTATO";
         grdSTATO.DataBind();
+
     }
 
     protected void grdSTATO_SelectedIndexChanged(object sender, EventArgs e)

@@ -206,5 +206,4 @@ public partial class AccettazioneResi : System.Web.UI.Page
         grigliaResi.DataSource = DT2;
         grigliaResi.DataBind();
     }
-
 }

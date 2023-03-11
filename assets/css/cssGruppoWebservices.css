@@ -38,3 +38,15 @@
     max-width: 300px;
     max-height: 300px;
 }
+
+.chiusuraresi {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}

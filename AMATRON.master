@@ -68,7 +68,7 @@
                 url: "/Forms/WM.aspx/DiscardItemInCart",
                     //NON CAMBIARE I NOMI A,B,C SE NO NON FUNZIONA
                     <%--BISOGNA CAMBIARE I VALORI NELLA FUNZIONE JS E METTERCI LE SESSION DI chiaveCliente, chiaveProdotto E QTA per renderlo dinamico--%>
-                data: "{'c': '"+c+"'}",
+                data: "{'c': '" + c + "'}",
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (msg) {
@@ -99,12 +99,12 @@
                             <%--  BARRA DI RICERCA--%>
                             <div class="input-group searchbar">
 
-
-                                <asp:DropDownList ID="ddlCategorie" CssClass="btn dropdown-toggle masterButton" runat="server" DataSourceID="sdsCategorie" DataTextField="CATEGORIA" DataValueField="CATEGORIA" AppendDataBoundItems="True">
-                                    <asp:ListItem Text="Tutte le Categorie" Value="*"></asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:SqlDataSource ID="sdsCategorie" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCATEGORIE_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
-
+                                <div class="dropdown">
+                                    <asp:DropDownList ID="ddlCategorie" CssClass="btn dropdownlist" runat="server" DataSourceID="sdsCategorie" DataTextField="CATEGORIA" DataValueField="CATEGORIA" AppendDataBoundItems="True">
+                                        <asp:ListItem Text="Tutte le Categorie" Value="*"></asp:ListItem>
+                                    </asp:DropDownList>
+                                    <asp:SqlDataSource ID="sdsCategorie" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCATEGORIE_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                                </div>
                                 <%--
                                 <button class="btn dropdown-toggle masterButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tutte le Categorie</button>
                                 <ul class="dropdown-menu" style="background-color: #212529" id="categorieDropdown" runat="server">
@@ -362,8 +362,8 @@
                                                 <a href="#"><i class="fa-brands fa-discord"></i></a>
                                                 <a href="#"><i class="fa-brands fa-github"></i></a>
                                             </div>
-                        </div>
-                        </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

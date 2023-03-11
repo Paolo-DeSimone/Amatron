@@ -31,8 +31,8 @@ public partial class _Default : System.Web.UI.Page
             DataTable DT2 = new DataTable();
             DT2 = V.SelectByKey();
             string NomeVenditore = DT2.Rows[0]["RAGIONESOCIALE"].ToString() ;
-            IdentificaVenditore.InnerHtml = "";
-            IdentificaVenditore.InnerHtml += "<h2> Storico Vendite del Venditore " + NomeVenditore + "</h2>";
+            //IdentificaVenditore.InnerHtml = "";
+            IdentificaVenditore.InnerHtml = "<center><h2> Storico Vendite del Venditore " + NomeVenditore + "</h2></center>";
 
 
 

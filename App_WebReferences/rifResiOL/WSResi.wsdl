@@ -105,6 +105,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="RESI_SelectCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="chiaveordine" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RESI_SelectCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RESI_SelectCountResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="Resi_InsertSoapIn">
@@ -143,6 +164,12 @@
   <wsdl:message name="RESI_SelectByOrderSoapOut">
     <wsdl:part name="parameters" element="tns:RESI_SelectByOrderResponse" />
   </wsdl:message>
+  <wsdl:message name="RESI_SelectCountSoapIn">
+    <wsdl:part name="parameters" element="tns:RESI_SelectCount" />
+  </wsdl:message>
+  <wsdl:message name="RESI_SelectCountSoapOut">
+    <wsdl:part name="parameters" element="tns:RESI_SelectCountResponse" />
+  </wsdl:message>
   <wsdl:portType name="WsResiSoap">
     <wsdl:operation name="Resi_Insert">
       <wsdl:input message="tns:Resi_InsertSoapIn" />
@@ -167,6 +194,10 @@
     <wsdl:operation name="RESI_SelectByOrder">
       <wsdl:input message="tns:RESI_SelectByOrderSoapIn" />
       <wsdl:output message="tns:RESI_SelectByOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RESI_SelectCount">
+      <wsdl:input message="tns:RESI_SelectCountSoapIn" />
+      <wsdl:output message="tns:RESI_SelectCountSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WsResiSoap" type="tns:WsResiSoap">
@@ -225,6 +256,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="RESI_SelectCount">
+      <soap:operation soapAction="http://tempuri.org/RESI_SelectCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WsResiSoap12" type="tns:WsResiSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -275,6 +315,15 @@
     </wsdl:operation>
     <wsdl:operation name="RESI_SelectByOrder">
       <soap12:operation soapAction="http://tempuri.org/RESI_SelectByOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RESI_SelectCount">
+      <soap12:operation soapAction="http://tempuri.org/RESI_SelectCount" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

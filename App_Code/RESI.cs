@@ -65,4 +65,11 @@ public class RESI
         dt = R.RESI_SelectByOrder(chiaveOrdine);
         return dt;
     }
+
+    public DataTable SelectCount()
+    {
+        DataTable dt = new DataTable();
+        dt = R.RESI_SelectCount(chiaveOrdine);
+        return dt;
+    }
 }

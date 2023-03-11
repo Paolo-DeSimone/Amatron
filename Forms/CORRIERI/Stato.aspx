@@ -9,7 +9,7 @@
         <div class="row text-center">
             <h4 id="OrdiniCorriere" runat="server"></h4>
         </div>
-        <div style="text-align:center; color:black; margin: 0 auto;" class="testo">
+        <div style="text-align: center; color: black; margin: 0 auto;" class="testo">
             Benvenuto nella pagina dei corrieri qui puoi visualizzare e cambiare lo stato delle tue spedizioni.
         </div>
         <center>
@@ -18,9 +18,21 @@
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-lg-2">
+                                <asp:Label ID="Label2" runat="server" Text="FILTRA PER NOME:"></asp:Label>
+                            </div>
+                            <div class="col-lg-3">
+                                <asp:TextBox ID="txtFiltraNomeCliente" class="form-control" AutoPostBack="true" runat="server"></asp:TextBox>
+                            </div>
+                            <div class="col-lg-1">
+                                <asp:Button ID="btnFiltraNomeCliente" runat="server" CssClass="btn masterButton" Text="Filtra" OnClick="btnFiltraNomeCliente_Click" />
+                            </div>
+                        </div>
+                        <p></p>
+                        <div class="row align-items-center">
+                            <div class="col-lg-2">
                                 <asp:Label ID="Label1" runat="server" Text="FILTRA I DATI PER:"></asp:Label>
                             </div>
-                            <div class="col-lg-2">
+                            <div class="col-lg-3">
                                 <asp:DropDownList ID="ddlSTATO" runat="server" CssClass="form-select" Style="width: auto" AutoPostBack="True">
                                     <asp:ListItem Value="S">TUTTE LE SPEDIZIONI</asp:ListItem>
                                     <asp:ListItem Value="A">A - Ordine in Preparazione</asp:ListItem>
@@ -29,14 +41,13 @@
                                     <asp:ListItem Value="D">D - Prodotto consegnato</asp:ListItem>
                                 </asp:DropDownList>
                             </div>
-                            <div class="col-lg-3"></div>
                             <div class="col-lg-2">
                                 <%-- pulsante --%>
                                 <asp:Button ID="btnStato" runat="server" class="btn masterButton" Text="CONFERMA LO STATO AL PASSAGGIO SUCCESSIVO" OnClick="btnStato_Click" />
                             </div>
                         </div>
                         <div class="row text-center">
-                            <div class="col">
+                            <div class="col" style="overflow-y: scroll; width: 100%; height: 500px;">
                                 <br />
                                 <center>
                                     <asp:GridView ID="grdSTATO" class="table" runat="server" CssClass="table table-bordered table-condensed" DataSourceID="sdsSTATO" AutoGenerateColumns="False" OnSelectedIndexChanged="grdSTATO_SelectedIndexChanged" DataKeyNames="chiaveSPEDIZIONE">
@@ -48,14 +59,21 @@
                                             <asp:BoundField DataField="NOME_CLIENTE" HeaderText="NOME CLIENTE" SortExpression="NOME_CLIENTE" ReadOnly="True" />
                                             <asp:BoundField DataField="INDIRIZZO_CLIENTE" HeaderText="INDIRIZZO CLIENTE" ReadOnly="True" SortExpression="INDIRIZZO_CLIENTE" />
                                             <asp:BoundField DataField="statosp" HeaderText="STATO SPEDIZIONE" SortExpression="statosp" ReadOnly="True" />
-                                            <asp:BoundField DataField="DATA_TRANSAZIONE" HeaderText="DATA VENDITA" SortExpression="DATA_TRANSAZIONE" ReadOnly="True" Visible="False"/>
+                                            <asp:BoundField DataField="DATA_TRANSAZIONE" HeaderText="DATA VENDITA" SortExpression="DATA_TRANSAZIONE" ReadOnly="True" Visible="False" />
                                             <asp:BoundField DataField="DATA_SPEDIZIONE" HeaderText="DATA" SortExpression="DATA_SPEDIZIONE" ReadOnly="True" />
-                                            <asp:BoundField DataField="EMAIL_CLIENTI" HeaderText="EMAIL CLIENTE" SortExpression="EMAIL_CLIENTI" Visible="False"/>
+                                            <asp:BoundField DataField="EMAIL_CLIENTI" HeaderText="EMAIL CLIENTE" SortExpression="EMAIL_CLIENTI" Visible="False" />
                                             <asp:CommandField ShowSelectButton="True" ButtonType="Image" ControlStyle-Height="20px" ControlStyle-Width="24px" SelectImageUrl="../../assets/images/spunta_button.png" />
                                         </Columns>
                                         <SelectedRowStyle BackColor="LightGray" />
                                         <HeaderStyle BackColor="#B469FF" />
                                     </asp:GridView>
+                                    <asp:SqlDataSource ID="sdsFILTRA" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spFILTRA_nomeClienti" SelectCommandType="StoredProcedure">
+                                        <SelectParameters>
+                                            <asp:ControlParameter ControlID="txtFiltraNomeCliente" Name="NOME" PropertyName="Text" Type="String" />
+                                            <asp:SessionParameter Name="chiave" SessionField="chiaveUSR" Type="Int32" />
+                                            <asp:ControlParameter ControlID="ddlSTATO" Name="STATO" PropertyName="SelectedValue" Type="String" />
+                                        </SelectParameters>
+                                    </asp:SqlDataSource>
                                     <asp:SqlDataSource ID="sdsSTATO" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSPEDIZIONI_ORDINI_Select" SelectCommandType="StoredProcedure">
                                         <SelectParameters>
                                             <asp:SessionParameter Name="chiave" SessionField="chiaveUSR" Type="Int32" />
@@ -65,9 +83,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
-        </center>
+    </div>
+    </center>
     </div>
 </asp:Content>
 

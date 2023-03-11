@@ -13,7 +13,17 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
    
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        //if (!IsPostBack)
+        //{
+        //    if (Session["chiaveProdotto"] == null)
+        //    {
+        //        return;
+        //    }
+        //    PRODOTTI P = new PRODOTTI();
+        //    //Session.Remove("chiaveProdottoEsaurito");
+        //    string chiaveprodotto = Session["chiaveProdotto"].ToString();
+      
+        //}
     }
 
     protected void btnSalva_Click(object sender, EventArgs e)
@@ -107,8 +117,8 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
 
         //string script = @"notifySuccess('Modifica avvenuta con successo!')";
         //ScriptManager.RegisterStartupScript(this, GetType(), "btnSalva_Click", script, true);
-        ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Modifica avvenuta con successo!');", true);
-        return;
+        ClientScript.RegisterStartupScript(this.GetType(), "SUCCESSO", "alert('Modifica avvenuta con successo!');", true);
+        
         reset();
         return;
     }

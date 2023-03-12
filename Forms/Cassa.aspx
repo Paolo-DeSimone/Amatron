@@ -71,7 +71,6 @@
                                     <b>
                                         <%--LBL IMPORTO TOTALE CARRELLO--%>
                                         <asp:Label runat="server" ID="payInput" Text=""></asp:Label>
-                                        <input type="text" value="5" />
                                     </b>
                                 </div>
                                 <div class="col-6">
@@ -82,11 +81,11 @@
                                     </asp:ScriptManager>
 
                                     <%-- pulsante che apre il popup --%>
-                                    <h3>CHIEDERE A FLAVIO COME VUOLE IL BTN ESTETICAMENTE PARLANDO</h3>
+                                    <h3>CHIEDERE A FLAVIO COME VUOLE IL BTN ESTETICAMENTE PARLANDO E COME PASSARE L'IMPORTO DEL CARRELLO AL POPUP</h3>
                                     <b>
                                         <asp:Label ID="lblPagaCon" runat="server" Text="Paga con: "></asp:Label>
                                     </b>
-                                    <button style="margin: 0px; width: 200px;" id="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" text="Paga con">
+                                    <button style="margin: 0px; width: 200px;" id="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" text="Paga con" >
                                         <img src="/assets/images/paypall.png" style="width: 9vw; height: 4vh;" />
                                     </button>
 

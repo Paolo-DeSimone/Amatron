@@ -13,7 +13,22 @@ public partial class AccettazioneResi : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        //riempio grigliaResi con dati dal DB 
+        DataTable DT = new DataTable();
+        AMATRONADMIN A = new AMATRONADMIN();
+        A.NOMINATIVO = txtCliente.Text;
+        if (txtNumeroOrdine.Text == "")
+        {
+            txtNumeroOrdine.Text = "0";
+        }
+        A.NUMERO_ORDINE = int.Parse(txtNumeroOrdine.Text);
+        A.STARTDATE = txtDInizio.Text;
+        A.ENDDATE = txtDFine.Text;
+        DT = A.RESIFILTRA();
 
+        //update a grigliaResi per mettere i valori nella DT dentro la GridView
+        grigliaResi.DataSource = DT;
+        grigliaResi.DataBind();
     }
 
     protected void grigliaResi_SelectedIndexChanged(object sender, EventArgs e)
@@ -26,10 +41,10 @@ public partial class AccettazioneResi : System.Web.UI.Page
         }
         //faccio la session per passare la chiave
         Session["chiaveRESO"] = grigliaResi.SelectedValue.ToString();
-        Session["NUMEROORDINE"] = grigliaResi.SelectedRow.Cells[5].Text; //cell del numero ordine
-        Session["NOMINATIVO"] = grigliaResi.SelectedRow.Cells[6].Text; //cell del nominativo
-        Session["EMAIL"] = grigliaResi.SelectedRow.Cells[7].Text; //cell dell'email 
-        Session["DATAEMISSIONE"] = grigliaResi.SelectedRow.Cells[12].Text; //cell della data emissione
+        Session["NOMINATIVO"] = grigliaResi.SelectedRow.Cells[2].Text; //cell del nominativo
+        Session["NUMEROORDINE"] = grigliaResi.SelectedRow.Cells[3].Text; //cell del numero ordine
+        Session["EMAIL"] = grigliaResi.SelectedRow.Cells[4].Text; //cell dell'email 
+        Session["DATAEMISSIONE"] = grigliaResi.SelectedRow.Cells[9].Text; //cell della data emissione
     }
 
     //funzione per controllare se il reso selezionato è già stato revisionato o meno
@@ -39,11 +54,11 @@ public partial class AccettazioneResi : System.Web.UI.Page
     protected string controlloReso()
     {
         //controlli formali
-        RESI R = new RESI();
-        R.dataemissione = Session["DATAEMISSIONE"].ToString();
         //controllo per verificare se è stata selezionato un reso dalla GridView
         if (Session["chiaveRESO"] != null)
         {
+            RESI R = new RESI();
+            R.dataemissione = Session["DATAEMISSIONE"].ToString();
             //controllo per vedere se è stato già dichiarato l'esito del reso
             //se il reso è stato già accettato/negato, allora non lo vado a modificare
             //verifico se il reso è stato accettato
@@ -51,21 +66,20 @@ public partial class AccettazioneResi : System.Web.UI.Page
             {
                 //verifico se il reso è stato già emesso, indipendentemente se è stato accettato o meno
                 //questo controllo extra è necessario per essere sicuri di non andare a modificare un reso già gestito
-                //&nbsp; è standard per nullbreakingspace (null) (workaround per variabili nella classe RESI settate male)
-                if (R.dataemissione == "&nbsp;")
+                if (R.dataemissione == "")
                 {
                     return "Reso dichiarato.";
                 }
                 //return se è stato selezionato un reso già approvato/negato
                 else
                 {
-                    return "Reso già gestito.";
+                    return "Reso gia gestito.";
                 }
             }
             //return se il reso è stato già gestito
             else
             {
-                return "Reso già gestito.";
+                return "Reso gia gestito.";
             }
         }
         //return se non è stato selezionato un reso
@@ -102,12 +116,11 @@ public partial class AccettazioneResi : System.Web.UI.Page
             //passo in resoUpdate il valore di sopra
             resoUpdate(R.accettazione);
             //mando la mail al cliente
-            mail(R.accettazione);
+            //mail(R.accettazione);
             DataBind();
         }
         //alert con il risultato di controlloReso() memorizzato nella string reso
-        string script = @"notifySuccess('Reso andato a buon fine')";
-        ScriptManager.RegisterStartupScript(this, GetType(), "btnAccetta_Click", script, true);
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "btnAccetta_Click", reso, true);
     }
 
     protected void btnRifiuta_Click(object sender, EventArgs e)
@@ -123,12 +136,11 @@ public partial class AccettazioneResi : System.Web.UI.Page
             //passo in resoUpdate il valore di sopra
             resoUpdate(R.accettazione);
             //mando la mail al cliente
-            mail(R.accettazione);
+            //mail(R.accettazione);
             DataBind();
         }
         //alert con il risultato di controlloReso() memorizzato nella string reso
-        string scripts = @"notifyError('Reso non andato a buon fine')";
-        ScriptManager.RegisterStartupScript(this, GetType(), "btnRifiuta_Click", scripts, true);
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "btnRifiuta_Click", reso, true);
     }
 
     //funzione per mandare una mail al cliente con la revisione del reso
@@ -174,4 +186,21 @@ public partial class AccettazioneResi : System.Web.UI.Page
 
 
 
+
+    protected void btnFiltra_Click(object sender, EventArgs e)
+    {
+        AMATRONADMIN A = new AMATRONADMIN();
+        DataTable DT2 = new DataTable();
+        A.NOMINATIVO = txtCliente.Text.Trim();
+        if (txtNumeroOrdine.Text.Trim() == "")
+        {
+            txtNumeroOrdine.Text = "0";
+        }
+        A.NUMERO_ORDINE = int.Parse(txtNumeroOrdine.Text);
+        A.STARTDATE = txtDInizio.Text.Trim();
+        A.ENDDATE = txtDFine.Text.Trim();
+        DT2 = A.RESIFILTRA();
+        grigliaResi.DataSource = DT2;
+        grigliaResi.DataBind();
+    }
 }

@@ -11,19 +11,22 @@ public partial class Forms_VENDITORI_AggiungiImmagini : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["chiaveProdottoEsaurito"] == null)
-        {
-            return;
-        }
-        PRODOTTI P = new PRODOTTI();
-        //Session.Remove("chiaveProdottoEsaurito");
-        string chiaveprodotto = Session["chiaveProdottoEsaurito"].ToString();
-        P.chiave = int.Parse(chiaveprodotto);
-        DataTable DT = new DataTable();
-        DT = P.SelectByKey();
-        string titolo;
-        titolo = DT.Rows[0]["TITOLO"].ToString();
-        lblProdotto.Text = titolo;
+        //if (!IsPostBack)
+        //{
+        //    if (Session["chiaveProdottoEsaurito"] == null)
+        //    {
+        //        return;
+        //    }
+        //    PRODOTTI P = new PRODOTTI();
+        //    //Session.Remove("chiaveProdottoEsaurito");
+        //    string chiaveprodotto = Session["chiaveProdottoEsaurito"].ToString();
+        //    P.chiave = int.Parse(chiaveprodotto);
+        //    DataTable DT = new DataTable();
+        //    DT = P.SelectByKey();
+        //    string titolo;
+        //    titolo = DT.Rows[0]["TITOLO"].ToString();
+        //    lblProdotto.Text = titolo;
+        //}
     }
 
     protected void btnSalva_Click(object sender, EventArgs e)
@@ -61,8 +64,9 @@ public partial class Forms_VENDITORI_AggiungiImmagini : System.Web.UI.Page
 
         DataBind();
 
-        string script = @"notifySuccess('Modifica avvenuta con successo!')";
-        ScriptManager.RegisterStartupScript(this, GetType(), "btnSalva_Click", script, true);
+        //string script = @"notifySuccess('Modifica avvenuta con successo!')";
+        //ScriptManager.RegisterStartupScript(this, GetType(), "btnSalva_Click", script, true);
+        ClientScript.RegisterStartupScript(this.GetType(), "SUCCESSO", "alert('Modifica avvenuta con successo!');", true);
         return;
     }
 

@@ -21,7 +21,7 @@ public partial class _Default : System.Web.UI.Page
             CLIENTI C = new CLIENTI();
             C.chiave = int.Parse(Session["chiaveUSR"].ToString());
             DataTable DT = C.SELECTBYKEY();
-            lblMostraIndirizzoConsegna.Text = DT.Rows[0]["INDIRIZZO"].ToString() + DT.Rows[0]["CITTA"].ToString() + DT.Rows[0]["PROVINCIA"].ToString();
+            lblMostraIndirizzoConsegna.Text = DT.Rows[0]["INDIRIZZO"].ToString() + ", " + DT.Rows[0]["CITTA"].ToString() + " " + "(" + DT.Rows[0]["PROVINCIA"].ToString() + ").";
 
             CARRELLO CR = new CARRELLO();
             DataTable dt = CR.SelectAllItemsInCart(int.Parse(Session["chiaveUSR"].ToString()));

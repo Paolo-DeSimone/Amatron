@@ -26,6 +26,7 @@ public partial class AccettazioneResi : System.Web.UI.Page
         A.ENDDATE = txtDFine.Text;
         DT = A.RESIFILTRA();
 
+        //update a grigliaResi per mettere i valori nella DT dentro la GridView
         grigliaResi.DataSource = DT;
         grigliaResi.DataBind();
     }
@@ -53,11 +54,11 @@ public partial class AccettazioneResi : System.Web.UI.Page
     protected string controlloReso()
     {
         //controlli formali
-        RESI R = new RESI();
-        R.dataemissione = Session["DATAEMISSIONE"].ToString();
         //controllo per verificare se è stata selezionato un reso dalla GridView
         if (Session["chiaveRESO"] != null)
         {
+            RESI R = new RESI();
+            R.dataemissione = Session["DATAEMISSIONE"].ToString();
             //controllo per vedere se è stato già dichiarato l'esito del reso
             //se il reso è stato già accettato/negato, allora non lo vado a modificare
             //verifico se il reso è stato accettato
@@ -65,8 +66,7 @@ public partial class AccettazioneResi : System.Web.UI.Page
             {
                 //verifico se il reso è stato già emesso, indipendentemente se è stato accettato o meno
                 //questo controllo extra è necessario per essere sicuri di non andare a modificare un reso già gestito
-                //&nbsp; è standard per nullbreakingspace (null) (workaround per variabili nella classe RESI settate male)
-                if (R.dataemissione == "&nbsp;")
+                if (R.dataemissione == "")
                 {
                     return "Reso dichiarato.";
                 }

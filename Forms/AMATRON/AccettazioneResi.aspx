@@ -22,7 +22,7 @@
                                     <div class="col-lg-2">
                                         <asp:Label ID="Label1" runat="server" Text="Cliente:"></asp:Label>
                                     </div>
-                                     <div class="col-lg-2">
+                                    <div class="col-lg-2">
                                         <asp:Label ID="Label5" runat="server" Text="Numero Ordine:"></asp:Label>
                                     </div>
 
@@ -63,20 +63,18 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-11">
                                     <div style="overflow-y: scroll; height: 500px;">
-                                        <asp:GridView ID="grigliaResi" CssClass="table table-bordered table-condensed" runat="server" AutoGenerateColumns="False" DataSourceID="sdsTabellaResi" OnSelectedIndexChanged="grigliaResi_SelectedIndexChanged" DataKeyNames="chiaveRESO">
+                                        <asp:GridView ID="grigliaResi" CssClass="table table-bordered table-condensed" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="grigliaResi_SelectedIndexChanged" DataKeyNames="chiaveRESO">
+                                            <SelectedRowStyle BackColor="LightGray" />
                                             <Columns>
                                                 <asp:BoundField DataField="chiaveRESO" HeaderText="chiaveRESO" SortExpression="chiaveRESO" Visible="False" />
-                                                <asp:BoundField DataField="chiaveORDINE" HeaderText="chiaveORDINE" SortExpression="chiaveORDINE" Visible="False" />
-                                                <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" Visible="False" />
-                                                <asp:BoundField DataField="chiaveCLIENTI" HeaderText="chiaveCLIENTI" SortExpression="chiaveCLIENTI" Visible="False" />
-                                                <asp:BoundField DataField="NUMERO_ORDINE" HeaderText="NUM ORD" SortExpression="NUMERO_ORDINE" />
-                                                <asp:BoundField DataField="NOMINATIVO" HeaderText="NOMINATIVO" SortExpression="NOMINATIVO" ReadOnly="True" />
+                                                <asp:BoundField DataField="NOMINATIVO" HeaderText="NOMINATIVO" SortExpression="NOMINATIVO" />
+                                                <asp:BoundField DataField="ORDINE" HeaderText="ORDINE" SortExpression="ORDINE" />
                                                 <asp:BoundField DataField="EMAIL" HeaderText="EMAIL" SortExpression="EMAIL" />
-                                                <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
-                                                <asp:BoundField DataField="DESCRIZIONE_RESO" HeaderText="MOTIVO RESO" SortExpression="DESCRIZIONE_RESO" />
-                                                <asp:BoundField DataField="QTARESA" HeaderText="QTA RESA" SortExpression="QTARESA" />
-                                                <asp:BoundField DataField="DATARICHIESTA" HeaderText="DATARICHIESTA" SortExpression="DATARICHIESTA" />
-                                                <asp:BoundField DataField="DATAEMISSIONE" HeaderText="DATAEMISSIONE" SortExpression="DATAEMISSIONE" />
+                                                <asp:BoundField DataField="PRODOTTO" HeaderText="PRODOTTO" SortExpression="PRODOTTO" />
+                                                <asp:BoundField DataField="DESCRIZIONE_RESO" HeaderText="DESCRIZIONE RESO" SortExpression="DESCRIZIONE_RESO" />
+                                                <asp:BoundField DataField="QTARESA" HeaderText="QTA RESA" SortExpression="TITOLO" />
+                                                <asp:BoundField DataField="DATARICHIESTA" HeaderText="DATA RICHIESTA" SortExpression="DATARICHIESTA" />
+                                                <asp:BoundField DataField="DATAEMISSIONE" HeaderText="DATA EMISSIONE" SortExpression="DATAEMISSIONE" />
                                                 <asp:CommandField ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/assets/images/spunta_button.png">
                                                     <ControlStyle Height="20px" Width="24px" />
                                                 </asp:CommandField>
@@ -84,7 +82,6 @@
                                             <SelectedRowStyle BackColor="#adaaaa" Font-Bold="True" />
                                             <HeaderStyle BackColor="#B469FF" />
                                         </asp:GridView>
-                                        <asp:SqlDataSource ID="sdsTabellaResi" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spRESI_ORDINI_PRODOTTI_CLIENTISelectByNUMERO_ORDINE" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                     </div>
                                 </div>
 

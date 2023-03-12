@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PopupPaypalAMATRON.aspx.cs" Inherits="AMATRON_PopupPaypalAMATRON" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PopupPaypalAMATRON.aspx.cs" Inherits="AMATRON_PopupPaypalAMATRON" %>
 
 <!DOCTYPE html>
 
@@ -74,6 +74,10 @@
             }
             initPayPalButton();
         </script>
+        <div style="background-color: green; display: none;" id="transition">Grazie per il tuo pagamento!</div>
+        <input type="text" id="payInput" />
+        <button onclick="generatePayment(document.getElementById('payInput').value)">Paga</button>
+        <div id="paypal-button-container"></div>
     </form>
 </body>
 </html>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -26,12 +26,6 @@ public partial class _Default : System.Web.UI.Page
             CARRELLO CR = new CARRELLO();
             DataTable dt = CR.SelectAllItemsInCart(int.Parse(Session["chiaveUSR"].ToString()));
 
-            //Session["TotaleCarrello"] = dt.Rows[0]
-
-            //for (int i = 0; i < grigliaOrdini.Rows.Count; i++)
-            //{
-            //    totaleCarrello = totaleCarrello + int.Parse(grigliaOrdini.Rows[i]["PREZZOprodotto"]);
-            //}
             float sum = 0;
             for (int i = 0; i < grigliaOrdini.Rows.Count; ++i)
             {
@@ -40,14 +34,11 @@ public partial class _Default : System.Web.UI.Page
             payInput.Text = "Il totale del carrello è di" + " " + " " + sum + " " + "&euro;";
         }
         grigliaOrdini.DataBind();
-        //Session["TotaleCarrello"] = grigliaOrdini.Rows[i]["PREZZOprodotto"];
+
         foreach (GridViewRow r in grigliaOrdini.Rows)
         {
             r.Cells[0].Text = "<img src=\"/Img.ashx?c=" + r.Cells[1].Text.ToString() + "\" />";
-
         }
-
-
     }
 
     protected void paypalBottone_Click(object sender, EventArgs e)
@@ -57,10 +48,10 @@ public partial class _Default : System.Web.UI.Page
         O.InsertFromCarrello();
     }
 
-    protected void btnprova_Click(object sender, EventArgs e)
+
+
+    protected void CheckPaypalPage_Click(object sender, EventArgs e)
     {
-        ORDINI O = new ORDINI();
-        O.chiavecliente = int.Parse(Session["chiaveUSR"].ToString());
-        O.InsertFromCarrello();
+        Response.Redirect("/Forms/AMATRON/PopupPaypalAMATRON.aspx");
     }
 }

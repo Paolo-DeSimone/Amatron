@@ -134,34 +134,34 @@
                 <%-- POPUP--%>
 
                 <%-- Introduzione di uno script manager --%>
-                <%--<asp:ScriptManager ID="ScriptManager1" runat="server">
-                </asp:ScriptManager>--%>
+                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                </asp:ScriptManager>
 
                 <%-- pulsante che apre il popup --%>
-<%--                <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnApri_Click" />--%>
-                <asp:Button ID="btnIscriviti" runat="server" class=" btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnIscriviti_Click" />
+                <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnApri_Click"/>
+                <%--<asp:Button ID="btnIscriviti" runat="server" class=" btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnIscriviti_Click" />--%>
                 <br />
 
                 <%-- chiamata del popup --%>
-               <%-- <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnApri"
+                <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnApri"
                     CancelControlID="btnChiudi" BackgroundCssClass="Background">
-                </cc1:ModalPopupExtender>--%>
+                </cc1:ModalPopupExtender>
 
                 <%-- contenuto del popup --%>
-              <%--  <asp:Panel
+                <asp:Panel
                     ID="Panl1"
                     runat="server"
                     CssClass="Popup"
                     align="center"
-                    Style="display: none">--%>
+                    Style="display: none">
                     <%--ci pensa lo script manager a renderlo visibile--%>
 
                     <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-<%--                    <iframe style="width: 550px; height: 373px; -webkit-border-radius: 10px 10px 10px 10px;" id="if2" src="../Profilo/IscrizionePrimePopup.aspx" runat="server"></iframe>--%>
-                <%--    <br />--%>
+                    <iframe style="width: 550px; height: 373px; -webkit-border-radius: 10px 10px 10px 10px;" id="if2" src="../../AMATRON/PopupPaypalAMATRON.aspx" runat="server"></iframe>
+                    <br />
                     <%--chiude il popup--%>
-               <%--     <asp:Button ID="btnChiudi" class="btn btn-secondary" runat="server" Text="Chiudi" />
-                </asp:Panel>--%>
+                    <asp:Button ID="btnChiudi" runat="server" Text="Chiudi" />
+                </asp:Panel>
                 </div>
             </div>
         </div>

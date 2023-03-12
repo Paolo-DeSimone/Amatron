@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using AjaxControlToolkit;
 
 
 public partial class Default2 : System.Web.UI.Page
@@ -21,7 +22,7 @@ public partial class Default2 : System.Web.UI.Page
         CLI.PRIME = Boolean.Parse(DT.Rows[0]["PRIME"].ToString());
         if ( CLI.PRIME == true)
         {
-            btnIscriviti.Visible = false;
+            btnApri.Visible = false;
         }
 
         if (Session["emailUSR"] == null)
@@ -141,7 +142,7 @@ public partial class Default2 : System.Web.UI.Page
 
 
 
-    protected void btnIscriviti_Click(object sender, EventArgs e)
+    protected void btnApri_Click(object sender, EventArgs e)
     {
         CLIENTI C = new CLIENTI();
         C.chiave = int.Parse(Session["chiaveUSR"].ToString());
@@ -149,12 +150,10 @@ public partial class Default2 : System.Web.UI.Page
 
         string script4 = @"notifySuccess('Iscrizione avvenuta con successo!')";
         ScriptManager.RegisterStartupScript(this, GetType(), "btnIscriviti_Click", script4, true);
-        btnIscriviti.Visible = false;
-
-
-
-
-
+        if (C.PRIME == true)
+        {
+            btnApri.Visible = false;
+        }
 
     }
 

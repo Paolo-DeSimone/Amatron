@@ -13,7 +13,7 @@ using System.Reflection.Emit;
 
 public partial class _Default : System.Web.UI.Page
 {
-    
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -21,7 +21,7 @@ public partial class _Default : System.Web.UI.Page
             CLIENTI C = new CLIENTI();
             C.chiave = int.Parse(Session["chiaveUSR"].ToString());
             DataTable DT = C.SELECTBYKEY();
-            lblMostraIndirizzoConsegna.Text = DT.Rows[0]["INDIRIZZO"].ToString() + DT.Rows[0]["CITTA"].ToString() + DT.Rows[0]["PROVINCIA"].ToString();
+            lblMostraIndirizzoConsegna.Text = DT.Rows[0]["INDIRIZZO"].ToString() + ", " + DT.Rows[0]["CITTA"].ToString() + " " + "(" + DT.Rows[0]["PROVINCIA"].ToString() + ").";
 
             CARRELLO CR = new CARRELLO();
             DataTable dt = CR.SelectAllItemsInCart(int.Parse(Session["chiaveUSR"].ToString()));
@@ -32,11 +32,11 @@ public partial class _Default : System.Web.UI.Page
             //{
             //    totaleCarrello = totaleCarrello + int.Parse(grigliaOrdini.Rows[i]["PREZZOprodotto"]);
             //}
-        float sum = 0;
-        for (int i = 0; i < grigliaOrdini.Rows.Count; ++i)
-        {
-            sum += float.Parse(grigliaOrdini.Rows[i].Cells[5].Text);
-        }
+            float sum = 0;
+            for (int i = 0; i < grigliaOrdini.Rows.Count; ++i)
+            {
+                sum += float.Parse(grigliaOrdini.Rows[i].Cells[5].Text);
+            }
             payInput.Text = "Il totale del carrello è di" + " " + " " + sum + " " + "&euro;";
         }
         grigliaOrdini.DataBind();
@@ -44,7 +44,7 @@ public partial class _Default : System.Web.UI.Page
         foreach (GridViewRow r in grigliaOrdini.Rows)
         {
             r.Cells[0].Text = "<img src=\"/Img.ashx?c=" + r.Cells[1].Text.ToString() + "\" />";
-            
+
         }
 
 

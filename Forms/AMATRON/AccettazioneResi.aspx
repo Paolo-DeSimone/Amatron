@@ -2,6 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="../../assets/css/AMATRON.css" rel="stylesheet" />
+    <script src="Assets/js/notify.js"></script>
+    <link href="../../assets/css/notify.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
@@ -75,6 +77,7 @@
                                                 <asp:BoundField DataField="QTARESA" HeaderText="QTA RESA" SortExpression="TITOLO" />
                                                 <asp:BoundField DataField="DATARICHIESTA" HeaderText="DATA RICHIESTA" SortExpression="DATARICHIESTA" />
                                                 <asp:BoundField DataField="DATAEMISSIONE" HeaderText="DATA EMISSIONE" SortExpression="DATAEMISSIONE" />
+                                                <asp:BoundField DataField="ACCETTAZIONE" HeaderText="ESITO RESO" SortExpression="ACCETTAZIONE" />
                                                 <asp:CommandField ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/assets/images/spunta_button.png">
                                                     <ControlStyle Height="20px" Width="24px" />
                                                 </asp:CommandField>

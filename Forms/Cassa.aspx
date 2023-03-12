@@ -53,7 +53,7 @@
                         <br />
                         L'indirizzo di consegna attuale è
                         <asp:Label ID="lblMostraIndirizzoConsegna" runat="server" Text=""></asp:Label>
-                        Se hai bisogno di modificalo o vuoi aderire ad Amatron Prime per avere uno sconto sulla consegna dei tuoi ordini, vai a 
+                        Se hai bisogno di modificarlo o vuoi aderire ad Amatron Prime per avere uno sconto sulla consegna dei tuoi ordini, vai a 
                         <a href="/Forms/CLIENTI/Profilo/ProfiloModifica.aspx">Questo link.</a>
                         <br />
                         Se non hai bisogno di modificare la quanità dei prodotti in carrello selezionando una riga dalla griglia 
@@ -120,7 +120,7 @@
 
                                     <button type="button" id="paypalBottone" onclick="paypalBottone_Click" >
                                         <asp:Button ID="btnprova" runat="server" Text="Button" OnClick="btnprova_Click" />
-                                        <%-- NON CONDUCE AL POPUP DI PAGAMENTO DI PAYPALL --%>
+                                        <%-- NON CONDUCE AL POPUP DI PAGAMENTO DI PAYPAL --%>
                                         <%--<a  href="https://www.paypal.com/cgi-bin/webscr">--%>
                                         <img src="/assets/images/paypall.png" style="width: 7vw; height: 4vh;" />
                                        <%-- </a>--%>

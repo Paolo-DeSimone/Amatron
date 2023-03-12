@@ -73,13 +73,13 @@ public partial class AccettazioneResi : System.Web.UI.Page
                 //return se è stato selezionato un reso già approvato/negato
                 else
                 {
-                    return "Reso già gestito.";
+                    return "Reso gia gestito.";
                 }
             }
             //return se il reso è stato già gestito
             else
             {
-                return "Reso già gestito.";
+                return "Reso gia gestito.";
             }
         }
         //return se non è stato selezionato un reso

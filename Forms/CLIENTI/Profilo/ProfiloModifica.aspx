@@ -5,6 +5,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <script src="/assets/js/notify.js"></script>
     <link href="/assets/css/notify.css" rel="stylesheet" />
+    <link href="/assets/css/cssFrancescoVENDITORE.css" rel="stylesheet" />
+    <link href="/assets/css/masterStyle.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <p></p>
@@ -19,7 +21,7 @@
     <br />
 
     <div class="row">
-        <div class="col-lg-5" style="margin-left:10%";>
+        <div class="col-lg-5" style="margin-left: 10%;">
             <div class="sposta">
 
                 <div class="card">
@@ -114,57 +116,63 @@
                     </div>
                 </div>
             </div>
-        
-  <br />
 
+            <br />
 
-
-        <%--Amatron prime card--%>
-        <div class="col-lg-3" >
-            <div class="card colore bianco " style="height:300px; width:446.5px;">
-                <%--<div class="card-header text-center">
+            <%--Amatron prime card--%>
+            <div class="col-lg-3">
+                <div class="card colore bianco " style="height: 300px; width: 446.5px;">
+                    <%--<div class="card-header text-center">
                     <h4 class="card-title">Amatron Prime</h4>
                 </div>--%>
-                <img src="../../../assets/images/amatron-prime.png" />
-                <p class="card-text primeScritta">Amatron prime &egrave; un servizio che ti permetter&agrave; di avere uno sconto di <asp:Label ID="lblPrimeProMod" runat="server" Text=""></asp:Label>% su ogni prodotto acquistato.</p>
-                <h4 style="text-align: center" class="card-title">Iscrizione annuale &euro;29,99!</h4>
-                <div class="card-body">
-                </div>
+                    <img src="../../../assets/images/amatron-prime.png" />
+                    <p class="card-text primeScritta">
+                        Amatron prime &egrave; un servizio che ti permetter&agrave; di avere uno sconto di
+                        <asp:Label ID="lblPrimeProMod" runat="server" Text=""></asp:Label>% su ogni prodotto acquistato.
+                    </p>
+                    <h4 style="text-align: center" class="card-title">Iscrizione annuale &euro;29,99!</h4>
+                    <div class="card-body">
+                    </div>
 
-                <%-- POPUP--%>
+                    <%-- POPUP--%>
 
-                <%-- Introduzione di uno script manager --%>
-                <asp:ScriptManager ID="ScriptManager1" runat="server">
-                </asp:ScriptManager>
+                    <%-- Introduzione di uno script manager --%>
+                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                    </asp:ScriptManager>
 
-                <%-- pulsante che apre il popup --%>
-                <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnApri_Click"/>
-                <%--<asp:Button ID="btnIscriviti" runat="server" class=" btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnIscriviti_Click" />--%>
-                <br />
-
-                <%-- chiamata del popup --%>
-                <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnApri"
-                    CancelControlID="btnChiudi" BackgroundCssClass="Background">
-                </cc1:ModalPopupExtender>
-
-                <%-- contenuto del popup --%>
-                <asp:Panel
-                    ID="Panl1"
-                    runat="server"
-                    CssClass="Popup"
-                    align="center"
-                    Style="display: none">
-                    <%--ci pensa lo script manager a renderlo visibile--%>
-
-                    <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
-                    <iframe style="width: 550px; height: 373px; -webkit-border-radius: 10px 10px 10px 10px;" id="if2" src="../../AMATRON/PopupPaypalAMATRON.aspx" runat="server"></iframe>
+                    <%-- pulsante che apre il popup --%>
+                    <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnApri_Click" />
+                    <%--<asp:Button ID="btnIscriviti" runat="server" class=" btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnIscriviti_Click" />--%>
                     <br />
-                    <%--chiude il popup--%>
-                    <asp:Button ID="btnChiudi" runat="server" Text="Chiudi" />
-                </asp:Panel>
+
+                    <%-- chiamata del popup --%>
+                    <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnApri"
+                        CancelControlID="btnChiudi" BackgroundCssClass="Background">
+                    </cc1:ModalPopupExtender>
+
+                    <%-- contenuto del popup --%>
+                    <asp:Panel
+                        ID="Panl1"
+                        runat="server"
+                        CssClass="Popup"
+                        align="center"
+                        Style="display: none">
+                        <%--ci pensa lo script manager a renderlo visibile--%>
+
+                        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+                        <iframe style="width: 550px; height: 373px; -webkit-border-radius: 10px 10px 10px 10px;" id="if2" src="../../AMATRON/PopupPaypalAMATRON.aspx" runat="server"></iframe>
+                        <br />
+                        <%--chiude il popup--%>
+                        <button id="btnChiudi" class="close-btnAggiungiProdotto" runat="server" style="margin-right: 120px; margin-top: 15px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle">
+                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                        </button>
+                    </asp:Panel>
                 </div>
             </div>
         </div>
-          </div>
- 
+    </div>
+
 </asp:Content>

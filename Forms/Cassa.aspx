@@ -59,8 +59,7 @@
                         Se hai bisogno di modificarlo o vuoi aderire ad Amatron Prime per avere uno sconto sulla consegna dei tuoi ordini, vai a 
                         <a href="/Forms/CLIENTI/Profilo/ProfiloModifica.aspx">Questo link.</a>
                         <br />
-                        Se non hai bisogno di modificare la quanità dei prodotti in carrello selezionando una riga dalla griglia 
-                        e poi premendo il pulsante "Modifica quantità", procedi con l'ordine cliccando sul bottone in basso a destra!
+                        Se sei pronto a procedere con l'acquisto clicca sul bottone qui in basso!
                         <br />
                     </p>
 
@@ -81,13 +80,7 @@
                                     </asp:ScriptManager>
 
                                     <%-- pulsante che apre il popup --%>
-                                    <h3>CHIEDERE A FLAVIO COME VUOLE IL BTN ESTETICAMENTE PARLANDO E COME PASSARE L'IMPORTO DEL CARRELLO AL POPUP</h3>
-                                    <b>
-                                        <asp:Label ID="lblPagaCon" runat="server" Text="Paga con: "></asp:Label>
-                                    </b>
-                                    <button style="margin: 0px; width: 200px;" id="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" text="Paga con" >
-                                        <img src="/assets/images/paypall.png" style="width: 9vw; height: 4vh;" />
-                                    </button>
+                                    <asp:Button runat="server" Style="margin: 0px; width: 200px;" ID="btnApri" class="btnApri btn btn-secondary masterButton" Text="Vai al pagamento" OnClick="btnApri_Click" />
 
                                     <%-- chiamata del popup --%>
                                     <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnApri"

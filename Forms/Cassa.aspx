@@ -64,7 +64,6 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-
     <section class="h-100 h-custom">
         <div class="container text-align-center py-3 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -165,8 +164,6 @@
                                     </asp:SqlDataSource>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -174,4 +171,3 @@
         </div>
     </section>
 </asp:Content>
-

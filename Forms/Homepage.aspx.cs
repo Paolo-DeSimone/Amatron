@@ -44,7 +44,6 @@ public partial class Homepage : System.Web.UI.Page
                     for (int y = 0; y < int.Parse(DT.Rows[0]["MEDIA"].ToString()); y++)
                     {
                         caroselNovita.InnerHtml +="<img style =\"width:20px; height:20px;\" src='/assets/images/yellowstar.png'>";
-                       
                     }
                 }
                 caroselNovita.InnerHtml += "</div>" +
@@ -88,7 +87,6 @@ public partial class Homepage : System.Web.UI.Page
                     for (int h = 0; h < int.Parse(VE.Rows[0]["MEDIA"].ToString()); h++)
                     {
                         caroselPiuVenduti.InnerHtml += "<img style =\"width:20px; height:20px;\" src='/assets/images/yellowstar.png'>";
-
                     }
                 }
                 caroselPiuVenduti.InnerHtml += "</div>" +
@@ -132,7 +130,6 @@ public partial class Homepage : System.Web.UI.Page
                     for (int u = 0; u < int.Parse(VOT.Rows[0]["MEDIA"].ToString()); u++)
                     {
                         caroselpiuVotati.InnerHtml += "<img style =\"width:20px; height:20px;\" src='/assets/images/yellowstar.png'>";
-
                     }
                 }
                 caroselpiuVotati.InnerHtml += "</div>" +

@@ -66,13 +66,16 @@
                     <div class="card rounded-3">
                         <div class="card-body p-4 p-md-5">
                             <div class="row align-items-center">
-                                <div class="col-5">
+                                <div class="col-6">
                                     <b>
                                         <%--LBL IMPORTO TOTALE CARRELLO--%>
                                         <asp:Label runat="server" ID="payInput" Text=""></asp:Label>
                                     </b>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-4">
+
+                                </div>
+                                <div class="col-2">
                                     <%-- POPUP--%>
 
                                     <%-- Introduzione di uno script manager --%>

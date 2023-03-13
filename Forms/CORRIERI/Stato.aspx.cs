@@ -9,6 +9,9 @@ using System.Web.UI.WebControls;
 
 public partial class _Default : System.Web.UI.Page
 {
+
+    protected DataTable SelectedSPED;
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -40,11 +43,11 @@ public partial class _Default : System.Web.UI.Page
         }
         SPEDIZIONI SPE = new SPEDIZIONI();
         SPE.chiave = int.Parse(grdSTATO.SelectedValue.ToString());
-        DataTable DT = SPE.SPEDIZIONI_SelectByKey();
-        Session["STATO_SPEDIZIONE"] = DT.Rows[0]["STATO"].ToString();
+        SelectedSPED = SPE.SPEDIZIONI_SelectByKey();
+        //Session["STATO_char"] = DT.Rows[0]["STATO_char"].ToString();
         //faccio la session per passare la chiave
-        Session["chiaveSPEDIZIONE"] = grdSTATO.SelectedValue.ToString();
-        Session["chiaveORDINE"] = DT.Rows[0]["chiaveORDINE"].ToString();
+        //Session["chiaveSPEDIZIONE"] = grdSTATO.SelectedValue.ToString();
+        //Session["chiaveORDINE"] = DT.Rows[0]["chiaveORDINE"].ToString();
     }
 
     protected void btnStato_Click(object sender, EventArgs e)
@@ -56,9 +59,8 @@ public partial class _Default : System.Web.UI.Page
             ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripter4, true);
             return;
         }
-
         //controllo se lo stato della spedizione è già a prodotto consegnato, non faccio nulla
-        if (Session["STATO_SPEDIZIONE"].ToString() == "D")
+        if (SelectedSPED.Rows[0]["STATO_char"].ToString() == "D")
         {
             string scripterr = @"notifyError('Prodotto già consegnato')"; //messaggio di errore
             ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripterr, true);

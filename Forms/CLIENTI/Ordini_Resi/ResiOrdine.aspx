@@ -10,7 +10,7 @@
             <h4 id="OrdiniCorriere" runat="server"></h4>
         </div>
         <div style="text-align: center; color: black; margin: 0 auto;" class="testo">
-            <h2>Pagina Resi</h2>
+            <h2 style="margin: 0px;">Pagina Resi</h2>
         </div>
         <center>
             <div class="col-lg-10 text-center">
@@ -19,7 +19,7 @@
                 <asp:Button ID="btnRecensione" class="btn masterButton" runat="server" Text="Effettua Recensione" OnClick="btnRecensione_Click" />
             </div>
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body" style="padding-top: 0px;">
                         <div class="row text-center">
                             <div class="col">
                                 <br />
@@ -31,9 +31,7 @@
                                                     <asp:Image ID="Image" runat="server" DataField="IMMAGINE" Mode="ReadOnly" ImageUrl="IMMAGINEprodotto" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-
-                                            <asp:BoundField DataField="chiaveprodotto" HeaderText="IDProdotto" Visible="true" InsertVisible="False" SortExpression="chiaveprodotto" />
-
+                                            <asp:BoundField DataField="chiaveprodotto" HeaderText="ID Prodotto" Visible="true" InsertVisible="False" SortExpression="chiaveprodotto" />
                                             <asp:BoundField DataField="TITOLO" HeaderText="TITOLO" SortExpression="TITOLO" />
                                             <asp:BoundField DataField="DESCRIZIONE" HeaderText="DESCRIZIONE" SortExpression="DESCRIZIONE" />
                                             <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
@@ -52,11 +50,10 @@
                                         </SelectParameters>
                                     </asp:SqlDataSource>
                             </div>
-
-                            <%--<div align="center">
-                                <asp:Button ID="btnReso" class="btn masterButton" runat="server" Text="Effettua Reso" OnClick="btnReso_Click"/>
+                            <div align="center">
+                                <asp:Button ID="btnReso" class="btn masterButton" runat="server" Text="Effettua Reso" OnClick="btnReso_Click" />
                                 <asp:Button ID="btnRecensione" class="btn masterButton" runat="server" Text="Effettua Recensione" OnClick="btnRecensione_Click" />
-                            </div>--%>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -94,6 +91,7 @@
         <br />
         <div class="close-btn-wrapper">
         </div>
+
     </asp:Panel>
 </asp:Content>
 

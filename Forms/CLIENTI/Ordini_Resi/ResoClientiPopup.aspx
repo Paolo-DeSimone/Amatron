@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ResoClientiPopup.aspx.cs" Inherits="ResoClientiPopup" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ResoClientiPopup.aspx.cs" Inherits="ResoClientiPopup" %>
 
 <!DOCTYPE html>
 

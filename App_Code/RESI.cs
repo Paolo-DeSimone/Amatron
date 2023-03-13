@@ -66,6 +66,10 @@ public class RESI
         return dt;
     }
 
+    /// <summary>
+    /// Ritorna 1 se il reso di uno specifico ordine è stato effettuato, 0 se NON è stato effettuato.
+    /// </summary>
+    /// <returns></returns>
     public DataTable SelectCount()
     {
         DataTable dt = new DataTable();

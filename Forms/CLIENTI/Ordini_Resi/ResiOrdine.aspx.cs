@@ -1,4 +1,4 @@
-﻿using Microsoft.SqlServer.Server;
+using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -67,14 +67,15 @@ public partial class _Default : System.Web.UI.Page
         RESI R = new RESI();
         DataTable DT = new DataTable();
         R.chiaveOrdine = int.Parse(Session["chiaveordine"].ToString());
-        //DT = R.SelectCount();
-        //if (DT.Rows.Count > 0)
-        //{
-        //    //non funziona l'alert ma solo il return
-        //    string script = "notifyError('Hai già effettuato il reso per quest'ordine');";
-        //    ScriptManager.RegisterStartupScript(this, GetType(), "btnReso_Click", script, true);
-        //    return;
-        //}
+        // SelectCount ritorna 1 se il reso di uno specifico ordine è stato effettuato, 0 se NON è stato effettuato.
+        DT = R.SelectCount();
+        if (int.Parse(DT.Rows[0][0].ToString()) > 0)
+        {
+            // L'ALERT DEVE ESSER FATTO FUNZIONARE PERCHè LA GRIGLIA MOSTRA TUTTI GLI ORDINI, SENZA DISCRIMINARE QUELLI CHE SONO STATI RESI E QUELLI NON RESI
+            string script = "notifyError('Hai già effettuato il reso per quest'ordine');";
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnReso_Click", script, true);
+            return;
+        }
         if (grdreso.SelectedValue == null)
         {
             string script = "notifyError('Selezionare un Prodotto per effettuare un reso');";

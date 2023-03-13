@@ -31,7 +31,7 @@
                         <div class="card-body p-4 p-md-5">
                             <div class="row align-items-center">
                                 <div class="col-lg-8">
-                                    <asp:Literal ID="ltlCostoPrime" runat="server">Costo AMATRON PRIME:</asp:Literal>
+                                    <asp:Literal ID="ltlCostoPrime" runat="server">Percentuale sconto AMATRON PRIME:</asp:Literal>
                                 </div>
                                 <div class="col-lg-4">
                                     <asp:TextBox ID="txtCostoPrime" class="form-control" runat="server"></asp:TextBox>

@@ -55,14 +55,14 @@
                                     <div class="masterHideScroll masterCardHeight">
                                         <asp:UpdatePanel runat="server">
                                             <ContentTemplate>
-                                                <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged" AutoGenerateColumns="False">
+                                                <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="chiaveORDINI" >
                                                     <SelectedRowStyle BackColor="LightGray" />
                                                     <Columns>
                                                         <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUM ORD" SortExpression="NUMEROORDINE" />
                                                         <asp:BoundField DataField="COGNOME" HeaderText="COGNOME" SortExpression="COGNOME" />
                                                         <asp:BoundField DataField="NOME" HeaderText="NOME" SortExpression="NOME" />
                                                         <asp:BoundField DataField="RAGIONESOCIALE" HeaderText="RAG.SOC.VEND" SortExpression="RAGIONESOCIALE" />
-                                                        <asp:BoundField DataField="DATATRANSAZIONE_ORDINI" HeaderText="DATA TRANSAZIONE" SortExpression="DATATRANSAZIONE_ORDINI" DataFormatString="{0:D}"/>
+                                                        <asp:BoundField DataField="DATATRANSAZIONE_ORDINI" HeaderText="DATA TRANSAZIONE" SortExpression="DATATRANSAZIONE_ORDINI" DataFormatString="{0:d}"/>
                                                         <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
                                                         <asp:BoundField DataField="QTA_ORDINI" HeaderText="QTA" SortExpression="QTA_ORDINI" />
                                                         <asp:BoundField DataField="STATO" HeaderText="STATO" SortExpression="STATO" Visible="False" />

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ResoClientiPopup.aspx.cs" Inherits="ResoClientiPopup" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ResoClientiPopup.aspx.cs" Inherits="ResoClientiPopup" %>
 
 <!DOCTYPE html>
 
@@ -20,11 +20,9 @@
         <!-- TITOLO PRODOTTO RESO -->
         <div class="container">
             <div class="row mt-2">
-
                 <div class="col">
                     <asp:Label ID="lblChiaveProdotto" runat="server" Text="Prodotto: " class="control-label col-sm-4"></asp:Label>
                     <asp:Label ID="lblTitolo" Text="" runat="server" Font-Bold="True"></asp:Label>
-
                 </div>
             </div>
             <!-- COMPILAZIONE CAMPI -->
@@ -38,29 +36,21 @@
             <div class="row mt-2">
                 <!-- QTA RESA -->
                 <div class="col-md-6">
-
                     <asp:Label ID="lbl" runat="server" Text="Quantità Reso: "></asp:Label>
                     <asp:Label ID="lblQta" runat="server" Text="" Font-Bold="True"></asp:Label>
-
                 </div>
             </div>
             <div>
                 <!-- RIMBORSO -->
                 <div class="col-md-6">
-
                     <asp:Label ID="lblRimborso" runat="server" Text="Rimborso: &euro;"></asp:Label>
-                    <b>
-                        <asp:Label ID="lblImporto" runat="server"></asp:Label></b>
-
+                   <b> <asp:Label ID="lblImporto" runat="server"></asp:Label></b>
                 </div>
             </div>
             <!-- BOTTONE EFFETTUA RESO -->
-            <!-- non mandare l'ACCETTAZIONE perchè deve approvare AMATRON -->
             <div class="row mt-2">
                 <div align="right">
-
-                    <asp:Button ID="btnReso" class="btn masterButton sm" runat="server" Text="EFFETTUA RESO" OnClick="btnReso_Click" />
-
+                    <asp:Button ID="btnReso" class="btn masterButton sm" runat="server" Text="Effettua reso" OnClick="btnReso_Click" />
                 </div>
             </div>
         </div>

@@ -133,7 +133,7 @@
                                     <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" Visible="False" />
                                     <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
                                     <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" DataFormatString="{0:C}" SortExpression="PREZZO" />
-                                    <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" SortExpression="PERCAMATRON" />
+                                    <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" DataFormatString="{0:0}%" SortExpression="PERCAMATRON" />
                                     <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATA VEND" SortExpression="DATATRANSAZIONE" ApplyFormatInEditMode="true" DataFormatString="{0:d}" />
                                     <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
                                     <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUM. ORD." SortExpression="NUMEROORDINE" />

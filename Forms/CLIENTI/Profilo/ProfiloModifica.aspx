@@ -139,7 +139,7 @@
 
             <%--Amatron prime card--%>
             <div class="col-lg-3">
-                <div class="card colore bianco " style="height: 300px; width: 446.5px;">
+                <div class="card colore bianco " style="height: 300px; width: 446.5px; padding:10px;">
                     <%--<div class="card-header text-center">
                     <h4 class="card-title">Amatron Prime</h4>
                 </div>--%>
@@ -157,7 +157,9 @@
                     <%-- Introduzione di uno script manager --%>
                     <asp:ScriptManager ID="ScriptManager1" runat="server">
                     </asp:ScriptManager>
-
+                    <div style="margin:0 auto; margin-right:110px;">
+                    <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnApri_Click"/>
+                    </div>
                     <%-- pulsante che apre il popup --%>
                     <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" />
                     <%--<asp:Button ID="btnIscriviti" runat="server" class=" btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnIscriviti_Click" />--%>
@@ -192,5 +194,4 @@
             </div>
         </div>
     </div>
-
 </asp:Content>

@@ -110,6 +110,13 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnFiltraNomeCliente_Click(object sender, EventArgs e)
     {
+        if(String.IsNullOrEmpty(txtFiltraNomeCliente.Text))
+        {
+            grdSTATO.DataSourceID = "sdsNoFilter";
+        } else
+        {
+            grdSTATO.DataSourceID = "sdsFilter";
+        }
         grdSTATO.DataBind();
     }
 }

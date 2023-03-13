@@ -119,9 +119,7 @@
     <br />
 
     <div class="container mt-1">
-        <div class="row">
-            <div id="contenitoreRecensioni" class="col-md-4 offset-md-5 scrollo border-0" style="height: fit-content" runat="server">
-            </div>
+        <div class="scrollo border-0" id="contenitoreRecensioni" style="height: fit-content" runat="server">
         </div>
     </div>
 

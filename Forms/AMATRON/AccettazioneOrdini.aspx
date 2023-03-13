@@ -52,10 +52,9 @@
                             <div class="row align-items-center">
                                 <div class="col-lg-12">
                                     <%--GRIGLIA ORDINI--%>
-                                    <div class="masterHideScroll masterCardHeight">
+                                    <div class="table-responsive" style="overflow-y:auto; width:100%; max-height:500px;">
                                         <asp:UpdatePanel runat="server">
                                             <ContentTemplate>
-
                                                 <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="chiaveORDINI">
                                                     <SelectedRowStyle BackColor="LightGray" />
                                                     <Columns>

@@ -14,19 +14,25 @@
         $(function () {
             $
         })
-
+        function NotifyAcquisto() {
+            notifySuccess('Il tuo acquisto è avvenuto con successo');
+        }
     </script>
     <div class="container">
         <%-- Titolo della pagina --%>
-        <div class="CardMargine ">
-            <h2>
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
-                    <path d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434L7.752.066ZM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567L4.25 7.504ZM7.5 9.933l-2.75 1.571v3.134l2.75-1.571V9.933Zm1 3.134 2.75 1.571v-3.134L8.5 9.933v3.134Zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567-2.742 1.567Zm2.242-2.433V3.504L8.5 5.076V8.21l2.75-1.572ZM7.5 8.21V5.076L4.75 3.504v3.134L7.5 8.21ZM5.258 2.643 8 4.21l2.742-1.567L8 1.076 5.258 2.643ZM15 9.933l-2.75 1.571v3.134L15 13.067V9.933ZM3.75 14.638v-3.134L1 9.933v3.134l2.75 1.571Z" />
-                </svg>
-                <asp:Label ID="lblProdottiInVendita" runat="server" Text="Prodotti in vendita"></asp:Label>
-            </h2>
-        </div>
-        <p>In questa sezione puoi aggiungere un nuovo prodotto da mettere in vendita, aggiungere pi&ugrave; foto ad un prodotto selezionabile dalla griglia e modificarne la quantit&agrave; una volta esaurito</p>
+        <center>
+            <div>
+                <h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                        <path d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434L7.752.066ZM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567L4.25 7.504ZM7.5 9.933l-2.75 1.571v3.134l2.75-1.571V9.933Zm1 3.134 2.75 1.571v-3.134L8.5 9.933v3.134Zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567-2.742 1.567Zm2.242-2.433V3.504L8.5 5.076V8.21l2.75-1.572ZM7.5 8.21V5.076L4.75 3.504v3.134L7.5 8.21ZM5.258 2.643 8 4.21l2.742-1.567L8 1.076 5.258 2.643ZM15 9.933l-2.75 1.571v3.134L15 13.067V9.933ZM3.75 14.638v-3.134L1 9.933v3.134l2.75 1.571Z" />
+                    </svg>
+                    <asp:Label ID="lblProdottiInVendita" runat="server" Text="Prodotti in vendita"></asp:Label>
+                </h2>
+            </div>
+        </center>
+        <center>
+            <p>In questa sezione puoi aggiungere un nuovo prodotto da mettere in vendita, aggiungere pi&ugrave; foto ad un prodotto selezionabile dalla griglia e modificarne la quantit&agrave; una volta esaurito</p>
+        </center>
         <div class="card">
 
             <%-- Body --%>
@@ -36,7 +42,7 @@
                 <div class="row mb-4 text-center">
                     <%-- I due button saranno due PopUp --%>
                     <div class=" col-md-4">
-                        <asp:Button ID="btnAggiungiProdotto" class="btn masterButton" runat="server" Text="Aggiungi Nuovo Prodotto" />
+                        <asp:Button ID="btnAggiungiProdotto" class="btn masterButton" runat="server" Text="Aggiungi Nuovo Prodotto" OnClick="btnAggiungiProdotto_Click" />
                     </div>
                     <div class=" col-md-4 ">
                         <asp:Button ID="btnAggiungiImmagini" class="btn masterButton" runat="server" Text="Aggiungi Immagine" OnClick="btnAggiungiImmagini_Click" />
@@ -75,7 +81,7 @@
                             </div>
                         </div>
                     </div>--%>
-                <div class="table-responsive" style="overflow-y: scroll; width: 100%; height: 500px;">
+                <div class="table-responsive" style="overflow-y: auto; width: 100%; height: 500px;">
 
                     <%-- QUI INSERIRò LA GRIDVIEW AL POSTO DELLE COL E DELLE ROW PER POPOLARE LA PAGINA --%>
                     <asp:GridView ID="gridVisualizzaProdotti" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed" DataKeyNames="chiave,chiave1" DataSourceID="sdsGRIDVisualizzaProdotti" OnSelectedIndexChanged="gridVisualizzaProdotti_SelectedIndexChanged">
@@ -93,10 +99,10 @@
                             <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" Visible="False" />
                             <asp:BoundField DataField="TITOLO" HeaderText="TITOLO" SortExpression="TITOLO" />
                             <asp:BoundField DataField="DESCRIZIONE" HeaderText="DESCRIZIONE" SortExpression="DESCRIZIONE" />
-                            <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
+                            <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" DataFormatString="&euro;{0:n}" SortExpression="PREZZO" />
                             <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
-                            <asp:BoundField DataField="DATACARICAMENTO" HeaderText="DATA CARICAMENTO" SortExpression="DATACARICAMENTO" />
-                            <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" SortExpression="PERCAMATRON" />
+                            <asp:BoundField DataField="DATACARICAMENTO" HeaderText="DATA CARICAMENTO" SortExpression="DATACARICAMENTO" DataFormatString="{0:d}" />
+                            <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" DataFormatString="{0:0}%" SortExpression="PERCAMATRON" />
                             <asp:BoundField DataField="chiave1" HeaderText="chiave1" InsertVisible="False" ReadOnly="True" SortExpression="chiave1" Visible="False" />
                             <asp:BoundField DataField="CATEGORIA" HeaderText="CATEGORIA" SortExpression="CATEGORIA" />
                             <asp:CommandField ShowSelectButton="True" ButtonType="image" SelectImageUrl="../../assets/images/spunta_button.png" ControlStyle-Height="20px" ControlStyle-Width="24px" />
@@ -124,7 +130,9 @@
         PopupControlID="Panl1"
         TargetControlID="btnAggiungiProdotto"
         CancelControlID="btnChiudiPopup"
-        BackgroundCssClass="masterPopupBG">
+        BackgroundCssClass="masterPopupBG"
+        Enabled="false"
+        OnCancelScript="NotifyAcquisto()">
     </cc1:ModalPopupExtender>
 
     <%-- contenuto del popup --%>
@@ -171,7 +179,6 @@
         runat="server"
         CssClass="masterPopup"
         align="center"
-
         Style="display: none">
         <div class="popupBoxWrapper">
             <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>

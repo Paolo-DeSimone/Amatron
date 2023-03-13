@@ -14,17 +14,17 @@
             notifySuccess('Il tuo acquisto è avvenuto con successo');
             
            
-            //$.ajax({
-            //    type: "POST",
-            //    url: "Cassa.aspx/NotifyAcquisto",
-            //    contentType: "application/json; charset=utf-8",
-            //    success: function (msg) {
-            //        notifySuccess(msg.d);
-            //    },
-            //    error: function (req, status, err) {
-            //        alert("Sono un errore");
-            //    }
-            //});
+        //    //$.ajax({
+        //    //    type: "POST",
+        //    //    url: "Cassa.aspx/NotifyAcquisto",
+        //    //    contentType: "application/json; charset=utf-8",
+        //    //    success: function (msg) {
+        //    //        notifySuccess(msg.d);
+        //    //    },
+        //    //    error: function (req, status, err) {
+        //    //        alert("Sono un errore");
+        //    //    }
+        //    //});
         }
 
 
@@ -63,7 +63,6 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-
 
     <section class="h-100 h-custom">
         <div class="container text-align-center py-3 h-100">
@@ -165,8 +164,6 @@
                                     </asp:SqlDataSource>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -174,4 +171,3 @@
         </div>
     </section>
 </asp:Content>
-

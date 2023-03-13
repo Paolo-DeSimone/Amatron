@@ -104,14 +104,15 @@ public partial class _Default : System.Web.UI.Page
         else
         {
             V.Abilita();
-            client.Send(mail); //mando mail
+            //client.Send(mail); //mando mail
                                //error
             string script = @"notifySuccess('Venditore abilitato')"; //messaggio di successo
             ScriptManager.RegisterStartupScript(this, GetType(), "btnAbilitaVenditori_Click", script, true);
 
         }
+        grigliaVenditori.DataSource = V.SelectAll();
         grigliaVenditori.DataBind();
-
+        
 
     }
     protected void btnFiltraVenditori_Click(object sender, EventArgs e)
@@ -200,13 +201,15 @@ public partial class _Default : System.Web.UI.Page
         {
 
             C.CORRIERI_Abilita();
-            client.Send(mail); //mando mail
+            //client.Send(mail); //mando mail
             string script = @"notifySuccess('Corriere abilitato')"; //messaggio di successo
             ScriptManager.RegisterStartupScript(this, GetType(), "btnAbilitaCorrieri_Click", script, true);
 
         }
+        grigliaCorrieri.DataSource = C.CORRIERI_SelectAll();
         grigliaCorrieri.DataBind();
     }
+
     protected void btnFiltraCorrieri_Click(object sender, EventArgs e)
     {
         //if (txtFiltraCorrieri.Text.Trim() == "")

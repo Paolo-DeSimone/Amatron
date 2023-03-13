@@ -228,6 +228,8 @@ social-widget a:hover {
 }
 
 .copyright {
+    margin: 0 auto;
+    background-color: #282828;
 }
 
     .copyright p {

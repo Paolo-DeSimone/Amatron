@@ -13,9 +13,7 @@ public partial class AMATRON_PopupPaypalAMATRON : System.Web.UI.Page
 
     protected void payInput_ValueChanged(object sender, EventArgs e)
     {
-        int totaleCarrello = int.Parse(Session["TotaleCarrello"].ToString());
-
-        
+        int totaleCarrello = int.Parse(Session["TotaleCarrello"].ToString());       
     }
     
 }

@@ -1,8 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PopupPaypalAMATRON.aspx.cs" Inherits="AMATRON_PopupPaypalAMATRON" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="PopupPaypalAMATRON.aspx.cs" Inherits="AMATRON_PopupPaypalAMATRON" %>
 
-<!DOCTYPE html>
+<!DOCTYPE html  >
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" style="margin-top: 0px;" id="PopupPaypal" >
 <head runat="server">
 
     <%--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />--%>
@@ -15,22 +15,23 @@
     <link href="assets/css/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <style>
-        *{
+        * {
             margin: 0 auto;
             margin-top: 20px;
         }
     </style>
+    <script>
+        function closePopUpPaypal() {
+            document.getElementById("PopupPaypal").style.display = "none";
+        }
+    </script>
+
 </head>
 <body>
-    <form id="form1" runat="server">
-        
-        <%--  <div style="background-color: green; display: none"; id="transition">Grazie per il tuo pagamento!</div>
-        <input type="text" id="payInput" />
-        <button onclick="generatePayment(document.getElementById('payInput').value)">Paga</button>
-        <div id="paypal-button-container"></div>--%>
+    <form runat="server">
         <div id="smart-button-container">
             <div style="text-align: center;">
-                <div id="paypal-button-container"></div>
+                <div id="paypal-button-container" style="margin-top: 0px;"></div>
             </div>
         </div>
         <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=EUR" data-sdk-integration-source="button-factory"></script>
@@ -47,7 +48,7 @@
 
                     createOrder: function (data, actions) {
                         return actions.order.create({
-                            purchase_units: [{ "amount": { "currency_code": "EUR", "value": 1 } }]
+                            purchase_units: [{ "amount": { "currency_code": "EUR", "value": 100 } }]
                         });
                     },
 

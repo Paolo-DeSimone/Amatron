@@ -37,29 +37,31 @@ public partial class Default2 : System.Web.UI.Page
                     lit.InnerHtml += "<div class='col-lg-1'></div>";
 
                 }
-                VALUTAZIONI V = new VALUTAZIONI();
-                V.chiaveprodotto = int.Parse(dt.Rows[j]["chiave"].ToString());
-                DataTable DT = V.Media();
-
                 string titolo = dt.Rows[j]["titolo"].ToString();
                 string prezzo = dt.Rows[j]["prezzo"].ToString();
                 string descrizione = dt.Rows[j]["descrizione"].ToString();
                 lit.InnerHtml += "<div class='col-lg-2 scrollo' style='height: 350px; overflow-y: scroll; overflow-x: hidden'>";
                 //lit.InnerHtml += "<asp:ImageButton ID='ImageButton1' runat='server' CssClass='image' ImageUrl='/AsyncHandler.ashx?c=" + chiave + "' /> ";
                 //lit.InnerHtml += "<img id='" + chiave + "' onclick=\"showPopup(" + chiave + ",'" + titolo + "','" + descrizione + "')\" class='image' src='/AsyncHandler.ashx?c=" + chiave + "' />";
-                lit.InnerHtml += "<a href='/Forms/PRODOTTI/PaginaProdotto.aspx?c=" + dt.Rows[j]["chiave"] +"' >";
+                lit.InnerHtml += "<a href='/Forms/PRODOTTI/PaginaProdotto.aspx?c=" + dt.Rows[j]["chiave"] + "' >";
                 lit.InnerHtml += "<img src='/Img.ashx?c=" + dt.Rows[j]["chiave"] + "' class='d-block w-100' alt='Product Image 1' style='height:200px'/>";
                 lit.InnerHtml += "<p style='margin:0px;'><b>";
                 lit.InnerHtml += titolo;
                 lit.InnerHtml += "</b></p>";
 
-                for (int y = 0; y < int.Parse(DT.Rows[j]["MEDIA"].ToString()); y++)
+                VALUTAZIONI V = new VALUTAZIONI();
+                V.chiaveprodotto = int.Parse(dt.Rows[j]["chiave"].ToString());
+                DataTable DT = V.Media();
+                if (String.IsNullOrEmpty(DT.Rows[0]["MEDIA"].ToString()))
                 {
-                    lit.InnerHtml += "<img style =\"width:20px; height:20px;\" src='/assets/images/yellowstar.png'>";
+
                 }
-                for (int k = int.Parse(DT.Rows[j]["MEDIA"].ToString()); k < 5; k++)
+                else
                 {
-                    lit.InnerHtml += "<img style =\"width:20px; height:20px;\" src='/assets/images/whitestar.png'>";
+                    for (int y = 0; y < int.Parse(DT.Rows[0]["MEDIA"].ToString()); y++)
+                    {
+                    lit.InnerHtml += "<img style =\"width:20px; height:20px;\" src='/assets/images/yellowstar.png'>";
+                    }
                 }
 
                 lit.InnerHtml += "<p style='margin:0px;'>";
@@ -69,7 +71,7 @@ public partial class Default2 : System.Web.UI.Page
                 lit.InnerHtml += "" + descrizione + "";
                 lit.InnerHtml += "</a>";
                 lit.InnerHtml += "</div>";
-                
+
                 if (i == 4)
                 {
                     lit.InnerHtml += "<div class='col-lg-1'></div>";

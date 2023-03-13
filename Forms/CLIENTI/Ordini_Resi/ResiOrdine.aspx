@@ -22,22 +22,22 @@
                                 <center>
                                     <asp:GridView ID="grdreso" class="table" runat="server" CssClass="table table-bordered table-condensed" AutoGenerateColumns="False" DataKeyNames="chiaveprodotto" DataSourceID="sdsResi" OnSelectedIndexChanged="grdreso_SelectedIndexChanged">
                                         <Columns>
-                                             <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="IMMAGINEprodotto" SortExpression="IMMAGINEprodotto">
+                                            <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="IMMAGINE" SortExpression="IMMAGINEprodotto">
                                                 <ItemTemplate>
                                                     <asp:Image ID="Image" runat="server" DataField="IMMAGINE" Mode="ReadOnly" ImageUrl="IMMAGINEprodotto" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
 
-                                            <asp:BoundField DataField="chiaveprodotto" HeaderText="ID Prodotto" Visible="true" InsertVisible="False" SortExpression="chiaveprodotto"/>
+                                            <asp:BoundField DataField="chiaveprodotto" HeaderText="ID Prodotto" Visible="true" InsertVisible="False" SortExpression="chiaveprodotto" />
 
                                             <asp:BoundField DataField="TITOLO" HeaderText="TITOLO" SortExpression="TITOLO" />
                                             <asp:BoundField DataField="DESCRIZIONE" HeaderText="DESCRIZIONE" SortExpression="DESCRIZIONE" />
                                             <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
                                             <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
-                                            <asp:BoundField DataField="chiaveordine" HeaderText="chiaveordine" Visible="true" InsertVisible="False" SortExpression="chiaveordine"/>
-                                            <asp:CommandField ShowSelectButton="True" ButtonType="Image" ControlStyle-Height="20px" ControlStyle-Width="24px" SelectImageUrl="/assets/images/spunta_button.png" >
-<ControlStyle Height="20px" Width="24px"></ControlStyle>
-                                             </asp:CommandField>
+                                            <asp:BoundField DataField="chiaveordine" HeaderText="N° Ordine" InsertVisible="False" SortExpression="chiaveordine" />
+                                            <asp:CommandField ShowSelectButton="True" ButtonType="Image" ControlStyle-Height="20px" ControlStyle-Width="24px" SelectImageUrl="/assets/images/spunta_button.png">
+                                                <ControlStyle Height="20px" Width="24px"></ControlStyle>
+                                            </asp:CommandField>
                                         </Columns>
                                         <SelectedRowStyle BackColor="LightGray" />
                                         <HeaderStyle BackColor="#B469FF" />
@@ -47,10 +47,9 @@
                                             <asp:SessionParameter Name="chiaveCLIENTE" SessionField="chiaveUSR" Type="Int32" />
                                         </SelectParameters>
                                     </asp:SqlDataSource>
-
                             </div>
                             <div align="center">
-                                <asp:Button ID="btnReso" class="btn masterButton" runat="server" Text="Effettua Reso" OnClick="btnReso_Click"/>
+                                <asp:Button ID="btnReso" class="btn masterButton" runat="server" Text="Effettua Reso" OnClick="btnReso_Click" />
                                 <asp:Button ID="btnRecensione" class="btn masterButton" runat="server" Text="Effettua Recensione" OnClick="btnRecensione_Click" />
 
                             </div>
@@ -64,15 +63,15 @@
             </div>
         </center>
     </div>
-     <%-- Script Manager --%>
+    <%-- Script Manager --%>
     <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
     <%-- chiamata del popup --%>
-    <cc1:ModalPopupExtender id="mp1" runat="server"
+    <cc1:ModalPopupExtender ID="mp1" runat="server"
         PopupControlID="Panel1"
         TargetControlID="btnReso"
-        cancelControlID="btnChiudiPopupReso"
-        BackGroundCssClass="masterPopupBG"
+        CancelControlID="btnChiudiPopupReso"
+        BackgroundCssClass="masterPopupBG"
         Enabled="false">
     </cc1:ModalPopupExtender>
     <%-- contenuto del popup --%>

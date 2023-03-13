@@ -15,7 +15,10 @@ public partial class _Default : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
-        
+        if (IsPostBack)
+        {
+            gridVisualizzaProdotti.DataBind();
+        }
         //lavoriamo sul postback true
         //if (!IsPostBack)
         //{
@@ -82,7 +85,7 @@ public partial class _Default : System.Web.UI.Page
 
         if (QTA != 0.ToString())
         {
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "notifyError('Il prodotto selezionato risulta ancora in vendita, selezionare un prodotto esaurito');", true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "notifyError('Selezionare un prodotto esaurito');", true);
             return;
         }
         else
@@ -115,12 +118,28 @@ public partial class _Default : System.Web.UI.Page
         return;
     }
 
-    public void closePopup()
+    //funzione per la chiusura di popup gestisci inventario
+    public void closePopupGestisciInventario()
     {
-
         Session.Remove("chiaveProdottoEsaurito");
         ModalPopupExtender1.Hide();
         ModalPopupExtender1.Enabled = false;
+    }
+    //funzione per la chiusura di popup aggiungi prodotti
+    public void closePopupAggiungiProdotto()
+    {
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "success", "notifySuccess('Prodotto aggiunto con successo');", true);
+        mp1.Hide();
+        mp1.Enabled = false;
+        return;
+    }
+    //funzione per la chiusura di popup aggiungi immagini
+    public void closePopupAggiungiImmagine()
+    {
+        ModalPopupExtender2.Hide();
+        ModalPopupExtender2.Enabled = false;
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "success", "notifySuccess('Prodotto aggiunto con successo');", true);
+        return;
     }
 
 
@@ -146,4 +165,10 @@ public partial class _Default : System.Web.UI.Page
     //    GridViewRow row = (GridViewRow)chkStatus.NamingContainer;
     //}
 
+
+    protected void btnAggiungiProdotto_Click(object sender, EventArgs e)
+    {
+        mp1.Enabled = true;
+        mp1.Show();
+    }
 }

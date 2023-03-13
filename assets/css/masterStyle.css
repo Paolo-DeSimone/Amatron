@@ -147,13 +147,13 @@ footer {
     display:block;
     background-color: #282828;
     color: #aba8a8;
-    height: 47vh;
+    height: fit-content;
     margin-top: 170px;
-    overflow:unset;
+    overflow: unset;
 }
 
 .footer-widget {
-    /background-color:#ff9800a1;
+    /*background-color:#ff9800a1;*/
     margin: 0 10px;
     text-align: justify;
 }
@@ -228,6 +228,8 @@ social-widget a:hover {
 }
 
 .copyright {
+    margin: 0 auto;
+    background-color: #282828;
 }
 
     .copyright p {

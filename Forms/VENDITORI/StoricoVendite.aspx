@@ -64,17 +64,17 @@
 
                             <div class="col-lg-2">
 
-                                <asp:Label ID="Label2" runat="server" Text="Numero Ordine"></asp:Label>
+                                <asp:Label ID="Label2" runat="server" Text="Numero Ordine:"></asp:Label>
                             </div>
 
                             <div class="col-lg-2">
 
-                                <asp:Label ID="Label3" runat="server" Text="Data inizio"></asp:Label>
+                                <asp:Label ID="Label3" runat="server" Text="Data inizio:"></asp:Label>
                             </div>
 
                             <div class="col-lg-2">
 
-                                <asp:Label ID="Label4" runat="server" Text="Data fine"></asp:Label>
+                                <asp:Label ID="Label4" runat="server" Text="Data fine:"></asp:Label>
                             </div>
                         </div>
                         <div class="row">
@@ -118,7 +118,7 @@
 
                 <div class="row mt-3">
                     <div class="col-lg-8">
-                        <div class="table-responsive" style="overflow-y: scroll; width: 100%; height: 500px;">
+                        <div class="table-responsive" style="overflow-y: auto; width: 100%; height: 500px;">
                             <asp:GridView ID="GrigliaStoricoVendite" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed">
                                 <Columns>
                                     <asp:BoundField DataField="chiavePRODOTTI" HeaderText="chiavePRODOTTI" SortExpression="chiavePRODOTTI" Visible="False" />
@@ -126,7 +126,7 @@
                                     <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False" />
                                     <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" Visible="False" />
                                     <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
-                                    <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" DataFormatString="{0:C}" SortExpression="PREZZO" />
+                                    <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" DataFormatString="€{0:0}" SortExpression="PREZZO" />
                                     <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" DataFormatString="{0:0}%" SortExpression="PERCAMATRON" />
                                     <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATA VEND" SortExpression="DATATRANSAZIONE" ApplyFormatInEditMode="true" DataFormatString="{0:d}" />
                                     <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />

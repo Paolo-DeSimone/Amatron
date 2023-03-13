@@ -28,14 +28,16 @@
                                                 </ItemTemplate>
                                             </asp:TemplateField>
 
-                                            <asp:BoundField DataField="chiaveprodotto" HeaderText="chiaveprodotto" Visible="true" InsertVisible="False" SortExpression="chiaveprodotto"/>
+                                            <asp:BoundField DataField="chiaveprodotto" HeaderText="ID Prodotto" Visible="true" InsertVisible="False" SortExpression="chiaveprodotto"/>
 
                                             <asp:BoundField DataField="TITOLO" HeaderText="TITOLO" SortExpression="TITOLO" />
                                             <asp:BoundField DataField="DESCRIZIONE" HeaderText="DESCRIZIONE" SortExpression="DESCRIZIONE" />
                                             <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
                                             <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
                                             <asp:BoundField DataField="chiaveordine" HeaderText="chiaveordine" Visible="true" InsertVisible="False" SortExpression="chiaveordine"/>
-                                            <asp:CommandField ShowSelectButton="True" ButtonType="Image" ControlStyle-Height="20px" ControlStyle-Width="24px" SelectImageUrl="/assets/images/spunta_button.png" />
+                                            <asp:CommandField ShowSelectButton="True" ButtonType="Image" ControlStyle-Height="20px" ControlStyle-Width="24px" SelectImageUrl="/assets/images/spunta_button.png" >
+<ControlStyle Height="20px" Width="24px"></ControlStyle>
+                                             </asp:CommandField>
                                         </Columns>
                                         <SelectedRowStyle BackColor="LightGray" />
                                         <HeaderStyle BackColor="#B469FF" />

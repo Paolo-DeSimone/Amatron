@@ -209,3 +209,15 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.pulsantecazzo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    background: none;
+    padding: 5px;
+    margin-left: 4px;
+}

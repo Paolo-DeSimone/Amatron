@@ -72,8 +72,7 @@ public partial class _Default : System.Web.UI.Page
         if (int.Parse(DT.Rows[0][0].ToString()) > 0)
         {
             // L'ALERT DEVE ESSER FATTO FUNZIONARE PERCHè LA GRIGLIA MOSTRA TUTTI GLI ORDINI, SENZA DISCRIMINARE QUELLI CHE SONO STATI RESI E QUELLI NON RESI
-            string script = "notifyError('Hai già effettuato il reso per quest'ordine');";
-            ScriptManager.RegisterStartupScript(this, GetType(), "btnReso_Click", script, true);
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "notifyError('Hai già effettuato il reso');", true);
             return;
         }
         if (grdreso.SelectedValue == null)

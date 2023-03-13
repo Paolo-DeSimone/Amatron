@@ -10,8 +10,6 @@ using System.Web.UI.WebControls;
 public partial class _Default : System.Web.UI.Page
 {
 
-    protected DataTable SelectedSPED;
-
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -32,13 +30,6 @@ public partial class _Default : System.Web.UI.Page
 
     }
 
-    protected void grdSTATO_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        SPEDIZIONI SPE = new SPEDIZIONI();
-        SPE.chiave = int.Parse(grdSTATO.SelectedValue.ToString());
-        SelectedSPED = SPE.SPEDIZIONI_SelectByKey();
-    }
-
     protected void btnStato_Click(object sender, EventArgs e)
     {
         //controllo se viene prima selezionata una riga dalla tabella
@@ -48,6 +39,11 @@ public partial class _Default : System.Web.UI.Page
             ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripter4, true);
             return;
         }
+
+        SPEDIZIONI SPE = new SPEDIZIONI();
+        SPE.chiave = int.Parse(grdSTATO.SelectedValue.ToString());
+        DataTable SelectedSPED = SPE.SPEDIZIONI_SelectByKey();
+
         //controllo se lo stato della spedizione è già a prodotto consegnato, non faccio nulla
         if (SelectedSPED.Rows[0]["STATO"].ToString() == "D")
         {
@@ -56,12 +52,12 @@ public partial class _Default : System.Web.UI.Page
             return;
         }
 
-        SPEDIZIONI SPE = new SPEDIZIONI();
         SPE.chiaveORDINE = int.Parse(SelectedSPED.Rows[0]["chiaveORDINE"].ToString());
         string stato_pre_update = SelectedSPED.Rows[0]["STATO"].ToString();
-        SPE.DATAORA = DateTime.Now.ToString("dd/MM/yy");
+        SPE.DATAORA = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
         EMAIL E = new EMAIL();
         EMAIL EM = new EMAIL();
+
         string notifyString = "";
 
         switch (stato_pre_update)

@@ -61,13 +61,9 @@ public partial class Forms_VENDITORI_AggiungiImmagini : System.Web.UI.Page
         I.doc = ImgData;
         I.tipo = tipo;
         I.Insert();
-
-        DataBind();
-
         //string script = @"notifySuccess('Modifica avvenuta con successo!')";
         //ScriptManager.RegisterStartupScript(this, GetType(), "btnSalva_Click", script, true);
-        ClientScript.RegisterStartupScript(this.GetType(), "SUCCESSO", "alert('Modifica avvenuta con successo!');", true);
-        return;
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "closePopupAggiungiImmagine", "window.parent.location.href='/Forms/VENDITORI/VisualizzaProdotti.aspx';", true);
     }
 
 }

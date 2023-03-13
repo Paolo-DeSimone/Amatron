@@ -14,7 +14,9 @@
         $(function () {
             $
         })
-
+        function NotifyAcquisto() {
+            notifySuccess('Il tuo acquisto è avvenuto con successo');
+        }
     </script>
     <div class="container">
         <%-- Titolo della pagina --%>
@@ -36,7 +38,7 @@
                 <div class="row mb-4 text-center">
                     <%-- I due button saranno due PopUp --%>
                     <div class=" col-md-4">
-                        <asp:Button ID="btnAggiungiProdotto" class="btn masterButton" runat="server" Text="Aggiungi Nuovo Prodotto" />
+                        <asp:Button ID="btnAggiungiProdotto" class="btn masterButton" runat="server" Text="Aggiungi Nuovo Prodotto" OnClick="btnAggiungiProdotto_Click" />
                     </div>
                     <div class=" col-md-4 ">
                         <asp:Button ID="btnAggiungiImmagini" class="btn masterButton" runat="server" Text="Aggiungi Immagine" OnClick="btnAggiungiImmagini_Click" />
@@ -75,7 +77,7 @@
                             </div>
                         </div>
                     </div>--%>
-                <div class="table-responsive" style="overflow-y: scroll; width: 100%; height: 500px;">
+                <div class="table-responsive" style="overflow-y: auto; width: 100%; height: 500px;">
 
                     <%-- QUI INSERIRò LA GRIDVIEW AL POSTO DELLE COL E DELLE ROW PER POPOLARE LA PAGINA --%>
                     <asp:GridView ID="gridVisualizzaProdotti" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed" DataKeyNames="chiave,chiave1" DataSourceID="sdsGRIDVisualizzaProdotti" OnSelectedIndexChanged="gridVisualizzaProdotti_SelectedIndexChanged">
@@ -93,10 +95,10 @@
                             <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" Visible="False" />
                             <asp:BoundField DataField="TITOLO" HeaderText="TITOLO" SortExpression="TITOLO" />
                             <asp:BoundField DataField="DESCRIZIONE" HeaderText="DESCRIZIONE" SortExpression="DESCRIZIONE" />
-                            <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" SortExpression="PREZZO" />
+                            <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" DataFormatString="€{0:0}" SortExpression="PREZZO" />
                             <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
-                            <asp:BoundField DataField="DATACARICAMENTO" HeaderText="DATA CARICAMENTO" SortExpression="DATACARICAMENTO" />
-                            <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" SortExpression="PERCAMATRON" />
+                            <asp:BoundField DataField="DATACARICAMENTO" HeaderText="DATA CARICAMENTO" SortExpression="DATACARICAMENTO" DataFormatString="{0:d}" />
+                            <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" DataFormatString="{0:0}%" SortExpression="PERCAMATRON" />
                             <asp:BoundField DataField="chiave1" HeaderText="chiave1" InsertVisible="False" ReadOnly="True" SortExpression="chiave1" Visible="False" />
                             <asp:BoundField DataField="CATEGORIA" HeaderText="CATEGORIA" SortExpression="CATEGORIA" />
                             <asp:CommandField ShowSelectButton="True" ButtonType="image" SelectImageUrl="../../assets/images/spunta_button.png" ControlStyle-Height="20px" ControlStyle-Width="24px" />
@@ -124,7 +126,9 @@
         PopupControlID="Panl1"
         TargetControlID="btnAggiungiProdotto"
         CancelControlID="btnChiudiPopup"
-        BackgroundCssClass="masterPopupBG">
+        BackgroundCssClass="masterPopupBG"
+        Enabled="false"
+        OnCancelScript="NotifyAcquisto()">
     </cc1:ModalPopupExtender>
 
     <%-- contenuto del popup --%>
@@ -171,7 +175,6 @@
         runat="server"
         CssClass="masterPopup"
         align="center"
-
         Style="display: none">
         <div class="popupBoxWrapper">
             <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>

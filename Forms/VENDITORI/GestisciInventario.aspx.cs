@@ -16,6 +16,7 @@ public partial class Venditori_GestisciInventario : System.Web.UI.Page
         //il campo QTA può essere riempito solamente se un prodotto ha quantita 0
         if (!IsPostBack)
         {
+            
             if (Session["chiaveProdottoEsaurito"] == null)
             {
 
@@ -76,8 +77,6 @@ public partial class Venditori_GestisciInventario : System.Web.UI.Page
 
         //Mando a schermo una notifica di avvenuta modifica
         Session["chiaveProdottoEsaurito"] = "";
-        ScriptManager.RegisterStartupScript(this, this.GetType(), "closePopup", "window.parent.location.href='/Forms/VENDITORI/VisualizzaProdotti.aspx';", true);
-
-        
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "closePopupGestisciInventario", "window.parent.location.href='/Forms/VENDITORI/VisualizzaProdotti.aspx';", true);
     }
 }

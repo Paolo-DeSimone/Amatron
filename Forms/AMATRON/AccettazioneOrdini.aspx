@@ -52,6 +52,7 @@
                                     <div class="masterHideScroll masterCardHeight">
                                         <asp:UpdatePanel runat="server">
                                             <ContentTemplate>
+
                                                 <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="chiaveORDINI">
                                                     <SelectedRowStyle BackColor="LightGray" />
                                                     <Columns>

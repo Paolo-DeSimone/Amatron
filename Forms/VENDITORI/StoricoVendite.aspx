@@ -95,14 +95,8 @@
                                 </div>
                             </div>
                             <div class="col-lg-2">
-                                <asp:DropDownList ID="ddlNOrdine" AppendDataBoundItems="true" Class="form-control form-control" runat="server" DataSourceID="SqlDataSource2" DataTextField="NUMEROORDINE" DataValueField="chiaveORDINI">
-                                    <asp:ListItem Value="0">Tutti gli ordini</asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_PRODOTTI_CATEGORIA_SelectDDL" SelectCommandType="StoredProcedure">
-                                    <SelectParameters>
-                                        <asp:SessionParameter DefaultValue="" Name="chiaveVENDITORE" SessionField="chiaveUSR" Type="Int32" />
-                                    </SelectParameters>
-                                </asp:SqlDataSource>
+                                <asp:TextBox ID="txtNumeroOrdine" Class="form-control" runat="server" TextMode="Number"></asp:TextBox>
+                         
                             </div>
                             <div class="col-lg-2">
                                 <asp:TextBox ID="txtDInizio" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
@@ -133,7 +127,7 @@
                                     <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" Visible="False" />
                                     <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
                                     <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" DataFormatString="{0:C}" SortExpression="PREZZO" />
-                                    <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" SortExpression="PERCAMATRON" />
+                                    <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" DataFormatString="{0:0}%" SortExpression="PERCAMATRON" />
                                     <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATA VEND" SortExpression="DATATRANSAZIONE" ApplyFormatInEditMode="true" DataFormatString="{0:d}" />
                                     <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
                                     <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUM. ORD." SortExpression="NUMEROORDINE" />

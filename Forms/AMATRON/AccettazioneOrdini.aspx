@@ -28,10 +28,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-2">
-                                        <asp:DropDownList ID="ddlUTENTE" AppendDataBoundItems="true" runat="server" CssClass="form-select" DataSourceID="SqlDataSource1" DataTextField="Column1" DataValueField="chiaveCLIENTE">
-                                            <asp:ListItem Value="0">Seleziona</asp:ListItem>
-                                        </asp:DropDownList>
-                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_CLIENTI_ddl" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                                        <asp:TextBox ID="txtNominativo" Class="form-control" runat="server"></asp:TextBox>
                                     </div>
                                     <div class="col-lg-2">
                                         <asp:TextBox ID="txtDInizio" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
@@ -40,9 +37,11 @@
                                         <asp:TextBox ID="txtDFine" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
 
                                     </div>
+                                    <%--BUTTON FILTRA ORDINI--%>
                                     <div class="col-lg-4">
                                         <asp:Button ID="btnCerca" Class="btn masterButton" runat="server" Text="Filtra" OnClick="btnCerca_Click" />
                                     </div>
+                                    <%--BUTTON ACCETTA ORDINE--%>
                                     <div class="col-lg-2 align-items-center text-end">
                                         <asp:Button ID="btnAccetta" class="btn masterButton" runat="server" Text="Accetta" OnClick="btnAccetta_Click" />
                                     </div>
@@ -52,17 +51,19 @@
                             <br />
                             <div class="row align-items-center">
                                 <div class="col-lg-12">
+                                    <%--GRIGLIA ORDINI--%>
                                     <div class="masterHideScroll masterCardHeight">
                                         <asp:UpdatePanel runat="server">
                                             <ContentTemplate>
-                                                <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged" AutoGenerateColumns="False">
+
+                                                <asp:GridView ID="grigliaOrdini" CssClass="table table-bordered table-condensed" runat="server" OnSelectedIndexChanged="grigliaOrdini_SelectedIndexChanged" AutoGenerateColumns="False" DataKeyNames="chiaveORDINI">
                                                     <SelectedRowStyle BackColor="LightGray" />
                                                     <Columns>
                                                         <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUM ORD" SortExpression="NUMEROORDINE" />
                                                         <asp:BoundField DataField="COGNOME" HeaderText="COGNOME" SortExpression="COGNOME" />
                                                         <asp:BoundField DataField="NOME" HeaderText="NOME" SortExpression="NOME" />
                                                         <asp:BoundField DataField="RAGIONESOCIALE" HeaderText="RAG.SOC.VEND" SortExpression="RAGIONESOCIALE" />
-                                                        <asp:BoundField DataField="DATATRANSAZIONE_ORDINI" HeaderText="DATA TRANSAZIONE" SortExpression="DATATRANSAZIONE_ORDINI" DataFormatString="{0:D}"/>
+                                                        <asp:BoundField DataField="DATATRANSAZIONE_ORDINI" HeaderText="DATA TRANSAZIONE" SortExpression="DATATRANSAZIONE_ORDINI" DataFormatString="{0:d}" />
                                                         <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
                                                         <asp:BoundField DataField="QTA_ORDINI" HeaderText="QTA" SortExpression="QTA_ORDINI" />
                                                         <asp:BoundField DataField="STATO" HeaderText="STATO" SortExpression="STATO" Visible="False" />
@@ -83,16 +84,9 @@
                                                     </Columns>
                                                     <HeaderStyle BackColor="#B469FF" />
                                                 </asp:GridView>
-                                                <%--<asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString2 %>" SelectCommand="spORDINI_GESTISCI" SelectCommandType="StoredProcedure"></asp:SqlDataSource>--%>
-                                                <%--<selectparameters>
-                                                    <asp:ControlParameter ControlID="ddlUTENTE" Name="chiaveCLIENTE" PropertyName="SelectedValue" Type="Int32" />
-                                                    <asp:ControlParameter ControlID="txtDInizio" Name="STARTDATE" PropertyName="Text" Type="DateTime" />
-                                                    <asp:ControlParameter ControlID="txtDFine" Name="ENDDATE" PropertyName="Text" Type="DateTime" />
-                                                </selectparameters>--%>
-                                                <%--</asp:SqlDataSource>--%>
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
-                                        <%--<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_GESTISCI" SelectCommandType="StoredProcedure"></asp:SqlDataSource>--%>                                    </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

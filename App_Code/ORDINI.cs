@@ -17,6 +17,7 @@ public class ORDINI
     public int chiavecorriere;
     public int chiaveprodotto;
     public int chiavecliente;
+    public string NOMINATIVO;
     public int qta;
     public string datatransazione;
     public string DInizio;
@@ -95,7 +96,7 @@ public class ORDINI
         return dt;
     }
 
-    //Metodo inserito per la Gestione Ordini (George D.)
+    //Metodo inserito per update Ordini (George D.)
     public void ORDINI_GESTITO()
     {
         O.ORDINI_GESTITO(chiave, chiavecorriere, gestito);
@@ -126,11 +127,11 @@ public class ORDINI
         return dt;
     }
 
-
+    //Metodo inserito per filtrare gli ordini (George D.)
     public DataTable ORDINI_FILTER()
     {
         DataTable dt = new DataTable();
-        dt = O.ORDINI_Filter(chiaveCLIENTE, DInizio, DFine);
+        dt = O.ORDINI_Filter(NOMINATIVO, DInizio, DFine);
         return dt;
     }
 

@@ -31,7 +31,6 @@ public partial class _Default : System.Web.UI.Page
             DataTable DT2 = new DataTable();
             DT2 = V.SelectByKey();
             string NomeVenditore = DT2.Rows[0]["RAGIONESOCIALE"].ToString() ;
-            //IdentificaVenditore.InnerHtml = "";
             IdentificaVenditore.InnerHtml = "<center><h2> Storico Vendite del Venditore " + NomeVenditore + "</h2></center>";
 
 
@@ -46,9 +45,16 @@ public partial class _Default : System.Web.UI.Page
         //filtraggio dei campi del venditore in base alla ricerca
         DataTable DT = new DataTable();
         VENDITORI V = new VENDITORI();
+
+        
+
         V.TITOLO = txtTitolo.Text;
         V.chiaveCATEGORIA = int.Parse(ddlCategoria.SelectedValue);
-        V.chiaveORDINI = int.Parse(ddlNOrdine.SelectedValue);
+        if(txtNumeroOrdine.Text == "")
+        {
+            txtNumeroOrdine.Text = "0";
+        }
+        V.NUMEROORDINE = int.Parse(txtNumeroOrdine.Text);
         V.DInizio = txtDInizio.Text;
         V.DFine = txtDFine.Text;
         V.chiave = int.Parse(Session["chiaveUSR"].ToString());

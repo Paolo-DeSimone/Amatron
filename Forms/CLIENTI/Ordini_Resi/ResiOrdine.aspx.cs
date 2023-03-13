@@ -63,19 +63,18 @@ public partial class _Default : System.Web.UI.Page
             ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "notifyError('Devi selezionare un ordine');", true);
             return;
         }
-        
 
         RESI R = new RESI();
         DataTable DT = new DataTable();
         R.chiaveOrdine = int.Parse(Session["chiaveordine"].ToString());
-        DT = R.SelectCount();
-        if (DT.Rows.Count > 0)
-        {
-            //non funziona l'alert ma solo il return
-            string script = "notifyError('Hai già effettuato il reso per quest'ordine');";
-            ScriptManager.RegisterStartupScript(this, GetType(), "btnReso_Click", script, true);
-            return;
-        }
+        //DT = R.SelectCount();
+        //if (DT.Rows.Count > 0)
+        //{
+        //    //non funziona l'alert ma solo il return
+        //    string script = "notifyError('Hai già effettuato il reso per quest'ordine');";
+        //    ScriptManager.RegisterStartupScript(this, GetType(), "btnReso_Click", script, true);
+        //    return;
+        //}
         if (grdreso.SelectedValue == null)
         {
             string script = "notifyError('Selezionare un Prodotto per effettuare un reso');";

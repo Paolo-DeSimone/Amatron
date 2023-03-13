@@ -47,8 +47,8 @@ public partial class Ordini : System.Web.UI.Page
                 "</div>" +
                 "</div>" +
                 //"<div class=\"col-md-2\" style=\"width:1px\"> </div>" +
-                "</div>" +
-                "<hr class=\"opacity-100\"style=\"border-color:lightgray;\"/>";
+                "</div>" 
+                ;
                 
                 // "</div>";
 

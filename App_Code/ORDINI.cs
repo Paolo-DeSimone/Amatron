@@ -38,16 +38,16 @@ public class ORDINI
     //richiamo il webservice fornendo tutti i parametri necessari
 
     public void Insert()
-    {      
+    {
 
         O.ORDINI_Insert(chiavecorriere, chiaveprodotto, chiavecliente, datatransazione, qta, numeroordine);
     }
- 
-     public void Update()
-    {      
+
+    public void Update()
+    {
         O.ORDINI_Update(chiave, datatransazione, qta, numeroordine);
-    } 
-    
+    }
+
     public void Delete()
     {
         O.ORDINI_Delete(chiave);
@@ -56,17 +56,17 @@ public class ORDINI
     public DataTable SelectAll()
     {
         DataTable dt = new DataTable();
-        dt=O.ORDINI_SelectAll();
+        dt = O.ORDINI_SelectAll();
         return dt;
     }
 
     public DataTable SelectByKey()
     {
         DataTable dt = new DataTable();
-        dt=O.ORDINI_SelectByKey(chiave);
+        dt = O.ORDINI_SelectByKey(chiave);
         return dt;
     }
-    
+
     public DataTable SelectProdottoAcquistato()
     {
         DataTable dt = new DataTable();
@@ -126,6 +126,7 @@ public class ORDINI
         return dt;
     }
 
+
     public DataTable ORDINI_FILTER()
     {
         DataTable dt = new DataTable();
@@ -133,5 +134,13 @@ public class ORDINI
         return dt;
     }
 
+
+
+    public DataTable InsertFromCarrello()
+    {
+        DataTable dt = new DataTable();
+        dt = O.ORDINI_InsertFromCarrello(chiavecliente);
+        return dt;
+    }
 
 }

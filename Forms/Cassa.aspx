@@ -37,7 +37,7 @@
                     }
                 }).render('#paypal-button-container');
         }
-           window.onload = generatePayment(document.getElementById('payInput').value);
+        window.onload = generatePayment(document.getElementById('payInput').value);
     </script>
 
 </asp:Content>
@@ -70,19 +70,50 @@
                                 <div class="col-5">
                                     <b>
                                         <%--LBL IMPORTO TOTALE CARRELLO--%>
-                                        <asp:Label runat="server" id="payInput" Text=""></asp:Label>
-                                        <input type="text" value="5" />
+                                        <asp:Label runat="server" ID="payInput" Text=""></asp:Label>
                                     </b>
                                 </div>
                                 <div class="col-6">
+                                    <%-- POPUP--%>
 
+                                    <%-- Introduzione di uno script manager --%>
+                                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+                                    </asp:ScriptManager>
+
+                                    <%-- pulsante che apre il popup --%>
+                                    <h3>CHIEDERE A FLAVIO COME VUOLE IL BTN ESTETICAMENTE PARLANDO E COME PASSARE L'IMPORTO DEL CARRELLO AL POPUP</h3>
                                     <b>
                                         <asp:Label ID="lblPagaCon" runat="server" Text="Paga con: "></asp:Label>
-                                    <asp:Button ID="CheckPaypalPage" runat="server" Text="controlla come è la pagina di paypal" OnClick="CheckPaypalPage_Click" />
                                     </b>
-                                    <button onclick="generatePayment(document.getElementById('1').value)">
-                                        <img src="/assets/images/paypall.png" style="width: 7vw; height: 4vh;" />
+                                    <button style="margin: 0px; width: 200px;" id="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" text="Paga con" >
+                                        <img src="/assets/images/paypall.png" style="width: 9vw; height: 4vh;" />
                                     </button>
+
+                                    <%-- chiamata del popup --%>
+                                    <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnApri"
+                                        CancelControlID="btnChiudiPopup" BackgroundCssClass="Background">
+                                    </cc1:ModalPopupExtender>
+
+                                    <%-- contenuto del popup --%>
+                                    <asp:Panel
+                                        ID="Panl1"
+                                        runat="server"
+                                        CssClass="Popup"
+                                        align="center"
+                                        Style="display: none">
+                                        <%--ci pensa lo script manager a renderlo visibile--%>
+
+                                        <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
+                                        <iframe style="width: 550px; height: 373px; -webkit-border-radius: 10px 10px 10px 10px;" id="if2" src="/Forms/AMATRON/PopupPaypalAMATRON.aspx" runat="server"></iframe>
+                                        <br />
+                                        <%--chiude il popup--%>
+                                        <button id="btnChiudiPopup" class="close-btnAggiungiProdotto" runat="server" style="margin-right: 120px; margin-top: 15px;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle">
+                                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                            </svg>
+                                        </button>
+                                    </asp:Panel>
                                 </div>
                             </div>
                             <div class="row align-items-center">
@@ -102,7 +133,7 @@
                                                     <asp:Image ID="Image" runat="server" DataField="IMMAGINE" Mode="ReadOnly" ImageUrl="IMMAGINEprodotto" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:BoundField DataField="chiavePRODOTTO" HeaderText="chiavePRODOTTO" SortExpression="chiavePRODOTTO" />
+                                            <asp:BoundField DataField="chiavePRODOTTO" HeaderText="ID prodotto" SortExpression="chiavePRODOTTO" />
                                             <asp:BoundField DataField="QTAprodotto" HeaderText="QTA" SortExpression="QTAprodotto" ReadOnly="True" />
                                             <asp:BoundField DataField="TITOLOprodotto" HeaderText="TITOLO" SortExpression="TITOLOprodotto" />
                                             <asp:BoundField DataField="DESCRIZIONEprodotto" HeaderText="DESCRIZIONE" SortExpression="DESCRIZIONEprodotto" />
@@ -119,6 +150,8 @@
                                     </asp:SqlDataSource>
                                 </div>
                             </div>
+
+
                         </div>
                     </div>
                 </div>

@@ -133,8 +133,8 @@ public partial class Default2 : System.Web.UI.Page
                 "</div>";
         }
         AggiornaRecensioni();
-        caricaCarrello(int.Parse(Session["chiaveUSR"].ToString()));
     }
+
     public void AggiornaRecensioni()
     {
         VALUTAZIONI V = new VALUTAZIONI();
@@ -202,7 +202,6 @@ public partial class Default2 : System.Web.UI.Page
         // Dentro il div con id "litCarrello" dentro AMATRON.master, fai comparire tutto quel che c'è in carrelloProdotti.InnerHtml (InnerHtml permette di scrivere codice HTML dentro il C#)
         // Uso un ciclo for che itera per il numero di row in DT ( DT.Rows.Count) così da far comparire in carrello ogni singolo oggetto della DT
         string s = "";
-
 
         for (int i = 0; i < DT.Rows.Count; i++)
         {

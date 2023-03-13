@@ -17,7 +17,7 @@ public partial class Ordini : System.Web.UI.Page
             PRODOTTI P = new PRODOTTI();
             ORDINI O = new ORDINI();
             CLIENTI C = new CLIENTI();
-            O.chiavecliente = int.Parse(Session["chiaveUSR"].ToString());
+            O.chiaveCLIENTE = int.Parse(Session["chiaveUSR"].ToString());
             DataTable dt = O.SelectByOrdineCliente();
             // lblDescrizione = P.descrizione;
             cardprodotto.InnerHtml = "";
@@ -28,7 +28,7 @@ public partial class Ordini : System.Web.UI.Page
                 "<div class=\"col-md-6\">" +
                 //immagine
                 "<div class=\"card-body\">" +
-                "<img src='/Img.ashx?c=" + dt.Rows[i]["chiaveimmagine"].ToString() + "'class=\"immagine\" '/>" +
+                "<img src='/Img.ashx?c=" + dt.Rows[i]["chiaveprodotto"].ToString() + "'class=\"immagine\" '/>" +
                 "</div>" +
                 "</div>" +
                 "<div class=\"col-md-6\"> " +

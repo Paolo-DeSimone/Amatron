@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-10">
-                                        <label class="lblInBasso">Città:</label>
+                                        <label class="lblInBasso">Citt&agrave;:</label>
                                         <asp:TextBox ID="txtCittaCliente" runat="server" class="form-control form-control-sm"></asp:TextBox>
                                     </div>
                                     <div class="col-lg-2">
@@ -157,7 +157,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-10">
-                                        <label class="lblInBasso">Città:</label>
+                                        <label class="lblInBasso">Citt&agrave;:</label>
                                         <asp:TextBox ID="txtCittaVenditore" runat="server" class="form-control form-control-sm"></asp:TextBox>
                                     </div>
                                     <div class="col-lg-2">
@@ -230,7 +230,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-10">
-                                        <label class="lblInBasso">Città:</label>
+                                        <label class="lblInBasso">Citt&agrave;:</label>
                                         <asp:TextBox ID="txtCittaCorriere" runat="server" class="form-control form-control-sm"></asp:TextBox>
                                     </div>
                                     <div class="col-lg-2">

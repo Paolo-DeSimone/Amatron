@@ -37,9 +37,11 @@
                                         <asp:TextBox ID="txtDFine" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
 
                                     </div>
+                                    <%--BUTTON FILTRA ORDINI--%>
                                     <div class="col-lg-4">
                                         <asp:Button ID="btnCerca" Class="btn masterButton" runat="server" Text="Filtra" OnClick="btnCerca_Click" />
                                     </div>
+                                    <%--BUTTON ACCETTA ORDINE--%>
                                     <div class="col-lg-2 align-items-center text-end">
                                         <asp:Button ID="btnAccetta" class="btn masterButton" runat="server" Text="Accetta" OnClick="btnAccetta_Click" />
                                     </div>
@@ -49,6 +51,7 @@
                             <br />
                             <div class="row align-items-center">
                                 <div class="col-lg-12">
+                                    <%--GRIGLIA ORDINI--%>
                                     <div class="masterHideScroll masterCardHeight">
                                         <asp:UpdatePanel runat="server">
                                             <ContentTemplate>
@@ -80,16 +83,8 @@
                                                     </Columns>
                                                     <HeaderStyle BackColor="#B469FF" />
                                                 </asp:GridView>
-                                                <%--<asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString2 %>" SelectCommand="spORDINI_GESTISCI" SelectCommandType="StoredProcedure"></asp:SqlDataSource>--%>
-                                                <%--<selectparameters>
-                                                    <asp:ControlParameter ControlID="ddlUTENTE" Name="chiaveCLIENTE" PropertyName="SelectedValue" Type="Int32" />
-                                                    <asp:ControlParameter ControlID="txtDInizio" Name="STARTDATE" PropertyName="Text" Type="DateTime" />
-                                                    <asp:ControlParameter ControlID="txtDFine" Name="ENDDATE" PropertyName="Text" Type="DateTime" />
-                                                </selectparameters>--%>
-                                                <%--</asp:SqlDataSource>--%>
                                             </ContentTemplate>
                                         </asp:UpdatePanel>
-                                        <%--<asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_GESTISCI" SelectCommandType="StoredProcedure"></asp:SqlDataSource>--%>
                                     </div>
                                 </div>
                             </div>

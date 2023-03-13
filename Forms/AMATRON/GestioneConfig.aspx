@@ -10,6 +10,13 @@
                 <div class="col-lg-8 col-xl-8">
                     <%--card--%>
                     <h2 class="text-center mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Gestione Config AMATRON</h2>
+                    <p style="text-align: center;">
+                        Benvenuto nella pagina di modifica percentuali di Amatron.
+                        <br />
+                        In questa pagina sar&agrave; possibile modificare la percentuale di sconto per gli utenti che sono iscritti al servizio di Amatron prime.
+                        <br />
+                        Inoltre &egrave; possibile modificare la percentuale che Amatron guadagna in base al prezzo di un prodotto.
+                    </p>
                     <div class="card rounded-3">
                         <div class="card-body p-4 p-md-5">
                             <div class="row align-items-center">

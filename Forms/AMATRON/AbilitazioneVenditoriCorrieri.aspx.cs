@@ -13,12 +13,26 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (!IsPostBack)
+        {
+            Session["chiaveVenditore"] = null;
+            DataTable dt = new DataTable();
+            VENDITORI V = new VENDITORI();
+            dt = V.SelectAll();
+            grigliaVenditori.DataSource = dt;
+            grigliaVenditori.DataBind();
+            //grigliaVenditori.DataSourceID = "sdsVenditori";
+            //grigliaVenditori.DataBind();
+            Session["chiaveCorriere"] = null;
+            DataTable DT = new DataTable();
+            CORRIERI C = new CORRIERI();
+            DT = C.CORRIERI_SelectAll();
+            grigliaCorrieri.DataSource = DT;
+            grigliaCorrieri.DataBind();
+            //grigliaCorrieri.DataSourceID = "sdsCorrieri";
+            //grigliaCorrieri.DataBind();
+        }
 
-        grigliaVenditori.DataSourceID = "sdsVenditori";
-        grigliaVenditori.DataBind();
-
-        grigliaCorrieri.DataSourceID = "sdsCorrieri";
-        grigliaCorrieri.DataBind();
     }
 
 
@@ -37,14 +51,22 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnAbilitaVenditori_Click(object sender, EventArgs e)
     {
-
+        if (Session["chiaveVenditore"] == null)
+        {
+            string script = @"notifyError('Nessun venditore selezionato')"; //messaggio di errore
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnAbilitaVenditori_Click", script, true);
+            return;
+        }
         //istanzio l'oggetto V
         VENDITORI V = new VENDITORI();
-        //prendo la chiave
         V.chiave = int.Parse(Session["chiaveVenditore"].ToString());
-
         DataTable dt = new DataTable();
         dt = V.SelectByKey();
+        //prendo la chiave
+
+
+
+
         V.abilitato = Convert.ToBoolean(dt.Rows[0]["ABILITATO"].ToString());
         V.email = dt.Rows[0]["EMAIL"].ToString();
         V.ragionesociale = dt.Rows[0]["RAGIONESOCIALE"].ToString();
@@ -94,14 +116,20 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void btnFiltraVenditori_Click(object sender, EventArgs e)
     {
-        if (txtFiltraVenditori.Text.Trim() == "")
-        {
-            grigliaVenditori.DataSourceID = "sdsVenditori";
-            grigliaVenditori.DataBind();
-        }
-        else grigliaVenditori.DataSourceID = "sdsVenditoriFiltra";
-        grigliaVenditori.DataBind();
+        //if (txtFiltraVenditori.Text.Trim() == "")
+        //{
+        //    grigliaVenditori.DataSourceID = "sdsVenditori";
+        //    grigliaVenditori.DataBind();
+        //}
+        //else grigliaVenditori.DataSourceID = "sdsVenditoriFiltra";
+        //grigliaVenditori.DataBind();
+        DataTable dt = new DataTable();
+        VENDITORI V = new VENDITORI();
+        V.venditore = txtFiltraVenditori.Text.Trim();
+        dt = V.FiltraVenditori();
 
+        grigliaVenditori.DataSource = dt;
+        grigliaVenditori.DataBind();
     }
 
 
@@ -120,11 +148,17 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnAbilitaCorrieri_Click(object sender, EventArgs e)
     {
-        //prendo la chiave
-        string chiave = Session["chiaveCorriere"].ToString();
+        if (Session["chiaveCorriere"] == null)
+        {
+            string script = @"notifyError('Nessun corriere selezionato')"; //messaggio di errore
+            ScriptManager.RegisterStartupScript(this, GetType(), "btnAbilitaCorrieri_Click", script, true);
+            return;
+        }
         //istanzio l'oggetto C
         CORRIERI C = new CORRIERI();
-        C.chiave = Convert.ToInt32(chiave);
+        //prendo la chiave
+        
+        C.chiave = int.Parse(Session["chiaveCorriere"].ToString());
 
         DataTable dt = new DataTable();
         dt = C.CORRIERI_SelectByKey();
@@ -146,7 +180,7 @@ public partial class _Default : System.Web.UI.Page
         //imposto il messaggio
         MailMessage mail = new MailMessage();
         mail.From = new MailAddress("generation@brovia.it"); //mittente
-        mail.To.Add("fera.marco92@gmail.com"); //destinatario // 
+        mail.To.Add(C.email); //destinatario // 
         mail.IsBodyHtml = true; //mail è scritta in html
         mail.Subject = "Richiesta ABILITAZIONE approvata"; //oggetto
                                                            //messaggio
@@ -175,12 +209,19 @@ public partial class _Default : System.Web.UI.Page
     }
     protected void btnFiltraCorrieri_Click(object sender, EventArgs e)
     {
-        if (txtFiltraCorrieri.Text.Trim() == "")
-        {
-            grigliaCorrieri.DataSourceID = "sdsCorrieri";
-            grigliaCorrieri.DataBind();
-        }
-        else grigliaCorrieri.DataSourceID = "sdsCorrieriFiltra";
+        //if (txtFiltraCorrieri.Text.Trim() == "")
+        //{
+        //    grigliaCorrieri.DataSourceID = "sdsCorrieri";
+        //    grigliaCorrieri.DataBind();
+        //}
+        //else grigliaCorrieri.DataSourceID = "sdsCorrieriFiltra";
+        //grigliaCorrieri.DataBind();
+        DataTable DT = new DataTable();
+        CORRIERI C = new CORRIERI();
+        C.corriere = txtFiltraCorrieri.Text.Trim();
+        DT = C.FiltraCorrieri();
+
+        grigliaCorrieri.DataSource = DT;
         grigliaCorrieri.DataBind();
 
     }

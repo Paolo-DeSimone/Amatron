@@ -8,18 +8,18 @@
     color: #B469FF;
 }
 
-.carrello :hover {
-    color: white;
-    cursor: pointer;
-}
+    .carrello :hover {
+        color: white;
+        cursor: pointer;
+    }
 
 .nav-link {
     color: #B469FF;
 }
 
-.nav-link:hover {
-    color: white;   
-}
+    .nav-link:hover {
+        color: white;
+    }
 
 
 .carrello {
@@ -29,9 +29,9 @@
     margin-right: 20px;
 }
 
-.carrello:hover {
-    color:white;
-}
+    .carrello:hover {
+        color: white;
+    }
 
 .searchbar {
     width: 700px;
@@ -71,7 +71,7 @@
 }
 
 
-.bianco{
+.bianco {
     color: white;
 }
 
@@ -79,10 +79,10 @@
 /*CSS LOGIN E POPUP*/
 
 #loginform {
-
-    width: 370px;  
+    width: 370px;
     border-radius: 20vh;
-    margin-left: 80%;
+    position: absolute;
+    right: 15px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0px 0px 10px 0px #333;
@@ -100,47 +100,47 @@
     z-index: 3;
 }
 
-.popupLogin .chiusuraLogin {
-    position: fixed;
-}
+    .popupLogin .chiusuraLogin {
+        position: fixed;
+    }
 
-.popupLogin p {
-    margin-top: 40px;
-    font-size: 22px;
-    color: black;
-}
+    .popupLogin p {
+        margin-top: 40px;
+        font-size: 22px;
+        color: black;
+    }
 
-.popupLogin .txtUSR {
-    width: 50%;
-    height: 10%;
-    border: 2px solid silver;
-    border-radius: 4px;
-    padding: 5px;
-    margin: 0 auto;
-    margin-left: 14%;
-}
+    .popupLogin .txtUSR {
+        width: 50%;
+        height: 10%;
+        border: 2px solid silver;
+        border-radius: 4px;
+        padding: 5px;
+        margin: 0 auto;
+        margin-left: 14%;
+    }
 
-.popupLogin .txtPWD {
-    width: 50%;
-    height: 10%;
-    border: 2px solid silver;
-    border-radius: 4px;
-    padding: 5px;
-    margin-top: 2%;
-    margin-left: 6%;
-}
+    .popupLogin .txtPWD {
+        width: 50%;
+        height: 10%;
+        border: 2px solid silver;
+        border-radius: 4px;
+        padding: 5px;
+        margin-top: 2%;
+        margin-left: 6%;
+    }
 
-.popupLogin .doLogin {
-    margin-top: 15px;
-    width: 50%;
-    height: auto;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    background-color: #B469FF;
-    font-size: 17px;
-    margin-left: 27%;
-}
+    .popupLogin .doLogin {
+        margin-top: 15px;
+        width: 50%;
+        height: auto;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        background-color: #B469FF;
+        font-size: 17px;
+        margin-left: 27%;
+    }
 
 .check {
     margin-top: 5%;
@@ -169,17 +169,14 @@
     color: #B469FF;
     font-family: Arial;
     margin-left: 37%;
-    
 }
 
 .misura {
-    text-align:center;
-    
+    text-align: center;
 }
 
 .margini {
     height: 40px;
-  
     margin-bottom: 10px;
 }
 
@@ -195,8 +192,7 @@
     background-color: #B469FF;
     border: #B469FF;
     margin-top: 8px;
-    margin-left:10px;
-    
+    margin-left: 10px;
 }
 
 .hrdivider {
@@ -216,8 +212,8 @@
 }
 
 .btnApri {
-    width:200px;
-    margin-left:85px;
+    width: 200px;
+    margin-left: 85px;
 }
 
 
@@ -240,17 +236,14 @@
     padding-left: 10px;
     width: 400px;
     height: 400px;
-
 }
 
 .colore {
     background-color: white;
-    
-
 }
 
 .card-text {
-    color:black;
+    color: black;
 }
 
 .card-title {
@@ -272,6 +265,6 @@
     margin-right: 2vw;
 }
 
-.mItem:hover {
-    color: white;
-}
+    .mItem:hover {
+        color: white;
+    }

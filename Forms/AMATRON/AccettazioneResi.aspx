@@ -55,8 +55,8 @@
                                         <asp:Button ID="btnFiltra" Class="btn masterButton" runat="server" Text="Filtra" OnClick="btnFiltra_Click" />
                                     </div>
                                     <div class="col-lg-2 align-items-center text-end">
-                                        <asp:Button ID="Button1" class="btn masterButton" runat="server" Text="Accetta" OnClick="btnAccetta_Click" />
-                                        <asp:Button ID="Button2" class="btn masterButton" runat="server" Text="Rifiuta" />
+                                        <asp:Button ID="btnAccetta" class="btn masterButton" runat="server" Text="Accetta" OnClick="btnAccetta_Click" />
+                                        <asp:Button ID="btnRifiuta" class="btn masterButton" runat="server" Text="Rifiuta" OnClick="btnRifiuta_Click"/>
                                     </div>
                                 </div>
                                 <br />
@@ -75,8 +75,8 @@
                                                 <asp:BoundField DataField="PRODOTTO" HeaderText="PRODOTTO" SortExpression="PRODOTTO" />
                                                 <asp:BoundField DataField="DESCRIZIONE_RESO" HeaderText="DESCRIZIONE RESO" SortExpression="DESCRIZIONE_RESO" />
                                                 <asp:BoundField DataField="QTARESA" HeaderText="QTA RESA" SortExpression="TITOLO" />
-                                                <asp:BoundField DataField="DATARICHIESTA" HeaderText="DATA RICHIESTA" SortExpression="DATARICHIESTA" />
-                                                <asp:BoundField DataField="DATAEMISSIONE" HeaderText="DATA EMISSIONE" SortExpression="DATAEMISSIONE" />
+                                                <asp:BoundField DataField="DATARICHIESTA" HeaderText="DATA RICHIESTA" SortExpression="DATARICHIESTA" DataFormatString="{0:d}" />
+                                                <asp:BoundField DataField="DATAEMISSIONE" HeaderText="DATA EMISSIONE" SortExpression="DATAEMISSIONE" DataFormatString="{0:d}" />
                                                 <asp:BoundField DataField="ACCETTAZIONE" HeaderText="ESITO RESO" SortExpression="ACCETTAZIONE" />
                                                 <asp:CommandField ShowSelectButton="True" ButtonType="Image" SelectImageUrl="~/assets/images/spunta_button.png">
                                                     <ControlStyle Height="20px" Width="24px" />

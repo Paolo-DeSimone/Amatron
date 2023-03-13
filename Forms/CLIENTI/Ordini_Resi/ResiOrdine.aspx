@@ -3,7 +3,9 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <link href="/assets/css/cssFrancescoVENDITORE.css" rel="stylesheet" />
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container mt-1">
         <div class="row text-center">
@@ -77,7 +79,7 @@
         <div class="popupBoxWrapper">
             <%--l'iframe è un contenitore che ha la possibilità di richiamare una pagina--%>
             <iframe style="width: 100%; height: 300px; aspect-ratio: 16/9; border-radius: 10px;" id="Iframe1" src="ResoClientiPopup.aspx" runat="server"></iframe>
-            <button id="btnChiudiPopupReso" class="chiusuraresi" align="right" runat="server">
+            <button id="btnChiudiPopupReso" class="pulsantecazzo" align="right" runat="server">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                     <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />

@@ -34,20 +34,9 @@ public partial class _Default : System.Web.UI.Page
 
     protected void grdSTATO_SelectedIndexChanged(object sender, EventArgs e)
     {
-        // controllo se viene selezionato la riga
-        if (grdSTATO.SelectedValue == null)
-        {
-            string scripter5 = @"notifyError('Non è stata selezionata nessuna spedizione!')"; //messaggio Riga non selezionata
-            ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripter5, true);
-            return;
-        }
         SPEDIZIONI SPE = new SPEDIZIONI();
         SPE.chiave = int.Parse(grdSTATO.SelectedValue.ToString());
         SelectedSPED = SPE.SPEDIZIONI_SelectByKey();
-        //Session["STATO_char"] = DT.Rows[0]["STATO_char"].ToString();
-        //faccio la session per passare la chiave
-        //Session["chiaveSPEDIZIONE"] = grdSTATO.SelectedValue.ToString();
-        //Session["chiaveORDINE"] = DT.Rows[0]["chiaveORDINE"].ToString();
     }
 
     protected void btnStato_Click(object sender, EventArgs e)
@@ -60,7 +49,7 @@ public partial class _Default : System.Web.UI.Page
             return;
         }
         //controllo se lo stato della spedizione è già a prodotto consegnato, non faccio nulla
-        if (SelectedSPED.Rows[0]["STATO_char"].ToString() == "D")
+        if (SelectedSPED.Rows[0]["STATO"].ToString() == "D")
         {
             string scripterr = @"notifyError('Prodotto già consegnato')"; //messaggio di errore
             ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripterr, true);
@@ -68,11 +57,12 @@ public partial class _Default : System.Web.UI.Page
         }
 
         SPEDIZIONI SPE = new SPEDIZIONI();
-        SPE.chiaveORDINE = int.Parse(Session["chiaveORDINE"].ToString());
-        string stato_pre_update = Session["STATO_SPEDIZIONE"].ToString();
+        SPE.chiaveORDINE = int.Parse(SelectedSPED.Rows[0]["chiaveORDINE"].ToString());
+        string stato_pre_update = SelectedSPED.Rows[0]["STATO"].ToString();
         SPE.DATAORA = DateTime.Now.ToString("dd/MM/yy");
         EMAIL E = new EMAIL();
         EMAIL EM = new EMAIL();
+        string notifyString = "";
 
         switch (stato_pre_update)
         {
@@ -87,8 +77,7 @@ public partial class _Default : System.Web.UI.Page
                 //E.subject = "AGGIORNAMENTO STATO";
                 //E.body = "Il tuo ordine è stato PRESO IN CARICO";
                 //E.SendEmail();
-                string scripter1 = @"notifySuccess('Consegna Presa in Carico')"; //messaggio di stato
-                ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripter1, true);
+                notifyString = @"notifySuccess('Consegna Presa in Carico')"; //messaggio di stato
                 break;
             case "B":
                 SPE.STATO = "C";
@@ -100,8 +89,7 @@ public partial class _Default : System.Web.UI.Page
                 //E.subject = "AGGIORNAMENTO STATO";
                 //E.body = "Il tuo ordine è IN CONSEGNA";
                 //E.SendEmail();
-                string scripter2 = @"notifySuccess('Prodotto in Consegna')"; //messaggio di stato
-                ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripter2, true);
+                notifyString = @"notifySuccess('Prodotto in Consegna')"; //messaggio di stato
                 break;
             case "C":
                 SPE.STATO = "D";
@@ -113,10 +101,12 @@ public partial class _Default : System.Web.UI.Page
                 //E.subject = "AGGIORNAMENTO STATO";
                 //E.body = "Il tuo ordine è STATO CONSEGNATO";
                 //E.SendEmail();
-                string scripter3 = @"notifySuccess('Prodotto Consegnato')"; //messaggio di stato
-                ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", scripter3, true);
+                notifyString = @"notifySuccess('Prodotto Consegnato')"; //messaggio di stato
+                
                 break;
         }
+
+        ScriptManager.RegisterStartupScript(this, GetType(), "btnStato_Click", notifyString, true);
 
         SPE.SPEDIZIONI_Insert();
         DataBind();

@@ -155,7 +155,7 @@
             <s:element minOccurs="1" maxOccurs="1" name="chiave" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="TITOLO" type="s:string" />
             <s:element minOccurs="1" maxOccurs="1" name="chiaveCATEGORIA" type="s:int" />
-            <s:element minOccurs="1" maxOccurs="1" name="chiaveORDINI" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="NUMEROORDINE" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="DInizio" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="DFine" type="s:string" />
           </s:sequence>

@@ -10,6 +10,24 @@
 
     <script>
 
+        function NotifyAcquisto() {
+            notifySuccess('Il tuo acquisto è avvenuto con successo');
+            
+           
+            //$.ajax({
+            //    type: "POST",
+            //    url: "Cassa.aspx/NotifyAcquisto",
+            //    contentType: "application/json; charset=utf-8",
+            //    success: function (msg) {
+            //        notifySuccess(msg.d);
+            //    },
+            //    error: function (req, status, err) {
+            //        alert("Sono un errore");
+            //    }
+            //});
+        }
+
+
         function generatePayment(value) {
             if (value == "") {
                 alert("inserire un'importo");
@@ -38,6 +56,8 @@
                 }).render('#paypal-button-container');
         }
         window.onload = generatePayment(document.getElementById('payInput').value);
+
+
     </script>
 
 </asp:Content>
@@ -73,7 +93,6 @@
                                     </b>
                                 </div>
                                 <div class="col-4">
-
                                 </div>
                                 <div class="col-2">
                                     <%-- POPUP--%>
@@ -87,7 +106,7 @@
 
                                     <%-- chiamata del popup --%>
                                     <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnApri"
-                                        CancelControlID="btnChiudiPopup" BackgroundCssClass="Background">
+                                        CancelControlID="btnChiudiPopup" BackgroundCssClass="Background" Enabled="false" OnCancelScript="NotifyAcquisto()">
                                     </cc1:ModalPopupExtender>
 
                                     <%-- contenuto del popup --%>

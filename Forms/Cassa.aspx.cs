@@ -48,5 +48,9 @@ public partial class _Default : System.Web.UI.Page
         ORDINI O = new ORDINI();
         O.chiavecliente = int.Parse(Session["chiaveUSR"].ToString());
         O.InsertFromCarrello();
+        mp1.Enabled = true;
+        mp1.Show();
     }
+
+    
 }

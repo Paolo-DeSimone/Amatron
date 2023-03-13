@@ -3,7 +3,6 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <link href="../../../assets/css/cssGruppoWebservices.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="container mt-1">
@@ -21,7 +20,6 @@
                             <div class="col">
                                 <br />
                                 <center>
-
                                     <asp:GridView ID="grdreso" class="table" runat="server" CssClass="table table-bordered table-condensed" AutoGenerateColumns="False" DataKeyNames="chiaveprodotto" DataSourceID="sdsResi" OnSelectedIndexChanged="grdreso_SelectedIndexChanged">
                                         <Columns>
                                              <asp:TemplateField ConvertEmptyStringToNull="False" HeaderText="IMMAGINEprodotto" SortExpression="IMMAGINEprodotto">

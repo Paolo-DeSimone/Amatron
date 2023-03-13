@@ -15,7 +15,7 @@ public partial class Default2 : System.Web.UI.Page
         //////filtraggio dei campi del venditore in base alla ricerca
         DataTable DT = new DataTable();
         ORDINI O = new ORDINI();
-        O.chiaveCLIENTE = int.Parse(ddlUTENTE.SelectedValue);
+        O.NOMINATIVO = txtNominativo.Text;
         O.DInizio = txtDInizio.Text;
         O.DFine = txtDFine.Text;
         DT = O.ORDINI_FILTER();
@@ -29,7 +29,7 @@ public partial class Default2 : System.Web.UI.Page
         //////filtraggio dei campi del venditore in base alla ricerca
         DataTable DT = new DataTable();
         ORDINI O = new ORDINI();
-        O.chiaveCLIENTE = int.Parse(ddlUTENTE.SelectedValue);
+        O.NOMINATIVO = txtNominativo.Text;
         O.DInizio = txtDInizio.Text;
         O.DFine = txtDFine.Text;
         DT = O.ORDINI_FILTER();

@@ -16,8 +16,6 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-      
-
         PRODOTTI P = new PRODOTTI();
         IMMAGINI I = new IMMAGINI();
         P.chiave = int.Parse(HttpContext.Current.Request.QueryString["c"].ToString());
@@ -111,16 +109,33 @@ public partial class Default2 : System.Web.UI.Page
                 "</div>" +
                 "<div class=\"bbb_viewed_content text-center\">" +
                 "<div class=\"bbb_viewed_name\"><b>" + CAROSEL.Rows[i]["TITOLO"] + "</b></div>" +
-                "<div class=\"bbb_viewed_price\"><b>€" + CAROSEL.Rows[i]["PREZZO"] + "</b></div>" +
+                "<div class=\"d-flex justify-content-center justify-item-center text-center\">";
+
+            V.chiaveprodotto = int.Parse(CAROSEL.Rows[i]["chiavePRODOTTO"].ToString());
+            DataTable STEL = V.Media();
+            if (String.IsNullOrEmpty(STEL.Rows[0]["MEDIA"].ToString()))
+            {
+
+            }
+            else
+            {
+                for (int y = 0; y < int.Parse(STEL.Rows[0]["MEDIA"].ToString()); y++)
+                {
+                    caroselProdottiSimili.InnerHtml += "<img style =\"width:20px; height:20px;\" src='/assets/images/yellowstar.png'>";
+                }
+            }
+            caroselProdottiSimili.InnerHtml += "</div>" +
+            "<div class=\"bbb_viewed_price\"><b>€" + CAROSEL.Rows[i]["PREZZO"] + "</b></div>" +
                 "<div class=\"bbb_viewed_name\">" + CAT.Rows[0]["CATEGORIA"] + "</div>" +
                 "</div>" +
                 "</div>" +
                 "</a>" +
                 "</div>";
         }
-            AggiornaRecensioni();
+        AggiornaRecensioni();
     }
-     public void AggiornaRecensioni()
+
+    public void AggiornaRecensioni()
     {
         VALUTAZIONI V = new VALUTAZIONI();
         DataTable REC = new DataTable();
@@ -153,15 +168,15 @@ public partial class Default2 : System.Web.UI.Page
                        "<label id = 'litRecensione'>" + REC.Rows[i]["COMMENTO"] + "</label></p>" +
                    "</div>" +
                "</div>";
-            
+
         }
     }
     protected void btnAggiungi_Click(object sender, EventArgs e)
     {
         if (Session["chiaveUSR"] == null)
         {
-           
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "notifyError('Per aggiungere un prodotto al carrello occorre eseguire il Login');",true);
+
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "notifyError('Per aggiungere un prodotto al carrello occorre eseguire il Login');", true);
             return;
         }
         PRODOTTI P = new PRODOTTI();
@@ -184,10 +199,9 @@ public partial class Default2 : System.Web.UI.Page
         // Seleziona tutti gli oggetti (item) in carrello ma solo per un certo utente, identificato grazie alla session.
         DataTable DT = c.SelectAllItemsInCart(chiaveUSR);
 
-        // Dentro il div con id "carrelloProdotti" dentro AMATRON.master, fai comparire tutto quel che c'è in carrelloProdotti.InnerHtml (InnerHtml permette di scrivere codice HTML dentro il C#)
+        // Dentro il div con id "litCarrello" dentro AMATRON.master, fai comparire tutto quel che c'è in carrelloProdotti.InnerHtml (InnerHtml permette di scrivere codice HTML dentro il C#)
         // Uso un ciclo for che itera per il numero di row in DT ( DT.Rows.Count) così da far comparire in carrello ogni singolo oggetto della DT
         string s = "";
-
 
         for (int i = 0; i < DT.Rows.Count; i++)
         {
@@ -242,8 +256,8 @@ public partial class Default2 : System.Web.UI.Page
             //"</div>" +
             "</div>";
         }
-        Literal litCarrelloMaster = (Literal)this.Master.FindControl("litCarrello");
-        litCarrelloMaster.Text = s;
+        Literal litCarrello = (Literal)this.Master.FindControl("litCarrello");
+        litCarrello.Text = s;
     }
 
     protected void whitestar1_Click(object sender, ImageClickEventArgs e)

@@ -31,7 +31,7 @@ public partial class _Default : System.Web.UI.Page
             {
                 sum += float.Parse(grigliaOrdini.Rows[i].Cells[5].Text);
             }
-            payInput.Text = "Il totale del carrello &eacute; di" + " " + " " + sum + " " + "&euro;";
+            payInput.Text = "Il totale del carrello &eacute; di "+"&euro;" + sum;
         }
         grigliaOrdini.DataBind();
 

@@ -54,7 +54,7 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
         P.chiaveCATEGORIA = int.Parse(ddlCategoria.SelectedValue.ToString());
         P.descrizione = txtDescrizione.Text.Trim();
         P.prezzo = int.Parse(txtPrezzo.Text.Trim());
-        P.datacaricamento = DateTime.Now.ToString();
+        P.datacaricamento = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
         P.qta = int.Parse(txtQuantita.Text.Trim());
         P.titolo=txtTitolo.Text.Trim();
         

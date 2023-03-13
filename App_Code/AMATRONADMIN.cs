@@ -44,7 +44,7 @@ public class AMATRONADMIN
     public DataTable RESIFILTRA()
     {
         DataTable dt = new DataTable();
-        A.AMATRON_RESIFILTRA(NOMINATIVO, NUMERO_ORDINE, STARTDATE, ENDDATE);
+        dt = A.AMATRON_RESIFILTRA(NOMINATIVO, NUMERO_ORDINE, STARTDATE, ENDDATE);
         return dt;
     }
      

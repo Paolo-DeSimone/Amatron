@@ -41,23 +41,12 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 
-    protected void paypalBottone_Click(object sender, EventArgs e)
+
+    //Evento che permette di concludere l'acquisto: quando attivato, si tolgono gli elementi dal carrello e vengono aggiunti nella griglia di AMATRON/AccettazioneOrdini.aspx
+    protected void btnApri_Click(object sender, EventArgs e)
     {
         ORDINI O = new ORDINI();
         O.chiavecliente = int.Parse(Session["chiaveUSR"].ToString());
         O.InsertFromCarrello();
-    }
-
-
-
-    protected void CheckPaypalPage_Click(object sender, EventArgs e)
-    {
-        Response.Redirect("/Forms/AMATRON/PopupPaypalAMATRON.aspx");
-    }
-
-    //evento che permette di concludere l'acquisto: quando attivato, si tolgono gli elementi dal carrello e vengono aggiunti nella griglia di AMATRON/AccettazioneOrdini.aspx
-    protected void btnApri_Click(object sender, EventArgs e)
-    {
-        //SP da usare sp_ORDINI_InsertFromCarrello 
     }
 }

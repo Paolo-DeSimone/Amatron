@@ -141,11 +141,18 @@ public partial class Default2 : System.Web.UI.Page
         DataTable REC = new DataTable();
         V.chiaveprodotto = int.Parse(HttpContext.Current.Request.QueryString["c"].ToString());
         REC = V.RecensioniClienti();
-        contenitoreRecensioni.InnerHtml = "";
 
+        contenitoreRecensioni.InnerHtml = "";
+        int cCount = 0;
         for (int i = 0; i < REC.Rows.Count; i++)
         {
-            contenitoreRecensioni.InnerHtml += "<div class=\"card mb-2\">" +
+            if (cCount == 0)
+            {
+                cCount++;
+                contenitoreRecensioni.InnerHtml += "<div class=\"row\">";
+            }
+            contenitoreRecensioni.InnerHtml += "<div class=\"col-lg-4\">" +
+                "<div class=\"card mb-2\">" +
 
                     "<div class=\"card-body\">" +
                     "<label id = 'litNomeCliente'>" + REC.Rows[i]["CLIENTE"] + "</label>" +
@@ -161,14 +168,19 @@ public partial class Default2 : System.Web.UI.Page
                 contenitoreRecensioni.InnerHtml += "<img style =\"width:20px; height:20px;\" src='/assets/images/whitestar.png'>";
             }
             contenitoreRecensioni.InnerHtml += "<p style = 'color: black' > " +
-                                    "<label id = 'litDataRecensione'>" + REC.Rows[i]["DATACOMMENTO"] + "</label></p>" +
-                        "</div>" +
-                        "<hr style = 'margin: 5px' />" +
-                        "<p style='color: black' > " +
-                       "<label id = 'litRecensione'>" + REC.Rows[i]["COMMENTO"] + "</label></p>" +
-                   "</div>" +
-               "</div>";
-
+                    "<label id = 'litDataRecensione'>" + REC.Rows[i]["DATACOMMENTO"] + "</label></p>" +
+                    "</div>" +
+                    "<hr style = 'margin: 5px' />" +
+                    "<p style='color: black' > " +
+                    "<label id = 'litRecensione'>" + REC.Rows[i]["COMMENTO"] + "</label></p>" +
+                    "</div>" +
+                    "</div>" +
+                    "</div>";
+            if(cCount == 3)
+            {
+                cCount = 0;
+                contenitoreRecensioni.InnerHtml += "</div>";
+            }
         }
     }
     protected void btnAggiungi_Click(object sender, EventArgs e)

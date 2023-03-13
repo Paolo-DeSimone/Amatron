@@ -96,7 +96,7 @@ public class ORDINI
         return dt;
     }
 
-    //Metodo inserito per la Gestione Ordini (George D.)
+    //Metodo inserito per update Ordini (George D.)
     public void ORDINI_GESTITO()
     {
         O.ORDINI_GESTITO(chiave, chiavecorriere, gestito);
@@ -127,7 +127,7 @@ public class ORDINI
         return dt;
     }
 
-
+    //Metodo inserito per filtrare gli ordini (George D.)
     public DataTable ORDINI_FILTER()
     {
         DataTable dt = new DataTable();

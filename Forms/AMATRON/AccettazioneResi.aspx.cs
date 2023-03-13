@@ -118,9 +118,12 @@ public partial class AccettazioneResi : System.Web.UI.Page
             //mando la mail al cliente
             //mail(R.accettazione);
             DataBind();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "notifySuccess('" + reso + "');", true);
+            return;
         }
         //alert con il risultato di controlloReso() memorizzato nella string reso
-        ScriptManager.RegisterStartupScript(this, this.GetType(), "btnAccetta_Click", reso, true);
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "notifyError('"+ reso +"');", true);
+        return;
     }
 
     protected void btnRifiuta_Click(object sender, EventArgs e)
@@ -138,9 +141,12 @@ public partial class AccettazioneResi : System.Web.UI.Page
             //mando la mail al cliente
             //mail(R.accettazione);
             DataBind();
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "notifySuccess('" + reso + "');", true);
+            return;
         }
         //alert con il risultato di controlloReso() memorizzato nella string reso
-        ScriptManager.RegisterStartupScript(this, this.GetType(), "btnRifiuta_Click", reso, true);
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "notifyError('" + reso + "');", true);
+        return;
     }
 
     //funzione per mandare una mail al cliente con la revisione del reso

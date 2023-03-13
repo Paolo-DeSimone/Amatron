@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -53,7 +53,9 @@ public partial class Venditori_AggiungiProdotti : System.Web.UI.Page
 
         P.chiaveCATEGORIA = int.Parse(ddlCategoria.SelectedValue.ToString());
         P.descrizione = txtDescrizione.Text.Trim();
+
         P.prezzo = float.Parse(txtPrezzo.Text.Trim());
+
         P.datacaricamento = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
         P.qta = int.Parse(txtQuantita.Text.Trim());
         P.titolo = txtTitolo.Text.Trim();

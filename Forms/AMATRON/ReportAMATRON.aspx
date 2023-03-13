@@ -63,7 +63,7 @@
                                                         <HeaderStyle BackColor="#B469FF" />
                                                         <Columns>
                                                             <asp:BoundField DataField="MESE" HeaderText="MESE" ReadOnly="True" SortExpression="MESE" />
-                                                            <asp:BoundField DataField="GUADAGNO_TOTALE" HeaderText="GUADAGNO TOTALE" ReadOnly="True" SortExpression="GUADAGNO_TOTALE" DataFormatString="€ {0:0}"/>
+                                                            <asp:BoundField DataField="GUADAGNO_TOTALE" HeaderText="GUADAGNO_TOTALE" ReadOnly="True" SortExpression="GUADAGNO_TOTALE" DataFormatString="€ {0:0.00}"/>
                                                         </Columns>
                                                     </asp:GridView>
                                                 </div>
@@ -103,7 +103,7 @@
                                             <HeaderStyle BackColor="#B469FF" />
                                             <Columns>
                                                 <asp:BoundField DataField="ANNO" HeaderText="ANNO" ReadOnly="True" SortExpression="ANNO" />
-                                                <asp:BoundField DataField="GUADAGNO_TOTALE" HeaderText="GUADAGNO TOTALE" ReadOnly="True" SortExpression="GUADAGNO_TOTALE" DataFormatString="€ {0:0}" />
+                                                <asp:BoundField DataField="GUADAGNO_TOTALE" HeaderText="GUADAGNO_TOTALE" ReadOnly="True" SortExpression="GUADAGNO_TOTALE" DataFormatString="€ {0:0.00}"/>
                                             </Columns>
                                         </asp:GridView>
                                     </div>

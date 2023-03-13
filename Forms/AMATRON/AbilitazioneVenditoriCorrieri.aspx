@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="masterHideScroll masterCardHeight">
+                        <div class="masterCardHeight" style="overflow-y: scroll;">
                             <%--griglia dei venditori--%>
                             <asp:UpdatePanel runat="server">
                                 <ContentTemplate>
@@ -90,7 +90,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="masterHideScroll masterCardHeight">
+                        <div class="masterCardHeight" style="overflow-y: scroll;">
                             <%--griglia dei corrieri--%>
                             <asp:UpdatePanel runat="server">
                                 <ContentTemplate>

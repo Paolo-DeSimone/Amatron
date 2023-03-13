@@ -49,8 +49,10 @@
                         <div class="row text-center">
                             <div class="col" style="overflow-y: scroll; width: 100%; height: 500px;">
                                 <br />
-                                <asp:GridView ID="grdSTATO" runat="server" DataSourceID="sdsSPEDIZIONI" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed">
+                                <asp:GridView ID="grdSTATO" runat="server" DataSourceID="sdsSPEDIZIONI" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed" DataKeyNames="cSPED">
                                     <Columns>
+                                        <asp:BoundField DataField="cSPED" Visible="false" />
+                                        <asp:BoundField DataField="STATO_char" Visible="false" />
                                         <asp:BoundField DataField="NUMERO_ORDINE" HeaderText="N. ORD" ReadOnly="True" SortExpression="NUMERO_ORDINE" />
                                         <asp:BoundField DataField="clNOME" HeaderText="CLIENTE" ReadOnly="True" SortExpression="clNOME" />
                                         <asp:BoundField DataField="INDIRIZZO_CLIENTE" HeaderText="INDIRIZZO" ReadOnly="True" SortExpression="INDIRIZZO_CLIENTE" />
@@ -59,11 +61,13 @@
                                         <asp:BoundField DataField="dataB" HeaderText="DATA PRESA IN CARICO" ReadOnly="True" SortExpression="dataB" />
                                         <asp:BoundField DataField="dataC" HeaderText="DATA FUORI IN CONSEGNA" ReadOnly="True" SortExpression="dataC" />
                                         <asp:BoundField DataField="dataD" HeaderText="DATA CONSEGNA" ReadOnly="True" SortExpression="dataD" />
+                                        <asp:CommandField ShowSelectButton="true" ButtonType="Image" ControlStyle-Height="20px" ControlStyle-Width="24px" SelectImageUrl="../../assets/images/spunta_button.png" />
                                     </Columns>
+                                    <SelectedRowStyle BackColor="LightGray" />
                                 </asp:GridView>
                                 <asp:SqlDataSource runat="server" ID="sdsSPEDIZIONI" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSPEDIZIONI_KevinSelect" SelectCommandType="StoredProcedure">
                                     <SelectParameters>
-                                        <asp:ControlParameter ControlID="txtFiltraNomeCliente" PropertyName="Text" Name="NOME" Type="String"></asp:ControlParameter>
+                                        <asp:ControlParameter ControlID="txtFiltraNomeCliente" PropertyName="Text" Name="NOME" Type="String" ConvertEmptyStringToNull="true"></asp:ControlParameter>
                                         <asp:SessionParameter SessionField="chiaveUSR" DefaultValue="1" Name="chiaveCORRIERE" Type="Int32"></asp:SessionParameter>
                                         <asp:ControlParameter ControlID="ddlSTATO" PropertyName="SelectedValue" Name="STATO" Type="String"></asp:ControlParameter>
                                     </SelectParameters>
@@ -71,9 +75,9 @@
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
-    </div>
-    </center>
+        </center>
     </div>
 </asp:Content>
 

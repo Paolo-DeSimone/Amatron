@@ -99,7 +99,7 @@
                             <%--  BARRA DI RICERCA--%>
                             <div class="input-group searchbar">
 
-                                <div class="dropdown">
+                                <div class="dropdown btn btn-sm masterButtonInv">
                                     <asp:DropDownList ID="ddlCategorie" CssClass="btn dropdownlist" runat="server" DataSourceID="sdsCategorie" DataTextField="CATEGORIA" DataValueField="CATEGORIA" AppendDataBoundItems="True">
                                         <asp:ListItem Text="Tutte le Categorie" Value="*"></asp:ListItem>
                                     </asp:DropDownList>

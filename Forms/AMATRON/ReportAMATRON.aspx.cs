@@ -17,15 +17,15 @@ public partial class ReportAMATRON : System.Web.UI.Page
     {
         //impostazioni nomi assi per chart IncassiMensili
         chartIncassiMensili.ChartAreas["ChartArea1"].AxisX.Title = "Mese";
-        chartIncassiMensili.ChartAreas["ChartArea1"].AxisY.Title = "Incassi (Euro)";
+        chartIncassiMensili.ChartAreas["ChartArea1"].AxisY.Title = "Incassi - \u20AC ";
 
         //impostazioni nomi assi per chart IncassiAnnuali
         chartIncassiAnnuali.ChartAreas["ChartArea1"].AxisX.Title = "Anno";
-        chartIncassiAnnuali.ChartAreas["ChartArea1"].AxisY.Title = "Incassi (Euro)";
+        chartIncassiAnnuali.ChartAreas["ChartArea1"].AxisY.Title = "Incassi - \u20AC ";
 
         //impostazioni nomi assi per chart IncassiCategoria
         chartIncassiCategoria.ChartAreas["ChartArea1"].AxisX.Title = "Categoria";
-        chartIncassiCategoria.ChartAreas["ChartArea1"].AxisY.Title = "Incassi (Euro)";
+        chartIncassiCategoria.ChartAreas["ChartArea1"].AxisY.Title = "Incassi - \u20AC ";
 
         //questo comando è necessario per settare l'intervallo dei valori della X in chartIncassiCategoria
         //senza questo, non si vedranno tutti i valori

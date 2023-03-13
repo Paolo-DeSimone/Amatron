@@ -12,19 +12,6 @@
 
         function NotifyAcquisto() {
             notifySuccess('Il tuo acquisto è avvenuto con successo');
-            
-           
-        //    //$.ajax({
-        //    //    type: "POST",
-        //    //    url: "Cassa.aspx/NotifyAcquisto",
-        //    //    contentType: "application/json; charset=utf-8",
-        //    //    success: function (msg) {
-        //    //        notifySuccess(msg.d);
-        //    //    },
-        //    //    error: function (req, status, err) {
-        //    //        alert("Sono un errore");
-        //    //    }
-        //    //});
         }
 
 

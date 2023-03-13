@@ -7,6 +7,24 @@
     <link href="/assets/css/notify.css" rel="stylesheet" />
     <link href="/assets/css/cssFrancescoVENDITORE.css" rel="stylesheet" />
     <link href="/assets/css/masterStyle.css" rel="stylesheet" />
+    <script src="/assets/js/notify.js"></script>
+    <script>
+        function changeButton() {
+            document.getElementById("ContentPlaceHolder1_btnApri").style.display = "none";
+            ContentPlaceHolder1_txtPrime.innerHTML = "Sei gia iscritto a Prime!";
+            $.ajax({
+                type: "POST",
+                url: "ProfiloModifica.aspx/getPrime",
+                contentType: "application/json; charset=utf-8",
+                success: function (msg) {
+                    notifySuccess('Iscrizione avvenuta con successo!');
+                },
+                error: function (req, status, err) {
+                    alert("Sono un errore");
+                }
+            });
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <p></p>
@@ -130,7 +148,7 @@
                         Amatron prime &egrave; un servizio che ti permetter&agrave; di avere uno sconto di
                         <asp:Label ID="lblPrimeProMod" runat="server" Text=""></asp:Label>% su ogni prodotto acquistato.
                     </p>
-                    <h4 style="text-align: center" class="card-title">Iscrizione annuale &euro;29,99!</h4>
+                    <h4 style="text-align: center" class="card-title" id="txtPrime" runat="server">Iscrizione annuale &euro;29,99!</h4>
                     <div class="card-body">
                     </div>
 
@@ -143,12 +161,13 @@
                     <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnApri_Click"/>
                     </div>
                     <%-- pulsante che apre il popup --%>
+                    <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" />
                     <%--<asp:Button ID="btnIscriviti" runat="server" class=" btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnIscriviti_Click" />--%>
                     <br />
 
                     <%-- chiamata del popup --%>
                     <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnApri"
-                        CancelControlID="btnChiudi" BackgroundCssClass="Background">
+                        CancelControlID="btnChiudi" BackgroundCssClass="Background" OnCancelScript="changeButton()">
                     </cc1:ModalPopupExtender>
 
                     <%-- contenuto del popup --%>
@@ -175,5 +194,4 @@
             </div>
         </div>
     </div>
-
 </asp:Content>

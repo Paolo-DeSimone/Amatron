@@ -49,7 +49,8 @@
                 <div class="col-md-6">
 
                     <asp:Label ID="lblRimborso" runat="server" Text="Rimborso: &euro;"></asp:Label>
-                   <b> <asp:Label ID="lblImporto" runat="server"></asp:Label></b>
+                    <b>
+                        <asp:Label ID="lblImporto" runat="server"></asp:Label></b>
 
                 </div>
             </div>

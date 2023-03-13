@@ -23,6 +23,7 @@ public class VENDITORI
     public string PWD;
     public bool abilitato;
     public string venditore;
+    public int NUMEROORDINE;
 
     //per webservices Storico Vendite
     public string DInizio;
@@ -106,7 +107,7 @@ public class VENDITORI
 
     public DataTable VENDITORI_Filter()
     {
-        DataTable DT = V.VENDITORI_ORDINI_Filter(chiave, TITOLO, chiaveCATEGORIA, chiaveORDINI, DInizio, DFine);
+        DataTable DT = V.VENDITORI_ORDINI_Filter(chiave, TITOLO, chiaveCATEGORIA, NUMEROORDINE, DInizio, DFine);
         return DT;
     }
 

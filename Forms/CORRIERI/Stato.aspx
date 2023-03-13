@@ -67,7 +67,7 @@
                                 </asp:GridView>
                                 <asp:SqlDataSource runat="server" ID="sdsSPEDIZIONI" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSPEDIZIONI_KevinSelect" SelectCommandType="StoredProcedure">
                                     <SelectParameters>
-                                        <asp:ControlParameter ControlID="txtFiltraNomeCliente" PropertyName="Text" Name="NOME" Type="String"></asp:ControlParameter>
+                                        <asp:ControlParameter ControlID="txtFiltraNomeCliente" PropertyName="Text" Name="NOME" Type="String" ConvertEmptyStringToNull="true"></asp:ControlParameter>
                                         <asp:SessionParameter SessionField="chiaveUSR" DefaultValue="1" Name="chiaveCORRIERE" Type="Int32"></asp:SessionParameter>
                                         <asp:ControlParameter ControlID="ddlSTATO" PropertyName="SelectedValue" Name="STATO" Type="String"></asp:ControlParameter>
                                     </SelectParameters>

@@ -33,8 +33,10 @@ public partial class ResoClientiPopup : System.Web.UI.Page
     }
     protected void btnReso_Click(object sender, EventArgs e)
     {
+        
         if (txtDescrizione.Text.Trim() == "")
         {
+            Response.Redirect("/Forms/CLIENTI/Ordini_Resi/ResiOrdine.aspx");
             string script = "notifyError('Inserire una motivazione per inserire il reso');";
             ScriptManager.RegisterStartupScript(this, GetType(), "btnReso_Click", script, true);
             return;

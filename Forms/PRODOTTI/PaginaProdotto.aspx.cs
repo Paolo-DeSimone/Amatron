@@ -176,7 +176,7 @@ public partial class Default2 : System.Web.UI.Page
                     "</div>" +
                     "</div>" +
                     "</div>";
-            if(cCount == 3)
+            if(cCount == 3 || i == REC.Rows.Count - 1)
             {
                 cCount = 0;
                 contenitoreRecensioni.InnerHtml += "</div>";

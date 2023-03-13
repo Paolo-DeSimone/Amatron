@@ -6,8 +6,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <script src="/assets/js/notify.js"></script>
-    <link href="/assets/css/notify.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="/assets/css/notify.css" rel="stylesheet" />
     <link href="/assets/css/ValerioVenditore.css" rel="stylesheet" />
     <%--    <link href="/assets/css/cssFrancescoVENDITORE.css" rel="stylesheet" />--%>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
@@ -57,8 +57,8 @@
                 <%-- Script che permette di accettare solo numeri nella textbox prezzo --%>
                 <asp:ScriptManager ID="ScriptManager1" runat="server">
                 </asp:ScriptManager>
-                <ajaxToolkit:FilteredTextBoxExtender ID="txtPrezzo_FilteredTextBoxExtender" runat="server"
-                    Enabled="True" TargetControlID="txtPrezzo" FilterType="Numbers"></ajaxToolkit:FilteredTextBoxExtender>
+               <%-- <ajaxToolkit:FilteredTextBoxExtender ID="txtPrezzo_FilteredTextBoxExtender" runat="server"
+                    Enabled="True" TargetControlID="txtPrezzo" FilterType="Numbers"></ajaxToolkit:FilteredTextBoxExtender>--%>
                 <div class="col-md-4">
                 </div>
                 <%--  strumento ajax per consentire solo numeri --%>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="row text-left center" style="margin-left: 0px; margin-right: 0px;">
                     <div class="col-sm-4 col-4">
-                        <asp:TextBox Class="form-control-sm" ID="txtPrezzo" runat="server" Style="width: 65px;"></asp:TextBox>€
+                        <asp:TextBox Class="form-control-sm" ID="txtPrezzo" runat="server" Style="width: 65px;" ></asp:TextBox>€
                     </div>
                     <div class="col-sm-6 col-6">
 

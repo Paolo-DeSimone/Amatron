@@ -64,6 +64,7 @@ public partial class GestioneConfig : System.Web.UI.Page
         //ScriptManager.RegisterStartupScript(this,this.GetType(), )
 
         //ricarico la pagina
-        Response.Redirect(Request.RawUrl);
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "notifySuccess('Impostazioni di AMATRON cambiate con successo.');", true);
+        return;
     }
 }

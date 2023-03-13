@@ -285,7 +285,7 @@
                     <%--<section>--%>
                     <%--Da qui comincia il Footer--%>
                     <%--<section>--%>
-                    <footer>
+                    <footer style="height:fit-content">
                         <div class="container wrap">
                             <div class="row">
                                 <div class="column" style="padding:0px;">
@@ -367,7 +367,7 @@
                             </div>
                         <div class="copyright">
                             <div class="container wrap">
-                                <p>
+                                <p style="margin-bottom: 0px;">
                                     Copyright ©
                                    
                                 <script type="text/javascript">document.write(new Date().getFullYear());</script>

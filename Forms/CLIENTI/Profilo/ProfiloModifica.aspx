@@ -13,7 +13,7 @@
         function NotifyAcquisto() {
             notifySuccess('Il tuo acquisto è avvenuto con successo');
 
-    <script src="/assets/js/notify.js"></script>
+    </script>
     <script>
         function changeButton() {
             document.getElementById("ContentPlaceHolder1_btnApri").style.display = "none";
@@ -99,7 +99,7 @@
                             </div>
                         </div>
                         <br />
-                        <asp:Button ID="btnSalva" runat="server" Text="Salva" class="btn masterButton" OnClick="btnSalva_Click" />
+                        <asp:Button ID="btnSalva" runat="server" Text="Salva" class="btn masterButton" OnClick="btnSalva_Click" style="float:right;" />
                     </div>
                 </div>
             </div>
@@ -170,7 +170,6 @@
                     </div>
                     <%-- pulsante che apre il popup --%>
 
-                    <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnApri_Click" />
                     <asp:Label ID="lblAmatronPrime" runat="server" Text=""></asp:Label>
                     <%--<asp:Button ID="btnIscriviti" runat="server" class=" btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnIscriviti_Click" />--%>
 

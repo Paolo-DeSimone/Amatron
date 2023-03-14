@@ -14,9 +14,6 @@
             notifySuccess('Il tuo acquisto è avvenuto con successo');
 
 
-            <script src="/assets/js/notify.js"></script>
-
-    <script>
         function changeButton() {
             document.getElementById("ContentPlaceHolder1_btnApri").style.display = "none";
         ContentPlaceHolder1_txtPrime.innerHTML = "Sei gia iscritto a Prime!";

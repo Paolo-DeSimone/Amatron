@@ -7,6 +7,12 @@
     <link href="/assets/css/notify.css" rel="stylesheet" />
     <link href="/assets/css/cssFrancescoVENDITORE.css" rel="stylesheet" />
     <link href="/assets/css/masterStyle.css" rel="stylesheet" />
+    <script>
+
+        function NotifyAcquisto() {
+            notifySuccess('Il tuo acquisto è avvenuto con successo');
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <p></p>
@@ -142,12 +148,13 @@
 
                     <%-- pulsante che apre il popup --%>
                     <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnApri_Click" />
+                    <asp:Label ID="lblAmatronPrime" runat="server" Text=""></asp:Label>
                     <%--<asp:Button ID="btnIscriviti" runat="server" class=" btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnIscriviti_Click" />--%>
                     <br />
 
                     <%-- chiamata del popup --%>
                     <cc1:ModalPopupExtender ID="mp1" runat="server" PopupControlID="Panl1" TargetControlID="btnApri"
-                        CancelControlID="btnChiudi" BackgroundCssClass="Background">
+                        CancelControlID="btnChiudi" BackgroundCssClass="Background" OnCancelScript="NotifyAcquisto()">
                     </cc1:ModalPopupExtender>
 
                     <%-- contenuto del popup --%>

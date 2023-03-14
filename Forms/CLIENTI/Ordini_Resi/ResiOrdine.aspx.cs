@@ -75,4 +75,14 @@ public partial class _Default : System.Web.UI.Page
         mp1.Enabled = true;
         mp1.Show();
     }
+
+    /// <summary>
+    /// Metodo utile per chiudere il popup quando si preme su reso dal popup
+    /// </summary>
+    public void closePopupAggiungiProdotto()
+    {
+        mp1.Hide();
+        mp1.Enabled = false;
+        return;
+    }
 }

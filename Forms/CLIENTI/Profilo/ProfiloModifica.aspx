@@ -170,8 +170,6 @@
                     </div>
                     <%-- pulsante che apre il popup --%>
 
-                    <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnApri_Click" />
-                    <asp:Label ID="lblAmatronPrime" runat="server" Text=""></asp:Label>
                     <%--<asp:Button ID="btnIscriviti" runat="server" class=" btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnIscriviti_Click" />--%>
 
                     <br />

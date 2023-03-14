@@ -33,7 +33,7 @@ public partial class ResoClientiPopup : System.Web.UI.Page
     }
     protected void btnReso_Click(object sender, EventArgs e)
     {
-        
+
         if (txtDescrizione.Text.Trim() == "")
         {
             Response.Redirect("/Forms/CLIENTI/Ordini_Resi/ResiOrdine.aspx");
@@ -49,6 +49,8 @@ public partial class ResoClientiPopup : System.Web.UI.Page
         R.datarichiesta = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
         R.dataemissione = "";
         R.Insert();
+
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "closePopupGestisciInventario", "window.parent.location.href='/Forms/CLIENTI/Ordini_Resi/ResiOrdine.aspx';", true);
 
     }
 }

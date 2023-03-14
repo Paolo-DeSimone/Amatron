@@ -11,7 +11,7 @@
     <script>
 
         function NotifyAcquisto() {
-            notifySuccess('Il tuo acquisto è avvenuto con successo');
+            notifySuccess('Il tuo acquisto \u00E8 avvenuto con successo');
         }
 
 
@@ -60,7 +60,7 @@
                     <p class="text-center py-2">
                         <strong>Questi sono i prodotti che hai aggiunto al carrello!</strong>
                         <br />
-                        L'indirizzo di consegna attuale è
+                        L'indirizzo di consegna attuale &#232;
                         <asp:Label ID="lblMostraIndirizzoConsegna" runat="server" Text=""></asp:Label>
                         Se hai bisogno di modificarlo o vuoi aderire ad Amatron Prime per avere uno sconto sulla consegna dei tuoi ordini, vai a 
                         <a href="/Forms/CLIENTI/Profilo/ProfiloModifica.aspx">Questo link.</a>
@@ -139,7 +139,7 @@
                                             <asp:BoundField DataField="TITOLOprodotto" HeaderText="TITOLO" SortExpression="TITOLOprodotto" />
                                             <asp:BoundField DataField="DESCRIZIONEprodotto" HeaderText="DESCRIZIONE" SortExpression="DESCRIZIONEprodotto" />
 
-                                            <asp:BoundField DataField="PREZZOprodotto" HeaderText="PREZZO" ReadOnly="True" SortExpression="PREZZOprodotto" DataFormatString="€ {0:0.00}" />
+                                            <asp:BoundField DataField="PREZZOprodotto" HeaderText="PREZZO" ReadOnly="True" SortExpression="PREZZOprodotto" DataFormatString="&euro; {0:0.00}" />
 
 
                                         </Columns>

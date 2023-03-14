@@ -29,6 +29,7 @@ public partial class _Default : System.Web.UI.Page
             float sum = 0;
             for (int i = 0; i < grigliaOrdini.Rows.Count; ++i)
             {
+                //sum = 2;
                 sum += float.Parse(grigliaOrdini.Rows[i].Cells[5].Text.Remove(0,1));
             }
             payInput.Text = "Il totale del carrello &eacute; di "+"&euro;" + sum;

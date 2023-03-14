@@ -16,7 +16,7 @@
         </div>
         <p class="testo" style="color: black;">Benvenuto nella pagina dei tuoi ordini</p>
         <div style="margin-left: 700px;">
-            <asp:Button ID="btnresi" class="btn masterButton" runat="server" Text="Effetua Reso" OnClick="btnresi_Click" />
+            <asp:Button ID="btnresi" class="btn masterButton" runat="server" Text="Effettua Reso" OnClick="btnresi_Click" />
         </div>
         <br />
         <div class="row">

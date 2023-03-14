@@ -77,6 +77,6 @@ public partial class Venditori_GestisciInventario : System.Web.UI.Page
 
         //Mando a schermo una notifica di avvenuta modifica
         Session["chiaveProdottoEsaurito"] = "";
-        ScriptManager.RegisterStartupScript(this, this.GetType(), "closePopupGestisciInventario", "window.parent.location.href='/Forms/VENDITORI/VisualizzaProdotti.aspx';", true);
+        ScriptManager.RegisterStartupScript(this, this.GetType(), "closePopupGestisciInventario", "window.parent.location.href='/Forms/VENDITORI/ResiOrdine.aspx';", true);
     }
 }

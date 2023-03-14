@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ResoClientiPopup.aspx.cs" Inherits="ResoClientiPopup" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ResoClientiPopup.aspx.cs" Inherits="ResoClientiPopup" %>
 
 <!DOCTYPE html>
 
@@ -36,7 +36,7 @@
             <div class="row mt-2">
                 <!-- QTA RESA -->
                 <div class="col-md-6">
-                    <asp:Label ID="lbl" runat="server" Text="Quantità Reso: "></asp:Label>
+                    <asp:Label ID="lbl" runat="server" Text="Quantit&agrave; Reso: "></asp:Label>
                     <asp:Label ID="lblQta" runat="server" Text="" Font-Bold="True"></asp:Label>
                 </div>
             </div>

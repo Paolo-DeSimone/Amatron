@@ -7,22 +7,28 @@
     <link href="/assets/css/notify.css" rel="stylesheet" />
     <link href="/assets/css/cssFrancescoVENDITORE.css" rel="stylesheet" />
     <link href="/assets/css/masterStyle.css" rel="stylesheet" />
-    <script src="/assets/js/notify.js"></script>
+
     <script>
+
+        function NotifyAcquisto() {
+            notifySuccess('Il tuo acquisto è avvenuto con successo');
+
+
         function changeButton() {
             document.getElementById("ContentPlaceHolder1_btnApri").style.display = "none";
-            ContentPlaceHolder1_txtPrime.innerHTML = "Sei gia iscritto a Prime!";
-            $.ajax({
-                type: "POST",
-                url: "ProfiloModifica.aspx/getPrime",
-                contentType: "application/json; charset=utf-8",
-                success: function (msg) {
-                    notifySuccess('Iscrizione avvenuta con successo!');
+        ContentPlaceHolder1_txtPrime.innerHTML = "Sei gia iscritto a Prime!";
+        $.ajax({
+            type: "POST",
+        url: "ProfiloModifica.aspx/getPrime",
+        contentType: "application/json; charset=utf-8",
+        success: function (msg) {
+            notifySuccess('Iscrizione avvenuta con successo!');
                 },
-                error: function (req, status, err) {
-                    alert("Sono un errore");
+        error: function (req, status, err) {
+            alert("Sono un errore");
                 }
             });
+
         }
     </script>
 </asp:Content>
@@ -92,7 +98,7 @@
                             </div>
                         </div>
                         <br />
-                        <asp:Button ID="btnSalva" runat="server" Text="Salva" class="btn masterButton" OnClick="btnSalva_Click" />
+                        <asp:Button ID="btnSalva" runat="server" Text="Salva" class="btn masterButton" OnClick="btnSalva_Click" style="float:right;" />
                     </div>
                 </div>
             </div>
@@ -110,27 +116,28 @@
                 </div>
                 <div class="card-body">
                     <div class="row text-center">
-                        <div class="col">
+                        <div class="col-lg-12">
                             <asp:Label ID="lblOldPWD" Style="float: left;" runat="server" Text="Vecchia Password:"></asp:Label>
                             <asp:TextBox ID="txtOldPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
 
                         </div>
+                    </div>
 
-                        <div class="row text-center">
-                            <div class="col">
-                                <asp:Label ID="lblNewPWD" Style="float: left;" runat="server" Text="Nuova Password:"></asp:Label>
-                                <asp:TextBox ID="txtNewPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
-                            </div>
+
+                    <div class="row text-center">
+                        <div class="col-lg-12">
+                            <asp:Label ID="lblNewPWD" Style="float: left;" runat="server" Text="Nuova Password:"></asp:Label>
+                            <asp:TextBox ID="txtNewPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
                         </div>
-                        <div class="row text-center">
-                            <div class="col">
-                                <asp:Label ID="lblConfPWD" Style="float: left;" runat="server" Text="Conferma Password:"></asp:Label>
-                                <asp:TextBox ID="txtConfPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
-                            </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-lg-12">
+                            <asp:Label ID="lblConfPWD" Style="float: left;" runat="server" Text="Conferma Password:"></asp:Label>
+                            <asp:TextBox ID="txtConfPWD" class="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox>
                         </div>
-                        <div class="text-right mt-2" style="text-align: right !important;">
-                            <asp:Button ID="btnModPWD" class="btn masterButton" runat="server" Text="Modifica" OnClick="btnModPWD_Click" />
-                        </div>
+                    </div>
+                    <div class="text-right mt-2" style="text-align: right !important;">
+                        <asp:Button ID="btnModPWD" class="btn masterButton" runat="server" Text="Modifica" OnClick="btnModPWD_Click" />
                     </div>
                 </div>
             </div>
@@ -139,7 +146,7 @@
 
             <%--Amatron prime card--%>
             <div class="col-lg-3">
-                <div class="card colore bianco " style="height: 300px; width: 446.5px; padding:10px;">
+                <div class="card colore bianco " style="height: 300px; width: 446.5px; padding: 10px;">
                     <%--<div class="card-header text-center">
                     <h4 class="card-title">Amatron Prime</h4>
                 </div>--%>
@@ -157,11 +164,15 @@
                     <%-- Introduzione di uno script manager --%>
                     <asp:ScriptManager ID="ScriptManager1" runat="server">
                     </asp:ScriptManager>
-                    
-                    <div style="margin:0 auto; margin-right:110px;">
-                    <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime"/>
+
+                    <div style="margin: 0 auto; margin-right: 110px;">
+                        <asp:Button ID="btnApri" runat="server" class="btnApri btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" />
                     </div>
                     <%-- pulsante che apre il popup --%>
+
+
+                    <%--<asp:Button ID="btnIscriviti" runat="server" class=" btn btn-secondary masterButton" Text="Iscriviti ad Amatron Prime" OnClick="btnIscriviti_Click" />--%>
+
                     <br />
 
                     <%-- chiamata del popup --%>

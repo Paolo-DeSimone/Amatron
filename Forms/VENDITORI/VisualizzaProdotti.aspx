@@ -131,8 +131,7 @@
         TargetControlID="btnAggiungiProdotto"
         CancelControlID="btnChiudiPopup"
         BackgroundCssClass="masterPopupBG"
-        Enabled="false"
-        OnCancelScript="NotifyAcquisto()">
+        Enabled="false">
     </cc1:ModalPopupExtender>
 
     <%-- contenuto del popup --%>

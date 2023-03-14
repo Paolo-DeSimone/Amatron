@@ -153,6 +153,7 @@ public partial class Default2 : System.Web.UI.Page
         if (C.PRIME == true)
         {
             btnApri.Visible = false;
+            lblAmatronPrime.Text = "Hai già aderito al nostro servizio Amatron Prime";
         }
 
     }

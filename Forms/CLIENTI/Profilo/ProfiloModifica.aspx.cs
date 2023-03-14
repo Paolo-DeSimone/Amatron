@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -142,6 +142,17 @@ public partial class Default2 : System.Web.UI.Page
         CLIENTI C = new CLIENTI();
         C.chiave = int.Parse(HttpContext.Current.Session["chiaveUSR"].ToString());
         C.CLIENTI_Prime();
+
+
+        string script4 = @"notifySuccess('Iscrizione avvenuta con successo!')";
+        ScriptManager.RegisterStartupScript(this, GetType(), "btnIscriviti_Click", script4, true);
+        if (C.PRIME == true)
+        {
+            btnApri.Visible = false;
+            lblAmatronPrime.Text = "Hai già aderito al nostro servizio Amatron Prime";
+        }
+
+
     }
 
 }

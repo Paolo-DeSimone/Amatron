@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="Cassa.aspx.cs" Inherits="_Default" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="Cassa.aspx.cs" Inherits="_Default" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -12,19 +12,6 @@
 
         function NotifyAcquisto() {
             notifySuccess('Il tuo acquisto è avvenuto con successo');
-            
-           
-        //    //$.ajax({
-        //    //    type: "POST",
-        //    //    url: "Cassa.aspx/NotifyAcquisto",
-        //    //    contentType: "application/json; charset=utf-8",
-        //    //    success: function (msg) {
-        //    //        notifySuccess(msg.d);
-        //    //    },
-        //    //    error: function (req, status, err) {
-        //    //        alert("Sono un errore");
-        //    //    }
-        //    //});
         }
 
 
@@ -151,8 +138,9 @@
                                             <asp:BoundField DataField="QTAprodotto" HeaderText="QTA" SortExpression="QTAprodotto" ReadOnly="True" />
                                             <asp:BoundField DataField="TITOLOprodotto" HeaderText="TITOLO" SortExpression="TITOLOprodotto" />
                                             <asp:BoundField DataField="DESCRIZIONEprodotto" HeaderText="DESCRIZIONE" SortExpression="DESCRIZIONEprodotto" />
-                                            <asp:BoundField DataField="PREZZOprodotto"  HeaderText="PREZZO" ReadOnly="True" SortExpression="PREZZOprodotto" />
-                                            <asp:BoundField DataField="PREZZOprodotto"  HeaderText="PREZZO" ReadOnly="True" SortExpression="PREZZOprodotto" />
+
+                                            <asp:BoundField DataField="PREZZOprodotto" HeaderText="PREZZO" ReadOnly="True" SortExpression="PREZZOprodotto" DataFormatString="€ {0:0.00}" />
+
 
                                         </Columns>
                                         <SelectedRowStyle BackColor="LightGray" />

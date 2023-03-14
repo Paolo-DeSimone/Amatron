@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using AjaxControlToolkit;
-
+using System.Web.Services;
 
 public partial class Default2 : System.Web.UI.Page
 {
@@ -20,8 +20,9 @@ public partial class Default2 : System.Web.UI.Page
         DataTable DT = new DataTable();
         DT = CLI.SELECTBYKEY();
         CLI.PRIME = Boolean.Parse(DT.Rows[0]["PRIME"].ToString());
-        if ( CLI.PRIME == true)
+        if (CLI.PRIME == true)
         {
+            txtPrime.InnerHtml = "Sei gia iscritto a Prime!";
             btnApri.Visible = false;
         }
 
@@ -48,9 +49,6 @@ public partial class Default2 : System.Web.UI.Page
             ScriptManager.RegisterStartupScript(this, GetType(), "Page_Load", script, true);
             return;
         }
-
-
-
 
         if (!IsPostBack)
         {
@@ -138,15 +136,13 @@ public partial class Default2 : System.Web.UI.Page
         ScriptManager.RegisterStartupScript(this, GetType(), "btnModPWD_Click", script3, true);
     }
 
-
-
-
-
-    protected void btnApri_Click(object sender, EventArgs e)
+    [WebMethod(EnableSession = true)]
+    public static void getPrime()
     {
         CLIENTI C = new CLIENTI();
-        C.chiave = int.Parse(Session["chiaveUSR"].ToString());
+        C.chiave = int.Parse(HttpContext.Current.Session["chiaveUSR"].ToString());
         C.CLIENTI_Prime();
+
 
         string script4 = @"notifySuccess('Iscrizione avvenuta con successo!')";
         ScriptManager.RegisterStartupScript(this, GetType(), "btnIscriviti_Click", script4, true);
@@ -156,7 +152,7 @@ public partial class Default2 : System.Web.UI.Page
             lblAmatronPrime.Text = "Hai già aderito al nostro servizio Amatron Prime";
         }
 
-    }
 
+    }
 
 }

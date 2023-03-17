@@ -21,7 +21,7 @@
                                 <asp:Label ID="Label2" runat="server" Text="FILTRA PER NOME:"></asp:Label>
                             </div>
                             <div class="col-lg-3">
-                                <asp:TextBox ID="txtFiltraNomeCliente" class="form-control" AutoPostBack="true" runat="server" Text=""></asp:TextBox>
+                                <asp:TextBox ID="txtFiltraNomeCliente" class="form-control" runat="server" Text=""></asp:TextBox>
                             </div>
                             <div class="col-lg-1">
                                 <asp:Button ID="btnFiltraNomeCliente" runat="server" CssClass="btn masterButton" Text="Filtra" OnClick="btnFiltraNomeCliente_Click" />
@@ -33,7 +33,7 @@
                                 <asp:Label ID="Label1" runat="server" Text="FILTRA I DATI PER:"></asp:Label>
                             </div>
                             <div class="col-lg-3">
-                                <asp:DropDownList ID="ddlSTATO" runat="server" CssClass="form-select" Style="width: auto" AutoPostBack="True">
+                                <asp:DropDownList ID="ddlSTATO" runat="server" CssClass="form-select" Style="width: auto" >
                                     <asp:ListItem Value="S">TUTTE LE SPEDIZIONI</asp:ListItem>
                                     <asp:ListItem Value="A">A - Ordine in Preparazione</asp:ListItem>
                                     <asp:ListItem Value="B">B - Consegna presa in carico</asp:ListItem>
@@ -49,7 +49,7 @@
                         <div class="row text-center">
                             <div class="col" style="overflow-y: scroll; width: 100%; height: 500px;">
                                 <br />
-                                <asp:GridView ID="grdSTATO" runat="server" DataSourceID="sdsSPEDIZIONI" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed" DataKeyNames="cSPED">
+                                <asp:GridView ID="grdSTATO" runat="server" DataSourceID="sdsNoFilter" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed" DataKeyNames="cSPED">
                                     <Columns>
                                         <asp:BoundField DataField="cSPED" Visible="false" />
                                         <asp:BoundField DataField="STATO_char" Visible="false" />
@@ -65,9 +65,15 @@
                                     </Columns>
                                     <SelectedRowStyle BackColor="LightGray" />
                                 </asp:GridView>
-                                <asp:SqlDataSource runat="server" ID="sdsSPEDIZIONI" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSPEDIZIONI_KevinSelect" SelectCommandType="StoredProcedure">
+                                <asp:SqlDataSource runat="server" ID="sdsNoFilter" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSPEDIZIONI_KevinSelect" SelectCommandType="StoredProcedure">
                                     <SelectParameters>
-                                        <asp:ControlParameter ControlID="txtFiltraNomeCliente" PropertyName="Text" Name="NOME" Type="String"></asp:ControlParameter>
+                                        <asp:SessionParameter SessionField="chiaveUSR" DefaultValue="1" Name="chiaveCORRIERE" Type="Int32"></asp:SessionParameter>
+                                        <asp:ControlParameter ControlID="ddlSTATO" PropertyName="SelectedValue" Name="STATO" Type="String"></asp:ControlParameter>
+                                    </SelectParameters>
+                                </asp:SqlDataSource>
+                                <asp:SqlDataSource runat="server" ID="sdsFilter" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spSPEDIZIONI_KevinSelect_Filter" SelectCommandType="StoredProcedure">
+                                    <SelectParameters>
+                                        <asp:ControlParameter ControlID="txtFiltraNomeCliente" PropertyName="Text" Name="NOME" Type="String" ConvertEmptyStringToNull="true"></asp:ControlParameter>
                                         <asp:SessionParameter SessionField="chiaveUSR" DefaultValue="1" Name="chiaveCORRIERE" Type="Int32"></asp:SessionParameter>
                                         <asp:ControlParameter ControlID="ddlSTATO" PropertyName="SelectedValue" Name="STATO" Type="String"></asp:ControlParameter>
                                     </SelectParameters>

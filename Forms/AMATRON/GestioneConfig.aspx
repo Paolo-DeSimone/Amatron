@@ -1,23 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="GestioneConfig.aspx.cs" Inherits="GestioneConfig" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <%-- Test per script di popup per la conferma dei dati salvati, ignorare --%>
-       <%-- <script>
-       function Accetta() {
-            $.ajax({
-                type: "POST",
-                url: "GestioneConfig.aspx/Accetta",
-                data: "{'COSTOPRIME': '" + $('#txtCostoPrime').val() + "', 'PERC1_10' : '" + $('#txtPerc1_10').val() + "','PERC11_100' : '" + $('txtPerc11_100').val() + "', 'PERC101_1000' : '" + $('txtPerc101_1000').val() + "','PERC_1001' : '" + $('txtPerc_1001').val() + "'}",
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (msg) {
-                    notifySuccess(msg.d);
-                },
-                error: function (req, status, err) {
-                    alert(req, status, err);
-                }
-            });
-    </script>--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <section class="h-100 h-custom">
@@ -27,11 +10,18 @@
                 <div class="col-lg-8 col-xl-8">
                     <%--card--%>
                     <h2 class="text-center mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Gestione Config AMATRON</h2>
+                    <p style="text-align: center;">
+                        Benvenuto nella pagina di modifica percentuali di Amatron.
+                        <br />
+                        In questa pagina sar&agrave; possibile modificare la percentuale di sconto per gli utenti che sono iscritti al servizio di Amatron prime.
+                        <br />
+                        Inoltre &egrave; possibile modificare la percentuale che Amatron guadagna in base al prezzo di un prodotto.
+                    </p>
                     <div class="card rounded-3">
                         <div class="card-body p-4 p-md-5">
                             <div class="row align-items-center">
                                 <div class="col-lg-8">
-                                    <asp:Literal ID="ltlCostoPrime" runat="server">Costo AMATRON PRIME:</asp:Literal>
+                                    <asp:Literal ID="ltlCostoPrime" runat="server">Percentuale sconto AMATRON PRIME:</asp:Literal>
                                 </div>
                                 <div class="col-lg-4">
                                     <asp:TextBox ID="txtCostoPrime" class="form-control" runat="server"></asp:TextBox>

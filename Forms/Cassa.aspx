@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="Cassa.aspx.cs" Inherits="_Default" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/AMATRON.master" AutoEventWireup="true" CodeFile="Cassa.aspx.cs" Inherits="_Default" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 
@@ -11,20 +11,7 @@
     <script>
 
         function NotifyAcquisto() {
-            notifySuccess('Il tuo acquisto è avvenuto con successo');
-            
-           
-            //$.ajax({
-            //    type: "POST",
-            //    url: "Cassa.aspx/NotifyAcquisto",
-            //    contentType: "application/json; charset=utf-8",
-            //    success: function (msg) {
-            //        notifySuccess(msg.d);
-            //    },
-            //    error: function (req, status, err) {
-            //        alert("Sono un errore");
-            //    }
-            //});
+            notifySuccess('Il tuo acquisto \u00E8 avvenuto con successo');
         }
 
 
@@ -64,7 +51,6 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-
     <section class="h-100 h-custom">
         <div class="container text-align-center py-3 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -74,7 +60,7 @@
                     <p class="text-center py-2">
                         <strong>Questi sono i prodotti che hai aggiunto al carrello!</strong>
                         <br />
-                        L'indirizzo di consegna attuale è
+                        L'indirizzo di consegna attuale &#232;
                         <asp:Label ID="lblMostraIndirizzoConsegna" runat="server" Text=""></asp:Label>
                         Se hai bisogno di modificarlo o vuoi aderire ad Amatron Prime per avere uno sconto sulla consegna dei tuoi ordini, vai a 
                         <a href="/Forms/CLIENTI/Profilo/ProfiloModifica.aspx">Questo link.</a>
@@ -152,7 +138,9 @@
                                             <asp:BoundField DataField="QTAprodotto" HeaderText="QTA" SortExpression="QTAprodotto" ReadOnly="True" />
                                             <asp:BoundField DataField="TITOLOprodotto" HeaderText="TITOLO" SortExpression="TITOLOprodotto" />
                                             <asp:BoundField DataField="DESCRIZIONEprodotto" HeaderText="DESCRIZIONE" SortExpression="DESCRIZIONEprodotto" />
-                                            <asp:BoundField DataField="PREZZOprodotto" HeaderText="PREZZO" ReadOnly="True" SortExpression="PREZZOprodotto" />
+
+                                            <asp:BoundField DataField="PREZZOprodotto" HeaderText="PREZZO" ReadOnly="True" SortExpression="PREZZOprodotto" DataFormatString="&euro; {0:0.00}" />
+
 
                                         </Columns>
                                         <SelectedRowStyle BackColor="LightGray" />
@@ -165,8 +153,6 @@
                                     </asp:SqlDataSource>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -174,4 +160,3 @@
         </div>
     </section>
 </asp:Content>
-

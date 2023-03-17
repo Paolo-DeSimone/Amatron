@@ -12,10 +12,9 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //////filtraggio dei campi del venditore in base alla ricerca
         DataTable DT = new DataTable();
         ORDINI O = new ORDINI();
-        O.chiaveCLIENTE = int.Parse(ddlUTENTE.SelectedValue);
+        O.NOMINATIVO = txtNominativo.Text;
         O.DInizio = txtDInizio.Text;
         O.DFine = txtDFine.Text;
         DT = O.ORDINI_FILTER();
@@ -26,10 +25,10 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void btnCerca_Click(object sender, EventArgs e)
     {
-        //////filtraggio dei campi del venditore in base alla ricerca
+        //////TASTO FILTRA PER NOME/DATA
         DataTable DT = new DataTable();
         ORDINI O = new ORDINI();
-        O.chiaveCLIENTE = int.Parse(ddlUTENTE.SelectedValue);
+        O.NOMINATIVO = txtNominativo.Text;
         O.DInizio = txtDInizio.Text;
         O.DFine = txtDFine.Text;
         DT = O.ORDINI_FILTER();
@@ -46,6 +45,7 @@ public partial class Default2 : System.Web.UI.Page
 
     protected void btnAccetta_Click(object sender, EventArgs e)
     {
+        // ACCETTAZIONE ORDINI ADMIN AMATRON
         ORDINI O = new ORDINI();
         DataTable DT = new DataTable();
         O.chiave = int.Parse(grigliaOrdini.SelectedValue.ToString());

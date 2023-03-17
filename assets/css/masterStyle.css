@@ -1,5 +1,4 @@
 body {
-    
 }
 
 .masterBorderColor {
@@ -23,6 +22,21 @@ body {
     .masterButton:focus {
         background-color: #B469FF !important;
         color: white;
+    }
+
+.masterButtonInv {
+    border-color: #b469ff;
+    color: #b469ff;
+}
+
+    .masterButtonInv:hover {
+        border-color: #b469ff;
+        color: #b469ff;
+    }
+
+    .masterButtonInv:focus {
+        border-color: #b469ff;
+        color: #b469ff;
     }
 
 .masterCardHeight {
@@ -144,16 +158,16 @@ body {
 }
 
 footer {
-    display:block;
+    display: block;
     background-color: #282828;
     color: #aba8a8;
-    height: 47vh;
+    height: fit-content;
     margin-top: 170px;
-    overflow:unset;
+    overflow: unset;
 }
 
 .footer-widget {
-    /background-color:#ff9800a1;
+    /*background-color:#ff9800a1;*/
     margin: 0 10px;
     text-align: justify;
 }
@@ -228,6 +242,8 @@ social-widget a:hover {
 }
 
 .copyright {
+    margin: 0 auto;
+    background-color: #282828;
 }
 
     .copyright p {
@@ -240,6 +256,6 @@ social-widget a:hover {
             color: #d2d2d2;
         }
 
-.masterNoHover:hover{
+.masterNoHover:hover {
     background-color: transparent !important;
 }

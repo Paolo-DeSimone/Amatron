@@ -32,11 +32,11 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="masterHideScroll masterCardHeight">
+                        <div class="masterCardHeight" style="overflow-y: scroll;">
                             <%--griglia dei venditori--%>
                             <asp:UpdatePanel runat="server">
                                 <ContentTemplate>
-                                    <asp:GridView ID="grigliaVenditori" CssClass="table table-bordered table-condensed" runat="server" DataSourceID="sdsVenditori" AutoGenerateColumns="False" DataKeyNames="chiave" OnSelectedIndexChanged="grigliaVenditori_SelectedIndexChanged">
+                                    <asp:GridView ID="grigliaVenditori" CssClass="table table-bordered table-condensed" runat="server"  AutoGenerateColumns="False" DataKeyNames="chiave" OnSelectedIndexChanged="grigliaVenditori_SelectedIndexChanged">
                                         <Columns>
                                             <asp:BoundField DataField="chiave" HeaderText="chiave" ReadOnly="True" Visible="False" SortExpression="chiave"></asp:BoundField>
                                             <asp:BoundField DataField="RAGIONESOCIALE" HeaderText="RAGIONESOCIALE" SortExpression="RAGIONESOCIALE"></asp:BoundField>
@@ -59,12 +59,12 @@
                                     </asp:GridView>
                                 </ContentTemplate>
                             </asp:UpdatePanel>
-                            <asp:SqlDataSource runat="server" ID="sdsVenditori" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spVENDITORI_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
-                            <asp:SqlDataSource runat="server" ID="sdsVenditoriFiltra" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spFILTRA_Venditori" SelectCommandType="StoredProcedure">
+                            <%--<asp:SqlDataSource runat="server" ID="sdsVenditori" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spVENDITORI_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>--%>
+                            <%--<asp:SqlDataSource runat="server" ID="sdsVenditoriFiltra" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spFILTRA_Venditori" SelectCommandType="StoredProcedure">
                                 <SelectParameters>
                                     <asp:ControlParameter ControlID="txtFiltraVenditori" PropertyName="Text" Name="VENDITORI" Type="String"></asp:ControlParameter>
                                 </SelectParameters>
-                            </asp:SqlDataSource>
+                            </asp:SqlDataSource>--%>
                         </div>
                         <%--pulsante per abilitare--%>
                         <div class="text-center mt-2" style="float: right;">
@@ -90,11 +90,11 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="masterHideScroll masterCardHeight">
+                        <div class="masterCardHeight" style="overflow-y: scroll;">
                             <%--griglia dei corrieri--%>
                             <asp:UpdatePanel runat="server">
                                 <ContentTemplate>
-                                    <asp:GridView ID="grigliaCorrieri" Class="table table-bordered table-condensed" runat="server" AutoGenerateColumns="False" DataKeyNames="chiave" DataSourceID="sdsCorrieri" OnSelectedIndexChanged="grigliaCorrieri_SelectedIndexChanged">
+                                    <asp:GridView ID="grigliaCorrieri" Class="table table-bordered table-condensed" runat="server" AutoGenerateColumns="False" DataKeyNames="chiave" OnSelectedIndexChanged="grigliaCorrieri_SelectedIndexChanged">
                                         <Columns>
                                             <asp:BoundField DataField="chiave" HeaderText="chiave" ReadOnly="True" InsertVisible="False" SortExpression="chiave" Visible="False"></asp:BoundField>
                                             <asp:BoundField DataField="RAGIONESOCIALE" HeaderText="RAGIONESOCIALE" SortExpression="RAGIONESOCIALE"></asp:BoundField>
@@ -118,12 +118,12 @@
                                     </asp:GridView>
                                 </ContentTemplate>
                             </asp:UpdatePanel>
-                            <asp:SqlDataSource runat="server" ID="sdsCorrieri" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCORRIERI_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                            <%--<asp:SqlDataSource runat="server" ID="sdsCorrieri" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spCORRIERI_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                             <asp:SqlDataSource runat="server" ID="sdsCorrieriFiltra" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spFILTRA_Corrieri" SelectCommandType="StoredProcedure">
                                 <SelectParameters>
                                     <asp:ControlParameter ControlID="txtFiltraCorrieri" PropertyName="Text" Name="CORRIERI" Type="String"></asp:ControlParameter>
                                 </SelectParameters>
-                            </asp:SqlDataSource>
+                            </asp:SqlDataSource>--%>
                         </div>
                         <%--pulsante per abilitare--%>
 

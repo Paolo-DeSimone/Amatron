@@ -1,4 +1,4 @@
-﻿using Microsoft.SqlServer.Server;
+using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,12 +12,9 @@ public partial class _Default : System.Web.UI.Page
     public static string chiaveordine;
     public static string chiave;
 
-    //string chiave = Session["chiaveUSR"].ToString();
-
     protected void Page_Load(object sender, EventArgs e)
     {
         grdreso.DataBind();
-        sdsResi.DataBind();
 
         foreach (GridViewRow r in grdreso.Rows)
         {
@@ -36,14 +33,12 @@ public partial class _Default : System.Web.UI.Page
         string prezzo = row.Cells[4].Text;
         Session["PREZZO"] = prezzo;
 
-        string chiaveordine = row.Cells[6].Text;
+        chiaveordine = row.Cells[6].Text;
         Session["chiaveordine"] = chiaveordine;
-
-        
-
 
         chiave = grdreso.SelectedValue.ToString();
     }
+
     protected void btnRecensione_Click(object sender, EventArgs e)
     {
         if (grdreso.SelectedValue == null)
@@ -63,26 +58,31 @@ public partial class _Default : System.Web.UI.Page
             ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "notifyError('Devi selezionare un ordine');", true);
             return;
         }
-        
 
         RESI R = new RESI();
-        DataTable DT = new DataTable();
-        R.chiaveOrdine = int.Parse(Session["chiaveordine"].ToString());
-        DT = R.SelectCount();
-        if (DT.Rows.Count > 0)
+        R.chiaveOrdine = int.Parse(chiaveordine);
+
+        // SelectCount ritorna 1 se il reso di uno specifico ordine è stato effettuato, 0 se NON è stato effettuato.
+        DataTable DT = R.SelectCount();
+
+        if (int.Parse(DT.Rows[0][0].ToString()) > 0)
         {
-            //non funziona l'alert ma solo il return
-            string script = "notifyError('Hai già effettuato il reso per quest'ordine');";
-            ScriptManager.RegisterStartupScript(this, GetType(), "btnReso_Click", script, true);
+            // L'ALERT DEVE ESSER FATTO FUNZIONARE PERCHè LA GRIGLIA MOSTRA TUTTI GLI ORDINI, SENZA DISCRIMINARE QUELLI CHE SONO STATI RESI E QUELLI NON RESI
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "error", "notifyError('Hai gi\u00E0 effettuato il reso');", true);
             return;
         }
-        if (grdreso.SelectedValue == null)
-        {
-            string script = "notifyError('Selezionare un Prodotto per effettuare un reso');";
-            ScriptManager.RegisterStartupScript(this, GetType(), "btnReso_Click", script, true);
-            return;
-        }
+
         mp1.Enabled = true;
         mp1.Show();
+    }
+
+    /// <summary>
+    /// Metodo utile per chiudere il popup quando si preme su reso dal popup
+    /// </summary>
+    public void closePopupAggiungiProdotto()
+    {
+        mp1.Hide();
+        mp1.Enabled = false;
+        return;
     }
 }

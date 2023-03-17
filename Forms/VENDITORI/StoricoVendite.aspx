@@ -43,9 +43,6 @@
     <div class="container">
 
         <div id="IdentificaVenditore" style="display: center; width: 65vw; margin: 4vh auto;" runat="server">
-
-
-
         </div>
         <div class="card" style="width: 100%; margin: 0 auto;">
             <%-- Inizio body --%>
@@ -64,17 +61,17 @@
 
                             <div class="col-lg-2">
 
-                                <asp:Label ID="Label2" runat="server" Text="Numero Ordine"></asp:Label>
+                                <asp:Label ID="Label2" runat="server" Text="Numero Ordine:"></asp:Label>
                             </div>
 
                             <div class="col-lg-2">
 
-                                <asp:Label ID="Label3" runat="server" Text="Data inizio"></asp:Label>
+                                <asp:Label ID="Label3" runat="server" Text="Data inizio:"></asp:Label>
                             </div>
 
                             <div class="col-lg-2">
 
-                                <asp:Label ID="Label4" runat="server" Text="Data fine"></asp:Label>
+                                <asp:Label ID="Label4" runat="server" Text="Data fine:"></asp:Label>
                             </div>
                         </div>
                         <div class="row">
@@ -95,14 +92,8 @@
                                 </div>
                             </div>
                             <div class="col-lg-2">
-                                <asp:DropDownList ID="ddlNOrdine" AppendDataBoundItems="true" Class="form-control form-control" runat="server" DataSourceID="SqlDataSource2" DataTextField="NUMEROORDINE" DataValueField="chiaveORDINI">
-                                    <asp:ListItem Value="0">Tutti gli ordini</asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="spORDINI_PRODOTTI_CATEGORIA_SelectDDL" SelectCommandType="StoredProcedure">
-                                    <SelectParameters>
-                                        <asp:SessionParameter DefaultValue="" Name="chiaveVENDITORE" SessionField="chiaveUSR" Type="Int32" />
-                                    </SelectParameters>
-                                </asp:SqlDataSource>
+                                <asp:TextBox ID="txtNumeroOrdine" Class="form-control" runat="server" TextMode="Number"></asp:TextBox>
+
                             </div>
                             <div class="col-lg-2">
                                 <asp:TextBox ID="txtDInizio" Class="form-control" runat="server" TextMode="Date"></asp:TextBox>
@@ -124,7 +115,7 @@
 
                 <div class="row mt-3">
                     <div class="col-lg-8">
-                        <div class="table-responsive" style="overflow-y: scroll; width: 100%; height: 500px;">
+                        <div class="table-responsive" style="overflow-y: auto; width: 100%; height: 500px;">
                             <asp:GridView ID="GrigliaStoricoVendite" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed">
                                 <Columns>
                                     <asp:BoundField DataField="chiavePRODOTTI" HeaderText="chiavePRODOTTI" SortExpression="chiavePRODOTTI" Visible="False" />
@@ -132,8 +123,8 @@
                                     <asp:BoundField DataField="chiaveVENDITORE" HeaderText="chiaveVENDITORE" SortExpression="chiaveVENDITORE" Visible="False" />
                                     <asp:BoundField DataField="chiaveCATEGORIA" HeaderText="chiaveCATEGORIA" SortExpression="chiaveCATEGORIA" Visible="False" />
                                     <asp:BoundField DataField="TITOLO" HeaderText="PRODOTTO" SortExpression="TITOLO" />
-                                    <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" DataFormatString="{0:C}" SortExpression="PREZZO" />
-                                    <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" SortExpression="PERCAMATRON" />
+                                    <asp:BoundField DataField="PREZZO" HeaderText="PREZZO" DataFormatString="€{0:n}" SortExpression="PREZZO" />
+                                    <asp:BoundField DataField="PERCAMATRON" HeaderText="% AMATRON" DataFormatString="{0:0}%" SortExpression="PERCAMATRON" />
                                     <asp:BoundField DataField="DATATRANSAZIONE" HeaderText="DATA VEND" SortExpression="DATATRANSAZIONE" ApplyFormatInEditMode="true" DataFormatString="{0:d}" />
                                     <asp:BoundField DataField="QTA" HeaderText="QTA" SortExpression="QTA" />
                                     <asp:BoundField DataField="NUMEROORDINE" HeaderText="NUM. ORD." SortExpression="NUMEROORDINE" />
@@ -144,14 +135,17 @@
                         </div>
                     </div>
                     <div class="col-lg-4">
+                          <div class="mb-2"> 
+                            <h4>
+                            <asp:Label ID="Label7" runat="server" Text="Guadagni del venditore:"></asp:Label>
+                            </h4>
+                        </div>
                         <div class="table-responsive" style="width: 100%;">
-
                             <asp:GridView ID="GrigliaFatturatoVenditore" class="table" runat="server" CssClass="table table-bordered table-condensed" AutoGenerateColumns="False" DataSourceID="sdsGrigliaFatturatoVenditore">
                                 <Columns>
-                                    <asp:BoundField DataField="GuadagnoLordo" HeaderText="Guad. Lordo" ReadOnly="True" DataFormatString="{0:C}" SortExpression="GuadagnoLordo" />
-                                    <asp:BoundField DataField="PercentualeAmatron" HeaderText="Costo %Amatron" ReadOnly="True" DataFormatString="{0:C}" SortExpression="PercentualeAmatron" />
-                                    <asp:BoundField DataField="GuadagnoNetto" HeaderText="Guad. Netto" ReadOnly="True" DataFormatString="{0:C}" SortExpression="GuadagnoNetto" />
-
+                                    <asp:BoundField DataField="GuadagnoLordo" HeaderText="Guad. Lordo" ReadOnly="True" DataFormatString="&euro;{0:n}" SortExpression="GuadagnoLordo" />
+                                    <asp:BoundField DataField="PercentualeAmatron" HeaderText="Costo %Amatron" ReadOnly="True" DataFormatString="&euro;{0:n}" SortExpression="PercentualeAmatron" />
+                                    <asp:BoundField DataField="GuadagnoNetto" HeaderText="Guad. Netto" ReadOnly="True" DataFormatString="&euro;{0:n}" SortExpression="GuadagnoNetto" />
                                 </Columns>
                                 <HeaderStyle BackColor="#B469FF" />
                             </asp:GridView>
@@ -160,6 +154,26 @@
                                     <asp:SessionParameter Name="chiaveVENDITORE" SessionField="chiaveUSR" Type="Int32" />
                                 </SelectParameters>
                             </asp:SqlDataSource>
+                        </div>
+                        <div class="mt-4 mb-2"> 
+                            <h4>
+                            <asp:Label ID="Label6" runat="server" Text="Percentuali percepite da Amatron per ogni acquisto:"></asp:Label>
+                            </h4>
+                        </div>
+                        <div class="table-responsive" style="width: 100%;">
+                            <asp:GridView ID="grdPercentualiAmatron" class="table" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-condensed" DataSourceID="SqlDataSource2">
+                                <Columns>
+                                    <asp:BoundField DataField="PERC1_10" HeaderText="% 1-10€" DataFormatString="{0:0}%" SortExpression="PERC1_10" />
+                                    <asp:BoundField DataField="PERC11_100" HeaderText="% 11-100€" DataFormatString="{0:0}%" SortExpression="PERC11_100" />
+                                    <asp:BoundField DataField="PERC101_1000" HeaderText="% 101-1000€" DataFormatString="{0:0}%" SortExpression="PERC101_1000" />
+                                    <asp:BoundField DataField="PERC1001" HeaderText="% 1001€+" DataFormatString="{0:0}%" SortExpression="PERC1001" />
+                                </Columns>
+                                <HeaderStyle BackColor="#B469FF" />
+
+                            </asp:GridView>
+
+                            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMATRONDBConnectionString %>" SelectCommand="SELECT [PERC1_10], [PERC11_100], [PERC101_1000], [PERC1001] FROM [CONFIG]"></asp:SqlDataSource>
+
                         </div>
                     </div>
                 </div>
